@@ -1,0 +1,734 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>abstract_data_feed &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="data_feed" href="index.html"/>
+        <link rel="next" title="cassandra_config" href="cassandra_config.html"/>
+        <link rel="prev" title="stock_historical_processor" href="transfer/stock_historical_processor.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">data_feed</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dts/index.html">dts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer/index.html">transfer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">abstract_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cassandra_config.html">cassandra_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cassandra_data_feed.html">cassandra_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composite_data_feed.html">composite_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_feed_utils.html">data_feed_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_as_data_feed.html">data_source_as_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_config.html">database_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_based_data_feed.html">file_based_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_data_updater.html">local_data_updater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_data_broker_config.html">market_data_broker_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="money_flow_calculator.html">money_flow_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mongo_access.html">mongo_access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mongo_config.html">mongo_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mongo_data_feed.html">mongo_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_based_data_feed.html">ohlc_based_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_loader.html">ohlc_loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_loader.html">security_loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_pinyin_utils.html">security_pinyin_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stock_classifiers.html">stock_classifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stock_plates.html">stock_plates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stock_pool_utils.html">stock_pool_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_data_feed.html">web_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webserver_config.html">webserver_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wordpress_data_feed.html">wordpress_data_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeromq_bar_receiver.html">zeromq_bar_receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeromq_feed_utils.html">zeromq_feed_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">data_feed</a> &raquo;</li>
+      
+    <li>abstract_data_feed</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/data_feed/abstract_data_feed.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.data_feed.abstract_data_feed">
+<span id="abstract-data-feed"></span><h1>abstract_data_feed<a class="headerlink" href="#module-ctxalgolib.data_feed.abstract_data_feed" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_feed.abstract_data_feed.</code><code class="descname">AbstractDataFeed</code><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.get_datetime">
+<em class="property">static </em><code class="descname">get_datetime</code><span class="sig-paren">(</span><em>dt</em>, <em>time_component=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.get_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.traded_instruments">
+<code class="descname">traded_instruments</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.traded_instruments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of instruments that have trading data between start_time and end_time.
+Note that not all descendants can support this method. If a descendant does not support this method,
+it will throws an assertion violation when this method is invoked.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>start_time</strong> &#8211; datetime, date or string in form of yyyy-mm-dd or yyyy-mm-dd HH:MM:SS,
+the start time (inclusive). If the type is date or string of form yyyy-mm-dd,
+the time component is considered to be 00:00:00</li>
+<li><strong>end_time</strong> &#8211; datetime, date or string in form of yyyy-mm-dd or yyyy-mm-dd HH:MM:SS,
+the end time (inclusive). If the type is date or string of form yyyy-mm-dd,
+the time component is considered to be 23:59:59.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return [string], the list of instruments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.instruments">
+<code class="descname">instruments</code><span class="sig-paren">(</span><em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.instruments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the traded instruments on the given trading day.</p>
+<p>Note that not all descendants can support this method. If a descendant does not support this method,
+it will throws an assertion violation when this method is invoked.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>trading_day</strong> &#8211; date or string in form of yyyy-mm-dd, the trading day.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[string], the list of instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.trading_data">
+<code class="descname">trading_data</code><span class="sig-paren">(</span><em>sids</em>, <em>start_time</em>, <em>end_time</em>, <em>periodicity=20</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load trading data.
+:param sids: a string or an iterator of strings, representing one or more instruments.
+:param start_time: datetime or string in form of yyyy-mm-dd, the starting time (inclusive) of the loaded OHLC.</p>
+<blockquote>
+<div>If None, starting_time is one year before the end_time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>end_time</strong> &#8211; datetime or string in form of yyyy-mm-dd, the end time (inclusive)  of the loaded OHLC.
+If None, end time is the latest time point in current data feed.</li>
+<li><strong>periodicity</strong> &#8211; Periodicity, the periodicity of the data to load. Default is DAILY.</li>
+<li><strong>with_open_interests</strong> &#8211; boolean, if True, include the open interests series in the returned OHLCs.
+This only has effect for instruments which have the concept of open interests. For instruments
+which do not have the open interests concept, the returned OHLCs won&#8217;t contain the open interests
+series.</li>
+<li><strong>order_book_level</strong> &#8211; int, order book level. 0 means no order book. positive number means the returned
+ohlcs should contains order book information up to the given level.</li>
+<li><strong>dominants</strong> &#8211; boolean, if True, the returned OHLCs should contain the dominants series, which contains
+the full instrument id of the dominant contract.
+This only has effect for instruments which have the dominant contract. For instruments which do not have
+the dominant concept, the returned OHLCs won&#8217;t contain the dominants series.</li>
+<li><strong>profits</strong> &#8211; boolean, If True, the returned OHLCs will contain the profits series.</li>
+<li><strong>use_mid_ask_bid</strong> &#8211; boolean, if True, return the OHLCs which are generated by mid ask bid values,
+otherwise, return the OHLCs which are generated by traded prices.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return [OHLC], each OHLC object represents a single instrument. The order of OHLCs in the result list</dt>
+<dd>is the same as the order of instrument in sids. If there is no data for some instruments, the corresponding
+entry in the result list will be an empty OHLC.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.trading_data_by_bar">
+<code class="descname">trading_data_by_bar</code><span class="sig-paren">(</span><em>sids</em>, <em>bars=1</em>, <em>periodicity=20</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.trading_data_by_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load ohlc at most with bars number of bars.
+:param sids: string or an iterator of strings, representing one or more instruments.
+:param bars: int, the number of max bars to load for each ohlc.
+:param periodicity: Periodicity, the period.
+:return [OHLC], each OHLC object represents a single instrument. The order of OHLCs in the result list</p>
+<blockquote>
+<div>is the same as the order of instrument in sids. If there is no data for some instruments, the corresponding
+entry in the result list will be None.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.volatility_trading_data">
+<code class="descname">volatility_trading_data</code><span class="sig-paren">(</span><em>sids</em>, <em>start_time</em>, <em>end_time</em>, <em>volatility=5</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.volatility_trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load volatility based ohlc.
+:param start_time: datetime or string in form of yyyy-mm-dd, the starting time (inclusive) of the loaded OHLC.</p>
+<blockquote>
+<div>If None, starting_time is one year before the end_time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>end_time</strong> &#8211; datetime or string in form of yyyy-mm-dd, the end time (inclusive)  of the loaded OHLC.
+If None, end time is now.</li>
+<li><strong>sids</strong> &#8211; a string or an iterator of strings, representing one or more securities.</li>
+<li><strong>volatility</strong> &#8211; int, the volatility threshold</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[OHLC], an array of volatility-based ohlcs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.volatility_trading_data_by_bar">
+<code class="descname">volatility_trading_data_by_bar</code><span class="sig-paren">(</span><em>sids</em>, <em>bars=1</em>, <em>volatility=5</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.volatility_trading_data_by_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load ohlc at most with bars number of volatility bars.
+:param sids: string or an iterator of strings, representing one or more instruments.
+:param bars: int, the number of max bars to load for each ohlc.
+:param volatility: int/float, volatility threashold.
+:param with_open_interests: boolean, if True, include the open interests series in the returned OHLCs.</p>
+<blockquote>
+<div>This only has effect for instruments which have the concept of open interests. For instruments
+which do not have the open interests concept, the returned OHLCs won&#8217;t contain the open interests
+series.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>order_book_level</strong> &#8211; int, order book level. 0 means no order book. positive number means the returned
+ohlcs should contains order book information up to the given level.</li>
+<li><strong>dominants</strong> &#8211; boolean, if True, the returned OHLCs should contain the dominants series, which contains
+the full instrument id of the dominant contract.
+This only has effect for instruments which have the dominant contract. For instruments which do not have
+the dominant concept, the returned OHLCs won&#8217;t contain the dominants series.</li>
+<li><strong>profits</strong> &#8211; boolean, If True, the returned OHLCs will contain the profits series.</li>
+<li><strong>use_mid_ask_bid</strong> &#8211; boolean, if True, return the OHLCs which are generated by mid ask bid values,
+otherwise, return the OHLCs which are generated by traded prices.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return [OHLC], each OHLC object represents a single instrument. The order of OHLCs in the result list</dt>
+<dd>is the same as the order of instrument in sids. If there is no data for some instruments, the corresponding
+entry in the result list will be None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.ohlc">
+<code class="descname">ohlc</code><span class="sig-paren">(</span><em>sid</em>, <em>start_time=None</em>, <em>end_time=None</em>, <em>periodicity=20</em>, <em>bars=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ohlc for the given security.
+:param sid: string, the id of the security.
+:param start_time: datetime, or string in form of yyyy-mm-dd. The starting time of the ohlc.
+:param end_time: datetime, or string in form of yyyy-mm-dd. The end time of the ohlc.
+:param periodicity: Periodicity, the period of the ohlc.
+:param bars: int, the number of latest bars to retrieve.</p>
+<blockquote>
+<div>if not None, use this and ignore start_time, end_time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>with_open_interests</strong> &#8211; boolean, if True, include the open interests series in the returned OHLCs.
+This only has effect for instruments which have the concept of open interests. For instruments
+which do not have the open interests concept, the returned OHLCs won&#8217;t contain the open interests
+series.</li>
+<li><strong>order_book_level</strong> &#8211; int, order book level. 0 means no order book. positive number means the returned
+ohlcs should contains order book information up to the given level.</li>
+<li><strong>dominants</strong> &#8211; boolean, if True, the returned OHLCs should contain the dominants series, which contains
+the full instrument id of the dominant contract.
+This only has effect for instruments which have the dominant contract. For instruments which do not have
+the dominant concept, the returned OHLCs won&#8217;t contain the dominants series.</li>
+<li><strong>profits</strong> &#8211; boolean, If True, the returned OHLCs will contain the profits series.</li>
+<li><strong>use_mid_ask_bid</strong> &#8211; boolean, if True, return the OHLCs which are generated by mid ask bid values,
+otherwise, return the OHLCs which are generated by traded prices.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC. If no data for sid, return an empty OHLC.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.volatility_ohlc">
+<code class="descname">volatility_ohlc</code><span class="sig-paren">(</span><em>sid</em>, <em>start_time=None</em>, <em>end_time=None</em>, <em>volatility=5</em>, <em>bars=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.volatility_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ohlc for the given security.
+:param sid: string, the id of the security.
+:param start_time: datetime, or string in form of yyyy-mm-dd. The starting time of the ohlc.
+:param end_time: datetime, or string in form of yyyy-mm-dd. The end time of the ohlc.
+:param bars: int, the maximum number of bars to load. If bars is not None, ignore start_time and end_time.
+:param volatility: int, volatility threshold.
+:param with_open_interests: boolean, if True, include the open interests series in the returned OHLCs.</p>
+<blockquote>
+<div>This only has effect for instruments which have the concept of open interests. For instruments
+which do not have the open interests concept, the returned OHLCs won&#8217;t contain the open interests
+series.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>order_book_level</strong> &#8211; int, order book level. 0 means no order book. positive number means the returned
+ohlcs should contains order book information up to the given level.</li>
+<li><strong>dominants</strong> &#8211; boolean, if True, the returned OHLCs should contain the dominants series, which contains
+the full instrument id of the dominant contract.
+This only has effect for instruments which have the dominant contract. For instruments which do not have
+the dominant concept, the returned OHLCs won&#8217;t contain the dominants series.</li>
+<li><strong>profits</strong> &#8211; boolean, If True, the returned OHLCs will contain the profits series.</li>
+<li><strong>use_mid_ask_bid</strong> &#8211; boolean, if True, return the OHLCs which are generated by mid ask bid values,
+otherwise, return the OHLCs which are generated by traded prices.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC. or None if no such ohlc is found.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.projected_trading_data">
+<code class="descname">projected_trading_data</code><span class="sig-paren">(</span><em>dates</em>, <em>stock_ids</em>, <em>periodicity=20</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.projected_trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load OHLCs for given stocks. Those OHLCs are projected onto dates.
+Parameters:</p>
+<blockquote>
+<div>dates: [datetime], the dates on which loaded OHLCs should be projected.
+periodicity: Periodicity, the periodicity of the data to load. Default is DAILY.
+stock_ids: a string or an iterator of strings, representing one or more stocks.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>An array of OHLC, each OHLC object represents a single stock.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.ohlcs_from_json">
+<code class="descname">ohlcs_from_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.ohlcs_from_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.cleanup">
+<code class="descname">cleanup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.cleanup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.set_with_exrights">
+<code class="descname">set_with_exrights</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.set_with_exrights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.with_exrights to v.
+:param v: boolean, new with_exrights value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stocks">
+<code class="descname">stocks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all stock ids and names.
+:return {string: string}, keys are stock ids, values are stock names.</p>
+<blockquote>
+<div>If current data feed does not have information, return an empty dict.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_names">
+<code class="descname">stock_names</code><span class="sig-paren">(</span><em>stock_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get names of the given stock.
+:param stock_id: string, the stock id.
+:return: {string:string}, it has three keys:</p>
+<blockquote>
+<div>name: the short Chinese name of the stock (from the stocks table).
+full: the full Chinese name of the stock (from the stock_info table).
+english: the English name of the stock (from the stock_info table).
+If current data feed does not have this information, return an empty dict.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_info">
+<code class="descname">stock_info</code><span class="sig-paren">(</span><em>stock_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the stock info.
+:param stock_id: string, the stock id.
+:return: {string:string}, keys are information name:</p>
+<blockquote>
+<div>ipo_date, full_chinese_name, full_english_name, website.
+Values are the information.
+If current data feed does not have this information, return an empty dict.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stocks_info">
+<code class="descname">stocks_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stocks_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the details of all stocks.
+:return: dict{string:dict{string:string}}</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Outer keys are stock ids. Inner keys are information name:</dt>
+<dd>ipo_date, full_chinese_name, full_english_name, website.</dd>
+</dl>
+<p>Inner values are the information.
+If current data feed does not have this information, return an empty dict.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.indices">
+<code class="descname">indices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all index ids and names
+:return dict{string: string}, keys are index ids, values are stock names.</p>
+<blockquote>
+<div>If current data feed does not have this information, return an empty dict.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_capital_structure">
+<code class="descname">stock_capital_structure</code><span class="sig-paren">(</span><em>stock_id</em>, <em>dates</em>, <em>kind</em>, <em>capital_structure_records=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_capital_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get capital structure for stocks between dates.
+:param stock_id: string, the id, such as &#8216;sh600001&#8217;, of the stock whose capital structure is to be loaded.
+:param dates: [datetime], The dates during which capital structure is to be used.
+:param kind: int, 0 means total shares, 1 means fluid_a shares.
+:param capital_structure_records: [CapitalStructureRecord], the capital structure records used to</p>
+<blockquote>
+<div>calculate returned number of shares. If None, load the data from database.</div></blockquote>
+<dl class="docutils">
+<dt>:return [double], the number of shares on given dates. If there is no data on a date, use numpy.nan.</dt>
+<dd>If current data feed does not have this information, return an empty list.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_turnover_rate">
+<code class="descname">stock_turnover_rate</code><span class="sig-paren">(</span><em>stock_id</em>, <em>dates</em>, <em>volumes</em>, <em>kind</em>, <em>capital_structure_records=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_turnover_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get stock turnover rate.
+:param stock_id: string, the id, such as &#8216;sh600001&#8217;, of the stock whose turnover rate is to be calculated..
+:param dates: [datetime], The dates during which capital structure is to be used.
+:param volumes: [double], The volumes corresponding to the dates
+:param kind: int, 0 means total shares, 1 means fluid_a shares.
+:param capital_structure_records: [CapitalStructureRecord], the capital structure records used to</p>
+<blockquote>
+<div>calculate returned number of shares. If None, load the data from database.</div></blockquote>
+<dl class="docutils">
+<dt>:return  [double], turnover rates on those dates. Rates are in range of [0, 1].</dt>
+<dd>If there is no data on a date, use numpy.nan.
+If current data feed does not have this information, return an empty list.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_plates">
+<code class="descname">stock_plates</code><span class="sig-paren">(</span><em>stock_id</em>, <em>cursor_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stock_plates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get names of plates where the given stock belongs.
+:param stock_id: string, stock id, in form of &#8216;sh600001&#8217;.
+:param cursor_date: date, the date on which the plate should be retrieved.</p>
+<blockquote>
+<div>None means that retrieve the most recent information.</div></blockquote>
+<dl class="docutils">
+<dt>:param [string], list of plate names.</dt>
+<dd>If current data feed does not have this information, return an empty list.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stocks_in_plate">
+<code class="descname">stocks_in_plate</code><span class="sig-paren">(</span><em>plate_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.stocks_in_plate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ids for stocks which are in the same plate.
+:param plate_name: string, the plate name.
+:return [string], a list of stock ids.</p>
+<blockquote>
+<div>If current data feed does not have this information, return an empty list.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.fundamentals">
+<code class="descname">fundamentals</code><span class="sig-paren">(</span><em>stock_id</em>, <em>dates</em>, <em>kind</em>, <em>data_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.fundamentals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the fundamental data for the given stock in the given date range.
+:param stock_id, string, the stock id, in form sh600001.
+:param dates: [datetime] or [date], The dates or datetimes on which fundamental data should be returned.
+:param kind: string, can be &#8220;财务&#8221;, &#8220;股本结构&#8221;, &#8220;交易&#8221;.
+:param data_name: string, the Chinese name for the data item.
+:return  [float], the list of data on the given dates, the length of the result should be the same as the</p>
+<blockquote>
+<div>the length of the dates parameter.
+If current data feed does not have this information, return an empty list.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.fundamental_expression">
+<code class="descname">fundamental_expression</code><span class="sig-paren">(</span><em>stock_id</em>, <em>expr</em>, <em>datetimes</em>, <em>context=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.fundamental_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate an financial expression given by expr.
+Notes:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><dl class="first docutils">
+<dt>The datetimes parameter decides the datetime points that the fundamental results should return. This means</dt>
+<dd><p class="first last">in the result, the first datetime should == datetimes[0] and the last datetime should == datetimes[-1]</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">The datetimes parameter is also used to load variables which are not in context.</p>
+</li>
+<li><p class="first">We do not load variables that are already in context.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Given a variable (either freshly loaded from database or directly from context), and the datetimes</dt>
+<dd><p class="first last">parameter, we find the datetime slots where the variable has no data, and find the last available data
+to put in those slots</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stock_id</strong> &#8211; string, the stock id, in form sh600001.</li>
+<li><strong>expr</strong> &#8211; string, a financial expression.</li>
+<li><strong>datetimes</strong> &#8211; [datetime], the list of timestamps used for calculation. Use it to define the range of dates.</li>
+<li><strong>context</strong> &#8211; A dictionary string-&gt;([datetime], [float]) from data items which are already available
+(so no need to load it). Keys are date item names, such as 股本结构.股份总数, values are time series.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return ([datetime], [float]), the evaluated time series.</dt>
+<dd>If current data feed does not have this information, return None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.get_start_and_end_time">
+<code class="descname">get_start_and_end_time</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.get_start_and_end_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare start and end time.
+:param start_time: datetime, or string in form of yyyy-mm-dd.
+:param end_time: : datetime or string in form of yyyy-mm-dd.
+:return: (datetime, datetime)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.dominant_instrument">
+<code class="descname">dominant_instrument</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.dominant_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the level dominant instrument id on the given trading day.
+:param instrument_prefix: string, instrument id prefix, such as IF, cu.
+:param trading_day: date, or string in form of yyyy-mm-dd. trading day.
+:param level: int, 0 means the dominant contract, 1 means the next dominant contract, and so on.
+:return: string, the instrument id of the asked dominant contract.</p>
+<blockquote>
+<div>If no such dominant contract, return None.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.last_price">
+<code class="descname">last_price</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_feed.abstract_data_feed.AbstractDataFeed.last_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the last price of the given instrument id.
+:param instrument_id: string, instrument id.
+:return: float, price. None if no price is available.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cassandra_config.html" class="btn btn-neutral float-right" title="cassandra_config" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="transfer/stock_historical_processor.html" class="btn btn-neutral" title="stock_historical_processor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

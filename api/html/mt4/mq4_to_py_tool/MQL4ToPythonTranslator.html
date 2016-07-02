@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MQL4ToPythonTranslator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="mq4_to_py_tool" href="index.html"/>
+        <link rel="next" title="script" href="script.html"/>
+        <link rel="prev" title="MQL4Visitor" href="mql4_parser/MQL4Visitor.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">mt4</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">mq4_to_py_tool</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mql4_parser/index.html">mql4_parser</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MQL4ToPythonTranslator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script.html">script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../abstract_mt4_indicator.html">abstract_mt4_indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mt4_indicator.html">mt4_indicator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">mt4</a> &raquo;</li>
+      
+          <li><a href="index.html">mq4_to_py_tool</a> &raquo;</li>
+      
+    <li>MQL4ToPythonTranslator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/mt4/mq4_to_py_tool/MQL4ToPythonTranslator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator">
+<span id="mql4topythontranslator"></span><h1>MQL4ToPythonTranslator<a class="headerlink" href="#module-ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream">
+<em class="property">class </em><code class="descclassname">ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.</code><code class="descname">MyFileStream</code><span class="sig-paren">(</span><em>file_name</em>, <em>encoding='ascii'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">antlr4.InputStream.InputStream</span></code></p>
+<p>antlr4-python2-runtime(4.4)中FileStream实现有点bug，这里做了
+些修改</p>
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.LA">
+<code class="descname">LA</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.LA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.LT">
+<code class="descname">LT</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.LT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.consume">
+<code class="descname">consume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.consume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.getText">
+<code class="descname">getText</code><span class="sig-paren">(</span><em>start</em>, <em>stop</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.getText" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.index">
+<code class="descname">index</code><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.mark">
+<code class="descname">mark</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.mark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.release">
+<code class="descname">release</code><span class="sig-paren">(</span><em>marker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.release" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.seek">
+<code class="descname">seek</code><span class="sig-paren">(</span><em>_index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.seek" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.size">
+<code class="descname">size</code><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MyFileStream.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.</code><code class="descname">MQL4ToPythonTranslator</code><span class="sig-paren">(</span><em>source_file</em>, <em>encoding</em>, <em>outdir</em>, <em>outfile</em>, <em>classname</em>, <em>calling_convention='WinDLL'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="mql4_parser/MQL4Visitor.html#ctxalgolib.mt4.mq4_to_py_tool.mql4_parser.MQL4Visitor.MQL4Visitor" title="ctxalgolib.mt4.mq4_to_py_tool.mql4_parser.MQL4Visitor.MQL4Visitor"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.mt4.mq4_to_py_tool.mql4_parser.MQL4Visitor.MQL4Visitor</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.translate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visit">
+<code class="descname">visit</code><span class="sig-paren">(</span><em>tree</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitChildren">
+<code class="descname">visitChildren</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitChildren" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTerminal">
+<code class="descname">visitTerminal</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTerminal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitErrorNode">
+<code class="descname">visitErrorNode</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitErrorNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitCompilationUnit">
+<code class="descname">visitCompilationUnit</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitCompilationUnit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTranslationUnit">
+<code class="descname">visitTranslationUnit</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTranslationUnit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExternalDeclaration">
+<code class="descname">visitExternalDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExternalDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitFunctionDefinition">
+<code class="descname">visitFunctionDefinition</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitFunctionDefinition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclaration">
+<code class="descname">visitDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPropertyDeclaration">
+<code class="descname">visitPropertyDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPropertyDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPropertyValue">
+<code class="descname">visitPropertyValue</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPropertyValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDefineDeclaration">
+<code class="descname">visitDefineDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDefineDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitImportDeclaration">
+<code class="descname">visitImportDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitImportDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationSpecifiers">
+<code class="descname">visitDeclarationSpecifiers</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationSpecifiers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarator">
+<code class="descname">visitDeclarator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationList">
+<code class="descname">visitDeclarationList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitCompoundStatement">
+<code class="descname">visitCompoundStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitCompoundStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitDeclaratorList">
+<code class="descname">visitInitDeclaratorList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitDeclaratorList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitFunctionDeclaration">
+<code class="descname">visitFunctionDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitFunctionDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationSpecifier">
+<code class="descname">visitDeclarationSpecifier</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationSpecifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPointer">
+<code class="descname">visitPointer</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPointer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDirectDeclarator">
+<code class="descname">visitDirectDeclarator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDirectDeclarator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitBlockItemList">
+<code class="descname">visitBlockItemList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitBlockItemList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitDeclarator">
+<code class="descname">visitInitDeclarator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitDeclarator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStorageClassSpecifier">
+<code class="descname">visitStorageClassSpecifier</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStorageClassSpecifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeSpecifier">
+<code class="descname">visitTypeSpecifier</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeSpecifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeQualifier">
+<code class="descname">visitTypeQualifier</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeQualifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeQualifierList">
+<code class="descname">visitTypeQualifierList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeQualifierList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAssignmentExpression">
+<code class="descname">visitAssignmentExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAssignmentExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitParameterTypeList">
+<code class="descname">visitParameterTypeList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitParameterTypeList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitIdentifierList">
+<code class="descname">visitIdentifierList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitIdentifierList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitBlockItem">
+<code class="descname">visitBlockItem</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitBlockItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitializer">
+<code class="descname">visitInitializer</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitializer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructSpecifier">
+<code class="descname">visitStructSpecifier</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructSpecifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumSpecifier">
+<code class="descname">visitEnumSpecifier</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumSpecifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitConditionalExpression">
+<code class="descname">visitConditionalExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitConditionalExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitUnaryExpression">
+<code class="descname">visitUnaryExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitUnaryExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAssignmentOperator">
+<code class="descname">visitAssignmentOperator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAssignmentOperator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitParameterList">
+<code class="descname">visitParameterList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitParameterList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStatement">
+<code class="descname">visitStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationStatement">
+<code class="descname">visitDeclarationStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitJumpStatement">
+<code class="descname">visitJumpStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitJumpStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitializerList">
+<code class="descname">visitInitializerList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInitializerList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclarationList">
+<code class="descname">visitStructDeclarationList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclarationList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumeratorList">
+<code class="descname">visitEnumeratorList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumeratorList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitLogicalOrExpression">
+<code class="descname">visitLogicalOrExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitLogicalOrExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExpression">
+<code class="descname">visitExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPostfixExpression">
+<code class="descname">visitPostfixExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPostfixExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitUnaryOperator">
+<code class="descname">visitUnaryOperator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitUnaryOperator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitCastExpression">
+<code class="descname">visitCastExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitCastExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeName">
+<code class="descname">visitTypeName</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitTypeName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitParameterDeclaration">
+<code class="descname">visitParameterDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitParameterDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitLabeledStatement">
+<code class="descname">visitLabeledStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitLabeledStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExpressionStatement">
+<code class="descname">visitExpressionStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExpressionStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitSelectionStatement">
+<code class="descname">visitSelectionStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitSelectionStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitIterationStatement">
+<code class="descname">visitIterationStatement</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitIterationStatement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDesignation">
+<code class="descname">visitDesignation</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDesignation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclaration">
+<code class="descname">visitStructDeclaration</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumerator">
+<code class="descname">visitEnumerator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumerator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitLogicalAndExpression">
+<code class="descname">visitLogicalAndExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitLogicalAndExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPrimaryExpression">
+<code class="descname">visitPrimaryExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitPrimaryExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitArgumentExpressionList">
+<code class="descname">visitArgumentExpressionList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitArgumentExpressionList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitSpecifierQualifierList">
+<code class="descname">visitSpecifierQualifierList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitSpecifierQualifierList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAbstractDeclarator">
+<code class="descname">visitAbstractDeclarator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAbstractDeclarator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationSpecifiers2">
+<code class="descname">visitDeclarationSpecifiers2</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDeclarationSpecifiers2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitConstantExpression">
+<code class="descname">visitConstantExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitConstantExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDesignatorList">
+<code class="descname">visitDesignatorList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDesignatorList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclaratorList">
+<code class="descname">visitStructDeclaratorList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclaratorList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumerationConstant">
+<code class="descname">visitEnumerationConstant</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEnumerationConstant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInclusiveOrExpression">
+<code class="descname">visitInclusiveOrExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitInclusiveOrExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDirectAbstractDeclarator">
+<code class="descname">visitDirectAbstractDeclarator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDirectAbstractDeclarator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDesignator">
+<code class="descname">visitDesignator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitDesignator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclarator">
+<code class="descname">visitStructDeclarator</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitStructDeclarator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExclusiveOrExpression">
+<code class="descname">visitExclusiveOrExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitExclusiveOrExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitGenericAssocList">
+<code class="descname">visitGenericAssocList</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitGenericAssocList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitGenericAssociation">
+<code class="descname">visitGenericAssociation</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitGenericAssociation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAndExpression">
+<code class="descname">visitAndExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAndExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEqualityExpression">
+<code class="descname">visitEqualityExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitEqualityExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitRelationalExpression">
+<code class="descname">visitRelationalExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitRelationalExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitShiftExpression">
+<code class="descname">visitShiftExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitShiftExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAdditiveExpression">
+<code class="descname">visitAdditiveExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitAdditiveExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitMultiplicativeExpression">
+<code class="descname">visitMultiplicativeExpression</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitMultiplicativeExpression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitGenericSelection">
+<code class="descname">visitGenericSelection</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.visitGenericSelection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.find_all_function_names">
+<code class="descname">find_all_function_names</code><span class="sig-paren">(</span><em>tree</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.find_all_function_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.find_all_classvarnames">
+<code class="descname">find_all_classvarnames</code><span class="sig-paren">(</span><em>tree</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.find_all_classvarnames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.insert_one_indention">
+<em class="property">static </em><code class="descname">insert_one_indention</code><span class="sig-paren">(</span><em>codesnippets</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.insert_one_indention" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.convert_value">
+<code class="descname">convert_value</code><span class="sig-paren">(</span><em>typespecifier</em>, <em>v_str</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.convert_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.datetime_constant_transform">
+<code class="descname">datetime_constant_transform</code><span class="sig-paren">(</span><em>mql4_datetime</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.datetime_constant_transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.aggregateResult">
+<code class="descname">aggregateResult</code><span class="sig-paren">(</span><em>aggregate</em>, <em>nextResult</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.aggregateResult" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.defaultResult">
+<code class="descname">defaultResult</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.defaultResult" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.shouldVisitNextChild">
+<code class="descname">shouldVisitNextChild</code><span class="sig-paren">(</span><em>node</em>, <em>currentResult</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mt4.mq4_to_py_tool.MQL4ToPythonTranslator.MQL4ToPythonTranslator.shouldVisitNextChild" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="script.html" class="btn btn-neutral float-right" title="script" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mql4_parser/MQL4Visitor.html" class="btn btn-neutral" title="MQL4Visitor" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

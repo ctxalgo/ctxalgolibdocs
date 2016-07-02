@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zipline_algorithm &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="backtesting" href="index.html"/>
+        <link rel="next" title="zipline_datasources" href="zipline_datasources.html"/>
+        <link rel="prev" title="simple_signal_evaluator" href="simple_signal_evaluator.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">backtesting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html">data_sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simple_signal_evaluator.html">simple_signal_evaluator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">zipline_algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zipline_datasources.html">zipline_datasources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zipline_utils.html">zipline_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">backtesting</a> &raquo;</li>
+      
+    <li>zipline_algorithm</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/backtesting/zipline_algorithm.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.backtesting.zipline_algorithm">
+<span id="zipline-algorithm"></span><h1>zipline_algorithm<a class="headerlink" href="#module-ctxalgolib.backtesting.zipline_algorithm" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm">
+<em class="property">class </em><code class="descclassname">ctxalgolib.backtesting.zipline_algorithm.</code><code class="descname">CTXTradingAlgorithm</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">zipline.algorithm.TradingAlgorithm</span></code></p>
+<p>Initialize sids and other state variables.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Optional:</th><td class="field-body"><dl class="first last docutils">
+<dt>initialize</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">Function that is called with a single
+argument at the begninning of the simulation.</p>
+</dd>
+<dt>handle_data</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">Function that is called with 2 arguments
+(context and data) on every bar.</p>
+</dd>
+<dt>script</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Algoscript that contains initialize and
+handle_data function definition.</p>
+</dd>
+<dt>data_frequency</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str (daily, hourly or minutely)</span><dd><p class="first last">The duration of the bars.</p>
+</dd>
+<dt>capital_base</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float &lt;default: 1.0e5&gt;</span><dd><p class="first last">How much capital to start with.</p>
+</dd>
+<dt>instant_fill</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool &lt;default: False&gt;</span><dd><p class="first last">Whether to fill orders immediately or on next bar.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.AUTO_INITIALIZE">
+<code class="descname">AUTO_INITIALIZE</code><em class="property"> = True</em><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.AUTO_INITIALIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.add_history">
+<code class="descname">add_history</code><span class="sig-paren">(</span><em>bar_count</em>, <em>frequency</em>, <em>field</em>, <em>ffill=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.add_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.add_transform">
+<code class="descname">add_transform</code><span class="sig-paren">(</span><em>transform_class</em>, <em>tag</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.add_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a single-sid, sequential transform to the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first last docutils">
+<dt>transform_class</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">class</span><dd><p class="first last">Which transform to use. E.g. mavg.</p>
+</dd>
+<dt>tag</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">How to name the transform. Can later be access via:
+data[sid].tag()</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Extra args and kwargs will be forwarded to the transform
+instantiation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.all_api_methods">
+<code class="descname">all_api_methods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.all_api_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of all the TradingAlgorithm API methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.analyze">
+<code class="descname">analyze</code><span class="sig-paren">(</span><em>perf</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.analyze" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.cancel_order">
+<code class="descname">cancel_order</code><span class="sig-paren">(</span><em>order_param</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.cancel_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.data_frequency">
+<code class="descname">data_frequency</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.data_frequency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_datetime">
+<code class="descname">get_datetime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a copy of the datetime.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_generator">
+<code class="descname">get_generator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this method to add new logic to the construction
+of the generator. Overrides can use the _create_generator
+method to get a standard construction generator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_open_orders">
+<code class="descname">get_open_orders</code><span class="sig-paren">(</span><em>sid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_open_orders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_order">
+<code class="descname">get_order</code><span class="sig-paren">(</span><em>order_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.get_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.handle_data">
+<code class="descname">handle_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.handle_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.history">
+<code class="descname">history</code><span class="sig-paren">(</span><em>bar_count</em>, <em>frequency</em>, <em>field</em>, <em>ffill=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self._initialize with <cite>self</cite> made available to Zipline API
+functions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.on_dt_changed">
+<code class="descname">on_dt_changed</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.on_dt_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback triggered by the simulation loop whenever the current dt
+changes.</p>
+<p>Any logic that should happen exactly once at the start of each datetime
+group should happen here.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order">
+<code class="descname">order</code><span class="sig-paren">(</span><em>sid</em>, <em>amount</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order using the specified parameters.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_percent">
+<code class="descname">order_percent</code><span class="sig-paren">(</span><em>sid</em>, <em>percent</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_percent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order in the specified security corresponding to the given
+percent of the current portfolio value.</p>
+<p>Note that percent must expressed as a decimal (0.50 means 50%).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_target">
+<code class="descname">order_target</code><span class="sig-paren">(</span><em>sid</em>, <em>target</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to adjust a position to a target number of shares. If
+the position doesn&#8217;t already exist, this is equivalent to placing a new
+order. If the position does exist, this is equivalent to placing an
+order for the difference between the target number of shares and the
+current number of shares.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_target_percent">
+<code class="descname">order_target_percent</code><span class="sig-paren">(</span><em>sid</em>, <em>target</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_target_percent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to adjust a position to a target percent of the
+current portfolio value. If the position doesn&#8217;t already exist, this is
+equivalent to placing a new order. If the position does exist, this is
+equivalent to placing an order for the difference between the target
+percent and the current percent.</p>
+<p>Note that target must expressed as a decimal (0.50 means 50%).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_target_value">
+<code class="descname">order_target_value</code><span class="sig-paren">(</span><em>sid</em>, <em>target</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_target_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to adjust a position to a target value. If
+the position doesn&#8217;t already exist, this is equivalent to placing a new
+order. If the position does exist, this is equivalent to placing an
+order for the difference between the target value and the
+current value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_value">
+<code class="descname">order_value</code><span class="sig-paren">(</span><em>sid</em>, <em>value</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.order_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order by desired value rather than desired number of shares.
+If the requested sid is found in the universe, the requested value is
+divided by its price to imply the number of shares to transact.</p>
+<p>value &gt; 0 :: Buy/Cover
+value &lt; 0 :: Sell/Short
+Market order:    order(sid, value)
+Limit order:     order(sid, value, limit_price)
+Stop order:      order(sid, value, None, stop_price)
+StopLimit order: order(sid, value, limit_price, stop_price)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.portfolio">
+<code class="descname">portfolio</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.portfolio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.raw_orders">
+<code class="descname">raw_orders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.raw_orders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current open orders from the blotter.</p>
+<p>N.B. this is not a property, so that the function can be passed
+and called back from within a source.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.raw_positions">
+<code class="descname">raw_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.raw_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current portfolio for the algorithm.</p>
+<p>N.B. this is not done as a property, so that the function can be
+passed and called from within a source.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.record">
+<code class="descname">record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Track and record local variable (i.e. attributes) each day.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.recorded_vars">
+<code class="descname">recorded_vars</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.recorded_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.register_trading_control">
+<code class="descname">register_trading_control</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.register_trading_control" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a new TradingControl to be checked prior to order calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>source</em>, <em>overwrite_sim_params=True</em>, <em>benchmark_return_source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first docutils">
+<dt>source</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">can be either:</span><dd><blockquote class="first">
+<div><ul class="simple">
+<li>pandas.DataFrame</li>
+<li>zipline source</li>
+<li>list of sources</li>
+</ul>
+</div></blockquote>
+<p>If pandas.DataFrame is provided, it must have the
+following structure:
+* column names must consist of ints representing the</p>
+<blockquote>
+<div><p>different sids</p>
+</div></blockquote>
+<ul class="last simple">
+<li>index must be DatetimeIndex</li>
+<li>array contents should be price info.</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt>daily_stats</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">pandas.DataFrame</span><dd><p class="first last">Daily performance metrics such as returns, alpha etc.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_commission">
+<code class="descname">set_commission</code><span class="sig-paren">(</span><em>commission</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_commission" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_logger">
+<code class="descname">set_logger</code><span class="sig-paren">(</span><em>logger</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_long_only">
+<code class="descname">set_long_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_long_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a rule specifying that this algorithm cannot take short positions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_max_order_count">
+<code class="descname">set_max_order_count</code><span class="sig-paren">(</span><em>max_count</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_max_order_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a limit on the number of orders that can be placed within the given
+time interval.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_max_order_size">
+<code class="descname">set_max_order_size</code><span class="sig-paren">(</span><em>sid=None</em>, <em>max_shares=None</em>, <em>max_notional=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_max_order_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a limit on the number of shares and/or dollar value of any single
+order placed for sid.  Limits are treated as absolute values and are
+enforced at the time that the algo attempts to place an order for sid.</p>
+<p>If an algorithm attempts to place an order that would result in
+exceeding one of these limits, raise a TradingControlException.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_max_position_size">
+<code class="descname">set_max_position_size</code><span class="sig-paren">(</span><em>sid=None</em>, <em>max_shares=None</em>, <em>max_notional=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_max_position_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a limit on the number of shares and/or dollar value held for the
+given sid. Limits are treated as absolute values and are enforced at
+the time that the algo attempts to place an order for sid. This means
+that it&#8217;s possible to end up with more than the max number of shares
+due to splits/dividends, and more than the max notional due to price
+improvement.</p>
+<p>If an algorithm attempts to place an order that would result in
+increasing the absolute value of shares/dollar value exceeding one of
+these limits, raise a TradingControlException.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_slippage">
+<code class="descname">set_slippage</code><span class="sig-paren">(</span><em>slippage</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_slippage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_sources">
+<code class="descname">set_sources</code><span class="sig-paren">(</span><em>sources</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_sources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_transact">
+<code class="descname">set_transact</code><span class="sig-paren">(</span><em>transact</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_transact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the method that will be called to create a
+transaction from open orders and trade events.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_transforms">
+<code class="descname">set_transforms</code><span class="sig-paren">(</span><em>transforms</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.set_transforms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.update_dividends">
+<code class="descname">update_dividends</code><span class="sig-paren">(</span><em>dividend_frame</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.update_dividends" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set DataFrame used to process dividends.  DataFrame columns should
+contain at least the entries in zp.DIVIDEND_FIELDS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.updated_portfolio">
+<code class="descname">updated_portfolio</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.updated_portfolio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.validate_order_params">
+<code class="descname">validate_order_params</code><span class="sig-paren">(</span><em>sid</em>, <em>amount</em>, <em>limit_price</em>, <em>stop_price</em>, <em>style</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_algorithm.CTXTradingAlgorithm.validate_order_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method for validating parameters to the order API function.</p>
+<p>Raises an UnsupportedOrderParameters if invalid arguments are found.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="zipline_datasources.html" class="btn btn-neutral float-right" title="zipline_datasources" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="simple_signal_evaluator.html" class="btn btn-neutral" title="simple_signal_evaluator" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

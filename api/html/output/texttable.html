@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>texttable &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="output" href="index.html"/>
+        <link rel="next" title="translation" href="translation.html"/>
+        <link rel="prev" title="iterm_plot" href="iterm_plot.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">output</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ipython/index.html">ipython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ap.html">ap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_mo_file.html">generate_mo_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterm_plot.html">iterm_plot</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">texttable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translation.html">translation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">output</a> &raquo;</li>
+      
+    <li>texttable</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/output/texttable.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.output.texttable">
+<span id="texttable"></span><h1>texttable<a class="headerlink" href="#module-ctxalgolib.output.texttable" title="Permalink to this headline">¶</a></h1>
+<p>module for creating simple ASCII tables</p>
+<p>Example:</p>
+<blockquote>
+<div><p>table = Texttable()
+table.set_cols_align([&#8220;l&#8221;, &#8220;r&#8221;, &#8220;c&#8221;])
+table.set_cols_valign([&#8220;t&#8221;, &#8220;m&#8221;, &#8220;b&#8221;])
+table.add_rows([ [&#8220;Name&#8221;, &#8220;Age&#8221;, &#8220;Nickname&#8221;],</p>
+<blockquote>
+<div>[&#8220;MrnXaviernHuon&#8221;, 32, &#8220;Xav&#8217;&#8221;],
+[&#8220;MrnBaptistenClement&#8221;, 1, &#8220;Baby&#8221;] ])</div></blockquote>
+<p>print table.draw() + &#8220;n&#8221;</p>
+<p>table = Texttable()
+table.set_deco(Texttable.HEADER)
+table.set_cols_dtype([&#8216;t&#8217;,  # text</p>
+<blockquote>
+<div>&#8216;f&#8217;,  # float (decimal)
+&#8216;e&#8217;,  # float (exponent)
+&#8216;i&#8217;,  # integer
+&#8216;a&#8217;]) # automatic</div></blockquote>
+<p>table.set_cols_align([&#8220;l&#8221;, &#8220;r&#8221;, &#8220;r&#8221;, &#8220;r&#8221;, &#8220;l&#8221;])
+table.add_rows([[&#8220;text&#8221;,    &#8220;float&#8221;, &#8220;exp&#8221;, &#8220;int&#8221;, &#8220;auto&#8221;],</p>
+<blockquote>
+<div>[&#8220;abcd&#8221;,    &#8220;67&#8221;,    654,   89,    128.001],
+[&#8220;efghijk&#8221;, 67.5434, .654,  89.6,  12800000000000000000000.00023],
+[&#8220;lmn&#8221;,     5e-78,   5e-78, 89.4,  .000000000000128],
+[&#8220;opqrstu&#8221;, .023,    5e+78, 92.,   12800000000000000000000]])</div></blockquote>
+<p>print table.draw()</p>
+</div></blockquote>
+<p>Result:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="20%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Age</th>
+<th class="head">Nickname</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Mr
+Xavier
+Huon</td>
+<td>32</td>
+<td>Xav&#8217;</td>
+</tr>
+<tr class="row-odd"><td>Mr
+Baptiste
+Clement</td>
+<td>1</td>
+<td>Baby</td>
+</tr>
+</tbody>
+</table>
+<p>abcd   67.000   6.540e+02   89    128.001
+efgh   67.543   6.540e-01   90    1.280e+22
+ijkl   0.000    5.000e-78   89    0.000
+mnop   0.023    5.000e+78   92    1.280e+22</p>
+</div></blockquote>
+<dl class="exception">
+<dt id="ctxalgolib.output.texttable.ArraySizeError">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.output.texttable.</code><code class="descname">ArraySizeError</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.ArraySizeError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>Exception raised when specified rows don&#8217;t fit the required size</p>
+<dl class="attribute">
+<dt id="ctxalgolib.output.texttable.ArraySizeError.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.output.texttable.ArraySizeError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.texttable.ArraySizeError.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.output.texttable.ArraySizeError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.output.texttable.Texttable">
+<em class="property">class </em><code class="descclassname">ctxalgolib.output.texttable.</code><code class="descname">Texttable</code><span class="sig-paren">(</span><em>max_width=80</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<ul class="simple">
+<li>max_width is an integer, specifying the maximum width of the table</li>
+<li>if set to 0, size is unlimited, therefore cells won&#8217;t be wrapped</li>
+</ul>
+<dl class="attribute">
+<dt id="ctxalgolib.output.texttable.Texttable.BORDER">
+<code class="descname">BORDER</code><em class="property"> = 1</em><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.BORDER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.texttable.Texttable.HEADER">
+<code class="descname">HEADER</code><em class="property"> = 2</em><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.HEADER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.texttable.Texttable.HLINES">
+<code class="descname">HLINES</code><em class="property"> = 4</em><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.HLINES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.texttable.Texttable.VLINES">
+<code class="descname">VLINES</code><em class="property"> = 8</em><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.VLINES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the instance</p>
+<ul class="simple">
+<li>reset rows and header</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.set_chars">
+<code class="descname">set_chars</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.set_chars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the characters used to draw lines between rows and columns</p>
+<ul>
+<li><p class="first">the array should contain 4 fields:</p>
+<blockquote>
+<div><p>[horizontal, vertical, corner, header]</p>
+</div></blockquote>
+</li>
+<li><p class="first">default is set to:</p>
+<blockquote>
+<div><p>[&#8216;-&#8216;, &#8216;|&#8217;, &#8216;+&#8217;, &#8216;=&#8217;]</p>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.set_deco">
+<code class="descname">set_deco</code><span class="sig-paren">(</span><em>deco</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.set_deco" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the table decoration</p>
+<ul>
+<li><p class="first">&#8216;deco&#8217; can be a combinaison of:</p>
+<blockquote>
+<div><blockquote>
+<div><p>Texttable.BORDER: Border around the table
+Texttable.HEADER: Horizontal line below the header
+Texttable.HLINES: Horizontal lines between rows
+Texttable.VLINES: Vertical lines between columns</p>
+</div></blockquote>
+<p>All of them are enabled by default</p>
+</div></blockquote>
+</li>
+<li><p class="first">example:</p>
+<blockquote>
+<div><p>Texttable.BORDER | Texttable.HEADER</p>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.set_cols_align">
+<code class="descname">set_cols_align</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.set_cols_align" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the desired columns alignment</p>
+<ul>
+<li><p class="first">the elements of the array should be either &#8220;l&#8221;, &#8220;c&#8221; or &#8220;r&#8221;:</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;l&#8221;: column flushed left</li>
+<li>&#8220;c&#8221;: column centered</li>
+<li>&#8220;r&#8221;: column flushed right</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.set_cols_valign">
+<code class="descname">set_cols_valign</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.set_cols_valign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the desired columns vertical alignment</p>
+<ul>
+<li><p class="first">the elements of the array should be either &#8220;t&#8221;, &#8220;m&#8221; or &#8220;b&#8221;:</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;t&#8221;: column aligned on the top of the cell</li>
+<li>&#8220;m&#8221;: column aligned on the middle of the cell</li>
+<li>&#8220;b&#8221;: column aligned on the bottom of the cell</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.set_cols_dtype">
+<code class="descname">set_cols_dtype</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.set_cols_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the desired columns datatype for the cols.</p>
+<ul>
+<li><p class="first">the elements of the array should be either &#8220;a&#8221;, &#8220;t&#8221;, &#8220;f&#8221;, &#8220;e&#8221; or &#8220;i&#8221;:</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;a&#8221;: automatic (try to use the most appropriate datatype)</li>
+<li>&#8220;t&#8221;: treat as text</li>
+<li>&#8220;f&#8221;: treat as float in decimal format</li>
+<li>&#8220;e&#8221;: treat as float in exponential format</li>
+<li>&#8220;i&#8221;: treat as int</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">by default, automatic datatyping is used for each column</p>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.set_cols_width">
+<code class="descname">set_cols_width</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.set_cols_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the desired columns width</p>
+<ul>
+<li><p class="first">the elements of the array should be integers, specifying the
+width of each column. For example:</p>
+<blockquote>
+<div><p>[10, 20, 5]</p>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.set_precision">
+<code class="descname">set_precision</code><span class="sig-paren">(</span><em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.set_precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the desired precision for float/exponential formats</p>
+<ul class="simple">
+<li>width must be an integer &gt;= 0</li>
+<li>default value is set to 3</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.header">
+<code class="descname">header</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the header of the table</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.add_row">
+<code class="descname">add_row</code><span class="sig-paren">(</span><em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.add_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a row in the rows stack</p>
+<ul class="simple">
+<li>cells can contain newlines and tabs</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.add_rows">
+<code class="descname">add_rows</code><span class="sig-paren">(</span><em>rows</em>, <em>header=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.add_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add several rows in the rows stack</p>
+<ul class="simple">
+<li>The &#8216;rows&#8217; argument can be either an iterator returning arrays,
+or a by-dimensional array</li>
+<li>&#8216;header&#8217; specifies if the first row should be used as the header
+of the table</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.texttable.Texttable.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.texttable.Texttable.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw the table</p>
+<ul class="simple">
+<li>the table is returned as a whole string</li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="translation.html" class="btn btn-neutral float-right" title="translation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iterm_plot.html" class="btn btn-neutral" title="iterm_plot" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

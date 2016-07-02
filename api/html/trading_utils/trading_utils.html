@@ -1,0 +1,1401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>trading_utils &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="type_checking_utils" href="type_checking_utils.html"/>
+        <link rel="prev" title="trading_constants" href="trading_constants.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>trading_utils</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/trading_utils.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.trading_utils">
+<span id="trading-utils"></span><h1>trading_utils<a class="headerlink" href="#module-ctxalgolib.trading_utils.trading_utils" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">AbstractTradingUtils</code><span class="sig-paren">(</span><em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Initialize current.
+:param trading_days: TradingDays, trading days.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_previous_trading_day_end_time">
+<code class="descname">get_previous_trading_day_end_time</code><span class="sig-paren">(</span><em>now</em>, <em>all_market_end_time=datetime.time(15</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_previous_trading_day_end_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market end time of the previous trading day, given current timestamp.
+:param now: datetime, current timestamp.
+:param all_market_end_time: time, the time when all markets closes on a trading day.
+:return: datetime, the end time of the previous trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading periods of the given future on the given date.
+:param instrument_prefix: string, the ID of the stock.
+:param day: date, the trading ay.
+:param dominant: boolean, indicates whether the returned market periods are for dominant contracts.</p>
+<blockquote>
+<div>Only for future contracts from the sf exchange and before 2016.1.1, the market periods between
+dominant and non-dominant future contracts are different.
+Otherwise, the dominant parameter is ignored.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[(time, time)], the list of trading periods for the future on the given date.
+If trading_day is not a trading day for the given instrument prefix, return None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.in_market_periods">
+<code class="descname">in_market_periods</code><span class="sig-paren">(</span><em>timestamp</em>, <em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.in_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the timestamp within market periods?
+:param timestamp: datetime, the time stamp.
+:param market_periods: [(time, time)], meaning [(start_time, end_time)], the market periods.
+:return: boolean, True if timestamp is in market periods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_dated_market_periods_between">
+<code class="descname">get_dated_market_periods_between</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>start_time</em>, <em>end_time</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_dated_market_periods_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all market time periods between start_time and end_time for the given instrument.
+:param instrument_prefix: string, the instrument prefix, such as IF, cu.
+:param start_time: datetime, starting timestamp.
+:param end_time: datetime, end timestamp.
+:param delta: timedelta, if not None, returned market time periods are widened by -delta at period</p>
+<blockquote>
+<div>starts, and +delta at period ends.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[market_period_in_a_day], list of market time periods for all
+trading days between start_time, and end_time.
+market_period_in_day: [(start_ts, end_ts)], a list of traded market periods.
+start_ts and end_ts are of type datetime.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_next_trading_day">
+<code class="descname">get_next_trading_day</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the next trading day given timestamp ts.
+Next trading days means that at ts point of time, which trading day should ts belong to?
+:param ts: datetime, given timestamp.
+:return: date, the trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_previous_trading_days">
+<code class="descname">get_previous_trading_days</code><span class="sig-paren">(</span><em>ts</em>, <em>number_of_days</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_previous_trading_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the previous trading day given timestamp ts.
+Previous trading days means that at ts point of time, which trading day should be the preivous trading of the
+trading day that ts belong to?
+:param ts: datetime, given timestamp.
+:param number_of_days: int, the maximum number of trading days to get.
+:return: [date], the list of previous trading days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_trading_days_between">
+<code class="descname">get_trading_days_between</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_trading_days_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get trading days between two timestamp.s
+:param start_time: datetime, starting timestamp.
+:param end_time: datetime, end timestamp.
+:return: [date], list of trading dates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_merged_market_periods">
+<code class="descname">get_merged_market_periods</code><span class="sig-paren">(</span><em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_merged_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return merged market periods.
+:param market_periods: [market_period], list of market periods that are to be merged.</p>
+<blockquote>
+<div>Each element market_period is of type [(start_ts, end_ts)], and start_ts, end_ts are of type datetime.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[(start_ts, end_ts)], merged market periods.
+start_ts, end_ts are of type datetime.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_merged_two_market_periods">
+<code class="descname">get_merged_two_market_periods</code><span class="sig-paren">(</span><em>mp1</em>, <em>mp2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_merged_two_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get merged periods from mp1 and mp2.
+Union semantics, not intersection semantics.
+case 1:</p>
+<blockquote>
+<div>mp1:  ##########
+mp2:  ##########
+s1 == s2, e1 == e2</div></blockquote>
+<dl class="docutils">
+<dt>case 2:</dt>
+<dd>mp1:  ##########
+mp2:                 ##########
+e1 &lt; s2</dd>
+<dt>case 3:</dt>
+<dd>mp1:  ##########
+mp2:       ##########
+s1 &lt;= s2 &lt;= e1, e1 &lt;= e2</dd>
+<dt>case 4:</dt>
+<dd>mp1:  ##########
+mp2:     #####
+s1 &lt;= s2, e2 &lt;= e1</dd>
+<dt>case 5:</dt>
+<dd>mp1:      ##########
+mp2:  #########
+s2 &lt;= s1, e2 &lt;= e1, s1 &lt; e2</dd>
+<dt>case 6:</dt>
+<dd>mp1:               ##########
+mp2:  ##########
+e2 &lt; s1</dd>
+<dt>case 7:</dt>
+<dd>mp1:     ####
+mp2:  ##########
+s2 &lt; s1, e1 &lt; e2</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mp1</strong> &#8211; [(start_ts, end_time)], both start_ts, and end_ts are datetime.</li>
+<li><strong>mp2</strong> &#8211; [(start_ts, end_time)], both start_ts, and end_ts are datetime.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[(start_ts, end_time)], both start_ts, and end_ts are datetime.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">StockTradingUtils</code><span class="sig-paren">(</span><em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils" title="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_dated_market_periods_between">
+<code class="descname">get_dated_market_periods_between</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>start_time</em>, <em>end_time</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_dated_market_periods_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all market time periods between start_time and end_time for the given instrument.
+:param instrument_prefix: string, the instrument prefix, such as IF, cu.
+:param start_time: datetime, starting timestamp.
+:param end_time: datetime, end timestamp.
+:param delta: timedelta, if not None, returned market time periods are widened by -delta at period</p>
+<blockquote>
+<div>starts, and +delta at period ends.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[market_period_in_a_day], list of market time periods for all
+trading days between start_time, and end_time.
+market_period_in_day: [(start_ts, end_ts)], a list of traded market periods.
+start_ts and end_ts are of type datetime.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_merged_market_periods">
+<code class="descname">get_merged_market_periods</code><span class="sig-paren">(</span><em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_merged_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return merged market periods.
+:param market_periods: [market_period], list of market periods that are to be merged.</p>
+<blockquote>
+<div>Each element market_period is of type [(start_ts, end_ts)], and start_ts, end_ts are of type datetime.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[(start_ts, end_ts)], merged market periods.
+start_ts, end_ts are of type datetime.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_merged_two_market_periods">
+<code class="descname">get_merged_two_market_periods</code><span class="sig-paren">(</span><em>mp1</em>, <em>mp2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_merged_two_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get merged periods from mp1 and mp2.
+Union semantics, not intersection semantics.
+case 1:</p>
+<blockquote>
+<div>mp1:  ##########
+mp2:  ##########
+s1 == s2, e1 == e2</div></blockquote>
+<dl class="docutils">
+<dt>case 2:</dt>
+<dd>mp1:  ##########
+mp2:                 ##########
+e1 &lt; s2</dd>
+<dt>case 3:</dt>
+<dd>mp1:  ##########
+mp2:       ##########
+s1 &lt;= s2 &lt;= e1, e1 &lt;= e2</dd>
+<dt>case 4:</dt>
+<dd>mp1:  ##########
+mp2:     #####
+s1 &lt;= s2, e2 &lt;= e1</dd>
+<dt>case 5:</dt>
+<dd>mp1:      ##########
+mp2:  #########
+s2 &lt;= s1, e2 &lt;= e1, s1 &lt; e2</dd>
+<dt>case 6:</dt>
+<dd>mp1:               ##########
+mp2:  ##########
+e2 &lt; s1</dd>
+<dt>case 7:</dt>
+<dd>mp1:     ####
+mp2:  ##########
+s2 &lt; s1, e1 &lt; e2</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mp1</strong> &#8211; [(start_ts, end_time)], both start_ts, and end_ts are datetime.</li>
+<li><strong>mp2</strong> &#8211; [(start_ts, end_time)], both start_ts, and end_ts are datetime.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[(start_ts, end_time)], both start_ts, and end_ts are datetime.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_next_trading_day">
+<code class="descname">get_next_trading_day</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the next trading day given timestamp ts.
+Next trading days means that at ts point of time, which trading day should ts belong to?
+:param ts: datetime, given timestamp.
+:return: date, the trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_previous_trading_day_end_time">
+<code class="descname">get_previous_trading_day_end_time</code><span class="sig-paren">(</span><em>now</em>, <em>all_market_end_time=datetime.time(15</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_previous_trading_day_end_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market end time of the previous trading day, given current timestamp.
+:param now: datetime, current timestamp.
+:param all_market_end_time: time, the time when all markets closes on a trading day.
+:return: datetime, the end time of the previous trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_previous_trading_days">
+<code class="descname">get_previous_trading_days</code><span class="sig-paren">(</span><em>ts</em>, <em>number_of_days</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_previous_trading_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the previous trading day given timestamp ts.
+Previous trading days means that at ts point of time, which trading day should be the preivous trading of the
+trading day that ts belong to?
+:param ts: datetime, given timestamp.
+:param number_of_days: int, the maximum number of trading days to get.
+:return: [date], the list of previous trading days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_trading_days_between">
+<code class="descname">get_trading_days_between</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_trading_days_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get trading days between two timestamp.s
+:param start_time: datetime, starting timestamp.
+:param end_time: datetime, end timestamp.
+:return: [date], list of trading dates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.in_market_periods">
+<code class="descname">in_market_periods</code><span class="sig-paren">(</span><em>timestamp</em>, <em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.in_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the timestamp within market periods?
+:param timestamp: datetime, the time stamp.
+:param market_periods: [(time, time)], meaning [(start_time, end_time)], the market periods.
+:return: boolean, True if timestamp is in market periods.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">FutureTradingUtils</code><span class="sig-paren">(</span><em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils" title="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils</span></code></a></p>
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.futures">
+<em class="property">static </em><code class="descname">futures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.futures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of futures.
+:return:</p>
+<blockquote>
+<div>dict{string:string}, Keys are future prefixes, values are the Exchange (sc, sf, zc, dc) that
+those futures belong.</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.is_stock_index_future">
+<em class="property">static </em><code class="descname">is_stock_index_future</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.is_stock_index_future" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether instrument_id is a stock index future.
+&#64;param instrument_id: string, instrument_id of the stock or future.
+&#64;return: boolean, true if the instrument_id is a stock index future.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.margin_money">
+<em class="property">static </em><code class="descname">margin_money</code><span class="sig-paren">(</span><em>price</em>, <em>volume</em>, <em>volume_multiple</em>, <em>margin_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.margin_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.names">
+<em class="property">static </em><code class="descname">names</code><span class="sig-paren">(</span><em>language='chinese'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return future names.
+:param language: string, the language, valid values are &#8216;chinese&#8217; or &#8216;english&#8217;.
+:return: dict{string: string}, keys are instrument prefixes, such as IF, cu.</p>
+<blockquote>
+<div>Values are their names.</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.is_delivery_day">
+<em class="property">static </em><code class="descname">is_delivery_day</code><span class="sig-paren">(</span><em>future_id</em>, <em>date</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.is_delivery_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given date is the delivery day for the future.
+:param future_id: string, the ID of the future.
+:param date: date, the date.
+:return: boolean, True if date is the delivery day for the future; False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.is_market_order_supported">
+<code class="descname">is_market_order_supported</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.is_market_order_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given instrument supports market order on the trading day
+:param instrument_id: string, the ID of the future
+:param trading_day: date, the date
+Returns: boolean, True if the instrument supports market order; False otherwise</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates">
+<em class="property">static </em><code class="descname">contract_traded_dates</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given future.
+:param future_id: string, future id, such as IF1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.traded_contracts">
+<code class="descname">traded_contracts</code><span class="sig-paren">(</span><em>future_id_prefix</em>, <em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.traded_contracts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the contracts that are traded for the given day.
+:param future_id_prefix: string, the prefix of the future, for example, IF.
+:param day: date, the day.
+:return: [string], the list of future ids that are traded.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_IF">
+<em class="property">static </em><code class="descname">contract_traded_dates_IF</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_IF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given IF/IH/IC future.
+:param future_id: string, future id, such as IF1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_TF">
+<em class="property">static </em><code class="descname">contract_traded_dates_TF</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_TF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given TF/T future.
+:param future_id: string, future id, such as TF1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_CU">
+<em class="property">static </em><code class="descname">contract_traded_dates_CU</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_CU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given CU/AL/ZN/PB/NI/SN/AG/RB/WR/HC/RU future.
+:param future_id: string, future id, such as TF1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_AU">
+<em class="property">static </em><code class="descname">contract_traded_dates_AU</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_AU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given AU future.
+:param future_id: string, future id, such as AU1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_FU">
+<em class="property">static </em><code class="descname">contract_traded_dates_FU</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_FU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given FU future.
+:param future_id: string, future id, such as FU1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_BU">
+<em class="property">static </em><code class="descname">contract_traded_dates_BU</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_BU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given BU future.
+:param future_id: string, future id, such as BU1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_WH">
+<em class="property">static </em><code class="descname">contract_traded_dates_WH</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_WH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given WH future.
+:param future_id: string, future id, such as WH505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_SR">
+<em class="property">static </em><code class="descname">contract_traded_dates_SR</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_SR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given WH future.
+:param future_id: string, future id, such as WH505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_TC">
+<em class="property">static </em><code class="descname">contract_traded_dates_TC</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_TC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given WH future.
+:param future_id: string, future id, such as WH505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_A">
+<em class="property">static </em><code class="descname">contract_traded_dates_A</code><span class="sig-paren">(</span><em>future_id</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.contract_traded_dates_A" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end date of the given A future.
+:param future_id: string, future id, such as A1505.
+:return: (start_date, end_date), both elements are of type date.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading periods of the given future on the given date.
+:param instrument_prefix: string, the prefix of futures
+:param day: date or string in format yyyy-mm-dd, the date on which the trading day should start.
+:param dominant: boolean, indicates whether the returned market periods are for dominant contracts.</p>
+<blockquote>
+<div>Only for future contracts from the sf exchange and before 2016.1.1, the market periods between
+dominant and non-dominant future contracts are different.
+Otherwise, the dominant parameter is ignored.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[(time, time)]
+The list of trading periods for the future on the given date. If date is not a trading day for the
+set of futures given by future_prefix, return None.
+Note that for instruments which have night trading, for example au, which has the following trading
+periods when it starts night trading in 2014: [(21:00, 2:30), (9:30, 11:30), (13:30, 15:00)],
+where the first market period is night trading period. The trading date is the date for 2:30, not 21:00.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.dated_market_periods">
+<code class="descname">dated_market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.dated_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.concatenate_trading_data">
+<code class="descname">concatenate_trading_data</code><span class="sig-paren">(</span><em>folder</em>, <em>output_file</em>, <em>future_prefix='IF'</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.concatenate_trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate future trading data from folder, and output result to output_file.
+:param folder: string, the folder path storing future trading data.
+:param output_file: string, the path of the output file.
+:param future_prefix, string the prefix of the future.
+:param start_date: date, the starting date of the output data. If None, use the first date available in folder.
+:param end_date: date, the end date of the output data. If None, use the last date available in folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_prefix_part">
+<code class="descname">get_prefix_part</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_prefix_part" title="Permalink to this definition">¶</a></dt>
+<dd><p>get prefix part from file name
+:param file_name: string, the file name (not full path name)
+:return: string, the prefix part</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_dominant_value">
+<code class="descname">get_dominant_value</code><span class="sig-paren">(</span><em>dominant_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_dominant_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>get dominant value according to dominant id
+:param dominant_id: string, the id of dominant contract, like cu1601
+:return: int, the converted dominant value, like 91601</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data">
+<code class="descname">get_daily_trading_data</code><span class="sig-paren">(</span><em>folder</em>, <em>instrument_id</em>, <em>output_file_path</em>, <em>future_prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the trading data of one day (the file with max trading volumes) and output to the target file
+:param folder: string, the folder path storing future trading data of a certain day.
+:param former_folder: string, the folder path storing future trading data of the former day
+:param output_file_path: string, the path of the output file.
+:param future_prefix, string the prefix of the future.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_total_volume">
+<code class="descname">get_total_volume</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_total_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the total volume of the trading data in a certain file (csv file)
+:param file_path: string, the file path of a certain file
+:return: float, the total volume of the trading data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.generate_concise_data">
+<code class="descname">generate_concise_data</code><span class="sig-paren">(</span><em>precise_data_folder</em>, <em>concise_data_folder</em>, <em>future_prefix='IF'</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>include_order_book=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.generate_concise_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate concise data (data which contains less information) from precise data (data which contains more
+information). Concise data is fast to load, this is especially true when working with tick level data.</p>
+<dl class="docutils">
+<dt>The generation contains the following steps:</dt>
+<dd><ol class="first last arabic simple">
+<li>For each sub-folder in precise_data_folder, first find the main future data file (take future_prefix
+into consideration).</li>
+<li>Use the content from the main future data file to generate a file in concise_data_folder. Each row
+in the output file only contains the following columns:
+(a) timestamp, in format yyyy-mm-dd HH:MM:SS.microsecond. Add proper microseconds to the data.
+(b) price, rounded with 1 decimal,
+(c) volume, rounded as integer, so no decimal.
+(d) open_volume, rounded as integer, so no decimal.
+(e) close_volume, rounded as integer, so no decimal</li>
+<li>Write concise data into output files.</li>
+</ol>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>precise_data_folder</strong> &#8211; string, the folder storing precise data. It is assumed to have sub-folders
+whose names are yyyyddmm. In each sub-folder, there are several data files.</li>
+<li><strong>concise_data_folder</strong> &#8211; The folder to store the generated concise data. The output is a single file
+named yyyymmdd.txt for each day.</li>
+<li><strong>future_prefix</strong> &#8211; string, the prefix of the future. Used to select data file from sub-folders.</li>
+<li><strong>start_date</strong> &#8211; date, the starting date for the generation. If None, start from the first date.</li>
+<li><strong>end_date</strong> &#8211; date, the end date for the generation. If None, generate concise data until the last date.</li>
+<li><strong>include_order_book</strong> &#8211; boolean, if True, include order book information such as buy1, sell1.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.write_concise_data">
+<code class="descname">write_concise_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>output_file</em>, <em>include_order_book</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.write_concise_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data2">
+<code class="descname">get_daily_trading_data2</code><span class="sig-paren">(</span><em>folders</em>, <em>instrument_id</em>, <em>future_prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data2" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the trading data of one day (the file with max trading volumes) and output to the target file
+:param folders: deque(string), the folder paths storing future trading data of certain days.</p>
+<blockquote>
+<div>(current folder and previous two days&#8217; folder) length = 3</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, the dominant instrument id of current folder</td>
+</tr>
+</tbody>
+</table>
+<p>:param future_prefix, string the prefix of the future.
+:return the path of the dominant file in current folder, the instrument id of next folder,</p>
+<blockquote>
+<div>and the dominant value</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price">
+<code class="descname">calculate_settlement_price</code><span class="sig-paren">(</span><em>future_id</em>, <em>ohlc_in_a_day</em>, <em>is_delivery_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the settlement price for a future given its trading data.
+:param future_id: string, the if of the future.
+:param ohlc_in_a_day: OHLC, the ohlc for that future in a day.
+:param is_delivery_day: boolean, True if the current day is delivery day.
+:return: float, the settlement price for the future.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_dated_market_periods_between">
+<code class="descname">get_dated_market_periods_between</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>start_time</em>, <em>end_time</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_dated_market_periods_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all market time periods between start_time and end_time for the given instrument.
+:param instrument_prefix: string, the instrument prefix, such as IF, cu.
+:param start_time: datetime, starting timestamp.
+:param end_time: datetime, end timestamp.
+:param delta: timedelta, if not None, returned market time periods are widened by -delta at period</p>
+<blockquote>
+<div>starts, and +delta at period ends.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[market_period_in_a_day], list of market time periods for all
+trading days between start_time, and end_time.
+market_period_in_day: [(start_ts, end_ts)], a list of traded market periods.
+start_ts and end_ts are of type datetime.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_merged_market_periods">
+<code class="descname">get_merged_market_periods</code><span class="sig-paren">(</span><em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_merged_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return merged market periods.
+:param market_periods: [market_period], list of market periods that are to be merged.</p>
+<blockquote>
+<div>Each element market_period is of type [(start_ts, end_ts)], and start_ts, end_ts are of type datetime.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[(start_ts, end_ts)], merged market periods.
+start_ts, end_ts are of type datetime.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_merged_two_market_periods">
+<code class="descname">get_merged_two_market_periods</code><span class="sig-paren">(</span><em>mp1</em>, <em>mp2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_merged_two_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get merged periods from mp1 and mp2.
+Union semantics, not intersection semantics.
+case 1:</p>
+<blockquote>
+<div>mp1:  ##########
+mp2:  ##########
+s1 == s2, e1 == e2</div></blockquote>
+<dl class="docutils">
+<dt>case 2:</dt>
+<dd>mp1:  ##########
+mp2:                 ##########
+e1 &lt; s2</dd>
+<dt>case 3:</dt>
+<dd>mp1:  ##########
+mp2:       ##########
+s1 &lt;= s2 &lt;= e1, e1 &lt;= e2</dd>
+<dt>case 4:</dt>
+<dd>mp1:  ##########
+mp2:     #####
+s1 &lt;= s2, e2 &lt;= e1</dd>
+<dt>case 5:</dt>
+<dd>mp1:      ##########
+mp2:  #########
+s2 &lt;= s1, e2 &lt;= e1, s1 &lt; e2</dd>
+<dt>case 6:</dt>
+<dd>mp1:               ##########
+mp2:  ##########
+e2 &lt; s1</dd>
+<dt>case 7:</dt>
+<dd>mp1:     ####
+mp2:  ##########
+s2 &lt; s1, e1 &lt; e2</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>mp1</strong> &#8211; [(start_ts, end_time)], both start_ts, and end_ts are datetime.</li>
+<li><strong>mp2</strong> &#8211; [(start_ts, end_time)], both start_ts, and end_ts are datetime.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[(start_ts, end_time)], both start_ts, and end_ts are datetime.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_next_trading_day">
+<code class="descname">get_next_trading_day</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the next trading day given timestamp ts.
+Next trading days means that at ts point of time, which trading day should ts belong to?
+:param ts: datetime, given timestamp.
+:return: date, the trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_previous_trading_day_end_time">
+<code class="descname">get_previous_trading_day_end_time</code><span class="sig-paren">(</span><em>now</em>, <em>all_market_end_time=datetime.time(15</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_previous_trading_day_end_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market end time of the previous trading day, given current timestamp.
+:param now: datetime, current timestamp.
+:param all_market_end_time: time, the time when all markets closes on a trading day.
+:return: datetime, the end time of the previous trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_previous_trading_days">
+<code class="descname">get_previous_trading_days</code><span class="sig-paren">(</span><em>ts</em>, <em>number_of_days</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_previous_trading_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the previous trading day given timestamp ts.
+Previous trading days means that at ts point of time, which trading day should be the preivous trading of the
+trading day that ts belong to?
+:param ts: datetime, given timestamp.
+:param number_of_days: int, the maximum number of trading days to get.
+:return: [date], the list of previous trading days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_trading_days_between">
+<code class="descname">get_trading_days_between</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_trading_days_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get trading days between two timestamp.s
+:param start_time: datetime, starting timestamp.
+:param end_time: datetime, end timestamp.
+:return: [date], list of trading dates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.in_market_periods">
+<code class="descname">in_market_periods</code><span class="sig-paren">(</span><em>timestamp</em>, <em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.in_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the timestamp within market periods?
+:param timestamp: datetime, the time stamp.
+:param market_periods: [(time, time)], meaning [(start_time, end_time)], the market periods.
+:return: boolean, True if timestamp is in market periods.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">FutureInfoCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that calculate basic information about futures.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">AbstractFutureTickSizeCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator" title="ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator.tick_size">
+<code class="descname">tick_size</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator.tick_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tick size of the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: float, instrument tick size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTickSizeCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">FutureTickSizeCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTickSizeCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator" title="ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractFutureTickSizeCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTickSizeCalculator.tick_size">
+<code class="descname">tick_size</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTickSizeCalculator.tick_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTickSizeCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTickSizeCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">AbstractFutureVolumeMultipleCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator" title="ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator.volume_multiple">
+<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator.volume_multiple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the volume multiple of the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: int, volume multiple.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureVolumeMultipleCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">FutureVolumeMultipleCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureVolumeMultipleCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator" title="ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractFutureVolumeMultipleCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureVolumeMultipleCalculator.volume_multiple">
+<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureVolumeMultipleCalculator.volume_multiple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureVolumeMultipleCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureVolumeMultipleCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">AbstractFutureMarginCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator" title="ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator.margin">
+<code class="descname">margin</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>direction</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator.margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin of the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: float, future margin.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator.margin_money">
+<code class="descname">margin_money</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>price</em>, <em>volume</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator.margin_money" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin money needed to open positions for the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the price to open positions.</li>
+<li><strong>volume</strong> &#8211; int, the volume to open.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+:return: float, the margin money</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">FutureMarginCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator" title="ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractFutureMarginCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator.margin">
+<code class="descname">margin</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>direction</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator.margin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator.margin_money">
+<code class="descname">margin_money</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>price</em>, <em>volume</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator.margin_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureMarginCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">AbstractFutureCommissionCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator" title="ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.commission_type">
+<code class="descname">commission_type</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.commission_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return the commission type.</dt>
+<dd><dl class="first last docutils">
+<dt>&#64;param instrument_id: string, the instrument id. If is_prefix is True,</dt>
+<dd>it is the prefix already, otherwise, full instrument id.</dd>
+</dl>
+</dd>
+</dl>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the commission type, can be &#8216;proportional&#8217; or &#8216;fixed&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.commission_rates">
+<code class="descname">commission_rates</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.commission_rates" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Get commission rate information.</dt>
+<dd><dl class="first last docutils">
+<dt>&#64;param instrument_id: string, the instrument id. If is_prefix is True,</dt>
+<dd>it is the prefix already, otherwise, full instrument id.</dd>
+</dl>
+</dd>
+</dl>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the commission rate is acquired.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+:return: (open, close_yesterday, close_today), commission for the future on that date.</p>
+<blockquote>
+<div>All three elements are of type double.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.commission">
+<code class="descname">commission</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>price</em>, <em>volume</em>, <em>day</em>, <em>order_flag</em>, <em>is_prefix=False</em>, <em>has_commission=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate future trading commission.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param price: float, the price of the executed order.
+&#64;param volume, int, the volume of the trade, positive number means long trade, negative number means short trade.
+&#64;param day: date or string in form of yyyy-mm-dd, the date on which the trade happens.
+&#64;param order_flag: string, values can be &#8216;Open&#8217;, &#8216;Close&#8217;, &#8216;ForceClose&#8217;, &#8216;CloseToday&#8217;, &#8216;CloseYesterday&#8217;,</p>
+<blockquote>
+<div>&#8216;ForceOff&#8217;, &#8216;LocalForceClose&#8217;, &#8216;Cancel&#8217;.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;param has_commission: bool, if True, return normal commission, if False, always return 0.</p>
+<blockquote>
+<div>This is useful for early stage strategy research, when we can turn on and off commissions.</div></blockquote>
+<p>&#64;return: float, the commission in money unit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">FutureCommissionCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator" title="ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractFutureCommissionCalculator</span></code></a></p>
+<p>Class to calculate future trading commission.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission_type">
+<code class="descname">commission_type</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return the commission type.</dt>
+<dd><dl class="first last docutils">
+<dt>&#64;param instrument_id: string, the instrument id. If is_prefix is True,</dt>
+<dd>it is the prefix already, otherwise, full instrument id.</dd>
+</dl>
+</dd>
+</dl>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the commission type, can be &#8216;proportional&#8217; or &#8216;fixed&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission_rates">
+<code class="descname">commission_rates</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission_rates" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Get commission rate information.</dt>
+<dd><dl class="first last docutils">
+<dt>&#64;param instrument_id: string, the instrument id. If is_prefix is True,</dt>
+<dd>it is the prefix already, otherwise, full instrument id.</dd>
+</dl>
+</dd>
+</dl>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the commission rate is acquired.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+:return: (open, close_yesterday, close_today), commission for the future on that date.</p>
+<blockquote>
+<div>All three elements are of type double.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission_rates_from_values">
+<code class="descname">commission_rates_from_values</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>values</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission_rates_from_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get commission rate information from values.
+:param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>values</strong> &#8211; dict{string: float}, commission information.</li>
+<li><strong>is_prefix</strong> &#8211; bool, indicates whether instrument_id is prefix already.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(open, close_yesterday, close_today), commission for the future on that date.
+All three elements are of type double.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission">
+<code class="descname">commission</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>price</em>, <em>volume</em>, <em>day</em>, <em>order_flag</em>, <em>is_prefix=False</em>, <em>has_commission=True</em>, <em>open_today=None</em>, <em>close_yesterday=None</em>, <em>close_today=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureCommissionCalculator.commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate future trading commission.
+:param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>price</strong> &#8211; float, the price of the executed order.</td>
+</tr>
+</tbody>
+</table>
+<p>:param volume, int, the volume of the trade, positive number means long trade, negative number means short trade.
+:param day: date or string in form of yyyy-mm-dd, the date on which the trade happens.
+:param order_flag: string, values can be &#8216;Open&#8217;, &#8216;Close&#8217;, &#8216;ForceClose&#8217;, &#8216;CloseToday&#8217;, &#8216;CloseYesterday&#8217;,</p>
+<blockquote>
+<div>&#8216;ForceOff&#8217;, &#8216;LocalForceClose&#8217;, &#8216;Cancel&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>is_prefix</strong> &#8211; bool, indicates whether instrument_id is prefix already.</li>
+<li><strong>has_commission</strong> &#8211; bool, if True, return normal commission, if False, always return 0.
+This is useful for early stage strategy research, when we can turn on and off commissions.</li>
+<li><strong>open_today</strong> &#8211; float, commission rate for opening positions.
+If None, use values stored in CTX.</li>
+<li><strong>close_yesterday</strong> &#8211; float, commission rate for closing a position which is opened before
+current trading day. If None, use values stored in CTX.</li>
+<li><strong>close_today</strong> &#8211; float, commission rate for closing a position which is opened on current trading day.
+If None, use values stored in CTX.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">float, the commission in money unit.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="type_checking_utils.html" class="btn btn-neutral float-right" title="type_checking_utils" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trading_constants.html" class="btn btn-neutral" title="trading_constants" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

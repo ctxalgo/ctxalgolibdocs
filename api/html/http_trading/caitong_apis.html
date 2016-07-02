@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>caitong_apis &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="http_trading" href="index.html"/>
+        <link rel="next" title="caitong_utils_trading" href="caitong_utils_trading.html"/>
+        <link rel="prev" title="abstract_apis" href="abstract_apis.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">http_trading</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="abstract_apis.html">abstract_apis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">caitong_apis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caitong_utils_trading.html">caitong_utils_trading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">http_trading</a> &raquo;</li>
+      
+    <li>caitong_apis</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/http_trading/caitong_apis.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.http_trading.caitong_apis">
+<span id="caitong-apis"></span><h1>caitong_apis<a class="headerlink" href="#module-ctxalgolib.http_trading.caitong_apis" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi">
+<em class="property">class </em><code class="descclassname">ctxalgolib.http_trading.caitong_apis.</code><code class="descname">CaiTongHttpTradingApi</code><span class="sig-paren">(</span><em>account</em>, <em>password</em>, <em>share_holder_account</em>, <em>communication_password=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="abstract_apis.html#ctxalgolib.http_trading.abstract_apis.AbstractHttpTradingApi" title="ctxalgolib.http_trading.abstract_apis.AbstractHttpTradingApi"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.http_trading.abstract_apis.AbstractHttpTradingApi</span></code></a></p>
+<p>Initialize current object.
+&#64;param account: string, CaiTong capital account name.
+&#64;param password: string, CaiTong capital account password.
+&#64;param share_holder_account: dict{string: string}, shareholder account name.</p>
+<blockquote>
+<div>Keys are exchange names, valid values are &#8216;SH&#8217; and &#8216;SZ&#8217;. Note, these names are case sensitive.
+Values are share holder account names for the corresponding exchanges.
+Example:{&#8216;SH&#8217;:&#8217;A0000000&#8217;,&#8217;SZ&#8217;:&#8216;00000000&#8217;}</div></blockquote>
+<dl class="docutils">
+<dt>&#64;param communication_password: string, the second password needed to establish communication.</dt>
+<dd>If None, it is set to be the same as password.</dd>
+</dl>
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.login">
+<code class="descname">login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Login the account.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.logout">
+<code class="descname">logout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webapi do not need logout.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_positions">
+<code class="descname">get_positions</code><span class="sig-paren">(</span><em>instruments=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_positions" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>&#64;param instruments: iterable of string, list of instrument ids.</dt>
+<dd>If None, returns positions of all held instruments.</dd>
+<dt>&#64;return:dict{string: Position}</dt>
+<dd>Keys are instrument ids, values are positions of corresponding instruments.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_account">
+<code class="descname">get_account</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#64;return: Account, return the current account information</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_available_money_and_balance">
+<code class="descname">get_available_money_and_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_available_money_and_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get available money and balance of current account.
+&#64;return: dict{string: float},</p>
+<blockquote>
+<div>Keys are account money related metrics. Valid values are &#8216;available_money&#8217; and &#8216;balance&#8217;. Both are
+case sensitive. Values are values of corresponding metrics.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_order_status_today">
+<code class="descname">get_order_status_today</code><span class="sig-paren">(</span><em>order_refs=None</em>, <em>instruments=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.get_order_status_today" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the order status by instrument or order_ref
+&#64;param order_refs: iterable of string, list of order_refs
+&#64;param instruments: iterable of string, list of instrument ids.</p>
+<blockquote>
+<div>either instruments or order_refs should be None, indicates the classification method of the query.
+if both of the parameters are None, return the order_refs way.</div></blockquote>
+<dl class="docutils">
+<dt>&#64;return:</dt>
+<dd><dl class="first last docutils">
+<dt>instruments is not None:</dt>
+<dd><dl class="first last docutils">
+<dt>dict{string: [OrderStatus]}</dt>
+<dd>Keys are instrument ids, values are OrderStatus of the corresponding keys.</dd>
+</dl>
+</dd>
+<dt>order_refs is not None:</dt>
+<dd><dl class="first last docutils">
+<dt>dict{string: OrderStatus}</dt>
+<dd>Keys are order_refs, values are OrderStatus of the corresponding keys.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.place_order">
+<code class="descname">place_order</code><span class="sig-paren">(</span><em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.place_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#64;param order: Order, the order to be placed.
+&#64;return: OrderResponse, contains the reference to the order for cancellation.</p>
+<blockquote>
+<div>and the operation error.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.cancel_order">
+<code class="descname">cancel_order</code><span class="sig-paren">(</span><em>order_ref</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.http_trading.caitong_apis.CaiTongHttpTradingApi.cancel_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel the oder given by the order ref.
+&#64;param order_ref: string, the reference to the placed order.
+&#64;return: Error, the operation error.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="caitong_utils_trading.html" class="btn btn-neutral float-right" title="caitong_utils_trading" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="abstract_apis.html" class="btn btn-neutral" title="abstract_apis" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

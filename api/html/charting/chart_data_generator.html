@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>chart_data_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="charting" href="index.html"/>
+        <link rel="next" title="chart_indicators" href="chart_indicators.html"/>
+        <link rel="prev" title="basic_indicators" href="basic_indicators.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">charting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="custom_indicators/index.html">custom_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_indicators.html">basic_indicators</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">chart_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_indicators.html">chart_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting_constants.html">charting_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charts.html">charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder.html">highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder_code_generator.html">highcharts_builder_code_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_charting_document_generator.html">highcharts_charting_document_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_data_generator.html">highcharts_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indicator_factory.html">indicator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talib_function_generator.html">talib_function_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">charting</a> &raquo;</li>
+      
+    <li>chart_data_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/charting/chart_data_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.charting.chart_data_generator">
+<span id="chart-data-generator"></span><h1>chart_data_generator<a class="headerlink" href="#module-ctxalgolib.charting.chart_data_generator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_data_generator.SeriesConfig">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_data_generator.</code><code class="descname">SeriesConfig</code><span class="sig-paren">(</span><em>yaxis_id</em>, <em>indicator</em>, <em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.SeriesConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents a configuration for a data series.</p>
+<p>Initialize current.
+:param yaxis_id: int, 0-based yaxis index.
+:param indicator: Indicator, the indicator associated with current series.</p>
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.SeriesConfig.has_parameter">
+<code class="descname">has_parameter</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.SeriesConfig.has_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if self.parameters contains a parameter with name.
+:param name: string, the name of the parameter whose existence is to be checked.
+:return bool, True if the parameter with name exists.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_data_generator.</code><code class="descname">AbstractChartDataGenerator</code><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.get_ohlc">
+<code class="descname">get_ohlc</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_time</em>, <em>end_time</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.get_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get OHLC for stock in given time region.
+:param instrument_id: string, id of the instrument whose ohlc is to be retrieved..</p>
+<blockquote>
+<div>start_time, end_time: datetime, define region of the data, both inclusive.
+period: Periodicity, the time period, None means use the default periodicity.</div></blockquote>
+<dl class="docutils">
+<dt>:return (OHLC, Periodicity)</dt>
+<dd>The first element is the retrieved ohlc data.
+The second element is the actual periodicity of the ohlc data.
+If an i happens, return (None, None)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_vertical_line">
+<code class="descname">draw_vertical_line</code><span class="sig-paren">(</span><em>dt</em>, <em>label=''</em>, <em>line_color='gray'</em>, <em>label_color='gray'</em>, <em>style='solid'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_vertical_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw vertical line at time dt.
+:param dt: string or datetime, a datetime object or a string represent a datetime,</p>
+<blockquote>
+<div>either in format yyyy-mm-dd or yyyy-mm-ddTHHMMSS.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>label</strong> &#8211; string, label of the vertical line.</li>
+<li><strong>line_color</strong> &#8211; string, color of the line.</li>
+<li><strong>label_color</strong> &#8211; string, color of the label.</li>
+<li><strong>style</strong> &#8211; string, the drawing style.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return dict{string:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">arrays}. Keys are category names of the array series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_vertical_band">
+<code class="descname">draw_vertical_band</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>label=''</em>, <em>color='rgba(252</em>, <em>255</em>, <em>197</em>, <em>.6)'</em>, <em>label_color='gray'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_vertical_band" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw vertical band.
+:param start: string or datetime, a datetime object or a string represent a datetime,</p>
+<blockquote>
+<div>either in format yyyy-mm-dd or yyyy-mm-ddTHHMMSS.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>end</strong> &#8211; string or datetime, a datetime object or a string represent a datetime,
+either in format yyyy-mm-dd or yyyy-mm-ddTHHMMSS.</li>
+<li><strong>color</strong> &#8211; string, color of the band.</li>
+<li><strong>label</strong> &#8211; string, label of the band.</li>
+<li><strong>label_color</strong> &#8211; string, label color of the band.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict{string: arrays}. Keys are category names of the array series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_text">
+<code class="descname">draw_text</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>text=''</em>, <em>color='black'</em>, <em>size=10</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw text
+:param x: datetime a datetime object or a string represent a datetime,</p>
+<blockquote>
+<div>either in format yyyy-mm-dd or yyyy-mm-ddTHHMMSS.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y</strong> &#8211; numeric the value of y axis</li>
+<li><strong>text</strong> &#8211; the content of the text</li>
+<li><strong>color</strong> &#8211; the color of the text</li>
+<li><strong>size</strong> &#8211; the size of the text</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict{string: arrays}. Keys are category names of the array series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_simple_series">
+<code class="descname">draw_simple_series</code><span class="sig-paren">(</span><em>yconfig</em>, <em>label</em>, <em>dates</em>, <em>values</em>, <em>extra_params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_simple_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a simple series.
+:param yconfig: YaxisConfig, the y-axis config on which the series is drawn.
+:param label: string, label of the series.
+:param dates: [datetime], datetimes of the series.
+:param values: [float], values of the series.
+:param extra_params: dict from string to objects. Extra parameters (usually used for setting drawing styles).
+:return A dict from string to arrays. Keys are category names of the array series.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_series">
+<code class="descname">draw_series</code><span class="sig-paren">(</span><em>category</em>, <em>series</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw series.
+:param category: string, the category of the series.
+:param series: [time series], the list of time series to draw.
+:return dict{string: arrays}. Keys are category names of the array series.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_horizontal_mark">
+<code class="descname">draw_horizontal_mark</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start</em>, <em>end</em>, <em>location</em>, <em>thick</em>, <em>color</em>, <em>label</em>, <em>style</em>, <em>yconfig</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_horizontal_mark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_line">
+<code class="descname">draw_line</code><span class="sig-paren">(</span><em>yconfig</em>, <em>dates</em>, <em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>label=''</em>, <em>thick=1</em>, <em>color='blue'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.set_value">
+<code class="descname">set_value</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a particular key-value pair in current chart.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_signal_line">
+<code class="descname">draw_signal_line</code><span class="sig-paren">(</span><em>dt</em>, <em>message=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.draw_signal_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.market_period_provider">
+<code class="descname">market_period_provider</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator.market_period_provider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market period provider for given instrument.
+:param instrument_id: string, instrument id.
+:return: AbstractMarketPeriodProvider.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chart_indicators.html" class="btn btn-neutral float-right" title="chart_indicators" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basic_indicators.html" class="btn btn-neutral" title="basic_indicators" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+Ctxalgolib api doc
+###################
+
+.. toctree::
+   :maxdepth: 2
+
+   backtesting/index
+   cache/index
+   charting/index
+   data_imports/index
+   docs/index
+   eval/index
+   http_trading/index
+   loggers/index
+   machine_learning/index
+   messaging/index
+   mission_control/index
+   mt4/index
+   news_analysis/index
+   ohlc/index
+   output/index
+   proto/index
+   pub_subs/index
+   pydot/index
+   report/index
+   risk/index
+   rule_checking/index
+   scripts/index
+   slippage/index
+   ta/index
+   time_series/index
+   timer/index
+   trading_utils/index
+   trail/index
+   trial/index
+   utils.rst

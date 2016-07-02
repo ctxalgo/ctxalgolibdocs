@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>security_performance &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="performance" href="index.html"/>
+        <link rel="next" title="piecewise_linear_regression" href="../piecewise_linear_regression/index.html"/>
+        <link rel="prev" title="performance" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">performance</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">security_performance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">performance</a> &raquo;</li>
+      
+    <li>security_performance</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/performance/security_performance.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.performance.security_performance">
+<span id="security-performance"></span><h1>security_performance<a class="headerlink" href="#module-ctxalgolib.ta.performance.security_performance" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.performance.security_performance.SecurityPerformance">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.performance.security_performance.</code><code class="descname">SecurityPerformance</code><a class="headerlink" href="#ctxalgolib.ta.performance.security_performance.SecurityPerformance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_returns">
+<code class="descname">calculate_returns</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em>, <em>ohlcs</em>, <em>is_cumulated=False</em>, <em>include_non_traded_stocks=True</em>, <em>previous_returns=None</em>, <em>shares=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_returns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate returns from a set of stocks.</p>
+<p>Only when there are two trading days for a stock, a return can be calculated: say, current date is d2,
+only when there exists a d1 where d1 &lt; d2, then a return can be calculated as
+(closes[d2] - closes[d1]) / closes[d1]. If on a date d, the stock return cannot be calculated (that is,
+the stock does not trade on d, or there is no date before d where the stock is also traded),
+the stock return on date d is assumed to be 0 during averaging calculation.</p>
+<p>On the date d, let R be the list returns for the stocks on that day, then the overall return (which will be
+stored in the result), is:</p>
+<blockquote>
+<div>sum(R[stock_1] * Weight[stock_1] + R[stock_2] * Weight[stock_2] + ,... , + R[stock_n] * Weight[stock_n])</div></blockquote>
+<dl class="docutils">
+<dt>average_return = &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</dt>
+<dd>number_of_stocks</dd>
+</dl>
+<p>If include_non_traded_stocks is True, then number_of_stocks = len(ohlcs), otherwise, number_of_stocks = the
+number of stocks whose returns can be calculated on that day.</p>
+<p>If is_cumulated is True, then return on that day is the previous return + current return.
+If is_cumulated is False, then the return on that day is the average return.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start_date</strong> &#8211; date or string in form of yyyy-mm-dd. Inclusive.</li>
+<li><strong>end_date</strong> &#8211; date or string in form of yyyy-mm-dd. Inclusive. Use TradingDays.get_days_between to
+get the list of trading days. These list of dates will be the first element in the result value.</li>
+<li><strong>ohlcs</strong> &#8211; dict{string: OHLC}, the set of stock ohlcs. Keys are stock ids, values are OHLC object.</li>
+<li><strong>is_cumulated</strong> &#8211; boolean, if True, calculate cumulated returns, otherwise,
+returns relative to the previous trading day.</li>
+<li><strong>include_non_traded_stocks</strong> &#8211; boolean, If True, only include returns for stocks whose returns can be
+calculated on those dates.</li>
+<li><strong>previous_returns</strong> &#8211; dict{string: [float]}, the previous returns.
+Keys are stock_ids, values are previous stock returns.
+If not None, use the previous returns for acumulated return calculation.
+Only have effect if is_cumulated is True.</li>
+<li><strong>shares</strong> &#8211; <p>dict{string: [float]}, fluid shares of stocks.
+Keys are stock ids, values are arrays representing capital structure of the stock on those dates.
+The capital structure can be retrieved using StockDataFeed.stock_capital_structure.
+for a stock, length of its share array should be the same as the length of its ohlc, so
+we can use bar index to go to the same position in both arrays.
+For a stock,</p>
+<blockquote>
+<div><blockquote>
+<div>shares[stock_id][date] * ohlcs[stock_id][date]</div></blockquote>
+<dl class="docutils">
+<dt>weight = &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</dt>
+<dd>sum(shares of all stocks * their corresponding close price on that date)</dd>
+</dl>
+</div></blockquote>
+<p>If shares is None, all weights are assumed to be 1.
+When shares is not None, it serves as weights when calculating average_return.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">([date], [float]), the returns. The first element is the list of trading days,
+the second element is the return or cumulated returns on those days.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_returns2">
+<code class="descname">calculate_returns2</code><span class="sig-paren">(</span><em>data_feed</em>, <em>start_date</em>, <em>end_date</em>, <em>stock_ids</em>, <em>is_cumulated=False</em>, <em>include_non_traded_stocks=True</em>, <em>previous_returns=None</em>, <em>weight_by_shares=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_returns2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as calculate_returns, but will use data feed to get ohlcs and stock fluid shares.
+:param data_feed: StockDataFeed.
+:param start_date:
+:param end_date:
+:param stock_ids: [string], the list of stock ids.
+:param is_cumulated:
+:param include_non_traded_stocks:
+:param previous_returns:
+:param weight_by_shares: boolean, if True, use stock fluid shares as weights.
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_advances">
+<code class="descname">calculate_advances</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em>, <em>ohlcs</em>, <em>is_cumulated=False</em>, <em>include_non_traded_stocks=True</em>, <em>previous_returns=None</em>, <em>direction=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_advances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as calculate_returns, but count the number of securities that goes up or down, instead of
+calculating returns. For example, if direction = 1, then the result would be the number of
+securities that goes up (or the number of acumulated ups) on a day. If direction = -1, then the
+result would be the number of securities that goes down (or the number of acumulated downs) on a day.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start_date</strong> &#8211; </li>
+<li><strong>end_date</strong> &#8211; </li>
+<li><strong>ohlcs</strong> &#8211; </li>
+<li><strong>is_cumulated</strong> &#8211; </li>
+<li><strong>include_non_traded_stocks</strong> &#8211; </li>
+<li><strong>previous_returns</strong> &#8211; </li>
+<li><strong>direction</strong> &#8211; int, 1 means to calculate up stocks, -1 means to calculate down stocks.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_advances2">
+<code class="descname">calculate_advances2</code><span class="sig-paren">(</span><em>data_feed</em>, <em>start_date</em>, <em>end_date</em>, <em>stock_ids</em>, <em>is_cumulated=False</em>, <em>include_non_traded_stocks=True</em>, <em>previous_returns=None</em>, <em>direction=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.performance.security_performance.SecurityPerformance.calculate_advances2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as calculate_advances, but uses data_feed, to get ohlc and fluid shares.
+:param data_feed:
+:param start_date:
+:param end_date:
+:param stock_ids:
+:param is_cumulated:
+:param include_non_traded_stocks:
+:param previous_returns:
+:param weight_by_shares: boolean, if True, use stock fluid shares as weights.
+:param direction:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.performance.security_performance.SecurityPerformance.compare_with_index">
+<code class="descname">compare_with_index</code><span class="sig-paren">(</span><em>security_ohlc</em>, <em>index_ohlc</em>, <em>stronger=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.performance.security_performance.SecurityPerformance.compare_with_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find bars on which the security is strong or weaker than the index.
+:param security_ohlc: OHLC, the ohlc for a security.
+:param index_ohlc: OHLC, the ohlc for an index.
+:param stronger: boolean. If True, find bars in the security_ohlc, such that the security</p>
+<blockquote>
+<div>is going up (close &gt; open) on that timestamp but the index is going down on the same timestamp.
+If False, find bars in security_ohlc, such that the security is going down (close &lt; open) on
+the timestamp, but the index is gown up on the same timestamp.
+Note that length of security_ohlc may not be the same as length of index_ohlc, because on some
+days, a stock may not trade. Only do the comparison when both security_ohlc and index_ohlc have data.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[int], the 0-based bars in security_ohlc where comparison condition is met.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../piecewise_linear_regression/index.html" class="btn btn-neutral float-right" title="piecewise_linear_regression" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="performance" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

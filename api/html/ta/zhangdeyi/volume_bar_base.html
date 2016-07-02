@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>volume_bar_base &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="zhangdeyi" href="index.html"/>
+        <link rel="next" title="cross" href="../cross.html"/>
+        <link rel="prev" title="jingzhunxian" href="jingzhunxian.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">zhangdeyi</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="jingzhunxian.html">jingzhunxian</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">volume_bar_base</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">zhangdeyi</a> &raquo;</li>
+      
+    <li>volume_bar_base</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/zhangdeyi/volume_bar_base.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.zhangdeyi.volume_bar_base">
+<span id="volume-bar-base"></span><h1>volume_bar_base<a class="headerlink" href="#module-ctxalgolib.ta.zhangdeyi.volume_bar_base" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.zhangdeyi.volume_bar_base.</code><code class="descname">VolumeBarBase</code><span class="sig-paren">(</span><em>date_</em>, <em>open_</em>, <em>high_</em>, <em>low_</em>, <em>close_</em>, <em>volume_</em>, <em>index_</em>, <em>amount_=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all volume bar classes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>date</strong> &#8211; the date for volume bar</li>
+<li><strong>open</strong> &#8211; openning price of the day</li>
+<li><strong>high</strong> &#8211; highest price of the day</li>
+<li><strong>low</strong> &#8211; lowest prices of the day</li>
+<li><strong>close</strong> &#8211; closing price of the day</li>
+<li><strong>volume</strong> &#8211; trading volume of the day</li>
+<li><strong>amount</strong> &#8211; trading amount of the day</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_basic_bar_type">
+<code class="descname">determine_basic_bar_type</code><span class="sig-paren">(</span><em>previous_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_basic_bar_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set volume bar basic types, including price change and volume type
+:param <a href="#id1"><span class="problematic" id="id2">previous_</span></a>: ohlc from previous trading day
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_inc_dec_bar_type">
+<code class="descname">determine_inc_dec_bar_type</code><span class="sig-paren">(</span><em>pre_days_bar_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_inc_dec_bar_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set increasing and shrinking bar type based on three previous trading days ohlc
+:param <a href="#id3"><span class="problematic" id="id4">pre_days_bar_</span></a>: two previous trading days ohlcs
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_silver_bar_type">
+<code class="descname">determine_silver_bar_type</code><span class="sig-paren">(</span><em>three_post_days_bar_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_silver_bar_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether a volume bar is 将军柱(silver bar) using data from three following days
+:param <a href="#id5"><span class="problematic" id="id6">three_post_days_bar_</span></a>: three following trading days ohlcs
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_gold_bar_type">
+<code class="descname">determine_gold_bar_type</code><span class="sig-paren">(</span><em>three_days_bar_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_gold_bar_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether a volume bar is 黄金柱(gold bar) using data from three following days
+:param <a href="#id7"><span class="problematic" id="id8">three_days_bar_</span></a>: three following trading days ohlcs
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_yin_yang_type">
+<code class="descname">determine_yin_yang_type</code><span class="sig-paren">(</span><em>previous_bar_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.determine_yin_yang_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set Yin and Yang type for a volume bar
+:param <a href="#id9"><span class="problematic" id="id10">previous_bar_</span></a>:  ohlc from previous trading day
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_single_yang">
+<code class="descname">is_single_yang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_single_yang" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is single yang
+:return: true if volume bar is a DanShengYang, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_yang">
+<code class="descname">is_yang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_yang" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is double yang
+:return: true if volume bar is a ShuangShengYang, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_xiaobei_yang">
+<code class="descname">is_xiaobei_yang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_xiaobei_yang" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is small multiple yang(around 2 times)
+:return: true if volume bar is a XiaoBeiYang, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_bei_yang">
+<code class="descname">is_bei_yang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_bei_yang" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is multiple yang(around 3-4 times)
+:return: true if volume bar is a BeiYang, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_gaobei_yang">
+<code class="descname">is_gaobei_yang</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_gaobei_yang" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is high multiple yang(more than 5 times)
+:return: true if volume bar is a GaoBeiYang, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_positive_increasing_bar">
+<code class="descname">is_positive_increasing_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_positive_increasing_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is 价增梯量柱 (more than 3 days raising volume and price)
+:return: true if volume bar is a 价增梯量柱, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_positive_shrinking_bar">
+<code class="descname">is_positive_shrinking_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_positive_shrinking_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is 价增缩量柱 (more than 3 days raising price and falling volume)
+:return: true if volume bar is a 价增缩量柱, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_silver_bar">
+<code class="descname">is_silver_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_silver_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is 将军柱
+:return: true if volume bar is a 将军柱, otherwise false</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_gold_bar">
+<code class="descname">is_gold_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.VolumeBarBase.is_gold_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if current volume bar is 黄金柱
+:return: true if volume bar is a 黄金柱, otherwise false</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.GoldVolumeBarFinder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.zhangdeyi.volume_bar_base.</code><code class="descname">GoldVolumeBarFinder</code><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.GoldVolumeBarFinder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ctxalgolib.ta.zhangdeyi.volume_bar_base.GoldVolumeBarFinder.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>kind=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.zhangdeyi.volume_bar_base.GoldVolumeBarFinder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find Gold volume bar from ohlc.
+Parameters:</p>
+<blockquote>
+<div>ohlc: OHLC, the OHLC time series.
+kind: int, the kind of bars to find. 0 means silver bar, 1 means gold bar</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[GoldVolumeBar], the list of found gold volume bars.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cross.html" class="btn btn-neutral float-right" title="cross" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="jingzhunxian.html" class="btn btn-neutral" title="jingzhunxian" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

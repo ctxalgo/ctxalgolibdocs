@@ -1,0 +1,4 @@
+e200_chan_theory_piecewise_linear_regression
+**************************
+
+.. automodule:: ctxalgolib.docs.ta.e200_chan_theory_piecewise_linear_regression

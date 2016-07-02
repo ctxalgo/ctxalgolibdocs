@@ -1,0 +1,1477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>strategy_queries &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="trading_constants" href="trading_constants.html"/>
+        <link rel="prev" title="state_machine_type_checking" href="state_machine_type_checking.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>strategy_queries</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/strategy_queries.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.strategy_queries">
+<span id="strategy-queries"></span><h1>strategy_queries<a class="headerlink" href="#module-ctxalgolib.trading_utils.strategy_queries" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.strategy_queries.</code><code class="descname">AbstractStrategyQueries</code><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that defines a set of queries</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.instrument_id">
+<code class="descname">instrument_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ONLY instrument id that has been traded. This is a convenient query
+for strategies which only trades a single instrument.
+If there are more than one instruments that are traded in current strategy, return None.
+In such a case, use self.instrument_ids() to get the list of traded instrument ids.
+:return: string, instrument id.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.instrument_ids">
+<code class="descname">instrument_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.instrument_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of instrument ids that are traded in current strategy.
+The traded instrument ids are specified by the instrument_ids parameter
+in the AbstractStateBasedStrategy.__init__ method.
+:return: [string], the list of instrument ids.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.periods">
+<code class="descname">periods</code><span class="sig-paren">(</span><em>kind=None</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of registered ohlc periods for the given instrument.
+:param kind: string, ohlc kind such as &#8216;time-based&#8217;, &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to self.strategy_period_kind().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, instrument id, whose registered periods are returned.
+If None, defaults to self.instrument_id().</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return [Periodicity], the list of registered periods, as given by the periods</dt>
+<dd>parameter of the AbstractStateBasedStrategy.__init__ method.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period_kind">
+<code class="descname">strategy_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period_kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the strategy period ohlc kind.
+:return: string, ohlc kind such as &#8216;time-based&#8217;, &#8216;volatility-based&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period">
+<code class="descname">strategy_period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the strategy period. A strategy does not have to trade under the strategy period.
+Strategy period is used to display strategy backtesting results: when backtesting results
+is displayed in the web portal of the CTX platform, all the trading signals will be
+displayed on OHLC bars with the strategy period.
+:return Periodicity, the strategy period, as given by the strategy_period parameter</p>
+<blockquote>
+<div>of the AbstractStateBasedStrategy.__init__ method.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlcs">
+<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>kind=None</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the ohlc objects for the given instrument.
+:param kind: string, the ohlc kind, such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;. Valid values are</p>
+<blockquote>
+<div>defined in ctxalgolib.ohlc.ohlc_generator.OhlcGeneratorConstants. If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, the instrument id. If None, use self.instrument_id().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict{string: OHLC}, keys are of type Periodicity, values are OHLC objects.
+The result is a dict because an instrument may register for multiple OHLCs with different periods.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_ohlc">
+<code class="descname">strategy_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ohlc under self.strategy_period().
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return: OHLC, the ohlc object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlc">
+<code class="descname">ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ohlc for the given instrument and with the given periodicity.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</td>
+</tr>
+</tbody>
+</table>
+<p>:return OHLC, the ohlc object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.available_money">
+<code class="descname">available_money</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.available_money" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return available money cached in current strategy&#8217;s internal account data structure.
+This available money does not include float profit and loss. To get the actual account information,
+call get_trading_account.
+:return: float, the available money.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.balance">
+<code class="descname">balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cached balance. Balance is the sum of available_money, margin and profit.
+:return: float, the cached balance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.profit">
+<code class="descname">profit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current profit.
+:return: float, profit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.account_size">
+<code class="descname">account_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.account_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the account size (not including float profit or loss) from cached trading account in the strategy.
+Account size is the sum of available_money and margin.
+:return: float, the account size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin">
+<code class="descname">margin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin money cached by the strategy.
+:return: float, the margin money.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_money">
+<code class="descname">margin_money</code><span class="sig-paren">(</span><em>price</em>, <em>volume</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_money" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin money needed to open positions for the future.
+:param price: float, the price of the future.
+:param volume: int, the positions to open. A positive value for open long, a negative value for open short.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return float, the margin money.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.tick_size">
+<code class="descname">tick_size</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.tick_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tick size of the given instrument.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return: float, tick size of the instrument on the current trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.all_positions">
+<code class="descname">all_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.all_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return currently holding positions in all traded instruments.
+:return dict from string to dict. The outer keys are instrument ids. The inner dict is from string to int.</p>
+<blockquote>
+<div><p>Inner keys can be either &#8216;long&#8217; or &#8216;short&#8217;, and the inner values are positions in that direction.
+A positive number means long positions. A negative number means short positions.
+For example:
+{</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8216;IF99&#8217;: {</dt>
+<dd><blockquote class="first">
+<div>&#8216;long&#8217;: 5,
+&#8216;short&#8217;: -3</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.positions">
+<code class="descname">positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the positions for instrument_id in direction.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return dict{string: int}, keys are directions, such as &#8216;long&#8217; and &#8216;short&#8217;, values are positions</p>
+<blockquote>
+<div>in those directions.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_position_reached">
+<code class="descname">is_position_reached</code><span class="sig-paren">(</span><em>target_position</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_position_reached" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the current position for the given instrument is the same as target position.
+:param target_position: int, the target position. If None, meaning that target position is unknown,</p>
+<blockquote>
+<div>then this method always returns False.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">boolean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.long_positions">
+<code class="descname">long_positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.long_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return long positions for future_id.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return: int, the long position, positive value or zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_long_position">
+<code class="descname">has_long_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_long_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current strategy have long positions?
+:param instrument_id: string, instrument id. If None, use self.instrument_id().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_short_position">
+<code class="descname">has_short_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_short_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current strategy have short positions?
+:param instrument_id: string, instrument id. If None, use self.instrument_id().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.single_sided_position">
+<code class="descname">single_sided_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.single_sided_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the single sided position for given instrument.
+Single sided means: assuming that there is no both long and short positions for the instrument, then</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>If long position is positive, return the long position number (positive).</li>
+<li>If short position is negative, return the short position number (negative).</li>
+<li>Otherwise return 0.</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return int, single-sided position. If the instrument have both long and short side positions,</dt>
+<dd>return None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.single_sided_positions">
+<code class="descname">single_sided_positions</code><span class="sig-paren">(</span><em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.single_sided_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the single sided position for the given instrument ids.
+:param instrument_ids: [string], the required instrument ids.</p>
+<blockquote>
+<div>If None, use self.instrument_ids().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict{string: int}, meaning dict{instrument_id: position}.
+Keys are the same as instrument_ids. Values are the single sided positions for those instruments.
+If an instrument has no position, its corresponding value is 0.
+If an instrument has both long and short sided positions, its corresponding value is None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.direction">
+<code class="descname">direction</code><span class="sig-paren">(</span><em>volume</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return &#8216;long&#8217; or &#8216;short&#8217; as direction.
+:param volume: int, positive number means long direction, negative numer means short direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_position_single_sided">
+<code class="descname">is_position_single_sided</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_position_single_sided" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current position for the given instrument single sided?
+Meaning either long or short positions, but not both.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return bool, True if position for the given instrument is single-sided, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.short_positions">
+<code class="descname">short_positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.short_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return long positions for future_id.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return: int, the short position, negative value or zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.position_details">
+<code class="descname">position_details</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.position_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current position details for a given instrument.
+:param instrument_id: string, the instrument id whose position details are to be retrieved.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict{string: [dict{string: object}]}
+Format is:<blockquote>
+<div><dl class="docutils">
+<dt>&#8216;long&#8217;: [</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>&#8216;order_ref&#8217;: order reference string
+&#8216;price&#8217;: the price when the position is opened.
+&#8216;volume&#8217;: the volume that are executed at this price.
+&#8216;timestamp&#8217;: the time when this position is executed.</dd>
+</dl>
+<p>}, ...</p>
+</div></blockquote>
+<p class="last">],</p>
+</dd>
+<dt>&#8216;short&#8217;: [</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>&#8216;order_ref&#8217;: order reference string
+&#8216;price&#8217;: the price when the position is opened.
+&#8216;volume&#8217;: the volume that are executed at this price.
+&#8216;timestamp&#8217;: the time when this position is executed.</dd>
+</dl>
+<p>}, ...</p>
+</div></blockquote>
+<p class="last">],</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.all_position_details">
+<code class="descname">all_position_details</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.all_position_details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return position details for all traded instruments.
+:return: dict{string: dict{string: [dict{string: object}]}}</p>
+<blockquote>
+<div><p>The out most keys are instrument ides, and the values are the same as the result of self.position_details.
+For example:
+{</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8216;IF99&#8217;: {</dt>
+<dd><dl class="first last docutils">
+<dt>&#8216;long&#8217;: [</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>&#8216;order_ref&#8217;: order reference string
+&#8216;price&#8217;: the price when the position is opened.
+&#8216;volume&#8217;: the volume that are executed at this price.
+&#8216;timestamp&#8217;: the time when this position is executed.</dd>
+</dl>
+<p>}, ...</p>
+</div></blockquote>
+<p class="last">],</p>
+</dd>
+<dt>&#8216;short&#8217;: [</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>&#8216;order_ref&#8217;: order reference string
+&#8216;price&#8217;: the price when the position is opened.
+&#8216;volume&#8217;: the volume that are executed at this price.
+&#8216;timestamp&#8217;: the time when this position is executed.</dd>
+</dl>
+<p>}, ...</p>
+</div></blockquote>
+<p class="last">],</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.filtered_position">
+<code class="descname">filtered_position</code><span class="sig-paren">(</span><em>direction</em>, <em>condition</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.filtered_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current position details for a given instrument.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param condition: string, values can be:</p>
+<blockquote>
+<div>highest_price: return the position which has the highest filled price.
+lowest_price: return the position which has the lowest filled price.
+earliest_filled: return the position which has the earliest filled time.
+latest_filled: return the position which as the latest filled time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict{string: object}
+The details of a particular position which satisfy the given condition. The format is:
+{<blockquote>
+<div>&#8216;order_ref&#8217;: order reference string
+&#8216;price&#8217;: the price when the position is opened.
+&#8216;volume&#8217;: the volume that are executed at this price.
+&#8216;timestamp&#8217;: the time when this position is executed.</div></blockquote>
+<p>}.
+If there are more than one position satisfies the condition, randomly choose one.
+If there is no position, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.lowest_position_price">
+<code class="descname">lowest_position_price</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.lowest_position_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the price of lowest long position.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param instrument_id: string, the instrument id whose position details are to be retrieved.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, position price.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.highest_position_price">
+<code class="descname">highest_position_price</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.highest_position_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the price of lowest long position.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param instrument_id: string, the instrument id whose position details are to be retrieved.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, position price.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.long_position_profit">
+<code class="descname">long_position_profit</code><span class="sig-paren">(</span><em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.long_position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held long positions.
+:param condition: string, the condition to select positions. Values can be the following:</p>
+<blockquote>
+<div>highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.short_position_profit">
+<code class="descname">short_position_profit</code><span class="sig-paren">(</span><em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.short_position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held short positions.
+:param condition: string, the condition to select positions. Values can be the following:</p>
+<blockquote>
+<div>highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.position_profit">
+<code class="descname">position_profit</code><span class="sig-paren">(</span><em>direction=None</em>, <em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held positions.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;, specifies the direction of the position whose</p>
+<blockquote>
+<div>profit is to be calculated.
+If None, assume that there is only one direction position, and use self.single_sided_position.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>condition</strong> &#8211; string, the condition to select positions. Values can be the following:
+highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</li>
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_position">
+<code class="descname">has_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current strategy have any position in any of the traded instruments?
+:param instrument_id: string, if not None, return whether that particular</p>
+<blockquote>
+<div>instrument has position (either long or short).
+If None, return whether any instrument has position (either long or short).</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if there is some position, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_pending_order">
+<code class="descname">has_pending_order</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_pending_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is there any pending order that still needs to be executed?
+This query is useful to decide if all orders has been fully executed.
+:param instrument_id: string, the instrument id. If not None, return whether there is pending order</p>
+<blockquote>
+<div>for that particular instrument. If None, return whether there is pending order for any instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean. True if there is at least one pending order; False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_order_pending">
+<code class="descname">is_order_pending</code><span class="sig-paren">(</span><em>order_ref</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_order_pending" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the order specified by order_ref pending? Meaning that part of the order has not been executed.
+:param order_ref: string, the full order reference.
+:return bool, True if the order is still pending, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_name">
+<code class="descname">strategy_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of current strategy.
+:return: string, name of the current strategy.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.sign">
+<code class="descname">sign</code><span class="sig-paren">(</span><em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sign 1 or -1 for the position direction. This is useful
+when calculating volumes from directions.
+:param direction: string or int, can be &#8216;long&#8217; or &#8216;short&#8217;.</p>
+<blockquote>
+<div>Or an integer, positive number means long, negative number mean short.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int, return 1 if direction is &#8216;long&#8217;, otherwise -1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_stop_loss_touched">
+<code class="descname">is_stop_loss_touched</code><span class="sig-paren">(</span><em>price</em>, <em>stop_loss</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_stop_loss_touched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has price touched given stop loss?
+:param price: float, the current instrument price.
+:param stop_loss: float, the predefined stop loss price.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:return: bool, True if given price touches stop loss.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_stop_win_touched">
+<code class="descname">is_stop_win_touched</code><span class="sig-paren">(</span><em>price</em>, <em>stop_win</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_stop_win_touched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has price touched given stop win?
+:param price: float, the current instrument price.
+:param stop_win: float, the predefined stop loss price.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:return: bool, True if given price touches stop win.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.state">
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of the current state in stat machine.
+Note: the current state may not be the same as current object.
+:return: string, tne name of the current state in self.state_machine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.in_state">
+<code class="descname">in_state</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.in_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current state machine in state named name?
+:param name: string, name of a state.
+:return string, name of the state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.max_positions_to_open">
+<code class="descname">max_positions_to_open</code><span class="sig-paren">(</span><em>price</em>, <em>direction</em>, <em>instrument_id=None</em>, <em>available_money=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.max_positions_to_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum number of positions that can be opened at direction.
+:param price: float, the current price of the instrument whose positions are to be opened.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.</p>
+<blockquote>
+<div>Or an integer, positive number means long, negative number means short.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</li>
+<li><strong>available_money</strong> &#8211; float, the available money in the account, if None, use available_money.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">int, the maximum number of positions that can be opened for instrument_id at direction.
+It always returns a NON-NEGATIVE value, even in the case that direction is &#8216;short&#8217;.
+To turn the value into the volume to trade, in the case of &#8216;short&#8217;, you need to negate the result.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_close_position">
+<code class="descname">latest_time_to_close_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_close_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the intra-day close position time. The result is defined
+only when self.parameters[&#8216;open_position_time_delta&#8217;] is defined.
+The strategy parameter open_position_time_delta specifies the number of minutes
+before the market closes when the last open position order should be placed.
+:param instrument_id: string, future id. If None, use self.instrument_id().
+:return: datetime.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_open_position">
+<code class="descname">latest_time_to_open_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_open_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the intra-day latest open position time. The result is defined
+only when self.parameters[&#8216;close_position_time_delta&#8217;] is defined.
+The strategy parameter close_position_time_delta specifies the number of minutes
+before the market closes when the last close position order should be placed.
+:param instrument_id: string, future id. If None, use self.instrument_id().
+:return: datetime.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_open_position_wrt_time">
+<code class="descname">can_open_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_open_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we open positions for all the instruments given by instrument_ids?
+Whether any position can be opened for an instrument id is defined by now &lt;= self.latest_time_to_open_position.
+:param now: datetime, current time. If None, use current timstamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be opened.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can open positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_close_position_wrt_time">
+<code class="descname">can_close_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_close_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we close positions for all the instruments given by instrument_ids?
+Whether any position can be closed for an instrument id is defined by now &lt;= self.latest_time_to_close_position.
+:param now: datetime, current time. If None, use current timestamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be closed.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can close positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_open_and_close_position_wrt_time">
+<code class="descname">can_open_and_close_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_open_and_close_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we open and close positions for all the instruments given by instrument_ids?
+Whether any position can be closed for an instrument id is defined by
+now &lt;= self.latest_time_to_open_position and now &lt;= self.latest_time_to_close_position.
+:param now: datetime, current time. If None, use current timestamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be closed.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can open and close close positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.last_known_price">
+<code class="descname">last_known_price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.last_known_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the last known price for the given instrument. For instruments whose price information
+is kept in current strategy, return the last price directly. Otherwsie, if self.data_feed() is set,
+try to get the price information from that data feed.
+Finally if no price information is available, return None.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return float, the last known price, None if no price is known for the given instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.price">
+<code class="descname">price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as self.last_known_price().
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return float, the last known price, None if no price is known for the given instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.volume_multiple">
+<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.volume_multiple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get volume multiple of the given instrument.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return: int. The volume multiple.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_rate_by_money">
+<code class="descname">margin_rate_by_money</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_rate_by_money" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the margin rate for the given future.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return: float, the margin rate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.current_transaction_id">
+<code class="descname">current_transaction_id</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.current_transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current transaction id for the future and the position direction.
+:param direction: string, &#8216;long&#8217; means long direction, &#8216;short&#8217; means short direction.
+:param instrument_id: string, instrument id. If None, use self.instrument_id.
+:return: string, the transaction id. None if there is no transaction for the future in that direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.transaction_id_from_order_ref">
+<code class="descname">transaction_id_from_order_ref</code><span class="sig-paren">(</span><em>order_ref</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.transaction_id_from_order_ref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the transaction id from order_ref.
+:param order_ref: string order reference.
+:return: string, the transaction id.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.now">
+<code class="descname">now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.now" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current timestamp. Always use this method to get current timestamp in the strategy class
+and all the state classes. Do not use datetime.now() because it won&#8217;t work for backtesting.
+:return: datetime, the current timestamp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.trading_day">
+<code class="descname">trading_day</code><span class="sig-paren">(</span><em>now=None</em>, <em>delta=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.trading_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current trading day, note this may not be the same as current calendar date.
+For example, if we are in night trading periods, then the current trading date is not equal
+to the current calendar date.
+:param now: datetime, calendar timestamp.</p>
+<blockquote>
+<div>If None, current system tile is used.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delta</strong> &#8211; int, if positive, return the next delta-th trading day relative to ts.
+If negative, return the previous delta-th trading day relative to ts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">date, current trading day.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.today_bars">
+<code class="descname">today_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.today_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar slice in ohlc, which covers all bars from today.
+:param ohlc: OHLC, the ohlc object.
+:param now: datetime, an optional timestamp indicating current time, if None,</p>
+<blockquote>
+<div>use the last timestamp in ohlc as current time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice, the slice used to index into ohlc. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.yesterday_bars">
+<code class="descname">yesterday_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.yesterday_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar slice in ohlc, which covers all bars from yesterday.
+:param ohlc: OHLC, the ohlc object.
+:param now: datetime, an optional timestamp indicating current time, if None,</p>
+<blockquote>
+<div>use the last timestamp in ohlc as current time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice, the slice used to index into ohlc. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.bars_in_last_days">
+<code class="descname">bars_in_last_days</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>start=-1</em>, <em>end=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.bars_in_last_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar slice in ohlc, which covers all bars from start to end (in days).
+:param ohlc: OHLC, the ohlc object.
+:param now: datetime, an optional timestamp indicating current time, if None,</p>
+<blockquote>
+<div>use the last timestamp in ohlc as current time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> &#8211; int, start day index. Must be negative. Index days from backward.</li>
+<li><strong>end</strong> &#8211; int, end day index. Must be negative or None. Index days from backward.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice, the slice used to index into ohlc. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlc_in_last_days">
+<code class="descname">ohlc_in_last_days</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>start=-1</em>, <em>end=None</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlc_in_last_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sliced ohlc, which covers all bars from start to end (in days).
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>start</strong> &#8211; int, start day index. Must be negative. Index days from backward.</li>
+<li><strong>end</strong> &#8211; int, end day index. Must be negative or None. Index days from backward.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.today_ohlc">
+<code class="descname">today_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.today_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return today&#8217;s ohlc, the sliced part only contain bars from today.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.yesterday_ohlc">
+<code class="descname">yesterday_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.yesterday_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sliced part from the given ohlc, the sliced part only contain bars from yesterday.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_day">
+<code class="descname">is_day</code><span class="sig-paren">(</span><em>timestamp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given timestamp in day trading period?
+:param timestamp: datetime, the given timestamp. If None, use self.now().
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_night">
+<code class="descname">is_night</code><span class="sig-paren">(</span><em>timestamp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_night" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given timestamp in night trading period?
+:param timestamp: datetime, the given timestamp. If None, use self.now().
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_run">
+<code class="descname">has_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has current strategy started running&gt;
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.futures">
+<code class="descname">futures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.futures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the full list of all futures.
+:return: dict{string: string}, meaning dict{future instrument prefix: exchange},</p>
+<blockquote>
+<div>keys are future instrument prefixes, such as IF, cu, values are the exchange to which
+those futures belong.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.data_feed">
+<code class="descname">data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.data_feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the data feed which provides external data, for example, from a database.
+:return: AbstractDataFeed. The data feed.</p>
+<blockquote>
+<div>If no data feed is set, return None.
+In the case when data feed is not set, queries which rely on data feed will fail.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_data_feed">
+<code class="descname">has_data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_data_feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is data feed set?
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.dominant_instrument">
+<code class="descname">dominant_instrument</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.dominant_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the level dominant instrument id on the given trading day.
+:param instrument_prefix: string, instrument id prefix, such as IF, cu.
+:param trading_day: date, or string in form of yyyy-mm-dd. trading day.
+:param level: int, 0 means the dominant contract, 1 means the next dominant contract, and so on.
+:return: string, the instrument id of the asked dominant contract.</p>
+<blockquote>
+<div>If no such dominant contract, return None.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>trading_day=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market periods for the given instrument on the given trading day.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:param trading_day: date, current trading day, if None ,use self.trading_day()
+:return: [(start_ts, end_ts)], the list of market periods.</p>
+<blockquote>
+<div>start_ts and end_ts are both of type datetime.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_market_order_supported">
+<code class="descname">is_market_order_supported</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>trading_day=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.is_market_order_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return if an instrument supports market order on the given trading day.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:param trading_day: date, current trading day, if None ,use self.trading_day()
+:return: bool.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.strategy_queries.</code><code class="descname">AbstractStrategyCallbacks</code><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents high-level strategy callbacks.
+Different from low-level, CTP-level callbacks, callbacks defined here are high-level, easier to use
+and directly address trading business logics.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.on_bar">
+<code class="descname">on_bar</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>bars</em>, <em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.on_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action to be called when there is some ohlc bars generated.
+:param: instrument_id, string, the instrument id of the generated bar(s).
+:param bars: dict{string: dict{Periodicity or int/float: Bar}.</p>
+<blockquote>
+<div>Outer keys are ohlc kind such as &#8216;time-based&#8217;, &#8216;volatility-based&#8217; from OhlcGeneratorConstants.
+Outer values are dict from Periodicity to Bars in the case of time-based ohlcs or
+dict from int/float to Bars in the case of volatility-based ohlcs.
+It may contains more than one bars: a single bar under each periodicity.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tick</strong> &#8211; dict{string: object}, the tick which triggers current ohlc bar(s) generation.
+The object has the following keys (non-exhaustive):
+timestamp, last_price, volume, ask_price1, ask_volume1, bid_price1, bid_volume1,
+pre_open_interest, open_interest. Note that when backtesting, only when the data source is tick level,
+tick includes order book information such as ask_price1, bid_price1. Otherwise, those order book
+related fields will have default values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.on_bar_method">
+<code class="descname">on_bar_method</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.on_bar_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the function pointer for on_bar.
+:return: function pointer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.set_all_callbacks">
+<code class="descname">set_all_callbacks</code><span class="sig-paren">(</span><em>all_callbacks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.set_all_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.all_callbacks to all_callbacks.
+:param all_callbacks: OrderedDict{string: AbstractStrategyCallbacks},</p>
+<blockquote>
+<div>The set of individual strategy callbacks. Keys are strategy callback names,
+values are callbacks. Note that it is an ordered dict. So when callbacks are invoked,
+they follow the order that is given here. The callback names are useful to find
+corresponding strategy callbacks from outside.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.strategy_queries.</code><code class="descname">CompositeStrategyCallbacks</code><span class="sig-paren">(</span><em>strategy_callbacks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks" title="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks</span></code></a></p>
+<p>Class that represents a composite strategy callbacks, which can hold multiple individual strategy callbacks.
+This is convenient to attached new monitoring functionalities to an existing strategy without changing the
+code of that strategy. For example, when writing test cases for a strategy backtesting session, it is
+convenient to intercept all callbacks of a strategy but it is non elegant to add code to the strategy class
+just for the purpose of the test cases. By using CompositeStrategyCallbacks, an additional callback receivers
+can be attached to the strategy via the backtester, and test case correctness can be checked there.</p>
+<p>Initialize current.
+:param strategy_callbacks: OrderedDict{string: AbstractStrategyCallbacks},</p>
+<blockquote>
+<div>The set of individual strategy callbacks. Keys are strategy callback names,
+values are callbacks. Note that it is an ordered dict. So when callbacks are invoked,
+they follow the order that is given here. The callback names are useful to find
+corresponding strategy callbacks from outside.</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.on_bar">
+<code class="descname">on_bar</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>bars</em>, <em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.on_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.on_bar_method">
+<code class="descname">on_bar_method</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.on_bar_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the function pointer for on_bar.
+:return: function pointer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.set_all_callbacks">
+<code class="descname">set_all_callbacks</code><span class="sig-paren">(</span><em>all_callbacks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.set_all_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.all_callbacks to all_callbacks.
+:param all_callbacks: OrderedDict{string: AbstractStrategyCallbacks},</p>
+<blockquote>
+<div>The set of individual strategy callbacks. Keys are strategy callback names,
+values are callbacks. Note that it is an ordered dict. So when callbacks are invoked,
+they follow the order that is given here. The callback names are useful to find
+corresponding strategy callbacks from outside.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="trading_constants.html" class="btn btn-neutral float-right" title="trading_constants" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="state_machine_type_checking.html" class="btn btn-neutral" title="state_machine_type_checking" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

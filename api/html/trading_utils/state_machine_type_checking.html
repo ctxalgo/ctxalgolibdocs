@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>state_machine_type_checking &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="strategy_queries" href="strategy_queries.html"/>
+        <link rel="prev" title="state" href="state.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>state_machine_type_checking</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/state_machine_type_checking.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="state-machine-type-checking">
+<h1>state_machine_type_checking<a class="headerlink" href="#state-machine-type-checking" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.trading_utils.state_machine_type_checking"></span><dl class="class">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.StateMahchineErrors">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state_machine_type_checking.</code><code class="descname">StateMahchineErrors</code><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.StateMahchineErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that lists possible errors for type checking a state machine.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.StateMahchineErrors.errors">
+<code class="descname">errors</code><em class="property"> = {1: 'A state machine must have a start node, specified by node_name[start=true].', 2: 'A state can only contain the following property: start, immediate, class, data_keys, input_keys.', 3: 'A transition can only contain the following properties: label.', 4: 'Duplicated properties in state or transition, meaning that there are at least two properties with the same name inside a state or a transition.', 5: 'Duplicated state names, meaning there are at least two states with the same name (case sensitive).', 6: 'Duplicated transitions, meaning there are at least two transitions with the same start and end states', 7: &quot;The value of the 'start' property in state is not a boolean (case insensitive true or false).&quot;, 8: &quot;The value of the 'immediate' property in state is not a boolean (case insensitive true or false).&quot;, 9: &quot;The value of the 'class' property in state is not a string.&quot;, 10: &quot;The value of the 'data_keys' property in state is not a comma-separated string.&quot;, 11: &quot;The value of the 'input_keys' property in state is not a comma-separated string.&quot;, 12: &quot;The value of the 'label' property in a transition is not a string.&quot;, 13: 'The start and end state of a transition is the same, for example, node -&gt; node.', 14: 'Transition label does not have the required prefix. For a transition start -&gt; end, where the start state has a predefined base class. The label of of this transition must have a prefix which is defined by the out_edges from that base class.', 15: &quot;The DOT specification is not a directional graph. This means the DOT specification string does not start with 'digraph'.&quot;, 16: 'There are more than one states marked as start state.', 17: 'The DOT specification is not valid DOT format.', 18: &quot;A state inheriting from pre-defined states must have all the out-going transitions defined by the pre-defined state. For example, CancelOrderState2 has two out-going edges, whoselabels should have prefix 'fully traded' and 'canceled', so if state x inherits from CancelOrderState2, then there should have two edges x -&gt; y[label=fully traded_SOME_OTHER_TEXT], and x -&gt; z[label=canceled_SOME_OTHER_TEXT].&quot;}</em><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.StateMahchineErrors.errors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state_machine_type_checking.</code><code class="descname">AbstractStateMachineTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that perform type checking for state machines.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>dot</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type check state machine given by the DOT specification.
+:param dot: string, the DOT specification for a state machine.
+:return: [CodeError], list of type checking errors. If no error is detected, return an empty list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker.get_code_location">
+<code class="descname">get_code_location</code><span class="sig-paren">(</span><em>element_name</em>, <em>element_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker.get_code_location" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>element_name</strong> &#8211; string, the name of the element. If the element is a state,
+then element_name is the name of the state.
+If the element is a transition, then element_name is &#8220;start_state -&gt; end_state&#8221;.</li>
+<li><strong>element_type</strong> &#8211; string, the type of the element, can be &#8216;state&#8217; or &#8216;transition&#8217;.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return CodeLocation, the location for the element.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.BasicStateMachineTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state_machine_type_checking.</code><code class="descname">BasicStateMachineTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.BasicStateMachineTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker" title="ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.state_machine_type_checking.AbstractStateMachineTypeChecker</span></code></a></p>
+<p>This type checker checks the following errors:.
+1. The state machine must have a start node.</p>
+<blockquote>
+<div>Error code: 1.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>A node can only contain the following properties: start, immediate, class, data_keys, input_keys.
+Error code: 2.</li>
+<li>An edge can only contain the following properties: label.
+Error code: 3.</li>
+<li>[Do not do for the moment] Duplicated properties in node or edge.
+Error code: 4.</li>
+<li>Duplicated state names, meaning there are at least two states with the same name (case sensitive).
+Error code: 5.</li>
+<li>Duplicated transitions, meaning there are at least two transitions with the same start and end states.
+Error code: 6.</li>
+<li>The value of the &#8216;start&#8217; property in state is not a boolean (case insensitive true or false).
+Error code: 7.</li>
+<li>The value of the &#8216;immediate&#8217; property in state is not a boolean (case insensitive true or false).
+Error code: 8.</li>
+<li>The value of the &#8216;class&#8217; property in state is not a string.
+Error code: 9.</li>
+<li>The value of the &#8216;data_keys&#8217; property in state is not a comma-separated string.
+Error code: 10.</li>
+<li>The value of the &#8216;input_keys&#8217; property in state is not a comma-separated string.
+Error code: 11.</li>
+<li>The value of the &#8216;label&#8217; property in a transition is not a string.
+Error code: 12.</li>
+<li>The start and end state of a transition is the same, for example, node -&gt; node.
+Error code: 13.</li>
+<li>Transition label does not have the required prefix. For a transition start -&gt; end, where
+the start state has a predefined base class. The label of of this transition must have a
+prefix which is defined by the out_edges from that base class.
+Use the data from &#8216;label_prefixes&#8217; in KnownBaseClasses.classes to do the checking.
+Error code: 14.</li>
+<li>The DOT specification is not a directional graph. This means the DOT specification string
+does not start with &#8216;digraph&#8217;.
+Error code: 15.</li>
+<li>There are more than one states marked as start state.
+Error code: 16.</li>
+<li>The DOT specification is not valid DOT format.
+Error code: 17.</li>
+<li>A state inheriting from pre-defined states must have all the out-going transitions defined by the
+pre-defined state. For example, CancelOrderState2 has two out-going edges, whose
+labels should have prefix &#8220;fully traded&#8221; and &#8220;canceled&#8221;, so if state x inherits from CancelOrderState2,
+then there should have two edges x -&gt; y[label=fully traded_SOME_OTHER_TEXT],
+and x -&gt; z[label=canceled_SOME_OTHER_TEXT].
+Error code: 18</li>
+</ol>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.BasicStateMachineTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>dot</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.BasicStateMachineTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state_machine_type_checking.BasicStateMachineTypeChecker.get_code_location">
+<code class="descname">get_code_location</code><span class="sig-paren">(</span><em>element_name</em>, <em>element_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state_machine_type_checking.BasicStateMachineTypeChecker.get_code_location" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>element_name</strong> &#8211; string, the name of the element. If the element is a state,
+then element_name is the name of the state.
+If the element is a transition, then element_name is &#8220;start_state -&gt; end_state&#8221;.</li>
+<li><strong>element_type</strong> &#8211; string, the type of the element, can be &#8216;state&#8217; or &#8216;transition&#8217;.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return CodeLocation, the location for the element.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="strategy_queries.html" class="btn btn-neutral float-right" title="strategy_queries" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="state.html" class="btn btn-neutral" title="state" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

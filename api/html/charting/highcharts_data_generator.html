@@ -1,0 +1,555 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>highcharts_data_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="charting" href="index.html"/>
+        <link rel="next" title="indicator_factory" href="indicator_factory.html"/>
+        <link rel="prev" title="highcharts_charting_document_generator" href="highcharts_charting_document_generator.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">charting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="custom_indicators/index.html">custom_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_indicators.html">basic_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_data_generator.html">chart_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_indicators.html">chart_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting_constants.html">charting_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charts.html">charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder.html">highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder_code_generator.html">highcharts_builder_code_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_charting_document_generator.html">highcharts_charting_document_generator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">highcharts_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indicator_factory.html">indicator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talib_function_generator.html">talib_function_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">charting</a> &raquo;</li>
+      
+    <li>highcharts_data_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/charting/highcharts_data_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.charting.highcharts_data_generator">
+<span id="highcharts-data-generator"></span><h1>highcharts_data_generator<a class="headerlink" href="#module-ctxalgolib.charting.highcharts_data_generator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_data_generator.</code><code class="descname">HighchartsDataGenerator</code><span class="sig-paren">(</span><em>translator</em>, <em>data_feed</em>, <em>instrument_id</em>, <em>periodicity=20</em>, <em>ohlc_kind='time-based'</em>, <em>start_time=None</em>, <em>end_time=None</em>, <em>limit_bars=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="chart_data_generator.html#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator" title="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator</span></code></a></p>
+<p>Class to generate JSON data for chart display.</p>
+<p>Initialize current.
+:param translator: AbstractTranslator, a translator to provide translations into different languages.
+:param data_feed: AbstractDataFeed, data feed to provide ohlc and other such as stock fundamental data.
+:param instrument_id: string, the id of the instrument to draw.
+:param periodicity: Periodicity or int/float, the period for the ohlc to draw.</p>
+<blockquote>
+<div>In case of time-based ohlcs, the value is Periodicity, in case of volatility-based ohlcs, the value
+is volatility threshold.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ohlc_kind</strong> &#8211; string, can be &#8216;time-based&#8217;, &#8216;volatility-based&#8217; from OhlcGeneratorConstants.
+It specifies the kind of ohlc to draw.</li>
+<li><strong>start_time</strong> &#8211; datetime, the start time (inclusive) to draw the ohlc.</li>
+<li><strong>end_time</strong> &#8211; datetime, the end time (inclusive) to draw the ohlc.</li>
+<li><strong>limit_bars</strong> &#8211; boolean, if True, decide if there are two many ohlc bars to draw, if so, only draw
+a postfix of the required ohlc bars.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_k_area_sids">
+<code class="descname">set_k_area_sids</code><span class="sig-paren">(</span><em>k_sids</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_k_area_sids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_yaxis_ids">
+<code class="descname">set_yaxis_ids</code><span class="sig-paren">(</span><em>ids</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_yaxis_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_sid_to_k_area_positions">
+<code class="descname">set_sid_to_k_area_positions</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_sid_to_k_area_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.add_yaxis">
+<code class="descname">add_yaxis</code><span class="sig-paren">(</span><em>yaxis_config</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.add_yaxis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.add_series">
+<code class="descname">add_series</code><span class="sig-paren">(</span><em>series_config</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.add_series" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.add_category_in_chart">
+<code class="descname">add_category_in_chart</code><span class="sig-paren">(</span><em>category</em>, <em>series</em>, <em>chart</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.add_category_in_chart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_external_data">
+<code class="descname">set_external_data</code><span class="sig-paren">(</span><em>indicators</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_external_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set external data source.
+:param indicators: [dict{string:object}], each dict should contain a key with is &#8220;path&#8221;.</p>
+<blockquote>
+<div>The value is a &#8221;:&#8221; separated list of file paths.</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_datetime_from_string">
+<em class="property">static </em><code class="descname">get_datetime_from_string</code><span class="sig-paren">(</span><em>dt_str</em>, <em>default_time=datetime.time(15</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_datetime_from_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_timetuple">
+<em class="property">static </em><code class="descname">get_timetuple</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_timetuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_vertical_line">
+<code class="descname">draw_vertical_line</code><span class="sig-paren">(</span><em>dt</em>, <em>label=''</em>, <em>line_color='gray'</em>, <em>label_color='gray'</em>, <em>style='solid'</em>, <em>is_annotation=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_vertical_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_line">
+<code class="descname">draw_line</code><span class="sig-paren">(</span><em>yconfig</em>, <em>dates</em>, <em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>label=''</em>, <em>thick=1</em>, <em>color='blue'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_simple_series">
+<code class="descname">draw_simple_series</code><span class="sig-paren">(</span><em>yconfig</em>, <em>label</em>, <em>dates</em>, <em>values</em>, <em>extra_params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_simple_series" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_area_series">
+<code class="descname">draw_area_series</code><span class="sig-paren">(</span><em>yconfig</em>, <em>label</em>, <em>dates</em>, <em>values</em>, <em>extra_params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_area_series" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_series">
+<code class="descname">draw_series</code><span class="sig-paren">(</span><em>category</em>, <em>series</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_series" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_horizontal_mark">
+<code class="descname">draw_horizontal_mark</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start</em>, <em>end</em>, <em>location</em>, <em>thick</em>, <em>color</em>, <em>label</em>, <em>style</em>, <em>yconfig</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_horizontal_mark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_vertical_band">
+<code class="descname">draw_vertical_band</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>label=''</em>, <em>color='rgba(252</em>, <em>255</em>, <em>197</em>, <em>.6)'</em>, <em>label_color='gray'</em>, <em>is_annotation=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_vertical_band" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_text">
+<code class="descname">draw_text</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>text=''</em>, <em>color='black'</em>, <em>size=10</em>, <em>position='k'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_signal_line">
+<code class="descname">draw_signal_line</code><span class="sig-paren">(</span><em>dt</em>, <em>message=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.draw_signal_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_value">
+<code class="descname">set_value</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_price">
+<em class="property">static </em><code class="descname">get_price</code><span class="sig-paren">(</span><em>o</em>, <em>h</em>, <em>l</em>, <em>c</em>, <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_ohlc_key">
+<code class="descname">get_ohlc_key</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_time</em>, <em>end_time</em>, <em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_ohlc_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string signature for the specified ohlc region, used as keys to look up data in cache.
+:param instrument_id: string, stock id.
+:param start_time: datetime, start time.
+:param end_time: datetime, end time.
+:param periodicity: Periodicity, periodicity.
+:return: string, the signature string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_ohlc">
+<code class="descname">get_ohlc</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_time</em>, <em>end_time</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_periodicity_name">
+<code class="descname">get_periodicity_name</code><span class="sig-paren">(</span><em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.get_periodicity_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>cursor_date</em>, <em>with_exrights=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate data for chart display.
+Parameters:</p>
+<blockquote>
+<div>with_exrights: boolean, indicating if we use use data with exrights.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.market_period_provider">
+<code class="descname">market_period_provider</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.market_period_provider" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_data_generator.</code><code class="descname">HighchartsDataGenerationUtils</code><span class="sig-paren">(</span><em>data_feed=None</em>, <em>translator=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to generate data for Highcharts rendering.</p>
+<p>Initialize current.
+:param data_feed: AbstractDataFeed. Data feed. Data feed is used to get trading data, such as ohlcs.</p>
+<blockquote>
+<div>If there is no need for data feed, for example, if you just want to display some ad-hoc series,
+set data_feed to None.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>translator</strong> &#8211; AbstractTranslator, the translator which provides text in different languages.
+Pass in a translator that will generate text in the desirable language.
+If None, use default translator.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.set_should_enforce_default_k">
+<code class="descname">set_should_enforce_default_k</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.set_should_enforce_default_k" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.set_should_enforce_default_v">
+<code class="descname">set_should_enforce_default_v</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.set_should_enforce_default_v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.generate_chart_data">
+<code class="descname">generate_chart_data</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>cursor_date=None</em>, <em>indicators='none'</em>, <em>description=None</em>, <em>mobile=False</em>, <em>limit_bars=True</em>, <em>add_default_ohlc_and_volume=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.generate_chart_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate data for a single chart.
+:param instrument_id: string, the instrument id.
+:param cursor_date: date, the cursor date.
+:param indicators: string, the indicator specification.
+:param description: string, the pattern specification, used to draw a flag pattern.
+:param mobile: boolean, if True, generate chart data for mobile device. Otherwise, for normal screen.
+:param add_default_ohlc_and_volume: boolean, if True, add default areas for drawing ohlc and volume.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.generate_html">
+<code class="descname">generate_html</code><span class="sig-paren">(</span><em>folder</em>, <em>instrument_id=None</em>, <em>cursor_date=None</em>, <em>indicators=None</em>, <em>switch=None</em>, <em>description=None</em>, <em>mobile=False</em>, <em>limit_bars=False</em>, <em>html_file='index.html'</em>, <em>include_all_files=False</em>, <em>js_file_location=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.generate_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a static html page that contains chart(s) for instrument_id and indicators.
+If the indicators parameter specifies multiple charts via indicators1= to indicators5,
+the generated html page should contains all those sub-charts. The html page may require javascript files,
+get those files from the html folder in current Python package.</p>
+<dl class="docutils">
+<dt>The static html page should:</dt>
+<dd><ol class="first last arabic simple">
+<li>Open all the specified charts.</li>
+<li>No need to handle any web page widget actions. For example, no page reload, no switch
+on/off sub-charts (you can disable the switches).</li>
+<li>Need to include title and sub-title (if any).</li>
+</ol>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>folder</strong> &#8211; string, the folder to store the generated web page.
+If folder does not exist, create it. If it exists, keep the existing files there.
+New files should be generated and override existing files, if any.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id.
+If you don&#8217;t want to plot data related to any instrument, set instrument_id to None.</li>
+<li><strong>cursor_date</strong> &#8211; date, the cursor date.</li>
+<li><strong>indicators</strong> &#8211; [string], The list of indicators, the first element is for the main chart,
+the second element is for the first sub-chart and so on.</li>
+<li><strong>switch</strong> &#8211; int, indicates how many charts to open.
+If None, use the length of indicators to calculate the actual switch value.</li>
+<li><strong>description</strong> &#8211; string, the pattern specification, used to draw a flag pattern.</li>
+<li><strong>mobile</strong> &#8211; boolean, if True, generate chart data for mobile device. Otherwise, for normal screen.</li>
+<li><strong>limit_bars</strong> &#8211; boolean, if True, limit the maximum number of bars generated for charting.</li>
+<li><strong>html_file</strong> &#8211; string, the name of the generated html file.</li>
+<li><strong>include_all_files</strong> &#8211; boolean, if True, include all css, js files under folder, otherwise
+reference those files from ctxalgolib, or in case that js_file_location is not None, from the location
+given by js_file_location.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:param string, provide the location to reference js files.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.find_first_indicator">
+<code class="descname">find_first_indicator</code><span class="sig-paren">(</span><em>ind_name</em>, <em>parsed_indicators</em>, <em>all_indicators</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.find_first_indicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the first indicator in indicators with given name.
+:param ind_name: string, the name of the indicator to find.
+:param parsed_indicators: [(indicator, indicator_parameters)], the list of indicators.
+:param all_indicators: [indicator], the list of all registered indicators.
+:return: Indicator, the found indicator, or None, if nothing is found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.find_indicators_by_name">
+<code class="descname">find_indicators_by_name</code><span class="sig-paren">(</span><em>ind_name</em>, <em>parsed_indicators</em>, <em>all_indicators</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.find_indicators_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all indicators by name.
+:param ind_name: string, the name of the indicator to find.
+:param parsed_indicators: [(indicator, indicator_parameters)], the list of indicators.
+:param all_indicators: [indicator], the list of all registered indicators.
+:return: [(indicator, parameters)], the list of indicators with the given name,</p>
+<blockquote>
+<div>with their specified parameters. Parameters are of type dict{string:string}.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_default_k_indicator">
+<code class="descname">get_default_k_indicator</code><span class="sig-paren">(</span><em>parsed_indicators</em>, <em>all_indicators</em>, <em>y0</em>, <em>y1</em>, <em>heights</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_default_k_indicator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_default_volume_indicator">
+<code class="descname">get_default_volume_indicator</code><span class="sig-paren">(</span><em>parsed_indicators</em>, <em>all_indicators</em>, <em>y0</em>, <em>y1</em>, <em>heights</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_default_volume_indicator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_yaxis_config">
+<code class="descname">get_yaxis_config</code><span class="sig-paren">(</span><em>indicator</em>, <em>parameters</em>, <em>yk</em>, <em>yv</em>, <em>current_yaxis_id</em>, <em>current_top</em>, <em>heights</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_yaxis_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get yaxis config for indicator.
+:param indicator: Indicator, the indicator.
+:param parameters: dict{string: value}, the list of parameters to the indicator.
+:param yk: YaxisConfig, the yaxis config for K-bar area.
+:param yv: YaxisConfig, the yaxis config for volume area.
+:param current_yaxis_id: int, the current maximum yaxis id.
+:param heights: dict{string, int}.
+:return: (YAxisConfig, int, int)</p>
+<blockquote>
+<div>The first element is the yaxis config for indicator.
+The second element is the next yaxis id.
+The third element is the new current top.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_stock_info">
+<code class="descname">get_stock_info</code><span class="sig-paren">(</span><em>data_feed</em>, <em>instrument_id</em>, <em>cursor_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils.get_stock_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return information about a stock including plates and capital structure.
+Parameters:</p>
+<blockquote>
+<div>data_feed: StockDataFeed, stock data feed.
+instrument_id: string, stock id.
+cursor_date: date, the date.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[(text, tooltip, link)], list of information, each element is a triple of strings.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="indicator_factory.html" class="btn btn-neutral float-right" title="indicator_factory" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="highcharts_charting_document_generator.html" class="btn btn-neutral" title="highcharts_charting_document_generator" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

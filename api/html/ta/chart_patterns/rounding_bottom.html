@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rounding_bottom &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="chart_patterns" href="index.html"/>
+        <link rel="next" title="silver_edge" href="silver_edge.html"/>
+        <link rel="prev" title="grass_belly" href="grass_belly.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">chart_patterns</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="golden_angle.html">golden_angle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grass_belly.html">grass_belly</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">rounding_bottom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="silver_edge.html">silver_edge</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">chart_patterns</a> &raquo;</li>
+      
+    <li>rounding_bottom</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/chart_patterns/rounding_bottom.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.chart_patterns.rounding_bottom">
+<span id="rounding-bottom"></span><h1>rounding_bottom<a class="headerlink" href="#module-ctxalgolib.ta.chart_patterns.rounding_bottom" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomPattern">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.chart_patterns.rounding_bottom.</code><code class="descname">RoundingBottomPattern</code><span class="sig-paren">(</span><em>start_bar</em>, <em>end_bar</em>, <em>handle_start_bar</em>, <em>handle_end_bar</em>, <em>Ptop</em>, <em>Pbot</em>, <em>curve</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents rounding bottom pattern.</p>
+<p>Initialize current pattern.
+Parameters:</p>
+<blockquote>
+<div><p>start_bar: int, 0-based starting bar of the bowl shape.
+end_bar: int, 0-based end bar of the bowl shape.
+handle_start_bar: 0-based starting bar of the handle. -1 if no handle is found.
+handle_end_bar: 0-based end bar of the handle. -1 if no handle is found.
+Ptop, Pbot, B0, B5: float, intermediate variables used in patten identification. L1~L4, B1~B4 can be</p>
+<blockquote>
+<div>calculated from these values.</div></blockquote>
+<dl class="docutils">
+<dt>curve: [float], the curve to visualize the cup, if handle not exist, it begin from start_bar to end_bar,</dt>
+<dd>else, from start_bar to handle_end_bar</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomPattern">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.chart_patterns.rounding_bottom.</code><code class="descname">HalfRoundingBottomPattern</code><span class="sig-paren">(</span><em>start_bar</em>, <em>end_bar</em>, <em>Ptop</em>, <em>Pbot</em>, <em>curve</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize current pattern.
+Parameters:</p>
+<blockquote>
+<div><p>start_bar: int, 0-based starting bar of the half bowl pattern.
+end_bar: int, 0-based end bar of the half bowl shape.
+Ptop, Pbot: float, intermediate variables used in patten identification. L1~L4, B1~B4 can be</p>
+<blockquote>
+<div>calculated from these values.</div></blockquote>
+<p>B0 = start_bar
+B5 = end_bar
+curve: [float], the curve used to visualize the half bowl pattern. curve is the array for Y-values,</p>
+<blockquote>
+<div>X values starts from start_var and ends at end_bar.</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.chart_patterns.rounding_bottom.</code><code class="descname">RoundingBottomDetector</code><span class="sig-paren">(</span><em>last_highs_range=20</em>, <em>min_cup_length=30</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.detect">
+<code class="descname">detect</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect rounding bottoms from the given OHLC data.
+Parameters:</p>
+<blockquote>
+<div>opens: [float], open values.
+highs: [float], high values.
+lows: [float], low values.
+closes: [float], close values.</div></blockquote>
+<dl class="docutils">
+<dt>Returns: [RoundingBottomPattern], the list of rounding bottom patterns that are detected.</dt>
+<dd>Empty list if no pattern is detected.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.detect_with_start_and_end_dates">
+<code class="descname">detect_with_start_and_end_dates</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.detect_with_start_and_end_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>In this function, the start and end of the cup is fixed, in other words, b0 and b5 is fixed, b0 is the first bar
+and b5 is the last bar, p1 is highs[b5], In this way, the cup we get is without handle
+Be sure that highs[b0] satisfy the demand in step 2 when use this function: p1 satisfy the demand in step 1
+Param:</p>
+<blockquote>
+<div>opens: [float], open values, useless
+highs: [float], high values
+lows: [float], low values
+closes: [float], close values</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>RoundingBottomPattern: the rounding bottom that find, if not find, return None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.detect_per_cup">
+<code class="descname">detect_per_cup</code><span class="sig-paren">(</span><em>highs</em>, <em>lows</em>, <em>closes</em>, <em>b0=None</em>, <em>b5=None</em>, <em>p1=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.detect_per_cup" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to detect each rounding bottom (step 2 to step 9)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.is_lows_fit">
+<code class="descname">is_lows_fit</code><span class="sig-paren">(</span><em>lows</em>, <em>begin_index</em>, <em>end_index</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.is_lows_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to check whether any values of the lows from begin_index to end_index is low than value
+Param:</p>
+<blockquote>
+<div>&#64; lows: [float], the low values
+&#64; begin_index: int, the begin index
+&#64; end_index: int, the end index
+&#64; value: float, the target value</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>boolean, True, if find any; False, otherwise</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.get_highest">
+<code class="descname">get_highest</code><span class="sig-paren">(</span><em>highs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.get_highest" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to get p1&#8217;s value and b5&#8217;s value from highs date series
+Param:</p>
+<blockquote>
+<div>&#64; highs: [float], the high values</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[float, int], the highest value and it&#8217;s index</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.get_curve">
+<code class="descname">get_curve</code><span class="sig-paren">(</span><em>p0</em>, <em>p1</em>, <em>a</em>, <em>t0</em>, <em>begin_index</em>, <em>end_index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.RoundingBottomDetector.get_curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to get curve values from begin_index to end_index
+Param:</p>
+<blockquote>
+<div>p0: float, see above
+p1: float, see above
+a: float, a param
+t0: float, a param
+begin_index: int, the begin index of curve
+end_index: int, the end index of curve</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[float], the curve&#8217;s values</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.chart_patterns.rounding_bottom.</code><code class="descname">HalfRoundingBottomDetector</code><span class="sig-paren">(</span><em>min_cup_length=30</em>, <em>min_dx1_value=25</em>, <em>max_dx2_value=25</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.detect">
+<code class="descname">detect</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect half rounding bottoms from the given OHLC data.
+Parameters:</p>
+<blockquote>
+<div>opens: [float], open values.
+highs: [float], high values.
+lows: [float], low values.
+closes: [float], close values.</div></blockquote>
+<dl class="docutils">
+<dt>Returns: [HalfRoundingBottomPattern], the list of half rounding bottom patterns that are detected.</dt>
+<dd>Empty list if no pattern is detected.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.detect_with_start_and_end_dates">
+<code class="descname">detect_with_start_and_end_dates</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.detect_with_start_and_end_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>In this function, the start and end of the cup is fixed, in other words, b0 and b5 is fixed, b0 is the first bar
+and b5 is the last bar, p1 is closes[b0]
+Param:</p>
+<blockquote>
+<div>opens: [float], open values, useless
+highs: [float], high values
+lows: [float], low values
+closes: [float], close values</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>HalfRoundingBottomPattern: the rounding bottom that find, if not find, return None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.get_dx_value">
+<code class="descname">get_dx_value</code><span class="sig-paren">(</span><em>closes</em>, <em>begin_index</em>, <em>end_index</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.get_dx_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to get the sum of dx from begin_index to end_index
+Param:</p>
+<blockquote>
+<div>closes: [float], the close values
+begin_index: int, the begin index of dx
+end_index: int, the end index of dx
+direction: int, the direction of dx, 0 means + and 1 means -</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>float, the value of sum of dx</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.get_curve">
+<code class="descname">get_curve</code><span class="sig-paren">(</span><em>p0</em>, <em>p1</em>, <em>a</em>, <em>b5</em>, <em>begin_index</em>, <em>end_index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.chart_patterns.rounding_bottom.HalfRoundingBottomDetector.get_curve" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to get curve values from begin_index to end_index
+Param:</p>
+<blockquote>
+<div>p0: float, see above
+p1: float, see above
+a: float, a param
+b5: float, a param
+begin_index: int, the begin index of curve
+end_index: int, the end index of curve</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[float], the curve&#8217;s values</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="silver_edge.html" class="btn btn-neutral float-right" title="silver_edge" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="grass_belly.html" class="btn btn-neutral" title="grass_belly" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

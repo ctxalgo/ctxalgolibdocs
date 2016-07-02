@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>talib_function_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="charting" href="index.html"/>
+        <link rel="next" title="data_imports" href="../data_imports/index.html"/>
+        <link rel="prev" title="indicator_factory" href="indicator_factory.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">charting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="custom_indicators/index.html">custom_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_indicators.html">basic_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_data_generator.html">chart_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_indicators.html">chart_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting_constants.html">charting_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charts.html">charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder.html">highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder_code_generator.html">highcharts_builder_code_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_charting_document_generator.html">highcharts_charting_document_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_data_generator.html">highcharts_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indicator_factory.html">indicator_factory</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">talib_function_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">charting</a> &raquo;</li>
+      
+    <li>talib_function_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/charting/talib_function_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.charting.talib_function_generator">
+<span id="talib-function-generator"></span><h1>talib_function_generator<a class="headerlink" href="#module-ctxalgolib.charting.talib_function_generator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.charting.talib_function_generator.IndicatorTemplate">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.talib_function_generator.</code><code class="descname">IndicatorTemplate</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.IndicatorTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.charting.talib_function_generator.IndicatorTemplate.momentum_specs">
+<code class="descname">momentum_specs</code><em class="property"> = {'MACD': ['macdhist']}</em><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.IndicatorTemplate.momentum_specs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.talib_function_generator.IndicatorTemplate.drawing_styles">
+<code class="descname">drawing_styles</code><em class="property"> = {'SAR': [{'type': 'scatter'}], 'MACD': [{'color': 'blue', 'type': 'line'}, {'color': 'red', 'type': 'line'}, {'color': 'green', 'type': 'column'}]}</em><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.IndicatorTemplate.drawing_styles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.talib_function_generator.IndicatorTemplate.get_info">
+<code class="descname">get_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.IndicatorTemplate.get_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.talib_function_generator.IndicatorTemplate.get_parameters">
+<code class="descname">get_parameters</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.IndicatorTemplate.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the parameters from current indicator template.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.talib_function_generator.IndicatorTemplate.get_normalized_function_name">
+<em class="property">static </em><code class="descname">get_normalized_function_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.IndicatorTemplate.get_normalized_function_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.talib_function_generator.</code><code class="descname">TalibFunctionGenerator</code><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator.function_list">
+<code class="descname">function_list</code><em class="property"> = &quot;\n=Overlap\nBBANDS               Bollinger Bands\nDEMA                 Double Exponential Moving Average\nEMA                  Exponential Moving Average\nHT_TRENDLINE         Hilbert Transform - Instantaneous Trendline\nKAMA                 Kaufman Adaptive Moving Average\nMA                   Moving average\nMAMA                 MESA Adaptive Moving Average\nMAVP                 Moving average with variable period\nMIDPOINT             MidPoint over period\nMIDPRICE             Midpoint Price over period\nSAR                  Parabolic SAR\nSAREXT               Parabolic SAR - Extended\nSMA                  Simple Moving Average\nT3                   Triple Exponential Moving Average (T3)\nTEMA                 Triple Exponential Moving Average\nTRIMA                Triangular Moving Average\nWMA                  Weighted Moving Average\n\n=Momentum\nADX                  Average Directional Movement Index\nADXR                 Average Directional Movement Index Rating\nAPO                  Absolute Price Oscillator\nAROON                Aroon\nAROONOSC             Aroon Oscillator\nBOP                  Balance Of Power\nCCI                  Commodity Channel Index\nCMO                  Chande Momentum Oscillator\nDX                   Directional Movement Index\nMACD                 Moving Average Convergence/Divergence\nMACDEXT              MACD with controllable MA type\nMACDFIX              Moving Average Convergence/Divergence Fix 12/26\nMFI                  Money Flow Index\nMINUS_DI             Minus Directional Indicator\nMINUS_DM             Minus Directional Movement\nMOM                  Momentum\nPLUS_DI              Plus Directional Indicator\nPLUS_DM              Plus Directional Movement\nPPO                  Percentage Price Oscillator\nROC                  Rate of change : ((price/prevPrice)-1)*100\nROCP                 Rate of change Percentage: (price-prevPrice)/prevPrice\nROCR                 Rate of change ratio: (price/prevPrice)\nROCR100              Rate of change ratio 100 scale: (price/prevPrice)*100\nRSI                  Relative Strength Index\nSTOCH                Stochastic\nSTOCHF               Stochastic Fast\nSTOCHRSI             Stochastic Relative Strength Index\nTRIX                 1-day Rate-Of-Change (ROC) of a Triple Smooth EMA\nULTOSC               Ultimate Oscillator\nWILLR                Williams' %R\n\n=Volume\nAD                   Chaikin A/D Line\nADOSC                Chaikin A/D Oscillator\nOBV                  On Balance Volume\n\n=Volatility\nATR                  Average True Range\nNATR                 Normalized Average True Range\nTRANGE               True Range\n\n=Price Transform\nAVGPRICE             Average Price\nMEDPRICE             Median Price\nTYPPRICE             Typical Price\nWCLPRICE             Weighted Close Price\n\n=Cycle\nHT_DCPERIOD          Hilbert Transform - Dominant Cycle Period\nHT_DCPHASE           Hilbert Transform - Dominant Cycle Phase\nHT_PHASOR            Hilbert Transform - Phasor Components\nHT_SINE              Hilbert Transform - SineWave\nHT_TRENDMODE         Hilbert Transform - Trend vs Cycle Mode\n\n=Pattern Recognition\nCDL2CROWS            Two Crows\nCDL3BLACKCROWS       Three Black Crows\nCDL3INSIDE           Three Inside Up/Down\nCDL3LINESTRIKE       Three-Line Strike\nCDL3OUTSIDE          Three Outside Up/Down\nCDL3STARSINSOUTH     Three Stars In The South\nCDL3WHITESOLDIERS    Three Advancing White Soldiers\nCDLABANDONEDBABY     Abandoned Baby\nCDLADVANCEBLOCK      Advance Block\nCDLBELTHOLD          Belt-hold\nCDLBREAKAWAY         Breakaway\nCDLCLOSINGMARUBOZU   Closing Marubozu\nCDLCONCEALBABYSWALL  Concealing Baby Swallow\nCDLCOUNTERATTACK     Counterattack\nCDLDARKCLOUDCOVER    Dark Cloud Cover\nCDLDOJI              Doji\nCDLDOJISTAR          Doji Star\nCDLDRAGONFLYDOJI     Dragonfly Doji\nCDLENGULFING         Engulfing Pattern\nCDLEVENINGDOJISTAR   Evening Doji Star\nCDLEVENINGSTAR       Evening Star\nCDLGAPSIDESIDEWHITE  Up/Down-gap side-by-side white lines\nCDLGRAVESTONEDOJI    Gravestone Doji\nCDLHAMMER            Hammer\nCDLHANGINGMAN        Hanging Man\nCDLHARAMI            Harami Pattern\nCDLHARAMICROSS       Harami Cross Pattern\nCDLHIGHWAVE          High-Wave Candle\nCDLHIKKAKE           Hikkake Pattern\nCDLHIKKAKEMOD        Modified Hikkake Pattern\nCDLHOMINGPIGEON      Homing Pigeon\nCDLIDENTICAL3CROWS   Identical Three Crows\nCDLINNECK            In-Neck Pattern\nCDLINVERTEDHAMMER    Inverted Hammer\nCDLKICKING           Kicking\nCDLKICKINGBYLENGTH   Kicking - bull/bear determined by the longer marubozu\nCDLLADDERBOTTOM      Ladder Bottom\nCDLLONGLEGGEDDOJI    Long Legged Doji\nCDLLONGLINE          Long Line Candle\nCDLMARUBOZU          Marubozu\nCDLMATCHINGLOW       Matching Low\nCDLMATHOLD           Mat Hold\nCDLMORNINGDOJISTAR   Morning Doji Star\nCDLMORNINGSTAR       Morning Star\nCDLONNECK            On-Neck Pattern\nCDLPIERCING          Piercing Pattern\nCDLRICKSHAWMAN       Rickshaw Man\nCDLRISEFALL3METHODS  Rising/Falling Three Methods\nCDLSEPARATINGLINES   Separating Lines\nCDLSHOOTINGSTAR      Shooting Star\nCDLSHORTLINE         Short Line Candle\nCDLSPINNINGTOP       Spinning Top\nCDLSTALLEDPATTERN    Stalled Pattern\nCDLSTICKSANDWICH     Stick Sandwich\nCDLTAKURI            Takuri (Dragonfly Doji with very long lower shadow)\nCDLTASUKIGAP         Tasuki Gap\nCDLTHRUSTING         Thrusting Pattern\nCDLTRISTAR           Tristar Pattern\nCDLUNIQUE3RIVER      Unique 3 River\nCDLUPSIDEGAP2CROWS   Upside Gap Two Crows\nCDLXSIDEGAP3METHODS  Upside/Downside Gap Three Methods\n&quot;</em><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator.function_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator.get_functions">
+<code class="descname">get_functions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator.get_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator.get_group_functions">
+<code class="descname">get_group_functions</code><span class="sig-paren">(</span><em>group_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.talib_function_generator.TalibFunctionGenerator.get_group_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../data_imports/index.html" class="btn btn-neutral float-right" title="data_imports" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="indicator_factory.html" class="btn btn-neutral" title="indicator_factory" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

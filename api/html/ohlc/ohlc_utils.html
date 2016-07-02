@@ -1,0 +1,1154 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ohlc_utils &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="ohlc" href="index.html"/>
+        <link rel="next" title="periodicity" href="periodicity.html"/>
+        <link rel="prev" title="ohlc_spec_utils" href="ohlc_spec_utils.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_ohlc.html">abstract_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exright.html">exright</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_generator.html">ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_logger.html">ohlc_logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_merger.html">ohlc_merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer.html">ohlc_reader_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ohlc_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="periodicity.html">periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_days.html">trading_days</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ohlc</a> &raquo;</li>
+      
+    <li>ohlc_utils</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/ohlc/ohlc_utils.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ohlc.ohlc_utils">
+<span id="ohlc-utils"></span><h1>ohlc_utils<a class="headerlink" href="#module-ctxalgolib.ohlc.ohlc_utils" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.CJsonEncoder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">CJsonEncoder</code><span class="sig-paren">(</span><em>skipkeys=False</em>, <em>ensure_ascii=True</em>, <em>check_circular=True</em>, <em>allow_nan=True</em>, <em>sort_keys=False</em>, <em>indent=None</em>, <em>separators=None</em>, <em>encoding='utf-8'</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.CJsonEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">json.encoder.JSONEncoder</span></code></p>
+<p>Constructor for JSONEncoder, with sensible defaults.</p>
+<p>If skipkeys is false, then it is a TypeError to attempt
+encoding of keys that are not str, int, long, float or None.  If
+skipkeys is True, such items are simply skipped.</p>
+<p>If <em>ensure_ascii</em> is true (the default), all non-ASCII
+characters in the output are escaped with uXXXX sequences,
+and the results are str instances consisting of ASCII
+characters only.  If ensure_ascii is False, a result may be a
+unicode instance.  This usually happens if the input contains
+unicode strings or the <em>encoding</em> parameter is used.</p>
+<p>If check_circular is true, then lists, dicts, and custom encoded
+objects will be checked for circular references during encoding to
+prevent an infinite recursion (which would cause an OverflowError).
+Otherwise, no such check takes place.</p>
+<p>If allow_nan is true, then NaN, Infinity, and -Infinity will be
+encoded as such.  This behavior is not JSON specification compliant,
+but is consistent with most JavaScript based encoders and decoders.
+Otherwise, it will be a ValueError to encode such floats.</p>
+<p>If sort_keys is true, then the output of dictionaries will be
+sorted by key; this is useful for regression tests to ensure
+that JSON serializations can be compared on a day-to-day basis.</p>
+<p>If indent is a non-negative integer, then JSON array
+elements and object members will be pretty-printed with that
+indent level.  An indent level of 0 will only insert newlines.
+None is the most compact representation.  Since the default
+item separator is &#8216;, &#8216;,  the output might include trailing
+whitespace when indent is specified.  You can use
+separators=(&#8216;,&#8217;, &#8216;: &#8216;) to avoid this.</p>
+<p>If specified, separators should be a (item_separator, key_separator)
+tuple.  The default is (&#8216;, &#8216;, &#8216;: &#8216;).  To get the most compact JSON
+representation you should specify (&#8216;,&#8217;, &#8216;:&#8217;) to eliminate whitespace.</p>
+<p>If specified, default is a function that gets called for objects
+that can&#8217;t otherwise be serialized.  It should return a JSON encodable
+version of the object or raise a <code class="docutils literal"><span class="pre">TypeError</span></code>.</p>
+<p>If encoding is not None, then all input strings will be
+transformed into unicode using that encoding prior to JSON-encoding.
+The default is UTF-8.</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.default">
+<code class="descname">default</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.encode">
+<code class="descname">encode</code><span class="sig-paren">(</span><em>o</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a JSON string representation of a Python data structure.</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">JSONEncoder</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">({</span><span class="s">&quot;foo&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;baz&quot;</span><span class="p">]})</span>
+<span class="go">&#39;{&quot;foo&quot;: [&quot;bar&quot;, &quot;baz&quot;]}&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.item_separator">
+<code class="descname">item_separator</code><em class="property"> = ', '</em><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.item_separator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.iterencode">
+<code class="descname">iterencode</code><span class="sig-paren">(</span><em>o</em>, <em>_one_shot=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.iterencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode the given object and yield each string
+representation as available.</p>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">JSONEncoder</span><span class="p">()</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">bigobject</span><span class="p">):</span>
+    <span class="n">mysocket</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.key_separator">
+<code class="descname">key_separator</code><em class="property"> = ': '</em><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.CJsonEncoder.key_separator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">OHLC</code><span class="sig-paren">(</span><em>dates</em>, <em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em>, <em>volumes</em>, <em>amounts=None</em>, <em>dimensions=None</em>, <em>id_=''</em>, <em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="abstract_ohlc.html#ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc" title="ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc</span></code></a></p>
+<p>Class that represents Open, High, Low, Close value for a time series</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.dimensions">
+<code class="descname">dimensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the set of dimensions in current OHLC.
+:return: [string], the set of dimension names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.init_dimensions">
+<code class="descname">init_dimensions</code><span class="sig-paren">(</span><em>dimensions</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.init_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.add_dimension">
+<code class="descname">add_dimension</code><span class="sig-paren">(</span><em>name</em>, <em>data</em>, <em>default_generator=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.add_dimension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_instance">
+<code class="descname">get_instance</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_instance">
+<code class="descname">get_empty_instance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.sub_range">
+<code class="descname">sub_range</code><span class="sig-paren">(</span><em>start</em>, <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.sub_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.map">
+<code class="descname">map</code><span class="sig-paren">(</span><em>price_func</em>, <em>date_func=None</em>, <em>volume_func=None</em>, <em>amount_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a mapped OHLC.
+Parameters:</p>
+<blockquote>
+<div>price_func: A function pointer float-&gt;float. The function to change OHLC values.
+date_func: A function pointer datetime-&gt;datetime. The function to change dates.
+volume_func: A function pointer float-&gt;float. The function to change volumes.
+amount_func: A function pointer float-&gt;float. The function to change amounts.</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>An OHLC object with its values mapped.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.values">
+<code class="descname">values</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.dated_values">
+<code class="descname">dated_values</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.dated_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.bar_at_date">
+<code class="descname">bar_at_date</code><span class="sig-paren">(</span><em>bar_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.bar_at_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the 0-based bar position from current OHLC at given date.
+&#64;param bar_date: datetime, the date on which the bar position should be returned.
+&#64;return: 0-based bar position. None if no such date is found in current OHLC.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.to_csv_string">
+<code class="descname">to_csv_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.to_csv_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output current OHLC into a string with csv format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.to_csv_string2">
+<code class="descname">to_csv_string2</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>extra_date_and_time=False</em>, <em>with_open_interest=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.to_csv_string2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output current OHLC into a string with csv format.
+:param instrument_id: string, the instrument id. It is put in front of each row if it is not None.
+:param with_open_interest: boolean, if True, generate open interest information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.save_to_file">
+<code class="descname">save_to_file</code><span class="sig-paren">(</span><em>file_name</em>, <em>instrument_id=None</em>, <em>extra_date_and_time=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.save_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save current ohlc to file.
+:param file_name: string, the name of the file to save data to.
+:param instrument_id, string, the ID of the instrument to save in file.
+:param extra_date_and_time: bool, if True, include extra fields for date and time.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.empty">
+<em class="property">static </em><code class="descname">empty</code><span class="sig-paren">(</span><em>id_=''</em>, <em>name=''</em>, <em>additional_dimensions=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an empty ohlc.
+:param <a href="#id1"><span class="problematic" id="id2">id_</span></a>: string, id of the security.
+:param name: string, name of the security.
+:param additional_dimensions: [string], the list of additional dimensions to include in current ohlc.</p>
+<blockquote>
+<div>Additional means the dimensions besides dates, opens, highs, lows, closes, volumes, amounts.</div></blockquote>
+<p>:return OHLC, an empty ohlc.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc">
+<em class="property">static </em><code class="descname">get_empty_ohlc</code><span class="sig-paren">(</span><em>id_=''</em>, <em>name=''</em>, <em>additional_dimensions=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an empty ohlc.
+:param <a href="#id3"><span class="problematic" id="id4">id_</span></a>: string, id of the security.
+:param name: string, name of the security.
+:param additional_dimensions: [string], the list of additional dimensions to include in current ohlc.</p>
+<blockquote>
+<div>Additional means the dimensions besides dates, opens, highs, lows, closes, volumes, amounts.</div></blockquote>
+<p>:return OHLC, an empty ohlc.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions">
+<em class="property">static </em><code class="descname">get_empty_ohlc_from_dimensions</code><span class="sig-paren">(</span><em>id_=''</em>, <em>name=''</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an empty ohlc object with the required dimensions.
+:param <a href="#id5"><span class="problematic" id="id6">id_</span></a>: string, the instrument id.
+:param name: string, the name of the instrument.
+:param with_open_interests: boolean, if True, include the attribute for open interests.
+:param order_book_level: int, non-negative, indicates the level of order book. 0 means no order book.
+:param dominant: boolean, if True, include the attribute for dominant contract switching.
+:param profits: boolean, if True, include the attribute for profits series.
+:return: OHLC, the created empty ohlc object.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_single_bar_ohlc">
+<em class="property">static </em><code class="descname">get_single_bar_ohlc</code><span class="sig-paren">(</span><em>dt_</em>, <em>open_</em>, <em>high_</em>, <em>low_</em>, <em>close_</em>, <em>volume_</em>, <em>amount_</em>, <em>id_=''</em>, <em>name_=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_single_bar_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an OHLC containing a single bar.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.as_json">
+<code class="descname">as_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.as_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.as_dict">
+<code class="descname">as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.from_json">
+<em class="property">static </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.from_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>t</em>, <em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append a single timestamped value into current.
+The timestamp is put in self.dates.
+The value is put into self.closes.
+:param t: datetime, the timestamp.
+:param v: float, the value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.append_bar">
+<code class="descname">append_bar</code><span class="sig-paren">(</span><em>bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.append_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append a new bar at the end of current ohlc.
+:param bar: dict{string: object}, the new bar to be appended to the end of current ohlc.</p>
+<blockquote>
+<div>Keys are dimension names, values are data.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.append_bar_from_other">
+<code class="descname">append_bar_from_other</code><span class="sig-paren">(</span><em>bar_index</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.append_bar_from_other" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append the bar_index-th bar from other to current ohlc.
+:param bar_index: int, 0-based bar index from other.
+:param other: AbstractOHLC, the other ohlc. other must have the same attributes as current ohlc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.duplicate_last_bar">
+<code class="descname">duplicate_last_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.duplicate_last_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicate the last bar in current ohlc. No effect if current ohlc is empty.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.extend">
+<code class="descname">extend</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend the other ohlc into current.
+:param other: AbstractOhlc. The ohlc that is to be appended to current.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_bar">
+<code class="descname">get_bar</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar at index.
+:param index: int, bar index.
+:return bar: dict{string: object}, the new bar to be appended to the end of current ohlc.</p>
+<blockquote>
+<div>Keys are dimension names, values are data.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_default_value">
+<code class="descname">get_default_value</code><span class="sig-paren">(</span><em>dimension</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_default_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default value for the given dimension.
+:param dimension: string, dimension name.
+:return: object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_dimension_data">
+<code class="descname">get_dimension_data</code><span class="sig-paren">(</span><em>should_copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_dimension_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all dimension data along with their dimension names.
+:param should_copy: boolean, if True, shallow copy arrays.
+:return: dict{string: [object]}, keys are dimension names, values are dimension data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_dimensions">
+<code class="descname">get_dimensions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dimensions.
+:return: set of string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_end">
+<code class="descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the last available timestamp.
+:return datetime.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_order_book_level">
+<code class="descname">get_order_book_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the order book level in current OHLC.
+:return: int, non-negative integer. 0 means no order book data is available in current OHLC.</p>
+<blockquote>
+<div>1~5 means the corresponding level book is available in current OHLC.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_start">
+<code class="descname">get_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the first available timestamp.
+:return datetime.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.has_dimension">
+<code class="descname">has_dimension</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.has_dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current OHLC have the given dimension name?
+:param name: string, name of the dimension.
+:return: boolean, True if current OHLC contain the given dimension, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.pop_bar">
+<code class="descname">pop_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.pop_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.project_by_dates">
+<code class="descname">project_by_dates</code><span class="sig-paren">(</span><em>dates</em>, <em>fill_with_none=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.project_by_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new OHLC which contains data on dates which are at dates. If there is no data available from
+current OHLC on some of the required dates, use None to fill in the missing parts.
+:param dates: [datetime], the set of timestamps to project.
+:param fill_with_none: boolean, if True, use None to fill in missing parts.
+:return same as current, a new ohlc object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.set_id">
+<code class="descname">set_id</code><span class="sig-paren">(</span><em>sid</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.set_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.set_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.sub_range_by_date">
+<code class="descname">sub_range_by_date</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.sub_range_by_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sub range of current OHLC between start_date (inclusive) and end_date (exclusive).
+:param start_date: datetime, start timestamp. If None, start from the first time point.
+:param end_date: datetime, end timestamp. If None, end until the last time point.
+:return: same as current, the sub range ohlc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.sub_range_by_date2">
+<code class="descname">sub_range_by_date2</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.sub_range_by_date2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sub range of current OHLC between start_date (inclusive) and end_date (inclusive).
+:param start_date: datetime, start timestamp. If None, start from the first time point.
+:param end_date: datetime, end timestamp. If None, end until the last time point.
+:return: same as current, the sub range ohlc.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">OhlcCsv</code><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.get_date_string_from_datetime">
+<code class="descname">get_date_string_from_datetime</code><span class="sig-paren">(</span><em>dt</em>, <em>separator=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.get_date_string_from_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.get_time_string_from_datetime">
+<code class="descname">get_time_string_from_datetime</code><span class="sig-paren">(</span><em>dt</em>, <em>separator=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.get_time_string_from_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.get_datetime_string_from_datetime">
+<code class="descname">get_datetime_string_from_datetime</code><span class="sig-paren">(</span><em>dt</em>, <em>date_separator=None</em>, <em>time_separator=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.get_datetime_string_from_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.default_line_parser1">
+<em class="property">static </em><code class="descname">default_line_parser1</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.default_line_parser1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.default_line_parser2">
+<em class="property">static </em><code class="descname">default_line_parser2</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.default_line_parser2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.default_line_parser3">
+<em class="property">static </em><code class="descname">default_line_parser3</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.default_line_parser3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.jinmofang_output_data_line_parser">
+<em class="property">static </em><code class="descname">jinmofang_output_data_line_parser</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.jinmofang_output_data_line_parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.dafuweng_future_detail_data_line_parser">
+<em class="property">static </em><code class="descname">dafuweng_future_detail_data_line_parser</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.dafuweng_future_detail_data_line_parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.index_tick_line_parser">
+<code class="descname">index_tick_line_parser</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.index_tick_line_parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.ohlc_with_open_close_volume_line_parser">
+<code class="descname">ohlc_with_open_close_volume_line_parser</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.ohlc_with_open_close_volume_line_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>The line contains nine parts: datetime, price, volume, open_volume, close_volume.
+:param line:
+:return:</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.load_from_string">
+<em class="property">static </em><code class="descname">load_from_string</code><span class="sig-paren">(</span><em>data</em>, <em>line_parser</em>, <em>has_header=False</em>, <em>sid=''</em>, <em>sname=''</em>, <em>time_delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.load_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load Ohlc from string.
+Parameters:</p>
+<blockquote>
+<div><p>data: string, the data in string.
+line_parser: a function pointer: string -&gt; (timestamp, open, high, low, close, volume, amount).</p>
+<blockquote>
+<div>The input to the function is a line read from the file. The output is a tuple defining a bar.</div></blockquote>
+<dl class="docutils">
+<dt>has_header: boolean, True means the input file has a single line as header. The header line</dt>
+<dd>will be ignored.</dd>
+</dl>
+<p>sid: string, the id of the security.
+sname: string, the name of the security.
+time_delta: timedelta, if not None, add this delta to all timestamps.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.load">
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>path</em>, <em>line_parser</em>, <em>has_header=False</em>, <em>sid=''</em>, <em>sname=''</em>, <em>time_delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load Ohlc from data path.
+Parameters:</p>
+<blockquote>
+<div><p>path: string, the path of the data to load.
+line_parser: a function pointer: string -&gt; (timestamp, open, high, low, close, volume, amount).</p>
+<blockquote>
+<div>The input to the function is a line read from the file. The output is a tuple defining a bar.</div></blockquote>
+<dl class="docutils">
+<dt>has_header: boolean, True means the input file has a single line as header. The header line</dt>
+<dd>will be ignored.</dd>
+</dl>
+<p>sid: string, the id of the security.
+sname: string, the name of the security.
+time_delta: timedelta, if not None, add this delta to all timestamps.</p>
+</div></blockquote>
+<p>Return: OHLC. The loaded ohlc object.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcCsv.write">
+<em class="property">static </em><code class="descname">write</code><span class="sig-paren">(</span><em>ohlc</em>, <em>path</em>, <em>append=True</em>, <em>header=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcCsv.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write ohlc into file.
+:param ohlc: OHLC, the ohlc object to write to file.
+:param path: string, path of the file.
+:param append: boolean, If True, append to existing file.
+:param header: boolean, If True, include a header.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcComparer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">OhlcComparer</code><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcComparer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcComparer.compare">
+<code class="descname">compare</code><span class="sig-paren">(</span><em>ohlc1</em>, <em>ohlc2</em>, <em>minimal_bar_height=0.01</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcComparer.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare ohlc1 and ohlc2 and return the comparison report.
+Only need to compare opens, highs, lows, closes and volumes.
+Parameters:</p>
+<blockquote>
+<div>ohlc1: OHLC, the first ohlc object.
+ohlc2: OHLC, the second ohlc object.
+minimal_bar_height: float, the minimal bar height, used in case if some ohlc bar has height 0.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><dl class="first last docutils">
+<dt>dict from string to objects. Keys include:</dt>
+<dd>missing_bars1: int,
+missing_bars2: int,
+common_bars: int,
+same_open_bars: int,
+same_high_bars: int,
+same_low_bars: int,
+same_close_bars: int,
+same_volume_bars: int,
+bar_distances: [float],
+correlation_between_opens: float,
+correlation_between_highs: float,
+correlation_between_lows: float,
+correlation_between_closes: float,
+correlation_between_volumes: float</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcToFile">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">OhlcToFile</code><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcToFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcToFile.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>ohlc</em>, <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcToFile.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write ohlc to file.
+:param ohlc: OHLC, the ohlc to write to file.
+:param path: string, the path of the file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcToFile.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcToFile.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read ohlc from file.
+:param path: string, the path of the file.
+:return: OHLC, the read OHLC object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">OhlcUtils</code><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_ohlc_with_no_missing_bar">
+<em class="property">static </em><code class="descname">get_ohlc_with_no_missing_bar</code><span class="sig-paren">(</span><em>ohlc</em>, <em>period</em>, <em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_ohlc_with_no_missing_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new ohlc which include the data from the given ohlc object, and in case that
+the given ohlc have missing bars, generate those bars by cloning from the last non-missing bar.
+:param ohlc: OHLC, the OHLC object.
+:param period: Periodicity, the periodicity of the ohlc object.
+:param market_periods: [(start_time, end_time)], both start_time and end_time is of type time.</p>
+<blockquote>
+<div>This array defines the trading periods in a trading day.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">OHLC. The new ohlc with no missing bars.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_volatility_ohlc_with_no_missing_bar">
+<em class="property">static </em><code class="descname">get_volatility_ohlc_with_no_missing_bar</code><span class="sig-paren">(</span><em>ohlc</em>, <em>volatility</em>, <em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_volatility_ohlc_with_no_missing_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new ohlc which ends at the end of market periods. The way to do it is to change the
+timestamp of the last bar in the ohlc to the end of the market period. Still return a new OHLC though.
+:param ohlc: OHLC, volatility-based ohlc.
+:param volatility: int, the volatility.
+:param market_periods: [(start_time, end_time)], both start_time and end_time is of type time.</p>
+<blockquote>
+<div>This array defines the trading periods in a trading day.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">OHLC. The new ohlc with no missing bars.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils.flip">
+<em class="property">static </em><code class="descname">flip</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils.flip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a flipped ohlc.
+:param ohlc: OHLC, the original ohlc.
+:return: OHLC, the flipped ohlc.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils.randomize">
+<em class="property">static </em><code class="descname">randomize</code><span class="sig-paren">(</span><em>ohlc</em>, <em>percent=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils.randomize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add random noise in all the prices in ohlc. A percentage of noise is added to every of the open, high, low and
+close values. After that, maintain the property that high &gt;= max(low, open, close), low &lt;= min(high, open, close).
+:param ohlc: OHLC, the ohlc object.
+:param percent: float, the percent of noise to add.
+:return: OHLC, new ohlc with random noise added.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_end_bar">
+<em class="property">static </em><code class="descname">get_end_bar</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar</em>, <em>timespan</em>, <em>last_bar_of_day=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_end_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the smallest bar end_bar such that:
+ohlc.dates[end_bar] - ohlc.dates[start_bar] &gt;= timespan.
+If there is no such end_bar, return None.
+:param ohlc: OHLC, the ohlc object.
+:param start_bar: int, 0-based index in ohlc.
+:param timespan: timedelta, the timespan which defined the end bar.
+:param last_bar_of_day: bool, if True, end_bar should be the last bar of a trading day.</p>
+<blockquote>
+<div>If last_bar_of_day is True, but there is no end of day bar on that particular day,
+(may due to missing data) then return the last bar of that day.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int, 0-based the end_bar.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_bars_in_day">
+<em class="property">static </em><code class="descname">get_bars_in_day</code><span class="sig-paren">(</span><em>ohlc</em>, <em>days_to_check=5</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils.get_bars_in_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the average number of bars in ohlc in a calendar day.
+:param ohlc: OHLC, the ohlc object.
+:param days_to_check: int, the number of days (from the beginning of ohlc) to check.
+:return: int, the rounded average number of bars in a day inside ohlc.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcUtils.period_from_ohlc">
+<em class="property">static </em><code class="descname">period_from_ohlc</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcUtils.period_from_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Guess the best period from ohlc.
+:param ohlc: OHLC, the ohlc object.
+:return Periodicity: the guessed period of ohlc. If cannot decide, return None.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">AbstractOhlcSynchronizer</code><span class="sig-paren">(</span><em>fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Synchronizer which syncs one ohlc&#8217;s data into another ohlc.</p>
+<p>Initialize current.
+:param fields: [string], the list of data attributes that should be synchronized.</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer.synchronize_bar">
+<code class="descname">synchronize_bar</code><span class="sig-paren">(</span><em>target</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer.synchronize_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize source bar y into target bar z and generate a new bar.
+Synchronization is performed as:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>using source.open as the final open.</li>
+<li>using max(source.high, target.high) as the final high.</li>
+<li>using min(source.low, target.low) as the final low.</li>
+<li>using source.close as the final close.</li>
+<li>using source.volume + target.volume as the final volume.</li>
+<li>using source.amount + target.amount as the final amount.</li>
+<li>using target&#8217; timestamp as the final timestamp.</li>
+<li>using target.open_interest as the final open interest (if any).</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>target</strong> &#8211; Bar, the target bar.</li>
+<li><strong>source</strong> &#8211; Bar, the source bar.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return Bar:</th><td class="field-body"><p class="first last">a new, synced bar.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer.synchronize">
+<code class="descname">synchronize</code><span class="sig-paren">(</span><em>target</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer.synchronize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize data from source ohlc into target ohlc.
+:param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself.
+:param source: OHLC, the source ohlc, the ohlc which provides new data.
+:return Bar, the possible partial bar from target (which is target&#8217;s last bar as well).</p>
+<blockquote>
+<div>If no such partial bar in target, return None.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer.insert_ohlc">
+<code class="descname">insert_ohlc</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>target_bar</em>, <em>source_begin_bar</em>, <em>source_end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer.insert_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>insert part of source ohlc into target ohlc
+:param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself
+:param source: OHLC, the source ohlc, the ohlc which provides new data.
+:param target_bar: int, the place to insert the target part (just before target_bar)
+:param source_begin_bar: int, the start bar of the part of the target ohlc (inclusive)
+:param source_end_bar: int, the end bar of the part of the target ohlc (inclusive)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">OhlcSynchronizer</code><span class="sig-paren">(</span><em>period</em>, <em>fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer" title="ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer</span></code></a></p>
+<p>Synchronizer for time-based ohlc.</p>
+<p>Initialize current.
+:param period: Periodicity, the period of both source and target ohlc.
+:param fields: [string], the list of data attributes that should be synchronized.</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.synchronize">
+<code class="descname">synchronize</code><span class="sig-paren">(</span><em>target</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.synchronize" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Synchronize the data from source ohlc into target ohlc. The synchronization is performed as follows:</dt>
+<dd><ol class="first last arabic">
+<li><p class="first">For a bar x in source, if its timestamp is not in target, then add x in target in the proper position.
+If the timestamp of bar x also exists in target, ignore bar x.</p>
+</li>
+<li><p class="first">The last bar y in source may not end at the proper timestamp (as given in OhlcMerger.get_end_timestamps).
+If this happens, and there is a bar z in target which ends at the proper timestamp for bar y, then
+change bar z in place by (calling the synchronize_bar method): (we merge these two bars together)</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>using y.open as the final open.</li>
+<li>using max(y.high, z.high) as the final high.</li>
+<li>using min(y.low, z.low) as the final low.</li>
+<li>using z.close as the final close.</li>
+<li>using y.volume + z.volume as the final volume.</li>
+<li>using y.amount + z.amount as the final amount.</li>
+<li>using z&#8217; timestamp as the final timestamp.</li>
+<li>using z.open_interest as the final open interest (if any).</li>
+</ol>
+</div></blockquote>
+<p>If there is no such z bar from target (in such a case, the last timestamp from target must &lt; y.timestamp),
+then return the y bar as a Bar object. Otherwise, return None.</p>
+</li>
+</ol>
+</dd>
+<dt>Notes:</dt>
+<dd><ol class="first last arabic simple">
+<li>After the synchronization, change the length property of source.</li>
+<li>The synchronization requires inserting some sub-array into the arrays (sometimes insertion happens
+in the middle of the target ohlc arrays) of the target ohlc object, do it efficiently.</li>
+</ol>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; OHLC, the target ohlc, the ohlc which will have data inserted into itself.</li>
+<li><strong>source</strong> &#8211; OHLC, the source ohlc, the ohlc which provides new data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return Bar, the possible partial bar from source (which is source&#8217;s last bar as well).</dt>
+<dd>If no such partial bar in source, return None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.get_bar">
+<code class="descname">get_bar</code><span class="sig-paren">(</span><em>source</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.get_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the bar from the source ohlc
+:param: source: OHLC, the source ohlc, the ohlc which provides new data
+:param: index: int, the bar index  we need to get
+:return Bar, the bar we got according to the fields</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.set_bar">
+<code class="descname">set_bar</code><span class="sig-paren">(</span><em>target</em>, <em>index</em>, <em>bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.set_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>set a bar in target according to the bar information
+:param: target: OHLC, the target ohlc, the ohlc which will have data inserted into itself
+:param: index: int, the bar index we need to set
+:param: bar: Bar, the bar contains the information we need to set</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.insert_ohlc">
+<code class="descname">insert_ohlc</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>target_bar</em>, <em>source_begin_bar</em>, <em>source_end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.insert_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>insert part of source ohlc into target ohlc
+:param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself
+:param source: OHLC, the source ohlc, the ohlc which provides new data.
+:param target_bar: int, the place to insert the target part (just before target_bar)
+:param source_begin_bar: int, the start bar of the part of the target ohlc (inclusive)
+:param source_end_bar: int, the end bar of the part of the target ohlc (inclusive)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.synchronize_bar">
+<code class="descname">synchronize_bar</code><span class="sig-paren">(</span><em>target</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcSynchronizer.synchronize_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize source bar y into target bar z and generate a new bar.
+Synchronization is performed as:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>using source.open as the final open.</li>
+<li>using max(source.high, target.high) as the final high.</li>
+<li>using min(source.low, target.low) as the final low.</li>
+<li>using source.close as the final close.</li>
+<li>using source.volume + target.volume as the final volume.</li>
+<li>using source.amount + target.amount as the final amount.</li>
+<li>using target&#8217; timestamp as the final timestamp.</li>
+<li>using target.open_interest as the final open interest (if any).</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>target</strong> &#8211; Bar, the target bar.</li>
+<li><strong>source</strong> &#8211; Bar, the source bar.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return Bar:</th><td class="field-body"><p class="first last">a new, synced bar.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">VolatilityOhlcSynchronizer</code><span class="sig-paren">(</span><em>fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer" title="ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_utils.AbstractOhlcSynchronizer</span></code></a></p>
+<p>Synchronizer for volatility-based ohlc.</p>
+<p>Initialize current.
+:param fields: [string], the list of data attributes that should be synchronized.</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.insert_ohlc">
+<code class="descname">insert_ohlc</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>target_bar</em>, <em>source_begin_bar</em>, <em>source_end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.insert_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>insert part of source ohlc into target ohlc
+:param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself
+:param source: OHLC, the source ohlc, the ohlc which provides new data.
+:param target_bar: int, the place to insert the target part (just before target_bar)
+:param source_begin_bar: int, the start bar of the part of the target ohlc (inclusive)
+:param source_end_bar: int, the end bar of the part of the target ohlc (inclusive)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.synchronize">
+<code class="descname">synchronize</code><span class="sig-paren">(</span><em>target</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.synchronize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize source ohlc into target. The synchronization is performed as follows:
+1. For a bar x in source, if its timestamp is not in target, then add x in target in the proper position.
+2. For a bar x in source, if its timestamp is already in target, ignore x.
+Notes: see the notes at OhlcSynchronizer.synchronize.
+:param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself.
+:param source: OHLC, the source ohlc, the ohlc which provides new data.
+:return Bar, always return None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.synchronize_bar">
+<code class="descname">synchronize_bar</code><span class="sig-paren">(</span><em>target</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.synchronize_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize source bar y into target bar z and generate a new bar.
+Synchronization is performed as:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>using source.open as the final open.</li>
+<li>using max(source.high, target.high) as the final high.</li>
+<li>using min(source.low, target.low) as the final low.</li>
+<li>using source.close as the final close.</li>
+<li>using source.volume + target.volume as the final volume.</li>
+<li>using source.amount + target.amount as the final amount.</li>
+<li>using target&#8217; timestamp as the final timestamp.</li>
+<li>using target.open_interest as the final open interest (if any).</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>target</strong> &#8211; Bar, the target bar.</li>
+<li><strong>source</strong> &#8211; Bar, the source bar.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return Bar:</th><td class="field-body"><p class="first last">a new, synced bar.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="periodicity.html" class="btn btn-neutral float-right" title="periodicity" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ohlc_spec_utils.html" class="btn btn-neutral" title="ohlc_spec_utils" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,959 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>speedparser &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="speedparser" href="index.html"/>
+        <link rel="next" title="xmlpprint" href="xmlpprint.html"/>
+        <link rel="prev" title="feedparsercompat" href="feedparsercompat.html"/> 
+
+  
+  <script src="../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../charting/index.html">charting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">data_imports</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">blog</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../poster/index.html">poster</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">speedparser</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="feedparsercompat.html">feedparsercompat</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">speedparser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xmlpprint.html">xmlpprint</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../unirest/index.html">unirest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../base_rss.html">base_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../base_site.html">base_site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../feedparser.html">feedparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_blog_hits.html">import_blog_hits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_from_xml.html">import_from_xml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../n163_blog_rss.html">n163_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../qq_blog_rss.html">qq_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../script.html">script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sina_blog_rss.html">sina_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sohu_blog_rss.html">sohu_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../coretx_data_import/index.html">coretx_data_import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../major_money/index.html">major_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../news/index.html">news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ohlc_imports/index.html">ohlc_imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otc/index.html">otc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tongdaxin/index.html">tongdaxin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capital_structure_importer.html">capital_structure_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_allocation_importer.html">company_allocation_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_capital_structures_importer.html">company_capital_structures_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_exrights_importer.html">company_exrights_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_financials_importer.html">company_financials_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_performance_importer.html">company_performance_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_report_dates_importer.html">company_report_dates_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_importer.html">data_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../east_money_plate_importer.html">east_money_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fund_holders_collector.html">fund_holders_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fundamental_expressions_calculator.html">fundamental_expressions_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hexun_plate_importer.html">hexun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hs300_stock_weights_retriever.html">hs300_stock_weights_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../if_trading_1s_importer.html">if_trading_1s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index_composite_stocks_and_weights_collector.html">index_composite_stocks_and_weights_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../large_stock_price_finder.html">large_stock_price_finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new_stock_collector.html">new_stock_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plate_importer.html">plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rar_folder_importer.html">rar_folder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rumian_blog_extracter.html">rumian_blog_extracter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../share_holder_importer.html">share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sina_plate_importer.html">sina_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sohu_plate_importer.html">sohu_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../state_company_collector.html">state_company_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_info_collector.html">stock_info_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_name_retriever.html">stock_name_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_plate_importer.html">stock_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_pool_conditioned_triggers.html">stock_pool_conditioned_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_pool_return_calculator.html">stock_pool_return_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_pool_trigger_calculator.html">stock_pool_trigger_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_share_holder_importer.html">stock_share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_trading_1d_importer.html">stock_trading_1d_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_trading_3s_importer.html">stock_trading_3s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sub_new_stock_open_board_calculator.html">sub_new_stock_open_board_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targeted_stock_expansion_collector.html">targeted_stock_expansion_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tianya_collector.html">tianya_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tonghuashun_plate_importer.html">tonghuashun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../yahoo_data_importer.html">yahoo_data_importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">data_imports</a> &raquo;</li>
+      
+          <li><a href="../index.html">blog</a> &raquo;</li>
+      
+          <li><a href="index.html">speedparser</a> &raquo;</li>
+      
+    <li>speedparser</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../sources/data_imports/blog/speedparser/speedparser.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.data_imports.blog.speedparser.speedparser">
+<span id="speedparser"></span><h1>speedparser<a class="headerlink" href="#module-ctxalgolib.data_imports.blog.speedparser.speedparser" title="Permalink to this headline">¶</a></h1>
+<p>An attempt to be able to parse 80% of feeds that feedparser would parse
+in about 1% of the time feedparser would parse them in.</p>
+<p>LIMITATIONS:</p>
+<blockquote>
+<div><ul class="simple">
+<li>result.feed.namespaces will only contain namespaces declaed on the
+root object, not those declared later in the file</li>
+<li>general lack of support for many types of feeds</li>
+<li>only things verified in test.py are guaranteed to be there;  many fields
+which were not considered important were skipped</li>
+</ul>
+</div></blockquote>
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.FakeCleaner">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">FakeCleaner</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.FakeCleaner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.FakeCleaner.clean_html">
+<code class="descname">clean_html</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.FakeCleaner.clean_html" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.IncompatibleFeedError">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">IncompatibleFeedError</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.IncompatibleFeedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.IncompatibleFeedError.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.IncompatibleFeedError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.IncompatibleFeedError.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.IncompatibleFeedError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.unicoder">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">unicoder</code><span class="sig-paren">(</span><em>txt</em>, <em>hint=None</em>, <em>strip=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.unicoder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.first_text">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">first_text</code><span class="sig-paren">(</span><em>xpath_result</em>, <em>default=''</em>, <em>encoding='utf-8'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.first_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.strip_outer_tag">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">strip_outer_tag</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.strip_outer_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strips the outer tag, if text starts with a tag.  Not entity aware;
+designed to quickly strip outer tags from lxml cleaner output.  Only
+checks for &lt;p&gt; and &lt;div&gt; outer tags.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.strip_namespace">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">strip_namespace</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.strip_namespace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.munge_author">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">munge_author</code><span class="sig-paren">(</span><em>author</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.munge_author" title="Permalink to this definition">¶</a></dt>
+<dd><p>If an author contains an email and a name in it, make sure it is in
+the format: &#8220;name (email)&#8221;.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.reverse_namespace_map">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">reverse_namespace_map</code><span class="sig-paren">(</span><em>nsmap</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.reverse_namespace_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.base_url">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">base_url</code><span class="sig-paren">(</span><em>root</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.base_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine the base url for a root element.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.full_href">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">full_href</code><span class="sig-paren">(</span><em>href</em>, <em>base=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.full_href" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.full_href_attribs">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">full_href_attribs</code><span class="sig-paren">(</span><em>attribs</em>, <em>base=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.full_href_attribs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.clean_ns">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">clean_ns</code><span class="sig-paren">(</span><em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.clean_ns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a tag and its namespace separately.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.xpath">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">xpath</code><span class="sig-paren">(</span><em>node</em>, <em>query</em>, <em>namespaces={}</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.xpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A safe xpath that only uses namespaces if available.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.innertext">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">innertext</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.innertext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the inner text of a node.  If a node has no sub elements, this
+is just node.text.  Otherwise, it&#8217;s node.text + sub-element-text +
+node.tail.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">SpeedParserEntriesRss20</code><span class="sig-paren">(</span><em>root</em>, <em>namespaces={}</em>, <em>version='rss20'</em>, <em>encoding='utf-8'</em>, <em>feed={}</em>, <em>cleaner=&lt;lxml.html.clean.Cleaner object&gt;</em>, <em>unix_timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.entry_xpath">
+<code class="descname">entry_xpath</code><em class="property"> = '/rss/item | /rss/channel/item'</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.entry_xpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.tag_map">
+<code class="descname">tag_map</code><em class="property"> = {'pubdate': 'date', 'creator': 'author', 'itunes:summary': 'content', 'itunes:author': 'author', 'media:thumbnail': 'media_thumbnail', 'guid': 'guid', 'media:content': 'media_content', 'id': 'guid', 'media:group': 'media_group', 'pubDate': 'date', 'title': 'title', 'comments': 'comments', 'enclosure': 'enclosures', 'content': 'content', 'itunes:image': 'media_thumbnail', 'updated': 'date', 'description': 'summary', 'gr:annotation': 'annotation', 'link': 'links', 'itunes:keywords': 'content', 'date': 'date', 'encoded': 'content', 'name': 'author', 'author': 'author', 'modified': 'date', 'media_thumbnail': 'media_thumbnail', 'summary': 'summary'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.tag_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_entry">
+<code class="descname">parse_entry</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>An attempt to parse pieces of an entry out w/o xpath, by looping
+over the entry root&#8217;s children and slotting them into the right places.
+This is going to be way messier than SpeedParserEntries, and maybe
+less cleanly usable, but it should be faster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_date">
+<code class="descname">parse_date</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_title">
+<code class="descname">parse_title</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_author">
+<code class="descname">parse_author</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_guid">
+<code class="descname">parse_guid</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_guid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_annotation">
+<code class="descname">parse_annotation</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='gr'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_annotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_links">
+<code class="descname">parse_links</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_comments">
+<code class="descname">parse_comments</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_comments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_content">
+<code class="descname">parse_content</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_summary">
+<code class="descname">parse_summary</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_media_content">
+<code class="descname">parse_media_content</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_media_content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_media_thumbnail">
+<code class="descname">parse_media_thumbnail</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_media_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_media_group">
+<code class="descname">parse_media_group</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_media_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_enclosures">
+<code class="descname">parse_enclosures</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.parse_enclosures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.entry_list">
+<code class="descname">entry_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20.entry_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">SpeedParserEntriesRdf</code><span class="sig-paren">(</span><em>root</em>, <em>namespaces={}</em>, <em>version='rss20'</em>, <em>encoding='utf-8'</em>, <em>feed={}</em>, <em>cleaner=&lt;lxml.html.clean.Cleaner object&gt;</em>, <em>unix_timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20" title="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20</span></code></a></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.entry_xpath">
+<code class="descname">entry_xpath</code><em class="property"> = '/rdf:RDF/item | /rdf:RDF/channel/item'</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.entry_xpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.entry_list">
+<code class="descname">entry_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.entry_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_annotation">
+<code class="descname">parse_annotation</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='gr'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_annotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_author">
+<code class="descname">parse_author</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_comments">
+<code class="descname">parse_comments</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_comments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_content">
+<code class="descname">parse_content</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_date">
+<code class="descname">parse_date</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_enclosures">
+<code class="descname">parse_enclosures</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_enclosures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_entry">
+<code class="descname">parse_entry</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>An attempt to parse pieces of an entry out w/o xpath, by looping
+over the entry root&#8217;s children and slotting them into the right places.
+This is going to be way messier than SpeedParserEntries, and maybe
+less cleanly usable, but it should be faster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_guid">
+<code class="descname">parse_guid</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_guid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_links">
+<code class="descname">parse_links</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_media_content">
+<code class="descname">parse_media_content</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_media_content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_media_group">
+<code class="descname">parse_media_group</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_media_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_media_thumbnail">
+<code class="descname">parse_media_thumbnail</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_media_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_summary">
+<code class="descname">parse_summary</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_title">
+<code class="descname">parse_title</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.parse_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.tag_map">
+<code class="descname">tag_map</code><em class="property"> = {'pubdate': 'date', 'creator': 'author', 'itunes:summary': 'content', 'itunes:author': 'author', 'media:thumbnail': 'media_thumbnail', 'guid': 'guid', 'media:content': 'media_content', 'id': 'guid', 'media:group': 'media_group', 'pubDate': 'date', 'title': 'title', 'comments': 'comments', 'enclosure': 'enclosures', 'content': 'content', 'itunes:image': 'media_thumbnail', 'updated': 'date', 'description': 'summary', 'gr:annotation': 'annotation', 'link': 'links', 'itunes:keywords': 'content', 'date': 'date', 'encoded': 'content', 'name': 'author', 'author': 'author', 'modified': 'date', 'media_thumbnail': 'media_thumbnail', 'summary': 'summary'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRdf.tag_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">SpeedParserEntriesAtom</code><span class="sig-paren">(</span><em>root</em>, <em>namespaces={}</em>, <em>version='rss20'</em>, <em>encoding='utf-8'</em>, <em>feed={}</em>, <em>cleaner=&lt;lxml.html.clean.Cleaner object&gt;</em>, <em>unix_timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20" title="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesRss20</span></code></a></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.entry_xpath">
+<code class="descname">entry_xpath</code><em class="property"> = '/feed/entry'</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.entry_xpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_summary">
+<code class="descname">parse_summary</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.entry_list">
+<code class="descname">entry_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.entry_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_annotation">
+<code class="descname">parse_annotation</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='gr'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_annotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_author">
+<code class="descname">parse_author</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_comments">
+<code class="descname">parse_comments</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_comments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_content">
+<code class="descname">parse_content</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_date">
+<code class="descname">parse_date</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_enclosures">
+<code class="descname">parse_enclosures</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_enclosures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_entry">
+<code class="descname">parse_entry</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>An attempt to parse pieces of an entry out w/o xpath, by looping
+over the entry root&#8217;s children and slotting them into the right places.
+This is going to be way messier than SpeedParserEntries, and maybe
+less cleanly usable, but it should be faster.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_guid">
+<code class="descname">parse_guid</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_guid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_links">
+<code class="descname">parse_links</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_media_content">
+<code class="descname">parse_media_content</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_media_content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_media_group">
+<code class="descname">parse_media_group</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_media_group" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_media_thumbnail">
+<code class="descname">parse_media_thumbnail</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_media_thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_title">
+<code class="descname">parse_title</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.parse_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.tag_map">
+<code class="descname">tag_map</code><em class="property"> = {'pubdate': 'date', 'creator': 'author', 'itunes:summary': 'content', 'itunes:author': 'author', 'media:thumbnail': 'media_thumbnail', 'guid': 'guid', 'media:content': 'media_content', 'id': 'guid', 'media:group': 'media_group', 'pubDate': 'date', 'title': 'title', 'comments': 'comments', 'enclosure': 'enclosures', 'content': 'content', 'itunes:image': 'media_thumbnail', 'updated': 'date', 'description': 'summary', 'gr:annotation': 'annotation', 'link': 'links', 'itunes:keywords': 'content', 'date': 'date', 'encoded': 'content', 'name': 'author', 'author': 'author', 'modified': 'date', 'media_thumbnail': 'media_thumbnail', 'summary': 'summary'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserEntriesAtom.tag_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">SpeedParserFeedRss20</code><span class="sig-paren">(</span><em>root</em>, <em>namespaces={}</em>, <em>encoding='utf-8'</em>, <em>type='rss20'</em>, <em>cleaner=&lt;lxml.html.clean.Cleaner object&gt;</em>, <em>unix_timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A port of SpeedParserFeed that uses far fewer xpath lookups, which
+ends up simplifying parsing and makes it easier to catch the various
+names that different tags might come under.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.channel_xpath">
+<code class="descname">channel_xpath</code><em class="property"> = '/rss/channel'</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.channel_xpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.tag_map">
+<code class="descname">tag_map</code><em class="property"> = {'lastBuildDate': 'date', 'updated': 'date', 'subtitle': 'subtitle', 'description': 'subtitle', 'pubDate': 'date', 'title': 'title', 'tagline': 'subtitle', 'generator': 'generator', 'modified': 'date', 'itunes:summary': 'subtitle', 'language': 'lang', 'link': 'links', 'date': 'date', 'generatorAgent': 'generator', 'itunes:image': 'image', 'id': 'id'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.tag_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>text</em>, <em>outer_tag=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_title">
+<code class="descname">parse_title</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_subtitle">
+<code class="descname">parse_subtitle</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_subtitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_image">
+<code class="descname">parse_image</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_links">
+<code class="descname">parse_links</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_date">
+<code class="descname">parse_date</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_lang">
+<code class="descname">parse_lang</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_lang" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_generator">
+<code class="descname">parse_generator</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_id">
+<code class="descname">parse_id</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.parse_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.feed_dict">
+<code class="descname">feed_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20.feed_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">SpeedParserFeedAtom</code><span class="sig-paren">(</span><em>root</em>, <em>namespaces={}</em>, <em>encoding='utf-8'</em>, <em>type='rss20'</em>, <em>cleaner=&lt;lxml.html.clean.Cleaner object&gt;</em>, <em>unix_timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20" title="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20</span></code></a></p>
+<p>A port of SpeedParserFeed that uses far fewer xpath lookups, which
+ends up simplifying parsing and makes it easier to catch the various
+names that different tags might come under.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.channel_xpath">
+<code class="descname">channel_xpath</code><em class="property"> = '/feed'</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.channel_xpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>text</em>, <em>outer_tag=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.feed_dict">
+<code class="descname">feed_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.feed_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_date">
+<code class="descname">parse_date</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_generator">
+<code class="descname">parse_generator</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_id">
+<code class="descname">parse_id</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_image">
+<code class="descname">parse_image</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_lang">
+<code class="descname">parse_lang</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_lang" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_links">
+<code class="descname">parse_links</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_subtitle">
+<code class="descname">parse_subtitle</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_subtitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_title">
+<code class="descname">parse_title</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.parse_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.tag_map">
+<code class="descname">tag_map</code><em class="property"> = {'lastBuildDate': 'date', 'updated': 'date', 'subtitle': 'subtitle', 'description': 'subtitle', 'pubDate': 'date', 'title': 'title', 'tagline': 'subtitle', 'generator': 'generator', 'modified': 'date', 'itunes:summary': 'subtitle', 'language': 'lang', 'link': 'links', 'date': 'date', 'generatorAgent': 'generator', 'itunes:image': 'image', 'id': 'id'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedAtom.tag_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">SpeedParserFeedRdf</code><span class="sig-paren">(</span><em>root</em>, <em>namespaces={}</em>, <em>encoding='utf-8'</em>, <em>type='rss20'</em>, <em>cleaner=&lt;lxml.html.clean.Cleaner object&gt;</em>, <em>unix_timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20" title="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRss20</span></code></a></p>
+<p>A port of SpeedParserFeed that uses far fewer xpath lookups, which
+ends up simplifying parsing and makes it easier to catch the various
+names that different tags might come under.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.channel_xpath">
+<code class="descname">channel_xpath</code><em class="property"> = '/rdf:RDF/channel'</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.channel_xpath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>text</em>, <em>outer_tag=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.clean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.feed_dict">
+<code class="descname">feed_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.feed_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_date">
+<code class="descname">parse_date</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_generator">
+<code class="descname">parse_generator</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_generator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_id">
+<code class="descname">parse_id</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_image">
+<code class="descname">parse_image</code><span class="sig-paren">(</span><em>node</em>, <em>entry</em>, <em>ns='media'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_lang">
+<code class="descname">parse_lang</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_lang" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_links">
+<code class="descname">parse_links</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_subtitle">
+<code class="descname">parse_subtitle</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_subtitle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_title">
+<code class="descname">parse_title</code><span class="sig-paren">(</span><em>node</em>, <em>feed</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.parse_title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.tag_map">
+<code class="descname">tag_map</code><em class="property"> = {'lastBuildDate': 'date', 'updated': 'date', 'subtitle': 'subtitle', 'description': 'subtitle', 'pubDate': 'date', 'title': 'title', 'tagline': 'subtitle', 'generator': 'generator', 'modified': 'date', 'itunes:summary': 'subtitle', 'language': 'lang', 'link': 'links', 'date': 'date', 'generatorAgent': 'generator', 'itunes:image': 'image', 'id': 'id'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParserFeedRdf.tag_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">SpeedParser</code><span class="sig-paren">(</span><em>content</em>, <em>cleaner=&lt;lxml.html.clean.Cleaner object&gt;</em>, <em>unix_timestamp=False</em>, <em>encoding=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.version_map">
+<code class="descname">version_map</code><em class="property"> = {'rss2': 'rss20'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.version_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_version">
+<code class="descname">parse_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_namespaces">
+<code class="descname">parse_namespaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_encoding">
+<code class="descname">parse_encoding</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_encoding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_feed">
+<code class="descname">parse_feed</code><span class="sig-paren">(</span><em>version</em>, <em>encoding</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_feed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_entries">
+<code class="descname">parse_entries</code><span class="sig-paren">(</span><em>version</em>, <em>encoding</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.parse_entries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.SpeedParser.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.speedparser.speedparser.parse">
+<code class="descclassname">ctxalgolib.data_imports.blog.speedparser.speedparser.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>document</em>, <em>clean_html=True</em>, <em>unix_timestamp=False</em>, <em>encoding=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.speedparser.speedparser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a document and return a feedparser dictionary with attr key access.
+If clean_html is False, the html in the feed will not be cleaned.  If
+clean_html is True, a sane version of lxml.html.clean.Cleaner will be used.
+If it is a Cleaner object, that cleaner will be used.  If unix_timestamp is
+True, the date information will be a numerical unix timestamp rather than a
+struct_time.  If encoding is provided, the encoding of the document will be
+manually set to that.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="xmlpprint.html" class="btn btn-neutral float-right" title="xmlpprint" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="feedparsercompat.html" class="btn btn-neutral" title="feedparsercompat" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

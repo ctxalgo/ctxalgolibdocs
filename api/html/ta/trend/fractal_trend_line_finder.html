@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fractal_trend_line_finder &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="trend" href="index.html"/>
+        <link rel="next" title="ohlc_sector" href="ohlc_sector.html"/>
+        <link rel="prev" title="trend" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">trend</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fractal_trend_line_finder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ohlc_sector.html">ohlc_sector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="piecewise_trend_line_finder.html">piecewise_trend_line_finder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trend_line.html">trend_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variation_ratio.html">variation_ratio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">trend</a> &raquo;</li>
+      
+    <li>fractal_trend_line_finder</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/trend/fractal_trend_line_finder.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.trend.fractal_trend_line_finder">
+<span id="fractal-trend-line-finder"></span><h1>fractal_trend_line_finder<a class="headerlink" href="#module-ctxalgolib.ta.trend.fractal_trend_line_finder" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.trend.fractal_trend_line_finder.</code><code class="descname">FractalTrendLineFinder</code><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="trend_line.html#ctxalgolib.ta.trend.trend_line.AbstractTrendLineFinder" title="ctxalgolib.ta.trend.trend_line.AbstractTrendLineFinder"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.trend.trend_line.AbstractTrendLineFinder</span></code></a></p>
+<p>Class to find trend lines using simple fractal based method.</p>
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.get_regress_points">
+<code class="descname">get_regress_points</code><span class="sig-paren">(</span><em>line</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.get_regress_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get all the regress point of a line
+&#64;param line: TrendLine, the line that want to get all the regress point
+&#64;param highs: [float], the high prices
+&#64;param lows: [float], the lows prices
+&#64;return: [float], the 0-based bar index in the OHLC data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_down_fractals">
+<code class="descname">find_down_fractals</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_down_fractals" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find all the down fractal points in the OHLC data
+&#64;param opens: [float] the open prices
+&#64;param highs: [float] the high prices
+&#64;param lows: [float] the low prices
+&#64;param closes: [float] the close prices
+&#64;returns: [float] the 0-based bar index in the OHLC data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_up_fractals">
+<code class="descname">find_up_fractals</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_up_fractals" title="Permalink to this definition">¶</a></dt>
+<dd><p>To find all the up fractal points in the OHLC data
+&#64;param opens: [float] the open prices
+&#64;param highs: [float] the high prices
+&#64;param lows: [float] the low prices
+&#64;param closes: [float] the close prices
+&#64;returns: [float] the 0-based bar index in the OHLC data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_support_trend_lines">
+<code class="descname">find_support_trend_lines</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_support_trend_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all the support trend lines
+&#64;param opens: [float] the open prices
+&#64;param highs: [float] the high prices
+&#64;param lows: [float] the low prices
+&#64;param closes: [float] the close prices
+&#64;return: [TrendLine] all the support trend lines</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_suppress_trend_lines">
+<code class="descname">find_suppress_trend_lines</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find_suppress_trend_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all the suppress trend lines
+&#64;param opens: [float] the open prices
+&#64;param highs: [float] the high prices
+&#64;param lows: [float] the low prices
+&#64;param closes: [float] the close prices
+&#64;return: [TrendLine] all the suppress trend lines</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>opens</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find two fractals (each fractal consists of three OHLC bars). The line connecting the highest/lowest price
+of these two fractals are a potential trend line. To find support trend lines, use down-fractals, to find
+suppress trend lines, use up-fractals.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.check_trend_line">
+<code class="descname">check_trend_line</code><span class="sig-paren">(</span><em>line</em>, <em>highs</em>, <em>lows</em>, <em>closes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.check_trend_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>To check whether the line get meet the requirement or not
+&#64;param line: TrendLine, the line that want to get all the regress point
+&#64;param highs: [float], the high prices
+&#64;param lows: [float], the lows prices
+&#64;return: bool, True if the line meat the requirement; False otherwise</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.get_line">
+<code class="descname">get_line</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.get_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the gradient and intercept of a line
+&#64;param x1: float, the x coordinate of the begin point
+&#64;param y1: float, the y coordinate of the begin point
+&#64;param x2: float, the x coordinate of the end point
+&#64;param y2: float, the y coordinate of the end point
+&#64;return: (float, float), the gradient and intercept of the line</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.remove_duplicated_line">
+<code class="descname">remove_duplicated_line</code><span class="sig-paren">(</span><em>lines</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.fractal_trend_line_finder.FractalTrendLineFinder.remove_duplicated_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all the duplicated lines in the line series
+&#64;param lines: [TrendLine] the original lines that may be duplicated
+&#64;return: [TrendLine], the final line series that remove the duplicated</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ohlc_sector.html" class="btn btn-neutral float-right" title="ohlc_sector" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="trend" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

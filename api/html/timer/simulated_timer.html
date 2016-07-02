@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>simulated_timer &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="timer" href="index.html"/>
+        <link rel="next" title="trading_utils" href="../trading_utils/index.html"/>
+        <link rel="prev" title="timer" href="index.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">timer</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">simulated_timer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">timer</a> &raquo;</li>
+      
+    <li>simulated_timer</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/timer/simulated_timer.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.timer.simulated_timer">
+<span id="simulated-timer"></span><h1>simulated_timer<a class="headerlink" href="#module-ctxalgolib.timer.simulated_timer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.timer.simulated_timer.SimulatedTimer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.timer.simulated_timer.</code><code class="descname">SimulatedTimer</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Initialize current timer.
+:param name: string, name of the timer.
+:return:</p>
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.SimulatedTimer.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of current time.
+:return: string, the timer name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.SimulatedTimer.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set current time name.
+:param name: string, the name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.SimulatedTimer.update_time">
+<code class="descname">update_time</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer.update_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update current timer with timestamp ts. This timestamp may cause the timer to trigger.
+If the timer is triggered, actions in self.on_time_actions will be invoked.</p>
+<p>A timer is triggered when the first time, ts is larger than its internal next triggering timestamp.
+:param ts: datetime, the current timestamp.
+:return bool, True if the timer is triggered by timestamp ts, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.SimulatedTimer.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start current timer. Start always clears all internal time cache and start from scratch.
+This means that already elapsed time when the timer is stopped will be cleared.
+:param ts: datetime, the timestamp when current timer should be started at.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.SimulatedTimer.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop current timer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.SimulatedTimer.is_running">
+<code class="descname">is_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer.is_running" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current timer running? A timer is running when is it has been started, and not stopped, and the timer
+has not finished. A timer can finish its timing, for example, a non-repeated count-down timer with the
+count-down already triggered will be in a finished state, so is_running should return False even if
+the timer has not been stopped.
+:return: bool, indicates whether the timer is running.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.timer.simulated_timer.</code><code class="descname">CountDownSimulatedTimer</code><span class="sig-paren">(</span><em>interval</em>, <em>repeated=True</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer" title="ctxalgolib.timer.simulated_timer.SimulatedTimer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.timer.simulated_timer.SimulatedTimer</span></code></a></p>
+<p>Class that represents a count-down timer.
+A count-down timer can be in repeated mode, which causes the timer to repeat its count-down after it is triggered.
+The timer can be in non-repeated mode, which cuases the timer to trigger at most once.</p>
+<p>Initialize current.
+:param interval: timedelta, the interval for the count-down.
+:param repeated: bool, if True, the timer will be repeated after it has been triggered.</p>
+<blockquote>
+<div>If False, the timer is triggered at most once.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; string, name of the timer.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.update_time">
+<code class="descname">update_time</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.update_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update current timer with timestamp ts. This timestamp may cause the timer to trigger.
+If the timer is triggered, actions in self.on_time_actions will be invoked.</p>
+<p>A timer is triggered when the first time, ts is larger than its internal next triggering timestamp.
+:param ts: datetime, the current timestamp.
+:return bool, True if the timer is triggered by timestamp ts, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.is_running">
+<code class="descname">is_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.is_running" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current timer running? A timer is running when is it has been started, and not stopped, and the timer
+has not finished. A timer can finish its timing, for example, a non-repeated count-down timer with the
+count-down already triggered will be in a finished state, so is_running should return False even if
+the timer has not been stopped.
+:return: bool, indicates whether the timer is running.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of current time.
+:return: string, the timer name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set current time name.
+:param name: string, the name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start current timer. Start always clears all internal time cache and start from scratch.
+This means that already elapsed time when the timer is stopped will be cleared.
+:param ts: datetime, the timestamp when current timer should be started at.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop current timer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.timer.simulated_timer.</code><code class="descname">AlarmSimulatedTimer</code><span class="sig-paren">(</span><em>times</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer" title="ctxalgolib.timer.simulated_timer.SimulatedTimer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.timer.simulated_timer.SimulatedTimer</span></code></a></p>
+<p>Class that represents a alarm timer, which will be triggered at given time points.
+This timer will not finish by itself.</p>
+<p>Initialize current.
+:param times: [datetime or time or string], list of time points at which current timer should be triggered.</p>
+<blockquote>
+<div>If an element is of type datetime, the timer will be triggered at that time point.
+If an element is of type time, then the timer will be triggered every day at the time point.
+If an element is of type string, then it must be in form of HH:MM:SS or yyyy-mm-dd HH:MM:SS.
+times can also be a single elemtn of datetime, time or string.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; string, name of the timer.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.is_running">
+<code class="descname">is_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.is_running" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current timer running? A timer is running when is it has been started, and not stopped, and the timer
+has not finished. A timer can finish its timing, for example, a non-repeated count-down timer with the
+count-down already triggered will be in a finished state, so is_running should return False even if
+the timer has not been stopped.
+:return: bool, indicates whether the timer is running.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of current time.
+:return: string, the timer name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set current time name.
+:param name: string, the name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop current timer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start current timer. Start always clears all internal time cache and start from scratch.
+This means that already elapsed time when the timer is stopped will be cleared.
+:param ts: datetime, the timestamp when current timer should be started at.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.update_time">
+<code class="descname">update_time</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.AlarmSimulatedTimer.update_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update current timer with timestamp ts. This timestamp may cause the timer to trigger.
+If the timer is triggered, actions in self.on_time_actions will be invoked.</p>
+<p>A timer is triggered when the first time, ts is larger than its internal next triggering timestamp.
+:param ts: datetime, the current timestamp.
+:return bool, True if the timer is triggered by timestamp ts, False otherwise.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../trading_utils/index.html" class="btn btn-neutral float-right" title="trading_utils" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="timer" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

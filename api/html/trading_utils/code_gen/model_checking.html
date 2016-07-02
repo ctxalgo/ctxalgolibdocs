@@ -1,0 +1,1112 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>model_checking &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="code_gen" href="index.html"/>
+        <link rel="next" title="futures" href="../futures/index.html"/>
+        <link rel="prev" title="indicator_generator" href="indicator_generator.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">code_gen</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ast_utils.html">ast_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indicator_generator.html">indicator_generator</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">model_checking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">trading_utils</a> &raquo;</li>
+      
+          <li><a href="index.html">code_gen</a> &raquo;</li>
+      
+    <li>model_checking</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/trading_utils/code_gen/model_checking.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.code_gen.model_checking">
+<span id="model-checking"></span><h1>model_checking<a class="headerlink" href="#module-ctxalgolib.trading_utils.code_gen.model_checking" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">AbstractModelTypeChecker</code><span class="sig-paren">(</span><em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Initialize current.
+:param kind: string, the kind of model element where the type checking is performed.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check correctness of the given state machine.
+:param state_machine: StateMachineInfo.
+:return: [CodeError], the list of detected errors. If there is no error, return an empty list.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelPostconditionTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">ModelPostconditionTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelPostconditionTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker" title="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker</span></code></a></p>
+<p>Class that checks that model postconditions has the following structure:
+To get model postconditions from a state machine. Use the model_postconditions method from the state machine.</p>
+<p>Possible errors:
+1. Its predicate is an implication: implies(p, q).</p>
+<blockquote>
+<div>Error code: 1.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>The implication condition p must have the structure: self.next_state() == &#8216;some_state_name&#8217;. Note single quotes.
+Error code: 2.</li>
+<li>The implication consequence q must have the structure: mv == some_expression.
+Error code: 3.</li>
+<li>And mv must be equal to a model variable.
+Error code: 4.</li>
+<li>And all accesses (attribute access, calls), except for old(...) and implies(...) in some_expression must
+be equal to a model variable as well.
+For example, if a model postcondition&#8217;s some_expression is &#8220;len(self.positions()) == 1&#8221; and
+&#8220;len(self.positions())&#8221; is not a model variable, then current type checker should flag an error.
+Error code: 5.</li>
+<li>The implication condition p: self.next_state() == &#8216;some_state_name&#8217;. The some_state_name must be a defined
+name from the state_machine.states.
+Error code: 6.</li>
+</ol>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelPostconditionTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelPostconditionTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelPropertyTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">ModelPropertyTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelPropertyTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker" title="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker</span></code></a></p>
+<p>Class that type checks model properties.
+To get model properties from a state machine, use the model_properties attribute from the state machine.</p>
+<p>Possible errors:
+1. All accesses (attribute access, calls), except for F(...), G(...), U(...), X(...) and implies(...),</p>
+<blockquote>
+<div>in a model property must be equal to a model variable.
+Error code: 21.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>In a property, for sub expressions such as self.state() == &#8216;some_state_name&#8217; or
+&#8216;some_state_name&#8217; == self.state(), some_state_name must be defined in state_machine.states.
+Error code: 6.</li>
+</ol>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelPropertyTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelPropertyTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelStateTransitionConstraintsTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">ModelStateTransitionConstraintsTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelStateTransitionConstraintsTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker" title="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker</span></code></a></p>
+<p>Class that type checks model state transition constraints.
+To get model state transition constraints, use the model_state_transition_constraints
+attribute from the state machine.</p>
+<p>Possible errors for a constraint (start_state, end_state, label, constraint, line_number):
+1. start_state is not defined in state machine.</p>
+<blockquote>
+<div>Error code: 6.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>end_state is not defined in state machine.
+Error code: 6.</li>
+<li>constraint uses functions old(...).
+Error code: 61.</li>
+<li>constraint uses LTL functions F(...), G(...), U(...), X(...).
+Error code: 62.</li>
+<li>All accesses (attribute access, calls) must be model variables.
+For example, if a model postcondition&#8217;s some_expression is &#8220;len(self.positions()) == 1&#8221; and
+&#8220;len(self.positions())&#8221; is not a model variable, then current type checker should flag an error.
+Error code: 63.</li>
+<li>There is no transition from the start and end state, given by the constraint, in the state machine.
+For example, if the constraint says the start and end state is x -&gt; y. But there is no transition
+from x to y
+Error code: 64.</li>
+</ol>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelStateTransitionConstraintsTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelStateTransitionConstraintsTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelTypeCheckerConstants">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">ModelTypeCheckerConstants</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelTypeCheckerConstants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Error code and messages.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelTypeCheckerConstants.errors">
+<code class="descname">errors</code><em class="property"> = {1: 'Model postcondition must be the structure implies(p, q).', 2: &quot;The condition of a model postcondition implication must be the structure self.next_state() == 'some_state'. And 'some_state' must be in single quotes.&quot;, 3: 'Model postcondition must be the structure implies(p, mv == some_expression).', 4: 'Model postcondition must be the structure implies(p, mv == some_expression).And mv must be a model variable.', 5: 'Model postcondition must be the structure implies(p, mv == some_expression).And all accesses (attribute access, calls), except those in old(...) in some_expression must be model variables.', 6: 'State name is not defined.', 21: 'No old(...) is allowed in model properties. Model property can only reference model variables and the following functions: F(...), G(...), U(...), X(...), implies(...). No old(...) is allowed.', 41: 'Linear Temporal Logic connectors F(...), G(...), U(...), X(...) are not allowed in model variables.', 42: 'The type of a model variable must be either int or bool', 43: 'The initial value for a model variable must corresponds to its type. If the type of a model variable is int/bool, its initial value must be an integer/boolean value.', 61: 'old(...) expression is not allowed here.', 62: 'Linear Temporal Logic connectors F(...), G(...), U(...), X(...) are not allowed here.', 63: 'all accesses (attribute access, calls) must be model variables.'}</em><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelTypeCheckerConstants.errors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelTypeCheckerConstants.model_element_kinds">
+<code class="descname">model_element_kinds</code><em class="property"> = ['model variable', 'model property', 'model postcondition', 'model state transition constraints', 'postcondition', 'precondition']</em><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelTypeCheckerConstants.model_element_kinds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelVariableTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">ModelVariableTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelVariableTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker" title="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker</span></code></a></p>
+<p>Class that type checks model variables.
+To get model variables from a state machine, use the model_variables attribute from the state machine.</p>
+<p>Possible errors:
+1. LTL functions F(...), G(...), U(...), X(...) are not allowed in model variables.</p>
+<blockquote>
+<div>Error code: 41.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>The type of a model variable must be either int or bool.
+Error code: 42.</li>
+<li>The initial value for a model variable must corresponds to its type.
+For example, if a model variable is of type int, then its initial value must be an integer constant.
+Error code: 43.</li>
+</ol>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.ModelVariableTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.ModelVariableTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.NormalPostconditionTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">NormalPostconditionTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.NormalPostconditionTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker" title="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker</span></code></a></p>
+<p>Class that type checks normal postconditions.
+To get normal postconditions from a state, use the normal_postconditions method
+from the corresponding StateInfo object.</p>
+<p>Possible errors for a normal postcondition (label, expression, line_number) are:
+1. constraint uses LTL functions F(...), G(...), U(...), X(...).</p>
+<blockquote>
+<div>Error code: 62.</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.NormalPostconditionTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.NormalPostconditionTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PreconditionTypeChecker">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">PreconditionTypeChecker</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PreconditionTypeChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker" title="ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.code_gen.model_checking.AbstractModelTypeChecker</span></code></a></p>
+<p>Class that type checks preconditions.
+Possible errors for a precondition are:
+1. constraint uses functions old(...).</p>
+<blockquote>
+<div>Error code: 61.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>constraint uses LTL functions F(...), G(...), U(...), X(...).
+Error code: 62.</li>
+</ol>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PreconditionTypeChecker.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PreconditionTypeChecker.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">PromelaGenerator</code><span class="sig-paren">(</span><em>state_machine</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that takes a state machine and generate Promela code for model checking.
+The code generationg consists of the following steps:
+* Take the original state machine, and use get_canonical_state_machine to</p>
+<blockquote>
+<div>turn all expressions into canonical form.</div></blockquote>
+<ul class="simple">
+<li>Generate Promela variable names for all the model variables using generate_promela_variable_names.</li>
+<li>Decide on the minimum number of temporary variables and their types:
+for a model postcondition in source_state: implies(self.next_state() == &#8216;target_state&#8217;, mv == some_expression)
+all mentions to model variables in some_expression will need to have a corresponding temporary variable.</li>
+<li></li>
+</ul>
+<p>Initialize current.
+:param state_machine: StateMachineInfo, information about the state machine.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.find_temporary_variable">
+<code class="descname">find_temporary_variable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.find_temporary_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate Promela code and related information.
+Make results available at:
+self.model_variable_name_mapping.
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_all_state_transitions">
+<code class="descname">generate_all_state_transitions</code><span class="sig-paren">(</span><em>mv_to_var_mapping</em>, <em>all_temps</em>, <em>mv_to_temp_mapping</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_all_state_transitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_promela_var_definitions">
+<code class="descname">generate_promela_var_definitions</code><span class="sig-paren">(</span><em>model_vars</em>, <em>temps</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_promela_var_definitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_promela_variable_names">
+<code class="descname">generate_promela_variable_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_promela_variable_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate Promela names for model variables.
+:return: dict{string: string}, generated model variables names.</p>
+<blockquote>
+<div>Keys are model variables in Python, such as &#8220;self.long_positions()&#8221;, values are Promela
+variable names, such as &#8220;pml001&#8221;.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_state_mtype">
+<code class="descname">generate_state_mtype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_state_mtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the Promela mtype enumeration for state names.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_state_transitions">
+<code class="descname">generate_state_transitions</code><span class="sig-paren">(</span><em>state</em>, <em>mv_to_var_mapping</em>, <em>all_temps</em>, <em>mv_to_temp_mapping</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.generate_state_transitions" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>state</strong> &#8211; StateInfo, the state whose transitions needs to be generated.</li>
+<li><strong>mv_to_var_mapping</strong> &#8211; dict{string: string}, keys are model variable expressions in Python,
+values are Promela variable names for those model variables.</li>
+<li><strong>all_temps</strong> &#8211; </li>
+<li><strong>mv_to_temp_mapping</strong> &#8211; dict{string: string}, keys rae model variable expressions in Python,
+values are Promela temp variable names for those model variables.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.get_canonical_state_machine">
+<code class="descname">get_canonical_state_machine</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.get_canonical_state_machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new state machine from machine. All the expressions in the new machine has canonical form.
+:param m: StateMachineInfo, the source state machine.
+:return: StateMachineInfo, the new state machine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.get_padded_name">
+<code class="descname">get_padded_name</code><span class="sig-paren">(</span><em>prefix</em>, <em>vid</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.get_padded_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.group_postconditions_by_target_state">
+<code class="descname">group_postconditions_by_target_state</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.group_postconditions_by_target_state" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>state</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict{string: [postcondition]}, Keys are target state,
+values are model postconditions transiting to those target states.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.model_variable_expressions">
+<code class="descname">model_variable_expressions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.model_variable_expressions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of AST nodes for model variables.
+:return: [AST], list of ast expression nodes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.model_variables_as_dict">
+<code class="descname">model_variables_as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.model_variables_as_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return model variables as a dict.
+:return: dict{string: (string, string, int)}. The list of model variables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.parse_model_postcondition">
+<code class="descname">parse_model_postcondition</code><span class="sig-paren">(</span><em>state</em>, <em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.parse_model_postcondition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the given model postcondition and return its components.
+:param state: StateInfo, the state to which expr belongs.
+:param expr: string, the string representation of the model postcondition predicate.
+:return: dict{string: object}, which has the following keys (all of type string):</p>
+<blockquote>
+<div><p>current_state: string, name of the current state.
+next_state: string, name of the next state.
+model_variable: string, the Python expression of the updated model variable.
+value: string, the Python expression of the new value</p>
+<blockquote>
+<div>that the model variable should have after the state transition.</div></blockquote>
+<p>model_variable_ast: AST, the ast node for the model variable part.
+value_ast: AST, the ast node for the value part.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.translate_ltl_property">
+<em class="property">static </em><code class="descname">translate_ltl_property</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.translate_ltl_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate a Linear Temporal Logic predicate written in Python to its Promela syntax.
+Things to translate:
+1. Translate G(p) into [] (p).
+2. Translate F(p) into &lt;&gt; (p).
+3. Translate U(p, q) into (p) U (q).
+4. Translate implies(p, q) into (p) -&gt; (q).
+5. Translate logical a and b into a &amp;&amp; b.
+6. Translate logical a or b into a || b.
+7. Translate logical not a into !a.
+:param expr: Expr, the Linear Temporal Logic predicate in Python syntax.
+:return: string, the translated property.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.translate_operators">
+<em class="property">static </em><code class="descname">translate_operators</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaGenerator.translate_operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate a Python expression into Promela syntax.
+1. Translate logical a and b into a &amp;&amp; b.
+2. Translate logical a or b into a || b.
+3. Translate logical not a into !a.
+:param expr: Expr, a predicate in Python syntax.
+:return string: the translated property.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">PromelaTranslator</code><span class="sig-paren">(</span><em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">meta.asttools.visitors.pysourcegen.SourceGen</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.children">
+<code class="descname">children</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><em>file=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.dumps">
+<code class="descname">dumps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.dumps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.indenter">
+<code class="descname">indenter</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.indenter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.no_indent">
+<code class="descname">no_indent</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.no_indent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.print">
+<code class="descname">print</code><span class="sig-paren">(</span><em>line</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.print" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.print_lines">
+<code class="descname">print_lines</code><span class="sig-paren">(</span><em>lines</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.print_lines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visit">
+<code class="descname">visit</code><span class="sig-paren">(</span><em>node</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAdd">
+<code class="descname">visitAdd</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAdd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAnd">
+<code class="descname">visitAnd</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAnd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAssert">
+<code class="descname">visitAssert</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAssert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAssign">
+<code class="descname">visitAssign</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAssign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAttribute">
+<code class="descname">visitAttribute</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAttribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAugAssign">
+<code class="descname">visitAugAssign</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitAugAssign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBinOp">
+<code class="descname">visitBinOp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBinOp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBitAnd">
+<code class="descname">visitBitAnd</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBitAnd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBitOr">
+<code class="descname">visitBitOr</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBitOr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBitXor">
+<code class="descname">visitBitXor</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBitXor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBoolOp">
+<code class="descname">visitBoolOp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBoolOp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBreak">
+<code class="descname">visitBreak</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitBreak" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitCall">
+<code class="descname">visitCall</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitCall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitClassDef">
+<code class="descname">visitClassDef</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitClassDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitCompare">
+<code class="descname">visitCompare</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitCompare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitContinue">
+<code class="descname">visitContinue</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitContinue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDelete">
+<code class="descname">visitDelete</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDelete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDict">
+<code class="descname">visitDict</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDictComp">
+<code class="descname">visitDictComp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDictComp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDiv">
+<code class="descname">visitDiv</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitDiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitEllipsis">
+<code class="descname">visitEllipsis</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitEllipsis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitEq">
+<code class="descname">visitEq</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitEq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExceptHandler">
+<code class="descname">visitExceptHandler</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExceptHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExec">
+<code class="descname">visitExec</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExpr">
+<code class="descname">visitExpr</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExpr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExtSlice">
+<code class="descname">visitExtSlice</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitExtSlice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitFloorDiv">
+<code class="descname">visitFloorDiv</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitFloorDiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitFor">
+<code class="descname">visitFor</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitFor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitFunctionDef">
+<code class="descname">visitFunctionDef</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitFunctionDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitGlobal">
+<code class="descname">visitGlobal</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitGlobal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitGt">
+<code class="descname">visitGt</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitGt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitGtE">
+<code class="descname">visitGtE</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitGtE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIf">
+<code class="descname">visitIf</code><span class="sig-paren">(</span><em>node</em>, <em>indent_first=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIfExp">
+<code class="descname">visitIfExp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIfExp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitImport">
+<code class="descname">visitImport</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitImport" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitImportFrom">
+<code class="descname">visitImportFrom</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitImportFrom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIn">
+<code class="descname">visitIn</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIndex">
+<code class="descname">visitIndex</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIndex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitInvert">
+<code class="descname">visitInvert</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitInvert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIs">
+<code class="descname">visitIs</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIsNot">
+<code class="descname">visitIsNot</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitIsNot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLShift">
+<code class="descname">visitLShift</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLShift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLambda">
+<code class="descname">visitLambda</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLambda" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitList">
+<code class="descname">visitList</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitListComp">
+<code class="descname">visitListComp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitListComp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLt">
+<code class="descname">visitLt</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLtE">
+<code class="descname">visitLtE</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitLtE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitMod">
+<code class="descname">visitMod</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitMod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitModule">
+<code class="descname">visitModule</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitModule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitMult">
+<code class="descname">visitMult</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitMult" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitName">
+<code class="descname">visitName</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNot">
+<code class="descname">visitNot</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNotEq">
+<code class="descname">visitNotEq</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNotEq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNotIn">
+<code class="descname">visitNotIn</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNotIn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNum">
+<code class="descname">visitNum</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitNum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitOr">
+<code class="descname">visitOr</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitOr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitPass">
+<code class="descname">visitPass</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitPass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitPow">
+<code class="descname">visitPow</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitPow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitPrint">
+<code class="descname">visitPrint</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitPrint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitRShift">
+<code class="descname">visitRShift</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitRShift" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitRaise">
+<code class="descname">visitRaise</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitRaise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitReturn">
+<code class="descname">visitReturn</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitReturn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSet">
+<code class="descname">visitSet</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSetComp">
+<code class="descname">visitSetComp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSetComp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSlice">
+<code class="descname">visitSlice</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSlice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitStr">
+<code class="descname">visitStr</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitStr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSub">
+<code class="descname">visitSub</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSubscript">
+<code class="descname">visitSubscript</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitSubscript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitTryExcept">
+<code class="descname">visitTryExcept</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitTryExcept" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitTryFinally">
+<code class="descname">visitTryFinally</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitTryFinally" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitTuple">
+<code class="descname">visitTuple</code><span class="sig-paren">(</span><em>node</em>, <em>brace='()'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitTuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitUAdd">
+<code class="descname">visitUAdd</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitUAdd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitUSub">
+<code class="descname">visitUSub</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitUSub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitUnaryOp">
+<code class="descname">visitUnaryOp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitUnaryOp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitWhile">
+<code class="descname">visitWhile</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitWhile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitWith">
+<code class="descname">visitWith</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitWith" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitYield">
+<code class="descname">visitYield</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitYield" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visit_list">
+<code class="descname">visit_list</code><span class="sig-paren">(</span><em>nodes</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visit_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitalias">
+<code class="descname">visitalias</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitalias" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitarg">
+<code class="descname">visitarg</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitarg" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">Python2</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitarguments">
+<code class="descname">visitarguments</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitarguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitcomprehension">
+<code class="descname">visitcomprehension</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitcomprehension" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitkeyword">
+<code class="descname">visitkeyword</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.PromelaTranslator.visitkeyword" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.model_checking.</code><code class="descname">TranslatorFormatter</code><span class="sig-paren">(</span><em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">string.Formatter</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.check_unused_args">
+<code class="descname">check_unused_args</code><span class="sig-paren">(</span><em>used_args</em>, <em>args</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.check_unused_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.convert_field">
+<code class="descname">convert_field</code><span class="sig-paren">(</span><em>value</em>, <em>conversion</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.convert_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.format">
+<code class="descname">format</code><span class="sig-paren">(</span><em>format_string</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.format_field">
+<code class="descname">format_field</code><span class="sig-paren">(</span><em>value</em>, <em>format_spec</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.format_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.get_field">
+<code class="descname">get_field</code><span class="sig-paren">(</span><em>field_name</em>, <em>args</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.get_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>key</em>, <em>args</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>format_string</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.vformat">
+<code class="descname">vformat</code><span class="sig-paren">(</span><em>format_string</em>, <em>args</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.model_checking.TranslatorFormatter.vformat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../futures/index.html" class="btn btn-neutral float-right" title="futures" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="indicator_generator.html" class="btn btn-neutral" title="indicator_generator" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

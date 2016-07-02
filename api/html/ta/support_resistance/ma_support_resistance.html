@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ma_support_resistance &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="support_resistance" href="index.html"/>
+        <link rel="next" title="sr_feature_generator" href="sr_feature_generator.html"/>
+        <link rel="prev" title="support_resistance" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">support_resistance</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ma_support_resistance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sr_feature_generator.html">sr_feature_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">support_resistance</a> &raquo;</li>
+      
+    <li>ma_support_resistance</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/support_resistance/ma_support_resistance.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.support_resistance.ma_support_resistance">
+<span id="ma-support-resistance"></span><h1>ma_support_resistance<a class="headerlink" href="#module-ctxalgolib.ta.support_resistance.ma_support_resistance" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistancePoint">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.support_resistance.ma_support_resistance.</code><code class="descname">SupportResistancePoint</code><span class="sig-paren">(</span><em>bar</em>, <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistancePoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents a support or suppress point.</p>
+<p>Initialize current.
+Parameters:</p>
+<blockquote>
+<div>bar: int, 0-based index of the OHLC position.
+kind: int, 0 means support, 1 means suppress.</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistancePoint.is_support">
+<code class="descname">is_support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistancePoint.is_support" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistanceRegion">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.support_resistance.ma_support_resistance.</code><code class="descname">SupportResistanceRegion</code><span class="sig-paren">(</span><em>points</em>, <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistanceRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents a support or suppress region.</p>
+<p>Initialize current.
+points: [SupportSuppressPoint], the list of support or suppress points.
+kind: int, 0 means support, 1 means suppress.</p>
+<blockquote>
+<div>If 0, all elements in points msut be support points;
+if 1, all elements points must be suppress points.</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistanceRegion.is_support">
+<code class="descname">is_support</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.SupportResistanceRegion.is_support" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.support_resistance.ma_support_resistance.</code><code class="descname">MaSupportResistanceFinder</code><span class="sig-paren">(</span><em>linear_regressor</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to find support and resistance points of an OHLC against a moving average curve.</p>
+<p>Initialize current.
+Parameters:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>linear_regressor: AbstractPiecewiseLinearRegression, the piecewise linear regressor used</dt>
+<dd>to find high and low points of an OHLC.</dd>
+</dl>
+</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.is_touching">
+<code class="descname">is_touching</code><span class="sig-paren">(</span><em>ohlc</em>, <em>ma</em>, <em>bar</em>, <em>kind</em>, <em>atr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.is_touching" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default function to decide if the price at the bar position is touching the moving average.
+Parameters:</p>
+<blockquote>
+<div><p>ohlc: OHLC, time series data.
+ma: [float], the moving average data from ohlc. The length of ma is equal to the length of ohlc. The</p>
+<blockquote>
+<div>first few elements in ma is NaN .</div></blockquote>
+<p>atr: [float], the ATR value for ohlc.
+bar: int, 0-based index of the OHLC position.
+kind: int, 0 means support, 1 means suppress.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>bool, True if the price at bar position is touching the moving average; False otherwise.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.is_crossing_within_threshold">
+<code class="descname">is_crossing_within_threshold</code><span class="sig-paren">(</span><em>ohlc</em>, <em>ma</em>, <em>bar</em>, <em>kind</em>, <em>atr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.is_crossing_within_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default function to decide if the price crossing is within threshold.
+Parameters:</p>
+<blockquote>
+<div><p>ohlc: OHLC, time series data.
+ma: [float], the moving average data from ohlc. The length of ma is equal to the length of ohlc. The</p>
+<blockquote>
+<div>first few elements in ma is NaN .</div></blockquote>
+<p>atr: [float], the ATR value for ohlc.
+bar: int, 0-based index of the OHLC position.
+kind: int, 0 means support, 1 means suppress.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>bool, True if the price crossing is within threshold, otherwise False.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>ma</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find support and resistance points from ohlc againat ma.
+Parameters:</p>
+<blockquote>
+<div><p>ohlc: OHLC, time series data.
+ma: [float], the moving average data from ohlc. The length of ma is equal to the length of ohlc. The</p>
+<blockquote>
+<div>first few elements in ma is NaN .</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>[SupportSuppressPoint], the list of found support or suppress points. If no point is found, return</dt>
+<dd>an empty list.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.find_regions">
+<code class="descname">find_regions</code><span class="sig-paren">(</span><em>ohlc</em>, <em>ma</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.find_regions" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Find support or suppress regions from ohlc against ma.</dt>
+<dd><ol class="first last arabic">
+<li><dl class="first docutils">
+<dt>A support region consists of the longest (two or more) consecutive support points; and there is no</dt>
+<dd><p class="first last">price crossing the moving average too far (defined by is_crossing_within_threshold) within those points.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>A suppress region consists of the longest (two or more) consecutive suppress points; and there is no</dt>
+<dd><p class="first last">price crossing the moving average too far (defined by is_crossing_within_threshold) within those points.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+<dt>Parameters:</dt>
+<dd><p class="first">ohlc: OHLC, time series data.
+ma: [float], the moving average data from ohlc. The length of ma is equal to the length of ohlc. The</p>
+<blockquote class="last">
+<div>first few elements in ma is NaN .</div></blockquote>
+</dd>
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>[SupportSuppressRegion], the list of found support or suppress regions. If no region is found, return</dt>
+<dd>an empty list.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.get_same_kind_points">
+<code class="descname">get_same_kind_points</code><span class="sig-paren">(</span><em>points</em>, <em>begin_index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.support_resistance.ma_support_resistance.MaSupportResistanceFinder.get_same_kind_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to find the list of continuous points from the point list that have the same kind with begin point
+Parameters:</p>
+<blockquote>
+<div>points: [SupportSuppressPoint], the point list
+begin_index: integer, the 0-start index of the begin point</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>([SupportSuppressPoint], next_begin_index), the continuous point list we find and the index of the next begin point</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sr_feature_generator.html" class="btn btn-neutral float-right" title="sr_feature_generator" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="support_resistance" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

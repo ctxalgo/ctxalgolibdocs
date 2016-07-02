@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ctxalgolib api doc &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="#"/>
+        <link rel="next" title="backtesting" href="backtesting/index.html"/> 
+
+  
+  <script src="static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="#" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Ctxalgolib api doc</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ctxalgolib-api-doc">
+<h1>Ctxalgolib api doc<a class="headerlink" href="#ctxalgolib-api-doc" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backtesting/index.html">backtesting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backtesting/data_sources.html">data_sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backtesting/simple_signal_evaluator.html">simple_signal_evaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backtesting/zipline_algorithm.html">zipline_algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backtesting/zipline_datasources.html">zipline_datasources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backtesting/zipline_utils.html">zipline_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cache/index.html">cache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cache/abstract_cache.html">abstract_cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache/file_cache.html">file_cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache/memory_cache.html">memory_cache</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="charting/index.html">charting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="charting/custom_indicators/index.html">custom_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/basic_indicators.html">basic_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/chart_data_generator.html">chart_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/chart_indicators.html">chart_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/charting_constants.html">charting_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/charts.html">charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/highcharts_builder.html">highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/highcharts_builder_code_generator.html">highcharts_builder_code_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/highcharts_charting_document_generator.html">highcharts_charting_document_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/highcharts_data_generator.html">highcharts_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/indicator_factory.html">indicator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting/talib_function_generator.html">talib_function_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_imports/index.html">data_imports</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/blog/index.html">blog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/coretx_data_import/index.html">coretx_data_import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/major_money/index.html">major_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/news/index.html">news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/ohlc_imports/index.html">ohlc_imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/otc/index.html">otc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/tongdaxin/index.html">tongdaxin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/capital_structure_importer.html">capital_structure_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/company_allocation_importer.html">company_allocation_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/company_capital_structures_importer.html">company_capital_structures_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/company_exrights_importer.html">company_exrights_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/company_financials_importer.html">company_financials_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/company_performance_importer.html">company_performance_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/company_report_dates_importer.html">company_report_dates_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/data_importer.html">data_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/east_money_plate_importer.html">east_money_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/fund_holders_collector.html">fund_holders_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/fundamental_expressions_calculator.html">fundamental_expressions_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/hexun_plate_importer.html">hexun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/hs300_stock_weights_retriever.html">hs300_stock_weights_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/if_trading_1s_importer.html">if_trading_1s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/index_composite_stocks_and_weights_collector.html">index_composite_stocks_and_weights_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/large_stock_price_finder.html">large_stock_price_finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/new_stock_collector.html">new_stock_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/plate_importer.html">plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/rar_folder_importer.html">rar_folder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/rumian_blog_extracter.html">rumian_blog_extracter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/share_holder_importer.html">share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/sina_plate_importer.html">sina_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/sohu_plate_importer.html">sohu_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/state_company_collector.html">state_company_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_info_collector.html">stock_info_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_name_retriever.html">stock_name_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_plate_importer.html">stock_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_pool_conditioned_triggers.html">stock_pool_conditioned_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_pool_return_calculator.html">stock_pool_return_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_pool_trigger_calculator.html">stock_pool_trigger_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_share_holder_importer.html">stock_share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_trading_1d_importer.html">stock_trading_1d_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/stock_trading_3s_importer.html">stock_trading_3s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/sub_new_stock_open_board_calculator.html">sub_new_stock_open_board_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/targeted_stock_expansion_collector.html">targeted_stock_expansion_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/tianya_collector.html">tianya_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/tonghuashun_plate_importer.html">tonghuashun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_imports/yahoo_data_importer.html">yahoo_data_importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="eval/index.html">eval</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eval/eval_utils.html">eval_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http_trading/index.html">http_trading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http_trading/abstract_apis.html">abstract_apis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_trading/caitong_apis.html">caitong_apis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_trading/caitong_utils_trading.html">caitong_utils_trading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loggers/index.html">loggers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="loggers/log_loaders.html">log_loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggers/logger_handlers.html">logger_handlers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning/index.html">machine_learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="machine_learning/online.html">online</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="messaging/index.html">messaging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="messaging/message_client.html">message_client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messaging/message_server.html">message_server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messaging/messaging_utils.html">messaging_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mission_control/index.html">mission_control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mission_control/mission_control.html">mission_control</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mt4/index.html">mt4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mt4/mq4_to_py_tool/index.html">mq4_to_py_tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mt4/abstract_mt4_indicator.html">abstract_mt4_indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mt4/mt4_indicator.html">mt4_indicator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="news_analysis/index.html">news_analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="news_analysis/news_analysis.html">news_analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news_analysis/news_similarity.html">news_similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news_analysis/news_similarity_from_stocks_in_content.html">news_similarity_from_stocks_in_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news_analysis/news_similarity_from_title.html">news_similarity_from_title</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ohlc/index.html">ohlc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/holidays/index.html">holidays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/abstract_ohlc.html">abstract_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/bar_arrival_request.html">bar_arrival_request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/bar_generator.html">bar_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/exright.html">exright</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_generator.html">ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_logger.html">ohlc_logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_merger.html">ohlc_merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_reader_writer.html">ohlc_reader_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/ohlc_utils.html">ohlc_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/periodicity.html">periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/time_transformer.html">time_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc/trading_days.html">trading_days</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="output/index.html">output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output/ipython/index.html">ipython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/ap.html">ap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/generate_mo_file.html">generate_mo_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/iterm_plot.html">iterm_plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/texttable.html">texttable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/translation.html">translation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pub_subs/index.html">pub_subs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pub_subs/abstract_data_subscriber.html">abstract_data_subscriber</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pydot/index.html">pydot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydot/dot_parser.html">dot_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydot/pydot.html">pydot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report/index.html">report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report/abstract_strategy_report.html">abstract_strategy_report</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="risk/index.html">risk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="risk/drawdown.html">drawdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risk/risk_metrics.html">risk_metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risk/risk_retrievers.html">risk_retrievers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rule_checking/index.html">rule_checking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/alerts/index.html">alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/rules/index.html">rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/checker.html">checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/configs.html">configs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/message_validity_checker.html">message_validity_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/rule.html">rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/rule_factory.html">rule_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/violations.html">violations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scripts/rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_future_data_into_database.html">update_future_data_into_database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_major_money.html">update_major_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_new_stocks.html">update_new_stocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_ohlc_with_periodicity.html">update_ohlc_with_periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_pool_return.html">update_pool_return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_share_holder_from_163.html">update_share_holder_from_163</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_shibor.html">update_shibor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_stock_daily_from_yahoo.html">update_stock_daily_from_yahoo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_stock_info.html">update_stock_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_stock_plates.html">update_stock_plates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_stock_plates_from_sohu.html">update_stock_plates_from_sohu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_stock_returns.html">update_stock_returns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_sub_new_stock_open_board.html">update_sub_new_stock_open_board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_unique_stock_plates.html">update_unique_stock_plates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_user_stock_pool.html">update_user_stock_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/backup_database.html">backup_database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/calculate_fundamentals.html">calculate_fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/calculate_plate_money_flow.html">calculate_plate_money_flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/calculate_stock_money_flow.html">calculate_stock_money_flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/check_future_data_preparer_result_correctness.html">check_future_data_preparer_result_correctness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/check_market_period_same_as_estimated_from_data.html">check_market_period_same_as_estimated_from_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/check_ohlc_equality.html">check_ohlc_equality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_blogs.html">collect_blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_fund_holders.html">collect_fund_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_future_commission.html">collect_future_commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_future_margin_and_price_limit.html">collect_future_margin_and_price_limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_future_volume_multiple.html">collect_future_volume_multiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_index_composite_stocks_and_weights.html">collect_index_composite_stocks_and_weights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_state_company.html">collect_state_company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_target_stock_expansion.html">collect_target_stock_expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/collect_tianya_blog.html">collect_tianya_blog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/construct_ctxalgobase.html">construct_ctxalgobase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/correct_extra_large_stock_daily_price.html">correct_extra_large_stock_daily_price</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/download_news_content.html">download_news_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/extract_instrument_from_data_preparer_folder.html">extract_instrument_from_data_preparer_folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/extract_part_of_tick_data.html">extract_part_of_tick_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/extract_rumian_blogs.html">extract_rumian_blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/find_missing_stock_exrights.html">find_missing_stock_exrights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/generate_future_info_classes.html">generate_future_info_classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/generate_future_market_periods.html">generate_future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/generate_highcharts_builder.html">generate_highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/generate_ohlc_for_future_historical_data.html">generate_ohlc_for_future_historical_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/generate_trading_days.html">generate_trading_days</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/identify_stocks.html">identify_stocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/import_file_to_database.html">import_file_to_database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/import_from_dafuweng.html">import_from_dafuweng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/imprt_tongdaxin_data.html">imprt_tongdaxin_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/prepare_tick_data_for_ohlc_generation.html">prepare_tick_data_for_ohlc_generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/process_future_1s_trading_data.html">process_future_1s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/process_index_5s_trading_data.html">process_index_5s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/process_stock_1s_trading_data.html">process_stock_1s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/process_stock_3s_trading_data.html">process_stock_3s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/retrieve_missing_stock_names.html">retrieve_missing_stock_names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/s3_data_updater.html">s3_data_updater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/script_utils.html">script_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/stock_data_processor.html">stock_data_processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/strong_stocks_statistics_calculator.html">strong_stocks_statistics_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/sync_ctxlite.html">sync_ctxlite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/unzip_data_from_dafuweng_to_data_preparer_format.html">unzip_data_from_dafuweng_to_data_preparer_format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_capital_structure.html">update_capital_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_company_allocation_from_163.html">update_company_allocation_from_163</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_company_news.html">update_company_news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_company_performance_from_163.html">update_company_performance_from_163</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripts/update_company_report_dates_from_163.html">update_company_report_dates_from_163</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/index.html">slippage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="slippage/ask_bid_spread_slippage_model_generator.html">ask_bid_spread_slippage_model_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ta/index.html">ta</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ta/chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta/turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="time_series/index.html">time_series</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="time_series/time_series.html">time_series</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timer/index.html">timer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timer/simulated_timer.html">simulated_timer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trading_utils/index.html">trading_utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils/type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trail/index.html">trail</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trail/temp.html">temp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trail/trail_pool_strategy.html">trail_pool_strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trail/trail_up_surge_distribution.html">trail_up_surge_distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trail/trial.html">trial</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trial/index.html">trial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="trial/process_index_5s_historical_data.html">process_index_5s_historical_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trial/temp2.html">temp2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trial/temp4.html">temp4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trial/unzip_index_5s_trading.html">unzip_index_5s_trading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backtesting/index.html" class="btn btn-neutral float-right" title="backtesting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

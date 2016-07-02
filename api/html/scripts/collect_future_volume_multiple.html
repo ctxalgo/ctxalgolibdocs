@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>collect_future_volume_multiple &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="scripts" href="index.html"/>
+        <link rel="next" title="collect_index_composite_stocks_and_weights" href="collect_index_composite_stocks_and_weights.html"/>
+        <link rel="prev" title="collect_future_margin_and_price_limit" href="collect_future_margin_and_price_limit.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">scripts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_future_data_into_database.html">update_future_data_into_database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_major_money.html">update_major_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_new_stocks.html">update_new_stocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_ohlc_with_periodicity.html">update_ohlc_with_periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_pool_return.html">update_pool_return</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_share_holder_from_163.html">update_share_holder_from_163</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_shibor.html">update_shibor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_stock_daily_from_yahoo.html">update_stock_daily_from_yahoo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_stock_info.html">update_stock_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_stock_plates.html">update_stock_plates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_stock_plates_from_sohu.html">update_stock_plates_from_sohu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_stock_returns.html">update_stock_returns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_sub_new_stock_open_board.html">update_sub_new_stock_open_board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_unique_stock_plates.html">update_unique_stock_plates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_user_stock_pool.html">update_user_stock_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup_database.html">backup_database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculate_fundamentals.html">calculate_fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculate_plate_money_flow.html">calculate_plate_money_flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculate_stock_money_flow.html">calculate_stock_money_flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check_future_data_preparer_result_correctness.html">check_future_data_preparer_result_correctness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check_market_period_same_as_estimated_from_data.html">check_market_period_same_as_estimated_from_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="check_ohlc_equality.html">check_ohlc_equality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_blogs.html">collect_blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_fund_holders.html">collect_fund_holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_future_commission.html">collect_future_commission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_future_margin_and_price_limit.html">collect_future_margin_and_price_limit</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">collect_future_volume_multiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_index_composite_stocks_and_weights.html">collect_index_composite_stocks_and_weights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_state_company.html">collect_state_company</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_target_stock_expansion.html">collect_target_stock_expansion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collect_tianya_blog.html">collect_tianya_blog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="construct_ctxalgobase.html">construct_ctxalgobase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correct_extra_large_stock_daily_price.html">correct_extra_large_stock_daily_price</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_news_content.html">download_news_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extract_instrument_from_data_preparer_folder.html">extract_instrument_from_data_preparer_folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extract_part_of_tick_data.html">extract_part_of_tick_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extract_rumian_blogs.html">extract_rumian_blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="find_missing_stock_exrights.html">find_missing_stock_exrights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_future_info_classes.html">generate_future_info_classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_future_market_periods.html">generate_future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_highcharts_builder.html">generate_highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_ohlc_for_future_historical_data.html">generate_ohlc_for_future_historical_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_trading_days.html">generate_trading_days</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identify_stocks.html">identify_stocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_file_to_database.html">import_file_to_database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_from_dafuweng.html">import_from_dafuweng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imprt_tongdaxin_data.html">imprt_tongdaxin_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prepare_tick_data_for_ohlc_generation.html">prepare_tick_data_for_ohlc_generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="process_future_1s_trading_data.html">process_future_1s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="process_index_5s_trading_data.html">process_index_5s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="process_stock_1s_trading_data.html">process_stock_1s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="process_stock_3s_trading_data.html">process_stock_3s_trading_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retrieve_missing_stock_names.html">retrieve_missing_stock_names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="s3_data_updater.html">s3_data_updater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="script_utils.html">script_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stock_data_processor.html">stock_data_processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strong_stocks_statistics_calculator.html">strong_stocks_statistics_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_ctxlite.html">sync_ctxlite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unzip_data_from_dafuweng_to_data_preparer_format.html">unzip_data_from_dafuweng_to_data_preparer_format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_capital_structure.html">update_capital_structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_company_allocation_from_163.html">update_company_allocation_from_163</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_company_news.html">update_company_news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_company_performance_from_163.html">update_company_performance_from_163</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update_company_report_dates_from_163.html">update_company_report_dates_from_163</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">scripts</a> &raquo;</li>
+      
+    <li>collect_future_volume_multiple</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/scripts/collect_future_volume_multiple.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="collect-future-volume-multiple">
+<h1>collect_future_volume_multiple<a class="headerlink" href="#collect-future-volume-multiple" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.scripts.collect_future_volume_multiple"></span><dl class="function">
+<dt id="ctxalgolib.scripts.collect_future_volume_multiple.collect_from_url">
+<code class="descclassname">ctxalgolib.scripts.collect_future_volume_multiple.</code><code class="descname">collect_from_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.collect_future_volume_multiple.collect_from_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>collect volume multiples of futures from the following url:</dt>
+<dd><a class="reference external" href="http://www.ebfcn.com/17/">http://www.ebfcn.com/17/</a></dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[(date, future_prefix, volume_multiple, tick_size, tick_unit)]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.collect_future_volume_multiple.import_to_database">
+<code class="descclassname">ctxalgolib.scripts.collect_future_volume_multiple.</code><code class="descname">import_to_database</code><span class="sig-paren">(</span><em>connection</em>, <em>datas</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.collect_future_volume_multiple.import_to_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>import the data we collect from url to database and only update those new information
+:param connection: the sql connection
+:param datas: [(date, future_prefix, volume_multiple, tick_size, tick_unit)]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.collect_future_volume_multiple.generate">
+<code class="descclassname">ctxalgolib.scripts.collect_future_volume_multiple.</code><code class="descname">generate</code><span class="sig-paren">(</span><em>connection</em>, <em>provider='default'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.collect_future_volume_multiple.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate ctxalgolib.trading_utils.FutureVolumeMultiple &amp; FutureTickSize
+:param connection: the sql connection
+:param provider: string, to specify the data provider
+:return: string, the generate code for the two classes</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.collect_future_volume_multiple.get_repeat_string">
+<code class="descclassname">ctxalgolib.scripts.collect_future_volume_multiple.</code><code class="descname">get_repeat_string</code><span class="sig-paren">(</span><em>ch</em>, <em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.collect_future_volume_multiple.get_repeat_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a string which is combined with repeat char
+:param ch: char, the char need to be repeated
+:param number: integer, the number of repeated char
+:return: string, the generated string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.collect_future_volume_multiple.main">
+<code class="descclassname">ctxalgolib.scripts.collect_future_volume_multiple.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.collect_future_volume_multiple.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collect_index_composite_stocks_and_weights.html" class="btn btn-neutral float-right" title="collect_index_composite_stocks_and_weights" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collect_future_margin_and_price_limit.html" class="btn btn-neutral" title="collect_future_margin_and_price_limit" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

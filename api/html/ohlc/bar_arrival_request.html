@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>bar_arrival_request &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="ohlc" href="index.html"/>
+        <link rel="next" title="bar_generator" href="bar_generator.html"/>
+        <link rel="prev" title="abstract_ohlc" href="abstract_ohlc.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_ohlc.html">abstract_ohlc</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">bar_arrival_request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exright.html">exright</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_generator.html">ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_logger.html">ohlc_logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_merger.html">ohlc_merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer.html">ohlc_reader_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_utils.html">ohlc_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="periodicity.html">periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_days.html">trading_days</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ohlc</a> &raquo;</li>
+      
+    <li>bar_arrival_request</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/ohlc/bar_arrival_request.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ohlc.bar_arrival_request">
+<span id="bar-arrival-request"></span><h1>bar_arrival_request<a class="headerlink" href="#module-ctxalgolib.ohlc.bar_arrival_request" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ohlc.bar_arrival_request.BarArrivalRequest">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_arrival_request.</code><code class="descname">BarArrivalRequest</code><span class="sig-paren">(</span><em>action</em>, <em>period</em>, <em>instrument_ids</em>, <em>ohlc_kind</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_arrival_request.BarArrivalRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Setup an action, which will be called when all required ohlc bars have arrived.
+For example, if period=Periodicity.HOURLY, and instrument_ids are the list of all the traded instruments,
+then action will be called the next time when all hourly bars for the traded instruments have arrived.
+:param action: function pointer with the following four parameters:</p>
+<blockquote>
+<div><p>ohlc_kind: string, the ohlc kind, can be &#8216;time-based&#8217;, &#8216;volatility-based&#8217;.
+period: Periodicity in case of time-based ohlc, or int/float as volatility threshold</p>
+<blockquote>
+<div>in case of volatility-based ohlc.</div></blockquote>
+<p>name: string, the bar arrival action name, same as the name parameter specified here.
+ohlcs: dict{string: OHLC}, the list of ohlcs, keys are instrument ids, values are the ohlc objects.</p>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>period</strong> &#8211; Periodicity in case of time-based ohlc, or int/float as volatility threshold
+in case of volatility-based ohlc. This is the period for the required ohlc bars.
+This will be passed into the action when it is invoked.</li>
+<li><strong>instrument_ids</strong> &#8211; [string], the list of instruments whose last ohlc bar of required period must
+arrived before action can be invoked.</li>
+<li><strong>ohlc_kind</strong> &#8211; string, the ohlc kind, can be &#8216;time-based&#8217;, &#8216;volatility-based&#8217;.
+This will be passed into the action when it is invoked.</li>
+<li><strong>name</strong> &#8211; string, the bar arrival action name, used to identify different bar arrival requests.
+This will be passed into the action when it is invoked.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_arrival_request.BarArrivalRequest.on_bar">
+<code class="descname">on_bar</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>bars</em>, <em>all_ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_arrival_request.BarArrivalRequest.on_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action to be called when there is some ohlc bars generated.
+:param instrument_id, string, the instrument id of the generated bar(s).
+:param bars: dict{string: dict{Periodicity or int/float: Bar}.</p>
+<blockquote>
+<div>Meaning: dict{ohlc_kind: dict{Periodicity/volatility threshold: Bar}}
+Outer keys are ohlc kind such as &#8216;time-based&#8217;, &#8216;volatility-based&#8217; from OhlcGeneratorConstants.
+Outer values are dict from Periodicity to Bar in the case of time-based ohlcs or
+dict from int/float to Bar in the case of volatility-based ohlcs.
+It may contains more than one bars: a single bar under each periodicity.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>all_ohlcs</strong> &#8211; dict{string: OHLC}, meaning dict{instrument_id: OHLC}, the ohlcs
+for the registered instruments at the registered period.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_arrival_request.BarArrivalRequest.on_bar2">
+<code class="descname">on_bar2</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>bars</em>, <em>all_ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_arrival_request.BarArrivalRequest.on_bar2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action to be called when there is some ohlc bars generated.
+This method will return all_ohlcs if the new bars will trigger multiple bar arrival event.
+:param instrument_id, string, the instrument id of the generated bar(s).
+:param bars: dict{string: dict{Periodicity or int/float: Bar}.</p>
+<blockquote>
+<div>Meaning: dict{ohlc_kind: dict{Periodicity/volatility threshold: Bar}}
+Outer keys are ohlc kind such as &#8216;time-based&#8217;, &#8216;volatility-based&#8217; from OhlcGeneratorConstants.
+Outer values are dict from Periodicity to Bar in the case of time-based ohlcs or
+dict from int/float to Bar in the case of volatility-based ohlcs.
+It may contains more than one bars: a single bar under each periodicity.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>all_ohlcs</strong> &#8211; dict{string: OHLC}, meaning dict{instrument_id: OHLC}, the ohlcs
+for the registered instruments at the registered period.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Return dict{string:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">OHLCS}, same as all_ohlcs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bar_generator.html" class="btn btn-neutral float-right" title="bar_generator" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="abstract_ohlc.html" class="btn btn-neutral" title="abstract_ohlc" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

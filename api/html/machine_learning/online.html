@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>online &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="machine_learning" href="index.html"/>
+        <link rel="next" title="messaging" href="../messaging/index.html"/>
+        <link rel="prev" title="machine_learning" href="index.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">machine_learning</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">online</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">machine_learning</a> &raquo;</li>
+      
+    <li>online</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/machine_learning/online.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.machine_learning.online">
+<span id="online"></span><h1>online<a class="headerlink" href="#module-ctxalgolib.machine_learning.online" title="Permalink to this headline">¶</a></h1>
+<p>Online learning algorithms</p>
+<p>copyright 2016 Equilibirum Capital</p>
+<dl class="class">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlinePredictor">
+<em class="property">class </em><code class="descclassname">ctxalgolib.machine_learning.online.</code><code class="descname">AbstractOnlinePredictor</code><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlinePredictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>An abstract instance of an online learner.  Given a context, suggests an action.
+Given context, suggestion and result, updates its prediction</p>
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlinePredictor.action">
+<code class="descname">action</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlinePredictor.action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suggest action for given context</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlinePredictor.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>context</em>, <em>prediction</em>, <em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlinePredictor.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive result</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor">
+<em class="property">class </em><code class="descclassname">ctxalgolib.machine_learning.online.</code><code class="descname">AbstractOnlineContextlessPredictor</code><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.machine_learning.online.AbstractOnlinePredictor" title="ctxalgolib.machine_learning.online.AbstractOnlinePredictor"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.machine_learning.online.AbstractOnlinePredictor</span></code></a></p>
+<p>An abstract instance of an online learner, without context.
+Makes predictions, gets result and updates</p>
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action in no context</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.observe">
+<code class="descname">observe</code><span class="sig-paren">(</span><em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.observe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update with result in no context</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.action">
+<code class="descname">action</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suggest action for given context</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>context</em>, <em>prediction</em>, <em>result</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive result</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.machine_learning.online.adahedge_mix">
+<code class="descclassname">ctxalgolib.machine_learning.online.</code><code class="descname">adahedge_mix</code><span class="sig-paren">(</span><em>eta</em>, <em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.adahedge_mix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs mix function from adahedge paper given below</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.machine_learning.online.AdaHedge">
+<em class="property">class </em><code class="descclassname">ctxalgolib.machine_learning.online.</code><code class="descname">AdaHedge</code><span class="sig-paren">(</span><em>dimension</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AdaHedge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor" title="ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.machine_learning.online.AbstractOnlineContextlessPredictor</span></code></a></p>
+<p>From &#8220;Follow the Leader If You Can, Hedge If You Must&#8221;
+<a class="reference external" href="http://arxiv.org/pdf/1301.0534v2.pdf">http://arxiv.org/pdf/1301.0534v2.pdf</a></p>
+<p>Translation and scale invariant on losses</p>
+<p>Numerically stable Matlab code
+% Returns the losses of AdaHedge.
+% l(t,k) is the loss of expert k at time t
+function h = adahedge(l)</p>
+<blockquote>
+<div><p>[T, K]  = size(l);
+h       = nan(T,1);
+L       = zeros(1,K);
+Delta   = 0</p>
+<dl class="docutils">
+<dt>for t = 1:T</dt>
+<dd>eta = log(K)/Delta;
+[w, Mprev] = mix(eta, L);
+h(t) = w * l(t,:)&#8217;;
+L = L + l(t,:);
+[~, M] = mix(eta, L);
+delta = max(0, h(t)-(M-Mprev)); % (max clips numeric Jensen violation)
+Delta = Delta + delta;</dd>
+</dl>
+<p>end</p>
+</div></blockquote>
+<p>end</p>
+<p>% Returns the posterior weights and mix loss
+% for learning rate eta and cumulative loss
+% vector L, avoiding numerical instability.
+function [w, M] = mix(eta, L)</p>
+<blockquote>
+<div><p>mn = min(L);
+if (eta == Inf) % Limit behaviour: FTL</p>
+<blockquote>
+<div>w = L==mn;</div></blockquote>
+<dl class="docutils">
+<dt>else</dt>
+<dd>w = exp(-eta .* (L-mn));</dd>
+</dl>
+<p>end
+s = sum(w);
+w = w/s;
+M = mn - log(s/length(L))/eta;</p>
+</div></blockquote>
+<p>end</p>
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AdaHedge.action">
+<code class="descname">action</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AdaHedge.action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AdaHedge.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>_</em>, <em>prediction</em>, <em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AdaHedge.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AdaHedge.observe">
+<code class="descname">observe</code><span class="sig-paren">(</span><em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AdaHedge.observe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update with result in no context</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.AdaHedge.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.AdaHedge.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action in no context</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.machine_learning.online.FlipFlop">
+<em class="property">class </em><code class="descclassname">ctxalgolib.machine_learning.online.</code><code class="descname">FlipFlop</code><span class="sig-paren">(</span><em>dimension</em>, <em>phi</em>, <em>alpha</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.FlipFlop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.machine_learning.online.AdaHedge" title="ctxalgolib.machine_learning.online.AdaHedge"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.machine_learning.online.AdaHedge</span></code></a></p>
+<p>From &#8220;Follow the Leader If You Can, Hedge If You Must&#8221;
+<a class="reference external" href="http://arxiv.org/pdf/1301.0534v2.pdf">http://arxiv.org/pdf/1301.0534v2.pdf</a></p>
+<p>Translation and scale invariant on losses.  Performs better on non-adversarial sequences</p>
+<p>% Returns the losses of FlipFlop
+% l(t,k) is the loss of expert k at time t; phi &gt; 1 and alpha &gt; 0 are parameters
+function h = flipflop(l, alpha, phi)</p>
+<blockquote>
+<div><p>[T, K]  = size(l);
+h = nan(T,1);
+L = zeros(1,K);
+Delta = [0 0];
+scale = [phi/alpha alpha]
+regime = 1; % 1=FTL, 2=AH</p>
+<dl class="docutils">
+<dt>for t = 1:T</dt>
+<dd><p class="first">if regime==1, eta = Inf; else eta = log(K)/Delta(2); end
+[w, Mprev] = mix(eta, L);
+h(t) = w * l(t,:)&#8217;;
+L = L + l(t,:);
+[~, M] = mix(eta, L);
+delta = max(0, h(t)-(M-Mprev));
+Delta(regime) = Delta(regime) + delta;
+if Delta(regime) &gt; scale(regime) * Delta(3-regime)</p>
+<blockquote>
+<div>regime = 3-regime;</div></blockquote>
+<p class="last">end</p>
+</dd>
+</dl>
+<p>end</p>
+</div></blockquote>
+<p>end</p>
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.FlipFlop.action">
+<code class="descname">action</code><span class="sig-paren">(</span><em>_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.FlipFlop.action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just return weights, no context here.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.FlipFlop.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>_</em>, <em>prediction</em>, <em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.FlipFlop.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Two regiemes, AdaHedge, and Follow the leader.
+Switch between them based on performance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.FlipFlop.observe">
+<code class="descname">observe</code><span class="sig-paren">(</span><em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.FlipFlop.observe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update with result in no context</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.machine_learning.online.FlipFlop.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.machine_learning.online.FlipFlop.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action in no context</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../messaging/index.html" class="btn btn-neutral float-right" title="messaging" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="machine_learning" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

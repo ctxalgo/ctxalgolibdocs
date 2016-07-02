@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ast_utils &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="code_gen" href="index.html"/>
+        <link rel="next" title="indicator_generator" href="indicator_generator.html"/>
+        <link rel="prev" title="code_gen" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">code_gen</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ast_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indicator_generator.html">indicator_generator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_checking.html">model_checking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">trading_utils</a> &raquo;</li>
+      
+          <li><a href="index.html">code_gen</a> &raquo;</li>
+      
+    <li>ast_utils</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/trading_utils/code_gen/ast_utils.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.code_gen.ast_utils">
+<span id="ast-utils"></span><h1>ast_utils<a class="headerlink" href="#module-ctxalgolib.trading_utils.code_gen.ast_utils" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.CanonicalExpressionGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.ast_utils.</code><code class="descname">CanonicalExpressionGenerator</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.CanonicalExpressionGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to generate canonical expression for an expression.
+A canonical expression is one that all whitespaces are normalized, so the textual representation of
+the expression AST can be used to identify an expression.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.CanonicalExpressionGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.CanonicalExpressionGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate canonical expression of the given expression.
+:param expr: Expr, a Python expression AST.
+:return: Expr, a canonical Python expression.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.CanonicalExpressionGenerator.generate_from_string">
+<code class="descname">generate_from_string</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.CanonicalExpressionGenerator.generate_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate canonical expression from a string expression.
+:param expr: string, a Python expression as string.
+:re turn string, a canonical expression as string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.ast_utils.</code><code class="descname">EqualToAssignTransformer</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">ast.NodeTransformer</span></code></p>
+<p>A class to replace == operator with assignment =.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.replace">
+<code class="descname">replace</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace == operator with assignment =.
+:param expr: Expr, a Python AST Node.
+:return: string, the expression with operators replaced.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.visit_Expr">
+<code class="descname">visit_Expr</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.visit_Expr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.visit_BinOp">
+<code class="descname">visit_BinOp</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.visit_BinOp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.generic_visit">
+<code class="descname">generic_visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.generic_visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.visit">
+<code class="descname">visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.EqualToAssignTransformer.visit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visit a node.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.ast_utils.</code><code class="descname">OldExpressionRemover</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">ast.NodeTransformer</span></code></p>
+<p>A class to remove all old functions.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>In node, remove all old functions.
+:param node: a Python AST node.
+:return: a Python AST node, the ast with old functions removed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.visit_Call">
+<code class="descname">visit_Call</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.visit_Call" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.generic_visit">
+<code class="descname">generic_visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.generic_visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.visit">
+<code class="descname">visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.OldExpressionRemover.visit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visit a node.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.ast_utils.</code><code class="descname">SubExpressionReplacer</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">ast.NodeTransformer</span></code></p>
+<p>A class to replace all occurrences of old_sub_expr with new_sub_expr.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer.replace">
+<code class="descname">replace</code><span class="sig-paren">(</span><em>expr</em>, <em>old_sub_expr</em>, <em>new_sub_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the expression expr, replace all occurrences of old_sub_expr with new_sub_expr.
+:param expr: Expr, a Python expression, already in canonical format.
+:param old_sub_expr: Expr, the expression to be replaced, already in canonical format.
+:param new_sub_expr: new_sub_expr: Expr, the expression to appear in result, already in canonical format.
+:return: Expr, the new expression with sub expression replaced.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer.visit">
+<code class="descname">visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer.visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer.generic_visit">
+<code class="descname">generic_visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionReplacer.generic_visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.ast_utils.</code><code class="descname">SubExpressionFinder</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">ast.NodeTransformer</span></code></p>
+<p>A class to find weather sub expression in the given expression.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>expr</em>, <em>sub_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder.find" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder.visit">
+<code class="descname">visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder.visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder.generic_visit">
+<code class="descname">generic_visit</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.SubExpressionFinder.generic_visit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.code_gen.ast_utils.</code><code class="descname">AstUtils</code><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.parse_expr">
+<em class="property">static </em><code class="descname">parse_expr</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.parse_expr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse Python expression expr in string and return Expr AST node.
+:param expr: string, a Python expression.
+:return: Expr, Python AST node.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.dump_expr">
+<em class="property">static </em><code class="descname">dump_expr</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.dump_expr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump expr AST as string.
+:param expr: Expr, a Python Expr AST node.
+:return: string, dumped code.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.get_canonical_expression">
+<em class="property">static </em><code class="descname">get_canonical_expression</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.get_canonical_expression" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return a canonical expression</dt>
+<dd>AST from the given AST expression. A canonical AST removes</dd>
+</dl>
+<p>unnecessary whitespaces, so its text can be used directly to decide equality of two AST nodes.
+:param expr: Expr, An Python expression node.
+:return: Expr, a new expression AST which is canonical.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.find_sub_expressions">
+<em class="property">static </em><code class="descname">find_sub_expressions</code><span class="sig-paren">(</span><em>expr</em>, <em>sub_expressions</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.find_sub_expressions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find sub expressions in the given expression.
+For example, if expr is &#8220;a + b * c&#8221; and sub_expressions is [&#8220;a&#8221;, &#8220;b&#8221;], then the result is [&#8220;a&#8221;, &#8220;b&#8221;].
+:param expr: Expr, a Python expression, which is already in canonical format.
+:param sub_expressions: [Expr], the set of Python expressions, which are in canonical format to be</p>
+<blockquote>
+<div>searched inside the expr.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[Expr], the set of distinct sub expressions that appear in expr.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.replace_sub_expression">
+<em class="property">static </em><code class="descname">replace_sub_expression</code><span class="sig-paren">(</span><em>expr</em>, <em>old_sub_expr</em>, <em>new_sub_expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.replace_sub_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the expression expr, replace all occurrences of old_sub_expr with new_sub_expr.
+For example, if expr is &#8220;self.long_positions() &gt; 0&#8221;, old_sub_expr is &#8220;self.long_positions()&#8221; and
+new_sub_expr is &#8220;v&#8221;, then the result is: &#8220;v &gt; 0&#8221;.
+:param expr: Expr, a Python expression, already in canonical format.
+:param old_sub_expr: Expr, the expression to be replaced, already in canonical format.
+:param new_sub_expr: new_sub_expr: Expr, the expression to appear in result, already in canonical format.
+:return: Expr, the new expression with sub expression replaced.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.replace_equal_with_assignment">
+<em class="property">static </em><code class="descname">replace_equal_with_assignment</code><span class="sig-paren">(</span><em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.replace_equal_with_assignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>In expr, assume its structure is expr1 == expr2.
+Replace == operator with assignment =. For example, if expr is &#8220;a == b&#8221;,
+then the result expression is &#8220;a = b&#8221;.
+:param expr: Expr, a Python expression.
+:return: Assign, the expression with operators replaced.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.remove_old_expression">
+<em class="property">static </em><code class="descname">remove_old_expression</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.remove_old_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>In node, remove all old functions. For example, if node is &#8220;a = old(b) + 1&#8221;,
+then the result is &#8220;a = b + 1&#8221;.
+:param node: a Python AST node.
+:return: a Python AST node, the ast with old functions removed.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.find_read_sub_expressions">
+<em class="property">static </em><code class="descname">find_read_sub_expressions</code><span class="sig-paren">(</span><em>assignments</em>, <em>sub_exprs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.code_gen.ast_utils.AstUtils.find_read_sub_expressions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of assignments, assuming that those assignments have the form v = expr. And given a set of
+sub expressions, find all the mentioned sub expressions in the right hand sides of the assignments.
+For example, if the assignments are:
+[a = a + 1, b = a + 1, c = b + 1], and the set of sub expressions are [a, b, c],
+then the result is [a, b], because sub expressions &#8220;a&#8221; appears in the right hand side of the first and second
+assignment, and &#8220;b&#8221; appears in the right hand side of the third assignment.
+:param assignments: [Assign], a list of assignment AST.
+:param sub_exprs: [Expr], a list of sub expressions.
+:return: [Expr], the list of mentioned sub-expressions. This list only contains distinct sub expressions.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="indicator_generator.html" class="btn btn-neutral float-right" title="indicator_generator" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="code_gen" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

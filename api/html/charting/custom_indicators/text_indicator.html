@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>text_indicator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="custom_indicators" href="index.html"/>
+        <link rel="next" title="vsa_indicators" href="vsa_indicators.html"/>
+        <link rel="prev" title="talib_indicator" href="talib_indicator.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">charting</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">custom_indicators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="anchor_indicator.html">anchor_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="annotation_indicator.html">annotation_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bar_id_indicator.html">bar_id_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bbi_bollinger_indicator.html">bbi_bollinger_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chart_title_indicator.html">chart_title_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cycle_swing_indicator.html">cycle_swing_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_indicator.html">data_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="day_separator_indicator.html">day_separator_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dynamic_cycle_explorer_indicator.html">dynamic_cycle_explorer_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elloit_osc.html">elloit_osc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="height_indicator.html">height_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hide_indicator.html">hide_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="highest_and_lowest_indicator.html">highest_and_lowest_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jingzhun_indicator.html">jingzhun_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jma_indicator.html">jma_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="k_pattern_indicator.html">k_pattern_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lvt_rsi_indicator.html">lvt_rsi_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="marker_indicator.html">marker_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moment_indicator.html">moment_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onc_nmax.html">onc_nmax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qian_combined_trend_line_indicator.html">qian_combined_trend_line_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="range_indicator.html">range_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rectangle_indicator.html">rectangle_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rsx_indicator.html">rsx_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="series_indicator.html">series_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signal_indicator.html">signal_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slow_dkj_indicator.html">slow_dkj_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smooth_rsx_indicator.html">smooth_rsx_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speed_indicator.html">speed_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sub_title_indicator.html">sub_title_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="talib_indicator.html">talib_indicator</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">text_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vsa_indicators.html">vsa_indicators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="w_percent_r_indicator.html">w_percent_r_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="yijianfenghou_indicator.html">yijianfenghou_indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zhangdeyi_indicators.html">zhangdeyi_indicators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../basic_indicators.html">basic_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chart_data_generator.html">chart_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chart_indicators.html">chart_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../charting_constants.html">charting_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../charts.html">charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../highcharts_builder.html">highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../highcharts_builder_code_generator.html">highcharts_builder_code_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../highcharts_charting_document_generator.html">highcharts_charting_document_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../highcharts_data_generator.html">highcharts_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator_factory.html">indicator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talib_function_generator.html">talib_function_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">charting</a> &raquo;</li>
+      
+          <li><a href="index.html">custom_indicators</a> &raquo;</li>
+      
+    <li>text_indicator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/charting/custom_indicators/text_indicator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.charting.custom_indicators.text_indicator">
+<span id="text-indicator"></span><h1>text_indicator<a class="headerlink" href="#module-ctxalgolib.charting.custom_indicators.text_indicator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.custom_indicators.text_indicator.</code><code class="descname">TextIndicator</code><span class="sig-paren">(</span><em>translator</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../chart_indicators.html#ctxalgolib.charting.chart_indicators.SingleIndicator" title="ctxalgolib.charting.chart_indicators.SingleIndicator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.charting.chart_indicators.SingleIndicator</span></code></a></p>
+<dl class="attribute">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_HEIGHT">
+<code class="descname">PARA_HEIGHT</code><em class="property"> = 'height'</em><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_HEIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_ID">
+<code class="descname">PARA_ID</code><em class="property"> = 'id'</em><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_PERIOD">
+<code class="descname">PARA_PERIOD</code><em class="property"> = 'period'</em><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_PERIOD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_POSITION">
+<code class="descname">PARA_POSITION</code><em class="property"> = 'position'</em><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_POSITION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_SID">
+<code class="descname">PARA_SID</code><em class="property"> = 'sid'</em><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.PARA_SID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.add_general_parameters">
+<code class="descname">add_general_parameters</code><span class="sig-paren">(</span><em>parameters</em>, <em>default_colors='#7cb5ec'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.add_general_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.add_parameter_for_momentum">
+<code class="descname">add_parameter_for_momentum</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.add_parameter_for_momentum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.add_result">
+<code class="descname">add_result</code><span class="sig-paren">(</span><em>dest</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.add_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add content of source into dest.
+:param dest: dict from string to array.
+:param source: dict from string to array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_bszone">
+<code class="descname">calculate_bszone</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>algorithm</em>, <em>parameters</em>, <em>chart_generator</em>, <em>context</em>, <em>label_prefix=''</em>, <em>actual_period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_bszone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate over-bought/sold zone for moment indicator.
+:param ohlc: OHLC, the time series.
+:param momentum: The curve from the momentum indicator.
+:param algorithm: string, algorithm used to calculate bs zone.
+:param parameters: string, the parameters to the bs zone algorithm.
+:param label_prefix: string, the label prefix for the bszone, usually the indicator name.
+:return: dict from string to arrays. The series to be added in the chart. Keys are category names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_divergence">
+<code class="descname">calculate_divergence</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>algorithm</em>, <em>parameters</em>, <em>direction</em>, <em>confirm</em>, <em>confirm_color</em>, <em>chart_generator</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_divergence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate divergence.
+:param ohlc: OHLC, the time series.
+:param momentum: The curve from the momentum indicator.
+:param algorithm: string, algorithm used to calculate divergence.
+:param parameters: string, the parameters to the divergence algorithm.
+:param direction: string, the direction of the divergences to find.
+:param confirm: string, can be &#8216;true&#8217; or &#8216;false&#8217;, indicating the confirmed price is shown.
+:param confirm_color: string, the color to show confirmed price.
+:return: dict from string to arrays. The series to be added in the chart. Keys are category names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_divergence_and_bs_zone">
+<code class="descname">calculate_divergence_and_bs_zone</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>chart_generator</em>, <em>parameters</em>, <em>context</em>, <em>actual_period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_divergence_and_bs_zone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_general_parameters">
+<code class="descname">calculate_general_parameters</code><span class="sig-paren">(</span><em>parameters</em>, <em>data_length</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_general_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_turn_points">
+<code class="descname">calculate_turn_points</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>parameters</em>, <em>chart_generator</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate_turn_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw turn points for momentum indicator.
+:param ohlc: OHLC, the ohlc data.
+:param momentum: [float], the values for the momentum indicator.
+:param parameters: dict from string to objects, the actual parameters for the indicator.
+:param chart_generator: chart generator.
+:param context: chart generation context.
+:return: dict from string to arrays. The series to be added in the chart. Keys are category names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.color_convert">
+<code class="descname">color_convert</code><span class="sig-paren">(</span><em>color</em>, <em>transparency=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.color_convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_color_from_pos">
+<code class="descname">get_color_from_pos</code><span class="sig-paren">(</span><em>colors</em>, <em>transparencies</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_color_from_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return color from initial color and transparency
+:param colors: [string], the color array
+:param transparencies: [string], the transparency array
+:param pos: int, index of current array
+:return: string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_height_parameter">
+<code class="descname">get_default_height_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_height_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_period_parameter">
+<code class="descname">get_default_period_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_period_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_position_parameter">
+<code class="descname">get_default_position_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_position_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_sid_parameter">
+<code class="descname">get_default_sid_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_default_sid_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_label">
+<code class="descname">get_label</code><span class="sig-paren">(</span><em>parameters</em>, <em>context</em>, <em>extra=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the label of current indicator to display.
+Default is to display self.label.
+:param parameters: dict from string to values.</p>
+<blockquote>
+<div>This is the set of the actual parameters passed to the indicator.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>context</strong> &#8211; dict from string to values.</li>
+<li><strong>extra</strong> &#8211; dict from string to values. It provides additional data for label generation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the label.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_label_with_period">
+<code class="descname">get_label_with_period</code><span class="sig-paren">(</span><em>period</em>, <em>parameters</em>, <em>context</em>, <em>extra=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_label_with_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the label of current indicator to display with periodicity.
+Default is to display self.label.
+:param period: Periodicity, the period.
+:param parameters: dict from string to values.</p>
+<blockquote>
+<div>This is the set of the actual parameters passed to the indicator.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>context</strong> &#8211; dict from string to values.</li>
+<li><strong>extra</strong> &#8211; dict from string to values. It provides additional data for label generation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the label.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_line_styles">
+<code class="descname">get_line_styles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_line_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the line drawing styles.
+:return: [(string, string)]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_ohlc">
+<code class="descname">get_ohlc</code><span class="sig-paren">(</span><em>chart_generator</em>, <em>parameters</em>, <em>context</em>, <em>sid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_str">
+<code class="descname">get_str</code><span class="sig-paren">(</span><em>with_default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string representation of current indicator.
+:param with_default, boolean, True if the output includes default values for parameters.
+:return: string, a string representation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_text_with_period">
+<code class="descname">get_text_with_period</code><span class="sig-paren">(</span><em>period</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_text_with_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the translated text prefixed with translated period.
+:param period: Periodicity.
+:param text: string, the text to translate.
+:return: string, the translated text.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_value_from_pos">
+<code class="descname">get_value_from_pos</code><span class="sig-paren">(</span><em>data</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.get_value_from_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return value of the specified index. If pos &gt; len(data), use the last value of data
+:param data: [string], the string of general parameter
+:param pos: int, index of current array
+:return: string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.gettext">
+<code class="descname">gettext</code><span class="sig-paren">(</span><em>text</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.gettext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> &#8211; string, text to translate.</li>
+<li><strong>period</strong> &#8211; Periodicity, if not None, prefix the translated text with the translated periodicity.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the translation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.is_bszone_supported">
+<code class="descname">is_bszone_supported</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.is_bszone_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current indicator support overbought/oversold region drawing?
+:return: boolean</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.is_divergence_supported">
+<code class="descname">is_divergence_supported</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.is_divergence_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current indicator support divergence detection?
+:return: boolean</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.parse_datetime_string">
+<code class="descname">parse_datetime_string</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.parse_datetime_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return array of datetime
+:param data: string, the string of data separated by &#8216;:&#8217;
+:return: [datetime]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.parse_numeric_string">
+<code class="descname">parse_numeric_string</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.parse_numeric_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return array of float
+:param data: string, the string of data separated by &#8216;:&#8217;
+:return: [float]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.setup_parameters">
+<code class="descname">setup_parameters</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.setup_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup parameters.
+:param parameters: Dictionary from string to string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>chart_generator</em>, <em>parameters</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.custom_indicators.text_indicator.TextIndicator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vsa_indicators.html" class="btn btn-neutral float-right" title="vsa_indicators" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="talib_indicator.html" class="btn btn-neutral" title="talib_indicator" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

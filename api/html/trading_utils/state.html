@@ -1,0 +1,2768 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>state &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="state_machine_type_checking" href="state_machine_type_checking.html"/>
+        <link rel="prev" title="spin" href="spin.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>state</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/state.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.state">
+<span id="state"></span><h1>state<a class="headerlink" href="#module-ctxalgolib.trading_utils.state" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.AbstractState">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">AbstractState</code><span class="sig-paren">(</span><em>state_machine</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="strategy_queries.html#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries" title="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries</span></code></a></p>
+<p>Initialize current.
+:param state_machine: StateMachine. The state machine that will drive the states and state transitions.
+:param name: string, name of the state.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of current state.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.state">
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of the current state in self.state_machine.
+Note: the current state may not be the same as current object.
+:return: string, tne name of the current state in self.state_machine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.next_state">
+<code class="descname">next_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.next_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of the next state (in transition).
+The next state name will be updated when the _transit method is returned.
+So in postcondition evaluations, next state name is already updated to the
+name of the transited state (if any transition occurs).
+This is useful in writing postconditions.
+:return string, the name of the next state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_next_state">
+<code class="descname">is_next_state</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_next_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is next_state the given name?
+:param name: string, the name of a state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.transit">
+<code class="descname">transit</code><span class="sig-paren">(</span><em>inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.transit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transit to another state or stay at current state by handling input. If no transition should happen,
+return the current state, that is, self.
+:param inputs: dict from string to objects. inputs carry information from outside of the state machine,</p>
+<blockquote>
+<div>which is used to trigger state changes.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">State, the new state (if transition occurs) or self if stays.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.state_by_name">
+<code class="descname">state_by_name</code><span class="sig-paren">(</span><em>state_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.state_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the state in all_states with the given name.
+:param state_name: string, name of the state to return.
+:return: AbstractState.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.set_possible_next_states">
+<code class="descname">set_possible_next_states</code><span class="sig-paren">(</span><em>next_states</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.set_possible_next_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.next_states with next_states.
+:param next_states: dict from string to string. Keys are names of the next states; values are</p>
+<blockquote>
+<div>state transition conditions.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.set_data">
+<code class="descname">set_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.set_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set data.
+Parameters:</p>
+<blockquote>
+<div>data: dict from string to objects.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.process_contracts">
+<code class="descname">process_contracts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.process_contracts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process contracts for evaluations.
+Process preconditions in the following way:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Generate evaluatable preconditions.</li>
+</ol>
+</div></blockquote>
+<dl class="docutils">
+<dt>Process postconditions in the following way:</dt>
+<dd><ol class="first last arabic simple">
+<li>Find all old expressions in postconditions.</li>
+<li>Generate variables to hold values of old expressions.</li>
+<li>Generate new post-conditions using variables generated in point 2.</li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.evaluate_invariants">
+<code class="descname">evaluate_invariants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.evaluate_invariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate invariants.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.evaluate_preconditions">
+<code class="descname">evaluate_preconditions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.evaluate_preconditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate preconditions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.evaluate_old_expressions">
+<code class="descname">evaluate_old_expressions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.evaluate_old_expressions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate old expressions appearing in self.postconditions.
+Store the evaluations in self.old_expression_evaluations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.evaluate_postconditions">
+<code class="descname">evaluate_postconditions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.evaluate_postconditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate postconditions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.now">
+<code class="descname">now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.now" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current timestamp. Always use this method to get current timestamp in the strategy class
+and all the state classes. Do not use datetime.now() because it won&#8217;t work for backtesting.
+:return: datetime, the current timestamp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.latest_time_to_close_position">
+<code class="descname">latest_time_to_close_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.latest_time_to_close_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.latest_time_to_open_position">
+<code class="descname">latest_time_to_open_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.latest_time_to_open_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.ohlcs">
+<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>kind=None</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.ohlcs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.strategy_ohlc">
+<code class="descname">strategy_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.strategy_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.ohlc">
+<code class="descname">ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.volume_multiple">
+<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.volume_multiple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.margin_rate_by_money">
+<code class="descname">margin_rate_by_money</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.margin_rate_by_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.margin_money">
+<code class="descname">margin_money</code><span class="sig-paren">(</span><em>price</em>, <em>volume</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.margin_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.available_money">
+<code class="descname">available_money</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.available_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.balance">
+<code class="descname">balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.balance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.margin">
+<code class="descname">margin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.margin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.tick_size">
+<code class="descname">tick_size</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.tick_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.profit">
+<code class="descname">profit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.profit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.instrument_id">
+<code class="descname">instrument_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.instrument_ids">
+<code class="descname">instrument_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.instrument_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.all_positions">
+<code class="descname">all_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.all_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.positions">
+<code class="descname">positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.long_positions">
+<code class="descname">long_positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.long_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.short_positions">
+<code class="descname">short_positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.short_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.position_details">
+<code class="descname">position_details</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.position_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.all_position_details">
+<code class="descname">all_position_details</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.all_position_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.has_position">
+<code class="descname">has_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.has_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.has_pending_order">
+<code class="descname">has_pending_order</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.has_pending_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_order_pending">
+<code class="descname">is_order_pending</code><span class="sig-paren">(</span><em>order_ref</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_order_pending" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.account_size">
+<code class="descname">account_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.account_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.max_positions_to_open">
+<code class="descname">max_positions_to_open</code><span class="sig-paren">(</span><em>price</em>, <em>direction</em>, <em>instrument_id=None</em>, <em>available_money=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.max_positions_to_open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.current_transaction_id">
+<code class="descname">current_transaction_id</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.current_transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.transaction_id_from_order_ref">
+<code class="descname">transaction_id_from_order_ref</code><span class="sig-paren">(</span><em>order_ref</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.transaction_id_from_order_ref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.strategy_name">
+<code class="descname">strategy_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.strategy_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.periods">
+<code class="descname">periods</code><span class="sig-paren">(</span><em>kind=None</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.strategy_period">
+<code class="descname">strategy_period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.strategy_period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.strategy_period_kind">
+<code class="descname">strategy_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.strategy_period_kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.last_known_price">
+<code class="descname">last_known_price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.last_known_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.bars_in_last_days">
+<code class="descname">bars_in_last_days</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>start=-1</em>, <em>end=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.bars_in_last_days" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.has_run">
+<code class="descname">has_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.has_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.futures">
+<code class="descname">futures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.futures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.data_feed">
+<code class="descname">data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.data_feed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.trading_day">
+<code class="descname">trading_day</code><span class="sig-paren">(</span><em>now=None</em>, <em>delta=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.trading_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>trading_day=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_market_order_supported">
+<code class="descname">is_market_order_supported</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>trading_day=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_market_order_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.can_close_position_wrt_time">
+<code class="descname">can_close_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.can_close_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we close positions for all the instruments given by instrument_ids?
+Whether any position can be closed for an instrument id is defined by now &lt;= self.latest_time_to_close_position.
+:param now: datetime, current time. If None, use current timestamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be closed.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can close positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.can_open_and_close_position_wrt_time">
+<code class="descname">can_open_and_close_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.can_open_and_close_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we open and close positions for all the instruments given by instrument_ids?
+Whether any position can be closed for an instrument id is defined by
+now &lt;= self.latest_time_to_open_position and now &lt;= self.latest_time_to_close_position.
+:param now: datetime, current time. If None, use current timestamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be closed.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can open and close close positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.can_open_position_wrt_time">
+<code class="descname">can_open_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.can_open_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we open positions for all the instruments given by instrument_ids?
+Whether any position can be opened for an instrument id is defined by now &lt;= self.latest_time_to_open_position.
+:param now: datetime, current time. If None, use current timstamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be opened.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can open positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.direction">
+<code class="descname">direction</code><span class="sig-paren">(</span><em>volume</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return &#8216;long&#8217; or &#8216;short&#8217; as direction.
+:param volume: int, positive number means long direction, negative numer means short direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.dominant_instrument">
+<code class="descname">dominant_instrument</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.dominant_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the level dominant instrument id on the given trading day.
+:param instrument_prefix: string, instrument id prefix, such as IF, cu.
+:param trading_day: date, or string in form of yyyy-mm-dd. trading day.
+:param level: int, 0 means the dominant contract, 1 means the next dominant contract, and so on.
+:return: string, the instrument id of the asked dominant contract.</p>
+<blockquote>
+<div>If no such dominant contract, return None.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.filtered_position">
+<code class="descname">filtered_position</code><span class="sig-paren">(</span><em>direction</em>, <em>condition</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.filtered_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current position details for a given instrument.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param condition: string, values can be:</p>
+<blockquote>
+<div>highest_price: return the position which has the highest filled price.
+lowest_price: return the position which has the lowest filled price.
+earliest_filled: return the position which has the earliest filled time.
+latest_filled: return the position which as the latest filled time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict{string: object}
+The details of a particular position which satisfy the given condition. The format is:
+{<blockquote>
+<div>&#8216;order_ref&#8217;: order reference string
+&#8216;price&#8217;: the price when the position is opened.
+&#8216;volume&#8217;: the volume that are executed at this price.
+&#8216;timestamp&#8217;: the time when this position is executed.</div></blockquote>
+<p>}.
+If there are more than one position satisfies the condition, randomly choose one.
+If there is no position, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.has_data_feed">
+<code class="descname">has_data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.has_data_feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is data feed set?
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.has_long_position">
+<code class="descname">has_long_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.has_long_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current strategy have long positions?
+:param instrument_id: string, instrument id. If None, use self.instrument_id().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.has_short_position">
+<code class="descname">has_short_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.has_short_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current strategy have short positions?
+:param instrument_id: string, instrument id. If None, use self.instrument_id().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.highest_position_price">
+<code class="descname">highest_position_price</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.highest_position_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the price of lowest long position.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param instrument_id: string, the instrument id whose position details are to be retrieved.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, position price.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.in_state">
+<code class="descname">in_state</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.in_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current state machine in state named name?
+:param name: string, name of a state.
+:return string, name of the state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_day">
+<code class="descname">is_day</code><span class="sig-paren">(</span><em>timestamp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given timestamp in day trading period?
+:param timestamp: datetime, the given timestamp. If None, use self.now().
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_night">
+<code class="descname">is_night</code><span class="sig-paren">(</span><em>timestamp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_night" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given timestamp in night trading period?
+:param timestamp: datetime, the given timestamp. If None, use self.now().
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_position_reached">
+<code class="descname">is_position_reached</code><span class="sig-paren">(</span><em>target_position</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_position_reached" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the current position for the given instrument is the same as target position.
+:param target_position: int, the target position. If None, meaning that target position is unknown,</p>
+<blockquote>
+<div>then this method always returns False.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">boolean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_position_single_sided">
+<code class="descname">is_position_single_sided</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_position_single_sided" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current position for the given instrument single sided?
+Meaning either long or short positions, but not both.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return bool, True if position for the given instrument is single-sided, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_stop_loss_touched">
+<code class="descname">is_stop_loss_touched</code><span class="sig-paren">(</span><em>price</em>, <em>stop_loss</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_stop_loss_touched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has price touched given stop loss?
+:param price: float, the current instrument price.
+:param stop_loss: float, the predefined stop loss price.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:return: bool, True if given price touches stop loss.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.is_stop_win_touched">
+<code class="descname">is_stop_win_touched</code><span class="sig-paren">(</span><em>price</em>, <em>stop_win</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.is_stop_win_touched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has price touched given stop win?
+:param price: float, the current instrument price.
+:param stop_win: float, the predefined stop loss price.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:return: bool, True if given price touches stop win.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.long_position_profit">
+<code class="descname">long_position_profit</code><span class="sig-paren">(</span><em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.long_position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held long positions.
+:param condition: string, the condition to select positions. Values can be the following:</p>
+<blockquote>
+<div>highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.lowest_position_price">
+<code class="descname">lowest_position_price</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.lowest_position_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the price of lowest long position.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param instrument_id: string, the instrument id whose position details are to be retrieved.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, position price.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.ohlc_in_last_days">
+<code class="descname">ohlc_in_last_days</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>start=-1</em>, <em>end=None</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.ohlc_in_last_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sliced ohlc, which covers all bars from start to end (in days).
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>start</strong> &#8211; int, start day index. Must be negative. Index days from backward.</li>
+<li><strong>end</strong> &#8211; int, end day index. Must be negative or None. Index days from backward.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.position_profit">
+<code class="descname">position_profit</code><span class="sig-paren">(</span><em>direction=None</em>, <em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held positions.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;, specifies the direction of the position whose</p>
+<blockquote>
+<div>profit is to be calculated.
+If None, assume that there is only one direction position, and use self.single_sided_position.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>condition</strong> &#8211; string, the condition to select positions. Values can be the following:
+highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</li>
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.price">
+<code class="descname">price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as self.last_known_price().
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return float, the last known price, None if no price is known for the given instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.short_position_profit">
+<code class="descname">short_position_profit</code><span class="sig-paren">(</span><em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.short_position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held short positions.
+:param condition: string, the condition to select positions. Values can be the following:</p>
+<blockquote>
+<div>highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.sign">
+<code class="descname">sign</code><span class="sig-paren">(</span><em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sign 1 or -1 for the position direction. This is useful
+when calculating volumes from directions.
+:param direction: string or int, can be &#8216;long&#8217; or &#8216;short&#8217;.</p>
+<blockquote>
+<div>Or an integer, positive number means long, negative number mean short.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int, return 1 if direction is &#8216;long&#8217;, otherwise -1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.single_sided_position">
+<code class="descname">single_sided_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.single_sided_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the single sided position for given instrument.
+Single sided means: assuming that there is no both long and short positions for the instrument, then</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>If long position is positive, return the long position number (positive).</li>
+<li>If short position is negative, return the short position number (negative).</li>
+<li>Otherwise return 0.</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return int, single-sided position. If the instrument have both long and short side positions,</dt>
+<dd>return None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.single_sided_positions">
+<code class="descname">single_sided_positions</code><span class="sig-paren">(</span><em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.single_sided_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the single sided position for the given instrument ids.
+:param instrument_ids: [string], the required instrument ids.</p>
+<blockquote>
+<div>If None, use self.instrument_ids().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict{string: int}, meaning dict{instrument_id: position}.
+Keys are the same as instrument_ids. Values are the single sided positions for those instruments.
+If an instrument has no position, its corresponding value is 0.
+If an instrument has both long and short sided positions, its corresponding value is None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.today_bars">
+<code class="descname">today_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.today_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar slice in ohlc, which covers all bars from today.
+:param ohlc: OHLC, the ohlc object.
+:param now: datetime, an optional timestamp indicating current time, if None,</p>
+<blockquote>
+<div>use the last timestamp in ohlc as current time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice, the slice used to index into ohlc. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.today_ohlc">
+<code class="descname">today_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.today_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return today&#8217;s ohlc, the sliced part only contain bars from today.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.yesterday_bars">
+<code class="descname">yesterday_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.yesterday_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar slice in ohlc, which covers all bars from yesterday.
+:param ohlc: OHLC, the ohlc object.
+:param now: datetime, an optional timestamp indicating current time, if None,</p>
+<blockquote>
+<div>use the last timestamp in ohlc as current time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice, the slice used to index into ohlc. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.yesterday_ohlc">
+<code class="descname">yesterday_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.yesterday_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sliced part from the given ohlc, the sliced part only contain bars from yesterday.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.TemplateState">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">TemplateState</code><span class="sig-paren">(</span><em>state_machine</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.state.AbstractState" title="ctxalgolib.trading_utils.state.AbstractState"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.state.AbstractState</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.on_entry">
+<code class="descname">on_entry</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.on_entry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.on_exit">
+<code class="descname">on_exit</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.on_exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.out_edges">
+<em class="property">static </em><code class="descname">out_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.out_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>The list of predefined and fixed out edges leaving current state.
+:return: [string], the list of out edge names that can leave current state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.prepare_for_transition">
+<code class="descname">prepare_for_transition</code><span class="sig-paren">(</span><em>next_state</em>, <em>inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.prepare_for_transition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare for the transition to next_state. This method is invoked inside the _transit method
+of a pre-defined state class. It is invoked when the state has finished all calculations and
+is ready to transit to the next state.
+:param next_state: string, name of the state to transit to.
+:param inputs: dict{string: object}, the inputs that are pass into current state&#8217;s _transit method.
+:return: dict{string: object}, the data that should be passed to</p>
+<blockquote>
+<div>the next_state (data is passed into the next_state through set_data).</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_transition_valid">
+<code class="descname">is_transition_valid</code><span class="sig-paren">(</span><em>transitions</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_transition_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is transitions valid according to out_edges?
+transitions is valid if it contains all the next states required by out_edges and
+the labels in transitions are also defined in out_edges.
+:param transitions: dict{string:string}, the transitions from current state.</p>
+<blockquote>
+<div>Keys are target state names, values are the label of those transitions.
+Note that the labels must be certain strings defined in current class.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.account_size">
+<code class="descname">account_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.account_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.all_position_details">
+<code class="descname">all_position_details</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.all_position_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.all_positions">
+<code class="descname">all_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.all_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.available_money">
+<code class="descname">available_money</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.available_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.balance">
+<code class="descname">balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.balance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.bars_in_last_days">
+<code class="descname">bars_in_last_days</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>start=-1</em>, <em>end=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.bars_in_last_days" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.can_close_position_wrt_time">
+<code class="descname">can_close_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.can_close_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we close positions for all the instruments given by instrument_ids?
+Whether any position can be closed for an instrument id is defined by now &lt;= self.latest_time_to_close_position.
+:param now: datetime, current time. If None, use current timestamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be closed.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can close positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.can_open_and_close_position_wrt_time">
+<code class="descname">can_open_and_close_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.can_open_and_close_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we open and close positions for all the instruments given by instrument_ids?
+Whether any position can be closed for an instrument id is defined by
+now &lt;= self.latest_time_to_open_position and now &lt;= self.latest_time_to_close_position.
+:param now: datetime, current time. If None, use current timestamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be closed.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can open and close close positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.can_open_position_wrt_time">
+<code class="descname">can_open_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.can_open_position_wrt_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can we open positions for all the instruments given by instrument_ids?
+Whether any position can be opened for an instrument id is defined by now &lt;= self.latest_time_to_open_position.
+:param now: datetime, current time. If None, use current timstamp.
+:param instrument_ids: [string], the list of instrument ids whose positions need to be opened.</p>
+<blockquote>
+<div>If None, use self.instrument_id() as the only instrument.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if we can open positions for all the given instrument ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.current_transaction_id">
+<code class="descname">current_transaction_id</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.current_transaction_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.data_feed">
+<code class="descname">data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.data_feed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.direction">
+<code class="descname">direction</code><span class="sig-paren">(</span><em>volume</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return &#8216;long&#8217; or &#8216;short&#8217; as direction.
+:param volume: int, positive number means long direction, negative numer means short direction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.dominant_instrument">
+<code class="descname">dominant_instrument</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.dominant_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the level dominant instrument id on the given trading day.
+:param instrument_prefix: string, instrument id prefix, such as IF, cu.
+:param trading_day: date, or string in form of yyyy-mm-dd. trading day.
+:param level: int, 0 means the dominant contract, 1 means the next dominant contract, and so on.
+:return: string, the instrument id of the asked dominant contract.</p>
+<blockquote>
+<div>If no such dominant contract, return None.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.evaluate_invariants">
+<code class="descname">evaluate_invariants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.evaluate_invariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate invariants.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.evaluate_old_expressions">
+<code class="descname">evaluate_old_expressions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.evaluate_old_expressions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate old expressions appearing in self.postconditions.
+Store the evaluations in self.old_expression_evaluations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.evaluate_postconditions">
+<code class="descname">evaluate_postconditions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.evaluate_postconditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate postconditions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.evaluate_preconditions">
+<code class="descname">evaluate_preconditions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.evaluate_preconditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate preconditions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.filtered_position">
+<code class="descname">filtered_position</code><span class="sig-paren">(</span><em>direction</em>, <em>condition</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.filtered_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current position details for a given instrument.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param condition: string, values can be:</p>
+<blockquote>
+<div>highest_price: return the position which has the highest filled price.
+lowest_price: return the position which has the lowest filled price.
+earliest_filled: return the position which has the earliest filled time.
+latest_filled: return the position which as the latest filled time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict{string: object}
+The details of a particular position which satisfy the given condition. The format is:
+{<blockquote>
+<div>&#8216;order_ref&#8217;: order reference string
+&#8216;price&#8217;: the price when the position is opened.
+&#8216;volume&#8217;: the volume that are executed at this price.
+&#8216;timestamp&#8217;: the time when this position is executed.</div></blockquote>
+<p>}.
+If there are more than one position satisfies the condition, randomly choose one.
+If there is no position, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.futures">
+<code class="descname">futures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.futures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.has_data_feed">
+<code class="descname">has_data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.has_data_feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is data feed set?
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.has_long_position">
+<code class="descname">has_long_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.has_long_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current strategy have long positions?
+:param instrument_id: string, instrument id. If None, use self.instrument_id().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.has_pending_order">
+<code class="descname">has_pending_order</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.has_pending_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.has_position">
+<code class="descname">has_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.has_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.has_run">
+<code class="descname">has_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.has_run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.has_short_position">
+<code class="descname">has_short_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.has_short_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current strategy have short positions?
+:param instrument_id: string, instrument id. If None, use self.instrument_id().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.highest_position_price">
+<code class="descname">highest_position_price</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.highest_position_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the price of lowest long position.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param instrument_id: string, the instrument id whose position details are to be retrieved.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, position price.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.in_state">
+<code class="descname">in_state</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.in_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current state machine in state named name?
+:param name: string, name of a state.
+:return string, name of the state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.instrument_id">
+<code class="descname">instrument_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.instrument_ids">
+<code class="descname">instrument_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.instrument_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_day">
+<code class="descname">is_day</code><span class="sig-paren">(</span><em>timestamp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given timestamp in day trading period?
+:param timestamp: datetime, the given timestamp. If None, use self.now().
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_market_order_supported">
+<code class="descname">is_market_order_supported</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>trading_day=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_market_order_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_next_state">
+<code class="descname">is_next_state</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_next_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is next_state the given name?
+:param name: string, the name of a state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_night">
+<code class="descname">is_night</code><span class="sig-paren">(</span><em>timestamp=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_night" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given timestamp in night trading period?
+:param timestamp: datetime, the given timestamp. If None, use self.now().
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_order_pending">
+<code class="descname">is_order_pending</code><span class="sig-paren">(</span><em>order_ref</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_order_pending" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_position_reached">
+<code class="descname">is_position_reached</code><span class="sig-paren">(</span><em>target_position</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_position_reached" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the current position for the given instrument is the same as target position.
+:param target_position: int, the target position. If None, meaning that target position is unknown,</p>
+<blockquote>
+<div>then this method always returns False.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">boolean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_position_single_sided">
+<code class="descname">is_position_single_sided</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_position_single_sided" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current position for the given instrument single sided?
+Meaning either long or short positions, but not both.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return bool, True if position for the given instrument is single-sided, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_stop_loss_touched">
+<code class="descname">is_stop_loss_touched</code><span class="sig-paren">(</span><em>price</em>, <em>stop_loss</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_stop_loss_touched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has price touched given stop loss?
+:param price: float, the current instrument price.
+:param stop_loss: float, the predefined stop loss price.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:return: bool, True if given price touches stop loss.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.is_stop_win_touched">
+<code class="descname">is_stop_win_touched</code><span class="sig-paren">(</span><em>price</em>, <em>stop_win</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.is_stop_win_touched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Has price touched given stop win?
+:param price: float, the current instrument price.
+:param stop_win: float, the predefined stop loss price.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:return: bool, True if given price touches stop win.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.last_known_price">
+<code class="descname">last_known_price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.last_known_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.latest_time_to_close_position">
+<code class="descname">latest_time_to_close_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.latest_time_to_close_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.latest_time_to_open_position">
+<code class="descname">latest_time_to_open_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.latest_time_to_open_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.long_position_profit">
+<code class="descname">long_position_profit</code><span class="sig-paren">(</span><em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.long_position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held long positions.
+:param condition: string, the condition to select positions. Values can be the following:</p>
+<blockquote>
+<div>highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.long_positions">
+<code class="descname">long_positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.long_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.lowest_position_price">
+<code class="descname">lowest_position_price</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.lowest_position_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the price of lowest long position.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+:param instrument_id: string, the instrument id whose position details are to be retrieved.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, position price.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.margin">
+<code class="descname">margin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.margin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.margin_money">
+<code class="descname">margin_money</code><span class="sig-paren">(</span><em>price</em>, <em>volume</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.margin_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.margin_rate_by_money">
+<code class="descname">margin_rate_by_money</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.margin_rate_by_money" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>trading_day=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.max_positions_to_open">
+<code class="descname">max_positions_to_open</code><span class="sig-paren">(</span><em>price</em>, <em>direction</em>, <em>instrument_id=None</em>, <em>available_money=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.max_positions_to_open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of current state.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.next_state">
+<code class="descname">next_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.next_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of the next state (in transition).
+The next state name will be updated when the _transit method is returned.
+So in postcondition evaluations, next state name is already updated to the
+name of the transited state (if any transition occurs).
+This is useful in writing postconditions.
+:return string, the name of the next state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.now">
+<code class="descname">now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.now" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current timestamp. Always use this method to get current timestamp in the strategy class
+and all the state classes. Do not use datetime.now() because it won&#8217;t work for backtesting.
+:return: datetime, the current timestamp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.ohlc">
+<code class="descname">ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.ohlc_in_last_days">
+<code class="descname">ohlc_in_last_days</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>start=-1</em>, <em>end=None</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.ohlc_in_last_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sliced ohlc, which covers all bars from start to end (in days).
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>start</strong> &#8211; int, start day index. Must be negative. Index days from backward.</li>
+<li><strong>end</strong> &#8211; int, end day index. Must be negative or None. Index days from backward.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.ohlcs">
+<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>kind=None</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.ohlcs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.periods">
+<code class="descname">periods</code><span class="sig-paren">(</span><em>kind=None</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.position_details">
+<code class="descname">position_details</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.position_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.position_profit">
+<code class="descname">position_profit</code><span class="sig-paren">(</span><em>direction=None</em>, <em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held positions.
+:param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;, specifies the direction of the position whose</p>
+<blockquote>
+<div>profit is to be calculated.
+If None, assume that there is only one direction position, and use self.single_sided_position.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>condition</strong> &#8211; string, the condition to select positions. Values can be the following:
+highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</li>
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.positions">
+<code class="descname">positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.price">
+<code class="descname">price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as self.last_known_price().
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return float, the last known price, None if no price is known for the given instrument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.process_contracts">
+<code class="descname">process_contracts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.process_contracts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process contracts for evaluations.
+Process preconditions in the following way:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Generate evaluatable preconditions.</li>
+</ol>
+</div></blockquote>
+<dl class="docutils">
+<dt>Process postconditions in the following way:</dt>
+<dd><ol class="first last arabic simple">
+<li>Find all old expressions in postconditions.</li>
+<li>Generate variables to hold values of old expressions.</li>
+<li>Generate new post-conditions using variables generated in point 2.</li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.profit">
+<code class="descname">profit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.profit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.set_data">
+<code class="descname">set_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.set_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set data.
+Parameters:</p>
+<blockquote>
+<div>data: dict from string to objects.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.set_possible_next_states">
+<code class="descname">set_possible_next_states</code><span class="sig-paren">(</span><em>next_states</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.set_possible_next_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.next_states with next_states.
+:param next_states: dict from string to string. Keys are names of the next states; values are</p>
+<blockquote>
+<div>state transition conditions.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.short_position_profit">
+<code class="descname">short_position_profit</code><span class="sig-paren">(</span><em>condition='average_price'</em>, <em>price=None</em>, <em>instrument_id=None</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.short_position_profit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the profit of held short positions.
+:param condition: string, the condition to select positions. Values can be the following:</p>
+<blockquote>
+<div>highest_price: use the highest price of the held position to calculate profit.
+lowest_price: use the lowest price of the held position.
+average_price: use the average price of the held position.
+This condition is needed because the positions of the given direction for the given instrument
+may have different entry prices.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the current price of the instrument. If None, use the last known price for that instrument.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id whose position details are to be retrieved.
+If None, use self.instrument_id().</li>
+<li><strong>percent</strong> &#8211; boolean, if True, the profit is returned as a percentage, otherwise, as difference
+between the current price and the position price.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return float, the position profit. Positive number means profit, negative number means loss.</dt>
+<dd>The percent parameter decides if the returned number is a percentage or actual price delta.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.short_positions">
+<code class="descname">short_positions</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.short_positions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.sign">
+<code class="descname">sign</code><span class="sig-paren">(</span><em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sign 1 or -1 for the position direction. This is useful
+when calculating volumes from directions.
+:param direction: string or int, can be &#8216;long&#8217; or &#8216;short&#8217;.</p>
+<blockquote>
+<div>Or an integer, positive number means long, negative number mean short.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int, return 1 if direction is &#8216;long&#8217;, otherwise -1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.single_sided_position">
+<code class="descname">single_sided_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.single_sided_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the single sided position for given instrument.
+Single sided means: assuming that there is no both long and short positions for the instrument, then</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>If long position is positive, return the long position number (positive).</li>
+<li>If short position is negative, return the short position number (negative).</li>
+<li>Otherwise return 0.</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return int, single-sided position. If the instrument have both long and short side positions,</dt>
+<dd>return None.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.single_sided_positions">
+<code class="descname">single_sided_positions</code><span class="sig-paren">(</span><em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.single_sided_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the single sided position for the given instrument ids.
+:param instrument_ids: [string], the required instrument ids.</p>
+<blockquote>
+<div>If None, use self.instrument_ids().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict{string: int}, meaning dict{instrument_id: position}.
+Keys are the same as instrument_ids. Values are the single sided positions for those instruments.
+If an instrument has no position, its corresponding value is 0.
+If an instrument has both long and short sided positions, its corresponding value is None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.state">
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of the current state in self.state_machine.
+Note: the current state may not be the same as current object.
+:return: string, tne name of the current state in self.state_machine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.state_by_name">
+<code class="descname">state_by_name</code><span class="sig-paren">(</span><em>state_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.state_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the state in all_states with the given name.
+:param state_name: string, name of the state to return.
+:return: AbstractState.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.strategy_name">
+<code class="descname">strategy_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.strategy_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.strategy_ohlc">
+<code class="descname">strategy_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.strategy_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.strategy_period">
+<code class="descname">strategy_period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.strategy_period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.strategy_period_kind">
+<code class="descname">strategy_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.strategy_period_kind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.tick_size">
+<code class="descname">tick_size</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.tick_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.today_bars">
+<code class="descname">today_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.today_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar slice in ohlc, which covers all bars from today.
+:param ohlc: OHLC, the ohlc object.
+:param now: datetime, an optional timestamp indicating current time, if None,</p>
+<blockquote>
+<div>use the last timestamp in ohlc as current time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice, the slice used to index into ohlc. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.today_ohlc">
+<code class="descname">today_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.today_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return today&#8217;s ohlc, the sliced part only contain bars from today.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.trading_day">
+<code class="descname">trading_day</code><span class="sig-paren">(</span><em>now=None</em>, <em>delta=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.trading_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.transaction_id_from_order_ref">
+<code class="descname">transaction_id_from_order_ref</code><span class="sig-paren">(</span><em>order_ref</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.transaction_id_from_order_ref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.transit">
+<code class="descname">transit</code><span class="sig-paren">(</span><em>inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.transit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transit to another state or stay at current state by handling input. If no transition should happen,
+return the current state, that is, self.
+:param inputs: dict from string to objects. inputs carry information from outside of the state machine,</p>
+<blockquote>
+<div>which is used to trigger state changes.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">State, the new state (if transition occurs) or self if stays.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.volume_multiple">
+<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.volume_multiple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.yesterday_bars">
+<code class="descname">yesterday_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.yesterday_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the bar slice in ohlc, which covers all bars from yesterday.
+:param ohlc: OHLC, the ohlc object.
+:param now: datetime, an optional timestamp indicating current time, if None,</p>
+<blockquote>
+<div>use the last timestamp in ohlc as current time.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>instrument_id</strong> &#8211; string, instrument id. If None, use self.instrument_id().</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">slice, the slice used to index into ohlc. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.yesterday_ohlc">
+<code class="descname">yesterday_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.yesterday_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sliced part from the given ohlc, the sliced part only contain bars from yesterday.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
+<blockquote>
+<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
+If None, use self.strategy_period().</li>
+<li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
+use the last timestamp in ohlc as current time.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
+<li><strong>ohlc</strong> &#8211; OHLC, the ohlc object. If not None, use this ohlc, instead of using
+instrument_id, kind and period to find the ohlc.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">OHLC, the sliced OHLC. If no such bars from ohlc, return None.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.PredefinedLabels">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">PredefinedLabels</code><a class="headerlink" href="#ctxalgolib.trading_utils.state.PredefinedLabels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that defines a list of state transitions labels.
+Those labels will be used in transition label auto-completion.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.trading_utils.state.PredefinedLabels.labels">
+<code class="descname">labels</code><em class="property"> = ['fully traded', 'timeout', 'canceled', 'should cancel', 'market near close', 'fully traded or canceled', 'entry signal', 'exit signal', 'entry or exit signal']</em><a class="headerlink" href="#ctxalgolib.trading_utils.state.PredefinedLabels.labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.KnownBaseStateClasses">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">KnownBaseStateClasses</code><a class="headerlink" href="#ctxalgolib.trading_utils.state.KnownBaseStateClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.KnownBaseStateClasses.classes">
+<code class="descname">classes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.KnownBaseStateClasses.classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>The list of predefined base state classes.
+:return: dict{string: dict}, keys are state class names, values are information about the state class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.StateMachine">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">StateMachine</code><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.state">
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the name of current state.
+:return: string, the name of current state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.set_is_precondition_enabled">
+<code class="descname">set_is_precondition_enabled</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.set_is_precondition_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or display precondition evaluation.
+:param b: boolean, True means enable, False means disable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.set_is_postcondition_enabled">
+<code class="descname">set_is_postcondition_enabled</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.set_is_postcondition_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or display postcondition evaluation.
+:param b: boolean, True means enable, False means disable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.set_is_invariant_enabled">
+<code class="descname">set_is_invariant_enabled</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.set_is_invariant_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or display invariant evaluation.
+:param b: boolean, True means enable, False means disable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.enable_contract">
+<code class="descname">enable_contract</code><span class="sig-paren">(</span><em>precondition=True</em>, <em>postcondition=True</em>, <em>invariant=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.enable_contract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable contract evaluation.
+:param precondition: boolean, whether to enable or disable precondition evaluation.</p>
+<blockquote>
+<div>None means do not change current precondition evaluation setting.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>postcondition</strong> &#8211; boolean, whether to enable or disable postcondition evaluation.
+None means do not change current postcondition evaluation setting.</li>
+<li><strong>invariant</strong> &#8211; boolean, whether to enable or disable invariant evaluation.
+None means do not change current invariant evaluation setting.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.initialize_states">
+<code class="descname">initialize_states</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.initialize_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the states used in current strategy.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.create_states">
+<code class="descname">create_states</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.create_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of states used in current strategy and indicates which is the start state.
+:return: (start_state, all_states), start_state is of type AbstractState, it is the start state.</p>
+<blockquote>
+<div>all_states is of type [AbstractState], it is the full list of states used in current strategy.
+start_state must be an element of all_states as well.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.transit_state">
+<code class="descname">transit_state</code><span class="sig-paren">(</span><em>state_inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.transit_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply state_inputs to self._state. This will possibly trigger state transition.
+If no state transition occurs, self._state stays the same.
+:param state_inputs: Arbitrary data as state transition inputs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.transit_to_start_state">
+<code class="descname">transit_to_start_state</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.transit_to_start_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transit current state machine to the start_state.
+Parameters:</p>
+<blockquote>
+<div>data: dict from string to objects.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.on_state_transited">
+<code class="descname">on_state_transited</code><span class="sig-paren">(</span><em>source_state</em>, <em>target_state</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.on_state_transited" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action to be invoked when state changes from source_state to target_state.
+Parameters:</p>
+<blockquote>
+<div>source_state: AbstractState, the source state. Can be None for the first transition.
+target_state: AbstractState, the target state.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachine.at">
+<code class="descname">at</code><span class="sig-paren">(</span><em>state_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachine.at" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current state machien at the state given by name?
+:param state_name: string, the name of the state.
+:return bool, True if state machine is at that state.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.StateInfo">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">StateInfo</code><span class="sig-paren">(</span><em>name</em>, <em>class_name</em>, <em>class_line_number</em>, <em>preconditions</em>, <em>postconditions</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that represents information about state in a strategy state machine.</p>
+<p>Initialize current.
+:param name: string, the name of the state, such as &#8216;holding&#8217;, &#8216;open_limit&#8217;.
+:param class_name: string, the class name of the state, such as HoldingState.
+:param class_line_number: int, 1-based line number where the state class appears.
+:param preconditions: [(label, expression, line_number)], the list of precondition predicates.</p>
+<blockquote>
+<div>label: string, the label for the predicate. If no label is available, set to empty string.
+expression: string, the expression of the predicate.
+line_number: int, 1-based line number where the predicate appears.
+If there is no precondition in the state, this is an empty list.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>postconditions</strong> &#8211; [(label, expression, line_number)], the list of postcondition predicates.
+label: string, the label for the predicate. If no label is available, set to empty string.
+expression: string, the expression of the predicate.
+line_number: int, 1-based line number where the predicate appears.
+If there is no postcondition in the state, this is an empty list.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateInfo.model_postconditions">
+<code class="descname">model_postconditions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateInfo.model_postconditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of model postconditions, which are the postconditions with a label
+that starts with the case-sensitive prefix &#8216;model&#8217;.
+:return [(label, expression, line_number)].</p>
+<blockquote>
+<div>label: string, the label for the predicate. If no label is available, set to empty string.
+expression: string, the expression of the predicate.
+line_number: int, 1-based line number where the predicate appears.
+If no such postcondition, return an empty list.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateInfo.normal_postconditions">
+<code class="descname">normal_postconditions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateInfo.normal_postconditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of normal postconditions, which are the postconditions that do not come with a label
+that starts with the case-sensitive prefix &#8216;model&#8217;.
+:return [(label, expression, line_number)].</p>
+<blockquote>
+<div>label: string, the label for the predicate. If no label is available, set to empty string.
+expression: string, the expression of the predicate.
+line_number: int, 1-based line number where the predicate appears.
+If no such postcondition, return an empty list.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.StateMachineInfo">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">StateMachineInfo</code><span class="sig-paren">(</span><em>class_name</em>, <em>class_line_number</em>, <em>states</em>, <em>model_variables</em>, <em>model_properties</em>, <em>model_state_transition_constraints</em>, <em>dot</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachineInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that represents information about a state machine based strategy.
+Model variables and model properties can be extracted from the __init__ method of the state-based strategy class.</p>
+<p>Initialize current.
+:param class_name: string, the name of the state machine strategy class.
+:param class_line_number: int, 1-based line number where the state machine strategy class appears.
+:param states: [StateInfo], the information about all the states in current state machine.
+:param model_variables: [(label, expression, type, initial_value, line_number)], list of model variables.</p>
+<blockquote>
+<div>label: string, the label of the model variable. If not present, set to empty string.
+expression: string, the expression of the model variable.
+type: string, the name of the type of the model variable, such as int or bool.
+initial_value: string, the initial value of the model variable.
+line_number: int, 1-based line number where the model_variable appears.
+If there is no model variables in the state machine, this is an empty list.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model_properties</strong> &#8211; [(label, property, line_number)], the list of model properties.7
+label: string, the label of the model property. If not present, set to empty string.
+property: string, the expression of the model property.
+line_number: int, 1-based line number where the predicate appears.
+If there is no model properties in the state machine, this is an empty list.</li>
+<li><strong>model_state_transition_constraints</strong> &#8211; [(start_state, end_state, label, constraint, line_number)],
+the set of constraints over model state transitions.
+start_state: string, the name of the start state of the transition.
+end_state: string, the name of the end state of the transition.
+label: string, the label of the constraint property. If not present, set to empty string.
+constraint: string, the constraint predicate.
+line_number: int, 1-based line number where the constraint appears.</li>
+<li><strong>dot</strong> &#8211; string, the extracted DOT spec.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachineInfo.model_postconditions">
+<code class="descname">model_postconditions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachineInfo.model_postconditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of model postconditions from all states in self.state_machine.
+:return [([model_postcondition], state)], the list of model postconditions.</p>
+<blockquote>
+<div>model_postcondition: (label, expression, line_number), a single model postcondition.
+state: StateInfo, the state to which model_postcondition belongs.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.StateMachineInfoExtractor">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">StateMachineInfoExtractor</code><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachineInfoExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that extract state machine related information from a Python program.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateMachineInfoExtractor.extract">
+<code class="descname">extract</code><span class="sig-paren">(</span><em>program</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateMachineInfoExtractor.extract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract state machine information from the given program.
+:param program: string, a Python file, assumed to contain a single state machine.
+:return StateMachineInfo. The extracted state machine information.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.state.StateUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.state.</code><code class="descname">StateUtils</code><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to generate state machine classes from DOT language description and vice versa.
+We use a very small subset of DOT language (<a class="reference external" href="http://en.wikipedia.org/wiki/DOT_(graph_description_language">http://en.wikipedia.org/wiki/DOT_(graph_description_language</a>):
+[1] digraph
+[2] {
+[3]    rained [class=&#8221;weather&#8221; input=&#8221;x, y&#8221;]
+[4]    winded [class=&#8221;weather&#8221;]
+[5]    start -&gt; rained [label=&#8221;rain falls[millimeter, time]&#8221;]
+[6]    start -&gt; winded [label=&#8221;wind blows[level]&#8221;]
+[7] }</p>
+<ol class="arabic simple">
+<li>The digraph describes directional graph, since the state machine is directional.</li>
+<li>A state can be described explicitly using a separated line, such as line [3] and line [4] for start &#8220;rained&#8221;
+and state &#8220;winded&#8221;. Or a state can be described implicitly via transitions, such as the &#8220;start&#8221; state.
+There can be an optional &#8220;class&#8221; attribute, indicating if in the generated code, the &#8220;rained&#8221; state
+should be generated into the class Weather. In the above example. It means that for the &#8220;rained&#8221; and
+the &#8220;winded&#8221; state, we only need to generate one class WeatherState. In this case, the __init__ method
+of WeatherState will have a name parameter to indicate which state it is initialized into, &#8220;rained&#8221; or &#8220;winded&#8221;.
+Class name generation: the node names are assumed to be like some_name. And the generated state class name
+should be SomeName or SomeNameState.
+A state can have another optional property &#8220;input&#8221;. This property defines a list of data keys which
+must appear in AbstractState.input_data_keys.</li>
+<li>Every transition is described by a start state and an end state, such as line [5] and line [6].
+The optional label property specifies (1) the condition under which the transition happens;
+(2) If there is a [] at the end of the label string, the text inside the [] specifies
+the data requirement for the next state. That is, the text inside the [] is a comma separated list,
+which gives the keys that the data property of the next state must be set.</li>
+</ol>
+<p>Tip: use <a class="reference external" href="http://graphviz-dev.appspot.com/">http://graphviz-dev.appspot.com/</a> or <a class="reference external" href="http://sandbox.kidstrythisathome.com/erdos/">http://sandbox.kidstrythisathome.com/erdos/</a>
+to try dot graph generation.</p>
+<p>As an example, for the previous graph description, the generated classes are:</p>
+<dl class="docutils">
+<dt>class StartState(AbstractState):</dt>
+<dd><blockquote class="first">
+<div><blockquote>
+<div><blockquote>
+<div>bind blows [level]</div></blockquote>
+<p>+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;&gt; winded</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<dl class="last docutils">
+<dt>start &#8212;-+</dt>
+<dd><div class="first line-block">
+<div class="line">rain falls [millimeter, time]</div>
+</div>
+<p class="last">+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-&gt; rained</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>class WindedState(WeatherState):   # Note that WeatherState is not defined here, that&#8217;s ok.</p>
+<p>class RainedState(WeatherState):</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_from_dot_file">
+<code class="descname">generate_from_dot_file</code><span class="sig-paren">(</span><em>path</em>, <em>class_suffix='State'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_from_dot_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate state classes from the dot description.
+:param path: string, the path to the dot file.
+:param class_suffix: string, the suffix for the generated class name. For example, if in the DOT</p>
+<blockquote>
+<div>description, a state is named &#8216;some_other&#8217;, with class_suffix set to &#8216;State&#8217;, the generated
+class name is SomeOtherState.</div></blockquote>
+<p>:return [dict{string:object}], see the comments of generate_from_dot_string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_from_dot_string">
+<code class="descname">generate_from_dot_string</code><span class="sig-paren">(</span><em>dot</em>, <em>class_suffix='State'</em>, <em>include_header_comment=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_from_dot_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate state classes from the dot description.
+:param dot: string, the dot description.
+:param class_suffix: string, the suffix for the generated class name. For example, if in the DOT</p>
+<blockquote>
+<div>description, a state is named &#8216;some_other&#8217;, with class_suffix set to &#8216;State&#8217;, the generated
+class name is SomeOtherState.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>include_header_comment</strong> &#8211; bool, When it is False, do not include the header comment
+(which describes part of the state machine) in the generated code.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return [dict{string:object}], the list of generated state classes. Each element in the list</dt>
+<dd><p class="first">represents a state. The order of the elements are a topological order derived from state transitions.
+A state dict has the following key and values (all keys are of type string):</p>
+<blockquote class="last">
+<div><p>name: the name of the state (type is string).
+code: the code of the state class (type is string).
+class_name: the name of the state class.
+is_start: a boolean indicating if the state is starting state (type is bool).
+is_immediate: a boolean indicating if the state needs to do immediate transition (type is bool).
+is_parent: a boolean indicating if the code is for a parent class. If is_parent is True,</p>
+<blockquote>
+<div>there is no keys name, is_start, is_immediate and transitions in the dict.</div></blockquote>
+<dl class="docutils">
+<dt>transitions: a list of transitions from current state (type is [dict{string:string}]).</dt>
+<dd><dl class="first last docutils">
+<dt>Each element in the list has the following key and values (all keys are of type string):</dt>
+<dd>next_state: name of the target state that current state transits into (type is string).
+label: transition label (type is string).</dd>
+</dl>
+</dd>
+<dt>&#8216;import&#8217;: [string], a list of namespaces that should be imported. Will have elements in the list when</dt>
+<dd>the parent class is a predefined state class.If there is no namespace to be imported, an empty list.</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_dot_for_rendering">
+<code class="descname">generate_dot_for_rendering</code><span class="sig-paren">(</span><em>dot</em>, <em>alternative_styles=None</em>, <em>override_styles=None</em>, <em>with_edge_label=True</em>, <em>with_inputs=True</em>, <em>with_data_keys=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_dot_for_rendering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate dot string for rendering (with style).
+:param dot: string, the original dot spec.
+:param alternative_styles: dict, information to indicate which nodes and edges should be drawn</p>
+<blockquote>
+<div><p>with an alternative style (alternative means use a different color to draw nodes, edges and their labels).
+Let&#8217;s use the color blue for the moment. To do that, just add color=blue in nodes or edges that need
+this alternative style.
+The dict has the following keys and values:
+alternative_styles= {</p>
+<blockquote>
+<div><p>&#8216;nodes&#8217;: [string], list of node names,
+&#8216;edges&#8217;: [(string, string)], list of edges, each edge is</p>
+<blockquote>
+<div>represented by the names of its start and end node.</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>override_styles</strong> &#8211; <p>dict, information to indicate which nodes and edges should be drawn
+with an override style.
+Let&#8217;s use the penwidth for the moment. To do that, just add penwidth=3 in nodes or edges that need
+this alternative style. Note that the node or edge with override styles may already have
+the alternative styles. In this case, override.
+The dict has the following keys and values:
+alternative_styles= {</p>
+<blockquote>
+<div>&#8216;nodes&#8217;: [string], list of node names,
+&#8216;edges&#8217;: [(string, string)], list of edges, each edge is<blockquote>
+<div>represented by the names of its start and end node.</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</li>
+<li><strong>with_edge_label</strong> &#8211; bool, when it is False, do not generate any edge labels</li>
+<li><strong>with_inputs</strong> &#8211; bool, when it is False, do not generate any inputs part in nodes</li>
+<li><strong>with_data_keys</strong> &#8211; bool, when it is False, do not generate any data_keys part in nodes</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the dot format for rendering.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_dot">
+<code class="descname">generate_dot</code><span class="sig-paren">(</span><em>states</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate dot description from states. Note that the generated dot file is not standard DOT.
+It has attributes such as data, parent and condition.
+:param states: [AbstractState], the list of states.
+:return: string, the dot description.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_png">
+<code class="descname">generate_png</code><span class="sig-paren">(</span><em>states</em>, <em>path</em>, <em>data_in_condition=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_png" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate PNG file for the state machine defined by states, for rendering.
+:param states: [AbstractState], the list of states.
+:param path: string, the path of the output png file.
+:param data_in_condition: boolean, if True, in the rendering DOT, the transitions (edges)</p>
+<blockquote>
+<div>include text for both condition and data.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.convert_list_to_string">
+<code class="descname">convert_list_to_string</code><span class="sig-paren">(</span><em>datas</em>, <em>division</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.convert_list_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert a list to string which is divided by division e.g, &#8221;, &#8221;
+:param datas: [string], a string list
+:param division: string, the division
+:return: string, the converted string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_parent_class_dict">
+<code class="descname">generate_parent_class_dict</code><span class="sig-paren">(</span><em>class_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_parent_class_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate the string format of a parent class
+:param class_name: string, the name of parent class
+:return:dict{string:object},  state dict has the following key and values (all keys are of type string):</p>
+<blockquote>
+<div><p>name: the name of the state (type is string).
+code: the code of the state class (type is string).
+class_name: the name of the state class.
+is_start: a boolean indicating if the state is starting state (type is bool).
+is_immediate: a boolean indicating if the state needs to do immediate transition (type is bool).
+is_parent: a boolean indicating if the code is for a parent class. If is_parent is True,</p>
+<blockquote>
+<div>there is no keys name, is_start, is_immediate and transitions in the dict.</div></blockquote>
+<dl class="docutils">
+<dt>transitions: a list of transitions from current state (type is [dict{string:string}]).</dt>
+<dd><dl class="first last docutils">
+<dt>Each element in the list has the following key and values (all keys are of type string):</dt>
+<dd>next_state: name of the target state that current state transits into (type is string).
+label: transition label (type is string).</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_class_dict">
+<code class="descname">generate_class_dict</code><span class="sig-paren">(</span><em>graph</em>, <em>node_name</em>, <em>edge_names</em>, <em>class_suffix</em>, <em>include_header_comment</em>, <em>visited_nodes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_class_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate the string format of a class according to the information we get from graph
+:param graph: a DOT object that contains the information of generated classes
+:param node_name: string, the name of a source node
+:param edge_names: [string], all the nodes that can be accessed from the source node
+:param class_suffix: string, the suffix for the generated class name
+:param include_header_comment: bool, When it is False, do not include the header comment</p>
+<blockquote>
+<div>(which describes part of the state machine) in the generated code.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>visited_nodes</strong> &#8211; a set of class name of visited nodes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[dict{string:object}],  state dict has the following key and values (all keys are of type string):
+name: the name of the state (type is string).
+code: the code of the state class (type is string).
+class_name: the name of the state class.
+is_start: a boolean indicating if the state is starting state (type is bool).
+is_immediate: a boolean indicating if the state needs to do immediate transition (type is bool).
+is_parent: a boolean indicating if the code is for a parent class. If is_parent is True,<blockquote>
+<div>there is no keys name, is_start, is_immediate and transitions in the dict.</div></blockquote>
+<dl class="docutils">
+<dt>transitions: a list of transitions from current state (type is [dict{string:string}]).</dt>
+<dd><dl class="first last docutils">
+<dt>Each element in the list has the following key and values (all keys are of type string):</dt>
+<dd>next_state: name of the target state that current state transits into (type is string).
+label: transition label (type is string).</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.convert_class_to_dict">
+<code class="descname">convert_class_to_dict</code><span class="sig-paren">(</span><em>graph</em>, <em>sorted_nodes</em>, <em>class_suffix</em>, <em>include_header_comment</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.convert_class_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a string list, in which each string represents a generated class form a class dict
+:param graph: a DOT object that contains the information of generated classes
+:param sorted_nodes: [string], a list of name of the nodes that would be the order of the final results
+:param class_suffix: string, the suffix for the generated class name
+:param include_header_comment: bool, When it is False, do not include the header comment</p>
+<blockquote>
+<div>(which describes part of the state machine) in the generated code.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[dict{string:object}],  state dict has the following key and values (all keys are of type string):
+name: the name of the state (type is string).
+code: the code of the state class (type is string).
+is_start: a boolean indicating if the state is starting state (type is bool).
+is_immediate: a boolean indicating if the state needs to do immediate transition (type is bool).
+is_parent: a boolean indicating if the code is for a parent class. If is_parent is True,<blockquote>
+<div>there is no keys name, is_start, is_immediate and transitions in the dict.</div></blockquote>
+<dl class="docutils">
+<dt>transitions: a list of transitions from current state (type is [dict{string:string}]).</dt>
+<dd><dl class="first last docutils">
+<dt>Each element in the list has the following key and values (all keys are of type string):</dt>
+<dd>next_state: name of the target state that current state transits into (type is string).
+label: transition label (type is string).</dd>
+</dl>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.get_label_description">
+<code class="descname">get_label_description</code><span class="sig-paren">(</span><em>node_length</em>, <em>labels</em>, <em>with_vertical_line=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.get_label_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>get label description for comment lines
+:param node_length: string, the length of node name
+:param labels: [string], a list of labels
+:return: string, integer, the label description and the max length of label</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.process_label_string">
+<code class="descname">process_label_string</code><span class="sig-paren">(</span><em>label_string</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.process_label_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>process label string(such as &#8220;traded, opposite signal [pos, sig]&#8221;)
+:param label_string: string, the label that got from dot description
+:return: ([string], [string], string), the first string list stores the strings split by &#8216;,&#8217; of the former part,</p>
+<blockquote>
+<div>the second string list stores the strings got from latter part and former part</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.get_repeat_string">
+<code class="descname">get_repeat_string</code><span class="sig-paren">(</span><em>ch</em>, <em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.get_repeat_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a string which is combined with repeat char
+:param ch: char, the char need to be repeated
+:param number: integer, the number of repeated char
+:return: string, the generated string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_class_name">
+<code class="descname">generate_class_name</code><span class="sig-paren">(</span><em>name</em>, <em>class_suffix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate class name from original name like &#8216;some_other&#8217; to new class name like &#8216;SomeOtherState&#8217;
+:param name: string, the original name
+:param class_suffix: string, the suffix for the generated class name. For example, if in the DOT</p>
+<blockquote>
+<div>description, a state is named &#8216;some_other&#8217;, with class_suffix set to &#8216;State&#8217;, the generated
+class name is SomeOtherState.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the generated class name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.extract_state_machine_from_code">
+<code class="descname">extract_state_machine_from_code</code><span class="sig-paren">(</span><em>program</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.extract_state_machine_from_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract state machine information from the given Python program.
+Extraction instructions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>To find state classes, search for classes directly or indirectly inheriting from AbstractState, or
+directly inheriting from one of the predefined state classes.</li>
+<li>The attributes immediate, class, data_keys, inputs can be found in the __init__
+method of the state class.</li>
+<li>To find state machine classes, search for the class directly or indirectly inheriting from
+AbstractStateBasedStrategy.</li>
+<li>The attribute &#8220;start&#8221; to indicate whether a state is a starting state can be found in the
+create_states method of the state machine class.</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>program</strong> &#8211; string, a program which is assumed to contains a single state machine.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">StateMachineInfo. Information about the state machine.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_dot_descriptions">
+<code class="descname">generate_dot_descriptions</code><span class="sig-paren">(</span><em>programs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_dot_descriptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated. Use extract_state_machine_from_code instead.
+Generate dot descriptions for every state machine defined in programs.
+:param programs: [string], the list of python programs.
+:return: [(dot_description, state_dict)], the list of state machines.</p>
+<blockquote>
+<div><p>dot_description: string, the dot description for a single state machine.
+state_dict: dict from string to (program_id, line_number, class_name), keys are state names, values are:</p>
+<blockquote>
+<div>program_id: int, the 0-based program index from the programs list.
+line_number: int, 1-based line number in the program where the state class starts.
+class_name: string, the name of the state class.</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.get_description_form_state_tokens">
+<code class="descname">get_description_form_state_tokens</code><span class="sig-paren">(</span><em>state_tokens</em>, <em>token_indices</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.get_description_form_state_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>get dot description form state_tokens which stores the info of states and token_indices which contains the
+indices of the same graph
+:param state_tokens: a tuple stores the info of states
+:param token_indices: [int], the indices of the same graph
+:return: (string, dit), the dot description and a dict from state_name to (program_id, line_number, class_name)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.generate_state_machine">
+<code class="descname">generate_state_machine</code><span class="sig-paren">(</span><em>state_tokens</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.generate_state_machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>genrate state machine id from state_tokens
+:param state_tokens: a tuple contains the info of python programs
+:return: a dictionary form group_id to token_index</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.get_group_id">
+<code class="descname">get_group_id</code><span class="sig-paren">(</span><em>state_tokens</em>, <em>states</em>, <em>state</em>, <em>root_index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.get_group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>get group if according to the state tokens (using FS search on undirected group)
+:param state_tokens: a tuple contains the info of python programs
+:param states: a dict from state_name to index( of state_tokens)
+:param: state: string, the state name
+:param: root_index: int, the index of root state</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.parse_programs">
+<code class="descname">parse_programs</code><span class="sig-paren">(</span><em>programs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.parse_programs" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse python programs (only for state machine)
+:param programs: [string], the list of python programs.
+:return: a tuple contains the info of python programs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.StateUtils.get_graph_from_dot">
+<code class="descname">get_graph_from_dot</code><span class="sig-paren">(</span><em>dot</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.StateUtils.get_graph_from_dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>to create a networkx directed graph from the dot spec. The node in the networkx graph should be state names
+:param dot: string, string, the dot description.
+:return: the graph we got</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="state_machine_type_checking.html" class="btn btn-neutral float-right" title="state_machine_type_checking" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spin.html" class="btn btn-neutral" title="spin" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

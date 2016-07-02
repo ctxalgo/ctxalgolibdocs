@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zipline_datasources &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="backtesting" href="index.html"/>
+        <link rel="next" title="zipline_utils" href="zipline_utils.html"/>
+        <link rel="prev" title="zipline_algorithm" href="zipline_algorithm.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">backtesting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html">data_sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simple_signal_evaluator.html">simple_signal_evaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zipline_algorithm.html">zipline_algorithm</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">zipline_datasources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zipline_utils.html">zipline_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">backtesting</a> &raquo;</li>
+      
+    <li>zipline_datasources</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/backtesting/zipline_datasources.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.backtesting.zipline_datasources">
+<span id="zipline-datasources"></span><h1>zipline_datasources<a class="headerlink" href="#module-ctxalgolib.backtesting.zipline_datasources" title="Permalink to this headline">¶</a></h1>
+<p>leverage work of briancappello and quantopian team
+(especcially twiecki, eddie, and fawce)</p>
+<dl class="function">
+<dt id="ctxalgolib.backtesting.zipline_datasources.get_time">
+<code class="descclassname">ctxalgolib.backtesting.zipline_datasources.</code><code class="descname">get_time</code><span class="sig-paren">(</span><em>time_str</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.get_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.backtesting.zipline_datasources.gen_ts">
+<code class="descclassname">ctxalgolib.backtesting.zipline_datasources.</code><code class="descname">gen_ts</code><span class="sig-paren">(</span><em>date</em>, <em>time</em>, <em>tz</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.gen_ts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc">
+<em class="property">class </em><code class="descclassname">ctxalgolib.backtesting.zipline_datasources.</code><code class="descname">DatasourceCSVohlc</code><span class="sig-paren">(</span><em>data</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">zipline.sources.data_source.DataSource</span></code></p>
+<dl class="docutils">
+<dt>expects dictReader for a csv file</dt>
+<dd>with the following columns in the  header</dd>
+</dl>
+<p>dt, symbol, open, high, low, close, volume
+dt expected in ISO format and order does not matter</p>
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.instance_hash">
+<code class="descname">instance_hash</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.instance_hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.raw_data_gen">
+<code class="descname">raw_data_gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.raw_data_gen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.raw_data">
+<code class="descname">raw_data</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.raw_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.mapping">
+<code class="descname">mapping</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.apply_mapping">
+<code class="descname">apply_mapping</code><span class="sig-paren">(</span><em>raw_row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.apply_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this to hand craft conversion of row.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.event_type">
+<code class="descname">event_type</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.event_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.get_hash">
+<code class="descname">get_hash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.get_hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.mapped_data">
+<code class="descname">mapped_data</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.mapped_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DatasourceCSVohlc.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal">
+<em class="property">class </em><code class="descclassname">ctxalgolib.backtesting.zipline_datasources.</code><code class="descname">DataSourceCSVSignal</code><span class="sig-paren">(</span><em>data</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">zipline.sources.data_source.DataSource</span></code></p>
+<p>expects dictReader for a csv file in form with header
+dt, symbol, signal_name
+dt expected in ISO format</p>
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.apply_mapping">
+<code class="descname">apply_mapping</code><span class="sig-paren">(</span><em>raw_row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.apply_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this to hand craft conversion of row.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.event_type">
+<code class="descname">event_type</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.event_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.get_hash">
+<code class="descname">get_hash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.get_hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.instance_hash">
+<code class="descname">instance_hash</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.instance_hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.mapped_data">
+<code class="descname">mapped_data</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.mapped_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.raw_data_gen">
+<code class="descname">raw_data_gen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.raw_data_gen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.raw_data">
+<code class="descname">raw_data</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.raw_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.mapping">
+<code class="descname">mapping</code><a class="headerlink" href="#ctxalgolib.backtesting.zipline_datasources.DataSourceCSVSignal.mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="zipline_utils.html" class="btn btn-neutral float-right" title="zipline_utils" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="zipline_algorithm.html" class="btn btn-neutral" title="zipline_algorithm" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

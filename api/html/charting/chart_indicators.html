@@ -1,0 +1,928 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>chart_indicators &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="charting" href="index.html"/>
+        <link rel="next" title="charting_constants" href="charting_constants.html"/>
+        <link rel="prev" title="chart_data_generator" href="chart_data_generator.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">charting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="custom_indicators/index.html">custom_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_indicators.html">basic_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_data_generator.html">chart_data_generator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">chart_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting_constants.html">charting_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charts.html">charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder.html">highcharts_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder_code_generator.html">highcharts_builder_code_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_charting_document_generator.html">highcharts_charting_document_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_data_generator.html">highcharts_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indicator_factory.html">indicator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talib_function_generator.html">talib_function_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">charting</a> &raquo;</li>
+      
+    <li>chart_indicators</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/charting/chart_indicators.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.charting.chart_indicators">
+<span id="chart-indicators"></span><h1>chart_indicators<a class="headerlink" href="#module-ctxalgolib.charting.chart_indicators" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorParameter">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">IndicatorParameter</code><span class="sig-paren">(</span><em>position</em>, <em>name</em>, <em>description</em>, <em>min_value</em>, <em>max_value</em>, <em>default_value</em>, <em>kind</em>, <em>possible_date_range=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for an indicator parameter.</p>
+<p>Initialize current indicator parameter.
+:param position: int, 1-based parameter position.
+:param name: string, name of the parameter.
+:param description: string, description of the parameter.
+:param min_value: object, can be None, the min value of the parameter.
+:param max_value: object, can be None, the max value of the parameter.
+:param default_value: object, can not be None. The default value of the parameter.
+:param kind: object, can be either string &#8220;numeric&#8221;, &#8220;string&#8221;, &#8220;date&#8221;, &#8220;color&#8221; or an array of pairs.
+:param possible_date_range: boolean, if True, then this parameter may have the form d1~d2:d3~d4.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">Indicator</code><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator.PARA_ID">
+<code class="descname">PARA_ID</code><em class="property"> = 'id'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator.PARA_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator.PARA_PERIOD">
+<code class="descname">PARA_PERIOD</code><em class="property"> = 'period'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator.PARA_PERIOD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator.PARA_POSITION">
+<code class="descname">PARA_POSITION</code><em class="property"> = 'position'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator.PARA_POSITION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator.PARA_SID">
+<code class="descname">PARA_SID</code><em class="property"> = 'sid'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator.PARA_SID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator.PARA_HEIGHT">
+<code class="descname">PARA_HEIGHT</code><em class="property"> = 'height'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator.PARA_HEIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>chart_generator</em>, <em>parameters</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate current indicator.
+:param chart_generator: AbstractChartDataGenerator, the chart generator to draw indicators.
+:param parameters: dict from string to object. The actual parameters for current indicator.
+:param context: dict from string to object. The context from the chart generator.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>It has the following keys:</dt>
+<dd>stock_id: string, the id of the stock to display.
+start_time, end_time: datetime, the start and end time of the time region.
+cursor_date: datetime: if not None, the time of the cursor.
+yconfig: YaxisConfig, the y-axis config.
+k_yconfig: YaxisConfig, the y-axis config for the K bar area.
+v_yconfig: YaxisConfig, the y-axis config for the volume bar area.
+data_feed: AbstractDataFeed, the data feed to get data.</dd>
+</dl>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dict from string to object. Keys are series category names, or values in the chart.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.Indicator.add_result">
+<code class="descname">add_result</code><span class="sig-paren">(</span><em>dest</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.Indicator.add_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add content of source into dest.
+:param dest: dict from string to array.
+:param source: dict from string to array.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.DivergenceCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">DivergenceCalculator</code><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.DivergenceCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.DivergenceCalculator.calculate">
+<em class="property">static </em><code class="descname">calculate</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>algorithm=None</em>, <em>parameters=None</em>, <em>direction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.DivergenceCalculator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.BszoneCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">BszoneCalculator</code><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.BszoneCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.BszoneCalculator.calculate">
+<em class="property">static </em><code class="descname">calculate</code><span class="sig-paren">(</span><em>translator</em>, <em>ohlc</em>, <em>momentum</em>, <em>algorithm=None</em>, <em>parameters=None</em>, <em>label_prefix=''</em>, <em>actual_period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.BszoneCalculator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">SingleIndicator</code><span class="sig-paren">(</span><em>translator</em>, <em>name</em>, <em>label</em>, <em>group</em>, <em>description</em>, <em>parameters</em>, <em>yaxis_config</em>, <em>category='trading'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.charting.chart_indicators.Indicator" title="ctxalgolib.charting.chart_indicators.Indicator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.charting.chart_indicators.Indicator</span></code></a></p>
+<p>Initialize current indicator.
+:param name: string, name of the indicator.
+:param label: string, the label (used for display).
+:param group: string, group of the indicator, such as &#8216;大盘&#8217;, &#8216;指标&#8217;, &#8216;周期&#8217;
+:param description: string, description of the indicator.
+:param category: string, category of current indicator.</p>
+<blockquote>
+<div>Possible values: trading, xplotLines, yplotLines, xplotBands.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parameters</strong> &#8211; [IndicatorParameter], the list of parameters of this indicator.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.is_divergence_supported">
+<code class="descname">is_divergence_supported</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.is_divergence_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current indicator support divergence detection?
+:return: boolean</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.is_bszone_supported">
+<code class="descname">is_bszone_supported</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.is_bszone_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does current indicator support overbought/oversold region drawing?
+:return: boolean</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_str">
+<code class="descname">get_str</code><span class="sig-paren">(</span><em>with_default=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string representation of current indicator.
+:param with_default, boolean, True if the output includes default values for parameters.
+:return: string, a string representation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_ohlc">
+<code class="descname">get_ohlc</code><span class="sig-paren">(</span><em>chart_generator</em>, <em>parameters</em>, <em>context</em>, <em>sid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_label">
+<code class="descname">get_label</code><span class="sig-paren">(</span><em>parameters</em>, <em>context</em>, <em>extra=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the label of current indicator to display.
+Default is to display self.label.
+:param parameters: dict from string to values.</p>
+<blockquote>
+<div>This is the set of the actual parameters passed to the indicator.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>context</strong> &#8211; dict from string to values.</li>
+<li><strong>extra</strong> &#8211; dict from string to values. It provides additional data for label generation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the label.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_label_with_period">
+<code class="descname">get_label_with_period</code><span class="sig-paren">(</span><em>period</em>, <em>parameters</em>, <em>context</em>, <em>extra=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_label_with_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the label of current indicator to display with periodicity.
+Default is to display self.label.
+:param period: Periodicity, the period.
+:param parameters: dict from string to values.</p>
+<blockquote>
+<div>This is the set of the actual parameters passed to the indicator.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>context</strong> &#8211; dict from string to values.</li>
+<li><strong>extra</strong> &#8211; dict from string to values. It provides additional data for label generation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the label.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_text_with_period">
+<code class="descname">get_text_with_period</code><span class="sig-paren">(</span><em>period</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_text_with_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the translated text prefixed with translated period.
+:param period: Periodicity.
+:param text: string, the text to translate.
+:return: string, the translated text.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.gettext">
+<code class="descname">gettext</code><span class="sig-paren">(</span><em>text</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.gettext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> &#8211; string, text to translate.</li>
+<li><strong>period</strong> &#8211; Periodicity, if not None, prefix the translated text with the translated periodicity.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the translation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.setup_parameters">
+<code class="descname">setup_parameters</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.setup_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup parameters.
+:param parameters: Dictionary from string to string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_height_parameter">
+<code class="descname">get_default_height_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_height_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_sid_parameter">
+<code class="descname">get_default_sid_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_sid_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_period_parameter">
+<code class="descname">get_default_period_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_period_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_position_parameter">
+<code class="descname">get_default_position_parameter</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_default_position_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.add_parameter_for_momentum">
+<code class="descname">add_parameter_for_momentum</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.add_parameter_for_momentum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.add_general_parameters">
+<em class="property">static </em><code class="descname">add_general_parameters</code><span class="sig-paren">(</span><em>parameters</em>, <em>default_colors='#7cb5ec'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.add_general_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_general_parameters">
+<em class="property">static </em><code class="descname">calculate_general_parameters</code><span class="sig-paren">(</span><em>parameters</em>, <em>data_length</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_general_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.color_convert">
+<em class="property">static </em><code class="descname">color_convert</code><span class="sig-paren">(</span><em>color</em>, <em>transparency=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.color_convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_divergence_and_bs_zone">
+<code class="descname">calculate_divergence_and_bs_zone</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>chart_generator</em>, <em>parameters</em>, <em>context</em>, <em>actual_period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_divergence_and_bs_zone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_divergence">
+<code class="descname">calculate_divergence</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>algorithm</em>, <em>parameters</em>, <em>direction</em>, <em>confirm</em>, <em>confirm_color</em>, <em>chart_generator</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_divergence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate divergence.
+:param ohlc: OHLC, the time series.
+:param momentum: The curve from the momentum indicator.
+:param algorithm: string, algorithm used to calculate divergence.
+:param parameters: string, the parameters to the divergence algorithm.
+:param direction: string, the direction of the divergences to find.
+:param confirm: string, can be &#8216;true&#8217; or &#8216;false&#8217;, indicating the confirmed price is shown.
+:param confirm_color: string, the color to show confirmed price.
+:return: dict from string to arrays. The series to be added in the chart. Keys are category names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_bszone">
+<code class="descname">calculate_bszone</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>algorithm</em>, <em>parameters</em>, <em>chart_generator</em>, <em>context</em>, <em>label_prefix=''</em>, <em>actual_period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_bszone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate over-bought/sold zone for moment indicator.
+:param ohlc: OHLC, the time series.
+:param momentum: The curve from the momentum indicator.
+:param algorithm: string, algorithm used to calculate bs zone.
+:param parameters: string, the parameters to the bs zone algorithm.
+:param label_prefix: string, the label prefix for the bszone, usually the indicator name.
+:return: dict from string to arrays. The series to be added in the chart. Keys are category names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_turn_points">
+<code class="descname">calculate_turn_points</code><span class="sig-paren">(</span><em>ohlc</em>, <em>momentum</em>, <em>parameters</em>, <em>chart_generator</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.calculate_turn_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw turn points for momentum indicator.
+:param ohlc: OHLC, the ohlc data.
+:param momentum: [float], the values for the momentum indicator.
+:param parameters: dict from string to objects, the actual parameters for the indicator.
+:param chart_generator: chart generator.
+:param context: chart generation context.
+:return: dict from string to arrays. The series to be added in the chart. Keys are category names.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_line_styles">
+<em class="property">static </em><code class="descname">get_line_styles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_line_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the line drawing styles.
+:return: [(string, string)]</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.parse_datetime_string">
+<em class="property">static </em><code class="descname">parse_datetime_string</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.parse_datetime_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return array of datetime
+:param data: string, the string of data separated by &#8216;:&#8217;
+:return: [datetime]</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.parse_numeric_string">
+<em class="property">static </em><code class="descname">parse_numeric_string</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.parse_numeric_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return array of float
+:param data: string, the string of data separated by &#8216;:&#8217;
+:return: [float]</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_value_from_pos">
+<em class="property">static </em><code class="descname">get_value_from_pos</code><span class="sig-paren">(</span><em>data</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_value_from_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return value of the specified index. If pos &gt; len(data), use the last value of data
+:param data: [string], the string of general parameter
+:param pos: int, index of current array
+:return: string</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.get_color_from_pos">
+<em class="property">static </em><code class="descname">get_color_from_pos</code><span class="sig-paren">(</span><em>colors</em>, <em>transparencies</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.get_color_from_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return color from initial color and transparency
+:param colors: [string], the color array
+:param transparencies: [string], the transparency array
+:param pos: int, index of current array
+:return: string</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_HEIGHT">
+<code class="descname">PARA_HEIGHT</code><em class="property"> = 'height'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_HEIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_ID">
+<code class="descname">PARA_ID</code><em class="property"> = 'id'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_PERIOD">
+<code class="descname">PARA_PERIOD</code><em class="property"> = 'period'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_PERIOD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_POSITION">
+<code class="descname">PARA_POSITION</code><em class="property"> = 'position'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_POSITION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_SID">
+<code class="descname">PARA_SID</code><em class="property"> = 'sid'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.PARA_SID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.add_result">
+<code class="descname">add_result</code><span class="sig-paren">(</span><em>dest</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.add_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add content of source into dest.
+:param dest: dict from string to array.
+:param source: dict from string to array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.SingleIndicator.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>chart_generator</em>, <em>parameters</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.SingleIndicator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate current indicator.
+:param chart_generator: AbstractChartDataGenerator, the chart generator to draw indicators.
+:param parameters: dict from string to object. The actual parameters for current indicator.
+:param context: dict from string to object. The context from the chart generator.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>It has the following keys:</dt>
+<dd>stock_id: string, the id of the stock to display.
+start_time, end_time: datetime, the start and end time of the time region.
+cursor_date: datetime: if not None, the time of the cursor.
+yconfig: YaxisConfig, the y-axis config.
+k_yconfig: YaxisConfig, the y-axis config for the K bar area.
+v_yconfig: YaxisConfig, the y-axis config for the volume bar area.
+data_feed: AbstractDataFeed, the data feed to get data.</dd>
+</dl>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dict from string to object. Keys are series category names, or values in the chart.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">CompositeIndicator</code><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.charting.chart_indicators.Indicator" title="ctxalgolib.charting.chart_indicators.Indicator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.charting.chart_indicators.Indicator</span></code></a></p>
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_HEIGHT">
+<code class="descname">PARA_HEIGHT</code><em class="property"> = 'height'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_HEIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_ID">
+<code class="descname">PARA_ID</code><em class="property"> = 'id'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_PERIOD">
+<code class="descname">PARA_PERIOD</code><em class="property"> = 'period'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_PERIOD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_POSITION">
+<code class="descname">PARA_POSITION</code><em class="property"> = 'position'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_POSITION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_SID">
+<code class="descname">PARA_SID</code><em class="property"> = 'sid'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator.PARA_SID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator.add_result">
+<code class="descname">add_result</code><span class="sig-paren">(</span><em>dest</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator.add_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add content of source into dest.
+:param dest: dict from string to array.
+:param source: dict from string to array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.chart_indicators.CompositeIndicator.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>chart_generator</em>, <em>parameters</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.CompositeIndicator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate current indicator.
+:param chart_generator: AbstractChartDataGenerator, the chart generator to draw indicators.
+:param parameters: dict from string to object. The actual parameters for current indicator.
+:param context: dict from string to object. The context from the chart generator.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>It has the following keys:</dt>
+<dd>stock_id: string, the id of the stock to display.
+start_time, end_time: datetime, the start and end time of the time region.
+cursor_date: datetime: if not None, the time of the cursor.
+yconfig: YaxisConfig, the y-axis config.
+k_yconfig: YaxisConfig, the y-axis config for the K bar area.
+v_yconfig: YaxisConfig, the y-axis config for the volume bar area.
+data_feed: AbstractDataFeed, the data feed to get data.</dd>
+</dl>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dict from string to object. Keys are series category names, or values in the chart.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">IndicatorUtils</code><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.INDICATOR_GROUP_MOMENTUM">
+<code class="descname">INDICATOR_GROUP_MOMENTUM</code><em class="property"> = u'\u52a8\u91cf\u6307\u6807'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.INDICATOR_GROUP_MOMENTUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.INDICATOR_GROUP_PERIODICITY">
+<code class="descname">INDICATOR_GROUP_PERIODICITY</code><em class="property"> = u'\u5468\u671f'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.INDICATOR_GROUP_PERIODICITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.INDICATOR_GROUP_OTHER">
+<code class="descname">INDICATOR_GROUP_OTHER</code><em class="property"> = u'\u5176\u5b83'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.INDICATOR_GROUP_OTHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_NAME">
+<code class="descname">DIVERGENCE_NAME</code><em class="property"> = 'div'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_PARAM_NAME">
+<code class="descname">DIVERGENCE_PARAM_NAME</code><em class="property"> = 'div-param'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_PARAM_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_DIRECTION_NAME">
+<code class="descname">DIVERGENCE_DIRECTION_NAME</code><em class="property"> = 'direction'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_DIRECTION_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_SHOW_CONFIRM">
+<code class="descname">DIVERGENCE_SHOW_CONFIRM</code><em class="property"> = 'div-confirm'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_SHOW_CONFIRM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_CONFIRM_COLOR">
+<code class="descname">DIVERGENCE_CONFIRM_COLOR</code><em class="property"> = 'div-confirm-color'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.DIVERGENCE_CONFIRM_COLOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.BSZONE_NAME">
+<code class="descname">BSZONE_NAME</code><em class="property"> = 'bszone'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.BSZONE_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.BSZONE_PARAM_NAME">
+<code class="descname">BSZONE_PARAM_NAME</code><em class="property"> = 'bszone-param'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.BSZONE_PARAM_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.PERIOD_NAME">
+<code class="descname">PERIOD_NAME</code><em class="property"> = 'period'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.PERIOD_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.POSITION_NAME">
+<code class="descname">POSITION_NAME</code><em class="property"> = 'position'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.POSITION_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.TURN_NAME">
+<code class="descname">TURN_NAME</code><em class="property"> = 'turn'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.TURN_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.ID_NAME">
+<code class="descname">ID_NAME</code><em class="property"> = 'id'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.ID_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.INSTRUMENT_ID_NAME">
+<code class="descname">INSTRUMENT_ID_NAME</code><em class="property"> = 'sid'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.INSTRUMENT_ID_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.HEIGHT_NAME">
+<code class="descname">HEIGHT_NAME</code><em class="property"> = 'height'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.HEIGHT_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.generate_parameter_str">
+<em class="property">static </em><code class="descname">generate_parameter_str</code><span class="sig-paren">(</span><em>indicator</em>, <em>actual_parameters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.generate_parameter_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate string representation of the indicator parameters.
+:param indicator: Indicator, the indicator.
+:param actual_parameters: dict from string to object. The actual parameters.</p>
+<blockquote>
+<div>If some parameters appear in actual_parameters, they will be used to fill in the actual value slot.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string, a string representation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.parse_parameters">
+<em class="property">static </em><code class="descname">parse_parameters</code><span class="sig-paren">(</span><em>indicator</em>, <em>parameter_string</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.parse_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse parameters from string for given indicator.
+:param indicator: Indicator, the indicator whose parameters are to be parsed.
+:param parameter_string: string, parameters.
+:return: Dictionary from string to IndicatorParameter.</p>
+<blockquote>
+<div>Keys are indicator parameter names. Values are the corresponding parameters.</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.get_bszone_parameters">
+<em class="property">static </em><code class="descname">get_bszone_parameters</code><span class="sig-paren">(</span><em>start_position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.get_bszone_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get parameters for over bought/sold zones.
+Parameters:</p>
+<blockquote>
+<div>start_position: int, the starting position of the parameter.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>A dictionary from string to IndicatorParameter objects. Keys are parameter names.</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.get_divergence_parameters">
+<em class="property">static </em><code class="descname">get_divergence_parameters</code><span class="sig-paren">(</span><em>start_position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.get_divergence_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get parameters for divergence configurations.
+Parameters:</p>
+<blockquote>
+<div>start_position: int, the starting position of the parameter.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>A dictionary from string to IndicatorParameter objects. Keys are parameter names.</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.get_turn_parameters">
+<em class="property">static </em><code class="descname">get_turn_parameters</code><span class="sig-paren">(</span><em>start_position</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.get_turn_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get parameters for momentum indicator turns.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.chart_indicators.IndicatorUtils.get_datetime">
+<em class="property">static </em><code class="descname">get_datetime</code><span class="sig-paren">(</span><em>dt</em>, <em>default_time=datetime.time(15</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.IndicatorUtils.get_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.YaxisConfig">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">YaxisConfig</code><span class="sig-paren">(</span><em>id_</em>, <em>top</em>, <em>height</em>, <em>opposite=True</em>, <em>reversed_=False</em>, <em>min_value=None</em>, <em>max_value=None</em>, <em>plotLines=None</em>, <em>log=False</em>, <em>forced_position=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.YaxisConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents a Y-axis configuration for display OHLC-based charts.</p>
+<p>Initialize current.
+Parameters:</p>
+<blockquote>
+<div><a href="#id1"><span class="problematic" id="id2">id_</span></a>: int, 0-based Y-axis index.
+top: int, the number of pixels to the top of the chart.
+height: int, the height of current Y-axis.
+opposite: bool, True if current Y-axis should be displayed on the right side.</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.chart_indicators.</code><code class="descname">TalibTypes</code><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes.OVERLAP">
+<code class="descname">OVERLAP</code><em class="property"> = 'Overlap'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes.OVERLAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes.MOMENTUM">
+<code class="descname">MOMENTUM</code><em class="property"> = 'Momentum'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes.MOMENTUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes.VOLUME">
+<code class="descname">VOLUME</code><em class="property"> = 'Volume'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes.VOLUME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes.VOLATILITY">
+<code class="descname">VOLATILITY</code><em class="property"> = 'Volatility'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes.VOLATILITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes.PRICE_TRANSFORM">
+<code class="descname">PRICE_TRANSFORM</code><em class="property"> = 'Price Transform'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes.PRICE_TRANSFORM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes.CYCLE">
+<code class="descname">CYCLE</code><em class="property"> = 'Cycle'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes.CYCLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.charting.chart_indicators.TalibTypes.PATTERN_RECOGNITION">
+<code class="descname">PATTERN_RECOGNITION</code><em class="property"> = 'Pattern Recognition'</em><a class="headerlink" href="#ctxalgolib.charting.chart_indicators.TalibTypes.PATTERN_RECOGNITION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="charting_constants.html" class="btn btn-neutral float-right" title="charting_constants" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chart_data_generator.html" class="btn btn-neutral" title="chart_data_generator" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>max_order_speed_rule &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="rules" href="index.html"/>
+        <link rel="next" title="strategy_heartbeat_rule" href="strategy_heartbeat_rule.html"/>
+        <link rel="prev" title="max_order_quota_rule" href="max_order_quota_rule.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">rule_checking</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../alerts/index.html">alerts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">rules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="max_order_quota_rule.html">max_order_quota_rule</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">max_order_speed_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strategy_heartbeat_rule.html">strategy_heartbeat_rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../checker.html">checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configs.html">configs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../message_validity_checker.html">message_validity_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rule.html">rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rule_factory.html">rule_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../violations.html">violations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">rule_checking</a> &raquo;</li>
+      
+          <li><a href="index.html">rules</a> &raquo;</li>
+      
+    <li>max_order_speed_rule</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/rule_checking/rules/max_order_speed_rule.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.rule_checking.rules.max_order_speed_rule">
+<span id="max-order-speed-rule"></span><h1>max_order_speed_rule<a class="headerlink" href="#module-ctxalgolib.rule_checking.rules.max_order_speed_rule" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.max_order_speed_rule.</code><code class="descname">MaxOrderSpeedRule</code><span class="sig-paren">(</span><em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../rule.html#ctxalgolib.rule_checking.rule.AbstractRule" title="ctxalgolib.rule_checking.rule.AbstractRule"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.rule.AbstractRule</span></code></a></p>
+<p>Rule that checks if the order request speed exceeds a given speed limit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>parameters</strong> &#8211; <p>dict{string: object}, parameters to the current rule.
+Valid key-value pairs are:
+1. (optional) account_speed_limits: dict{string: int},</p>
+<blockquote>
+<div>meaning dict{account_signature: speed_limit_of_that_account}.
+This defines the speed limit (orders/minute) for specific accounts.</div></blockquote>
+<ol class="arabic" start="2">
+<li>(mandatory) speed_limit: int, this defines the default speed limit (orders/minute) for all accounts.</li>
+<li><dl class="first docutils">
+<dt>(optional) timeout: int, in number of minutes, the timeout minutes after this rule is violated</dt>
+<dd>for an account.</dd>
+</dl>
+</li>
+</ol>
+</li>
+<li><strong>message_validity_checker</strong> &#8211; MessageValidityChecker, the message validity checker.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.account_speed_limits">
+<code class="descname">account_speed_limits</code><em class="property"> = 'account_speed_limits'</em><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.account_speed_limits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.default_speed_limit">
+<code class="descname">default_speed_limit</code><em class="property"> = 'speed_limit'</em><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.default_speed_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.timeout">
+<code class="descname">timeout</code><em class="property"> = 'timeout'</em><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.timeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.is_parameters_valid">
+<code class="descname">is_parameters_valid</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.is_parameters_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.input_topics">
+<code class="descname">input_topics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.input_topics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em>, <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.state">
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_unique_account_signature">
+<code class="descname">get_unique_account_signature</code><span class="sig-paren">(</span><em>account_type</em>, <em>account_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_unique_account_signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a unique signature for the given account.
+:param account_type: string, the account type, such as stock or future.
+:param account_id: string, the account id.
+:return: string, the account signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_unique_product_strategy">
+<code class="descname">get_unique_product_strategy</code><span class="sig-paren">(</span><em>product</em>, <em>strategy</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_unique_product_strategy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.is_message_valid">
+<code class="descname">is_message_valid</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.is_message_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given message valid?
+:param topic: string, message topic.
+:param content: object, message content.
+:return: boolean.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="strategy_heartbeat_rule.html" class="btn btn-neutral float-right" title="strategy_heartbeat_rule" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="max_order_quota_rule.html" class="btn btn-neutral" title="max_order_quota_rule" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

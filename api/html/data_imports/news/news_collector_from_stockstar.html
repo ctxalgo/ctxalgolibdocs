@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>news_collector_from_stockstar &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="news" href="index.html"/>
+        <link rel="next" title="news_collector_from_tonghuashun" href="news_collector_from_tonghuashun.html"/>
+        <link rel="prev" title="news_collector_from_sohu" href="news_collector_from_sohu.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">data_imports</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../blog/index.html">blog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coretx_data_import/index.html">coretx_data_import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../major_money/index.html">major_money</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">news</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="news_collector.html">news_collector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_eastmoney.html">news_collector_from_eastmoney</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_hexun.html">news_collector_from_hexun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_ifeng.html">news_collector_from_ifeng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_netease.html">news_collector_from_netease</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_qq.html">news_collector_from_qq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_sina.html">news_collector_from_sina</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_sohu.html">news_collector_from_sohu</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">news_collector_from_stockstar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="news_collector_from_tonghuashun.html">news_collector_from_tonghuashun</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_imports/index.html">ohlc_imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otc/index.html">otc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tongdaxin/index.html">tongdaxin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capital_structure_importer.html">capital_structure_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_allocation_importer.html">company_allocation_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_capital_structures_importer.html">company_capital_structures_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_exrights_importer.html">company_exrights_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_financials_importer.html">company_financials_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_performance_importer.html">company_performance_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_report_dates_importer.html">company_report_dates_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_importer.html">data_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../east_money_plate_importer.html">east_money_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fund_holders_collector.html">fund_holders_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamental_expressions_calculator.html">fundamental_expressions_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hexun_plate_importer.html">hexun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hs300_stock_weights_retriever.html">hs300_stock_weights_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../if_trading_1s_importer.html">if_trading_1s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_composite_stocks_and_weights_collector.html">index_composite_stocks_and_weights_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../large_stock_price_finder.html">large_stock_price_finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../new_stock_collector.html">new_stock_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plate_importer.html">plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rar_folder_importer.html">rar_folder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rumian_blog_extracter.html">rumian_blog_extracter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../share_holder_importer.html">share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sina_plate_importer.html">sina_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sohu_plate_importer.html">sohu_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state_company_collector.html">state_company_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_info_collector.html">stock_info_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_name_retriever.html">stock_name_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_plate_importer.html">stock_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_conditioned_triggers.html">stock_pool_conditioned_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_return_calculator.html">stock_pool_return_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_trigger_calculator.html">stock_pool_trigger_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_share_holder_importer.html">stock_share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_trading_1d_importer.html">stock_trading_1d_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_trading_3s_importer.html">stock_trading_3s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sub_new_stock_open_board_calculator.html">sub_new_stock_open_board_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targeted_stock_expansion_collector.html">targeted_stock_expansion_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tianya_collector.html">tianya_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tonghuashun_plate_importer.html">tonghuashun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yahoo_data_importer.html">yahoo_data_importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">data_imports</a> &raquo;</li>
+      
+          <li><a href="index.html">news</a> &raquo;</li>
+      
+    <li>news_collector_from_stockstar</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/data_imports/news/news_collector_from_stockstar.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="news-collector-from-stockstar">
+<h1>news_collector_from_stockstar<a class="headerlink" href="#news-collector-from-stockstar" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.data_imports.news.news_collector_from_stockstar"></span><dl class="class">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.news.news_collector_from_stockstar.</code><code class="descname">StockStarNewsCollector</code><span class="sig-paren">(</span><em>stocks</em>, <em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="news_collector.html#ctxalgolib.data_imports.news.news_collector.AbstractNewsCollector" title="ctxalgolib.data_imports.news.news_collector.AbstractNewsCollector"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.news.news_collector.AbstractNewsCollector</span></code></a></p>
+<p>Class to collect news from StockStar.</p>
+<p>Initialize current.
+stocks: a dictionary string-&gt;string from stock ids to stock names.
+connection: MySQLdb connection.
+update_type: int, 0 means insert ignore, 1 means insert update.</p>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect">
+<code class="descname">collect</code><span class="sig-paren">(</span><em>category</em>, <em>earliest_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect news from StockStar and store them in database.
+category: string, the category of news to be collected. Supported values:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>&#8220;news&#8221; from url: <a class="reference external" href="http://stock.stockstar.com/list/company.htm">http://stock.stockstar.com/list/company.htm</a></li>
+<li>&#8220;report&#8221; from url: <a class="reference external" href="http://stock.stockstar.com/report_list/report1.htm">http://stock.stockstar.com/report_list/report1.htm</a></li>
+<li>&#8220;plate&#8221; from url: <a class="reference external" href="http://stock.stockstar.com/list/sectors.htm">http://stock.stockstar.com/list/sectors.htm</a></li>
+</ol>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect_news_per_page">
+<code class="descname">collect_news_per_page</code><span class="sig-paren">(</span><em>url</em>, <em>category</em>, <em>earliest_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect_news_per_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect news and store them in database for each page
+Parameter:</p>
+<blockquote>
+<div>url: string, the url of each page
+category: string, the category of news to be collected. Supported values:
+earliest_time: datetime, the earliest time to collect</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect_report_per_page">
+<code class="descname">collect_report_per_page</code><span class="sig-paren">(</span><em>url</em>, <em>category</em>, <em>earliest_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect_report_per_page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect news and store them in database for each page
+Parameter:</p>
+<blockquote>
+<div>url: string, the url of each page
+category: string, the category of news to be collected. Supported values:
+earliest_time: datetime, the earliest time to collect</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_urls">
+<code class="descname">get_urls</code><span class="sig-paren">(</span><em>connection</em>, <em>start_time</em>, <em>end_time</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_urls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect_page_content">
+<code class="descname">collect_page_content</code><span class="sig-paren">(</span><em>urls</em>, <em>content_times</em>, <em>titles</em>, <em>categories</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.collect_page_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect news content from current source and store them into database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_earliest_time_from_db">
+<code class="descname">get_earliest_time_from_db</code><span class="sig-paren">(</span><em>connection</em>, <em>source</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_earliest_time_from_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get earliest time from database, to find the latest timestamp from the database table for those sources
+if no record is found, use datetime.now() - timedelta(days=3)
+Parameter:</p>
+<blockquote>
+<div>connection: the database connection
+source: string, the source of the news
+category: string, the category of the news, news, report, good or index</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>datetime: the earliest time found</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_stock_id_from_title">
+<code class="descname">get_stock_id_from_title</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_stock_id_from_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to find stock&#8217;s id according to the title
+Parameter:</p>
+<blockquote>
+<div>title: string, the title</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>string, the stock&#8217;s id; &#8216;&#8217;, if not find</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_urls_from_company_news">
+<code class="descname">get_urls_from_company_news</code><span class="sig-paren">(</span><em>connection</em>, <em>start_time</em>, <em>end_time</em>, <em>source</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.news.news_collector_from_stockstar.StockStarNewsCollector.get_urls_from_company_news" title="Permalink to this definition">¶</a></dt>
+<dd><p>if url is not given, get all urls from company_news table</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="news_collector_from_tonghuashun.html" class="btn btn-neutral float-right" title="news_collector_from_tonghuashun" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="news_collector_from_sohu.html" class="btn btn-neutral" title="news_collector_from_sohu" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

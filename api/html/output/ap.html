@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ap &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="output" href="index.html"/>
+        <link rel="next" title="generate_mo_file" href="generate_mo_file.html"/>
+        <link rel="prev" title="ipython_output_utils" href="ipython/ipython_output_utils.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">output</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ipython/index.html">ipython</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_mo_file.html">generate_mo_file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iterm_plot.html">iterm_plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="texttable.html">texttable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="translation.html">translation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">output</a> &raquo;</li>
+      
+    <li>ap</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/output/ap.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.output.ap">
+<span id="ap"></span><h1>ap<a class="headerlink" href="#module-ctxalgolib.output.ap" title="Permalink to this headline">¶</a></h1>
+<p>Package that allows you to plot simple graphs in ASCII, a la matplotlib.</p>
+<p>This package is a inspired from Imri Goldberg&#8217;s ASCII-Plotter 1.0
+(<a class="reference external" href="https://pypi.python.org/pypi/ASCII-Plotter/1.0">https://pypi.python.org/pypi/ASCII-Plotter/1.0</a>)</p>
+<p>At a time I was enoyed by security not giving me direct access to my computer,
+and thus to quickly make figures from python, I looked at how I could make
+quick and dirty ASCII figures. But if I were to develop something, I wanted
+something that can be used with just python and possible standard-ish packages
+(numpy, scipy).</p>
+<p>So I came up with this package after many iterations based of ASCII-plotter.
+I added the feature to show multiple curves on one plot with different markers.
+And I also made the usage, close to matplotlib, such that there is a plot,
+hist, hist2d and imshow functions.</p>
+<dl class="docutils">
+<dt>TODO:</dt>
+<dd>imshow does not plot axis yet.
+make a correct documentation</dd>
+</dl>
+<dl class="class">
+<dt id="ctxalgolib.output.ap.AData">
+<em class="property">class </em><code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">AData</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>marker='_.'</em>, <em>plot_slope=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Data container for ascii AFigure</p>
+<p>Constructor
+INPUTS
+&#8212;&#8212;
+x: iterable</p>
+<blockquote>
+<div>x values</div></blockquote>
+<dl class="docutils">
+<dt>y: iterable</dt>
+<dd>y values</dd>
+</dl>
+<dl class="docutils">
+<dt>marker: str</dt>
+<dd><p class="first">marker for the data.
+if None or empty, the curve will be plotted
+if the first character of the marker is &#8216;_&#8217; then unicode markers will be called:</p>
+<blockquote class="last">
+<div><blockquote>
+<div>marker      repr                description</div></blockquote>
+</div></blockquote>
+</dd>
+<dt>plot_slope: bool</dt>
+<dd>if set, the curve will be plotted</dd>
+</dl>
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AData.set_marker">
+<code class="descname">set_marker</code><span class="sig-paren">(</span><em>marker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AData.set_marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the marker of the data
+INPUTS
+&#8212;&#8212;
+marker: str</p>
+<blockquote>
+<div>marker for the data.
+see constructor for marker descriptions</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AData.extent">
+<code class="descname">extent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AData.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the extention of the data
+OUPUTS
+&#8212;&#8212;
+e: list</p>
+<blockquote>
+<div>[ min(x), max(x), min(y), max(y) ]</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.output.ap.ACanvas">
+<em class="property">class </em><code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">ACanvas</code><span class="sig-paren">(</span><em>shape=None</em>, <em>margins=None</em>, <em>xlim=None</em>, <em>ylim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Canvas of a AFigure instance. A Canvas handles all transformations
+between data space and figure space accounting for scaling and pixels</p>
+<p>In general there is no need to access the canvas directly</p>
+<p>Constructor
+KEYWORDS
+&#8212;&#8212;&#8211;
+shape: tuple of 2 ints</p>
+<blockquote>
+<div>shape of the canvas in number of characters: (width, height)</div></blockquote>
+<dl class="docutils">
+<dt>margins: tuple of 2 floats</dt>
+<dd>fractional margins</dd>
+<dt>xlim: tuple of 2 floats</dt>
+<dd>limits of the xaxis</dd>
+<dt>ylim: tuple of 2 floats</dt>
+<dd>limits of the yaxis</dd>
+</dl>
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.x_size">
+<code class="descname">x_size</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.x_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the width</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.y_size">
+<code class="descname">y_size</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.y_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the height</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.x_margin">
+<code class="descname">x_margin</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.x_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the margin in x</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.y_margin">
+<code class="descname">y_margin</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.y_margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the margin in y</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.xlim">
+<code class="descname">xlim</code><span class="sig-paren">(</span><em>vmin=None</em>, <em>vmax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.xlim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the <em>x</em> limits of the current axes.</p>
+<dl class="docutils">
+<dt>vmin: float</dt>
+<dd>lower limit</dd>
+<dt>vmax: float</dt>
+<dd>upper limit</dd>
+</dl>
+<p>xmin, xmax = xlim()   # return the current xlim
+xlim( (xmin, xmax) )  # set the xlim to xmin, xmax
+xlim( xmin, xmax )    # set the xlim to xmin, xmax</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.ylim">
+<code class="descname">ylim</code><span class="sig-paren">(</span><em>vmin=None</em>, <em>vmax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.ylim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the <em>y</em> limits of the current axes.</p>
+<dl class="docutils">
+<dt>vmin: float</dt>
+<dd>lower limit</dd>
+<dt>vmax: float</dt>
+<dd>upper limit</dd>
+</dl>
+<p>ymin, ymax = ylim()   # return the current xlim
+ylim( (ymin, ymax) )  # set the xlim to xmin, xmax
+ylim( ymin, ymax )    # set the xlim to xmin, xmax</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.min_x">
+<code class="descname">min_x</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.min_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the lower x limit</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.max_x">
+<code class="descname">max_x</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.max_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the upper x limit</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.min_y">
+<code class="descname">min_y</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.min_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the lower y limit</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.max_y">
+<code class="descname">max_y</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.max_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the upper y limit</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.x_step">
+<code class="descname">x_step</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.x_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.y_step">
+<code class="descname">y_step</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.y_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.ratio">
+<code class="descname">ratio</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.ratio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.x_mod">
+<code class="descname">x_mod</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.x_mod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.output.ap.ACanvas.y_mod">
+<code class="descname">y_mod</code><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.y_mod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.extent">
+<code class="descname">extent</code><span class="sig-paren">(</span><em>margin_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.extent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.extent_str">
+<code class="descname">extent_str</code><span class="sig-paren">(</span><em>margin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.extent_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.x_str">
+<code class="descname">x_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.x_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.y_str">
+<code class="descname">y_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.y_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.coords_inside_buffer">
+<code class="descname">coords_inside_buffer</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.coords_inside_buffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.ACanvas.coords_inside_data">
+<code class="descname">coords_inside_data</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.ACanvas.coords_inside_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>return if (x,y) covered by the data box
+x, y: float</p>
+<blockquote>
+<div>coordinates to test</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.output.ap.AFigure">
+<em class="property">class </em><code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">AFigure</code><span class="sig-paren">(</span><em>shape=(80</em>, <em>20)</em>, <em>margins=(0.05</em>, <em>0.1)</em>, <em>draw_axes=True</em>, <em>newline='n'</em>, <em>plot_labels=True</em>, <em>xlim=None</em>, <em>ylim=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AFigure.xlim">
+<code class="descname">xlim</code><span class="sig-paren">(</span><em>vmin=None</em>, <em>vmax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure.xlim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AFigure.ylim">
+<code class="descname">ylim</code><span class="sig-paren">(</span><em>vmin=None</em>, <em>vmax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure.ylim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AFigure.get_coord">
+<code class="descname">get_coord</code><span class="sig-paren">(</span><em>val</em>, <em>min</em>, <em>step</em>, <em>limits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure.get_coord" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AFigure.auto_limits">
+<code class="descname">auto_limits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure.auto_limits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AFigure.append_data">
+<code class="descname">append_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure.append_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AFigure.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>x_seq</em>, <em>y_seq=None</em>, <em>marker=None</em>, <em>plot_slope=False</em>, <em>xlim=None</em>, <em>ylim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.output.ap.AFigure.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.AFigure.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.plot">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>x</em>, <em>y=None</em>, <em>marker=None</em>, <em>shape=(50</em>, <em>20)</em>, <em>draw_axes=True</em>, <em>newline='\n'</em>, <em>plot_slope=False</em>, <em>x_margin=0.05</em>, <em>y_margin=0.1</em>, <em>plot_labels=True</em>, <em>xlim=None</em>, <em>ylim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.steppify">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">steppify</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.steppify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Steppify a curve (x,y). Useful for manually filling histograms</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.stemify">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">stemify</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.stemify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Steppify a curve (x,y). Useful for manually filling histograms</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.hist">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">hist</code><span class="sig-paren">(</span><em>x</em>, <em>bins=10</em>, <em>normed=False</em>, <em>weights=None</em>, <em>density=None</em>, <em>histtype='stem'</em>, <em>shape=(50</em>, <em>20)</em>, <em>draw_axes=True</em>, <em>newline='\n'</em>, <em>marker='_.'</em>, <em>plot_slope=False</em>, <em>x_margin=0.05</em>, <em>y_margin=0.1</em>, <em>plot_labels=True</em>, <em>xlim=None</em>, <em>ylim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.hist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.step">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">step</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>shape=(50</em>, <em>20)</em>, <em>draw_axes=True</em>, <em>newline='\n'</em>, <em>marker='_.'</em>, <em>plot_slope=True</em>, <em>x_margin=0.05</em>, <em>y_margin=0.1</em>, <em>plot_labels=True</em>, <em>xlim=None</em>, <em>ylim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.stem">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">stem</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>shape=(50</em>, <em>20)</em>, <em>draw_axes=True</em>, <em>newline='\n'</em>, <em>marker='_.'</em>, <em>plot_slope=True</em>, <em>x_margin=0.05</em>, <em>y_margin=0.1</em>, <em>plot_labels=True</em>, <em>xlim=None</em>, <em>ylim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.stem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.hist2d">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">hist2d</code><span class="sig-paren">(</span><em>x, y, bins=[50, 20], range=None, normed=False, weights=None, ncolors=16, width=50, percentiles=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.hist2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.percentile_imshow">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">percentile_imshow</code><span class="sig-paren">(</span><em>im, levels=[68, 95, 99], extent=None, width=50, ncolors=16</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.percentile_imshow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.output.ap.imshow">
+<code class="descclassname">ctxalgolib.output.ap.</code><code class="descname">imshow</code><span class="sig-paren">(</span><em>im</em>, <em>extent=None</em>, <em>width=50</em>, <em>ncolors=16</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.output.ap.imshow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generate_mo_file.html" class="btn btn-neutral float-right" title="generate_mo_file" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ipython/ipython_output_utils.html" class="btn btn-neutral" title="ipython_output_utils" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

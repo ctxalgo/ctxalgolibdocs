@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>fractal_finder &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="fractal" href="index.html"/>
+        <link rel="next" title="harmonic" href="../harmonic/index.html"/>
+        <link rel="prev" title="fractal" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">fractal</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fractal_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">fractal</a> &raquo;</li>
+      
+    <li>fractal_finder</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/fractal/fractal_finder.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.fractal.fractal_finder">
+<span id="fractal-finder"></span><h1>fractal_finder<a class="headerlink" href="#module-ctxalgolib.ta.fractal.fractal_finder" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.fractal.fractal_finder.</code><code class="descname">Fractal</code><span class="sig-paren">(</span><em>start_bar</em>, <em>level</em>, <em>direction</em>, <em>extreme_value</em>, <em>extreme_bar</em>, <em>immediate_bars</em>, <em>children</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize current fractal.
+Arguments:</p>
+<blockquote>
+<div><p>start_bar: int, the 0-based index of the first bar in current fractal.
+level: int, the fractal level: 0 means primitive fractal, 1 means middle level fractal, 2 means high level.
+direction: int, the direction of the fractal.</p>
+<blockquote>
+<div>0 means up fractal,
+1 means down fractal,
+2 means direction cannot be decided (both up and down are possible).</div></blockquote>
+<dl class="docutils">
+<dt>extreme_value: float, the high (if a up fractal) or low (if a down fractal)</dt>
+<dd>value of the extreme_bar in this fractal.</dd>
+</dl>
+<p>extreme_bar: int, the 0-based index of the highest bar (or lowest bar) in current fractal.
+immediate_bars: [int], list of 0-based indexes of the bars in current primitive fractal.</p>
+<blockquote>
+<div>If current fractal is not a primitive fractal, immediate_bars will be an empty list.</div></blockquote>
+<dl class="docutils">
+<dt>children: [Fractal], the list of children fractals of current fractal.</dt>
+<dd>For primitive level fractal, the children is an empty array.
+For middle level fractal, the children is the list of primitive fractals.
+For high level fractal, the children is the the list of middle level fractals.
+In other words, children is a recursive structure.</dd>
+</dl>
+</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.recursive_immediate_bars">
+<code class="descname">recursive_immediate_bars</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.recursive_immediate_bars" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return:</dt>
+<dd>[int], the list of 0-based OHLC bar indexes included in current fractal.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.is_up">
+<code class="descname">is_up</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.is_up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current an up fractal or bi-directional fractal?
+Return:</p>
+<blockquote>
+<div>bool.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.is_down">
+<code class="descname">is_down</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.is_down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current a down fractal or bi-directional fractal?
+Return:</p>
+<blockquote>
+<div>bool.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.extreme_high">
+<code class="descname">extreme_high</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.extreme_high" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return:</dt>
+<dd>float, the high value at self.extreme_bar.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.extreme_low">
+<code class="descname">extreme_low</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.extreme_low" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return:</dt>
+<dd>float, the low value at self.extreme_bar.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.high">
+<code class="descname">high</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.high" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.low">
+<code class="descname">low</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.low" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.unmark_up">
+<code class="descname">unmark_up</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.unmark_up" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.unmark_down">
+<code class="descname">unmark_down</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.unmark_down" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.Fractal.update_extreme_value">
+<code class="descname">update_extreme_value</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.Fractal.update_extreme_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.fractal.fractal_finder.</code><code class="descname">FractalFinder</code><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_up_fractal">
+<code class="descname">is_up_fractal</code><span class="sig-paren">(</span><em>ohlc</em>, <em>fractals</em>, <em>index</em>, <em>half_size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_up_fractal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can the index-th fractal in fractals be considered as a up fractal?
+Parameters:</p>
+<blockquote>
+<div>ohlc: OHLC, ohlc values.
+fractals: [Fractal], list of fractals
+index: int, 0-based index into fractals.
+half_size: int, the half size of the fractal.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><dl class="first last docutils">
+<dt>[int], a list of 0-based indices into fractals, representing the current fractal; None if index</dt>
+<dd>cannot be considered as a potential up fractal.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_down_fractal">
+<code class="descname">is_down_fractal</code><span class="sig-paren">(</span><em>ohlc</em>, <em>fractals</em>, <em>index</em>, <em>half_size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_down_fractal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can the index-th fractal in fractals be considered as a down fractal?
+Parameters:</p>
+<blockquote>
+<div>ohlc: OHLC, ohlc values.
+fractals: [Fractal], list of fractals
+index: int, 0-based index into fractals.
+half_size: int, the half size of the fractal.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><dl class="first last docutils">
+<dt>[int], a list of 0-based indices into fractals, representing the current fractal; None if index</dt>
+<dd>cannot be considered as a potential down fractal.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_up_primitive_fractal">
+<code class="descname">is_up_primitive_fractal</code><span class="sig-paren">(</span><em>highs</em>, <em>bar</em>, <em>half_size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_up_primitive_fractal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can bar be considered as a potential primitive up fractal?
+Parameters:</p>
+<blockquote>
+<div>highs: [float], high values.
+bar: int, 0-based bar position into ohlc.
+half_size: int, the half size of the fractal.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><dl class="first last docutils">
+<dt>[int], a list of 0-based bars representing the current primitive fractal; None if current bar</dt>
+<dd>cannot be considered as a potential up primitive fractal.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_down_primitive_fractal">
+<code class="descname">is_down_primitive_fractal</code><span class="sig-paren">(</span><em>lows</em>, <em>bar</em>, <em>half_size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.is_down_primitive_fractal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can bar be considered as a potential primitive down fractal?
+Parameters:</p>
+<blockquote>
+<div>ohlc: OHLC, ohlc data.
+bar: int, 0-based bar position into ohlc.
+half_size: int, the half size of the fractal.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><dl class="first last docutils">
+<dt>[int], a list of 0-based bars representing the current primitive fractal; None if current bar</dt>
+<dd>cannot be considered as a potential down primitive fractal.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_potential_primitive_fractals">
+<code class="descname">find_potential_primitive_fractals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_potential_primitive_fractals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_potential_fractals">
+<code class="descname">find_potential_fractals</code><span class="sig-paren">(</span><em>level</em>, <em>ohlc</em>, <em>base_fractals</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_potential_fractals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.check_higher_level_validity">
+<code class="descname">check_higher_level_validity</code><span class="sig-paren">(</span><em>lf</em>, <em>cf</em>, <em>rf</em>, <em>base_fractals</em>, <em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.check_higher_level_validity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.clear_invalid_fractals">
+<code class="descname">clear_invalid_fractals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>fractals</em>, <em>base_fractals</em>, <em>rf</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.clear_invalid_fractals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.fix_fractals">
+<code class="descname">fix_fractals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>original_fractals</em>, <em>base_fractals</em>, <em>type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.fix_fractals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_primitive_fractals">
+<code class="descname">find_primitive_fractals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>size=3</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_primitive_fractals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_middle_fractals">
+<code class="descname">find_middle_fractals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>primitive_size=3</em>, <em>middle_size=3</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_middle_fractals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_high_fractals">
+<code class="descname">find_high_fractals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>primitive_size=3</em>, <em>middle_size=3</em>, <em>high_size=3</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find_high_fractals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>level=1</em>, <em>sizes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.fractal.fractal_finder.FractalFinder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find fractals from ohlc data.
+Parameters:</p>
+<blockquote>
+<div><p>ohlc: OHLC, ohlc data for a security.
+level: int, 0 means primitive level, 1 means middle level, 2 means high level.
+sizes: [int], the size of each level of fractals.</p>
+<blockquote>
+<div>The first element specifies how many bars a primitive fractal should contain.
+The second element specifies (if level=1) how many primitive fractals a middle fractal should contain.
+The third element specifies (if level=2) how many middle fractals a high fractal should contain.</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[Fractal], the list found fractals; empty list of no fractal is found.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../harmonic/index.html" class="btn btn-neutral float-right" title="harmonic" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="fractal" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

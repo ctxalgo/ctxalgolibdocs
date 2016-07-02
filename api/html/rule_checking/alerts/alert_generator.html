@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>alert_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="alerts" href="index.html"/>
+        <link rel="next" title="rules" href="../rules/index.html"/>
+        <link rel="prev" title="alerts" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">rule_checking</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">alerts</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">alert_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../rules/index.html">rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../checker.html">checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configs.html">configs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../message_validity_checker.html">message_validity_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rule.html">rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rule_factory.html">rule_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../violations.html">violations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">rule_checking</a> &raquo;</li>
+      
+          <li><a href="index.html">alerts</a> &raquo;</li>
+      
+    <li>alert_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/rule_checking/alerts/alert_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.rule_checking.alerts.alert_generator">
+<span id="alert-generator"></span><h1>alert_generator<a class="headerlink" href="#module-ctxalgolib.rule_checking.alerts.alert_generator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">AlertEnvironments</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments.strategy">
+<code class="descname">strategy</code><em class="property"> = 'Strategy'</em><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments.strategy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments.strategy_heartbeat">
+<code class="descname">strategy_heartbeat</code><em class="property"> = 'Strategy heartbeat'</em><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments.strategy_heartbeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments.rule_status">
+<code class="descname">rule_status</code><em class="property"> = 'Rule status'</em><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AlertEnvironments.rule_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">AbstractAlertGenerator</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that represents an alert.io alert generator.</p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate one or more alerts from topic and content.
+:param topic: string, the alert topic.
+:param content: dict{unicode string: object}, data for this topic.
+:return: [dict{string: object}], alerts. If no alert is generated, return and empty list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if current alert generator can generate alert for topic and content.
+:param topic: string, the alert topic.
+:param content: dict{unicode string: object}, data for this topic.
+:return: bool, True if current generator can generate alert(s) for topic and content. False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the topic prefix that current alert generator can handle.
+:return: string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">RuleStatusAlertGenerator</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator" title="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.RuleStatusAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">StrategyHeartbeatAlertGenerator</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator" title="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyHeartbeatAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">StrategyExceptionAlertGenerator</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator" title="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.StrategyExceptionAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">OrderRequestViolationAlertGenerator</code><span class="sig-paren">(</span><em>topic_prefix</em>, <em>rule_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator" title="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.get_trading_account">
+<code class="descname">get_trading_account</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.get_trading_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading account signature..
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate one or more alerts from topic and content.
+:param topic: string, the alert topic.
+:param content: dict{unicode string: object}, data for this topic.
+:return: [dict{string: object}], alerts. If no alert is generated, return and empty list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">MaxOrderQuotaViolationAlertGenerator</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator" title="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.get_trading_account">
+<code class="descname">get_trading_account</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.get_trading_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading account signature..
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderQuotaViolationAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">MaxOrderSpeedViolationAlertGenerator</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator" title="ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.alerts.alert_generator.OrderRequestViolationAlertGenerator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.get_trading_account">
+<code class="descname">get_trading_account</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.get_trading_account" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading account signature..
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.MaxOrderSpeedViolationAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.alert_generator.</code><code class="descname">CompositeAlertGenerator</code><span class="sig-paren">(</span><em>generators</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator" title="ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.alerts.alert_generator.AbstractAlertGenerator</span></code></a></p>
+<p>Composite alert generator which represents a list of basic alert generators.</p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.topic_prefix">
+<code class="descname">topic_prefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.topic_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.can_handle">
+<code class="descname">can_handle</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.can_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.get_resource">
+<code class="descname">get_resource</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.alert_generator.CompositeAlertGenerator.get_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product-strategy pair.
+:param content: dict{unicode string: object}, data for this topic.
+:return: string.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rules/index.html" class="btn btn-neutral float-right" title="rules" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="alerts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ab_equals_cd &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="harmonic" href="index.html"/>
+        <link rel="next" title="harmonic_dtosc_parameter_tuner" href="harmonic_dtosc_parameter_tuner.html"/>
+        <link rel="prev" title="harmonic" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">harmonic</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ab_equals_cd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonic_dtosc_parameter_tuner.html">harmonic_dtosc_parameter_tuner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="harmonic_pattern.html">harmonic_pattern</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">harmonic</a> &raquo;</li>
+      
+    <li>ab_equals_cd</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/harmonic/ab_equals_cd.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.harmonic.ab_equals_cd">
+<span id="ab-equals-cd"></span><h1>ab_equals_cd<a class="headerlink" href="#module-ctxalgolib.ta.harmonic.ab_equals_cd" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.harmonic.ab_equals_cd.</code><code class="descname">ABEqualsCDPattern</code><span class="sig-paren">(</span><em>trading_direction</em>, <em>pivots</em>, <em>is_d_predicted</em>, <em>is_validated</em>, <em>zone</em>, <em>concentrated_areas</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="harmonic_pattern.html#ctxalgolib.ta.harmonic.harmonic_pattern.AbstractHarmonicPattern" title="ctxalgolib.ta.harmonic.harmonic_pattern.AbstractHarmonicPattern"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.harmonic.harmonic_pattern.AbstractHarmonicPattern</span></code></a></p>
+<p>Initialize current AB=CD pattern.
+Arguments:</p>
+<blockquote>
+<div><p>trading_direction: TradingDirection, the trading direction of current pattern.
+pivots: [(int, float)], the list of 4 points, A, B, C and D.</p>
+<blockquote>
+<div>Every point consists of two fields, the first int is the 0-based bar index, the second float is the
+price at that point. For A, the high prices, B, the low price, C the high price and D, the estimated
+or existing low price. The position of D is defined as follows: the bar index is the index which
+satisfies the high_A-low_B =  high_C-low_D if D.</div></blockquote>
+<p>is_d_predicted: bool, True if D is a predicated value (it has not appeared yet), False otherwise.
+is_validated: bool, True if D is a validated value, False otherwise.
+zone: [(int, float)], the list of 2 points defining the top-left and bottom-right corner of the operation</p>
+<blockquote>
+<div>zone (the blue zone).</div></blockquote>
+<dl class="docutils">
+<dt>concentrated_areas: [[up_ratio, up_value, up_ratio_source, down_ratio, down_value, down_ratio_source]]</dt>
+<dd>The list of concentrated areas in the operation zone. see ConcentratedAreaFinder for the
+definition of the elements. In this case, AB related ratios are the first ratio list, BC related
+ratios are the second ratio list.</dd>
+</dl>
+</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.a_bar">
+<code class="descname">a_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.a_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.b_bar">
+<code class="descname">b_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.b_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.c_bar">
+<code class="descname">c_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.c_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.d_bar">
+<code class="descname">d_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.d_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.zone_left">
+<code class="descname">zone_left</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.zone_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.zone_right">
+<code class="descname">zone_right</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.zone_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.set_noises">
+<code class="descname">set_noises</code><span class="sig-paren">(</span><em>ab_noise</em>, <em>bc_noise</em>, <em>cd_noise</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDPattern.set_noises" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set noise level for AB, BC and CD. Noise measures how linear each section is.
+Arguments:</p>
+<blockquote>
+<div>ab_noise: float, noise level for AB.
+bc_noise: float, noise level for BC.
+cd_noise: float, noise level for CD.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.DInfo">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.harmonic.ab_equals_cd.</code><code class="descname">DInfo</code><span class="sig-paren">(</span><em>target_index</em>, <em>d_value</em>, <em>gradient</em>, <em>intercept</em>, <em>is_d_predicted</em>, <em>is_validated</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.DInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>information for point D</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.harmonic.ab_equals_cd.</code><code class="descname">ABEqualsCDDetector</code><span class="sig-paren">(</span><em>piecewise_linear_regressor</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="harmonic_pattern.html#ctxalgolib.ta.harmonic.harmonic_pattern.AbstractHarmonicPatternDetector" title="ctxalgolib.ta.harmonic.harmonic_pattern.AbstractHarmonicPatternDetector"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.harmonic.harmonic_pattern.AbstractHarmonicPatternDetector</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.default_line_noise_function">
+<code class="descname">default_line_noise_function</code><span class="sig-paren">(</span><em>highs</em>, <em>lows</em>, <em>is_up_trend</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.default_line_noise_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the noise level for the line connecting the the high value of the first bar and low value of the
+last bar in up-trend (or the low value of the first bar and high value of the last bar, in down-trend).</p>
+<p>[I think] Calculates the noise level for the line connecting the the low value of the first bar and high value
+of the last bar in up-trend (or the high value of the first bar and low value of the last bar, in down-trend).</p>
+<p>the line is from 0-bar to (len-1)-bar
+&#64;param highs: [float], the high value data series
+&#64;para lows: [float], the low value data series
+&#64;is_up_trend: bool, True if line is up-trend else down-trend
+&#64;return: float, the noise level of the line</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.get_candidate_A_B_C_points">
+<code class="descname">get_candidate_A_B_C_points</code><span class="sig-paren">(</span><em>line_sections</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.get_candidate_A_B_C_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find candidate A, B, C points from piecewise linear regressed points.
+Parameters:</p>
+<blockquote>
+<div>line_sections: [(int, float)], List of piecewise linear regressed points.</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>([(int, float)], [(int, float)], [(int, float)])
+A tuple containing candidate points for A, B and C.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.detect">
+<code class="descname">detect</code><span class="sig-paren">(</span><em>ohlc</em>, <em>trading_direction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect AB=CD patterns.
+Parameters:</p>
+<blockquote>
+<div><p>ohlc: OHLC, ohlc data.
+trading_direction: TradingDirection. Specify in which trading direction to detect AB=CD patterns.</p>
+<blockquote>
+<div>Values can be TradingDirection.LONG or TradingDirection.SHORT.
+If None, detect patterns in both directions.</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>[ABEqualsCDPattern], List of detected AB=CD patterns.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.detect_per_point">
+<code class="descname">detect_per_point</code><span class="sig-paren">(</span><em>trading_direction</em>, <em>highs</em>, <em>lows</em>, <em>a_point</em>, <em>b_point</em>, <em>c_point</em>, <em>d_info</em>, <em>concentrated_areas</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.detect_per_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to detect the ab=cd pattern for every point D found in step 6
+Param:</p>
+<blockquote>
+<div><p>highs: [float], the high data series
+lows: [float], the low data series
+a_point: [int, float], the point a
+b_point: [int, float], the point b
+c_point: [int, float], the point c
+d_info: [DInfo], the information of point d, see the definition of DInfo
+concentrated_ares: [[up_ratio, up_value, up_ratio_source, down_ratio, down_value, down_ratio_source]]</p>
+<blockquote>
+<div>the concentrated areas that we find</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>return:</dt>
+<dd>ABEqualsCDHarmonicPattern: the detected AB=CD pattern</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.is_any_point_below">
+<code class="descname">is_any_point_below</code><span class="sig-paren">(</span><em>closes</em>, <em>start_bar</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.is_any_point_below" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function is to define if the close value of the point after start_bar is below &#8216;value&#8217;
+&#64;param closes: [float], the close data series
+&#64;param start_bar: the 0-based bar of the start point
+&#64;param value; float, the assigned value
+&#64;return: integer, the first bar that is below B (this is also can be used to define C&#8217;)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.is_bars_within_limits">
+<code class="descname">is_bars_within_limits</code><span class="sig-paren">(</span><em>highs</em>, <em>lows</em>, <em>extreme_value1</em>, <em>extreme_value2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.is_bars_within_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function checks if the data in highs series and lows series (between the two points) is in the
+range of the two extreme values
+Param:</p>
+<blockquote>
+<div>&#64; highs: [float], the highs data series
+&#64; lows: [float], the lows data series
+&#64; extreme_value1: float, the first extreme value
+&#64; extreme_value2: float, the second extreme value</div></blockquote>
+<dl class="docutils">
+<dt>return:</dt>
+<dd>boolean, True if all values is in the range of the extreme values; False, otherwise</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.is_intersect_with_concentrated_areas">
+<code class="descname">is_intersect_with_concentrated_areas</code><span class="sig-paren">(</span><em>high_value</em>, <em>low_value</em>, <em>concentrated_areas</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector.is_intersect_with_concentrated_areas" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to ensure whether a K line is intersected with any concentrated areas
+param:</p>
+<blockquote>
+<div><p>&#64; high_value: float, the high value of the k line
+&#64; low_value: float, the low value of the k line
+&#64; concentrated_areas: [[up_ratio, up_value, up_ratio_source, down_ratio, down_value, down_ratio_source]]</p>
+<blockquote>
+<div>the concentrated areas that we find</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>return:</dt>
+<dd>boolean, True if the k line is intersected with any concentrated areas, False, otherwise</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.harmonic.ab_equals_cd.</code><code class="descname">FractalbBasedABEqualsCDDetector</code><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector" title="ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.harmonic.ab_equals_cd.ABEqualsCDDetector</span></code></a></p>
+<p>Class that uses fractals to find points in AB=CD pattern.</p>
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.setup_fractal_analysis">
+<code class="descname">setup_fractal_analysis</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.setup_fractal_analysis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_point_a_ok">
+<code class="descname">is_point_a_ok</code><span class="sig-paren">(</span><em>bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_point_a_ok" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_point_b_ok">
+<code class="descname">is_point_b_ok</code><span class="sig-paren">(</span><em>bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_point_b_ok" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_point_c_ok">
+<code class="descname">is_point_c_ok</code><span class="sig-paren">(</span><em>bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_point_c_ok" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.detect">
+<code class="descname">detect</code><span class="sig-paren">(</span><em>ohlc</em>, <em>trading_direction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.detect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.default_line_noise_function">
+<code class="descname">default_line_noise_function</code><span class="sig-paren">(</span><em>highs</em>, <em>lows</em>, <em>is_up_trend</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.default_line_noise_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the noise level for the line connecting the the high value of the first bar and low value of the
+last bar in up-trend (or the low value of the first bar and high value of the last bar, in down-trend).</p>
+<p>[I think] Calculates the noise level for the line connecting the the low value of the first bar and high value
+of the last bar in up-trend (or the high value of the first bar and low value of the last bar, in down-trend).</p>
+<p>the line is from 0-bar to (len-1)-bar
+&#64;param highs: [float], the high value data series
+&#64;para lows: [float], the low value data series
+&#64;is_up_trend: bool, True if line is up-trend else down-trend
+&#64;return: float, the noise level of the line</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.detect_per_point">
+<code class="descname">detect_per_point</code><span class="sig-paren">(</span><em>trading_direction</em>, <em>highs</em>, <em>lows</em>, <em>a_point</em>, <em>b_point</em>, <em>c_point</em>, <em>d_info</em>, <em>concentrated_areas</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.detect_per_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to detect the ab=cd pattern for every point D found in step 6
+Param:</p>
+<blockquote>
+<div><p>highs: [float], the high data series
+lows: [float], the low data series
+a_point: [int, float], the point a
+b_point: [int, float], the point b
+c_point: [int, float], the point c
+d_info: [DInfo], the information of point d, see the definition of DInfo
+concentrated_ares: [[up_ratio, up_value, up_ratio_source, down_ratio, down_value, down_ratio_source]]</p>
+<blockquote>
+<div>the concentrated areas that we find</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>return:</dt>
+<dd>ABEqualsCDHarmonicPattern: the detected AB=CD pattern</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.get_candidate_A_B_C_points">
+<code class="descname">get_candidate_A_B_C_points</code><span class="sig-paren">(</span><em>line_sections</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.get_candidate_A_B_C_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find candidate A, B, C points from piecewise linear regressed points.
+Parameters:</p>
+<blockquote>
+<div>line_sections: [(int, float)], List of piecewise linear regressed points.</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>([(int, float)], [(int, float)], [(int, float)])
+A tuple containing candidate points for A, B and C.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_any_point_below">
+<code class="descname">is_any_point_below</code><span class="sig-paren">(</span><em>closes</em>, <em>start_bar</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_any_point_below" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function is to define if the close value of the point after start_bar is below &#8216;value&#8217;
+&#64;param closes: [float], the close data series
+&#64;param start_bar: the 0-based bar of the start point
+&#64;param value; float, the assigned value
+&#64;return: integer, the first bar that is below B (this is also can be used to define C&#8217;)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_bars_within_limits">
+<code class="descname">is_bars_within_limits</code><span class="sig-paren">(</span><em>highs</em>, <em>lows</em>, <em>extreme_value1</em>, <em>extreme_value2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_bars_within_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function checks if the data in highs series and lows series (between the two points) is in the
+range of the two extreme values
+Param:</p>
+<blockquote>
+<div>&#64; highs: [float], the highs data series
+&#64; lows: [float], the lows data series
+&#64; extreme_value1: float, the first extreme value
+&#64; extreme_value2: float, the second extreme value</div></blockquote>
+<dl class="docutils">
+<dt>return:</dt>
+<dd>boolean, True if all values is in the range of the extreme values; False, otherwise</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_intersect_with_concentrated_areas">
+<code class="descname">is_intersect_with_concentrated_areas</code><span class="sig-paren">(</span><em>high_value</em>, <em>low_value</em>, <em>concentrated_areas</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.harmonic.ab_equals_cd.FractalbBasedABEqualsCDDetector.is_intersect_with_concentrated_areas" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is to ensure whether a K line is intersected with any concentrated areas
+param:</p>
+<blockquote>
+<div><p>&#64; high_value: float, the high value of the k line
+&#64; low_value: float, the low value of the k line
+&#64; concentrated_areas: [[up_ratio, up_value, up_ratio_source, down_ratio, down_value, down_ratio_source]]</p>
+<blockquote>
+<div>the concentrated areas that we find</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>return:</dt>
+<dd>boolean, True if the k line is intersected with any concentrated areas, False, otherwise</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="harmonic_dtosc_parameter_tuner.html" class="btn btn-neutral float-right" title="harmonic_dtosc_parameter_tuner" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="harmonic" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

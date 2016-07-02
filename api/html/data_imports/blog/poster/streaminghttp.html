@@ -1,0 +1,736 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>streaminghttp &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="poster" href="index.html"/>
+        <link rel="next" title="speedparser" href="../speedparser/index.html"/>
+        <link rel="prev" title="encode" href="encode.html"/> 
+
+  
+  <script src="../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../charting/index.html">charting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">data_imports</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">blog</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">poster</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="encode.html">encode</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">streaminghttp</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../speedparser/index.html">speedparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../unirest/index.html">unirest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../base_rss.html">base_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../base_site.html">base_site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../feedparser.html">feedparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_blog_hits.html">import_blog_hits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_from_xml.html">import_from_xml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../n163_blog_rss.html">n163_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../qq_blog_rss.html">qq_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../script.html">script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sina_blog_rss.html">sina_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sohu_blog_rss.html">sohu_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../coretx_data_import/index.html">coretx_data_import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../major_money/index.html">major_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../news/index.html">news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ohlc_imports/index.html">ohlc_imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../otc/index.html">otc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tongdaxin/index.html">tongdaxin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capital_structure_importer.html">capital_structure_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_allocation_importer.html">company_allocation_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_capital_structures_importer.html">company_capital_structures_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_exrights_importer.html">company_exrights_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_financials_importer.html">company_financials_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_performance_importer.html">company_performance_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../company_report_dates_importer.html">company_report_dates_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_importer.html">data_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../east_money_plate_importer.html">east_money_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fund_holders_collector.html">fund_holders_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fundamental_expressions_calculator.html">fundamental_expressions_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hexun_plate_importer.html">hexun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hs300_stock_weights_retriever.html">hs300_stock_weights_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../if_trading_1s_importer.html">if_trading_1s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index_composite_stocks_and_weights_collector.html">index_composite_stocks_and_weights_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../large_stock_price_finder.html">large_stock_price_finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../new_stock_collector.html">new_stock_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plate_importer.html">plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rar_folder_importer.html">rar_folder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rumian_blog_extracter.html">rumian_blog_extracter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../share_holder_importer.html">share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sina_plate_importer.html">sina_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sohu_plate_importer.html">sohu_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../state_company_collector.html">state_company_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_info_collector.html">stock_info_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_name_retriever.html">stock_name_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_plate_importer.html">stock_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_pool_conditioned_triggers.html">stock_pool_conditioned_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_pool_return_calculator.html">stock_pool_return_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_pool_trigger_calculator.html">stock_pool_trigger_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_share_holder_importer.html">stock_share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_trading_1d_importer.html">stock_trading_1d_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stock_trading_3s_importer.html">stock_trading_3s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sub_new_stock_open_board_calculator.html">sub_new_stock_open_board_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../targeted_stock_expansion_collector.html">targeted_stock_expansion_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tianya_collector.html">tianya_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tonghuashun_plate_importer.html">tonghuashun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../yahoo_data_importer.html">yahoo_data_importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">data_imports</a> &raquo;</li>
+      
+          <li><a href="../index.html">blog</a> &raquo;</li>
+      
+          <li><a href="index.html">poster</a> &raquo;</li>
+      
+    <li>streaminghttp</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../sources/data_imports/blog/poster/streaminghttp.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.data_imports.blog.poster.streaminghttp">
+<span id="streaminghttp"></span><h1>streaminghttp<a class="headerlink" href="#module-ctxalgolib.data_imports.blog.poster.streaminghttp" title="Permalink to this headline">¶</a></h1>
+<p>Streaming HTTP uploads module.</p>
+<p>This module extends the standard httplib and urllib2 objects so that
+iterable objects can be used in the body of HTTP requests.</p>
+<p>In most cases all one should have to do is call <a class="reference internal" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.register_openers" title="ctxalgolib.data_imports.blog.poster.streaminghttp.register_openers"><code class="xref py py-func docutils literal"><span class="pre">register_openers()</span></code></a>
+to register the new streaming http handlers which will take priority over
+the default handlers, and then you can use iterable objects in the body
+of HTTP requests.</p>
+<p><strong>N.B.</strong> You must specify a Content-Length header if using an iterable object
+since there is no way to determine in advance the total size that will be
+yielded, and there is no way to reset an interator.</p>
+<p>Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">StringIO</span> <span class="k">import</span> <span class="n">StringIO</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">poster.streaminghttp</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">opener</span> <span class="o">=</span> <span class="n">poster</span><span class="o">.</span><span class="n">streaminghttp</span><span class="o">.</span><span class="n">register_openers</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Test file data&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">req</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s">&quot;http://localhost:5000&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="p">{</span><span class="s">&#39;Content-Length&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))})</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.poster.streaminghttp.</code><code class="descname">StreamingHTTPConnection</code><span class="sig-paren">(</span><em>host</em>, <em>port=None</em>, <em>strict=None</em>, <em>timeout=&lt;object object&gt;</em>, <em>source_address=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.poster.streaminghttp._StreamingHTTPMixin</span></code>, <code class="xref py py-class docutils literal"><span class="pre">httplib.HTTPConnection</span></code></p>
+<p>Subclass of <cite>httplib.HTTPConnection</cite> that overrides the <cite>send()</cite> method
+to support iterable body objects</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.auto_open">
+<code class="descname">auto_open</code><em class="property"> = 1</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.auto_open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the connection to the HTTP server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the host and port specified in __init__.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.debuglevel">
+<code class="descname">debuglevel</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.debuglevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.default_port">
+<code class="descname">default_port</code><em class="property"> = 80</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.default_port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.endheaders">
+<code class="descname">endheaders</code><span class="sig-paren">(</span><em>message_body=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.endheaders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate that the last header line has been sent to the server.</p>
+<p>This method sends the request to the server.  The optional
+message_body argument can be used to pass a message body
+associated with the request.  The message body will be sent in
+the same packet as the message headers if it is string, otherwise it is
+sent as a separate packet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.getresponse">
+<code class="descname">getresponse</code><span class="sig-paren">(</span><em>buffering=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.getresponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the response from the server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.putheader">
+<code class="descname">putheader</code><span class="sig-paren">(</span><em>header</em>, <em>*values</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.putheader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a request header line to the server.</p>
+<p>For example: h.putheader(&#8216;Accept&#8217;, &#8216;text/html&#8217;)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.putrequest">
+<code class="descname">putrequest</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>skip_host=0</em>, <em>skip_accept_encoding=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.putrequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a request to the server.</p>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>method&#8217; specifies an HTTP request method, e.g. &#8216;GET&#8217;.
+<a href="#id3"><span class="problematic" id="id4">`</span></a>url&#8217; specifies the object being requested, e.g. &#8216;/index.html&#8217;.
+<a href="#id5"><span class="problematic" id="id6">`</span></a>skip_host&#8217; if True does not add automatically a &#8216;Host:&#8217; header
+<a href="#id7"><span class="problematic" id="id8">`</span></a>skip_accept_encoding&#8217; if True does not add automatically an</p>
+<blockquote>
+<div>&#8216;Accept-Encoding:&#8217; header</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>body=None</em>, <em>headers={}</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a complete request to the server.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.response_class">
+<code class="descname">response_class</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.response_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">HTTPResponse</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send <code class="docutils literal"><span class="pre">value</span></code> to the server.</p>
+<p><code class="docutils literal"><span class="pre">value</span></code> can be a string object, a file-like object that supports
+a .read() method, or an iterable object that supports a .next()
+method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.set_debuglevel">
+<code class="descname">set_debuglevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.set_debuglevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.set_tunnel">
+<code class="descname">set_tunnel</code><span class="sig-paren">(</span><em>host</em>, <em>port=None</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.set_tunnel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up the host and the port for the HTTP CONNECT Tunnelling.</p>
+<p>The headers argument should be a mapping of extra HTTP headers
+to send with the CONNECT request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.strict">
+<code class="descname">strict</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPConnection.strict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.poster.streaminghttp.</code><code class="descname">StreamingHTTPRedirectHandler</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">urllib2.HTTPRedirectHandler</span></code></p>
+<p>Subclass of <cite>urllib2.HTTPRedirectHandler</cite> that overrides the
+<cite>redirect_request</cite> method to properly handle redirected POST requests</p>
+<p>This class is required because python 2.5&#8217;s HTTPRedirectHandler does
+not remove the Content-Type or Content-Length headers when requesting
+the new resource, but the body of the original request is not preserved.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.handler_order">
+<code class="descname">handler_order</code><em class="property"> = 499</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.handler_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.redirect_request">
+<code class="descname">redirect_request</code><span class="sig-paren">(</span><em>req</em>, <em>fp</em>, <em>code</em>, <em>msg</em>, <em>headers</em>, <em>newurl</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.redirect_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Request or None in response to a redirect.</p>
+<p>This is called by the http_error_30x methods when a
+redirection response is received.  If a redirection should
+take place, return a new Request to allow http_error_30x to
+perform the redirect.  Otherwise, raise HTTPError if no-one
+else should try to handle this url.  Return None if you can&#8217;t
+but another Handler might.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.add_parent">
+<code class="descname">add_parent</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.add_parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_301">
+<code class="descname">http_error_301</code><span class="sig-paren">(</span><em>req</em>, <em>fp</em>, <em>code</em>, <em>msg</em>, <em>headers</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_301" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_302">
+<code class="descname">http_error_302</code><span class="sig-paren">(</span><em>req</em>, <em>fp</em>, <em>code</em>, <em>msg</em>, <em>headers</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_302" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_303">
+<code class="descname">http_error_303</code><span class="sig-paren">(</span><em>req</em>, <em>fp</em>, <em>code</em>, <em>msg</em>, <em>headers</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_303" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_307">
+<code class="descname">http_error_307</code><span class="sig-paren">(</span><em>req</em>, <em>fp</em>, <em>code</em>, <em>msg</em>, <em>headers</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.http_error_307" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.inf_msg">
+<code class="descname">inf_msg</code><em class="property"> = 'The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\n'</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.inf_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.max_redirections">
+<code class="descname">max_redirections</code><em class="property"> = 10</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.max_redirections" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.max_repeats">
+<code class="descname">max_repeats</code><em class="property"> = 4</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPRedirectHandler.max_repeats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.poster.streaminghttp.</code><code class="descname">StreamingHTTPHandler</code><span class="sig-paren">(</span><em>debuglevel=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">urllib2.HTTPHandler</span></code></p>
+<p>Subclass of <cite>urllib2.HTTPHandler</cite> that uses
+StreamingHTTPConnection as its http connection class.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.handler_order">
+<code class="descname">handler_order</code><em class="property"> = 499</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.handler_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.http_open">
+<code class="descname">http_open</code><span class="sig-paren">(</span><em>req</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.http_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a StreamingHTTPConnection for the given request</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.http_request">
+<code class="descname">http_request</code><span class="sig-paren">(</span><em>req</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.http_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle a HTTP request.  Make sure that Content-Length is specified
+if we&#8217;re using an interable value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.add_parent">
+<code class="descname">add_parent</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.add_parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.do_open">
+<code class="descname">do_open</code><span class="sig-paren">(</span><em>http_class</em>, <em>req</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.do_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an addinfourl object for the request, using http_class.</p>
+<p>http_class must implement the HTTPConnection API from httplib.
+The addinfourl return value is a file-like object.  It also
+has methods and attributes including:</p>
+<blockquote>
+<div><ul class="simple">
+<li>info(): return a mimetools.Message object for the headers</li>
+<li>geturl(): return the original request URL</li>
+<li>code: HTTP status code</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.do_request_">
+<code class="descname">do_request_</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.do_request_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.set_http_debuglevel">
+<code class="descname">set_http_debuglevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPHandler.set_http_debuglevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.poster.streaminghttp.</code><code class="descname">StreamingHTTPSConnection</code><span class="sig-paren">(</span><em>host</em>, <em>port=None</em>, <em>key_file=None</em>, <em>cert_file=None</em>, <em>strict=None</em>, <em>timeout=&lt;object object&gt;</em>, <em>source_address=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.poster.streaminghttp._StreamingHTTPMixin</span></code>, <code class="xref py py-class docutils literal"><span class="pre">httplib.HTTPSConnection</span></code></p>
+<p>Subclass of <cite>httplib.HTTSConnection</cite> that overrides the <cite>send()</cite>
+method to support iterable body objects</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.auto_open">
+<code class="descname">auto_open</code><em class="property"> = 1</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.auto_open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the connection to the HTTP server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a host on a given (SSL) port.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.debuglevel">
+<code class="descname">debuglevel</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.debuglevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.default_port">
+<code class="descname">default_port</code><em class="property"> = 443</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.default_port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.endheaders">
+<code class="descname">endheaders</code><span class="sig-paren">(</span><em>message_body=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.endheaders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate that the last header line has been sent to the server.</p>
+<p>This method sends the request to the server.  The optional
+message_body argument can be used to pass a message body
+associated with the request.  The message body will be sent in
+the same packet as the message headers if it is string, otherwise it is
+sent as a separate packet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.getresponse">
+<code class="descname">getresponse</code><span class="sig-paren">(</span><em>buffering=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.getresponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the response from the server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.putheader">
+<code class="descname">putheader</code><span class="sig-paren">(</span><em>header</em>, <em>*values</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.putheader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a request header line to the server.</p>
+<p>For example: h.putheader(&#8216;Accept&#8217;, &#8216;text/html&#8217;)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.putrequest">
+<code class="descname">putrequest</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>skip_host=0</em>, <em>skip_accept_encoding=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.putrequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a request to the server.</p>
+<p><a href="#id9"><span class="problematic" id="id10">`</span></a>method&#8217; specifies an HTTP request method, e.g. &#8216;GET&#8217;.
+<a href="#id11"><span class="problematic" id="id12">`</span></a>url&#8217; specifies the object being requested, e.g. &#8216;/index.html&#8217;.
+<a href="#id13"><span class="problematic" id="id14">`</span></a>skip_host&#8217; if True does not add automatically a &#8216;Host:&#8217; header
+<a href="#id15"><span class="problematic" id="id16">`</span></a>skip_accept_encoding&#8217; if True does not add automatically an</p>
+<blockquote>
+<div>&#8216;Accept-Encoding:&#8217; header</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>body=None</em>, <em>headers={}</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a complete request to the server.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.response_class">
+<code class="descname">response_class</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.response_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal"><span class="pre">HTTPResponse</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send <code class="docutils literal"><span class="pre">value</span></code> to the server.</p>
+<p><code class="docutils literal"><span class="pre">value</span></code> can be a string object, a file-like object that supports
+a .read() method, or an iterable object that supports a .next()
+method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.set_debuglevel">
+<code class="descname">set_debuglevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.set_debuglevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.set_tunnel">
+<code class="descname">set_tunnel</code><span class="sig-paren">(</span><em>host</em>, <em>port=None</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.set_tunnel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up the host and the port for the HTTP CONNECT Tunnelling.</p>
+<p>The headers argument should be a mapping of extra HTTP headers
+to send with the CONNECT request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.strict">
+<code class="descname">strict</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSConnection.strict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.poster.streaminghttp.</code><code class="descname">StreamingHTTPSHandler</code><span class="sig-paren">(</span><em>debuglevel=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">urllib2.HTTPSHandler</span></code></p>
+<p>Subclass of <cite>urllib2.HTTPSHandler</cite> that uses
+StreamingHTTPSConnection as its http connection class.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.handler_order">
+<code class="descname">handler_order</code><em class="property"> = 499</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.handler_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.https_open">
+<code class="descname">https_open</code><span class="sig-paren">(</span><em>req</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.https_open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.https_request">
+<code class="descname">https_request</code><span class="sig-paren">(</span><em>req</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.https_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.add_parent">
+<code class="descname">add_parent</code><span class="sig-paren">(</span><em>parent</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.add_parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.do_open">
+<code class="descname">do_open</code><span class="sig-paren">(</span><em>http_class</em>, <em>req</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.do_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an addinfourl object for the request, using http_class.</p>
+<p>http_class must implement the HTTPConnection API from httplib.
+The addinfourl return value is a file-like object.  It also
+has methods and attributes including:</p>
+<blockquote>
+<div><ul class="simple">
+<li>info(): return a mimetools.Message object for the headers</li>
+<li>geturl(): return the original request URL</li>
+<li>code: HTTP status code</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.do_request_">
+<code class="descname">do_request_</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.do_request_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.set_http_debuglevel">
+<code class="descname">set_http_debuglevel</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.StreamingHTTPSHandler.set_http_debuglevel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.poster.streaminghttp.register_openers">
+<code class="descclassname">ctxalgolib.data_imports.blog.poster.streaminghttp.</code><code class="descname">register_openers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.poster.streaminghttp.register_openers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register the streaming http handlers in the global urllib2 default
+opener object.</p>
+<p>Returns the created OpenerDirector object.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../speedparser/index.html" class="btn btn-neutral float-right" title="speedparser" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="encode.html" class="btn btn-neutral" title="encode" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

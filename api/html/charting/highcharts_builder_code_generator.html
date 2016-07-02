@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>highcharts_builder_code_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="charting" href="index.html"/>
+        <link rel="next" title="highcharts_charting_document_generator" href="highcharts_charting_document_generator.html"/>
+        <link rel="prev" title="highcharts_builder" href="highcharts_builder.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">charting</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="custom_indicators/index.html">custom_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_indicators.html">basic_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_data_generator.html">chart_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chart_indicators.html">chart_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charting_constants.html">charting_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="charts.html">charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_builder.html">highcharts_builder</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">highcharts_builder_code_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_charting_document_generator.html">highcharts_charting_document_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="highcharts_data_generator.html">highcharts_data_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indicator_factory.html">indicator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talib_function_generator.html">talib_function_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">charting</a> &raquo;</li>
+      
+    <li>highcharts_builder_code_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/charting/highcharts_builder_code_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="highcharts-builder-code-generator">
+<h1>highcharts_builder_code_generator<a class="headerlink" href="#highcharts-builder-code-generator" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.charting.highcharts_builder_code_generator"></span><dl class="class">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_builder_code_generator.</code><code class="descname">HighchartsBuilderUtils</code><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils.separator">
+<em class="property">static </em><code class="descname">separator</code><span class="sig-paren">(</span><em>level</em>, <em>possible_date_range=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils.separator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the separator at given level.
+:param level: int, level.
+:return: string.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils.indent">
+<em class="property">static </em><code class="descname">indent</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils.indent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the separator at given level.
+:param level: int, level.
+:return: string.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils.generate_parameter">
+<em class="property">static </em><code class="descname">generate_parameter</code><span class="sig-paren">(</span><em>value</em>, <em>level=1</em>, <em>possible_date_range=False</em>, <em>period_parameter=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderUtils.generate_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate string representation for value.
+:param value: object, some Python object.
+:param level: int, used to handle arrays and array of arrays.
+:param possible_date_range: boolean, if True, the value can be of form [[dt, dt], [dt, dt], ..., [dt, dt]]
+:return: (string, int), the string representation of value and the level, used in recursion.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_builder_code_generator.</code><code class="descname">HighchartsBuilder</code><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as __repr__.
+:return: string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear all highcharts data generated so far.
+Call this method if you want to start to generate another chart.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.is_valid_dash_style">
+<code class="descname">is_valid_dash_style</code><span class="sig-paren">(</span><em>style</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.is_valid_dash_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if style is a valid dash style.
+:param style: string, the style.
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.is_valid_type">
+<code class="descname">is_valid_type</code><span class="sig-paren">(</span><em>line_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilder.is_valid_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a draw line type is valid.
+:param line_type: string, line type.
+:return: boolean.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_builder_code_generator.</code><code class="descname">HighchartsBuilderCodeGenerator</code><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>indicators</em>, <em>class_name='HighchartsBuilder'</em>, <em>base_classes=None</em>, <em>language='en'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a Python class that is the Highcharts spec builder.
+During the code generation:
+1. Replace all - in indicator names and parameter names with _ in method names.</p>
+<blockquote>
+<div>For example: &#8216;sys-cycle&#8217; becomes &#8216;sys_cycle&#8217;.</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Put parameters for an indicators into the generated methods according to the parameter position index.</p>
+</li>
+<li><p class="first">Add document to each parameter.</p>
+</li>
+<li><dl class="first docutils">
+<dt>If min_value or max_value of a parameter is not None, generate &#8216;assert min_value &lt;= parameter_value&#8217;,</dt>
+<dd><p class="first last">or &#8216;assert parameter_value &lt;= max_value&#8217;.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If a parameter accepts an array of things, in url, this is a string parameter with &#8216;:&#8217; as separator,</dt>
+<dd><p class="first last">in Python, support [string] or [date], or [datetime], or [float], or [int], as well as the original string
+notation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If a parameter accepts an array of array, in url, this is a string parameter with &#8216;::&#8217; as separator,</dt>
+<dd><p class="first last">in Python, support [[string]], [[date]], [[datetime]], or [[float]], or [[int]], as well as the original
+string notation.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>To generate string representation of an indicator parameter, use the following rules:
+1. If the value equals the default value of the parameter, do not generate anything.
+2. Otherwise, use the generate_parameter method to generate the string representation of the value.
+:param indicators: [Indicator], list of indicators.
+:param class_name: string, class name of generated class.
+:param base_classes: [string], list of base classes.
+:param language: string, language which is en or zh
+:return: string, the generated source code.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate_type_for_parameter">
+<em class="property">static </em><code class="descname">generate_type_for_parameter</code><span class="sig-paren">(</span><em>translator</em>, <em>param_name</em>, <em>param_kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate_type_for_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate comment for parameter&#8217;s type information
+:param translator: English to Chinese translator
+:param param_name: string, name of the parameter
+:param param_kind: string or list, kind of the parameter
+:return: string, the generated type information for parameter.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate_description_for_parameter">
+<em class="property">static </em><code class="descname">generate_description_for_parameter</code><span class="sig-paren">(</span><em>translator</em>, <em>param_description</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate_description_for_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate comment for parameter&#8217;s description information
+:param translator: English to Chinese translator
+:param param_description: string, description of the parameter
+:return: string, the generated description for parameter.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate_min_max_for_parameter">
+<em class="property">static </em><code class="descname">generate_min_max_for_parameter</code><span class="sig-paren">(</span><em>translator</em>, <em>param_min_value</em>, <em>param_max_value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_builder_code_generator.HighchartsBuilderCodeGenerator.generate_min_max_for_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate comment for parameter&#8217;s minimal and maximum values
+:param translator: English to Chinese translator
+:param param_min_value: numeric, minimal value of parameter
+:param param_max_value: numeric, maximum value of parameter
+:return: string, the generated comment for parameter.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="highcharts_charting_document_generator.html" class="btn btn-neutral float-right" title="highcharts_charting_document_generator" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="highcharts_builder.html" class="btn btn-neutral" title="highcharts_builder" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

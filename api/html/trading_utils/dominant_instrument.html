@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dominant_instrument &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="future_info_calculator_factory" href="future_info_calculator_factory.html"/>
+        <link rel="prev" title="design_by_contract" href="design_by_contract.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>dominant_instrument</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/dominant_instrument.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.dominant_instrument">
+<span id="dominant-instrument"></span><h1>dominant_instrument<a class="headerlink" href="#module-ctxalgolib.trading_utils.dominant_instrument" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentPostfix">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.dominant_instrument.</code><code class="descname">DominantInstrumentPostfix</code><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentPostfix" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentPostfix.postfix">
+<em class="property">static </em><code class="descname">postfix</code><span class="sig-paren">(</span><em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentPostfix.postfix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return level-th dominant instrument postfix.
+:param level: int, the level, 0 means dominant, 1 means the next dominant, and so on.</p>
+<blockquote>
+<div>A negative value means getting previous level of dominant instrument postfix.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string, the postfix.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentPostfix.instrument_id">
+<em class="property">static </em><code class="descname">instrument_id</code><span class="sig-paren">(</span><em>prefix</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentPostfix.instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the dominant instrument id at the given level.
+:param prefix: string, instrument prefix, such as IF, rb.
+:param level: int, the level, 0 means dominant, 1 means the next dominant, and so on.
+:return: string, dominant instrument id, such as IF00, IF01.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentDetector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.dominant_instrument.</code><code class="descname">DominantInstrumentDetector</code><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentDetector.detect">
+<code class="descname">detect</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentDetector.detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given instrument id a dominant instrument?
+:param instrument_id: string instrument id.
+:param level: int, the level, 0 means dominant, 1 means the next dominant, and so on.</p>
+<blockquote>
+<div>If None, it means to detect any level of dominance.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean, True if instrument_id is a dominant instrument.
+Futures whose instrument id has 99 as the delivery date part is dominant id.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentDetector.is_dominant">
+<code class="descname">is_dominant</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantInstrumentDetector.is_dominant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as self.detect.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.dominant_instrument.</code><code class="descname">DominantContractDeciderByVolume</code><span class="sig-paren">(</span><em>trading_utils</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to decide which individual contract will be the dominant contract for the next trading day.</p>
+<p>Initialize current.
+:param trading_utils: FutureTradingUtils, future trading utils.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day">
+<code class="descname">dominant_instrument_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>current_dominant_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the instrument id of the dominant contract for the next trading day.
+:param trading_day: date, the current trading day when traded_volumes is observed.
+:param traded_volumes: dict{string: int}, keys are instrument ids, values are the total traded volume</p>
+<blockquote>
+<div>for corresponding instruments in a single trading day.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>current_dominant_id</strong> &#8211; string, the current dominant instrument id. It is used to make sure that
+next dominant instrument id cannot backtrack, meaning that dominant instrument id for next trading day
+must &gt;= current_dominant_id.
+If current_dominant_id is None, then the previous rule is not enforced.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string, the dominant contract instrument id.
+If no dominant contract can be decided, return None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instruments_for_next_trading_day">
+<code class="descname">dominant_instruments_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>level=0</em>, <em>current_dominant_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instruments_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return different levels of dominant instrument ids.
+:param trading_day: date, the current trading day when traded_volumes is observed.
+:param traded_volumes: dict{string: int}, keys are instrument ids, values are the total traded volume</p>
+<blockquote>
+<div>for corresponding instruments in a single trading day.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>level</strong> &#8211; int, the level of dominant instrument ids to return. 0 means only the dominant instrument id,
+1 means the dominant and the next level of dominant, and so on.</li>
+<li><strong>current_dominant_id</strong> &#8211; string, the current dominant instrument id. It is used to make sure that
+next dominant instrument id cannot backtrack, meaning that dominant instrument id for next trading day
+must &gt;= current_dominant_id.
+If current_dominant_id is None, then the previous rule is not enforced.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[string], the list of multi-level dominant instrument ids. The first element in the list is the
+dominant instrument id, the first element is the next level dominant instrument id, and so on.
+If there is no enough data to calculate the given levels, the returned list is shorter than level+1.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.dominant_instrument.</code><code class="descname">AbstractDominantInstrumentDecider</code><span class="sig-paren">(</span><em>instrument_prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to decide dominant instrument ids.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>instrument_prefix</strong> &#8211; string, instrument prefix, such as IF, cu.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider.set_data">
+<code class="descname">set_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider.set_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set data needed to decide dominant contracts.
+:param data: dict{string: object}, an arbitrary dict. Different dominant decider will need different</p>
+<blockquote>
+<div>kinds of data, and they need to define the data items in this dict.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider.decide">
+<code class="descname">decide</code><span class="sig-paren">(</span><em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider.decide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decide the actual instrument id for it associated dominant contract.
+:param trading_day: date, trading day.
+:param level: int, the level of dominant contract. 0 means the current dominant contract, 1 means the next one.
+:return: string, the full instrument id for the given level of dominant contract.</p>
+<blockquote>
+<div>None if the asked level of dominant contract cannot be decided.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.dominant_instrument.</code><code class="descname">VolumeBasedDominantInstrumentDecider</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>days</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider" title="ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider</span></code></a></p>
+<p>Class to decide dominant instrument ids by choosing the instrument with the largest average traded volume
+as the dominant instrument. The average traded volume is calculated using simple moving average.</p>
+<p>Implementation: When traded volume averages are collected, use DominantContractDeciderByVolume to do the decision.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_prefix</strong> &#8211; string, instrument prefix, such as IF, cu.</li>
+<li><strong>days</strong> &#8211; int, the number of days to calculate simple moving average over volume.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.set_data">
+<code class="descname">set_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.set_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set data needed to decide dominant contracts.
+:param data: dict{trading_day: dict{instrument_id: traded_volume}}</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.decide">
+<code class="descname">decide</code><span class="sig-paren">(</span><em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.decide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decide the actual instrument id for it associated dominant contract.
+:param trading_day: date, trading day.
+:param level: int, the level of dominant instrument ids to return. 0 means only the dominant instrument id,</p>
+<blockquote>
+<div>1 means the dominant and the next level of dominant, and so on.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[string], the list of multi-level dominant instrument ids. The first element in the list is the
+dominant instrument id, the first element is the next level dominant instrument id, and so on.
+If there is no enough data to calculate the given levels, the returned list is shorter than level+1.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.check_insturment_id">
+<code class="descname">check_insturment_id</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.check_insturment_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if all data dict in self.data_cache have the specify instrument id
+:param instrument_id: string, the specify instrument id
+:return: Boolean, whether all data dict in self.data_cache have the specify instrument id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.get_total_volume">
+<code class="descname">get_total_volume</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.get_total_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>get total volume of a specify instrument_id
+:param instrument_id: string, the specify instrument_id
+:return: int, the total volume</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="future_info_calculator_factory.html" class="btn btn-neutral float-right" title="future_info_calculator_factory" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="design_by_contract.html" class="btn btn-neutral" title="design_by_contract" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

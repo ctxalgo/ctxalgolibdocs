@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lijin_indicators &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="lijin" href="index.html"/>
+        <link rel="next" title="lvt" href="../lvt/index.html"/>
+        <link rel="prev" title="lijin" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">lijin</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">lijin_indicators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">lijin</a> &raquo;</li>
+      
+    <li>lijin_indicators</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/lijin/lijin_indicators.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.lijin.lijin_indicators">
+<span id="lijin-indicators"></span><h1>lijin_indicators<a class="headerlink" href="#module-ctxalgolib.ta.lijin.lijin_indicators" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV1">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lijin.lijin_indicators.</code><code class="descname">YiJianFengHouFinderV1</code><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>来自礼进的一剑封喉（第一版）</p>
+<dl class="method">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV1.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=50</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV1.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find signals from ohlc.
+:param ohlc: OHLC, the ohlc from which signals are to be found.
+:param start_bar: int, 0-based starting bar, meaning only signals at or after this bar are to be returned.
+:return: [int], the 0-based bar index where signals occur.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV2">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lijin.lijin_indicators.</code><code class="descname">YiJianFengHouFinderV2</code><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>来自礼进的一剑封喉（第二版）</p>
+<dl class="method">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV2.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=50</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV2.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find signals from ohlc.
+:param ohlc: OHLC, the ohlc from which signals are to be found.
+:param start_bar: int, 0-based starting bar, meaning only signals at or after this bar are to be returned.
+:return: [int], the 0-based bar index where signals occur.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV3">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lijin.lijin_indicators.</code><code class="descname">YiJianFengHouFinderV3</code><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>来自礼进的一剑封喉（第三版）</p>
+<dl class="method">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV3.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=50</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.YiJianFengHouFinderV3.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find signals from ohlc.
+:param ohlc: OHLC, the ohlc from which signals are to be found.
+:param start_bar: int, 0-based starting bar, meaning only signals at or after this bar are to be returned.
+:return: [int], the 0-based bar index where signals occur.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.FengHuangNiePanFinder">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lijin.lijin_indicators.</code><code class="descname">FengHuangNiePanFinder</code><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.FengHuangNiePanFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.FengHuangNiePanFinder.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>stock_id</em>, <em>ohlc</em>, <em>index_ohlcs</em>, <em>start_bar=50</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.FengHuangNiePanFinder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find signals from ohlc.
+:param stock_id: string, id of the stock.
+:param ohlc: OHLC, the ohlc from which signals are to be found.
+:param index_ohlcs: dict{string:OHLC}, the ohlcs for indices. Used to support the TongDaXin INDEXC indicator.</p>
+<blockquote>
+<div>Keys are index ids, values are OHLC objects for the indices..</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>start_bar</strong> &#8211; int, 0-based starting bar, meaning only signals at or after this bar are to be returned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[int], the 0-based bar index where signals occur.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Notes:</dt>
+<dd><ol class="first last arabic simple">
+<li>The TongDaXin CAPITAL indicator is supported in StockDataFeed.stock_capital_structure with kind==1.</li>
+<li>To support TongDaXin INDEXC, assume ohlc for indices sh000001, sz399001 are stored in index_ohlcs.</li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.HuaShanLunJian">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lijin.lijin_indicators.</code><code class="descname">HuaShanLunJian</code><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.HuaShanLunJian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.HuaShanLunJian.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=50</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.HuaShanLunJian.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find signals from ohlc.
+:param ohlc: OHLC, the ohlc from which signals are to be found.
+:param start_bar: int, 0-based starting bar, meaning only signals at or after this bar are to be returned.
+:return: [int], the 0-based bar index where signals occur.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.PingTaiZhuTu">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lijin.lijin_indicators.</code><code class="descname">PingTaiZhuTu</code><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.PingTaiZhuTu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.PingTaiZhuTu.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=50</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.PingTaiZhuTu.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find signals from ohlc.
+:param ohlc: OHLC, the ohlc from which signals are to be found.
+:param start_bar: int, 0-based starting bar, meaning only signals at or after this bar are to be returned.
+:return: [[float], ... ].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.AnDuChenCang">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lijin.lijin_indicators.</code><code class="descname">AnDuChenCang</code><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.AnDuChenCang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.lijin.lijin_indicators.AnDuChenCang.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=50</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lijin.lijin_indicators.AnDuChenCang.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find signals from ohlc.
+:param ohlc: OHLC, the ohlc from which signals are to be found.
+:param start_bar: int, 0-based starting bar, meaning only signals at or after this bar are to be returned.
+:return: [int], the 0-based bar index where signals occur.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lvt/index.html" class="btn btn-neutral float-right" title="lvt" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="lijin" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

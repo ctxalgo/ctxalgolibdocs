@@ -1,0 +1,897 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>data_source_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="design_by_contract" href="design_by_contract.html"/>
+        <link rel="prev" title="data_preparer_utils" href="data_preparer_utils.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>data_source_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/data_source_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.data_source_generator">
+<span id="data-source-generator"></span><h1>data_source_generator<a class="headerlink" href="#module-ctxalgolib.trading_utils.data_source_generator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.data_source_generator.</code><code class="descname">StockDataSourceGenerator</code><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.update_ohlc_from_web">
+<code class="descname">update_ohlc_from_web</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>ohlc_file</em>, <em>period</em>, <em>end_date=None</em>, <em>exright=False</em>, <em>web_data_feed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.update_ohlc_from_web" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update ohlc_file by loading data from web data feed and append the data to the file.
+This method will check the last day in ohlc_file and only load date is larger than the last day in ohlc_file.
+This method will also detect the columns in ohlc_file so when appending new data to the file, it can
+append the same columns. There three possible cases:</p>
+<blockquote>
+<div>Case 1: instrument_id, datetime, date, time, open, high, low, close, volume, amount (10 columns).
+Case 2: instrument_id, datetime, open, high, low, close, volume, amount (8 columns).
+Case 3: datetime, open, high, low, close, volume, amount (7 columns).</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_id</strong> &#8211; string, the instrument id, such as sh600001.</li>
+<li><strong>ohlc_file</strong> &#8211; string, the file storing ohlc data. New data will be appended to this file.</li>
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the data to load from web.</li>
+<li><strong>web_data_feed</strong> &#8211; WebStockDataFeed. Used to load trading data from web.</li>
+<li><strong>end_date</strong> &#8211; date or string in format yyyy-mm-dd. The end date of the data to load.
+If None, use today.</li>
+<li><strong>exright</strong> &#8211; boolean, if True, load data with exrights.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.generate_ohlc_data">
+<code class="descname">generate_ohlc_data</code><span class="sig-paren">(</span><em>raw_data_folder</em>, <em>ohlc_folders</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>include_instrument_id=False</em>, <em>include_extra_date_and_time=False</em>, <em>add_missing_bars=False</em>, <em>accepted_instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.generate_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate ohlc data
+:param raw_data_folder: string, the folder to store raw stock 3s trading data.</p>
+<blockquote>
+<div>The folder should contain one or more sub-folders; each sub-folder is named yyyymmdd. A sub-folder
+contains stock 3s trading data: in the sub-folder, there will be a list of files, each file is named
+stock_id_yyyymmdd.csv. For example, 600338_20140913.csv. Note that the stock ids do not have sh or sz
+prefixes, but in the generated ohlc files or in the generated file content, sh and sz prefixes are needed.
+Use SecurityLoader.exchange_from_stock_id_number to get the prefix from stock id number.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ohlc_folders</strong> &#8211; dict from Periodicity to string. Keys are the ohlc periodicities, and values are folders
+to store the generated ohlc files. In the folder, each stock is generated as a file, with the file name
+perfix-stock_id_period.csv. For example, sh600338_5m.csv.</li>
+<li><strong>start_date</strong> &#8211; date, the start date (inclusive) to generate data.
+If None, start from the first available trading day.</li>
+<li><strong>end_date</strong> &#8211; date, the end date (inclusive) to generate data.
+If None, end at the last available trading day.</li>
+<li><strong>include_instrument_id</strong> &#8211; boolean, should instrument id be included in the generated ohlc file?</li>
+<li><strong>include_extra_date_and_time</strong> &#8211; boolean, If True, include two separate date and time column in
+the generated ohlc file.</li>
+<li><strong>add_missing_bars</strong> &#8211; boolean, if True, add missing bars to the end of each trading day&#8217;s data.</li>
+<li><strong>accepted_instrument_ids</strong> &#8211; [string], the list of instrument IDs to process.
+If None, process all seen instruments.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.write_ohlc_data">
+<code class="descname">write_ohlc_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>ohlc_folders</em>, <em>include_instrument_id</em>, <em>include_extra_date_and_time</em>, <em>add_missing_bars</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.write_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate ohlc data from source file and write it into target files
+:param source_file: string, the path of 3s source file
+:param ohlc_folders: dict from Periodicity to string. Keys are the ohlc periodicities, and values are folders</p>
+<blockquote>
+<div>to store the generated ohlc files</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>include_instrument_id</strong> &#8211; boolean, should instrument id be included in the generated ohlc file?</li>
+<li><strong>include_extra_date_and_time</strong> &#8211; boolean, If True, include two separate date and time column in
+the generated ohlc file.</li>
+<li><strong>add_missing_bars</strong> &#8211; boolean, if True, add missing bars to the end of each trading day&#8217;s data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.generate_money_flow">
+<code class="descname">generate_money_flow</code><span class="sig-paren">(</span><em>raw_data_folder</em>, <em>ohlc_folders</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.generate_money_flow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate money flow for stocks.
+:param raw_data_folder: string, the folder to store raw stock 1s trading data.</p>
+<blockquote>
+<div>The folder should contain one or more sub-folders; each sub-folder is named yyyymmdd. In a sub-folder,
+there should be a list of csv files, stockid.csv containing 1s trading data for stocks.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ohlc_folders</strong> &#8211; dict from Periodicity to string. Keys are periodicities, values are the folders to
+store generated files. A generated file is named stock_id_period.csv. For example, sh600338_5m.csv.
+In the generated file, there should be the following columns:
+1. stock_id,
+2. datetime
+3. in_money
+4. out_money</li>
+<li><strong>start_date</strong> &#8211; date, the start date (inclusive) to generate data.
+If None, start from the first available trading day.</li>
+<li><strong>end_date</strong> &#8211; date, the end date (inclusive) to generate data.
+If None, end at the last available trading day.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.write_money_flow">
+<code class="descname">write_money_flow</code><span class="sig-paren">(</span><em>source_file</em>, <em>date_time</em>, <em>stock_id</em>, <em>ohlc_folders</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.StockDataSourceGenerator.write_money_flow" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate and write money flow data from source file to ohlc files
+:param source_file: string, the path of source file
+:param date_time: date, the date of this source file
+:param stock_id: string, the stock id of that stock
+:param ohlc_folders: dict from Periodicity to string. Keys are periodicities, values are the folders to</p>
+<blockquote>
+<div>store generated files</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.data_source_generator.</code><code class="descname">FutureTradingDataSourceGenerator</code><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_ohlc_from_web">
+<code class="descname">update_ohlc_from_web</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>ohlc_file</em>, <em>period</em>, <em>end_date=None</em>, <em>web_data_feed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_ohlc_from_web" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update ohlc_file by loading data from web data feed and append the data to the file.
+This method will check the last day in ohlc_file and only load date is larger than the last day in ohlc_file.
+This method will also detect the columns in ohlc_file so when appending new data to the file, it can
+append the same columns. There three possible cases:</p>
+<blockquote>
+<div>Case 1: instrument_id, datetime, date, time, open, high, low, close, volume, amount (10 columns).
+Case 2: instrument_id, datetime, open, high, low, close, volume, amount (8 columns).
+Case 3: datetime, open, high, low, close, volume, amount (7 columns).</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_id</strong> &#8211; string, the instrument id, such as IF99.</li>
+<li><strong>ohlc_file</strong> &#8211; string, the file storing ohlc data. New data will be appended to this file.</li>
+<li><strong>period</strong> &#8211; Periodicity, the periodicity of the data to load from web.</li>
+<li><strong>web_data_feed</strong> &#8211; WebFutureDataFeed. Used to load trading data from web.</li>
+<li><strong>end_date</strong> &#8211; date or string in format yyyy-mm-dd. The end date of the data to load.
+If None, use today.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_volatility_ohlc_from_web">
+<code class="descname">update_volatility_ohlc_from_web</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>ohlc_file</em>, <em>volatility</em>, <em>end_date=None</em>, <em>web_data_feed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_volatility_ohlc_from_web" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update ohlc_file by loading data from web data feed and append the data to the file.
+This method will check the last day in ohlc_file and only load date is larger than the last day in ohlc_file.
+This method will also detect the columns in ohlc_file so when appending new data to the file, it can
+append the same columns. There three possible cases:</p>
+<blockquote>
+<div>Case 1: instrument_id, datetime, date, time, open, high, low, close, volume, amount (10 columns).
+Case 2: instrument_id, datetime, open, high, low, close, volume, amount (8 columns).
+Case 3: datetime, open, high, low, close, volume, amount (7 columns).</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_id</strong> &#8211; string, the instrument id, such as IF99.</li>
+<li><strong>ohlc_file</strong> &#8211; string, the file storing ohlc data. New data will be appended to this file.</li>
+<li><strong>volatility</strong> &#8211; int, the volatility threshold.</li>
+<li><strong>web_data_feed</strong> &#8211; WebFutureDataFeed. Used to load trading data from web.</li>
+<li><strong>end_date</strong> &#8211; date or string in format yyyy-mm-dd. The end date of the data to load.
+If None, use today.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.remove_subfolders_in_folder">
+<code class="descname">remove_subfolders_in_folder</code><span class="sig-paren">(</span><em>folder</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.remove_subfolders_in_folder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.unzip_raw_data">
+<code class="descname">unzip_raw_data</code><span class="sig-paren">(</span><em>source_folder</em>, <em>raw_data_folder</em>, <em>uncompress_password=None</em>, <em>copy_text_file=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.unzip_raw_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unzip or unrar all files in source_folder and put the uncompressed folders in target_folder.
+:param source_folder: string, source folder. The folder contains files, and each file represents</p>
+<blockquote>
+<div>a single trading day. The trading day is included in the file name.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>raw_data_folder</strong> &#8211; string, target folder. In the target folder, files for a single trading day
+are put in to a sub-folder named yyyymmdd.</li>
+<li><strong>uncompress_password</strong> &#8211; string, the password used to uncompress files.</li>
+<li><strong>copy_text_file</strong> &#8211; boolean, if True, copy found text files to the raw_data_folder.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.unzip_rar_zip_file">
+<code class="descname">unzip_rar_zip_file</code><span class="sig-paren">(</span><em>source_file</em>, <em>target_folder</em>, <em>uncompress_password</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.unzip_rar_zip_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>extract the rar or zip files in source_file to the target folder
+:param source_file: string, the file path of the archive file (.rar)
+:param target_folder: string, the path of the folder that to store the files extracted
+:param uncompress_password: string, the password of archive file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.concatenate_files">
+<code class="descname">concatenate_files</code><span class="sig-paren">(</span><em>data_folder</em>, <em>output_folder</em>, <em>file_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.concatenate_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concatenate all files in output_folder in chronological order.
+:param data_folder: string the folder containing all the data. For example the IF1505 folder which contains</p>
+<blockquote>
+<div>generated tick data for a contract.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>output_folder</strong> &#8211; string, the output folder to store the concatenated file.</li>
+<li><strong>file_name</strong> &#8211; string, the name of the output file. If None, use the data_folder name. For example,
+if the data folder name is IF1505, and file_name is None, then the generated file should be named IF1505.txt.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.generate_tick_data">
+<code class="descname">generate_tick_data</code><span class="sig-paren">(</span><em>instrument_id_prefix</em>, <em>raw_data_folder</em>, <em>tick_data_folder</em>, <em>order_book_data=0</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>choose_main=True</em>, <em>market_periods=None</em>, <em>add_missing_ticks=False</em>, <em>instrument_id_to_include=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.generate_tick_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate tick level data from source_folder. The tick level data is generated by
+FutureTradingUtils.generate_concise_data.
+:param instrument_id_prefix: the instrument prefix used to find the instrument data.
+:param raw_data_folder: string, the folder storing raw trading data. In the raw data folder, there are</p>
+<blockquote>
+<div>sub-folders for each trading day. The sub-folder names yyyymmdd.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tick_data_folder</strong> &#8211; <p>string, the folder to store generated tick level data.
+If the tick data folder does not exist, create the folder. In the target_folder, data for a trading day
+is stored in a file yyyymmdd.txt. The file is a csv file and contains the following fields:</p>
+<blockquote>
+<div><ol class="arabic">
+<li>instrument_id, string, which is different from instrument_id_prefix. instrument_id will change over time.</li>
+<li>timestamp, yyyy-mm-dd HH:MM:SS.MIL. MIL is millisecond.</li>
+<li>price, float, 2 decimal.</li>
+<li>volume, int.</li>
+<li>(new). open interest (持仓量)</li>
+<li>open volume, int.</li>
+<li>close volume, int.</li>
+<li>bid price1 (8~11 datare four columns order book 1), float, 2 decimal.</li>
+<li>ask price1, float, 2 decimal.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic" start="10">
+<li>bid volume1, int.</li>
+</ol>
+<p>11. ask volume1, int.
+12~15 columns for order book 2.
+16~19 columns for order book 3.
+20~23 columns for order book 4.
+24~27 columns for order book 5.</p>
+</li>
+<li><strong>order_book_data</strong> &#8211; int, specify to which order book we include the data in the result.
+0 means no order book. 1 ~ 5 means the upper bound of the order book level to include.</li>
+<li><strong>start_date</strong> &#8211; date, the start date (inclusive) to generate data.
+If None, start from the first available trading day.</li>
+<li><strong>end_date</strong> &#8211; date, the end date (inclusive) to generate data.
+If None, end at the last available trading day.</li>
+<li><strong>choose_main</strong> &#8211; <p>boolean, if True, use volume to choose the main instrument. If False,
+generate separate files for each instrument under the same instrument id prefix.
+So, if choose_main is True, tick_data_folder should have the following structure:
+tick_data_folder/yyyymmdd.txt.
+If choose_main is False, the tick_data_folder should have the following structure:</p>
+<blockquote>
+<div>tick_data_folder/instrument_id/yyyymmdd.txt.</div></blockquote>
+</li>
+<li><strong>market_periods</strong> &#8211; [(star_ts, end_ts)]: start_ts and end_ts are of type time.
+If None, use FutureTradingUtils.market_periods to get the proper market periods.</li>
+<li><strong>add_missing_ticks</strong> &#8211; bool, If True, add missing ticks by duplicating the last tick.
+Add one tick per second until market periods ends.</li>
+<li><strong>instrument_id_to_include</strong> &#8211; string, if not None, it provides the instrument id used for the
+first column of the data. If None, use the instrument id from underlying data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.write_tick_data">
+<code class="descname">write_tick_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>output_file</em>, <em>order_book_data</em>, <em>market_periods</em>, <em>add_missing_ticks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.write_tick_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate and write tick level data from source file to output file
+:param source_file: string, path of the source file
+:param output_file: string, path of the output file
+:param order_book_data: int, specify to which order book we include the data in the result.</p>
+<blockquote>
+<div>0 means no order book. 1 ~ 5 means the upper bound of the order book level to include.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>market_periods</strong> &#8211; [(star_ts, end_ts)]: start_ts and end_ts are of type time.
+If not None, use the timestamps to filter out data points which are outside of market periods.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.generate_volatility_ohlc_data">
+<code class="descname">generate_volatility_ohlc_data</code><span class="sig-paren">(</span><em>instrument_id_prefix</em>, <em>market_periods</em>, <em>raw_data_folder</em>, <em>volatility_ohlc_folders</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>choose_main=True</em>, <em>include_instrument_id=False</em>, <em>instrument_id_to_include=None</em>, <em>include_extra_date_and_time=False</em>, <em>add_missing_bars=False</em>, <em>with_open_interest=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.generate_volatility_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate OHLC level data from source_folder.
+:param instrument_id_prefix: the instrument prefix used to find the instrument data.
+:param market_periods: [(time, time)], market periods, used for OHLC merging. When market_periods is None,</p>
+<blockquote>
+<div>use FutureTradingUtils.market_periods to get the proper trading periods.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>raw_data_folder</strong> &#8211; string, the folder storing raw trading data. In the raw data folder, there are
+sub-folders for each trading day. The sub-folder names yyyymmdd.</li>
+<li><strong>volatility_ohlc_folders</strong> &#8211; dict from int to string. Keys (ints) are volatility thresholds.
+Values are folders to store data of those periodicities. The generated ohlc file(s) is of csv format,
+with the following columns:
+0. instrument_id, string. The value of instrument_id, if it is not None.
+1. datetime, datetime, yyyy-mm-dd HH:MM:SS
+2. open, float, 2 decimals.
+3. high, float, 2 decimals.
+4. low, float, 2 decimals.
+5. close, float, 2 decimals.
+6. volume, int.
+7. amount, float, 2 decimals. Amount is always 0 in our case.
+8. (optional), open_interest, float, This volume is available if with_open_interest is True.</li>
+<li><strong>start_date</strong> &#8211; date, the start date (inclusive) to generate data.
+If None, start from the first available trading day.</li>
+<li><strong>end_date</strong> &#8211; date, the end date (inclusive) to generate data.
+If None, end at the last available trading day.</li>
+<li><strong>choose_main</strong> &#8211; boolean, if True, use volume to choose the main instrument. If False,
+generate separate files for each instrument under the same instrument id prefix.
+So, if choose_main is True, folders in volatility_ohlc_folders should have the following structure:
+folder/instrument_id_prefix_volatility_threshold.csv, for example, IF_5.csv.
+If choose_main is False, the tick_data_folder should have the following structure:
+folder/instrument_id_volatility_threshold.csv, for example, IF1503_5.csv.</li>
+<li><strong>include_instrument_id</strong> &#8211; boolean, should instrument id be included in the generated ohlc file?
+If True, the instrument id will be put as the first column in the generated ohlc file.
+To decide which instrument id to put in ohlc file:
+1. if instrument_id_to_include is not None, use that id, otherwise,
+2. if choose_main is False, use the full instrument id, such as IF1503.
+3. if choose_main is True, use instrument_id_prefix.</li>
+<li><strong>instrument_id_to_include</strong> &#8211; string, the instrument id used to put into the generated ohlc file.
+See the comment for include_instrument_id for more details.</li>
+<li><strong>include_extra_date_and_time</strong> &#8211; boolean, If True, include two separate date and time column in
+the generated ohlc file.</li>
+<li><strong>add_missing_bars</strong> &#8211; boolean, if True, add missing bars to the end of each trading day&#8217;s data.</li>
+<li><strong>with_open_interest</strong> &#8211; boolean, if True, generate open interest information.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.write_volatility_ohlc_data">
+<code class="descname">write_volatility_ohlc_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>market_periods</em>, <em>volatility_ohlc_folders</em>, <em>instrument_id</em>, <em>include_instrument_id=False</em>, <em>include_extra_date_and_time=False</em>, <em>add_missing_bars=False</em>, <em>with_open_interest=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.write_volatility_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate and write ohlc data from source file to ohlc files
+:param source_file: stirng, the path of source file
+:param market_periods: [(time, time)], market periods, used for OHLC merging
+:param volatility_ohlc_folders: dict from Periodicity to string. Keys are for each required ohlc volitility.</p>
+<blockquote>
+<div>Values are folders to store data of those periodicities.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_id</strong> &#8211; string, the instrument id that should be included into file (if its value is not None)</li>
+<li><strong>instrument_id_to_include</strong> &#8211; string, the instrument id used to put into the generated ohlc file.</li>
+<li><strong>include_extra_date_and_time</strong> &#8211; boolean, If True, include two separate date and time column in
+the generated ohlc file.</li>
+<li><strong>add_missing_bars</strong> &#8211; boolean, if True, add missing bars to the end of each trading day&#8217;s data.</li>
+<li><strong>with_open_interest</strong> &#8211; boolean, if True, generate open interest information.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.generate_ohlc_data">
+<code class="descname">generate_ohlc_data</code><span class="sig-paren">(</span><em>instrument_id_prefix</em>, <em>market_periods</em>, <em>raw_data_folder</em>, <em>ohlc_folders</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>choose_main=True</em>, <em>include_instrument_id=False</em>, <em>instrument_id_to_include=None</em>, <em>include_extra_date_and_time=False</em>, <em>add_missing_bars=False</em>, <em>with_open_interest=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.generate_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate OHLC level data from source_folder.
+:param instrument_id_prefix: the instrument prefix used to find the instrument data.
+:param market_periods: [(time, time)], market periods, used for OHLC merging. When market_periods is None,</p>
+<blockquote>
+<div>use FutureTradingUtils.market_periods to get the proper trading periods.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>raw_data_folder</strong> &#8211; string, the folder storing raw trading data. In the raw data folder, there are
+sub-folders for each trading day. The sub-folder names yyyymmdd.</li>
+<li><strong>ohlc_folders</strong> &#8211; dict from Periodicity to string. Keys are for each required ohlc periodicity.
+Values are folders to store data of those periodicities. The generated ohlc file(s) is of csv format,
+with the following columns:
+0. instrument_id, string. The value of instrument_id, if it is not None.
+1. datetime, datetime, yyyy-mm-dd HH:MM:SS
+2. open, float, 2 decimals.
+3. high, float, 2 decimals.
+4. low, float, 2 decimals.
+5. close, float, 2 decimals.
+6. volume, int.
+7. amount, float, 2 decimals. Amount is always 0 in our case.
+8. (optional), open_interest, float, This volume is available if with_open_interest is True.</li>
+<li><strong>start_date</strong> &#8211; date, the start date (inclusive) to generate data.
+If None, start from the first available trading day.</li>
+<li><strong>end_date</strong> &#8211; date, the end date (inclusive) to generate data.
+If None, end at the last available trading day.</li>
+<li><strong>choose_main</strong> &#8211; boolean, if True, use volume to choose the main instrument. If False,
+generate separate files for each instrument under the same instrument id prefix.
+So, if choose_main is True, folders in ohlc_folders should have the following structure:
+folder/instrument_id_prefix_periodicity.csv, for example, IF_5m.csv.
+If choose_main is False, the tick_data_folder should have the following structure:
+folder/instrument_id_periodicity.csv, for example, IF1503_5m.csv.</li>
+<li><strong>include_instrument_id</strong> &#8211; boolean, should instrument id be included in the generated ohlc file?
+If True, the instrument id will be put as the first column in the generated ohlc file.
+To decide which instrument id to put in ohlc file:
+1. if instrument_id_to_include is not None, use that id, otherwise,
+2. if choose_main is False, use the full instrument id, such as IF1503.
+3. if choose_main is True, use instrument_id_prefix.</li>
+<li><strong>instrument_id_to_include</strong> &#8211; string, the instrument id used to put into the generated ohlc file.
+See the comment for include_instrument_id for more details.</li>
+<li><strong>include_extra_date_and_time</strong> &#8211; boolean, If True, include two separate date and time column in
+the generated ohlc file.</li>
+<li><strong>add_missing_bars</strong> &#8211; boolean, if True, add missing bars to the end of each trading day&#8217;s data.</li>
+<li><strong>with_open_interest</strong> &#8211; boolean, if True, generate open interest information.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.write_ohlc_data">
+<code class="descname">write_ohlc_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>market_periods</em>, <em>ohlc_folders</em>, <em>instrument_id</em>, <em>include_instrument_id</em>, <em>include_extra_date_and_time</em>, <em>add_missing_bars=False</em>, <em>with_open_interest=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.write_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate and write ohlc data from source file to ohlc files
+:param source_file: stirng, the path of source file
+:param market_periods: [(time, time)], market periods, used for OHLC merging
+:param ohlc_folders: dict from Periodicity to string. Keys are for each required ohlc periodicity.</p>
+<blockquote>
+<div>Values are folders to store data of those periodicities.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_id</strong> &#8211; string, the instrument id that should be included into file (if its value is not None)</li>
+<li><strong>instrument_id_to_include</strong> &#8211; string, the instrument id used to put into the generated ohlc file.</li>
+<li><strong>include_extra_date_and_time</strong> &#8211; boolean, If True, include two separate date and time column in
+the generated ohlc file.</li>
+<li><strong>add_missing_bars</strong> &#8211; boolean, if True, add missing bars to the end of each trading day&#8217;s data.</li>
+<li><strong>with_open_interest</strong> &#8211; boolean, if True, generate open interest information.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.download_data_from_s3">
+<code class="descname">download_data_from_s3</code><span class="sig-paren">(</span><em>s3_folder</em>, <em>s3_transfer</em>, <em>raw_data_folder</em>, <em>uncompress_password=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.download_data_from_s3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sync raw future trading data from s3. This method downloads new trading data files from Amazon S3 and
+unzip them and put them into raw_data_folder.
+:param s3_folder: string, the s3 folder for the data.
+:param s3_transfer: s3 s3_transfer. the object of s3_transfer
+:param raw_data_folder: string, the data folder to put uncompressed raw trading data.
+:param uncompress_password: string, the password used to uncompress data file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.get_file_time_list">
+<code class="descname">get_file_time_list</code><span class="sig-paren">(</span><em>raw_data_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.get_file_time_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a list which contains the time list (yyyymmdd) of the local folder
+:param raw_data_folder: string, the path of local folder
+:return: [string], the time list of local data files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_tick_data">
+<code class="descname">update_tick_data</code><span class="sig-paren">(</span><em>instrument_id_prefix</em>, <em>raw_data_folder</em>, <em>tick_data_folder</em>, <em>order_book_data=0</em>, <em>choose_main=True</em>, <em>market_periods=None</em>, <em>add_missing_ticks=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_tick_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find new data in raw_data_folder (compared to the data in tick_data_folder) and
+generate tick level data for new trading data. Assume that new data can only be later than old data.
+:param instrument_id_prefix: the instrument prefix used to find the instrument data.
+:param raw_data_folder: string, the folder storing raw trading data. In the raw data folder, there are</p>
+<blockquote>
+<div>sub-folders for each trading day. The sub-folder names yyyymmdd.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tick_data_folder</strong> &#8211; string, the folder to store generated tick level data.</li>
+<li><strong>order_book_data</strong> &#8211; int, order book level.</li>
+<li><strong>choose_main</strong> &#8211; <p>boolean, if True, use volume to choose the main instrument. If False,
+generate separate files for each instrument under the same instrument id prefix.
+So, if choose_main is True, tick_data_folder should have the following structure:
+tick_data_folder/yyyymmdd.txt.
+If choose_main is False, the tick_data_folder should have the following structure:</p>
+<blockquote>
+<div>tick_data_folder/instrument_id/yyyymmdd.txt.</div></blockquote>
+</li>
+<li><strong>market_periods</strong> &#8211; [(star_ts, end_ts)]: start_ts and end_ts are of type time.
+If None, use FutureTradingUtils.market_periods to get the proper market periods.</li>
+<li><strong>add_missing_ticks</strong> &#8211; bool, If True, add missing ticks by duplicating the last tick.
+Add one tick per second until market periods ends.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.get_file_time_list2">
+<code class="descname">get_file_time_list2</code><span class="sig-paren">(</span><em>tick_data_folder</em>, <em>choose_main</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.get_file_time_list2" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a list which contains the time list (yyyymmdd) of the local folder
+:param tick_data_folder: string, the path of local folder
+:param choose_main: boolean, mean two different way to choose time list
+:return: [string], the time list of local data files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_ohlc_data">
+<code class="descname">update_ohlc_data</code><span class="sig-paren">(</span><em>instrument_id_prefix</em>, <em>market_periods</em>, <em>raw_data_folder</em>, <em>ohlc_folders</em>, <em>instrument_id=None</em>, <em>choose_main=True</em>, <em>include_instrument_id=False</em>, <em>instrument_id_to_include=None</em>, <em>include_extra_date_and_time=False</em>, <em>add_missing_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.update_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find new data in raw_data_folder (compared to the data in ohlc_files) and generate ohlc level data
+for new trading data. Assume that new data can only be later than old data.
+:param instrument_id_prefix: the instrument prefix used to find the instrument data.
+:param market_periods: [(time, time)], market periods, used for OHLC merging. When market_periods is None,</p>
+<blockquote>
+<div>use FutureTradingUtils.market_periods to get the proper trading periods.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>raw_data_folder</strong> &#8211; string, the folder storing raw trading data. In the raw data folder, there are
+sub-folders for each trading day. The sub-folder names yyyymmdd.</li>
+<li><strong>ohlc_folders</strong> &#8211; dict from Periodicity to string. Keys are for each required ohlc periodicity.
+Values are folders to store data of those periodicities.</li>
+<li><strong>choose_main</strong> &#8211; boolean, if True, use volume to choose the main instrument. If False,
+generate separate files for each instrument under the same instrument id prefix.
+So, if choose_main is True, folders in ohlc_folders should have the following structure:
+folder/instrument_id_prefix_periodicity.csv, for example, IF_5m.csv.
+If choose_main is False, the tick_data_folder should have the following structure:
+folder/instrument_id_periodicity.csv, for example, IF1503_5m.csv.</li>
+<li><strong>include_instrument_id</strong> &#8211; boolean, should instrument id be included in the generated ohlc file?
+If True, the instrument id will be put as the first column in the generated ohlc file.
+To decide which instrument id to put in ohlc file:
+1. if instrument_id_to_include is not None, use that id, otherwise,
+2. if choose_main is False, use the full instrument id, such as IF1503.
+3. if choose_main is True, use instrument_id_prefix.</li>
+<li><strong>instrument_id_to_include</strong> &#8211; string, the instrument id used to put into the generated ohlc file.
+See the comment for include_instrument_id for more details.</li>
+<li><strong>include_extra_date_and_time</strong> &#8211; boolean, If True, include two separate date and time column in
+the generated ohlc file.</li>
+<li><strong>add_missing_bars</strong> &#8211; boolean, if True, add missing bars to the end of each trading day&#8217;s data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.get_file_time_list3">
+<code class="descname">get_file_time_list3</code><span class="sig-paren">(</span><em>ohlc_folders</em>, <em>choose_main</em>, <em>include_instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.get_file_time_list3" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a list which contains the time list (yyyymmdd) of the local folder
+:param ohlc_folders: Periodicity to string. Keys are for each required ohlc periodicity.
+:param choose_main: boolean, mean two different way to choose time list
+:param instrument_id_to_include: string, the instrument id used to put into the generated ohlc file.
+:return: [string], the time list of local data files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.download_source_data">
+<code class="descname">download_source_data</code><span class="sig-paren">(</span><em>market</em>, <em>raw_data_folder</em>, <em>s3_host</em>, <em>s3_id</em>, <em>s3_key</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>override=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_source_generator.FutureTradingDataSourceGenerator.download_source_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download source data from S3 bucket into raw_data_folder.
+:param market: string, the market, valid values are sc, sf, zc, dc.
+:param raw_data_folder: string, the folder to store downloaded zip files.
+:param s3_host: string, s3 host.
+:param s3_id: string, s3 id.
+:param s3_key: string, s3 key.
+:param start_date: date or string in form yyyy-mm-dd. The starting date (inclusive) of the data to download.</p>
+<blockquote>
+<div>If None, starts at the next day&#8217;s data which is not in raw_data_folder.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>end_date</strong> &#8211; date or string in form yyyy-mm-dd. The end date (inclusive) of the data to download.
+If None, use today.</li>
+<li><strong>override</strong> &#8211; bool, if False, and if there is already a file with the same name (as the file to be downloaded
+from s3) in raw_data_folder, do not perform the downloading. If True, perform the downloading by
+overriding the existing file in raw_data_folder.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="design_by_contract.html" class="btn btn-neutral float-right" title="design_by_contract" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_preparer_utils.html" class="btn btn-neutral" title="data_preparer_utils" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1957 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pydot &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="pydot" href="index.html"/>
+        <link rel="next" title="report" href="../report/index.html"/>
+        <link rel="prev" title="dot_parser" href="dot_parser.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pydot</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dot_parser.html">dot_parser</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pydot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">pydot</a> &raquo;</li>
+      
+    <li>pydot</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/pydot/pydot.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.pydot.pydot">
+<span id="pydot"></span><h1>pydot<a class="headerlink" href="#module-ctxalgolib.pydot.pydot" title="Permalink to this headline">¶</a></h1>
+<p>Graphviz&#8217;s dot language Python interface.</p>
+<p>This module provides with a full interface to create handle modify
+and process graphs in Graphviz&#8217;s dot language.</p>
+<p>References:</p>
+<p>pydot Homepage: <a class="reference external" href="http://www.dkbza.org/pydot.html">http://www.dkbza.org/pydot.html</a>
+Graphviz:       <a class="reference external" href="http://www.research.att.com/sw/tools/graphviz/">http://www.research.att.com/sw/tools/graphviz/</a>
+DOT Language:   <a class="reference external" href="http://www.research.att.com/~erg/graphviz/info/lang.html">http://www.research.att.com/~erg/graphviz/info/lang.html</a></p>
+<p>Programmed and tested with Graphviz 1.16 and Python 2.3.4 on GNU/Linux
+by Ero Carrera (c) 2004 [<a class="reference external" href="mailto:ero&#37;&#52;&#48;dkbza&#46;org">ero<span>&#64;</span>dkbza<span>&#46;</span>org</a>]</p>
+<p>Distributed under MIT license [<a class="reference external" href="http://opensource.org/licenses/mit-license.html">http://opensource.org/licenses/mit-license.html</a>].</p>
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.frozendict">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">frozendict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.frozendict.clear">
+<code class="descname">clear</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.frozendict.pop">
+<code class="descname">pop</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.frozendict.popitem">
+<code class="descname">popitem</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.frozendict.setdefault">
+<code class="descname">setdefault</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.frozendict.update">
+<code class="descname">update</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a shallow copy of D<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.fromkeys">
+<code class="descname">fromkeys</code><span class="sig-paren">(</span><em>S</em><span class="optional">[</span>, <em>v</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; New dict with keys from S and values equal to v.<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>v defaults to None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; D[k] if k in D, else d.  d defaults to None.<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.has_key">
+<code class="descname">has_key</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span> &rarr; True if D has a key k, else False<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.has_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's (key, value) pairs, as 2-tuples<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.iteritems">
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the (key, value) items of D<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.iterkeys">
+<code class="descname">iterkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the keys of D<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.itervalues">
+<code class="descname">itervalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the values of D<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's keys<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's values<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.viewitems">
+<code class="descname">viewitems</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on D's items<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.viewitems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.viewkeys">
+<code class="descname">viewkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on D's keys<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.viewkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.frozendict.viewvalues">
+<code class="descname">viewvalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an object providing a view on D's values<a class="headerlink" href="#ctxalgolib.pydot.pydot.frozendict.viewvalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.needs_quotes">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">needs_quotes</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.needs_quotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether a string is a dot language ID.</p>
+<p>It will check whether the string is solely composed
+by the characters allowed in an ID or not.
+If the string is one of the reserved keywords it will
+need quotes too.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.quote_if_necessary">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">quote_if_necessary</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.quote_if_necessary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.graph_from_dot_data">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">graph_from_dot_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.graph_from_dot_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load graph as defined by data in DOT format.</p>
+<p>The data is assumed to be in DOT format. It will
+be parsed and a Dot class will be returned, 
+representing the graph.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.graph_from_dot_file">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">graph_from_dot_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.graph_from_dot_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load graph as defined by a DOT file.</p>
+<p>The file is assumed to be in DOT format. It will
+be loaded, parsed and a Dot class will be returned, 
+representing the graph.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.graph_from_edges">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">graph_from_edges</code><span class="sig-paren">(</span><em>edge_list</em>, <em>node_prefix=''</em>, <em>directed=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.graph_from_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a basic graph out of an edge list.</p>
+<p>The edge list has to be a list of tuples representing
+the nodes connected by the edge.
+The values can be anything: bool, int, float, str.</p>
+<p>If the graph is undirected by default, it is only
+calculated from one of the symmetric halves of the matrix.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.graph_from_adjacency_matrix">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">graph_from_adjacency_matrix</code><span class="sig-paren">(</span><em>matrix</em>, <em>node_prefix=u''</em>, <em>directed=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.graph_from_adjacency_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a basic graph out of an adjacency matrix.</p>
+<p>The matrix has to be a list of rows of values
+representing an adjacency matrix.
+The values can be anything: bool, int, float, as long
+as they can evaluate to True or False.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.graph_from_incidence_matrix">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">graph_from_incidence_matrix</code><span class="sig-paren">(</span><em>matrix</em>, <em>node_prefix=''</em>, <em>directed=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.graph_from_incidence_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a basic graph out of an incidence matrix.</p>
+<p>The matrix has to be a list of rows of values
+representing an incidence matrix.
+The values can be anything: bool, int, float, as long
+as they can evaluate to True or False.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.pydot.find_graphviz">
+<code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">find_graphviz</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.find_graphviz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Locate Graphviz&#8217;s executables in the system.</p>
+<p>Tries three methods:</p>
+<p>First: Windows Registry (Windows only)
+This requires Mark Hammond&#8217;s pywin32 is installed.</p>
+<p>Secondly: Search the path
+It will look for &#8216;dot&#8217;, &#8216;twopi&#8217; and &#8216;neato&#8217; in all the directories
+specified in the PATH environment variable.</p>
+<p>Thirdly: Default install location (Windows only)
+It will look for &#8216;dot&#8217;, &#8216;twopi&#8217; and &#8216;neato&#8217; in the default install
+location under the &#8220;Program Files&#8221; directory.</p>
+<p>It will return a dictionary containing the program names as keys
+and their paths as values.</p>
+<p>If this fails, it returns None.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.Common">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Common</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common" title="Permalink to this definition">¶</a></dt>
+<dd><p>Common information to several classes.</p>
+<p>Should not be directly used, several classes are derived from
+this one.</p>
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.set_parent_graph">
+<code class="descname">set_parent_graph</code><span class="sig-paren">(</span><em>parent_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.set_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.get_parent_graph">
+<code class="descname">get_parent_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.get_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will set its value to &#8216;value&#8217;.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id1"><span class="problematic" id="id2">set_</span></a>&#8216;name&#8217;(value)</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will get its value.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id3"><span class="problematic" id="id4">get_</span></a>&#8216;name&#8217;()</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.get_attributes">
+<code class="descname">get_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.set_sequence">
+<code class="descname">set_sequence</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.set_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.get_sequence">
+<code class="descname">get_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.get_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Common.create_attribute_methods">
+<code class="descname">create_attribute_methods</code><span class="sig-paren">(</span><em>obj_attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Common.create_attribute_methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.pydot.pydot.Error">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Error</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>General error handling class.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.Error.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.Error.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.Error.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.Error.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.pydot.pydot.InvocationException">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">InvocationException</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.InvocationException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>To indicate that a ploblem occurred while running any of the GraphViz executables.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.InvocationException.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.InvocationException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.pydot.pydot.InvocationException.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.pydot.pydot.InvocationException.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.Node">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>name=''</em>, <em>obj_dict=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code>, <a class="reference internal" href="#ctxalgolib.pydot.pydot.Common" title="ctxalgolib.pydot.pydot.Common"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pydot.pydot.Common</span></code></a></p>
+<p>A graph node.</p>
+<p>This class represents a graph&#8217;s node with all its attributes.</p>
+<p>node(name, attribute=value, ...)</p>
+<p>name: node&#8217;s name</p>
+<p>All the attributes defined in the Graphviz dot language should
+be supported.</p>
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>node_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the node&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the node&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.get_port">
+<code class="descname">get_port</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.get_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the node&#8217;s port.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.add_style">
+<code class="descname">add_style</code><span class="sig-paren">(</span><em>style</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.add_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the node in dot language.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.create_attribute_methods">
+<code class="descname">create_attribute_methods</code><span class="sig-paren">(</span><em>obj_attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.create_attribute_methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will get its value.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id5"><span class="problematic" id="id6">get_</span></a>&#8216;name&#8217;()</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.get_attributes">
+<code class="descname">get_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.get_parent_graph">
+<code class="descname">get_parent_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.get_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.get_sequence">
+<code class="descname">get_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.get_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will set its value to &#8216;value&#8217;.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id7"><span class="problematic" id="id8">set_</span></a>&#8216;name&#8217;(value)</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.set_parent_graph">
+<code class="descname">set_parent_graph</code><span class="sig-paren">(</span><em>parent_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.set_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Node.set_sequence">
+<code class="descname">set_sequence</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Node.set_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.Edge">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Edge</code><span class="sig-paren">(</span><em>src=''</em>, <em>dst=''</em>, <em>obj_dict=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code>, <a class="reference internal" href="#ctxalgolib.pydot.pydot.Common" title="ctxalgolib.pydot.pydot.Common"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pydot.pydot.Common</span></code></a></p>
+<p>A graph edge.</p>
+<p>This class represents a graph&#8217;s edge with all its attributes.</p>
+<p>edge(src, dst, attribute=value, ...)</p>
+<p>src: source node&#8217;s name
+dst: destination node&#8217;s name</p>
+<p>All the attributes defined in the Graphviz dot language should
+be supported.</p>
+<blockquote>
+<div><blockquote>
+<div>Attributes can be set through the dynamically generated methods:</div></blockquote>
+<p>set_[attribute name], i.e. set_label, set_fontname</p>
+</div></blockquote>
+<p>or using the instance&#8217;s attributes:</p>
+<blockquote>
+<div>Edge.[attribute name], i.e. edge_instance.label, edge_instance.fontname</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.get_source">
+<code class="descname">get_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.get_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the edges source node name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.get_destination">
+<code class="descname">get_destination</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.get_destination" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the edge&#8217;s destination node name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.parse_node_ref">
+<code class="descname">parse_node_ref</code><span class="sig-paren">(</span><em>node_str</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.parse_node_ref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the edge in dot language.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.create_attribute_methods">
+<code class="descname">create_attribute_methods</code><span class="sig-paren">(</span><em>obj_attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.create_attribute_methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will get its value.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id9"><span class="problematic" id="id10">get_</span></a>&#8216;name&#8217;()</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.get_attributes">
+<code class="descname">get_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.get_parent_graph">
+<code class="descname">get_parent_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.get_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.get_sequence">
+<code class="descname">get_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.get_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will set its value to &#8216;value&#8217;.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id11"><span class="problematic" id="id12">set_</span></a>&#8216;name&#8217;(value)</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.set_parent_graph">
+<code class="descname">set_parent_graph</code><span class="sig-paren">(</span><em>parent_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.set_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Edge.set_sequence">
+<code class="descname">set_sequence</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Edge.set_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.Graph">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Graph</code><span class="sig-paren">(</span><em>graph_name='G'</em>, <em>obj_dict=None</em>, <em>graph_type='digraph'</em>, <em>strict=False</em>, <em>suppress_disconnected=False</em>, <em>simplify=False</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code>, <a class="reference internal" href="#ctxalgolib.pydot.pydot.Common" title="ctxalgolib.pydot.pydot.Common"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pydot.pydot.Common</span></code></a></p>
+<p>Class representing a graph in Graphviz&#8217;s dot language.</p>
+<p>This class implements the methods to work on a representation
+of a graph in Graphviz&#8217;s dot language.</p>
+<dl class="docutils">
+<dt>graph(  graph_name=&#8217;G&#8217;, graph_type=&#8217;digraph&#8217;,</dt>
+<dd>strict=False, suppress_disconnected=False, attribute=value, ...)</dd>
+<dt>graph_name:</dt>
+<dd>the graph&#8217;s name</dd>
+<dt>graph_type:</dt>
+<dd>can be &#8216;graph&#8217; or &#8216;digraph&#8217;</dd>
+<dt>suppress_disconnected:</dt>
+<dd>defaults to False, which will remove from the
+graph any disconnected nodes.</dd>
+<dt>simplify:</dt>
+<dd>if True it will avoid displaying equal edges, i.e.
+only one edge between two nodes. removing the
+duplicated ones.</dd>
+</dl>
+<p>All the attributes defined in the Graphviz dot language should
+be supported.</p>
+<p>Attributes can be set through the dynamically generated methods:</p>
+<blockquote>
+<div>set_[attribute name], i.e. set_size, set_fontname</div></blockquote>
+<p>or using the instance&#8217;s attributes:</p>
+<blockquote>
+<div>Graph.[attribute name], i.e. graph_instance.label, graph_instance.fontname</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_graph_type">
+<code class="descname">get_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_top_graph_type">
+<code class="descname">get_top_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_top_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_graph_defaults">
+<code class="descname">set_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_graph_defaults">
+<code class="descname">get_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_node_defaults">
+<code class="descname">set_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_node_defaults">
+<code class="descname">get_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_edge_defaults">
+<code class="descname">set_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_edge_defaults">
+<code class="descname">get_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_simplify">
+<code class="descname">set_simplify</code><span class="sig-paren">(</span><em>simplify</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to simplify or not.</p>
+<p>If True it will avoid displaying equal edges, i.e.
+only one edge between two nodes. removing the
+duplicated ones.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_simplify">
+<code class="descname">get_simplify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get whether to simplify or not.</p>
+<p>Refer to set_simplify for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_type">
+<code class="descname">set_type</code><span class="sig-paren">(</span><em>graph_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_type">
+<code class="descname">get_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>graph_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_strict">
+<code class="descname">set_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set graph to &#8216;strict&#8217; mode.</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_strict">
+<code class="descname">get_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get graph&#8217;s &#8216;strict&#8217; mode (True, False).</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_suppress_disconnected">
+<code class="descname">set_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suppress disconnected nodes in the output graph.</p>
+<p>This option will skip nodes in the graph with no        incoming or outgoing
+edges. This option works also for subgraphs and has effect only in the
+current graph/subgraph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_suppress_disconnected">
+<code class="descname">get_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get if suppress disconnected is set.</p>
+<p>Refer to set_suppress_disconnected for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_next_sequence_number">
+<code class="descname">get_next_sequence_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_next_sequence_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.add_node">
+<code class="descname">add_node</code><span class="sig-paren">(</span><em>graph_node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a node object to the graph.</p>
+<p>It takes a node object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_node">
+<code class="descname">get_node</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a node from the graph.</p>
+<p>Given a node&#8217;s name the corresponding Node
+instance will be returned.</p>
+<p>If multiple nodes exist with that name, a list of
+Node instances is returned.
+If only one node exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_nodes">
+<code class="descname">get_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_node_list">
+<code class="descname">get_node_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_node_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Node instances.</p>
+<p>This method returns the list of Node instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.add_edge">
+<code class="descname">add_edge</code><span class="sig-paren">(</span><em>graph_edge</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an edge object to the graph.</p>
+<p>It takes a edge object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_edge">
+<code class="descname">get_edge</code><span class="sig-paren">(</span><em>src</em>, <em>dst</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved an edge from the graph.</p>
+<p>Given an edge&#8217;s source and destination the corresponding
+Edge instance will be returned.</p>
+<p>If multiple edges exist with that source and destination,
+a list of Edge instances is returned.
+If only one edge exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_edges">
+<code class="descname">get_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_edges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_edge_list">
+<code class="descname">get_edge_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_edge_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Edge instances.</p>
+<p>This method returns the list of Edge instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.add_subgraph">
+<code class="descname">add_subgraph</code><span class="sig-paren">(</span><em>sgraph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.add_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an subgraph object to the graph.</p>
+<p>It takes a subgraph object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_subgraph">
+<code class="descname">get_subgraph</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a subgraph from the graph.</p>
+<p>Given a subgraph&#8217;s name the corresponding
+Subgraph instance will be returned.</p>
+<p>If multiple subgraphs exist with the same name, a list of
+Subgraph instances is returned.
+If only one Subgraph exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_subgraphs">
+<code class="descname">get_subgraphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_subgraphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_subgraph_list">
+<code class="descname">get_subgraph_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_subgraph_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Subgraph instances.</p>
+<p>This method returns the list of Subgraph instances
+in the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_parent_graph">
+<code class="descname">set_parent_graph</code><span class="sig-paren">(</span><em>parent_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the graph in dot language.</p>
+<p>It will return the graph and all its subelements in string from.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.create_attribute_methods">
+<code class="descname">create_attribute_methods</code><span class="sig-paren">(</span><em>obj_attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.create_attribute_methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will get its value.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id13"><span class="problematic" id="id14">get_</span></a>&#8216;name&#8217;()</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_attributes">
+<code class="descname">get_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_parent_graph">
+<code class="descname">get_parent_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.get_sequence">
+<code class="descname">get_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.get_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will set its value to &#8216;value&#8217;.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id15"><span class="problematic" id="id16">set_</span></a>&#8216;name&#8217;(value)</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Graph.set_sequence">
+<code class="descname">set_sequence</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Graph.set_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.Subgraph">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Subgraph</code><span class="sig-paren">(</span><em>graph_name=''</em>, <em>obj_dict=None</em>, <em>suppress_disconnected=False</em>, <em>simplify=False</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.pydot.pydot.Graph" title="ctxalgolib.pydot.pydot.Graph"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pydot.pydot.Graph</span></code></a></p>
+<p>Class representing a subgraph in Graphviz&#8217;s dot language.</p>
+<p>This class implements the methods to work on a representation
+of a subgraph in Graphviz&#8217;s dot language.</p>
+<p>subgraph(graph_name=&#8217;subG&#8217;, suppress_disconnected=False, attribute=value, ...)</p>
+<dl class="docutils">
+<dt>graph_name:</dt>
+<dd>the subgraph&#8217;s name</dd>
+<dt>suppress_disconnected:</dt>
+<dd>defaults to false, which will remove from the
+subgraph any disconnected nodes.</dd>
+</dl>
+<p>All the attributes defined in the Graphviz dot language should
+be supported.</p>
+<p>Attributes can be set through the dynamically generated methods:</p>
+<blockquote>
+<div>set_[attribute name], i.e. set_size, set_fontname</div></blockquote>
+<p>or using the instance&#8217;s attributes:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Subgraph.[attribute name], i.e.</dt>
+<dd>subgraph_instance.label, subgraph_instance.fontname</dd>
+</dl>
+</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.add_edge">
+<code class="descname">add_edge</code><span class="sig-paren">(</span><em>graph_edge</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an edge object to the graph.</p>
+<p>It takes a edge object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.add_node">
+<code class="descname">add_node</code><span class="sig-paren">(</span><em>graph_node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a node object to the graph.</p>
+<p>It takes a node object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.add_subgraph">
+<code class="descname">add_subgraph</code><span class="sig-paren">(</span><em>sgraph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.add_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an subgraph object to the graph.</p>
+<p>It takes a subgraph object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.create_attribute_methods">
+<code class="descname">create_attribute_methods</code><span class="sig-paren">(</span><em>obj_attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.create_attribute_methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will get its value.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id17"><span class="problematic" id="id18">get_</span></a>&#8216;name&#8217;()</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_attributes">
+<code class="descname">get_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_edge">
+<code class="descname">get_edge</code><span class="sig-paren">(</span><em>src</em>, <em>dst</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved an edge from the graph.</p>
+<p>Given an edge&#8217;s source and destination the corresponding
+Edge instance will be returned.</p>
+<p>If multiple edges exist with that source and destination,
+a list of Edge instances is returned.
+If only one edge exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_edge_defaults">
+<code class="descname">get_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_edge_list">
+<code class="descname">get_edge_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_edge_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Edge instances.</p>
+<p>This method returns the list of Edge instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_edges">
+<code class="descname">get_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_edges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_graph_defaults">
+<code class="descname">get_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_graph_type">
+<code class="descname">get_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_next_sequence_number">
+<code class="descname">get_next_sequence_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_next_sequence_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_node">
+<code class="descname">get_node</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a node from the graph.</p>
+<p>Given a node&#8217;s name the corresponding Node
+instance will be returned.</p>
+<p>If multiple nodes exist with that name, a list of
+Node instances is returned.
+If only one node exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_node_defaults">
+<code class="descname">get_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_node_list">
+<code class="descname">get_node_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_node_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Node instances.</p>
+<p>This method returns the list of Node instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_nodes">
+<code class="descname">get_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_parent_graph">
+<code class="descname">get_parent_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_sequence">
+<code class="descname">get_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_simplify">
+<code class="descname">get_simplify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get whether to simplify or not.</p>
+<p>Refer to set_simplify for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_strict">
+<code class="descname">get_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get graph&#8217;s &#8216;strict&#8217; mode (True, False).</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_subgraph">
+<code class="descname">get_subgraph</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a subgraph from the graph.</p>
+<p>Given a subgraph&#8217;s name the corresponding
+Subgraph instance will be returned.</p>
+<p>If multiple subgraphs exist with the same name, a list of
+Subgraph instances is returned.
+If only one Subgraph exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_subgraph_list">
+<code class="descname">get_subgraph_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_subgraph_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Subgraph instances.</p>
+<p>This method returns the list of Subgraph instances
+in the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_subgraphs">
+<code class="descname">get_subgraphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_subgraphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_suppress_disconnected">
+<code class="descname">get_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get if suppress disconnected is set.</p>
+<p>Refer to set_suppress_disconnected for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_top_graph_type">
+<code class="descname">get_top_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_top_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.get_type">
+<code class="descname">get_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.get_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will set its value to &#8216;value&#8217;.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id19"><span class="problematic" id="id20">set_</span></a>&#8216;name&#8217;(value)</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_edge_defaults">
+<code class="descname">set_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_graph_defaults">
+<code class="descname">set_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>graph_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_node_defaults">
+<code class="descname">set_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_parent_graph">
+<code class="descname">set_parent_graph</code><span class="sig-paren">(</span><em>parent_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_sequence">
+<code class="descname">set_sequence</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_simplify">
+<code class="descname">set_simplify</code><span class="sig-paren">(</span><em>simplify</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to simplify or not.</p>
+<p>If True it will avoid displaying equal edges, i.e.
+only one edge between two nodes. removing the
+duplicated ones.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_strict">
+<code class="descname">set_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set graph to &#8216;strict&#8217; mode.</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_suppress_disconnected">
+<code class="descname">set_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suppress disconnected nodes in the output graph.</p>
+<p>This option will skip nodes in the graph with no        incoming or outgoing
+edges. This option works also for subgraphs and has effect only in the
+current graph/subgraph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.set_type">
+<code class="descname">set_type</code><span class="sig-paren">(</span><em>graph_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.set_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Subgraph.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Subgraph.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the graph in dot language.</p>
+<p>It will return the graph and all its subelements in string from.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.Cluster">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Cluster</code><span class="sig-paren">(</span><em>graph_name='subG'</em>, <em>obj_dict=None</em>, <em>suppress_disconnected=False</em>, <em>simplify=False</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.pydot.pydot.Graph" title="ctxalgolib.pydot.pydot.Graph"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pydot.pydot.Graph</span></code></a></p>
+<p>Class representing a cluster in Graphviz&#8217;s dot language.</p>
+<p>This class implements the methods to work on a representation
+of a cluster in Graphviz&#8217;s dot language.</p>
+<p>cluster(graph_name=&#8217;subG&#8217;, suppress_disconnected=False, attribute=value, ...)</p>
+<dl class="docutils">
+<dt>graph_name:</dt>
+<dd>the cluster&#8217;s name (the string &#8216;cluster&#8217; will be always prepended)</dd>
+<dt>suppress_disconnected:</dt>
+<dd>defaults to false, which will remove from the
+cluster any disconnected nodes.</dd>
+</dl>
+<p>All the attributes defined in the Graphviz dot language should
+be supported.</p>
+<p>Attributes can be set through the dynamically generated methods:</p>
+<blockquote>
+<div>set_[attribute name], i.e. set_color, set_fontname</div></blockquote>
+<p>or using the instance&#8217;s attributes:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Cluster.[attribute name], i.e.</dt>
+<dd>cluster_instance.color, cluster_instance.fontname</dd>
+</dl>
+</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.add_edge">
+<code class="descname">add_edge</code><span class="sig-paren">(</span><em>graph_edge</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an edge object to the graph.</p>
+<p>It takes a edge object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.add_node">
+<code class="descname">add_node</code><span class="sig-paren">(</span><em>graph_node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a node object to the graph.</p>
+<p>It takes a node object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.add_subgraph">
+<code class="descname">add_subgraph</code><span class="sig-paren">(</span><em>sgraph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.add_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an subgraph object to the graph.</p>
+<p>It takes a subgraph object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.create_attribute_methods">
+<code class="descname">create_attribute_methods</code><span class="sig-paren">(</span><em>obj_attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.create_attribute_methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will get its value.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id21"><span class="problematic" id="id22">get_</span></a>&#8216;name&#8217;()</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_attributes">
+<code class="descname">get_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_edge">
+<code class="descname">get_edge</code><span class="sig-paren">(</span><em>src</em>, <em>dst</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved an edge from the graph.</p>
+<p>Given an edge&#8217;s source and destination the corresponding
+Edge instance will be returned.</p>
+<p>If multiple edges exist with that source and destination,
+a list of Edge instances is returned.
+If only one edge exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_edge_defaults">
+<code class="descname">get_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_edge_list">
+<code class="descname">get_edge_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_edge_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Edge instances.</p>
+<p>This method returns the list of Edge instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_edges">
+<code class="descname">get_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_edges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_graph_defaults">
+<code class="descname">get_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_graph_type">
+<code class="descname">get_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_next_sequence_number">
+<code class="descname">get_next_sequence_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_next_sequence_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_node">
+<code class="descname">get_node</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a node from the graph.</p>
+<p>Given a node&#8217;s name the corresponding Node
+instance will be returned.</p>
+<p>If multiple nodes exist with that name, a list of
+Node instances is returned.
+If only one node exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_node_defaults">
+<code class="descname">get_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_node_list">
+<code class="descname">get_node_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_node_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Node instances.</p>
+<p>This method returns the list of Node instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_nodes">
+<code class="descname">get_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_parent_graph">
+<code class="descname">get_parent_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_sequence">
+<code class="descname">get_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_simplify">
+<code class="descname">get_simplify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get whether to simplify or not.</p>
+<p>Refer to set_simplify for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_strict">
+<code class="descname">get_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get graph&#8217;s &#8216;strict&#8217; mode (True, False).</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_subgraph">
+<code class="descname">get_subgraph</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a subgraph from the graph.</p>
+<p>Given a subgraph&#8217;s name the corresponding
+Subgraph instance will be returned.</p>
+<p>If multiple subgraphs exist with the same name, a list of
+Subgraph instances is returned.
+If only one Subgraph exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_subgraph_list">
+<code class="descname">get_subgraph_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_subgraph_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Subgraph instances.</p>
+<p>This method returns the list of Subgraph instances
+in the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_subgraphs">
+<code class="descname">get_subgraphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_subgraphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_suppress_disconnected">
+<code class="descname">get_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get if suppress disconnected is set.</p>
+<p>Refer to set_suppress_disconnected for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_top_graph_type">
+<code class="descname">get_top_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_top_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.get_type">
+<code class="descname">get_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.get_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will set its value to &#8216;value&#8217;.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id23"><span class="problematic" id="id24">set_</span></a>&#8216;name&#8217;(value)</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_edge_defaults">
+<code class="descname">set_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_graph_defaults">
+<code class="descname">set_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>graph_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_node_defaults">
+<code class="descname">set_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_parent_graph">
+<code class="descname">set_parent_graph</code><span class="sig-paren">(</span><em>parent_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_sequence">
+<code class="descname">set_sequence</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_simplify">
+<code class="descname">set_simplify</code><span class="sig-paren">(</span><em>simplify</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to simplify or not.</p>
+<p>If True it will avoid displaying equal edges, i.e.
+only one edge between two nodes. removing the
+duplicated ones.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_strict">
+<code class="descname">set_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set graph to &#8216;strict&#8217; mode.</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_suppress_disconnected">
+<code class="descname">set_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suppress disconnected nodes in the output graph.</p>
+<p>This option will skip nodes in the graph with no        incoming or outgoing
+edges. This option works also for subgraphs and has effect only in the
+current graph/subgraph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.set_type">
+<code class="descname">set_type</code><span class="sig-paren">(</span><em>graph_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.set_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Cluster.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Cluster.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the graph in dot language.</p>
+<p>It will return the graph and all its subelements in string from.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.pydot.Dot">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.pydot.</code><code class="descname">Dot</code><span class="sig-paren">(</span><em>*argsl</em>, <em>**argsd</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.pydot.pydot.Graph" title="ctxalgolib.pydot.pydot.Graph"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pydot.pydot.Graph</span></code></a></p>
+<p>A container for handling a dot language file.</p>
+<p>This class implements methods to write and process
+a dot language file. It is a derived class of
+the base class &#8216;Graph&#8217;.</p>
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.add_edge">
+<code class="descname">add_edge</code><span class="sig-paren">(</span><em>graph_edge</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an edge object to the graph.</p>
+<p>It takes a edge object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.add_node">
+<code class="descname">add_node</code><span class="sig-paren">(</span><em>graph_node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a node object to the graph.</p>
+<p>It takes a node object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.add_subgraph">
+<code class="descname">add_subgraph</code><span class="sig-paren">(</span><em>sgraph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.add_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an subgraph object to the graph.</p>
+<p>It takes a subgraph object as its only argument and returns
+None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.create_attribute_methods">
+<code class="descname">create_attribute_methods</code><span class="sig-paren">(</span><em>obj_attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.create_attribute_methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will get its value.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id25"><span class="problematic" id="id26">get_</span></a>&#8216;name&#8217;()</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_attributes">
+<code class="descname">get_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_edge">
+<code class="descname">get_edge</code><span class="sig-paren">(</span><em>src</em>, <em>dst</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved an edge from the graph.</p>
+<p>Given an edge&#8217;s source and destination the corresponding
+Edge instance will be returned.</p>
+<p>If multiple edges exist with that source and destination,
+a list of Edge instances is returned.
+If only one edge exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_edge_defaults">
+<code class="descname">get_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_edge_list">
+<code class="descname">get_edge_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_edge_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Edge instances.</p>
+<p>This method returns the list of Edge instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_edges">
+<code class="descname">get_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_edges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_graph_defaults">
+<code class="descname">get_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_graph_type">
+<code class="descname">get_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_next_sequence_number">
+<code class="descname">get_next_sequence_number</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_next_sequence_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_node">
+<code class="descname">get_node</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a node from the graph.</p>
+<p>Given a node&#8217;s name the corresponding Node
+instance will be returned.</p>
+<p>If multiple nodes exist with that name, a list of
+Node instances is returned.
+If only one node exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_node_defaults">
+<code class="descname">get_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_node_list">
+<code class="descname">get_node_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_node_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Node instances.</p>
+<p>This method returns the list of Node instances
+composing the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_nodes">
+<code class="descname">get_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_parent_graph">
+<code class="descname">get_parent_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_sequence">
+<code class="descname">get_sequence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_simplify">
+<code class="descname">get_simplify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get whether to simplify or not.</p>
+<p>Refer to set_simplify for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_strict">
+<code class="descname">get_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get graph&#8217;s &#8216;strict&#8217; mode (True, False).</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_subgraph">
+<code class="descname">get_subgraph</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_subgraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieved a subgraph from the graph.</p>
+<p>Given a subgraph&#8217;s name the corresponding
+Subgraph instance will be returned.</p>
+<p>If multiple subgraphs exist with the same name, a list of
+Subgraph instances is returned.
+If only one Subgraph exists, the instance is returned.
+None is returned otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_subgraph_list">
+<code class="descname">get_subgraph_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_subgraph_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of Subgraph instances.</p>
+<p>This method returns the list of Subgraph instances
+in the graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_subgraphs">
+<code class="descname">get_subgraphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_subgraphs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_suppress_disconnected">
+<code class="descname">get_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get if suppress disconnected is set.</p>
+<p>Refer to set_suppress_disconnected for more information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_top_graph_type">
+<code class="descname">get_top_graph_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_top_graph_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.get_type">
+<code class="descname">get_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.get_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set an attribute value by name.</p>
+<p>Given an attribute &#8216;name&#8217; it will set its value to &#8216;value&#8217;.
+There&#8217;s always the possibility of using the methods:</p>
+<blockquote>
+<div><a href="#id27"><span class="problematic" id="id28">set_</span></a>&#8216;name&#8217;(value)</div></blockquote>
+<p>which are defined for all the existing attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_edge_defaults">
+<code class="descname">set_edge_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_edge_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_graph_defaults">
+<code class="descname">set_graph_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_graph_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_name">
+<code class="descname">set_name</code><span class="sig-paren">(</span><em>graph_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_node_defaults">
+<code class="descname">set_node_defaults</code><span class="sig-paren">(</span><em>**attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_node_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_parent_graph">
+<code class="descname">set_parent_graph</code><span class="sig-paren">(</span><em>parent_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_parent_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_sequence">
+<code class="descname">set_sequence</code><span class="sig-paren">(</span><em>seq</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_sequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_shape_files">
+<code class="descname">set_shape_files</code><span class="sig-paren">(</span><em>file_paths</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_shape_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the paths of the required image files.</p>
+<p>If the graph needs graphic objects to be used as shapes or otherwise
+those need to be in the same folder as the graph is going to be rendered
+from. Alternatively the absolute path to the files can be specified when
+including the graphics in the graph.</p>
+<p>The files in the location pointed to by the path(s) specified as arguments
+to this method will be copied to the same temporary location where the
+graph is going to be rendered.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_simplify">
+<code class="descname">set_simplify</code><span class="sig-paren">(</span><em>simplify</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to simplify or not.</p>
+<p>If True it will avoid displaying equal edges, i.e.
+only one edge between two nodes. removing the
+duplicated ones.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_strict">
+<code class="descname">set_strict</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set graph to &#8216;strict&#8217; mode.</p>
+<p>This option is only valid for top level graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_suppress_disconnected">
+<code class="descname">set_suppress_disconnected</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_suppress_disconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Suppress disconnected nodes in the output graph.</p>
+<p>This option will skip nodes in the graph with no        incoming or outgoing
+edges. This option works also for subgraphs and has effect only in the
+current graph/subgraph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_type">
+<code class="descname">set_type</code><span class="sig-paren">(</span><em>graph_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the graph&#8217;s type, &#8216;graph&#8217; or &#8216;digraph&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.to_string">
+<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the graph in dot language.</p>
+<p>It will return the graph and all its subelements in string from.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_prog">
+<code class="descname">set_prog</code><span class="sig-paren">(</span><em>prog</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_prog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the default program.</p>
+<p>Sets the default program in charge of processing
+the dot file into a graph.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.set_graphviz_executables">
+<code class="descname">set_graphviz_executables</code><span class="sig-paren">(</span><em>paths</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.set_graphviz_executables" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method allows to manually specify the location of the GraphViz executables.</p>
+<p>The argument to this method should be a dictionary where the keys are as follows:</p>
+<blockquote>
+<div>{&#8216;dot&#8217;: &#8216;&#8217;, &#8216;twopi&#8217;: &#8216;&#8217;, &#8216;neato&#8217;: &#8216;&#8217;, &#8216;circo&#8217;: &#8216;&#8217;, &#8216;fdp&#8217;: &#8216;&#8217;}</div></blockquote>
+<p>and the values are the paths to the corresponding executable, including the name
+of the executable itself.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>path</em>, <em>prog=None</em>, <em>format='raw'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes a graph to a file.</p>
+<p>Given a filename &#8216;path&#8217; it will open/create and truncate
+such file and write on it a representation of the graph
+defined by the dot object and in the format specified by
+&#8216;format&#8217;.
+The format &#8216;raw&#8217; is used to dump the string representation
+of the Dot object, without further processing.
+The output can be processed by any of graphviz tools, defined
+in &#8216;prog&#8217;, which defaults to &#8216;dot&#8217;
+Returns True or False according to the success of the write
+operation.</p>
+<p>There&#8217;s also the preferred possibility of using:</p>
+<blockquote>
+<div><a href="#id29"><span class="problematic" id="id30">write_</span></a>&#8216;format&#8217;(path, prog=&#8217;program&#8217;)</div></blockquote>
+<p>which are automatically defined for all the supported formats.
+[write_ps(), write_gif(), write_dia(), ...]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pydot.pydot.Dot.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>prog=None</em>, <em>format='ps'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.pydot.Dot.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns a Postscript representation of the graph.</p>
+<p>create will write the graph to a temporary dot file and process
+it with the program given by &#8216;prog&#8217; (which defaults to &#8216;twopi&#8217;),
+reading the Postscript output and returning it as a string is the
+operation is successful.
+On failure None is returned.</p>
+<p>There&#8217;s also the preferred possibility of using:</p>
+<blockquote>
+<div><a href="#id31"><span class="problematic" id="id32">create_</span></a>&#8216;format&#8217;(prog=&#8217;program&#8217;)</div></blockquote>
+<p>which are automatically defined for all the supported formats.
+[create_ps(), create_gif(), create_dia(), ...]</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../report/index.html" class="btn btn-neutral float-right" title="report" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dot_parser.html" class="btn btn-neutral" title="dot_parser" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>objective &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="optimization" href="index.html"/>
+        <link rel="next" title="optimization_utils" href="optimization_utils.html"/>
+        <link rel="prev" title="optimization" href="index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">optimization</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization_utils.html">optimization_utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimizer.html">optimizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html">parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regularizer.html">regularizer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="walk_forward.html">walk_forward</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">optimization</a> &raquo;</li>
+      
+    <li>objective</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/optimization/objective.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.optimization.objective">
+<span id="objective"></span><h1>objective<a class="headerlink" href="#module-ctxalgolib.ta.optimization.objective" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveBase">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.optimization.objective.</code><code class="descname">ObjectiveBase</code><span class="sig-paren">(</span><em>param_specs</em>, <em>num_funs</em>, <em>num_cons</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Base class for objective functions in the constrained optimization problem.</p>
+<p>The main function is eval that returns a pair of lists
+([f1, f2, ...], [c1, c2, ...]).
+The first list includes a list of objective functions to optimize, and
+the second list includes a list of constraint values for constaints in
+the form of c_i(x) &lt;= 0.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>param_specs</strong> &#8211; ParameterVector object.</li>
+<li><strong>num_funs</strong> &#8211; number of function.</li>
+<li><strong>num_cons</strong> &#8211; number of constraints.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveBase.eval">
+<code class="descname">eval</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveBase.eval" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> &#8211; value of all input values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">([f1, f2, ...], [c1, c2, ...])
+f_i: i&#8217;th function output,
+c_i: i&#8217;th constraint output.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveBase.less_then">
+<code class="descname">less_then</code><span class="sig-paren">(</span><em>foutputs1</em>, <em>foutputs2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveBase.less_then" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>foutputs1</strong> &#8211; one output of all objectvie functions</li>
+<li><strong>foutputs2</strong> &#8211; another output of all objectvie functions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return True, if foutputs &#8216;less then&#8217; foutputs2; otherwise False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveBase.equals">
+<code class="descname">equals</code><span class="sig-paren">(</span><em>foutputs1</em>, <em>foutputs2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveBase.equals" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>foutputs1</strong> &#8211; one output of all objectvie functions</li>
+<li><strong>foutputs2</strong> &#8211; another output of all objectvie functions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return True, if foutputs &#8216;qeuals to&#8217; foutputs2; otherwise False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveBase.energy">
+<code class="descname">energy</code><span class="sig-paren">(</span><em>foutput</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveBase.energy" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>foutput</strong> &#8211; one output of all objectvie functions</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return float:</th><td class="field-body">energy value of foutput</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.optimization.objective.ParameterVectorObjective">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.optimization.objective.</code><code class="descname">ParameterVectorObjective</code><span class="sig-paren">(</span><em>param_specs</em>, <em>param_dict</em>, <em>objective_functions</em>, <em>constraint_functions</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ParameterVectorObjective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ta.optimization.objective.ObjectiveBase" title="ctxalgolib.ta.optimization.objective.ObjectiveBase"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.optimization.objective.ObjectiveBase</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ParameterVectorObjective.eval">
+<code class="descname">eval</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ParameterVectorObjective.eval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ta.optimization.objective.ParameterVectorObjective.check_objective_functions">
+<em class="property">static </em><code class="descname">check_objective_functions</code><span class="sig-paren">(</span><em>objective_functions</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ParameterVectorObjective.check_objective_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ta.optimization.objective.ParameterVectorObjective.check_constraint_functions">
+<em class="property">static </em><code class="descname">check_constraint_functions</code><span class="sig-paren">(</span><em>constraint_functions</em>, <em>param_specs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ParameterVectorObjective.check_constraint_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ParameterVectorObjective.energy">
+<code class="descname">energy</code><span class="sig-paren">(</span><em>foutput</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ParameterVectorObjective.energy" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>foutput</strong> &#8211; one output of all objectvie functions</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return float:</th><td class="field-body">energy value of foutput</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ParameterVectorObjective.equals">
+<code class="descname">equals</code><span class="sig-paren">(</span><em>foutputs1</em>, <em>foutputs2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ParameterVectorObjective.equals" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>foutputs1</strong> &#8211; one output of all objectvie functions</li>
+<li><strong>foutputs2</strong> &#8211; another output of all objectvie functions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return True, if foutputs &#8216;qeuals to&#8217; foutputs2; otherwise False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.ParameterVectorObjective.less_then">
+<code class="descname">less_then</code><span class="sig-paren">(</span><em>foutputs1</em>, <em>foutputs2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ParameterVectorObjective.less_then" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>foutputs1</strong> &#8211; one output of all objectvie functions</li>
+<li><strong>foutputs2</strong> &#8211; another output of all objectvie functions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return True, if foutputs &#8216;less then&#8217; foutputs2; otherwise False.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.optimization.objective.SimpleObjective">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.optimization.objective.</code><code class="descname">SimpleObjective</code><span class="sig-paren">(</span><em>cons_switch</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.SimpleObjective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ta.optimization.objective.ObjectiveBase" title="ctxalgolib.ta.optimization.objective.ObjectiveBase"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.optimization.objective.ObjectiveBase</span></code></a></p>
+<p>Define a simple objective function for unit test purpose. The input parameters include: 2 real number within [-1,1]
+and one discrete number in {1,2,3}.</p>
+<blockquote>
+<div>f(x) = x1^2 + x2^2 + x3
+c1(x) = x1 + 0.5
+c2(x) = x2 + 0.5</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.SimpleObjective.eval">
+<code class="descname">eval</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.SimpleObjective.eval" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.SimpleObjective.energy">
+<code class="descname">energy</code><span class="sig-paren">(</span><em>foutput</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.SimpleObjective.energy" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>foutput</strong> &#8211; one output of all objectvie functions</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return float:</th><td class="field-body">energy value of foutput</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.SimpleObjective.equals">
+<code class="descname">equals</code><span class="sig-paren">(</span><em>foutputs1</em>, <em>foutputs2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.SimpleObjective.equals" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>foutputs1</strong> &#8211; one output of all objectvie functions</li>
+<li><strong>foutputs2</strong> &#8211; another output of all objectvie functions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return True, if foutputs &#8216;qeuals to&#8217; foutputs2; otherwise False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.optimization.objective.SimpleObjective.less_then">
+<code class="descname">less_then</code><span class="sig-paren">(</span><em>foutputs1</em>, <em>foutputs2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.SimpleObjective.less_then" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>foutputs1</strong> &#8211; one output of all objectvie functions</li>
+<li><strong>foutputs2</strong> &#8211; another output of all objectvie functions</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return True, if foutputs &#8216;less then&#8217; foutputs2; otherwise False.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveFunctionParameters">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.optimization.objective.</code><code class="descname">ObjectiveFunctionParameters</code><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveFunctionParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveFunctionParameters.names">
+<code class="descname">names</code><em class="property"> = ['initial_capital', 'end_capital', 'sortino_ratio', 'information_ratio', 'best_month_return_percent', 'worst_month_return_percent', 'profitable_month_percent', 'total_winning', 'total_loss', 'max_drawdown', 'return_percent', 'winning_transaction_count', 'lost_transaction_count', 'average_net_profit_by_transaction', 'average_winning_by_transaction', 'average_loss_by_transaction', 'max_transaction_winning', 'max_transaction_loss', 'ratio_of_max_transactional_winning_to_total_winning', 'ratio_of_max_transactional_loss_to_total_loss', 'commission', 'zero_return_transaction_count', 'monthly_return', 'effective_return_rate', 'annual_effective_return_percent', 'max_margin', 'stop_loss_hit_transaction_count', 'active_close_transaction_count', 'target_1_hit_transaction_count', 'target_2_hit_transaction_count', 'target_3_hit_transaction_count', 'net_profit', 'cagr_percent', 'max_drawdown_percent', 'transaction_count', 'winning_ratio_by_transaction', 'ratio_of_average_winning_to_average_loss_by_transaction', 'sharpe_ratio']</em><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveFunctionParameters.names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ta.optimization.objective.ObjectiveFunctionParameters.common_objectives">
+<code class="descname">common_objectives</code><em class="property"> = ['-net_profit', 'sharpe_ratio']</em><a class="headerlink" href="#ctxalgolib.ta.optimization.objective.ObjectiveFunctionParameters.common_objectives" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="optimization_utils.html" class="btn btn-neutral float-right" title="optimization_utils" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="optimization" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

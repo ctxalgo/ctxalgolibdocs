@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ohlc_merger &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="ohlc" href="index.html"/>
+        <link rel="next" title="ohlc_reader_writer" href="ohlc_reader_writer.html"/>
+        <link rel="prev" title="ohlc_logger" href="ohlc_logger.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_ohlc.html">abstract_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exright.html">exright</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_generator.html">ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_logger.html">ohlc_logger</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ohlc_merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer.html">ohlc_reader_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_utils.html">ohlc_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="periodicity.html">periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_days.html">trading_days</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ohlc</a> &raquo;</li>
+      
+    <li>ohlc_merger</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/ohlc/ohlc_merger.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ohlc.ohlc_merger">
+<span id="ohlc-merger"></span><h1>ohlc_merger<a class="headerlink" href="#module-ctxalgolib.ohlc.ohlc_merger" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_merger.</code><code class="descname">OhlcMerger</code><span class="sig-paren">(</span><em>market_periods=None</em>, <em>offset=None</em>, <em>market_periods_provider=None</em>, <em>instrument_prefix=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize current by setting the market open time and market close time.
+Market open and close time affects OHLC merging for daily data.
+Parameters:
+:param market_periods: [(time, time)], a list of time periods defining the open periods (in one day)</p>
+<blockquote>
+<div>for the market. Each element of the array defines a period. The first element is the open time,
+the second element is the close time.
+The open time of the first period and the close time of the last period defines
+the market open and close time for a day.
+market close time can be smaller than market open time, this means that the market opens
+at the previous date. For example, for 黄金期货, market open time = time(21, 0, 0) and
+market close time = time(15, 0, 0). This means for that future, a day&#8217;s trading starts at
+date1 21:00, and ends at date1+1 15:00. This affects the calculation of daily bars.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>offset</strong> &#8211; timedelta, the offset to left shift the bars. For example, if offset = timedelta(minutes=1), and
+under Periodicity.FIVE_MINUTE, the bars should end at 9:34, 9:39 instead of 9:35, 9:40. This means
+that the first bar may contain less data.</li>
+<li><strong>market_periods_provider</strong> &#8211; This parameter can be a function pointer which has the same signature as
+FutureTradingUtils.market_periods. When given, OhlcMerger will call this function pointer to get the
+correct market periods for the future on different dates. I understand some internal data structures may
+need to be initialized when market periods is updated.</li>
+<li><strong>instrument_prefix</strong> &#8211; string, the prefix of instrument that need to update market periods.
+For futures, instrument prefix are &#8216;IF&#8217; from &#8216;IF1601&#8217;. For stocks, instrument prefixes are &#8216;sh&#8217; or &#8216;sz&#8217;.</li>
+<li><strong>trading_days</strong> &#8211; TradingDays, the trading days. If None, a default for Chinese trading days will be used.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.update_market_periods">
+<code class="descname">update_market_periods</code><span class="sig-paren">(</span><em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.update_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>update the self.market_periods with new market_periods
+:param day: date or string in format yyyy-mm-dd, the date on which the trading day should start.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_ohlc">
+<code class="descname">merge_ohlc</code><span class="sig-paren">(</span><em>ohlc</em>, <em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge ohlc into the specified periodicity.
+:param ohlc: OHLC, time series data.
+:param periodicity: Periodicity. This is the target time granularity for the merged time series.</p>
+<blockquote>
+<div>Assuming that the granularity of the given time series is smaller than the given periodicity.</div></blockquote>
+<p>:return OHLC, the merged ohlc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_ohlc_arbitrary">
+<code class="descname">merge_ohlc_arbitrary</code><span class="sig-paren">(</span><em>ohlc</em>, <em>bar_size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_ohlc_arbitrary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge ohlc into a new bar size. For example, if the given ohlc object is for 1 minute data, and bar_size is 45,
+then the merged resulting ohlc should have bar size of 45 minutes.
+No need to check valid ending points.
+:param ohlc: OHLC, ohlc object as source data.
+:param bar_size: int, the number of bars from source ohlc to merge into a single bar in the resulting OHLC.
+:return OHLC, the merged ohlc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge">
+<code class="descname">merge</code><span class="sig-paren">(</span><em>ohlc</em>, <em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge ohlc into the specified periodicity.
+:param ohlc: OHLC, time series data.
+:param periodicity:
+:return: Periodicity. This is the target time granularity for the merged time series.</p>
+<blockquote>
+<div>Assuming that the granularity of the given time series is smaller than the given periodicity.</div></blockquote>
+<p>:return OHLC, the merged ohlc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.transform_date">
+<code class="descname">transform_date</code><span class="sig-paren">(</span><em>dates</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.transform_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform dates from old market periods to the new market periods (for dates)
+Parameters:</p>
+<blockquote>
+<div>dates, [datetime], time series data</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[datetime], the transformed time data</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.transform_date_back">
+<code class="descname">transform_date_back</code><span class="sig-paren">(</span><em>dates</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.transform_date_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>transform date back to old timestamp according to time_plus
+Parameters:</p>
+<blockquote>
+<div>dates, [datetime], time series data</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[datetime], the transformed data</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_interval_dates">
+<code class="descname">get_interval_dates</code><span class="sig-paren">(</span><em>min_time</em>, <em>max_time</em>, <em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_interval_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the interval dates which is used for merge data
+Parameters:</p>
+<blockquote>
+<div>min_time, datetime, the min time of date list
+max_time, datetime, the max time of date list
+periodicity, value from Periodicity class. This is the target time granularity for the merged time series.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[datetime], the interval date list which is used to split data</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>ohlc</em>, <em>new_dates</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the merge values
+:param ohlc: the ohlc need to merge
+:param new_dates: the new dates to split and merge data
+:return: OHLC, the merged ohlc</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_next_dates_index">
+<code class="descname">get_next_dates_index</code><span class="sig-paren">(</span><em>new_dates</em>, <em>time</em>, <em>old_index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_next_dates_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>to get the index of date that is before the time
+Parameter:</p>
+<blockquote>
+<div>new_dates: [datetime], the date list
+time: datetime, target time
+old_index: integer, the old time index</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>integer, the new time index</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_full_value">
+<code class="descname">get_full_value</code><span class="sig-paren">(</span><em>ohlc</em>, <em>new_dates</em>, <em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_full_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the merge values, all the merge values are full
+Parameters:</p>
+<blockquote>
+<div>dates, opens, highs, lows, closes, volumes, amounts, [float], the data to merge
+new_dates, the new dates to split and merge data
+periodicity, value from Periodicity class.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><p class="first">(new_dates, new_open, new_high, new_low, new_close, new_volumes, left_bar) A tuple with the new time series.
+new_dates: [datetime] new timestamps.
+new_open, high, low, close, volume: new open, high, low, close and volume values.
+left_bar: int, 0-based bar number (inclusive) indicating the left-over bars. Those left-over bars are</p>
+<blockquote class="last">
+<div>the ones which does not fill the full target periodicity.</div></blockquote>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ohlc</strong> &#8211; the ohlc need to merge</li>
+<li><strong>periodicity</strong> &#8211; value from Periodicity class.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the merged ohlc and left_bar: int, 0-based bar number (inclusive) indicating the left-over bars.
+Those left-over bars are the ones which does not fill the full target periodicity.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_full_bars">
+<code class="descname">merge_full_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>target_periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_full_bars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merger given ohlc data into the target periodicity. Only return fully developed bars.
+For example, if the source ohlc is in one minute frame and the target periodicity is in five minute frame,
+and the last three one minute bars are left, then these three one minute bars will not be merged into
+a half five minute bar.
+Parameters:</p>
+<blockquote>
+<div>ohlc, OHLC, the ohlc data
+target_periodicity: value from Periodicity class. This is the target time granularity for
+the merged time series. Assuming that the granularity of the given time series is
+smaller than the given periodicity.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><p class="first">(ohlc, left_bar) A tuple with the new time series.
+ohlc: OHLC, the merged ohlc.
+left_bar: int, 0-based bar number (inclusive) indicating the left-over bars. Those left-over bars are</p>
+<blockquote class="last">
+<div>the ones which does not fill the full target periodicity.</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_full_bars_ohlc">
+<code class="descname">merge_full_bars_ohlc</code><span class="sig-paren">(</span><em>ohlc</em>, <em>target_periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.merge_full_bars_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merger given ohlc data into the target periodicity. Only return fully developed bars.
+For example, if the source ohlc is in one minute frame and the target periodicity is in five minute frame,
+and the last three one minute bars are left, then these three one minute bars will not be merged into
+a half five minute bar.
+Parameters:</p>
+<blockquote>
+<div>ohlc: OHLC, the ohlc data.
+target_periodicity: value from Periodicity class. This is the target time granularity for
+the merged time series. Assuming that the granularity of the given time series is
+smaller than the given periodicity.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd><p class="first">(new ohlc, left_bar) A tuple with the new time series.
+ohlc: OHLC, time series.
+left_bar: int, 0-based bar number (inclusive) indicating the left-over bars. Those left-over bars are</p>
+<blockquote class="last">
+<div>the ones which does not fill the full target periodicity.</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_end_timestamp">
+<code class="descname">get_end_timestamp</code><span class="sig-paren">(</span><em>current_time</em>, <em>periodicity</em>, <em>time_transformation=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ending timestamp of current_time in certain periodicity.
+For example, if current time is 2014-11-12 15:38 and periodicity is 5 minute, then the result
+is 2014-11-12 15:40 (because 15:40 is the next ending timestamp). Another example, for the same current time,
+if periodicity is weekly, then the result is 2014-11-14 15:00 (the closing time of the next Friday).
+Note: all calculation in done based on calendar dates (not trading dates).
+Parameters:</p>
+<blockquote>
+<div>current_time: datetime, the cursor timestamp.
+periodicity: Periodicity, the time frame in which the calculation is performed.
+time_transformation: bool, do time transformation of current time or not</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>datetime, the next end timestamp.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_modified_time">
+<code class="descname">get_modified_time</code><span class="sig-paren">(</span><em>end_timestamp</em>, <em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_modified_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>get modified time stamp for the case Periodicity is TWO_MINUTES or FOUR_MINUTES
+:return: datetime, new timestamp</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_end_timestamps">
+<code class="descname">get_end_timestamps</code><span class="sig-paren">(</span><em>current_time</em>, <em>periodicity</em>, <em>previous_values=10</em>, <em>next_values=10</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ending timestamps within a range.
+Parameters:</p>
+<blockquote>
+<div>current_time: datetime, the cursor timestamp.
+periodicity: Periodicity, the time frame in which the calculation is performed.
+previous_values: int, the number of end timestamps (before the end timestamps of current_time) to return.
+next_values: int, the number of end timestamps (after the end timestamps of current_time) to return.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[datetime], the required end timestamps. The length of the result array is
+previous_values + 1 + next_values.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_all_end_timestamps">
+<code class="descname">get_all_end_timestamps</code><span class="sig-paren">(</span><em>start_time</em>, <em>end_time</em>, <em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_all_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the end timestamps between start_time and end_time under the given periodicity.
+:param start_time: datetime, the start time (inclusive).
+:param end_time: datetime, the end time (inclusive).
+:param periodicity: Periodicity, the period.
+:return: [datetime], the end timestamps between start_time and end_time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_next_end_timestamps">
+<code class="descname">get_next_end_timestamps</code><span class="sig-paren">(</span><em>current_time</em>, <em>timedelta</em>, <em>start_time</em>, <em>end_time</em>, <em>period_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_next_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>get some next end timestamps of current_time
+:param current_time: datetime, current time
+:param timedelta: timedelta, the delta of the corresponding periodicity
+:param start_time: the start time
+:param end_time: the end time, the end_timestamps must in the range of [start_time, end_time]
+:param period_index: int, the index of current market period
+:return: [datetime], some end timestamps after current time</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_year_month">
+<code class="descname">get_year_month</code><span class="sig-paren">(</span><em>time</em>, <em>periodicity</em>, <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_year_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>get previous or next month
+Parameters:</p>
+<blockquote>
+<div>time: datetime, the current time, like this datetime(year, month, 1, 0, 0, 0)
+periodicity: Periodicity, time periodicity (values can be MONTHLY, YEARLY)
+kind: 0 for previous year/ month, 1 for next year/month</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_previous_time_calander">
+<code class="descname">get_previous_time_calander</code><span class="sig-paren">(</span><em>current_time</em>, <em>periodicity</em>, <em>timedelta</em>, <em>period_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_previous_time_calander" title="Permalink to this definition">¶</a></dt>
+<dd><p>get previous day (Monday to Friday (9:30,11:30] (13:00, 15:00]) according to calander
+Parameter:</p>
+<blockquote>
+<div>current_time, datetime, current time
+periodicity: Periodicity, time periodicity (values can be THREE_SECOND, ONE_MINUTE, FIVE_MINUTE,
+THIRTY_MINUTE, HOURLY, TWO_HOURLY, DAILY, WEEKLY)</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>datetime, the previous time we got</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_next_time_calander">
+<code class="descname">get_next_time_calander</code><span class="sig-paren">(</span><em>current_time</em>, <em>periodicity</em>, <em>timedelta</em>, <em>period_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_next_time_calander" title="Permalink to this definition">¶</a></dt>
+<dd><p>get next day (Monday to Friday (9:30,11:30] (13:00, 15:00]) according to calander
+Parameter:</p>
+<blockquote>
+<div>current_time, datetime, current time
+periodicity: Periodicity, time periodicity (values can be THREE_SECOND, ONE_MINUTE, FIVE_MINUTE,
+THIRTY_MINUTE, HOURLY, TWO_HOURLY, DAILY, WEEKLY)</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>datetime, the previous time we got</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_last_time_delta">
+<code class="descname">get_last_time_delta</code><span class="sig-paren">(</span><em>timedelta</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger.get_last_time_delta" title="Permalink to this definition">¶</a></dt>
+<dd><p>to get the time delta of the last time period for the case it is less than others
+:param timedelta: time delta value
+:return: timedelta, the time delta</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ohlc_reader_writer.html" class="btn btn-neutral float-right" title="ohlc_reader_writer" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ohlc_logger.html" class="btn btn-neutral" title="ohlc_logger" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

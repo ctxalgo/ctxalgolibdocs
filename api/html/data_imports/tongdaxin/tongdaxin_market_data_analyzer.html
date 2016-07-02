@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tongdaxin_market_data_analyzer &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="tongdaxin" href="index.html"/>
+        <link rel="next" title="capital_structure_importer" href="../capital_structure_importer.html"/>
+        <link rel="prev" title="tongdaxin_data_importer" href="tongdaxin_data_importer.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">data_imports</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../blog/index.html">blog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coretx_data_import/index.html">coretx_data_import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../major_money/index.html">major_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/index.html">news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_imports/index.html">ohlc_imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otc/index.html">otc</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">tongdaxin</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tongdaxin_data_importer.html">tongdaxin_data_importer</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tongdaxin_market_data_analyzer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../capital_structure_importer.html">capital_structure_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_allocation_importer.html">company_allocation_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_capital_structures_importer.html">company_capital_structures_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_exrights_importer.html">company_exrights_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_financials_importer.html">company_financials_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_performance_importer.html">company_performance_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_report_dates_importer.html">company_report_dates_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_importer.html">data_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../east_money_plate_importer.html">east_money_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fund_holders_collector.html">fund_holders_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamental_expressions_calculator.html">fundamental_expressions_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hexun_plate_importer.html">hexun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hs300_stock_weights_retriever.html">hs300_stock_weights_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../if_trading_1s_importer.html">if_trading_1s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_composite_stocks_and_weights_collector.html">index_composite_stocks_and_weights_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../large_stock_price_finder.html">large_stock_price_finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../new_stock_collector.html">new_stock_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plate_importer.html">plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rar_folder_importer.html">rar_folder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rumian_blog_extracter.html">rumian_blog_extracter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../share_holder_importer.html">share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sina_plate_importer.html">sina_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sohu_plate_importer.html">sohu_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state_company_collector.html">state_company_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_info_collector.html">stock_info_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_name_retriever.html">stock_name_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_plate_importer.html">stock_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_conditioned_triggers.html">stock_pool_conditioned_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_return_calculator.html">stock_pool_return_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_trigger_calculator.html">stock_pool_trigger_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_share_holder_importer.html">stock_share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_trading_1d_importer.html">stock_trading_1d_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_trading_3s_importer.html">stock_trading_3s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sub_new_stock_open_board_calculator.html">sub_new_stock_open_board_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targeted_stock_expansion_collector.html">targeted_stock_expansion_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tianya_collector.html">tianya_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tonghuashun_plate_importer.html">tonghuashun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yahoo_data_importer.html">yahoo_data_importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">data_imports</a> &raquo;</li>
+      
+          <li><a href="index.html">tongdaxin</a> &raquo;</li>
+      
+    <li>tongdaxin_market_data_analyzer</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/data_imports/tongdaxin/tongdaxin_market_data_analyzer.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tongdaxin-market-data-analyzer">
+<h1>tongdaxin_market_data_analyzer<a class="headerlink" href="#tongdaxin-market-data-analyzer" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer"></span><dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationData">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">OperationData</code><span class="sig-paren">(</span><em>updated_date</em>, <em>category</em>, <em>name</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Initialize current.
+:param updated_date: date, the updated date.
+:param category: string, such as 行业构成，地区构成，产品构成。
+:param name: string, the name of an operation
+:param data: dict{string:float}, the data.</p>
+<blockquote>
+<div>It has the following keys: earning, profit, gross_profit_rate, percent.</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">OperationAnalyzer</code><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Parse information from TongDaXin F10 经营分析.</p>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer.get_data_dict">
+<code class="descname">get_data_dict</code><span class="sig-paren">(</span><em>earning</em>, <em>profit</em>, <em>gross_profit_rate</em>, <em>percent</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer.get_data_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a dictionary which has the following keys: earning, profit, gross_profit_rate, percent.
+:param earning: string, the value of earning
+:param profit: string, the value of profit
+:param gross_profit_rate: string, the value of gross_profit_rate
+:param percent: string, the value of percent
+:return: dict{string:float}, the data.</p>
+<blockquote>
+<div>It has the following keys: earning, profit, gross_profit_rate, percent.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse content, and return the parsed data.
+:param content: string, data content from TongDaXin F10 经营分析.
+:return: [OperationData]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer.import_data">
+<code class="descname">import_data</code><span class="sig-paren">(</span><em>stock_id</em>, <em>datas</em>, <em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.OperationAnalyzer.import_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>import the parsed datas into database
+:param stock_id: string, the id of the stock that need to insert
+:param datas: [OperationData]
+:param connection: the connection of database
+:param update_type: int, mean the way of import data into database</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.MainShareHolderHoldingRecord">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">MainShareHolderHoldingRecord</code><span class="sig-paren">(</span><em>updated_date</em>, <em>kind</em>, <em>shares</em>, <em>percent</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.MainShareHolderHoldingRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>机构持股汇总</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updated_date</strong> &#8211; date 日期</li>
+<li><strong>kind</strong> &#8211; string, 股东性质</li>
+<li><strong>shares</strong> &#8211; float, 持股数</li>
+<li><strong>percent</strong> &#8211; float, 占流通比</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.AverageHoldingRecord">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">AverageHoldingRecord</code><span class="sig-paren">(</span><em>updated_date</em>, <em>share_holders</em>, <em>average_shares</em>, <em>change</em>, <em>concentration</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.AverageHoldingRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>股东户数</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updated_date</strong> &#8211; date, 截止日期</li>
+<li><strong>share_holders</strong> &#8211; float, 股东户数</li>
+<li><strong>average_shares</strong> &#8211; float, 户均持股</li>
+<li><strong>change</strong> &#8211; string, 较上期变化</li>
+<li><strong>concentration</strong> &#8211; string, 筹码集中度</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderRecord">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">InstitutionHolderRecord</code><span class="sig-paren">(</span><em>updated_date</em>, <em>name</em>, <em>shares</em>, <em>percent</em>, <em>kind</em>, <em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>机构持股明细</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updated_date</strong> &#8211; date, 日期.</li>
+<li><strong>name</strong> &#8211; string, 机构名称.</li>
+<li><strong>shares</strong> &#8211; float, 持股数（万股）</li>
+<li><strong>percent</strong> &#8211; float, 流通占比.</li>
+<li><strong>kind</strong> &#8211; string, 股东性质</li>
+<li><strong>delta</strong> &#8211; string, 增减情况(万股).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.LongHuBangRecord">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">LongHuBangRecord</code><span class="sig-paren">(</span><em>updated_date</em>, <em>reason</em>, <em>name</em>, <em>buy_amount</em>, <em>sell_amount</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.LongHuBangRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>龙虎榜数据项</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updated_date</strong> &#8211; date, 数据日期.</li>
+<li><strong>reason</strong> &#8211; string, 上榜原因，日跌幅偏离值达到7%，连续三个交易日内，涨幅偏离值累计达到20%等.</li>
+<li><strong>name</strong> &#8211; string, 营业部名称.</li>
+<li><strong>buy_amount</strong> &#8211; float, 买入金额.</li>
+<li><strong>sell_amount</strong> &#8211; float, 卖出金额.</li>
+<li><strong>direction</strong> &#8211; string, can be &#8220;buy&#8221; or &#8220;sell”.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">InstitutionHolderAnalyzer</code><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="docutils">
+<dt>收集F10中的主力追踪，收集的信息包括:</dt>
+<dd><ul class="first last simple">
+<li>机构持股汇总</li>
+<li>股东户数</li>
+<li>机构持股明细</li>
+<li>异动上榜</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content</strong> &#8211; string, the returned data.</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>return: ([MainShareHolderHoldingRecord], [AverageHoldingRecord], [InstitutionHolderRecord], [LongHuBangRecord])</dt>
+<dd>第一个元素为机构持股汇总的所有记录。
+第二个元素为股东户数的所有记录。
+第三个元素为机构持股明细的所有记录。
+第四个元素为异动上榜的所有记录。</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_main_share_holder_holding_record">
+<code class="descname">parse_main_share_holder_holding_record</code><span class="sig-paren">(</span><em>record_values</em>, <em>updated_dates</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_main_share_holder_holding_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse main share holder holding record from record values
+:param record_values: [string], a list of data record
+:param updated_dates: [date], a list of updated date
+:return: [InstitutionHolderSummary]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_average_holding_record">
+<code class="descname">parse_average_holding_record</code><span class="sig-paren">(</span><em>record_values</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_average_holding_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse average holding record from record values
+:param record_values: [string], a list of data record
+:return: ShareHolderNumber</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_institution_holder_Record">
+<code class="descname">parse_institution_holder_Record</code><span class="sig-paren">(</span><em>record_values</em>, <em>updated_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_institution_holder_Record" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse institution holder record from record values
+:param record_values: [string], a list of data record
+:param updated_date: date, the announced date
+:return InstitutionHolderRecord</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_long_hu_bang_record">
+<code class="descname">parse_long_hu_bang_record</code><span class="sig-paren">(</span><em>record_values</em>, <em>updated_date</em>, <em>reason</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.parse_long_hu_bang_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse long hu bang record from records
+:param: record_values, [string], the record values
+:param: date, the updated date
+:param: reason, string, the reason of long hu bang
+:param: direction,, string, &#8216;buy&#8217; or &#8216;sell&#8217;
+:return: LongHuBangRecord</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.import_data">
+<code class="descname">import_data</code><span class="sig-paren">(</span><em>stock_id</em>, <em>datas</em>, <em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.InstitutionHolderAnalyzer.import_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>import the parsed datas into database
+:param stock_id: string, the id of the stock that need to insert
+:param datas: ([MainShareHolderHoldingRecord], [ShareHolderRecord], [ShareHolderRecord], [AverageHoldingRecord])
+:param connection: the connection of database
+:param update_type: int, mean the way of import data into database</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderRecord">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">ShareHolderRecord</code><span class="sig-paren">(</span><em>name</em>, <em>shares</em>, <em>percent</em>, <em>delta</em>, <em>kind</em>, <em>share_kind</em>, <em>updated_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>十大股东和流通股东的数据.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> &#8211; string, 股东名称.</li>
+<li><strong>shares</strong> &#8211; float, 持股数.</li>
+<li><strong>percent</strong> &#8211; float, 占总股本百分数.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body"><p class="first">delta: string, 增减情况.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body"><p class="first">kind: 股本性质.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body"><p class="first">share_kind: 流通股性质</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body"><p class="first last">updated_date: date, the updated date.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">ShareHolderDataAnalyzer</code><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="docutils">
+<dt>收集F10信息中的股东研究，收集的信息包括：</dt>
+<dd><ul class="first last simple">
+<li>十大流通股东</li>
+<li>十大股东</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.parse" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content</strong> &#8211; string, the returned data.</td>
+</tr>
+</tbody>
+</table>
+<p>return: ([ShareHolderRecord], [ShareHolderRecord]), 十大流通股东, 十大股东</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.parse_share_holder_record">
+<code class="descname">parse_share_holder_record</code><span class="sig-paren">(</span><em>record_values</em>, <em>updated_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.parse_share_holder_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse share hoder from record value (十大流通股东)
+:param: [string], a list of data record
+:return ShareHolderRecord</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.parse_share_holder_record2">
+<code class="descname">parse_share_holder_record2</code><span class="sig-paren">(</span><em>record_values</em>, <em>updated_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.parse_share_holder_record2" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse share hoder from record value （十大股东）
+:param: [string], a list of data record
+:param: updated_date, date, the announced date
+:return ShareHolderRecord</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.import_data">
+<code class="descname">import_data</code><span class="sig-paren">(</span><em>stock_id</em>, <em>datas</em>, <em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.ShareHolderDataAnalyzer.import_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>import the parsed datas into database
+:param stock_id: string, the id of the stock that need to insert
+:param datas: ([ShareHolderRecord], [ShareHolderRecord]), 十大流通股东, 十大股东
+:param connection: the connection of database
+:param update_type: int, mean the way of import data into database</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnouncement">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">CompanyAnnouncement</code><span class="sig-paren">(</span><em>updated_date</em>, <em>stock_id</em>, <em>title</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnouncement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>公司公告</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updated_date</strong> &#8211; date, 公告日期</li>
+<li><strong>stock_id</strong> &#8211; string, 股票代号, with sh and sz prefix</li>
+<li><strong>title</strong> &#8211; string, 公告题目</li>
+<li><strong>content</strong> &#8211; string, 公告内容</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnounceAnalyzer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">CompanyAnnounceAnalyzer</code><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnounceAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>收集公司公告</p>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnounceAnalyzer.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnounceAnalyzer.parse" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content</strong> &#8211; string, returned data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[CompanyAnnouncement], 公司公告的所有记录</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnounceAnalyzer.import_data">
+<code class="descname">import_data</code><span class="sig-paren">(</span><em>stock_id</em>, <em>datas</em>, <em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyAnnounceAnalyzer.import_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>import the parsed datas into database
+:param stock_id: string, the id of the stock that need to insert
+:param datas: [CompanyAnnouncement], 公司公告的所有记录
+:param connection: the connection of database
+:param update_type: int, mean the way of import data into database</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReport">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">RelatedReport</code><span class="sig-paren">(</span><em>updated_date</em>, <em>stock_id</em>, <em>title</em>, <em>institute</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>相关报道</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updated_date</strong> &#8211; date, 报道日期</li>
+<li><strong>stock_id</strong> &#8211; string, 股票代号, with sh and sz prefix</li>
+<li><strong>title</strong> &#8211; string, 报道题目</li>
+<li><strong>institute</strong> &#8211; string, 报道机构</li>
+<li><strong>content</strong> &#8211; string, 报道内容</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReportAnalyzer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">RelatedReportAnalyzer</code><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReportAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>收集相关报道</p>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReportAnalyzer.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReportAnalyzer.parse" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content</strong> &#8211; string, returned data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[RelatedReport], 相关报道的所有记录</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReportAnalyzer.import_data">
+<code class="descname">import_data</code><span class="sig-paren">(</span><em>stock_id</em>, <em>datas</em>, <em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.RelatedReportAnalyzer.import_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>import the parsed datas into database
+:param stock_id: string, the id of the stock that need to insert
+:param datas: [RelatedReport], 相关报道的所有记录
+:param connection: the connection of database
+:param update_type: int, mean the way of import data into database</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitPrediction">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">CompanyProfitPrediction</code><span class="sig-paren">(</span><em>updated_date</em>, <em>stock_id</em>, <em>predict_date</em>, <em>institute</em>, <em>profit</em>, <em>per_profit</em>, <em>rate</em>, <em>income</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitPrediction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>updated_date</strong> &#8211; date, 发生日期</li>
+<li><strong>stock_id</strong> &#8211; string, 股票代号, with sh and sz prefix.</li>
+<li><strong>predict_date</strong> &#8211; date, 预测年度</li>
+<li><strong>institute</strong> &#8211; string, 评级机构</li>
+<li><strong>profit</strong> &#8211; float, 净利润（亿元）</li>
+<li><strong>per_profit</strong> &#8211; float, 每股收益(元)</li>
+<li><strong>rate</strong> &#8211; float, 市盈率(倍)</li>
+<li><strong>income</strong> &#8211; float, 营业收入(亿元)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.</code><code class="descname">CompanyProfitAnalyzer</code><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer.parse" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>收集港澳特色中的以下数据：</dt>
+<dd>盈利预测</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[CompanyProfitPrediction]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer.parse_company_profit_record">
+<code class="descname">parse_company_profit_record</code><span class="sig-paren">(</span><em>record_values</em>, <em>stock_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer.parse_company_profit_record" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse company profit record from records
+:param record_values: [string], the record values
+:param stock_id: string, the id of stock
+:return: CompanyProfitPrediction</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer.import_data">
+<code class="descname">import_data</code><span class="sig-paren">(</span><em>stock_id</em>, <em>datas</em>, <em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.tongdaxin.tongdaxin_market_data_analyzer.CompanyProfitAnalyzer.import_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>import the parsed datas into database
+:param stock_id: string, the id of the stock that need to insert
+:param datas: [CompanyProfitPrediction]
+:param connection: the connection of database
+:param update_type: int, mean the way of import data into database</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../capital_structure_importer.html" class="btn btn-neutral float-right" title="capital_structure_importer" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tongdaxin_data_importer.html" class="btn btn-neutral" title="tongdaxin_data_importer" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

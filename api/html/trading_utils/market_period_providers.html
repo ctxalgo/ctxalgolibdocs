@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>market_period_providers &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="model_writer" href="model_writer.html"/>
+        <link rel="prev" title="instrument_utils" href="instrument_utils.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>market_period_providers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/market_period_providers.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.market_period_providers">
+<span id="market-period-providers"></span><h1>market_period_providers<a class="headerlink" href="#module-ctxalgolib.trading_utils.market_period_providers" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.market_period_providers.</code><code class="descname">AbstractMarketPeriodProvider</code><span class="sig-paren">(</span><em>trading_utils</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that generates market periods for a given time range for a given instrument.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.bar_slice_in_days">
+<code class="descname">bar_slice_in_days</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>instrument_id=None</em>, <em>start=-1</em>, <em>end=None</em>, <em>is_trading_day=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.bar_slice_in_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a slice object indexing into bars of the given ohlc. The slice object covers the bars
+that are within the trading days defined by start and end.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Note: a day/trading day is counted if there is a timestamp (either from ohlc or now) within that day</dt>
+<dd>is observed. For example, if now is Monday, and we are counting calendar days, Saturday and Sunday will
+not be counted, because there is no trading data timestamp within weekends.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>For example,</dt>
+<dd><dl class="first last docutils">
+<dt>bar_slice_in_days(ohlc): gives the bar range for trading days [-1:None], this is the last trading day</dt>
+<dd>from ohlc.</dd>
+<dt>bar_slice_in_days(ohlc, now): gives the bar range for trading days [-1:None], but makes use of</dt>
+<dd>the now parameter. now can be different from the last timestamp in ohlc.</dd>
+<dt>bar_slice_in_days(ohlc, start=-4, end=-2, is_trading_days=False): gives the bar range from calendar</dt>
+<dd>day [-4:-2].</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ohlc</strong> &#8211; AbstractOhlc, the ohlc object.</li>
+<li><strong>now</strong> &#8211; datetime, current time stamp. if None, defaults to the last timestamp inside ohlc.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id that ohlc belongs to. If None, use ohlc.id.</li>
+<li><strong>start</strong> &#8211; int, the calendar day or trading day start index. If None, defaults to end - 1.
+Must be negative int or None.</li>
+<li><strong>end</strong> &#8211; int, the calendar day or trading day end index.
+Must be negative int or None.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, bars in a day are organized by trading day borders,
+otherwise, by calendar day borders.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return slice, the Python slice object, which is used to index into ohlc to get the range of bars.</dt>
+<dd>If there is no bars found in the specified day ranges, return None.
+If the given ohlc only contains part of asked days, return the slice for that parts.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.trading_day_start_timestamps">
+<code class="descname">trading_day_start_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.trading_day_start_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive. An end timestamp after 17:00:00 will be</p>
+<blockquote>
+<div>considered to belong to the next trading day. This is a simplification for the
+Chinese stock and future market.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[datetime], the list trading day start timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.trading_day_end_timestamps">
+<code class="descname">trading_day_end_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.trading_day_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the end timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive. An end timestamp after 17:00:00 will be</p>
+<blockquote>
+<div>considered to belong to the next trading day. This is a simplification for the
+Chinese stock and future market.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[datetime], the list trading day end timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.trading_day_start_and_end_timestamps">
+<code class="descname">trading_day_start_and_end_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.trading_day_start_and_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive.
+:return: [(datetime, datetime)], the list trading day start and end timestamps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market periods for the given instrument on the given trading day.
+:param instrument_id: string, instrument id.
+:param trading_day: date, trading day.
+:return: [(start_time, end_time)], both start_time and end_time are of type date.</p>
+<blockquote>
+<div>The list of market periods.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.is_instrument_supported">
+<code class="descname">is_instrument_supported</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider.is_instrument_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given instrument supported in current market period provider?
+:param instrument_id: string, instrument id.
+:return: boolean, True if the instrument is supported.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.market_period_providers.</code><code class="descname">StockMarketPeriodProvider</code><span class="sig-paren">(</span><em>stock_trading_utils</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider" title="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.is_instrument_supported">
+<code class="descname">is_instrument_supported</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.is_instrument_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.bar_slice_in_days">
+<code class="descname">bar_slice_in_days</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>instrument_id=None</em>, <em>start=-1</em>, <em>end=None</em>, <em>is_trading_day=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.bar_slice_in_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a slice object indexing into bars of the given ohlc. The slice object covers the bars
+that are within the trading days defined by start and end.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Note: a day/trading day is counted if there is a timestamp (either from ohlc or now) within that day</dt>
+<dd>is observed. For example, if now is Monday, and we are counting calendar days, Saturday and Sunday will
+not be counted, because there is no trading data timestamp within weekends.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>For example,</dt>
+<dd><dl class="first last docutils">
+<dt>bar_slice_in_days(ohlc): gives the bar range for trading days [-1:None], this is the last trading day</dt>
+<dd>from ohlc.</dd>
+<dt>bar_slice_in_days(ohlc, now): gives the bar range for trading days [-1:None], but makes use of</dt>
+<dd>the now parameter. now can be different from the last timestamp in ohlc.</dd>
+<dt>bar_slice_in_days(ohlc, start=-4, end=-2, is_trading_days=False): gives the bar range from calendar</dt>
+<dd>day [-4:-2].</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ohlc</strong> &#8211; AbstractOhlc, the ohlc object.</li>
+<li><strong>now</strong> &#8211; datetime, current time stamp. if None, defaults to the last timestamp inside ohlc.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id that ohlc belongs to. If None, use ohlc.id.</li>
+<li><strong>start</strong> &#8211; int, the calendar day or trading day start index. If None, defaults to end - 1.
+Must be negative int or None.</li>
+<li><strong>end</strong> &#8211; int, the calendar day or trading day end index.
+Must be negative int or None.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, bars in a day are organized by trading day borders,
+otherwise, by calendar day borders.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return slice, the Python slice object, which is used to index into ohlc to get the range of bars.</dt>
+<dd>If there is no bars found in the specified day ranges, return None.
+If the given ohlc only contains part of asked days, return the slice for that parts.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.trading_day_end_timestamps">
+<code class="descname">trading_day_end_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.trading_day_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the end timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive. An end timestamp after 17:00:00 will be</p>
+<blockquote>
+<div>considered to belong to the next trading day. This is a simplification for the
+Chinese stock and future market.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[datetime], the list trading day end timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.trading_day_start_and_end_timestamps">
+<code class="descname">trading_day_start_and_end_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.trading_day_start_and_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive.
+:return: [(datetime, datetime)], the list trading day start and end timestamps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.trading_day_start_timestamps">
+<code class="descname">trading_day_start_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.StockMarketPeriodProvider.trading_day_start_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive. An end timestamp after 17:00:00 will be</p>
+<blockquote>
+<div>considered to belong to the next trading day. This is a simplification for the
+Chinese stock and future market.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[datetime], the list trading day start timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.market_period_providers.</code><code class="descname">FutureMarketPeriodProvider</code><span class="sig-paren">(</span><em>future_trading_utils</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider" title="ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.market_period_providers.AbstractMarketPeriodProvider</span></code></a></p>
+<p>Initialize current.
+:param future_trading_utils: FutureTradingUtils. Used for calculating market periods.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.market_periods">
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.market_periods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.is_instrument_supported">
+<code class="descname">is_instrument_supported</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.is_instrument_supported" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.bar_slice_in_days">
+<code class="descname">bar_slice_in_days</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>instrument_id=None</em>, <em>start=-1</em>, <em>end=None</em>, <em>is_trading_day=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.bar_slice_in_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a slice object indexing into bars of the given ohlc. The slice object covers the bars
+that are within the trading days defined by start and end.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Note: a day/trading day is counted if there is a timestamp (either from ohlc or now) within that day</dt>
+<dd>is observed. For example, if now is Monday, and we are counting calendar days, Saturday and Sunday will
+not be counted, because there is no trading data timestamp within weekends.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>For example,</dt>
+<dd><dl class="first last docutils">
+<dt>bar_slice_in_days(ohlc): gives the bar range for trading days [-1:None], this is the last trading day</dt>
+<dd>from ohlc.</dd>
+<dt>bar_slice_in_days(ohlc, now): gives the bar range for trading days [-1:None], but makes use of</dt>
+<dd>the now parameter. now can be different from the last timestamp in ohlc.</dd>
+<dt>bar_slice_in_days(ohlc, start=-4, end=-2, is_trading_days=False): gives the bar range from calendar</dt>
+<dd>day [-4:-2].</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ohlc</strong> &#8211; AbstractOhlc, the ohlc object.</li>
+<li><strong>now</strong> &#8211; datetime, current time stamp. if None, defaults to the last timestamp inside ohlc.</li>
+<li><strong>instrument_id</strong> &#8211; string, the instrument id that ohlc belongs to. If None, use ohlc.id.</li>
+<li><strong>start</strong> &#8211; int, the calendar day or trading day start index. If None, defaults to end - 1.
+Must be negative int or None.</li>
+<li><strong>end</strong> &#8211; int, the calendar day or trading day end index.
+Must be negative int or None.</li>
+<li><strong>is_trading_day</strong> &#8211; boolean, if True, bars in a day are organized by trading day borders,
+otherwise, by calendar day borders.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>:return slice, the Python slice object, which is used to index into ohlc to get the range of bars.</dt>
+<dd>If there is no bars found in the specified day ranges, return None.
+If the given ohlc only contains part of asked days, return the slice for that parts.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.trading_day_end_timestamps">
+<code class="descname">trading_day_end_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.trading_day_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the end timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive. An end timestamp after 17:00:00 will be</p>
+<blockquote>
+<div>considered to belong to the next trading day. This is a simplification for the
+Chinese stock and future market.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[datetime], the list trading day end timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.trading_day_start_and_end_timestamps">
+<code class="descname">trading_day_start_and_end_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.trading_day_start_and_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start and end timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive.
+:return: [(datetime, datetime)], the list trading day start and end timestamps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.trading_day_start_timestamps">
+<code class="descname">trading_day_start_timestamps</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_ts</em>, <em>end_ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.FutureMarketPeriodProvider.trading_day_start_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the start timestamps of every trading day between start_ts and end_ts ends.
+:param instrument_id: string, instrument id.
+:param start_ts: datetime, start timestamp, inclusive.
+:param end_ts: datetime, end timestamp, inclusive. An end timestamp after 17:00:00 will be</p>
+<blockquote>
+<div>considered to belong to the next trading day. This is a simplification for the
+Chinese stock and future market.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[datetime], the list trading day start timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.market_period_providers.MarketPeriodProviderFactory">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.market_period_providers.</code><code class="descname">MarketPeriodProviderFactory</code><span class="sig-paren">(</span><em>stock_trading_utils=None</em>, <em>future_trading_utils=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.MarketPeriodProviderFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Factory that returns a market period provider for a given instrument.</p>
+<p>Initialize current.
+:param stock_trading_utils: StockTradingUtils. If None, a default one will be used.
+:param future_trading_utils: FutureTradingUtils. If None, a default one will be used.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.market_period_providers.MarketPeriodProviderFactory.provider">
+<code class="descname">provider</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.market_period_providers.MarketPeriodProviderFactory.provider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market period provider for the given instrument.
+:param instrument_id: string, instrument id.
+:return: AbstractMarketPeriodProvider.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="model_writer.html" class="btn btn-neutral float-right" title="model_writer" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="instrument_utils.html" class="btn btn-neutral" title="instrument_utils" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

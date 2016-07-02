@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>periodicity &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="ohlc" href="index.html"/>
+        <link rel="next" title="time_transformer" href="time_transformer.html"/>
+        <link rel="prev" title="ohlc_utils" href="ohlc_utils.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_ohlc.html">abstract_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exright.html">exright</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_generator.html">ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_logger.html">ohlc_logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_merger.html">ohlc_merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer.html">ohlc_reader_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_utils.html">ohlc_utils</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_days.html">trading_days</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ohlc</a> &raquo;</li>
+      
+    <li>periodicity</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/ohlc/periodicity.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ohlc.periodicity">
+<span id="periodicity"></span><h1>periodicity<a class="headerlink" href="#module-ctxalgolib.ohlc.periodicity" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.periodicity.</code><code class="descname">Periodicity</code><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.is_valid">
+<em class="property">static </em><code class="descname">is_valid</code><span class="sig-paren">(</span><em>period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is period valid?
+:param period: Periodicity.
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.from_name">
+<em class="property">static </em><code class="descname">from_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.from_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity">
+<em class="property">static </em><code class="descname">get_periodicity</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity" title="Permalink to this definition">¶</a></dt>
+<dd><p>get periodicity from string name
+:param name, string, include 3s, 1m, 5m, 30m, 120m, 1d, 1w, 1month, 1year
+:return Periodicity, the converted periodicity</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.name">
+<em class="property">static </em><code class="descname">name</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name for the given periodicity.
+:param p: Periodicity, the periodicity value.
+:return string, name of that periodicity.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_name">
+<em class="property">static </em><code class="descname">get_periodicity_name</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name for the given periodicity.
+:param p: Periodicity, the periodicity value.
+:return string, name of that periodicity.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_printable_name">
+<em class="property">static </em><code class="descname">get_periodicity_printable_name</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_printable_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the printable name (used for dispaly) for the given periodicity.
+Parameter:</p>
+<blockquote>
+<div>p: Periodicity, the periodicity value.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>string, name of that periodicity.</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_from_timedelta">
+<em class="property">static </em><code class="descname">get_periodicity_from_timedelta</code><span class="sig-paren">(</span><em>time_delta</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_from_timedelta" title="Permalink to this definition">¶</a></dt>
+<dd><p>get periodicity according to time delta according
+:param: time_delta: timedelta
+Return:</p>
+<blockquote>
+<div>periodicity: including THREE_SECOND, ONE_MINUTE, FIVE_MINUTE, THIRTY_MINUTE, HOURLY, TWO_HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_unit_name">
+<em class="property">static </em><code class="descname">get_unit_name</code><span class="sig-paren">(</span><em>periodicity</em>, <em>language='en'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_unit_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_from_unit_name">
+<em class="property">static </em><code class="descname">get_periodicity_from_unit_name</code><span class="sig-paren">(</span><em>unit_name</em>, <em>language='en'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_periodicity_from_unit_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.is_approaching_bar_end">
+<em class="property">static </em><code class="descname">is_approaching_bar_end</code><span class="sig-paren">(</span><em>current_time</em>, <em>bar_end_time</em>, <em>periodicity</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.is_approaching_bar_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is current_time considered to be near bar_end_time
+:param current_time: datetime, the current time stamp.
+:param bar_end_time: datetime, the time when the current bar will end.
+:param periodicity: Periodicity, the periodicity.
+:param delta: timedelta, if not None, return True if current_time + delta &gt;= bar_end_time.
+:return: boolean, True if current_time is considered to be near bar_end_time.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_timedelta">
+<em class="property">static </em><code class="descname">get_timedelta</code><span class="sig-paren">(</span><em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_timedelta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.get_python_name">
+<em class="property">static </em><code class="descname">get_python_name</code><span class="sig-paren">(</span><em>period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.get_python_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get python name for a period.
+:param period: Periodicity.
+:return: string, the Python name, such as &#8216;Periodicity.FIVE_MINUTE&#8217;.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.all_periodicities">
+<em class="property">static </em><code class="descname">all_periodicities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.all_periodicities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of all periodicities.
+&#64;return: [int], list of all periodicities.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.all_periodicity_names">
+<em class="property">static </em><code class="descname">all_periodicity_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.all_periodicity_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of all periodicity names.
+&#64;return: [string], the list of all period names.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.DAILY">
+<code class="descname">DAILY</code><em class="property"> = 20</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.DAILY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.EIGHT_MINUTE">
+<code class="descname">EIGHT_MINUTE</code><em class="property"> = 13</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.EIGHT_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.FIFTEEN_MINUTE">
+<code class="descname">FIFTEEN_MINUTE</code><em class="property"> = 16</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.FIFTEEN_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.FIFTEEN_SECOND">
+<code class="descname">FIFTEEN_SECOND</code><em class="property"> = 4</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.FIFTEEN_SECOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.FIVE_MINUTE">
+<code class="descname">FIVE_MINUTE</code><em class="property"> = 10</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.FIVE_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.FIVE_SECOND">
+<code class="descname">FIVE_SECOND</code><em class="property"> = 2</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.FIVE_SECOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.FOUR_MINUTE">
+<code class="descname">FOUR_MINUTE</code><em class="property"> = 9</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.FOUR_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.HOURLY">
+<code class="descname">HOURLY</code><em class="property"> = 18</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.HOURLY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.MONTHLY">
+<code class="descname">MONTHLY</code><em class="property"> = 22</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.MONTHLY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.NINE_MINUTE">
+<code class="descname">NINE_MINUTE</code><em class="property"> = 14</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.NINE_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.ONE_MINUTE">
+<code class="descname">ONE_MINUTE</code><em class="property"> = 6</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.ONE_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.SEASONLY">
+<code class="descname">SEASONLY</code><em class="property"> = 23</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.SEASONLY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.SEVEN_MINUTE">
+<code class="descname">SEVEN_MINUTE</code><em class="property"> = 12</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.SEVEN_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.SIX_MINUTE">
+<code class="descname">SIX_MINUTE</code><em class="property"> = 11</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.SIX_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.TEN_MINUTE">
+<code class="descname">TEN_MINUTE</code><em class="property"> = 15</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.TEN_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.TEN_SECOND">
+<code class="descname">TEN_SECOND</code><em class="property"> = 3</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.TEN_SECOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.THIRTY_MINUTE">
+<code class="descname">THIRTY_MINUTE</code><em class="property"> = 17</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.THIRTY_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.THIRTY_SECOND">
+<code class="descname">THIRTY_SECOND</code><em class="property"> = 5</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.THIRTY_SECOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.THREE_MINUTE">
+<code class="descname">THREE_MINUTE</code><em class="property"> = 8</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.THREE_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.THREE_SECOND">
+<code class="descname">THREE_SECOND</code><em class="property"> = 1</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.THREE_SECOND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.TICK">
+<code class="descname">TICK</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.TICK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.TWO_HOURLY">
+<code class="descname">TWO_HOURLY</code><em class="property"> = 19</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.TWO_HOURLY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.TWO_MINUTE">
+<code class="descname">TWO_MINUTE</code><em class="property"> = 7</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.TWO_MINUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.WEEKLY">
+<code class="descname">WEEKLY</code><em class="property"> = 21</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.WEEKLY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.YEARLY">
+<code class="descname">YEARLY</code><em class="property"> = 24</em><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.YEARLY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.periodicity.Periodicity.greatest_common_divisor">
+<em class="property">static </em><code class="descname">greatest_common_divisor</code><span class="sig-paren">(</span><em>periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.periodicity.Periodicity.greatest_common_divisor" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>periods</strong> &#8211; [Periodicity], a list of periods, whose greatest common divisor is to be calculated.</td>
+</tr>
+</tbody>
+</table>
+<p>:return Periodicity, the smallest common divisor that can divide all periods.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="time_transformer.html" class="btn btn-neutral float-right" title="time_transformer" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ohlc_utils.html" class="btn btn-neutral" title="ohlc_utils" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

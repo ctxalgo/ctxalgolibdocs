@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>logger_handlers &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="loggers" href="index.html"/>
+        <link rel="next" title="machine_learning" href="../machine_learning/index.html"/>
+        <link rel="prev" title="log_loaders" href="log_loaders.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">loggers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="log_loaders.html">log_loaders</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">logger_handlers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">loggers</a> &raquo;</li>
+      
+    <li>logger_handlers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/loggers/logger_handlers.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.loggers.logger_handlers">
+<span id="logger-handlers"></span><h1>logger_handlers<a class="headerlink" href="#module-ctxalgolib.loggers.logger_handlers" title="Permalink to this headline">¶</a></h1>
+<p>Loggers defines here are accessible by the user.</p>
+<dl class="class">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">LoggerHandler</code><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.set_disabled_tags">
+<code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.disabled_tags with tags.
+:param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log message. Internal use only.
+:param message: string, the message to log.
+:param tag: string, optional tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.format_datetime">
+<code class="descname">format_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.format_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.dump_json">
+<code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.log_data">
+<code class="descname">log_data</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.log_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log data.
+:param ts: datetime, current timestamp.
+:param data: dict{string:object}, the data to log. Keys are data item names, values are data items.
+:param tag: string, option tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.log_heartbeat">
+<code class="descname">log_heartbeat</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.log_heartbeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log heartbeat of a strategy.
+:param ts: datetime, current timestamp.
+:param data: dict{string:object}, the data to log. Keys are data item names, values are data items.
+:param tag: string, option tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.log_records">
+<code class="descname">log_records</code><span class="sig-paren">(</span><em>records</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.log_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log records into current logger.
+:param records: iterator of LogRecord.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.log_exception">
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log exception.
+:param e: Exception, the exception object.
+:param tb: string, the traceback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flush current logger.
+Some loggers may cache messages and log them in batches. This flush method causes the logger to
+flush all cached messages into storage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispose current logger. For example, close opened file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.get_file_logger">
+<code class="descname">get_file_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.get_file_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the file logger.
+:return: LoggerHandler, if current is or contains a file logger, return it, otherwise return None.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">TextFileLoggerHandler</code><span class="sig-paren">(</span><em>path</em>, <em>cache_size=100</em>, <em>append=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="ctxalgolib.loggers.logger_handlers.LoggerHandler"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.logger_handlers.LoggerHandler</span></code></a></p>
+<p>Logger that outputs messages to a file.</p>
+<p>Initialize current file logger handler.
+:param path: string, the path to the log file.
+:param cache_size: int, the cache size indicating how many log messages to store in memory</p>
+<blockquote>
+<div>before writing them to file.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>append</strong> &#8211; boolean, if True, append to an existing log file (if any). If False, overwrite.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.safe_open_file">
+<code class="descname">safe_open_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.safe_open_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_heartbeat">
+<code class="descname">log_heartbeat</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_heartbeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.set_cache_size">
+<code class="descname">set_cache_size</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.set_cache_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.cache_size to size.
+:param size: int, size in number of log records.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_file_path">
+<code class="descname">log_file_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_file_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the path to the log file.
+:return: string, path to the log file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.get_file_logger">
+<code class="descname">get_file_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.get_file_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.dump_json">
+<code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.format_datetime">
+<code class="descname">format_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.format_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_data">
+<code class="descname">log_data</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log data.
+:param ts: datetime, current timestamp.
+:param data: dict{string:object}, the data to log. Keys are data item names, values are data items.
+:param tag: string, option tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_exception">
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log exception.
+:param e: Exception, the exception object.
+:param tb: string, the traceback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_records">
+<code class="descname">log_records</code><span class="sig-paren">(</span><em>records</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log records into current logger.
+:param records: iterator of LogRecord.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.set_disabled_tags">
+<code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.disabled_tags with tags.
+:param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">BinaryFileLoggerHandler</code><span class="sig-paren">(</span><em>path</em>, <em>cache_size=100</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="ctxalgolib.loggers.logger_handlers.LoggerHandler"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.logger_handlers.LoggerHandler</span></code></a></p>
+<p>Logger that outputs messages to a binary file. A binary file is consisted of
+a sequences of cPickle objects, and there is a spliter &#8216;_&#64;_&#8217; between two cPickle
+objects. One cPickle object is serialization of a list of log records.</p>
+<p>Initialize current file logger handler.
+:param path: string, the path to the log file.
+:param cache_size: int, the cache size indicating how many log messages to store in memory</p>
+<blockquote>
+<div>before writing them to file.</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.safe_open_file">
+<code class="descname">safe_open_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.safe_open_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_data">
+<code class="descname">log_data</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_heartbeat">
+<code class="descname">log_heartbeat</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_heartbeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_records">
+<code class="descname">log_records</code><span class="sig-paren">(</span><em>records</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_records" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_file_path">
+<code class="descname">log_file_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_file_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the path to the log file.
+:return: string, path to the log file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.get_file_logger">
+<code class="descname">get_file_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.get_file_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.dump_json">
+<code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.format_datetime">
+<code class="descname">format_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.format_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log message. Internal use only.
+:param message: string, the message to log.
+:param tag: string, optional tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_exception">
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log exception.
+:param e: Exception, the exception object.
+:param tb: string, the traceback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.set_disabled_tags">
+<code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.disabled_tags with tags.
+:param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">ConsoleLoggerHandler</code><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="ctxalgolib.loggers.logger_handlers.LoggerHandler"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.logger_handlers.LoggerHandler</span></code></a></p>
+<p>Logger that outputs messages to the console.</p>
+<p>Initialize current console logger handler.</p>
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_heartbeat">
+<code class="descname">log_heartbeat</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_heartbeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispose current logger. For example, close opened file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.dump_json">
+<code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flush current logger.
+Some loggers may cache messages and log them in batches. This flush method causes the logger to
+flush all cached messages into storage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.format_datetime">
+<code class="descname">format_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.format_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.get_file_logger">
+<code class="descname">get_file_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.get_file_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the file logger.
+:return: LoggerHandler, if current is or contains a file logger, return it, otherwise return None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_data">
+<code class="descname">log_data</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log data.
+:param ts: datetime, current timestamp.
+:param data: dict{string:object}, the data to log. Keys are data item names, values are data items.
+:param tag: string, option tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_exception">
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log exception.
+:param e: Exception, the exception object.
+:param tb: string, the traceback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_records">
+<code class="descname">log_records</code><span class="sig-paren">(</span><em>records</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log records into current logger.
+:param records: iterator of LogRecord.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.set_disabled_tags">
+<code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.disabled_tags with tags.
+:param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">ZmqLoggerHandler</code><span class="sig-paren">(</span><em>context</em>, <em>address</em>, <em>queue_filter</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="ctxalgolib.loggers.logger_handlers.LoggerHandler"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.logger_handlers.LoggerHandler</span></code></a></p>
+<p>Class that represents a logger that sends log data to a zeromq queue.
+This logger assumes a publisher-subscriber architecture for zeromq. This logger is a publisher,
+and there is a subscriber running on the other end of the communication queue.</p>
+<p>Initialize current.
+:param context, zeromq context.
+:param address: string, the address of the queue server.
+:param queue_filter: string, the topic name of the messages. Set to the strategy name.</p>
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_heartbeat">
+<code class="descname">log_heartbeat</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_heartbeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_data">
+<code class="descname">log_data</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_exception">
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.dump_json">
+<code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.format_datetime">
+<code class="descname">format_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.format_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.get_file_logger">
+<code class="descname">get_file_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.get_file_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the file logger.
+:return: LoggerHandler, if current is or contains a file logger, return it, otherwise return None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_records">
+<code class="descname">log_records</code><span class="sig-paren">(</span><em>records</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.log_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log records into current logger.
+:param records: iterator of LogRecord.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.set_disabled_tags">
+<code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.disabled_tags with tags.
+:param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">CompositeLoggerHandler</code><span class="sig-paren">(</span><em>handlers</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="ctxalgolib.loggers.logger_handlers.LoggerHandler"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.logger_handlers.LoggerHandler</span></code></a></p>
+<p>Class that represents a composite logger which will dispatch the log messages
+to its component individual loggers.</p>
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_data">
+<code class="descname">log_data</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log data.
+:param ts: datetime, current timestamp.
+:param data: dict{string:object}, the data to log. Keys are data item names, values are data items.
+:param tag: string, option tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_heartbeat">
+<code class="descname">log_heartbeat</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_heartbeat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_records">
+<code class="descname">log_records</code><span class="sig-paren">(</span><em>records</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log records into current logger.
+:param records: iterator of LogRecord.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_exception">
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log exception.
+:param e: Exception, the exception object.
+:param tb: string, the traceback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.get_file_logger">
+<code class="descname">get_file_logger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.get_file_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.dump_json">
+<code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.format_datetime">
+<code class="descname">format_datetime</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.format_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.get_message">
+<code class="descname">get_message</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log message. Internal use only.
+:param message: string, the message to log.
+:param tag: string, optional tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.set_disabled_tags">
+<code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.disabled_tags with tags.
+:param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../machine_learning/index.html" class="btn btn-neutral float-right" title="machine_learning" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="log_loaders.html" class="btn btn-neutral" title="log_loaders" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

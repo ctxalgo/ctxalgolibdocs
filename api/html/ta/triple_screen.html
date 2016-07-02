@@ -1,0 +1,934 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>triple_screen &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="ta" href="index.html"/>
+        <link rel="next" title="turning_point_finder" href="turning_point_finder.html"/>
+        <link rel="prev" title="trading_direction" href="trading_direction.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trend/index.html">trend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ta</a> &raquo;</li>
+      
+    <li>triple_screen</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/ta/triple_screen.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.triple_screen">
+<span id="triple-screen"></span><h1>triple_screen<a class="headerlink" href="#module-ctxalgolib.ta.triple_screen" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.triple_screen.Screen">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.triple_screen.</code><code class="descname">Screen</code><span class="sig-paren">(</span><em>periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.Screen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Abstract class for screen. A screen is a warper of an indictor.</p>
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.Screen.generate_signals">
+<code class="descname">generate_signals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>context</em>, <em>starting_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.Screen.generate_signals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate singals given an ohlc.
+Parameters:</p>
+<blockquote>
+<div><p>ohlc: ohlc with the same periodicity as self.periodicity.
+context: dict, stores any other data that can be read and updated by</p>
+<blockquote>
+<div>the screen.</div></blockquote>
+<dl class="docutils">
+<dt>starting_bar: int, 0-based bar index indicating the starting signal</dt>
+<dd>generation point.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>dict with keys:</dt>
+<dd>&#8216;directions&#8217;: list of int: 1: long, 0: none, -1: short
+&#8216;prices&#8217;: list of float: limit price or float(&#8216;NaN&#8217;)
+&#8216;dates&#8217;: list of datetime.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.Screen.confirm_signal">
+<code class="descname">confirm_signal</code><span class="sig-paren">(</span><em>entry_direction</em>, <em>entry_target_price</em>, <em>execution_ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.Screen.confirm_signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Confirm singals given entry_direction, entry_target_price, strategy_ohlc and execution_ohlc
+Parameters:</p>
+<blockquote>
+<div>entry_direction: unconfirm signal, int -1, 0, 1
+entry_target_price: float
+strategy_ohlc: ohlc of strategy frequency
+execution_ohlc: ohlc of exection frequency</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>confirmed signal: -1, 0, 1</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.triple_screen.MACDScreen">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.triple_screen.</code><code class="descname">MACDScreen</code><span class="sig-paren">(</span><em>periodicity</em>, <em>period_fast=11</em>, <em>period_slow=25</em>, <em>period_dea=9</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.MACDScreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ta.triple_screen.Screen" title="ctxalgolib.ta.triple_screen.Screen"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.triple_screen.Screen</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.MACDScreen.confirm_signal">
+<code class="descname">confirm_signal</code><span class="sig-paren">(</span><em>context</em>, <em>entry_direction</em>, <em>entry_target_price</em>, <em>execution_ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.MACDScreen.confirm_signal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.MACDScreen.generate_signals">
+<code class="descname">generate_signals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>context</em>, <em>starting_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.MACDScreen.generate_signals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.triple_screen.DTOSCScreen">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.triple_screen.</code><code class="descname">DTOSCScreen</code><span class="sig-paren">(</span><em>periodicity</em>, <em>option_id=0</em>, <em>stateless_search=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.DTOSCScreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ta.triple_screen.Screen" title="ctxalgolib.ta.triple_screen.Screen"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.triple_screen.Screen</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.DTOSCScreen.long_previous_k">
+<code class="descname">long_previous_k</code><span class="sig-paren">(</span><em>lows</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.DTOSCScreen.long_previous_k" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Parameters:</dt>
+<dd>lows: list of lows
+index: the index of current k</dd>
+<dt>Return:</dt>
+<dd>int, the index of the previous k line of Long</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.DTOSCScreen.short_previous_k">
+<code class="descname">short_previous_k</code><span class="sig-paren">(</span><em>highs</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.DTOSCScreen.short_previous_k" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Parameters:</dt>
+<dd>lows: list of lows
+index: the index of current k</dd>
+<dt>Return:</dt>
+<dd>int, the index of the previous k line of Short</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.DTOSCScreen.confirm_signal">
+<code class="descname">confirm_signal</code><span class="sig-paren">(</span><em>context</em>, <em>entry_direction</em>, <em>entry_target_price</em>, <em>execution_ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.DTOSCScreen.confirm_signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>confirm signals
+Parameters:</p>
+<blockquote>
+<div>context:
+entry_direction:the last direction,0,-1,1
+entry_target_price:float
+execution_ohlc:</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>signal:0,1,-1, the confirmed direction</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.DTOSCScreen.generate_signals">
+<code class="descname">generate_signals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>context</em>, <em>starting_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.DTOSCScreen.generate_signals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreen">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.triple_screen.</code><code class="descname">TripleScreen</code><span class="sig-paren">(</span><em>screens_or_params</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>screens_or_params</strong> &#8211; either a list of Screen objects or a list of
+dicts each with keys class and parameters which can be used to
+instantiate a Screen object.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreen.periodicity_map">
+<code class="descname">periodicity_map</code><em class="property"> = {10: 17, 20: 21, 18: 20, 21: 22}</em><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreen.periodicity_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreen.generate_signals">
+<code class="descname">generate_signals</code><span class="sig-paren">(</span><em>ohlc</em>, <em>context</em>, <em>starting_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreen.generate_signals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate signals using the Triple Screen strategy.
+Parameters:</p>
+<blockquote>
+<div><p>ohlc: ohlc with the same periodicity as the last screen.
+context: dict, stores any other data that can be read and updated by</p>
+<blockquote>
+<div><blockquote>
+<div>TripleScreen and its screens. It should include a key value</div></blockquote>
+<p>pair &#8216;screens&#8217; : list(dict()) to provide each screen their
+context.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>starting_bar: int, 0-based bar index indicating the starting signal</dt>
+<dd>generation point.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>dict with keys:</dt>
+<dd>&#8216;directions&#8217;: list of int: 1: long, 0: none, -1: short
+&#8216;prices&#8217;: list of float: limit price or float(&#8216;NaN&#8217;)</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreen.combine">
+<code class="descname">combine</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>starting_bars</em>, <em>screen_signals</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreen.combine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine signals from all screens to generate a final signal.
+Parameters:</p>
+<blockquote>
+<div>ohlcs: list of ohlc for each screen.
+starting_bars: list of the starting bar for each screen.
+screen_signals: list of output signals from each screen.</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>dict with keys:</dt>
+<dd>&#8216;directions&#8217;: list of int: 1: long, 0: none, -1: short
+&#8216;prices&#8217;: list of float: limit price or float(&#8216;NaN&#8217;)</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreen.combineSignals">
+<code class="descname">combineSignals</code><span class="sig-paren">(</span><em>signal</em>, <em>signal_list</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreen.combineSignals" title="Permalink to this definition">¶</a></dt>
+<dd><p>combine the signal of the last level with signals of previous levels
+Parameters:</p>
+<blockquote>
+<div>signal: signal in last level,int: 1: long, 0: none, -1: short
+signal_list: signals in previous levels,list of int: 1: long, 0: none, -1: short</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>final signal,int: 1: long, 0: none, -1: short</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreen.confirm_signal">
+<code class="descname">confirm_signal</code><span class="sig-paren">(</span><em>context</em>, <em>entry_direction</em>, <em>entry_target_price</em>, <em>execution_ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreen.confirm_signal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.triple_screen.Transaction">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.triple_screen.</code><code class="descname">Transaction</code><span class="sig-paren">(</span><em>time_zone</em>, <em>opening_order</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.Transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A transaction for a single security. A transaction may include with multiple
+orders.
+Members include:</p>
+<blockquote>
+<div>orders: list of orders
+id: transaction id
+sid: security id
+direction: the same as first order&#8217;s direction
+position: current position
+status: 0: open, 1: closed</div></blockquote>
+<p>The sign of the position must be consistent with the direction.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.ta.triple_screen.Transaction.count">
+<code class="descname">count</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.ta.triple_screen.Transaction.count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.Transaction.append_order">
+<code class="descname">append_order</code><span class="sig-paren">(</span><em>order</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.Transaction.append_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.Transaction.opening_datetime">
+<code class="descname">opening_datetime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.Transaction.opening_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.triple_screen.</code><code class="descname">TripleScreenStrategy</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">zipline.algorithm.TradingAlgorithm</span></code></p>
+<p>Initialize sids and other state variables.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Optional:</th><td class="field-body"><dl class="first last docutils">
+<dt>initialize</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">Function that is called with a single
+argument at the begninning of the simulation.</p>
+</dd>
+<dt>handle_data</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">Function that is called with 2 arguments
+(context and data) on every bar.</p>
+</dd>
+<dt>script</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">Algoscript that contains initialize and
+handle_data function definition.</p>
+</dd>
+<dt>data_frequency</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str (daily, hourly or minutely)</span><dd><p class="first last">The duration of the bars.</p>
+</dd>
+<dt>capital_base</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float &lt;default: 1.0e5&gt;</span><dd><p class="first last">How much capital to start with.</p>
+</dd>
+<dt>instant_fill</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool &lt;default: False&gt;</span><dd><p class="first last">Whether to fill orders immediately or on next bar.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.Context">
+<em class="property">class </em><code class="descname">Context</code><span class="sig-paren">(</span><em>init_ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.Context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">zipline.protocol.Event</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.Context.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.Context.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.Context.to_series">
+<code class="descname">to_series</code><span class="sig-paren">(</span><em>index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.Context.to_series" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.initialize">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">initialize</code><span class="sig-paren">(</span><em>execution_periodicity</em>, <em>strategy_periodicity</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.initialize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_init_days">
+<em class="property">static </em><code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_init_days</code><span class="sig-paren">(</span><em>periodicity</em>, <em>num_bars</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_init_days" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute at least how many trading days are required to contain
+[num_bars] bars at the given periodicity.
+:param periodicity: Periodicity.
+:param num_bars: int.
+:return: number of trading days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.handle_data">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">handle_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.handle_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_init_ohlc">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_init_ohlc</code><span class="sig-paren">(</span><em>sid</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_init_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_atr_stop">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_atr_stop</code><span class="sig-paren">(</span><em>strategy_ohlc</em>, <em>transaction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_atr_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the atr stop according to the opending_order
+Parameters:</p>
+<blockquote>
+<div>ohlc:
+opening_order:</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>float, the atr stop</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_entry_stop">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_entry_stop</code><span class="sig-paren">(</span><em>execution_ohlc</em>, <em>strategy_ohlc</em>, <em>transaction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_entry_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return entry stop for the next bar.
+If Long, return the lower price between the last low price before the
+transaction opening and the lowest price from the beginning of the bar
+when the transaction is opened until the opening time.
+If Short, return the higher price between the last high price before the
+transaction opening and the highest price from the beginning of the bar
+when the transaction is opened until the opening time.
+Parameters:</p>
+<blockquote>
+<div>execution_ohlc:
+strategy_ohlc:
+opening_order:</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>the entry stop</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.AUTO_INITIALIZE">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">AUTO_INITIALIZE</code><em class="property"> = True</em><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.AUTO_INITIALIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.add_history">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">add_history</code><span class="sig-paren">(</span><em>bar_count</em>, <em>frequency</em>, <em>field</em>, <em>ffill=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.add_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.add_transform">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">add_transform</code><span class="sig-paren">(</span><em>transform_class</em>, <em>tag</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.add_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a single-sid, sequential transform to the model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first last docutils">
+<dt>transform_class</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">class</span><dd><p class="first last">Which transform to use. E.g. mavg.</p>
+</dd>
+<dt>tag</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">str</span><dd><p class="first last">How to name the transform. Can later be access via:
+data[sid].tag()</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Extra args and kwargs will be forwarded to the transform
+instantiation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.all_api_methods">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">all_api_methods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.all_api_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of all the TradingAlgorithm API methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.analyze">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">analyze</code><span class="sig-paren">(</span><em>perf</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.analyze" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.cancel_order">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">cancel_order</code><span class="sig-paren">(</span><em>order_param</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.cancel_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.data_frequency">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">data_frequency</code><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.data_frequency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_datetime">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_datetime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a copy of the datetime.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_dtosc_stop">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_dtosc_stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_dtosc_stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_generator">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_generator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override this method to add new logic to the construction
+of the generator. Overrides can use the _create_generator
+method to get a standard construction generator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_open_orders">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_open_orders</code><span class="sig-paren">(</span><em>sid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_open_orders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_order">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">get_order</code><span class="sig-paren">(</span><em>order_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.get_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.history">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">history</code><span class="sig-paren">(</span><em>bar_count</em>, <em>frequency</em>, <em>field</em>, <em>ffill=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.on_dt_changed">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">on_dt_changed</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.on_dt_changed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback triggered by the simulation loop whenever the current dt
+changes.</p>
+<p>Any logic that should happen exactly once at the start of each datetime
+group should happen here.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.order">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">order</code><span class="sig-paren">(</span><em>sid</em>, <em>amount</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order using the specified parameters.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_percent">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">order_percent</code><span class="sig-paren">(</span><em>sid</em>, <em>percent</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_percent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order in the specified security corresponding to the given
+percent of the current portfolio value.</p>
+<p>Note that percent must expressed as a decimal (0.50 means 50%).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_target">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">order_target</code><span class="sig-paren">(</span><em>sid</em>, <em>target</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to adjust a position to a target number of shares. If
+the position doesn&#8217;t already exist, this is equivalent to placing a new
+order. If the position does exist, this is equivalent to placing an
+order for the difference between the target number of shares and the
+current number of shares.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_target_percent">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">order_target_percent</code><span class="sig-paren">(</span><em>sid</em>, <em>target</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_target_percent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to adjust a position to a target percent of the
+current portfolio value. If the position doesn&#8217;t already exist, this is
+equivalent to placing a new order. If the position does exist, this is
+equivalent to placing an order for the difference between the target
+percent and the current percent.</p>
+<p>Note that target must expressed as a decimal (0.50 means 50%).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_target_value">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">order_target_value</code><span class="sig-paren">(</span><em>sid</em>, <em>target</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_target_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order to adjust a position to a target value. If
+the position doesn&#8217;t already exist, this is equivalent to placing a new
+order. If the position does exist, this is equivalent to placing an
+order for the difference between the target value and the
+current value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_value">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">order_value</code><span class="sig-paren">(</span><em>sid</em>, <em>value</em>, <em>limit_price=None</em>, <em>stop_price=None</em>, <em>style=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.order_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an order by desired value rather than desired number of shares.
+If the requested sid is found in the universe, the requested value is
+divided by its price to imply the number of shares to transact.</p>
+<p>value &gt; 0 :: Buy/Cover
+value &lt; 0 :: Sell/Short
+Market order:    order(sid, value)
+Limit order:     order(sid, value, limit_price)
+Stop order:      order(sid, value, None, stop_price)
+StopLimit order: order(sid, value, limit_price, stop_price)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.portfolio">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">portfolio</code><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.portfolio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.raw_orders">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">raw_orders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.raw_orders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current open orders from the blotter.</p>
+<p>N.B. this is not a property, so that the function can be passed
+and called back from within a source.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.raw_positions">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">raw_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.raw_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current portfolio for the algorithm.</p>
+<p>N.B. this is not done as a property, so that the function can be
+passed and called from within a source.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.record">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">record</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Track and record local variable (i.e. attributes) each day.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.recorded_vars">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">recorded_vars</code><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.recorded_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.register_trading_control">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">register_trading_control</code><span class="sig-paren">(</span><em>control</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.register_trading_control" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a new TradingControl to be checked prior to order calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.run">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">run</code><span class="sig-paren">(</span><em>source</em>, <em>overwrite_sim_params=True</em>, <em>benchmark_return_source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first docutils">
+<dt>source</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">can be either:</span><dd><blockquote class="first">
+<div><ul class="simple">
+<li>pandas.DataFrame</li>
+<li>zipline source</li>
+<li>list of sources</li>
+</ul>
+</div></blockquote>
+<p>If pandas.DataFrame is provided, it must have the
+following structure:
+* column names must consist of ints representing the</p>
+<blockquote>
+<div><p>different sids</p>
+</div></blockquote>
+<ul class="last simple">
+<li>index must be DatetimeIndex</li>
+<li>array contents should be price info.</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt>daily_stats</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">pandas.DataFrame</span><dd><p class="first last">Daily performance metrics such as returns, alpha etc.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_commission">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_commission</code><span class="sig-paren">(</span><em>commission</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_commission" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_logger">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_logger</code><span class="sig-paren">(</span><em>logger</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_long_only">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_long_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_long_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a rule specifying that this algorithm cannot take short positions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_max_order_count">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_max_order_count</code><span class="sig-paren">(</span><em>max_count</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_max_order_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a limit on the number of orders that can be placed within the given
+time interval.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_max_order_size">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_max_order_size</code><span class="sig-paren">(</span><em>sid=None</em>, <em>max_shares=None</em>, <em>max_notional=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_max_order_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a limit on the number of shares and/or dollar value of any single
+order placed for sid.  Limits are treated as absolute values and are
+enforced at the time that the algo attempts to place an order for sid.</p>
+<p>If an algorithm attempts to place an order that would result in
+exceeding one of these limits, raise a TradingControlException.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_max_position_size">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_max_position_size</code><span class="sig-paren">(</span><em>sid=None</em>, <em>max_shares=None</em>, <em>max_notional=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_max_position_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a limit on the number of shares and/or dollar value held for the
+given sid. Limits are treated as absolute values and are enforced at
+the time that the algo attempts to place an order for sid. This means
+that it&#8217;s possible to end up with more than the max number of shares
+due to splits/dividends, and more than the max notional due to price
+improvement.</p>
+<p>If an algorithm attempts to place an order that would result in
+increasing the absolute value of shares/dollar value exceeding one of
+these limits, raise a TradingControlException.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_slippage">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_slippage</code><span class="sig-paren">(</span><em>slippage</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_slippage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_sources">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_sources</code><span class="sig-paren">(</span><em>sources</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_sources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_transact">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_transact</code><span class="sig-paren">(</span><em>transact</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_transact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the method that will be called to create a
+transaction from open orders and trade events.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_transforms">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">set_transforms</code><span class="sig-paren">(</span><em>transforms</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.set_transforms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.update_dividends">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">update_dividends</code><span class="sig-paren">(</span><em>dividend_frame</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.update_dividends" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set DataFrame used to process dividends.  DataFrame columns should
+contain at least the entries in zp.DIVIDEND_FIELDS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.updated_portfolio">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">updated_portfolio</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.updated_portfolio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.triple_screen.TripleScreenStrategy.validate_order_params">
+<code class="descclassname">TripleScreenStrategy.</code><code class="descname">validate_order_params</code><span class="sig-paren">(</span><em>sid</em>, <em>amount</em>, <em>limit_price</em>, <em>stop_price</em>, <em>style</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.triple_screen.TripleScreenStrategy.validate_order_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper method for validating parameters to the order API function.</p>
+<p>Raises an UnsupportedOrderParameters if invalid arguments are found.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="turning_point_finder.html" class="btn btn-neutral float-right" title="turning_point_finder" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trading_direction.html" class="btn btn-neutral" title="trading_direction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

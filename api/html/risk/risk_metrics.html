@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>risk_metrics &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="risk" href="index.html"/>
+        <link rel="next" title="risk_retrievers" href="risk_retrievers.html"/>
+        <link rel="prev" title="drawdown" href="drawdown.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">risk</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="drawdown.html">drawdown</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">risk_metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risk_retrievers.html">risk_retrievers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">risk</a> &raquo;</li>
+      
+    <li>risk_metrics</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/risk/risk_metrics.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.risk.risk_metrics">
+<span id="risk-metrics"></span><h1>risk_metrics<a class="headerlink" href="#module-ctxalgolib.risk.risk_metrics" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics">
+<em class="property">class </em><code class="descclassname">ctxalgolib.risk.risk_metrics.</code><code class="descname">RiskMetrics</code><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.sortino_ratio">
+<code class="descname">sortino_ratio</code><span class="sig-paren">(</span><em>returns</em>, <em>targeted_returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.sortino_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate sortino ratio (<a class="reference external" href="http://en.wikipedia.org/wiki/Sortino_ratio">http://en.wikipedia.org/wiki/Sortino_ratio</a>)
+:param returns: [float], the returns from a portfolio.
+:param targeted_returns: [float], target or required rate of return for the portfolio under consideration.
+:return: float, calculated sortino ratio.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.information_ratio">
+<code class="descname">information_ratio</code><span class="sig-paren">(</span><em>returns</em>, <em>benchmark_returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.information_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate information ratio (<a class="reference external" href="http://en.wikipedia.org/wiki/Information_ratio">http://en.wikipedia.org/wiki/Information_ratio</a>)
+:param returns: [float], the returns from a portfolio.
+:param benchmark_returns: [float], the benchmark returns.
+:return: float, calculated information ratio.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.sharpe_ratio">
+<code class="descname">sharpe_ratio</code><span class="sig-paren">(</span><em>daily_returns</em>, <em>benchmark_returns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.sharpe_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate sharpe ratio: <a class="reference external" href="http://en.wikipedia.org/wiki/Sharpe_ratio">http://en.wikipedia.org/wiki/Sharpe_ratio</a> and <a class="reference external" href="https://www.quantstart.com/articles/Sharpe-Ratio-for-Algorithmic-Trading-Performance-Measurement">https://www.quantstart.com/articles/Sharpe-Ratio-for-Algorithmic-Trading-Performance-Measurement</a>.
+:param daily_returns: [float], the daily returns from a portfolio.
+:param benchmark_returns: [float], the benchmark returns. If None, assume benchmark_returns</p>
+<blockquote>
+<div>to be zero at all data points.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, calculated sharpe ratio.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.get_return_from_balance">
+<em class="property">static </em><code class="descname">get_return_from_balance</code><span class="sig-paren">(</span><em>balance</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.get_return_from_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the returns series from the given balance series.
+:param balance: OHLC, the balance series.
+:return: OHLC, the returns series.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.sharpe_ratio_from_balance">
+<code class="descname">sharpe_ratio_from_balance</code><span class="sig-paren">(</span><em>balance</em>, <em>benchmark=None</em>, <em>merge=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.sharpe_ratio_from_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate sharpe ratio from balance ohlc.
+:param balance: OHLC, balance ohlc, the dates, and closes attributes represent the balance series.
+:param benchmark: OHLC, if not None, benchmark ohlc, the dates,</p>
+<blockquote>
+<div>and closes attributes represent the benchmark series.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>merge</strong> &#8211; boolean, if True merge balance and benchmark into daily.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">float, sharpe ratio.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.get_ohlc_with_period">
+<em class="property">static </em><code class="descname">get_ohlc_with_period</code><span class="sig-paren">(</span><em>ohlc</em>, <em>period=20</em>, <em>start_time=None</em>, <em>end_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.get_ohlc_with_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the merged ohlc with the given period..
+:param ohlc: OHLC, an ohlc.
+:param period: Periodicity, the period.
+:param start_time: datetime, the start time (inclusive) to get the information.</p>
+<blockquote>
+<div>If None, start from the first available data point.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>end_time</strong> &#8211; datetime, the end time (inclusive) to get the information.
+If None, ends at the last data point.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">OHLC, daily ohlc merged from ohlc.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.beta">
+<code class="descname">beta</code><span class="sig-paren">(</span><em>returns</em>, <em>benchmark_returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate sharpe ratio (<a class="reference external" href="http://en.wikipedia.org/wiki/Beta_%28finance%29">http://en.wikipedia.org/wiki/Beta_%28finance%29</a>)
+:param returns: [float], the returns from a portfolio.
+:param benchmark_returns: [float], the benchmark returns.
+:return: float, calculated beta value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.alpha">
+<code class="descname">alpha</code><span class="sig-paren">(</span><em>returns</em>, <em>benchmark_returns</em>, <em>risk_free_rates</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the alpha value (<a class="reference external" href="http://en.wikipedia.org/wiki/Alpha_%28investment%29">http://en.wikipedia.org/wiki/Alpha_%28investment%29</a>)
+:param returns: [float], the returns from a portfolio.
+:param benchmark_returns: [float], the returns of the benchmark.
+:param risk_free_rates: [float], the risk free rates.
+:return: float, calculated alpha value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.annual_return">
+<code class="descname">annual_return</code><span class="sig-paren">(</span><em>returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.annual_return" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the annual return.
+:param returns: [float], the returns from a portfolio.
+:return: float, annually return.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.total_return">
+<code class="descname">total_return</code><span class="sig-paren">(</span><em>returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.total_return" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the total return.
+:param returns: [float], the returns from a portfolio.
+:return: float, total return.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.annual_volatility">
+<code class="descname">annual_volatility</code><span class="sig-paren">(</span><em>returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.annual_volatility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the annual volatility.
+:param returns: [float], the returns from a portfolio.
+:return: float, annual volatility.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.downside_standard_deviation">
+<code class="descname">downside_standard_deviation</code><span class="sig-paren">(</span><em>returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.downside_standard_deviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the downside standard deviation.
+:param returns: [float], the returns from a portfolio.
+:return: float, downside standard deviation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.max_drawdown">
+<code class="descname">max_drawdown</code><span class="sig-paren">(</span><em>returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.max_drawdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the max drawdown.
+:param returns: [float], the returns from a portfolio.
+:return: float, max dawndown.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.risk.risk_metrics.RiskMetrics.return_drawdown_ratio">
+<code class="descname">return_drawdown_ratio</code><span class="sig-paren">(</span><em>returns</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.risk.risk_metrics.RiskMetrics.return_drawdown_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the return drawdown ratio.
+:param returns: [float], the returns from a portfolio.
+:return: float, return drawdown ratio.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="risk_retrievers.html" class="btn btn-neutral float-right" title="risk_retrievers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="drawdown.html" class="btn btn-neutral" title="drawdown" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

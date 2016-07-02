@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ask_bid_spread_slippage_model_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="slippage" href="index.html"/>
+        <link rel="next" title="ta" href="../ta/index.html"/>
+        <link rel="prev" title="slippage" href="index.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">slippage</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ask_bid_spread_slippage_model_generator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">slippage</a> &raquo;</li>
+      
+    <li>ask_bid_spread_slippage_model_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/slippage/ask_bid_spread_slippage_model_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ask-bid-spread-slippage-model-generator">
+<h1>ask_bid_spread_slippage_model_generator<a class="headerlink" href="#ask-bid-spread-slippage-model-generator" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.slippage.ask_bid_spread_slippage_model_generator"></span><dl class="class">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel">
+<em class="property">class </em><code class="descclassname">ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.</code><code class="descname">AbstractMiddleAskBidModel</code><span class="sig-paren">(</span><em>data</em>, <em>period=20</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel.middle_value">
+<code class="descname">middle_value</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel.middle_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the middle value of ask and bid spread at timestamp.
+Note: this method should have constant execution time. This means that
+do not do binary search given ts, instead using a dict to store all supported timestamps
+and do a dict look up to get the value. The first and last supported timestamps
+needs to be treated differently (see the comment on ts).
+:param ts: datetime, the current timestamp.</p>
+<blockquote>
+<div>If ts is earlier than the first supported timestamp in current model,
+return the value at the first supported timestamp.
+If ts is later than the last supported timestamp in current model,
+return the value at the last supported timestamp.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, the middle value of ask and bid spread at the given timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel.period">
+<code class="descname">period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>The period of current ask bid model.
+:return: Periodicity.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModelFromFile">
+<em class="property">class </em><code class="descclassname">ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.</code><code class="descname">MiddleAskBidModelFromFile</code><span class="sig-paren">(</span><em>path</em>, <em>period=20</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModelFromFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel" title="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel</span></code></a></p>
+<p>Class that represents an ask and bid model which loads its data from a binary file.</p>
+<p>Initialize current.
+:param path: string, the path storing the data</p>
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModelFromFile.middle_value">
+<code class="descname">middle_value</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModelFromFile.middle_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the middle value of ask and bid spread at timestamp.
+Note: this method should have constant execution time. This means that
+do not do binary search given ts, instead using a dict to store all supported timestamps
+and do a dict look up to get the value. The first and last supported timestamps
+needs to be treated differently (see the comment on ts).
+:param ts: datetime, the current timestamp.</p>
+<blockquote>
+<div>If ts is earlier than the first supported timestamp in current model,
+return the value at the first supported timestamp.
+If ts is later than the last supported timestamp in current model,
+return the value at the last supported timestamp.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, the middle value of ask and bid spread at the given timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModelFromFile.period">
+<code class="descname">period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModelFromFile.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>The period of current ask bid model.
+:return: Periodicity.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModel">
+<em class="property">class </em><code class="descclassname">ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.</code><code class="descname">MiddleAskBidModel</code><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel" title="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AbstractMiddleAskBidModel</span></code></a></p>
+<p>Class that represents an ask and bid model which uses data in memory.</p>
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModel.period">
+<code class="descname">period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModel.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>The period of current ask bid model.
+:return: Periodicity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModel.middle_value">
+<code class="descname">middle_value</code><span class="sig-paren">(</span><em>ts</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.MiddleAskBidModel.middle_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the middle value of ask and bid spread at timestamp.
+Note: this method should have constant execution time. This means that
+do not do binary search given ts, instead using a dict to store all supported timestamps
+and do a dict look up to get the value. The first and last supported timestamps
+needs to be treated differently (see the comment on ts).
+:param ts: datetime, the current timestamp.</p>
+<blockquote>
+<div>If ts is earlier than the first supported timestamp in current model,
+return the value at the first supported timestamp.
+If ts is later than the last supported timestamp in current model,
+return the value at the last supported timestamp.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">float, the middle value of ask and bid spread at the given timestamp.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.</code><code class="descname">AskBidSpreadSlippageModelGenerator</code><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>ask_bids</em>, <em>periods</em>, <em>alpha=0.8</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>The middle value of ask and bid sequences is calculated as, where t is timestamp:</dt>
+<dd>ask(t) - bid(t)</dd>
+<dt>middle_ask_bid(t) = &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</dt>
+<dd>2</dd>
+<dt>The result of model is an exponential moving average (EMA)</dt>
+<dd>(<a class="reference external" href="https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average">https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average</a>)</dd>
+</dl>
+<p>with parameter alpha:</p>
+<p>ask_bid_model(t) = EMA(middle_ask_bid series, alpha)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>ask_bids</strong> &#8211; an iterable of (datetime, float, float).
+The first element is timestamp, the second element is ask value,
+the third element is bid value.</li>
+<li><strong>periods</strong> &#8211; [Periodicity], the list of periods for the granularity of the generated models.
+Each element can be either Periodicity.DAILY or Periodicity.HOURLY.
+It is a list so you can generate multiple models with a single pass of the ask_bids data.</li>
+<li><strong>alpha</strong> &#8211; float, decay factor in the exponential moving average formula.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict{Periodicity: dict{datetime: float}}
+The ask bid spread models. Outer key are period, value is a dict{datetime: float}.
+Inner keys are DAILY or HOURLY timestamps (ending timestamps), and the values are the mean (ema)
+middle value of ask and bid spread during day or hour.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator.generate_codes">
+<code class="descname">generate_codes</code><span class="sig-paren">(</span><em>ask_bids</em>, <em>periods</em>, <em>alpha=0.8</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator.generate_codes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate text of class MiddleAskBidModel from given ask bid data.
+:param ask_bids: an iterable of (datetime, float, float).</p>
+<blockquote>
+<div>The first element is timestamp, the second element is ask value,
+the third element is bid value.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>periods</strong> &#8211; [Periodicity], the list of periods for the granularity of the generated models.
+Each element can be either Periodicity.DAILY or Periodicity.HOURLY.
+It is a list so you can generate multiple models with a single pass of the ask_bids data.</li>
+<li><strong>alpha</strong> &#8211; float, decay factor in the exponential moving average formula.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict{Periodicity: string}, keys are periods, values are text of class of type MiddleAskBidModel.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator.generate_files">
+<code class="descname">generate_files</code><span class="sig-paren">(</span><em>path</em>, <em>ask_bids</em>, <em>periods</em>, <em>alpha=0.8</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.slippage.ask_bid_spread_slippage_model_generator.AskBidSpreadSlippageModelGenerator.generate_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate data files (binary file) representing the ask and bid modes.
+This method does not return anything.
+:param path: string, the path storing the data
+:param ask_bids: an iterable of (datetime, float, float).</p>
+<blockquote>
+<div>The first element is timestamp, the second element is ask value,
+the third element is bid value.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>periods</strong> &#8211; {Periodicity: string}, keys are periods for the granularity of the generated models.
+Each element can be either Periodicity.DAILY or Periodicity.HOURLY.
+Values are file paths to store the generated model data.</li>
+<li><strong>alpha</strong> &#8211; float, decay factor in the exponential moving average formula.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ta/index.html" class="btn btn-neutral float-right" title="ta" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="slippage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

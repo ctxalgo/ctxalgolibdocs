@@ -1,0 +1,4 @@
+e120_chart_customized_series
+**************************
+
+.. automodule:: ctxalgolib.docs.charting.e120_chart_customized_series

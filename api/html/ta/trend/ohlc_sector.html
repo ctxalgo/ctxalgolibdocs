@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ohlc_sector &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="trend" href="index.html"/>
+        <link rel="next" title="piecewise_trend_line_finder" href="piecewise_trend_line_finder.html"/>
+        <link rel="prev" title="fractal_trend_line_finder" href="fractal_trend_line_finder.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chart_patterns/index.html">chart_patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../correlation/index.html">correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_mining/index.html">data_mining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../derivative/index.html">derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../divergence/index.html">divergence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fibonacci/index.html">fibonacci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forcast/index.html">forcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fractal/index.html">fractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harmonic/index.html">harmonic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lijin/index.html">lijin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lvt/index.html">lvt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_indicators/index.html">online_indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization/index.html">optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parameter_tuning/index.html">parameter_tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pattern_recognizer/index.html">pattern_recognizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../performance/index.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piecewise_linear_regression/index.html">piecewise_linear_regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategies/index.html">strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">trend</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fractal_trend_line_finder.html">fractal_trend_line_finder</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ohlc_sector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="piecewise_trend_line_finder.html">piecewise_trend_line_finder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trend_line.html">trend_line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variation_ratio.html">variation_ratio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility/index.html">volatility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volume/index.html">volume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vsa/index.html">vsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wavelet/index.html">wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross.html">cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../indicator.html">indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../momentum.html">momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ta.html">ta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thumb_line.html">thumb_line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_direction.html">trading_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triple_screen.html">triple_screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../turning_point_finder.html">turning_point_finder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ta</a> &raquo;</li>
+      
+          <li><a href="index.html">trend</a> &raquo;</li>
+      
+    <li>ohlc_sector</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ta/trend/ohlc_sector.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ta.trend.ohlc_sector">
+<span id="ohlc-sector"></span><h1>ohlc_sector<a class="headerlink" href="#module-ctxalgolib.ta.trend.ohlc_sector" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.trend.ohlc_sector.OhlcSection">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.trend.ohlc_sector.</code><code class="descname">OhlcSection</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em>, <em>start_price</em>, <em>end_price</em>, <em>start_bar</em>, <em>end_bar</em>, <em>direction</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.ohlc_sector.OhlcSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start_date</strong> &#8211; datetime, the start datetime of current section.</li>
+<li><strong>end_date</strong> &#8211; datetime, the end datetime of current section.</li>
+<li><strong>start_price</strong> &#8211; float, the start price of current section.</li>
+<li><strong>start_bar</strong> &#8211; int, 0-based bar index of current section start.</li>
+<li><strong>end_bar</strong> &#8211; int, 0-based bar index of current section end.</li>
+<li><strong>direction</strong> &#8211; int, 1 means up section, -1 means down section.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Praam end_price:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first last">float, the end price of current section.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.trend.ohlc_sector.</code><code class="descname">AbstractOhlcSector</code><a class="headerlink" href="#ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector.separate">
+<code class="descname">separate</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector.separate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Separate ohlc and return the sections.
+:param ohlc: OHLC, the ohlc object.
+:param start_bar: int, 0-based bar index, specifying where to start section separation.
+:return: [OhlcSection], the list of ohlc sections.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.trend.ohlc_sector.MovingAverageOhlcSector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.trend.ohlc_sector.</code><code class="descname">MovingAverageOhlcSector</code><span class="sig-paren">(</span><em>ma_calculator</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.ohlc_sector.MovingAverageOhlcSector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector" title="ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ma_calculator</strong> &#8211; object, moving average calculator.
+A moving average calculator returns a [float], this array represents the moving average values
+for each bar in the ohlc. An example moving average calculator can be found at
+ctxalgolib.ta.online_indicators.moving_averages.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.ohlc_sector.MovingAverageOhlcSector.separate">
+<code class="descname">separate</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.ohlc_sector.MovingAverageOhlcSector.separate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use moving average turns to calculate sections.
+If a moving average turns up or down, then a new section starts. The start price of the section is
+the close price of that bar. The start bar of the section is the index of that bar. If there is a previous
+non-finished section, then the end price is the close price of that bar, and the end bar is the index of
+that bar. If the moving average turns up, the direction of the corresponding section is 1, otherwise -1.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.trend.ohlc_sector.DoubleMovingAverageOhlcSector">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.trend.ohlc_sector.</code><code class="descname">DoubleMovingAverageOhlcSector</code><span class="sig-paren">(</span><em>fast_ma_calculator</em>, <em>slow_ma_calculator</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.ohlc_sector.DoubleMovingAverageOhlcSector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector" title="ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ta.trend.ohlc_sector.AbstractOhlcSector</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.ta.trend.ohlc_sector.DoubleMovingAverageOhlcSector.separate">
+<code class="descname">separate</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.trend.ohlc_sector.DoubleMovingAverageOhlcSector.separate" title="Permalink to this definition">¶</a></dt>
+<dd><p>fast moving average up-crosses slow moving average marks the start of a up-section.
+fast moving average down-crosses slow moving average marks the start of a down-section.
+If the fast moving average up-crosses the slow moving average, the direction of the corresponding section
+is 1, otherwise -1.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="piecewise_trend_line_finder.html" class="btn btn-neutral float-right" title="piecewise_trend_line_finder" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fractal_trend_line_finder.html" class="btn btn-neutral" title="fractal_trend_line_finder" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

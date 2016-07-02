@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dot_parser &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="pydot" href="index.html"/>
+        <link rel="next" title="pydot" href="pydot.html"/>
+        <link rel="prev" title="pydot" href="index.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pydot</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dot_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydot.html">pydot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">pydot</a> &raquo;</li>
+      
+    <li>dot_parser</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/pydot/dot_parser.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.pydot.dot_parser">
+<span id="dot-parser"></span><h1>dot_parser<a class="headerlink" href="#module-ctxalgolib.pydot.dot_parser" title="Permalink to this headline">¶</a></h1>
+<p>Graphviz&#8217;s dot language parser.</p>
+<p>The dotparser parses graphviz files in dot and dot files and transforms them
+into a class representation defined by pydot.</p>
+<p>The module needs pyparsing (tested with version 1.2.2) and pydot (tested with 0.9.10)</p>
+<p>Author: Michael Krause &lt;<a class="reference external" href="mailto:michael&#37;&#52;&#48;krause-software&#46;de">michael<span>&#64;</span>krause-software<span>&#46;</span>de</a>&gt;</p>
+<dl class="class">
+<dt id="ctxalgolib.pydot.dot_parser.P_AttrList">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">P_AttrList</code><span class="sig-paren">(</span><em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.P_AttrList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.pydot.dot_parser.DefaultStatement">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">DefaultStatement</code><span class="sig-paren">(</span><em>default_type</em>, <em>attrs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.DefaultStatement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.pydot.dot_parser.P_AttrList" title="ctxalgolib.pydot.dot_parser.P_AttrList"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pydot.dot_parser.P_AttrList</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.push_top_graph_stmt">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">push_top_graph_stmt</code><span class="sig-paren">(</span><em>str</em>, <em>loc</em>, <em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.push_top_graph_stmt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.add_defaults">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">add_defaults</code><span class="sig-paren">(</span><em>element</em>, <em>defaults</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.add_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.add_elements">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">add_elements</code><span class="sig-paren">(</span><em>g</em>, <em>toks</em>, <em>defaults_graph=None</em>, <em>defaults_node=None</em>, <em>defaults_edge=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.add_elements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.push_graph_stmt">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">push_graph_stmt</code><span class="sig-paren">(</span><em>str</em>, <em>loc</em>, <em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.push_graph_stmt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.push_subgraph_stmt">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">push_subgraph_stmt</code><span class="sig-paren">(</span><em>str</em>, <em>loc</em>, <em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.push_subgraph_stmt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.push_default_stmt">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">push_default_stmt</code><span class="sig-paren">(</span><em>str</em>, <em>loc</em>, <em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.push_default_stmt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.push_attr_list">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">push_attr_list</code><span class="sig-paren">(</span><em>str</em>, <em>loc</em>, <em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.push_attr_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.get_port">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">get_port</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.get_port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.do_node_ports">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">do_node_ports</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.do_node_ports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.push_edge_stmt">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">push_edge_stmt</code><span class="sig-paren">(</span><em>str</em>, <em>loc</em>, <em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.push_edge_stmt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.push_node_stmt">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">push_node_stmt</code><span class="sig-paren">(</span><em>s</em>, <em>loc</em>, <em>toks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.push_node_stmt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.graph_definition">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">graph_definition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.graph_definition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.pydot.dot_parser.parse_dot_data">
+<code class="descclassname">ctxalgolib.pydot.dot_parser.</code><code class="descname">parse_dot_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pydot.dot_parser.parse_dot_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pydot.html" class="btn btn-neutral float-right" title="pydot" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="pydot" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

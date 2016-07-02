@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>feedparser &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="blog" href="index.html"/>
+        <link rel="next" title="import_blog_hits" href="import_blog_hits.html"/>
+        <link rel="prev" title="base_site" href="base_site.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">data_imports</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">blog</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="poster/index.html">poster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="speedparser/index.html">speedparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unirest/index.html">unirest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base_rss.html">base_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base_site.html">base_site</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">feedparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import_blog_hits.html">import_blog_hits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import_from_xml.html">import_from_xml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="n163_blog_rss.html">n163_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="qq_blog_rss.html">qq_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script.html">script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sina_blog_rss.html">sina_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sohu_blog_rss.html">sohu_blog_rss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../coretx_data_import/index.html">coretx_data_import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../major_money/index.html">major_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../news/index.html">news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_imports/index.html">ohlc_imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otc/index.html">otc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tongdaxin/index.html">tongdaxin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../capital_structure_importer.html">capital_structure_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_allocation_importer.html">company_allocation_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_capital_structures_importer.html">company_capital_structures_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_exrights_importer.html">company_exrights_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_financials_importer.html">company_financials_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_performance_importer.html">company_performance_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../company_report_dates_importer.html">company_report_dates_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_importer.html">data_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../east_money_plate_importer.html">east_money_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fund_holders_collector.html">fund_holders_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fundamental_expressions_calculator.html">fundamental_expressions_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hexun_plate_importer.html">hexun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hs300_stock_weights_retriever.html">hs300_stock_weights_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../if_trading_1s_importer.html">if_trading_1s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_composite_stocks_and_weights_collector.html">index_composite_stocks_and_weights_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../large_stock_price_finder.html">large_stock_price_finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../new_stock_collector.html">new_stock_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plate_importer.html">plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rar_folder_importer.html">rar_folder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rumian_blog_extracter.html">rumian_blog_extracter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../share_holder_importer.html">share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sina_plate_importer.html">sina_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sohu_plate_importer.html">sohu_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state_company_collector.html">state_company_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_info_collector.html">stock_info_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_name_retriever.html">stock_name_retriever</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_plate_importer.html">stock_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_conditioned_triggers.html">stock_pool_conditioned_triggers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_return_calculator.html">stock_pool_return_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_pool_trigger_calculator.html">stock_pool_trigger_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_share_holder_importer.html">stock_share_holder_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_trading_1d_importer.html">stock_trading_1d_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stock_trading_3s_importer.html">stock_trading_3s_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sub_new_stock_open_board_calculator.html">sub_new_stock_open_board_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../targeted_stock_expansion_collector.html">targeted_stock_expansion_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tianya_collector.html">tianya_collector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tonghuashun_plate_importer.html">tonghuashun_plate_importer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../update_security_pinyin.html">update_security_pinyin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yahoo_data_importer.html">yahoo_data_importer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">data_imports</a> &raquo;</li>
+      
+          <li><a href="index.html">blog</a> &raquo;</li>
+      
+    <li>feedparser</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/data_imports/blog/feedparser.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.data_imports.blog.feedparser">
+<span id="feedparser"></span><h1>feedparser<a class="headerlink" href="#module-ctxalgolib.data_imports.blog.feedparser" title="Permalink to this headline">¶</a></h1>
+<p>Universal feed parser</p>
+<p>Handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds</p>
+<p>Visit <a class="reference external" href="https://code.google.com/p/feedparser/">https://code.google.com/p/feedparser/</a> for the latest version
+Visit <a class="reference external" href="http://packages.python.org/feedparser/">http://packages.python.org/feedparser/</a> for the latest documentation</p>
+<p>Required: Python 2.4 or later
+Recommended: iconv_codec &lt;<a class="reference external" href="http://cjkpython.i18n.org/">http://cjkpython.i18n.org/</a>&gt;</p>
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.feedparser.EndBracketMatch">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">EndBracketMatch</code><span class="sig-paren">(</span><em>match</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.EndBracketMatch" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.EndBracketMatch.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.EndBracketMatch.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">ThingsNobodyCaresAboutButMe</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.data_imports.blog.feedparser.CharacterEncodingOverride">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">CharacterEncodingOverride</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.CharacterEncodingOverride" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe" title="ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe</span></code></a></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.CharacterEncodingOverride.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.CharacterEncodingOverride.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.CharacterEncodingOverride.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.CharacterEncodingOverride.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.data_imports.blog.feedparser.CharacterEncodingUnknown">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">CharacterEncodingUnknown</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.CharacterEncodingUnknown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe" title="ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe</span></code></a></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.CharacterEncodingUnknown.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.CharacterEncodingUnknown.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.CharacterEncodingUnknown.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.CharacterEncodingUnknown.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.data_imports.blog.feedparser.NonXMLContentType">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">NonXMLContentType</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.NonXMLContentType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe" title="ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.data_imports.blog.feedparser.ThingsNobodyCaresAboutButMe</span></code></a></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.NonXMLContentType.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.NonXMLContentType.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.NonXMLContentType.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.NonXMLContentType.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="ctxalgolib.data_imports.blog.feedparser.UndeclaredNamespace">
+<em class="property">exception </em><code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">UndeclaredNamespace</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.UndeclaredNamespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.UndeclaredNamespace.args">
+<code class="descname">args</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.UndeclaredNamespace.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.UndeclaredNamespace.message">
+<code class="descname">message</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.UndeclaredNamespace.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict">
+<em class="property">class </em><code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">FeedParserDict</code><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.keymap">
+<code class="descname">keymap</code><em class="property"> = {'modified_parsed': 'updated_parsed', 'description': ['summary', 'subtitle'], 'copyright': 'rights', 'date_parsed': 'updated_parsed', 'url': ['href'], 'items': 'entries', 'tagline': 'subtitle', 'modified': 'updated', 'copyright_detail': 'rights_detail', 'issued_parsed': 'published_parsed', 'description_detail': ['summary_detail', 'subtitle_detail'], 'issued': 'published', 'date': 'updated', 'tagline_detail': 'subtitle_detail', 'guid': 'id', 'channel': 'feed'}</em><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.keymap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.has_key">
+<code class="descname">has_key</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.has_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None.  Remove all items from D.<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a shallow copy of D<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.fromkeys">
+<code class="descname">fromkeys</code><span class="sig-paren">(</span><em>S</em><span class="optional">[</span>, <em>v</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; New dict with keys from S and values equal to v.<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>v defaults to None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's (key, value) pairs, as 2-tuples<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.iteritems">
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the (key, value) items of D<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.iterkeys">
+<code class="descname">iterkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the keys of D<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.itervalues">
+<code class="descname">itervalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the values of D<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's keys<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; v, remove specified key and return the corresponding value.<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; (k, v), remove and return some (key, value) pair as a<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>2-tuple; but raise KeyError if D is empty.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em>E</em>, <span class="optional">]</span><em>**F</em><span class="sig-paren">)</span> &rarr; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's values<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.viewitems">
+<code class="descname">viewitems</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on D's items<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.viewitems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.viewkeys">
+<code class="descname">viewkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on D's keys<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.viewkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.data_imports.blog.feedparser.FeedParserDict.viewvalues">
+<code class="descname">viewvalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an object providing a view on D's values<a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.FeedParserDict.viewvalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.feedparser.registerDateHandler">
+<code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">registerDateHandler</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.registerDateHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a date handler function (takes string, returns 9-tuple date in GMT)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.feedparser.convert_to_utf8">
+<code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">convert_to_utf8</code><span class="sig-paren">(</span><em>http_headers</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.convert_to_utf8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect and convert the character encoding to UTF-8.</p>
+<p>http_headers is a dictionary
+data is a raw string (not Unicode)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.feedparser.replace_doctype">
+<code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">replace_doctype</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.replace_doctype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strips and replaces the DOCTYPE, returns (rss_version, stripped_data)</p>
+<p>rss_version may be &#8216;rss091n&#8217; or None
+stripped_data is the same XML document with a replaced DOCTYPE</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.data_imports.blog.feedparser.parse">
+<code class="descclassname">ctxalgolib.data_imports.blog.feedparser.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>url_file_stream_or_string</em>, <em>etag=None</em>, <em>modified=None</em>, <em>agent=None</em>, <em>referrer=None</em>, <em>handlers=None</em>, <em>request_headers=None</em>, <em>response_headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.data_imports.blog.feedparser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a feed from a URL, file, stream, or string.</p>
+<p>request_headers, if given, is a dict from http header name to value to add
+to the request; this overrides internally generated values.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="import_blog_hits.html" class="btn btn-neutral float-right" title="import_blog_hits" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="base_site.html" class="btn btn-neutral" title="base_site" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

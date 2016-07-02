@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>utils &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="index.html"/>
+        <link rel="prev" title="unzip_index_5s_trading" href="trial/unzip_index_5s_trading.html"/> 
+
+  
+  <script src="static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trial/index.html">trial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>utils</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="sources/utils.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.utils">
+<span id="utils"></span><h1>utils<a class="headerlink" href="#module-ctxalgolib.utils" title="Permalink to this headline">¶</a></h1>
+<p>Some utils.  These should not be here, move somewhere better</p>
+<p>copyright 2016 Equilibrium Capital</p>
+<dl class="function">
+<dt id="ctxalgolib.utils.override">
+<code class="descclassname">ctxalgolib.utils.</code><code class="descname">override</code><span class="sig-paren">(</span><em>interface_class</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.utils.override" title="Permalink to this definition">¶</a></dt>
+<dd><p>This one is from
+<a class="reference external" href="http://stackoverflow.com/questions/1167617/in-python-how-do-i-indicate-im-overriding-a-method">http://stackoverflow.com/questions/1167617/in-python-how-do-i-indicate-im-overriding-a-method</a></p>
+<p>Property that takes the class name that this method is supposed to override a method within
+and asserts if that does not appear</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.utils.find_last_index">
+<code class="descclassname">ctxalgolib.utils.</code><code class="descname">find_last_index</code><span class="sig-paren">(</span><em>seq</em>, <em>predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.utils.find_last_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the index of the last element with which predict returns True, or -1.
+:param seq: a list
+:param predicate: function
+:return: index if the found element or -1.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.utils.create_temp_folder">
+<code class="descclassname">ctxalgolib.utils.</code><code class="descname">create_temp_folder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.utils.create_temp_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a temporary folder and return its absolute path.
+:return: string, folder path.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.utils.DirectAccessibleDict">
+<em class="property">class </em><code class="descclassname">ctxalgolib.utils.</code><code class="descname">DirectAccessibleDict</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">dict</span></code></p>
+<p>A dict that supports dot notation to get and set its content key-value pairs.</p>
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.has">
+<code class="descname">has</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.has" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does key appear in current?
+:param key: object, key.
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.filtered">
+<code class="descname">filtered</code><span class="sig-paren">(</span><em>keys</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.filtered" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; None.  Remove all items from D.<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a shallow copy of D<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.fromkeys">
+<code class="descname">fromkeys</code><span class="sig-paren">(</span><em>S</em><span class="optional">[</span>, <em>v</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; New dict with keys from S and values equal to v.<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.fromkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>v defaults to None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; D[k] if k in D, else d.  d defaults to None.<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.has_key">
+<code class="descname">has_key</code><span class="sig-paren">(</span><em>k</em><span class="sig-paren">)</span> &rarr; True if D has a key k, else False<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.has_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.items">
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's (key, value) pairs, as 2-tuples<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.iteritems">
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the (key, value) items of D<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.iterkeys">
+<code class="descname">iterkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the keys of D<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.itervalues">
+<code class="descname">itervalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an iterator over the values of D<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's keys<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; v, remove specified key and return the corresponding value.<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.popitem">
+<code class="descname">popitem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; (k, v), remove and return some (key, value) pair as a<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.popitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>2-tuple; but raise KeyError if D is empty.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.setdefault">
+<code class="descname">setdefault</code><span class="sig-paren">(</span><em>k</em><span class="optional">[</span>, <em>d</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; D.get(k,d), also set D[k]=d if k not in D<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.setdefault" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em>E</em>, <span class="optional">]</span><em>**F</em><span class="sig-paren">)</span> &rarr; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; list of D's values<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.viewitems">
+<code class="descname">viewitems</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on D's items<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.viewitems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.viewkeys">
+<code class="descname">viewkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; a set-like object providing a view on D's keys<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.viewkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.utils.DirectAccessibleDict.viewvalues">
+<code class="descname">viewvalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; an object providing a view on D's values<a class="headerlink" href="#ctxalgolib.utils.DirectAccessibleDict.viewvalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.utils.sorted_list_dir">
+<code class="descclassname">ctxalgolib.utils.</code><code class="descname">sorted_list_dir</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.utils.sorted_list_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return content in path, sorted in asscending alphanumeric order.
+:param path: string, a folder path.
+:return: [string], list of sorted content.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="trial/unzip_index_5s_trading.html" class="btn btn-neutral" title="unzip_index_5s_trading" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

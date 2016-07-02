@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>bar_generator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="ohlc" href="index.html"/>
+        <link rel="next" title="ctp_file_log_reader" href="ctp_file_log_reader.html"/>
+        <link rel="prev" title="bar_arrival_request" href="bar_arrival_request.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_ohlc.html">abstract_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">bar_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exright.html">exright</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_generator.html">ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_logger.html">ohlc_logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_merger.html">ohlc_merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer.html">ohlc_reader_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_utils.html">ohlc_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="periodicity.html">periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_days.html">trading_days</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">ohlc</a> &raquo;</li>
+      
+    <li>bar_generator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/ohlc/bar_generator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.ohlc.bar_generator">
+<span id="bar-generator"></span><h1>bar_generator<a class="headerlink" href="#module-ctxalgolib.ohlc.bar_generator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ohlc.bar_generator.Bar">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">Bar</code><span class="sig-paren">(</span><em>timestamp</em>, <em>open_value</em>, <em>high_value</em>, <em>low_value</em>, <em>close_value</em>, <em>volume</em>, <em>amount=0</em>, <em>open_interest=None</em>, <em>dominant=None</em>, <em>next_dominant=None</em>, <em>tick=None</em>, <em>profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that represents a OHLC bar.</p>
+<p>Initialize current bar.
+Parameters:
+:param timestamp: datetime, time stamp of current bar (end time).
+:param open_value, high_value, low_value, close_value: float, OHLC values for current bar.
+:param volume: float, volume value.
+:param open_interest: float, if not None, open interest. None means that open interest information</p>
+<blockquote>
+<div>is not available.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dominant</strong> &#8211; int, if not None, the flag to indicate dominant contract switch. None means that
+dominant contract information is not available.</li>
+<li><strong>next_dominant</strong> &#8211; not used.</li>
+<li><strong>tick</strong> &#8211; dict{string: object}, the tick data.</li>
+<li><strong>profits</strong> &#8211; float, the profits value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.Bar.set_instrument_id">
+<code class="descname">set_instrument_id</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar.set_instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.instrument_id to instrument_id.
+&#64;param instrument_id: string, instrument id.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.Bar.as_dict">
+<code class="descname">as_dict</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dict containing data from current bar.
+:param with_open_interest: boolean, if True, include open interest data.
+:param order_book_level: int, order book level.
+:param dominant: boolean, if True, include dominant information.
+:param profits: boolean, if True, include the profits information.
+:return: dict{string: object}, the bar data as dict.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">AbstractBarGenerator</code><span class="sig-paren">(</span><em>on_bar_generated</em>, <em>use_mid_ask_bid</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Initialize current.
+:param on_bar_generated: a function pointer with a single parameter, whose type is Bar.</p>
+<blockquote>
+<div>The function to be called when a bar has been collected.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>use_mid_ask_bid</strong> &#8211; boolean, if True, use mid ask bid value to generate ohlcs.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.add_tick">
+<code class="descname">add_tick</code><span class="sig-paren">(</span><em>tick</em>, <em>second_precision_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.add_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a trading data tick.
+:param tick: dict{string: object},
+:param second_precision_time:datetime, a timestamp which only has second level precision,</p>
+<blockquote>
+<div>no millisecond component, this is used to handle the correct generation of bars at market period
+ends and day switch when is_data_source_tick() is True in the ohlc generator level.</div></blockquote>
+<p>:return Bar, a bar if a new bar is generated, None if no bar is generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.add_time">
+<code class="descname">add_time</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.add_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The action to be invoked when there is a new timestamp available. This method will use the timestamp
+to decide if new bars should be generated. Unlike self.add_tick, the parameters of this method do
+not contain information about traded price or order book.
+:param timestamp:  datetime, the new timestamp.
+:return: Bar, a bar if a new bar is generated, None if no bar is generated</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finish current bar generator. Emit remaining data into a single bar and emit the bar
+by calling self.on_bar_generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.peek_last_bar">
+<code class="descname">peek_last_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.peek_last_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the last bar so far even if it is not fully developed.
+:return Bar, the bat so far.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.is_tick_usable">
+<code class="descname">is_tick_usable</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator.is_tick_usable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given tick usable?
+:param tick: dict{string: object},
+:return: boolean.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">BarGenerator</code><span class="sig-paren">(</span><em>periodicity</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>market_period_ends=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator" title="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.bar_generator.AbstractBarGenerator</span></code></a></p>
+<p>Class that collects price events and emits ohlc bars.</p>
+<p>Initialize current.
+:param periodicity: Periodicity, the periodicity of ohlc bars that should be emitted.
+:param on_bar_generated: a function pointer with a single parameter, whose type is Bar.</p>
+<blockquote>
+<div>The function to be called when a bar has been collected.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>market_periods</strong> &#8211; [(time, time)], a list of time periods defining the open periods (in one day)
+for the market. Each element of the array defines a period. The first element is the open time,
+the second element is the close time.
+The open time of the first period and the close time of the last period defines
+the market open and close time for a day.
+market close time can be smaller than market open time, this means that the market opens
+at the previous date. For example, for 黄金期货, market open time = time(21, 0, 0) and
+market close time = time(15, 0, 0). This means for that future, a day&#8217;s trading starts at
+date1 21:00, and ends at date1+1 15:00. This affects the calculation of daily bars.</li>
+<li><strong>with_open_interest</strong> &#8211; boolean, if True, the underlying data source will have open interest data,
+and the generated ohlc bars contains open interest data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.add_tick">
+<code class="descname">add_tick</code><span class="sig-paren">(</span><em>tick</em>, <em>second_precision_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.add_tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.add_time">
+<code class="descname">add_time</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.add_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><em>force_end_timestamp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finish current bar generator. Emit remaining data into a single bar and emit the bar
+by calling self.on_bar_generated.
+:param force_end_timestamp: boolean, force to modify the timestamp of the last bar or not</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.peek_last_bar">
+<code class="descname">peek_last_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.peek_last_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the last bar so far even if it is not fully developed.
+:return Bar, the bat so far.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.get_end_timestamp">
+<code class="descname">get_end_timestamp</code><span class="sig-paren">(</span><em>current_time</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.get_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ending timestamp of current_time in current periodicity.
+:param current_time: datetime, the cursor timestamp.
+:return datetime, the next end timestamp.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.is_tick_usable">
+<code class="descname">is_tick_usable</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.is_tick_usable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given tick usable?
+:param tick: dict{string: object},
+:return: boolean.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">VolatilityBarGenerator</code><span class="sig-paren">(</span><em>volatility</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator" title="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.bar_generator.AbstractBarGenerator</span></code></a></p>
+<p>Class that collects price events and emits volatility ohlc bars.</p>
+<p>Initialize current.
+:param volatility: float, the volatility of ohlc bars that should be emitted.
+:param on_bar_generated: a function pointer with a single parameter, whose type is Bar.</p>
+<blockquote>
+<div>The function to be called when a bar has been collected.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>market_periods</strong> &#8211; [(time, time)], a list of time periods defining the open periods (in one day)
+for the market. Each element of the array defines a period. The first element is the open time,
+the second element is the close time.
+The open time of the first period and the close time of the last period defines
+the market open and close time for a day.
+market close time can be smaller than market open time, this means that the market opens
+at the previous date. For example, for 黄金期货, market open time = time(21, 0, 0) and
+market close time = time(15, 0, 0). This means for that future, a day&#8217;s trading starts at
+date1 21:00, and ends at date1+1 15:00. This affects the calculation of daily bars.</li>
+<li><strong>with_open_interest</strong> &#8211; boolean, if True, the underlying data source will have open interest data,
+and the generated ohlc bars contains open interest data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_tick">
+<code class="descname">add_tick</code><span class="sig-paren">(</span><em>tick</em>, <em>second_precision_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.is_tick_usable">
+<code class="descname">is_tick_usable</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.is_tick_usable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given tick usable?
+:param tick: dict{string: object},
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_time">
+<code class="descname">add_time</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finish current bar generator. Emit remaining data into a single bar and emit the bar
+by calling self.on_bar_generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.peek_last_bar">
+<code class="descname">peek_last_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.peek_last_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the last bar so far even if it is not fully developed.
+Return: Bar, the bat so far.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ctp_file_log_reader.html" class="btn btn-neutral float-right" title="ctp_file_log_reader" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bar_arrival_request.html" class="btn btn-neutral" title="bar_arrival_request" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

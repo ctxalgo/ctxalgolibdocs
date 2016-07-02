@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>log_loaders &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="loggers" href="index.html"/>
+        <link rel="next" title="logger_handlers" href="logger_handlers.html"/>
+        <link rel="prev" title="loggers" href="index.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">loggers</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">log_loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logger_handlers.html">logger_handlers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">loggers</a> &raquo;</li>
+      
+    <li>log_loaders</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/loggers/log_loaders.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.loggers.log_loaders">
+<span id="log-loaders"></span><h1>log_loaders<a class="headerlink" href="#module-ctxalgolib.loggers.log_loaders" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.loggers.log_loaders.LogUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">LogUtils</code><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.LogUtils" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="ctxalgolib.loggers.log_loaders.LogUtils.parse_json_data">
+<em class="property">static </em><code class="descname">parse_json_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.LogUtils.parse_json_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.log_loaders.LogRecord">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">LogRecord</code><span class="sig-paren">(</span><em>level</em>, <em>tag</em>, <em>dt</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.LogRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize current log record. A record represents a line in the output log file.
+:param level: string, the level of current record.
+:param tag: string, the tag of current record.
+:param dt: datetime, time of the record.
+:param data: dict with string keys. The data associated with current record.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">AbstractLogLoader</code><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load logger outputs from file.
+:param log_file: string, the log file.
+:return: [LogRecord], the loaded log records.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader.get_size_statistics">
+<code class="descname">get_size_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader.get_size_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal usage to debug that data size for logs. Used for optimizing the log size.
+:return: dict{string: float}, keys are log tag names, values are ratio of</p>
+<blockquote>
+<div>log size that those kinds of tags take.</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader.get_size_statistics_as_string">
+<em class="property">static </em><code class="descname">get_size_statistics_as_string</code><span class="sig-paren">(</span><em>stats</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader.get_size_statistics_as_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return size statistics as a string.
+:param stats: dict{string: float}, keys are tag names, values are size proportion of that tag.
+:return: string, the size statistics. Each line in the result string displays a single tag</p>
+<blockquote>
+<div>and its size proportion in the whole log file.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">BinaryLogLoader</code><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader" title="ctxalgolib.loggers.log_loaders.AbstractLogLoader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.log_loaders.AbstractLogLoader</span></code></a></p>
+<p>Class to load a binary log output.</p>
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.from_file">
+<em class="property">static </em><code class="descname">from_file</code><span class="sig-paren">(</span><em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load logger outputs from file.
+:param log_file: string, the log file.
+:return: [LogRecord], the loaded log records.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.get_size_statistics">
+<code class="descname">get_size_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.get_size_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal usage to debug that data size for logs. Used for optimizing the log size.
+:return: dict{string: float}, keys are log tag names, values are ratio of</p>
+<blockquote>
+<div>log size that those kinds of tags take.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.get_size_statistics_as_string">
+<code class="descname">get_size_statistics_as_string</code><span class="sig-paren">(</span><em>stats</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.get_size_statistics_as_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return size statistics as a string.
+:param stats: dict{string: float}, keys are tag names, values are size proportion of that tag.
+:return: string, the size statistics. Each line in the result string displays a single tag</p>
+<blockquote>
+<div>and its size proportion in the whole log file.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader">
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">TextLogLoader</code><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader" title="ctxalgolib.loggers.log_loaders.AbstractLogLoader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.log_loaders.AbstractLogLoader</span></code></a></p>
+<dl class="staticmethod">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.from_file">
+<em class="property">static </em><code class="descname">from_file</code><span class="sig-paren">(</span><em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load logger outputs from file.
+:param log_file: string, the log file.
+:return: [LogRecord], the loaded log records.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load logger outputs from file.
+:param log_file: string, the log file.
+:return: [LogRecord], the loaded log records.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.get_size_statistics">
+<code class="descname">get_size_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.get_size_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal usage to debug that data size for logs. Used for optimizing the log size.
+:return: dict{string: float}, keys are log tag names, values are ratio of</p>
+<blockquote>
+<div>log size that those kinds of tags take.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.parse_line">
+<code class="descname">parse_line</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.parse_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.process_data">
+<code class="descname">process_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.process_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.get_datetime_from_string">
+<code class="descname">get_datetime_from_string</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.get_datetime_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a datetime object from day, <a href="#id1"><span class="problematic" id="id2">time_</span></a> and milli.
+Parameters:</p>
+<blockquote>
+<div>text: string, the string representation of a datetime.
+day: string, a string representation of a date, in format yyyymmdd.
+<a href="#id3"><span class="problematic" id="id4">time_</span></a>: string, a string representation of a time, in format HH:MM:SS.
+milli: string, a strign representation of milliseconds, in format of an integer.</div></blockquote>
+<p>Return: datetime, a parsed datetime object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.get_size_statistics_as_string">
+<code class="descname">get_size_statistics_as_string</code><span class="sig-paren">(</span><em>stats</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.get_size_statistics_as_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return size statistics as a string.
+:param stats: dict{string: float}, keys are tag names, values are size proportion of that tag.
+:return: string, the size statistics. Each line in the result string displays a single tag</p>
+<blockquote>
+<div>and its size proportion in the whole log file.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="logger_handlers.html" class="btn btn-neutral float-right" title="logger_handlers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="loggers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Jul 02, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
