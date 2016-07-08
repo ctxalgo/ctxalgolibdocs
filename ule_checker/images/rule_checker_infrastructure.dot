@@ -1,0 +1,28 @@
+digraph G {
+  rankdir="LR";
+  strategy[color=green]
+  market_broker[color=brown]
+  input_proxy[shape=box, color=blue, style=bold]
+  rule_checker[shape=box, color=red, style=bold]
+  output_proxy[shape=box, color=blue, style=bold]
+
+  alerta_visualizer[color=gray]
+  database[color=purple]
+
+  order_executor[color=black]
+
+  strategy -> input_proxy[label="orders"]
+  market_broker -> input_proxy[label="price ticks"]
+  
+  input_proxy -> rule_checker[label="orders,\nprice ticks"]
+
+  rule_checker -> output_proxy[label="violations,\nstatus"] 
+  
+  output_proxy -> alerta_visualizer[label="violations,\nstatus"]
+  output_proxy -> database[label="violations,\nstatus"]
+
+  rule_checker -> order_executor[label="orders, if no\nviolation"]
+
+  output_proxy -> strategy[label="order rejection"]
+ 
+}

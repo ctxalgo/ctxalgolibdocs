@@ -1,6 +1,8 @@
 ---
 title: Introduction
 layout: post
-category: zh
+category: rule_checker
+language: zh
 ---
 Title:
+

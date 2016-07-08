@@ -1,7 +1,8 @@
 ---
-title: Chart Customized Series
+title: Chart customized series
 layout: post
-category: zh
+category: charting
+language: zh
 ---
 
 ```python
@@ -14,7 +15,9 @@ from ctxalgolib.data_feed.ohlc_based_data_feed import OhlcBasedDataFeed
 
 # Get some ohlc from web, please replace ohlc with your own ohlc object.
 f = WebFutureDataFeed()
-ohlc = f.ohlc('IF99', start_time='2014-01-01', end_time='2015-12-31', periodicity=Periodicity.DAILY)
+instrument_id = 'IF99'
+period = Periodicity.WEEKLY
+ohlc = f.ohlc(instrument_id, start_time='2014-01-01', end_time='2015-12-31', periodicity=period)
 
 
 # Construct some ad-hoc time series based on the ohlc. series_t stores x-axis points, series_d stores y-axis points.
@@ -29,15 +32,16 @@ for i in range(1, 10):
 # Construct a data feed for charting.
 feed = OhlcBasedDataFeed({
     OhlcGeneratorConstants.time_based: {
-        'IF99': {
-            Periodicity.DAILY: ohlc
+        instrument_id: {
+            period: ohlc
         }
     }
 })
 
 # Chart
 c = Charts(data_feed=feed)
-c.set_instrument('IF99')
+c.set_instrument(instrument_id)
+c.period(period)
 
 # Draw ohlc.
 c.height(k=500)        # Set the height of the K-bar area.

@@ -1,0 +1,22 @@
+---
+layout: default
+title: ta
+---
+<div>
+    <ul>
+        {% for cate in site.categories %}
+            {% if cate[0] == 'ta' %}
+                {% for post in cate[1] %}
+                    {% if post.language == 'en' %}
+                        <li>
+                            <h4>
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </h4>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
