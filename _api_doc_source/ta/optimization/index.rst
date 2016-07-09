@@ -4,9 +4,9 @@ optimization
 .. toctree::
    :maxdepth: 2
 
-   objective
-   optimization_utils
-   optimizer
    parameters
+   optimizer
    regularizer
+   optimization_utils
    walk_forward
+   objective

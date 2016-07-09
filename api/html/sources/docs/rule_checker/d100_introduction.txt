@@ -1,4 +1,0 @@
-d100_introduction
-**************************
-
-.. automodule:: ctxalgolib.docs.rule_checker.d100_introduction

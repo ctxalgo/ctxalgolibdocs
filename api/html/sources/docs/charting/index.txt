@@ -1,7 +1,0 @@
-charting
-########################
-
-.. toctree::
-   :maxdepth: 2
-
-   e120_chart_customized_series

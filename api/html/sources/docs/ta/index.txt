@@ -1,7 +1,0 @@
-ta
-########################
-
-.. toctree::
-   :maxdepth: 2
-
-   e200_chan_theory_piecewise_linear_regression

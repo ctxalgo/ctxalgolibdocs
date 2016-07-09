@@ -5,6 +5,6 @@ news_analysis
    :maxdepth: 2
 
    news_analysis
-   news_similarity
    news_similarity_from_stocks_in_content
+   news_similarity
    news_similarity_from_title
