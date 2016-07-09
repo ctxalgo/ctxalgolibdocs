@@ -5,6 +5,7 @@ trading_utils
    :maxdepth: 2
 
    code_gen/index
+   security_companies/index
    futures/index
    model_writer
    spin
