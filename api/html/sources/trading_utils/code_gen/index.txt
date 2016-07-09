@@ -5,5 +5,5 @@ code_gen
    :maxdepth: 2
 
    ast_utils
-   indicator_generator
    model_checking
+   indicator_generator

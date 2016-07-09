@@ -5,8 +5,8 @@ output
    :maxdepth: 2
 
    ipython/index
+   texttable
+   iterm_plot
    ap
    generate_mo_file
-   iterm_plot
-   texttable
    translation

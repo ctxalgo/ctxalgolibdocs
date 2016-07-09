@@ -5,5 +5,5 @@ mql4_parser
    :maxdepth: 2
 
    MQL4Lexer
-   MQL4Parser
    MQL4Visitor
+   MQL4Parser

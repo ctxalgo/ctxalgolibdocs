@@ -6,22 +6,23 @@ trading_utils
 
    code_gen/index
    futures/index
-   data_preparer
-   data_preparer_utils
-   data_source_generator
-   design_by_contract
-   dominant_instrument
-   future_info_calculator_factory
-   future_market_periods
-   future_name_parser
-   instrument_type_detector
-   instrument_utils
-   market_period_providers
    model_writer
    spin
+   strategy_queries
+   future_name_parser
+   instrument_utils
+   data_preparer
+   data_source_generator
+   dominant_instrument_detector
+   market_period_providers
+   data_preparer_utils
+   dominant_instrument
+   future_info_calculator_factory
+   instrument_type_detector
+   design_by_contract
+   type_checking_utils
+   trading_constants
    state
    state_machine_type_checking
-   strategy_queries
-   trading_constants
    trading_utils
-   type_checking_utils
+   future_market_periods

@@ -5,68 +5,68 @@ scripts
    :maxdepth: 2
 
    rule_checking/index
-   update_future_data_into_database
-   update_major_money
-   update_new_stocks
-   update_ohlc_with_periodicity
-   update_pool_return
-   update_security_pinyin
-   update_share_holder_from_163
-   update_shibor
-   update_stock_daily_from_yahoo
-   update_stock_info
-   update_stock_plates
    update_stock_plates_from_sohu
-   update_stock_returns
-   update_sub_new_stock_open_board
-   update_unique_stock_plates
-   update_user_stock_pool
-   backup_database
-   calculate_fundamentals
-   calculate_plate_money_flow
-   calculate_stock_money_flow
-   check_future_data_preparer_result_correctness
-   check_market_period_same_as_estimated_from_data
-   check_ohlc_equality
-   collect_blogs
-   collect_fund_holders
-   collect_future_commission
-   collect_future_margin_and_price_limit
-   collect_future_volume_multiple
-   collect_index_composite_stocks_and_weights
-   collect_state_company
-   collect_target_stock_expansion
-   collect_tianya_blog
-   construct_ctxalgobase
-   correct_extra_large_stock_daily_price
-   download_news_content
-   extract_instrument_from_data_preparer_folder
-   extract_part_of_tick_data
-   extract_rumian_blogs
-   find_missing_stock_exrights
-   generate_future_info_classes
-   generate_future_market_periods
-   generate_highcharts_builder
-   generate_ohlc_for_future_historical_data
    generate_trading_days
-   identify_stocks
-   import_file_to_database
+   update_shibor
+   collect_future_commission
+   update_stock_info
+   check_ohlc_equality
+   extract_instrument_from_data_preparer_folder
+   extract_rumian_blogs
+   collect_state_company
+   generate_future_info_classes
+   collect_fund_holders
    import_from_dafuweng
-   imprt_tongdaxin_data
-   prepare_tick_data_for_ohlc_generation
-   process_future_1s_trading_data
-   process_index_5s_trading_data
-   process_stock_1s_trading_data
-   process_stock_3s_trading_data
+   update_stock_returns
+   update_capital_structure
+   update_user_stock_pool
+   identify_stocks
+   update_major_money
    retrieve_missing_stock_names
+   find_missing_stock_exrights
+   update_security_pinyin
+   import_file_to_database
+   imprt_tongdaxin_data
+   generate_highcharts_builder
+   construct_ctxalgobase
+   update_company_performance_from_163
+   update_future_data_into_database
    s3_data_updater
-   script_utils
-   stock_data_processor
+   collect_future_volume_multiple
    strong_stocks_statistics_calculator
+   prepare_tick_data_for_ohlc_generation
+   collect_tianya_blog
    sync_ctxlite
    unzip_data_from_dafuweng_to_data_preparer_format
-   update_capital_structure
+   collect_target_stock_expansion
+   calculate_fundamentals
+   correct_extra_large_stock_daily_price
+   update_stock_plates
+   collect_index_composite_stocks_and_weights
+   calculate_plate_money_flow
+   collect_blogs
+   update_pool_return
+   update_new_stocks
+   generate_ohlc_for_future_historical_data
+   generate_future_market_periods
+   update_sub_new_stock_open_board
+   backup_database
+   calculate_stock_money_flow
+   download_news_content
+   process_stock_1s_trading_data
+   process_stock_3s_trading_data
    update_company_allocation_from_163
-   update_company_news
-   update_company_performance_from_163
+   check_future_data_preparer_result_correctness
+   process_index_5s_trading_data
+   process_future_1s_trading_data
    update_company_report_dates_from_163
+   script_utils
+   update_unique_stock_plates
+   update_ohlc_with_periodicity
+   extract_part_of_tick_data
+   update_share_holder_from_163
+   update_company_news
+   update_stock_daily_from_yahoo
+   check_market_period_same_as_estimated_from_data
+   collect_future_margin_and_price_limit
+   stock_data_processor

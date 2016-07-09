@@ -5,6 +5,6 @@ parameter_tuning
    :maxdepth: 2
 
    brute_force_solution_searcher
+   solution_searcher
    dtosc_parameter_tuner
    optimization_goals
-   solution_searcher

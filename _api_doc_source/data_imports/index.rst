@@ -7,46 +7,46 @@ data_imports
    blog/index
    coretx_data_import/index
    major_money/index
-   news/index
-   ohlc_imports/index
    otc/index
    tongdaxin/index
-   capital_structure_importer
-   company_allocation_importer
-   company_capital_structures_importer
-   company_exrights_importer
-   company_financials_importer
-   company_performance_importer
-   company_report_dates_importer
-   data_importer
-   east_money_plate_importer
-   fund_holders_collector
-   fundamental_expressions_calculator
-   hexun_plate_importer
-   hs300_stock_weights_retriever
-   if_trading_1s_importer
-   index_composite_stocks_and_weights_collector
-   large_stock_price_finder
-   new_stock_collector
-   plate_importer
+   ohlc_imports/index
+   news/index
    rar_folder_importer
-   rumian_blog_extracter
-   share_holder_importer
-   sina_plate_importer
-   sohu_plate_importer
-   state_company_collector
-   stock_info_collector
-   stock_name_retriever
-   stock_plate_importer
-   stock_pool_conditioned_triggers
-   stock_pool_return_calculator
-   stock_pool_trigger_calculator
-   stock_share_holder_importer
-   stock_trading_1d_importer
-   stock_trading_3s_importer
-   sub_new_stock_open_board_calculator
-   targeted_stock_expansion_collector
-   tianya_collector
    tonghuashun_plate_importer
+   stock_trading_3s_importer
+   sohu_plate_importer
+   rumian_blog_extracter
+   company_performance_importer
+   stock_share_holder_importer
+   hs300_stock_weights_retriever
+   share_holder_importer
+   stock_plate_importer
+   if_trading_1s_importer
+   stock_name_retriever
+   large_stock_price_finder
+   stock_pool_return_calculator
    update_security_pinyin
+   new_stock_collector
+   fund_holders_collector
+   capital_structure_importer
+   stock_pool_trigger_calculator
+   targeted_stock_expansion_collector
+   stock_info_collector
+   hexun_plate_importer
+   company_financials_importer
+   tianya_collector
+   company_exrights_importer
+   company_capital_structures_importer
+   sub_new_stock_open_board_calculator
+   plate_importer
+   sina_plate_importer
+   stock_pool_conditioned_triggers
    yahoo_data_importer
+   east_money_plate_importer
+   fundamental_expressions_calculator
+   data_importer
+   company_allocation_importer
+   stock_trading_1d_importer
+   index_composite_stocks_and_weights_collector
+   state_company_collector
+   company_report_dates_importer

@@ -4,7 +4,7 @@ chart_patterns
 .. toctree::
    :maxdepth: 2
 
-   golden_angle
+   silver_edge
    grass_belly
    rounding_bottom
-   silver_edge
+   golden_angle

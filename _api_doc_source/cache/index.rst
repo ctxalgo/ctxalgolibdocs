@@ -4,6 +4,6 @@ cache
 .. toctree::
    :maxdepth: 2
 
-   abstract_cache
    file_cache
+   abstract_cache
    memory_cache
