@@ -39,7 +39,12 @@ filter_str = ''
 
 # Based on the filter string defined above, we set the correct filter to receive the market data you want.
 subscriber.setsockopt(zmq.SUBSCRIBE, filter_str)
-subscriber.connect("localhost" + ':' + "27017")
+
+# To accept the tick data, need to register 6556 port.
+subscriber.connect("tcp://127.0.0.1" + ':' + "6556")
+
+# To accept the bar data, need to register 6557 port.
+subscriber.connect("tcp://127.0.0.1" + ':' + "6557")
 
 while True:
     try:
