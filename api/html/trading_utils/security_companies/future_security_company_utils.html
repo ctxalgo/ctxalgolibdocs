@@ -180,7 +180,7 @@
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.security_companies.future_security_company_utils.FutureSecurityCompanyUtils.create_provider">
 <code class="descname">create_provider</code><span class="sig-paren">(</span><em>old_provider</em>, <em>new_provider_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.security_companies.future_security_company_utils.FutureSecurityCompanyUtils.create_provider" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new provider from an old provider name. If old_provider does not exist, throw and exception.
+<dd><p>Create a new provider from an old provider name. If old_provider does not exist, throw an exception.
 If new_provider_name is not valid, throw an exception.
 :param old_provider: string, old provider name.
 :param new_provider_name: string, new provider name.</p>
@@ -227,6 +227,22 @@ If the given provider does not exist in database, throw an exception.
 :param start_date: date, the starting date of this commission.
 :param margin: float, margin.
 :param price_limit: float, price limit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.security_companies.future_security_company_utils.FutureSecurityCompanyUtils.get_all_providers">
+<code class="descname">get_all_providers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.security_companies.future_security_company_utils.FutureSecurityCompanyUtils.get_all_providers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all providers from future_commissions, future_volume_multiples, future_margin_and_price_limits
+:return list of names of providers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.security_companies.future_security_company_utils.FutureSecurityCompanyUtils.get_future_info">
+<code class="descname">get_future_info</code><span class="sig-paren">(</span><em>provider</em>, <em>latest</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.security_companies.future_security_company_utils.FutureSecurityCompanyUtils.get_future_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the future information of the provider
+:param provider: string, provider name
+:param latest: string, if true, get the latest row per future prefix
+:return A dict from string to arrays. Keys are table names of the array series.</p>
 </dd></dl>
 
 </dd></dl>
