@@ -290,7 +290,12 @@ as the dominant instrument. The average traded volume is calculated using simple
 <dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.set_data">
 <code class="descname">set_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.set_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set data needed to decide dominant contracts.
-:param data: dict{trading_day: dict{instrument_id: traded_volume}}</p>
+We would set the data of one kind of future in a special day each time
+:param data: dict{trading_day: dict{instrument_id: traded_volume}}, where</p>
+<blockquote>
+<div>trading_day: data, the data of the special day
+instrument_id: string, the instruments of a special kind, like &#8216;cu0501&#8217; ...
+traded_volume: int, the traded volue of each instrument in one day</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -353,7 +358,7 @@ If there is no enough data to calculate the given levels, the returned list is s
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 18, 2016.
+      Last updated on Jul 19, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
