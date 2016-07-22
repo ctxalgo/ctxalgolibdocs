@@ -32,7 +32,7 @@
   
     <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
         <link rel="up" title="loggers" href="index.html"/>
-        <link rel="next" title="risk" href="../risk/index.html"/>
+        <link rel="next" title="binary_separator" href="binary_separator.html"/>
         <link rel="prev" title="log_loaders" href="log_loaders.html"/> 
 
   
@@ -76,6 +76,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">loggers</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="log_loaders.html">log_loaders</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">logger_handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binary_separator.html">binary_separator</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
@@ -209,7 +210,7 @@
 
 <dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.log_exception">
-<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em>, <em>other_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log exception.
 :param e: Exception, the exception object.
 :param tb: string, the traceback.</p>
@@ -326,7 +327,7 @@ flush all cached messages into storage.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_exception">
-<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em>, <em>other_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log exception.
 :param e: Exception, the exception object.
 :param tb: string, the traceback.</p>
@@ -350,7 +351,7 @@ flush all cached messages into storage.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler">
-<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">BinaryFileLoggerHandler</code><span class="sig-paren">(</span><em>path</em>, <em>cache_size=100</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">BinaryFileLoggerHandler</code><span class="sig-paren">(</span><em>path</em>, <em>cache_size=100</em>, <em>append=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="ctxalgolib.loggers.logger_handlers.LoggerHandler"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.logger_handlers.LoggerHandler</span></code></a></p>
 <p>Logger that outputs messages to a binary file. A binary file is consisted of
 a sequences of cPickle objects, and there is a spliter &#8216;_&#64;_&#8217; between two cPickle
@@ -427,7 +428,7 @@ objects. One cPickle object is serialization of a list of log records.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_exception">
-<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em>, <em>other_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log exception.
 :param e: Exception, the exception object.
 :param tb: string, the traceback.</p>
@@ -505,7 +506,7 @@ flush all cached messages into storage.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_exception">
-<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em>, <em>other_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log exception.
 :param e: Exception, the exception object.
 :param tb: string, the traceback.</p>
@@ -635,7 +636,7 @@ to its component individual loggers.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_exception">
-<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
+<code class="descname">log_exception</code><span class="sig-paren">(</span><em>e</em>, <em>tb</em>, <em>other_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.log_exception" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log exception.
 :param e: Exception, the exception object.
 :param tb: string, the traceback.</p>
@@ -697,7 +698,7 @@ to its component individual loggers.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../risk/index.html" class="btn btn-neutral float-right" title="risk" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="binary_separator.html" class="btn btn-neutral float-right" title="binary_separator" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="log_loaders.html" class="btn btn-neutral" title="log_loaders" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -710,7 +711,7 @@ to its component individual loggers.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 19, 2016.
+      Last updated on Jul 22, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

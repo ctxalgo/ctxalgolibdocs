@@ -6,3 +6,4 @@ loggers
 
    log_loaders
    logger_handlers
+   binary_separator

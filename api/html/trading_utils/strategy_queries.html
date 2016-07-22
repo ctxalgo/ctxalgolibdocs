@@ -880,28 +880,6 @@ To turn the value into the volume to trade, in the case of &#8216;short&#8217;, 
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_close_position">
-<code class="descname">latest_time_to_close_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_close_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the intra-day close position time. The result is defined
-only when self.parameters[&#8216;open_position_time_delta&#8217;] is defined.
-The strategy parameter open_position_time_delta specifies the number of minutes
-before the market closes when the last open position order should be placed.
-:param instrument_id: string, future id. If None, use self.instrument_id().
-:return: datetime.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_open_position">
-<code class="descname">latest_time_to_open_position</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.latest_time_to_open_position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the intra-day latest open position time. The result is defined
-only when self.parameters[&#8216;close_position_time_delta&#8217;] is defined.
-The strategy parameter close_position_time_delta specifies the number of minutes
-before the market closes when the last close position order should be placed.
-:param instrument_id: string, future id. If None, use self.instrument_id().
-:return: datetime.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_open_position_wrt_time">
 <code class="descname">can_open_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.can_open_position_wrt_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Can we open positions for all the instruments given by instrument_ids?
@@ -1261,18 +1239,6 @@ In the case when data feed is not set, queries which rely on data feed will fail
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.dominant_instrument">
-<code class="descname">dominant_instrument</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.dominant_instrument" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the level dominant instrument id on the given trading day.
-:param instrument_prefix: string, instrument id prefix, such as IF, cu.
-:param trading_day: date, or string in form of yyyy-mm-dd. trading day.
-:param level: int, 0 means the dominant contract, 1 means the next dominant contract, and so on.
-:return: string, the instrument id of the asked dominant contract.</p>
-<blockquote>
-<div>If no such dominant contract, return None.</div></blockquote>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.market_periods">
 <code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>trading_day=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.market_periods" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the market periods for the given instrument on the given trading day.
@@ -1428,7 +1394,7 @@ corresponding strategy callbacks from outside.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 19, 2016.
+      Last updated on Jul 22, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
