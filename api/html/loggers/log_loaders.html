@@ -170,8 +170,25 @@
 
 <dl class="class">
 <dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">AbstractLogLoader</code><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">AbstractLogLoader</code><span class="sig-paren">(</span><em>tolerate_parsing_error=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader.set_should_tolerate_parsing_error">
+<code class="descname">set_should_tolerate_parsing_error</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader.set_should_tolerate_parsing_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader.should_tolerate_parsing_error">
+<code class="descname">should_tolerate_parsing_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader.should_tolerate_parsing_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader.error_rows">
+<code class="descname">error_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader.error_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of 0-based row numbers at which the loader cannot parse those rows.
+:return: [int], 0-based row numbers.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="ctxalgolib.loggers.log_loaders.AbstractLogLoader.load">
 <code class="descname">load</code><span class="sig-paren">(</span><em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader.load" title="Permalink to this definition">¶</a></dt>
@@ -203,9 +220,8 @@
 
 <dl class="class">
 <dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">BinaryLogLoader</code><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">BinaryLogLoader</code><span class="sig-paren">(</span><em>tolerate_parsing_error=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader" title="ctxalgolib.loggers.log_loaders.AbstractLogLoader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.log_loaders.AbstractLogLoader</span></code></a></p>
-<p>Class to load a binary log output.</p>
 <dl class="method">
 <dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.load">
 <code class="descname">load</code><span class="sig-paren">(</span><em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.load" title="Permalink to this definition">¶</a></dt>
@@ -217,6 +233,13 @@
 <dd><p>Load logger outputs from file.
 :param log_file: string, the log file.
 :return: [LogRecord], the loaded log records.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.error_rows">
+<code class="descname">error_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.error_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of 0-based row numbers at which the loader cannot parse those rows.
+:return: [int], 0-based row numbers.</p>
 </dd></dl>
 
 <dl class="method">
@@ -238,11 +261,21 @@
 <div>and its size proportion in the whole log file.</div></blockquote>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.set_should_tolerate_parsing_error">
+<code class="descname">set_should_tolerate_parsing_error</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.set_should_tolerate_parsing_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.BinaryLogLoader.should_tolerate_parsing_error">
+<code class="descname">should_tolerate_parsing_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.BinaryLogLoader.should_tolerate_parsing_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="ctxalgolib.loggers.log_loaders.TextLogLoader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">TextLogLoader</code><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.log_loaders.</code><code class="descname">TextLogLoader</code><span class="sig-paren">(</span><em>tolerate_parsing_error=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.log_loaders.AbstractLogLoader" title="ctxalgolib.loggers.log_loaders.AbstractLogLoader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.log_loaders.AbstractLogLoader</span></code></a></p>
 <dl class="staticmethod">
 <dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.from_file">
@@ -293,6 +326,13 @@ milli: string, a strign representation of milliseconds, in format of an integer.
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.error_rows">
+<code class="descname">error_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.error_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of 0-based row numbers at which the loader cannot parse those rows.
+:return: [int], 0-based row numbers.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.get_size_statistics_as_string">
 <code class="descname">get_size_statistics_as_string</code><span class="sig-paren">(</span><em>stats</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.get_size_statistics_as_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return size statistics as a string.
@@ -301,6 +341,16 @@ milli: string, a strign representation of milliseconds, in format of an integer.
 <blockquote>
 <div>and its size proportion in the whole log file.</div></blockquote>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.set_should_tolerate_parsing_error">
+<code class="descname">set_should_tolerate_parsing_error</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.set_should_tolerate_parsing_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.log_loaders.TextLogLoader.should_tolerate_parsing_error">
+<code class="descname">should_tolerate_parsing_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.log_loaders.TextLogLoader.should_tolerate_parsing_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -326,7 +376,7 @@ milli: string, a strign representation of milliseconds, in format of an integer.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 23, 2016.
+      Last updated on Jul 24, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
