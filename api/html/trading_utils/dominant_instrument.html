@@ -201,7 +201,7 @@ If no dominant contract can be decided, return None.</td>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instruments_for_next_trading_day">
-<code class="descname">dominant_instruments_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>level=0</em>, <em>current_dominant_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instruments_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dominant_instruments_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>level=0</em>, <em>current_dominant_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instruments_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return different levels of dominant instrument ids.
 :param trading_day: date, the current trading day when traded_volumes is observed.
 :param traded_volumes: dict{string: int}, keys are instrument ids, values are the total traded volume</p>
@@ -214,15 +214,16 @@ If no dominant contract can be decided, return None.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>level</strong> &#8211; int, the level of dominant instrument ids to return. 0 means only the dominant instrument id,
 1 means the dominant and the next level of dominant, and so on.</li>
-<li><strong>current_dominant_id</strong> &#8211; string, the current dominant instrument id. It is used to make sure that
+<li><strong>current_dominant_ids</strong> &#8211; {int:string}, the current dominant instrument ids. keys are levels, values are
+the current dominant id for that level. It is used to make sure that
 next dominant instrument id cannot backtrack, meaning that dominant instrument id for next trading day
 must &gt;= current_dominant_id.
 If current_dominant_id is None, then the previous rule is not enforced.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[string], the list of multi-level dominant instrument ids. The first element in the list is the
-dominant instrument id, the first element is the next level dominant instrument id, and so on.
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">{int: string}, the dict of multi-level dominant instrument ids.keys are levels, values are
+the current dominant id for that level.
 If there is no enough data to calculate the given levels, the returned list is shorter than level+1.</p>
 </td>
 </tr>
@@ -256,13 +257,25 @@ If there is no enough data to calculate the given levels, the returned list is s
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider.decide">
-<code class="descname">decide</code><span class="sig-paren">(</span><em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider.decide" title="Permalink to this definition">¶</a></dt>
+<code class="descname">decide</code><span class="sig-paren">(</span><em>trading_day</em>, <em>level=0</em>, <em>current_dominant_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider.decide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decide the actual instrument id for it associated dominant contract.
 :param trading_day: date, trading day.
 :param level: int, the level of dominant contract. 0 means the current dominant contract, 1 means the next one.
-:return: string, the full instrument id for the given level of dominant contract.</p>
+:param current_dominant_ids: dict{int: string}, keys are levels, values are the current dominant id for that</p>
 <blockquote>
-<div>None if the asked level of dominant contract cannot be decided.</div></blockquote>
+<div>level. If None or the required level does not appear in this dict, there is no constraints over the
+calculated dominant instrument id, otherwise, the calculated dominant instrument id should not be smaller
+than current_dominant_ids[level].</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">{int: string}, the dict of multi-level dominant instrument ids.keys are levels, values are
+the current dominant id for that level.
+None if the asked level of dominant contract cannot be decided.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -300,7 +313,7 @@ traded_volume: int, the traded volue of each instrument in one day</div></blockq
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.decide">
-<code class="descname">decide</code><span class="sig-paren">(</span><em>trading_day</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.decide" title="Permalink to this definition">¶</a></dt>
+<code class="descname">decide</code><span class="sig-paren">(</span><em>trading_day</em>, <em>level=0</em>, <em>current_dominant_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.decide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decide the actual instrument id for it associated dominant contract.
 :param trading_day: date, trading day.
 :param level: int, the level of dominant instrument ids to return. 0 means only the dominant instrument id,</p>
@@ -310,8 +323,13 @@ traded_volume: int, the traded volue of each instrument in one day</div></blockq
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[string], the list of multi-level dominant instrument ids. The first element in the list is the
-dominant instrument id, the first element is the next level dominant instrument id, and so on.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>current_dominant_ids</strong> &#8211; dict{int: string}, keys are levels, values are the current dominant id for that
+level. If None or the required level does not appear in this dict, there is no constraints over the
+calculated dominant instrument id, otherwise, the calculated dominant instrument id should not be smaller
+than current_dominant_ids[level].</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">{int: string}, the dict of multi-level dominant instrument ids.keys are levels, values are
+the current dominant id for that level.
 If there is no enough data to calculate the given levels, the returned list is shorter than level+1.</td>
 </tr>
 </tbody>
@@ -358,7 +376,7 @@ If there is no enough data to calculate the given levels, the returned list is s
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 22, 2016.
+      Last updated on Jul 23, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

@@ -489,6 +489,40 @@
 
 </dd></dl>
 
+<dl class="class">
+<dt id="ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule">
+<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.check_future_data_preparer_result_correctness.</code><code class="descname">IdNonDecreaseRule</code><span class="sig-paren">(</span><em>raw_data_folder</em>, <em>ohlc_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.AbstractRule" title="ctxalgolib.scripts.check_future_data_preparer_result_correctness.AbstractRule"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.scripts.check_future_data_preparer_result_correctness.AbstractRule</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.check">
+<code class="descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.get_ohlc">
+<code class="descname">get_ohlc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.get_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.is_dominant_instrument">
+<code class="descname">is_dominant_instrument</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.is_dominant_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is instrument_id a dominant id at some level (0, 1, or 2)?
+:param instrument_id: string, instrument id.
+:return: bool.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.set_is_debugging">
+<code class="descname">set_is_debugging</code><span class="sig-paren">(</span><em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.IdNonDecreaseRule.set_is_debugging" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="function">
 <dt id="ctxalgolib.scripts.check_future_data_preparer_result_correctness.main">
 <code class="descclassname">ctxalgolib.scripts.check_future_data_preparer_result_correctness.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.check_future_data_preparer_result_correctness.main" title="Permalink to this definition">¶</a></dt>
@@ -516,7 +550,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 22, 2016.
+      Last updated on Jul 23, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
