@@ -507,6 +507,14 @@ and all the state classes. Do not use datetime.now() because it won&#8217;t work
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.all_positions_with_actual_instrument_id">
+<code class="descname">all_positions_with_actual_instrument_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.all_positions_with_actual_instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return currently holding positions in all traded instruments, including information about actual
+instrument ids.
+:return dict{string: dict{string: int}}, meaning {instrument_id: dict{actual_instrument_id: volume}}.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.AbstractState.can_close_position_wrt_time">
 <code class="descname">can_close_position_wrt_time</code><span class="sig-paren">(</span><em>now=None</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.can_close_position_wrt_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Can we close positions for all the instruments given by instrument_ids?
@@ -1117,6 +1125,14 @@ Note that the labels must be certain strings defined in current class.</div></bl
 <dt id="ctxalgolib.trading_utils.state.TemplateState.all_positions">
 <code class="descname">all_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.all_positions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.all_positions_with_actual_instrument_id">
+<code class="descname">all_positions_with_actual_instrument_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.all_positions_with_actual_instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return currently holding positions in all traded instruments, including information about actual
+instrument ids.
+:return dict{string: dict{string: int}}, meaning {instrument_id: dict{actual_instrument_id: volume}}.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.available_money">
