@@ -148,7 +148,7 @@
 <span id="mission-control"></span><h1>mission_control<a class="headerlink" href="#module-ctxalgolib.mission_control.mission_control" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl">
-<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>sender</em>, <em>receiver</em>, <em>filter=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>queue_from_strategy</em>, <em>queue_into_strategy</em>, <em>topic=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../pub_subs/abstract_data_subscriber.html#ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber" title="ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber</span></code></a></p>
 <dl class="docutils">
 <dt>Class that represents an interface to the mission controller. Current class can communicate with the mission</dt>
@@ -174,11 +174,11 @@ for the moment, the returned message from the receive method will be None.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>sender</strong> &#8211; string, the address (such as IP address and port) to
-send messages to the mission controller.</li>
-<li><strong>receiver</strong> &#8211; string, the address (such as IP address and port) to
-receive messages to the mission controller.</li>
-<li><strong>filter</strong> &#8211; string, the filter for the queuing system. usually the value is
+<li><strong>queue_from_strategy</strong> &#8211; string, the address (such as IP address and port) to
+send messages from the strategy to mission control center.</li>
+<li><strong>queue_into_strategy</strong> &#8211; string, the address (such as IP address and port) to
+receive messages sent from mission control center into the strategy.</li>
+<li><strong>topic</strong> &#8211; string, the filter for the queuing system. usually the value is
 strategy full name, which is product_tag.strategy_name.</li>
 </ul>
 </td>
@@ -201,6 +201,12 @@ strategy full name, which is product_tag.strategy_name.</li>
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl.subscriber_socket">
 <code class="descname">subscriber_socket</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.subscriber_socket" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionControl.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispose current subscriber.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl.context">
@@ -240,7 +246,7 @@ strategy full name, which is product_tag.strategy_name.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 27, 2016.
+      Last updated on Jul 30, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
