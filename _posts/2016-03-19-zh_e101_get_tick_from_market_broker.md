@@ -10,7 +10,7 @@ language: zh
 
 ```python
 import zmq
-from ctxalgolib.proto.proto_gen.ctp_pb2 import DepthMarketData
+from ctxalgocore.market_data.market_data_broker_utils import MarketDataBrokerUtils
 
 # Create your own market data receiver (a zmq subscriber)
 sub_context = zmq.Context()
@@ -34,8 +34,7 @@ subscriber.connect("tcp://127.0.0.1" + ':' + "6556")
 while True:
     try:
         [filter_str, contents] = subscriber.recv_multipart(flags=zmq.NOBLOCK)
-        tick_data = DepthMarketData()
-        tick_data.ParseFromString(contents)
+        tick_data = MarketDataBrokerUtils.parse_subscribed_data('tick', contents)
         print str(tick_data)
         # ... You can apply any processing on the received bar data or tick data here in the loop.
 
