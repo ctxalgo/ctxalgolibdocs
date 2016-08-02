@@ -186,8 +186,8 @@ strategy full name, which is product_tag.strategy_name.</li>
 </tbody>
 </table>
 <dl class="method">
-<dt id="ctxalgolib.mission_control.mission_control.MissionControl.send">
-<code class="descname">send</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.send" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_control">
+<code class="descname">send_to_mission_control</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_control" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send message to the mission controller. Sending message is non-blocking.
 :param message: string, the message to send.</p>
 </dd></dl>
@@ -220,6 +220,77 @@ strategy full name, which is product_tag.strategy_name.</li>
 <code class="descname">set_on_data_action</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.set_on_data_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set self.on_data_action with action.
 :param action: Function pointer with a single parameter.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.mission_control.mission_control.MissionController">
+<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionController</code><span class="sig-paren">(</span><em>context</em>, <em>queues_from_strategy</em>, <em>queues_into_strategy</em>, <em>with_poller=True</em>, <em>topic=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that represents a mission contoller, which is outside strategies and reads messages from strategies and
+sends messages into strategies.</p>
+<p>Initialize current.
+:param context: zmq.Context, zmq context.
+:param queues_from_strategy: string, or dict{string: string}, if the type is string, it represents</p>
+<blockquote>
+<div>a single queue address from strategy. It will use the topic given by the topic parameter.
+If the type is dict{string: string}, it means dict{topic: address},
+then the topic parameter will be ignored.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>queues_into_strategy</strong> &#8211; string, or dict{string: string}, if the type is string, it represents
+a single queue address into strategy. It will use the topic given by the topic parameter.
+If the type is dict{string: string}, it means dict{topic: address},
+then the topic parameter will be ignored.</li>
+<li><strong>with_poller</strong> &#8211; bool, if True, create an internal Poller, so you can call self.poll_from_strategy().</li>
+<li><strong>topic</strong> &#8211; string, the topic.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionController.from_strategy_sockets">
+<code class="descname">from_strategy_sockets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.from_strategy_sockets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of subscriber sockets to read messages from strategies.
+:return: [zmq socket].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionController.to_strategy_sockets">
+<code class="descname">to_strategy_sockets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.to_strategy_sockets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of publisher sockets to send messages from strategies.
+:return: [zmq socket].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionController.send_to_strategy">
+<code class="descname">send_to_strategy</code><span class="sig-paren">(</span><em>topic</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.send_to_strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message with topic into strategy or strategies.
+:param topic: string, topic.
+:param message: string message.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionController.poll_from_strategy">
+<code class="descname">poll_from_strategy</code><span class="sig-paren">(</span><em>topic=None</em>, <em>timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.poll_from_strategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poll messages from strategies.
+:param topic: string, topic, if None, poll all messages from subscriber queues.
+:param timeout: int, in second, poll timeout.
+:return: dict{string: [string]}, meaning dict{topic: [messages with same topic]}.</p>
+<blockquote>
+<div>If no message at all, return an empty dict.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionController.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispose all created zmq sockets.
+:return:</p>
 </dd></dl>
 
 </dd></dl>
