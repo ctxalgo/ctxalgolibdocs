@@ -262,7 +262,7 @@ Only suitable for future data.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">AbstractOhlcGenerator</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>use_mid_ask_bid</em>, <em>keep_new_bars=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">AbstractOhlcGenerator</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>use_mid_ask_bid</em>, <em>keep_new_bars=True</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Initialize current.
 :param with_open_interest: boolean, does underlying data has open interest information?
@@ -283,6 +283,22 @@ and last_price, last_volume and timestamp will be included in every row of the g
 use the average value of ask_price1 and bid_price1 from tick data.</li>
 <li><strong>keep_new_bars</strong> &#8211; boolean, if True, newly generated bars are added into the ohlcs objects
 kept in current object. If False, no new bars are kept.</li>
+<li><strong>settlement_price</strong> &#8211; float, the settlement price for the instrument from the previous trading day.
+If None, no settlement price is given.</li>
+<li><strong>flat_bars</strong> &#8211; <p>bool, if True, when on_time is called, and there is no new tick data within the last
+time period (for example, a minute), then:
+1. use the last received tick&#8217;s price as the open, high, low, close price and use 0 as volume to generate</p>
+<blockquote>
+<div>a bar.</div></blockquote>
+<ol class="arabic" start="2">
+<li>if there is no last tick, but settlement price is set, use that settlement price as open, high, low
+close price and use 0 as volume to generate a bar.</li>
+</ol>
+<p>3. if settlement price is not set, then do not generate any bar.
+In the above two cases, when a bar is generated, the timestamp for the bar is the timestamp given to
+on_time, with second and millisecond set to 0. For example, if on_time(14:59:01.500), then the timestamp
+of the generated flat bar is 14:59:00.</p>
+</li>
 </ul>
 </td>
 </tr>
@@ -436,7 +452,7 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.OhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">OhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">OhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <p>Initialize current.
 :param market_periods: [(time, time)], a list of time periods defining the open periods (in one day)</p>
@@ -483,6 +499,22 @@ at 9:10 should be generated, its tick related field (in case order_book_level &g
 with the tick, but the tick itself does not participate in calculating the open, high, low, close,
 volume of that bar.</li>
 <li><strong>profit_factor</strong> &#8211; float, the factor used to calculate the profit series.</li>
+<li><strong>settlement_price</strong> &#8211; float, the settlement price for the instrument from the previous trading day.
+If None, no settlement price is given.</li>
+<li><strong>flat_bars</strong> &#8211; <p>bool, if True, when on_time is called, and there is no new tick data within the last
+time period (for example, a minute), then:
+1. use the last received tick&#8217;s price as the open, high, low, close price and use 0 as volume to generate</p>
+<blockquote>
+<div>a bar.</div></blockquote>
+<ol class="arabic" start="2">
+<li>if there is no last tick, but settlement price is set, use that settlement price as open, high, low
+close price and use 0 as volume to generate a bar.</li>
+</ol>
+<p>3. if settlement price is not set, then do not generate any bar.
+In the above two cases, when a bar is generated, the timestamp for the bar is the timestamp given to
+on_time, with second and millisecond set to 0. For example, if on_time(14:59:01.500), then the timestamp
+of the generated flat bar is 14:59:00.</p>
+</li>
 </ul>
 </td>
 </tr>
