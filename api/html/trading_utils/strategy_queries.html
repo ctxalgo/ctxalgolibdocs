@@ -1249,6 +1249,35 @@ In the case when data feed is not set, queries which rely on data feed will fail
 :return: bool.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.in_market_period">
+<code class="descname">in_market_period</code><span class="sig-paren">(</span><em>timestamp=None</em>, <em>instrument_id=None</em>, <em>trading_day=None</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.in_market_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given timestamp is within any of the market periods of the instrument.
+:param timestamp: datetime, current timestamp, if None, use self.now().
+:param instrument_id: string, instrument id, if None, use self.instrument_id().
+:param trading_day: date, current trading day, if None, use self.trading_day().
+:param delta: timedelta, if not None, checks this delta before a market period ends.
+:return: bool.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.pending_orders">
+<code class="descname">pending_orders</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.pending_orders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return pending orders.
+:param instrument_id: string, the instrument id whose pending orders are to be returned.</p>
+<blockquote>
+<div>If None, use self.instrument_id().</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict{string:, int}, meaning dict{direction: volume}.
+Keys are direction &#8216;long&#8217; or &#8216;short&#8217;, values are pending volumes in that direction.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
