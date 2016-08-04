@@ -4,8 +4,3 @@ layout: post
 category: ohlc_generation
 language: zh
 ---
-
-```python
-"""
-
-```
