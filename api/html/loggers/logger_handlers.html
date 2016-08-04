@@ -649,14 +649,15 @@ same thread object.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler">
-<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">ZmqLoggerHandler</code><span class="sig-paren">(</span><em>context</em>, <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.loggers.logger_handlers.</code><code class="descname">ZmqLoggerHandler</code><span class="sig-paren">(</span><em>context</em>, <em>address</em>, <em>bind=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler" title="ctxalgolib.loggers.logger_handlers.LoggerHandler"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.loggers.logger_handlers.LoggerHandler</span></code></a></p>
 <p>Class that represents a logger that sends log data to a zeromq queue.
 This logger assumes a publisher-subscriber architecture for zeromq. This logger is a publisher,
 and there is a subscriber running on the other end of the communication queue.</p>
 <p>Initialize current.
 :param context, zeromq context.
-:param address: string, the address of the queue server.</p>
+:param address: string, the address of the queue server.
+:param bind: bool, if True, bind the publisher, otherwise connect.</p>
 <dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.info">
 <code class="descname">info</code><span class="sig-paren">(</span><em>message</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.info" title="Permalink to this definition">¶</a></dt>
@@ -829,7 +830,7 @@ to its component individual loggers.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Aug 04, 2016.
+      Last updated on Aug 05, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
