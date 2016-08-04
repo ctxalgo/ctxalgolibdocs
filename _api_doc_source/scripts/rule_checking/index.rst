@@ -5,6 +5,6 @@ rule_checking
    :maxdepth: 2
 
    stress/index
+   message_proxies
    process_rule_checker_results
    check_rules
-   start_rule_checker_proxies
