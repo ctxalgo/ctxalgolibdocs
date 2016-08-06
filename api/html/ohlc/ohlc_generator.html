@@ -262,7 +262,7 @@ Only suitable for future data.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">AbstractOhlcGenerator</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>use_mid_ask_bid</em>, <em>keep_new_bars=True</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">AbstractOhlcGenerator</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>use_mid_ask_bid</em>, <em>keep_new_bars=True</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Initialize current.
 :param with_open_interest: boolean, does underlying data has open interest information?
@@ -297,7 +297,11 @@ close price and use 0 as volume to generate a bar.</li>
 <p>3. if settlement price is not set, then do not generate any bar.
 In the above two cases, when a bar is generated, the timestamp for the bar is the timestamp given to
 on_time, with second and millisecond set to 0. For example, if on_time(14:59:01.500), then the timestamp
-of the generated flat bar is 14:59:00.</p>
+of the generated flat bar is 14:59:00. And if order book information is needed for such generated bars,
+set the timestamp of the order book to the same as the bar, other order book related fields, such as
+ask, bid, volume, set to 0.
+Of course, bars whose timestamps are outside of market periods for the given instrument
+should not be generated.</p>
 </li>
 </ul>
 </td>
@@ -513,7 +517,11 @@ close price and use 0 as volume to generate a bar.</li>
 <p>3. if settlement price is not set, then do not generate any bar.
 In the above two cases, when a bar is generated, the timestamp for the bar is the timestamp given to
 on_time, with second and millisecond set to 0. For example, if on_time(14:59:01.500), then the timestamp
-of the generated flat bar is 14:59:00.</p>
+of the generated flat bar is 14:59:00. And if order book information is needed for such generated bars,
+set the timestamp of the order book to the same as the bar, other order book related fields, such as
+ask, bid, volume, set to 0.
+Of course, bars whose timestamps are outside of market periods for the given instrument
+should not be generated.</p>
 </li>
 </ul>
 </td>
@@ -1345,7 +1353,7 @@ the finishing of the previous bar.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Aug 06, 2016.
+      Last updated on Aug 07, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
