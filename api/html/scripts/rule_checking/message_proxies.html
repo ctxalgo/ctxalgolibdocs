@@ -122,6 +122,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../update_stock_returns.html">update_stock_returns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../update_capital_structure.html">update_capital_structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../update_user_stock_pool.html">update_user_stock_pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gracefull_killer.html">gracefull_killer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../identify_stocks.html">identify_stocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../update_major_money.html">update_major_money</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../retrieve_missing_stock_names.html">retrieve_missing_stock_names</a></li>
@@ -377,115 +378,6 @@ initial name is set by the constructor.</p>
 <dl class="method">
 <dt id="ctxalgolib.scripts.rule_checking.message_proxies.ProxyThread.start">
 <code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.ProxyThread.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Start the thread&#8217;s activity.</p>
-<p>It must be called at most once per thread object. It arranges for the
-object&#8217;s run() method to be invoked in a separate thread of control.</p>
-<p>This method will raise a RuntimeError if called more than once on the
-same thread object.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread">
-<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.rule_checking.message_proxies.</code><code class="descname">TimerThread</code><span class="sig-paren">(</span><em>exit_time</em>, <em>sleep_time=10</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.run">
-<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.run" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.daemon">
-<code class="descname">daemon</code><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.daemon" title="Permalink to this definition">¶</a></dt>
-<dd><p>A boolean value indicating whether this thread is a daemon thread (True) or not (False).</p>
-<p>This must be set before start() is called, otherwise RuntimeError is
-raised. Its initial value is inherited from the creating thread; the
-main thread is not a daemon thread and therefore all threads created in
-the main thread default to daemon = False.</p>
-<p>The entire Python program exits when no alive non-daemon threads are
-left.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.getName">
-<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.getName" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.ident">
-<code class="descname">ident</code><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.ident" title="Permalink to this definition">¶</a></dt>
-<dd><p>Thread identifier of this thread or None if it has not been started.</p>
-<p>This is a nonzero integer. See the thread.get_ident() function. Thread
-identifiers may be recycled when a thread exits and another thread is
-created. The identifier is available even after the thread has exited.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.isAlive">
-<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.isAlive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return whether the thread is alive.</p>
-<p>This method returns True just before the run() method starts until just
-after the run() method terminates. The module function enumerate()
-returns a list of all alive threads.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.isDaemon">
-<code class="descname">isDaemon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.isDaemon" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.is_alive">
-<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.is_alive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return whether the thread is alive.</p>
-<p>This method returns True just before the run() method starts until just
-after the run() method terminates. The module function enumerate()
-returns a list of all alive threads.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.join">
-<code class="descname">join</code><span class="sig-paren">(</span><em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.join" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wait until the thread terminates.</p>
-<p>This blocks the calling thread until the thread whose join() method is
-called terminates &#8211; either normally or through an unhandled exception
-or until the optional timeout occurs.</p>
-<p>When the timeout argument is present and not None, it should be a
-floating point number specifying a timeout for the operation in seconds
-(or fractions thereof). As join() always returns None, you must call
-isAlive() after join() to decide whether a timeout happened &#8211; if the
-thread is still alive, the join() call timed out.</p>
-<p>When the timeout argument is not present or None, the operation will
-block until the thread terminates.</p>
-<p>A thread can be join()ed many times.</p>
-<p>join() raises a RuntimeError if an attempt is made to join the current
-thread as that would cause a deadlock. It is also an error to join() a
-thread before it has been started and attempts to do so raises the same
-exception.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.name">
-<code class="descname">name</code><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>A string used for identification purposes only.</p>
-<p>It has no semantics. Multiple threads may be given the same name. The
-initial name is set by the constructor.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.setDaemon">
-<code class="descname">setDaemon</code><span class="sig-paren">(</span><em>daemonic</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.setDaemon" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.setName">
-<code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.setName" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.message_proxies.TimerThread.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the thread&#8217;s activity.</p>
 <p>It must be called at most once per thread object. It arranges for the
 object&#8217;s run() method to be invoked in a separate thread of control.</p>

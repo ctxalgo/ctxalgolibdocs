@@ -20,6 +20,7 @@ scripts
    update_stock_returns
    update_capital_structure
    update_user_stock_pool
+   gracefull_killer
    identify_stocks
    update_major_money
    retrieve_missing_stock_names
