@@ -148,7 +148,7 @@
 <span id="mission-control"></span><h1>mission_control<a class="headerlink" href="#module-ctxalgolib.mission_control.mission_control" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl">
-<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>queue_from_strategy</em>, <em>queue_into_strategy</em>, <em>topic=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>queue_from_strategy</em>, <em>queue_into_strategy</em>, <em>topic=''</em>, <em>through_proxy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../pub_subs/abstract_data_subscriber.html#ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber" title="ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber</span></code></a></p>
 <dl class="docutils">
 <dt>Class that represents an interface to the mission controller. Current class can communicate with the mission</dt>
@@ -179,15 +179,16 @@ send messages from the strategy to mission control center.</li>
 <li><strong>queue_into_strategy</strong> &#8211; string, the address (such as IP address and port) to
 receive messages sent from mission control center into the strategy.</li>
 <li><strong>topic</strong> &#8211; string, the filter for the queuing system. usually the value is
-strategy full name, which is product_tag.strategy_name.</li>
+strategy full name, which is usually product_tag.strategy_name.</li>
+<li><strong>through_proxy</strong> &#8211; bool, if True, the messages are sent through a proxy.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
-<dt id="ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_control">
-<code class="descname">send_to_mission_control</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_control" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_controller">
+<code class="descname">send_to_mission_controller</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_controller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send message to the mission controller. Sending message is non-blocking.
 :param message: string, the message to send.</p>
 </dd></dl>
@@ -226,7 +227,7 @@ strategy full name, which is product_tag.strategy_name.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.mission_control.mission_control.MissionController">
-<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionController</code><span class="sig-paren">(</span><em>context</em>, <em>queues_from_strategy</em>, <em>queues_into_strategy</em>, <em>with_poller=True</em>, <em>topic=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionController</code><span class="sig-paren">(</span><em>context</em>, <em>queues_from_strategy</em>, <em>queues_into_strategy</em>, <em>with_poller=True</em>, <em>topic=''</em>, <em>through_proxy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Class that represents a mission contoller, which is outside strategies and reads messages from strategies and
 sends messages into strategies.</p>
@@ -248,6 +249,7 @@ If the type is dict{string: string}, it means dict{topic: address},
 then the topic parameter will be ignored.</li>
 <li><strong>with_poller</strong> &#8211; bool, if True, create an internal Poller, so you can call self.poll_from_strategy().</li>
 <li><strong>topic</strong> &#8211; string, the topic.</li>
+<li><strong>through_proxy</strong> &#8211; bool, if True, the messages are sent through a proxy.</li>
 </ul>
 </td>
 </tr>
@@ -277,9 +279,8 @@ then the topic parameter will be ignored.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.mission_control.mission_control.MissionController.poll_from_strategy">
-<code class="descname">poll_from_strategy</code><span class="sig-paren">(</span><em>topic=None</em>, <em>timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.poll_from_strategy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">poll_from_strategy</code><span class="sig-paren">(</span><em>timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.poll_from_strategy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Poll messages from strategies.
-:param topic: string, topic, if None, poll all messages from subscriber queues.
 :param timeout: int, in second, poll timeout.
 :return: dict{string: [string]}, meaning dict{topic: [messages with same topic]}.</p>
 <blockquote>
