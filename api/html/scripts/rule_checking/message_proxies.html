@@ -239,7 +239,7 @@
 <dl class="docutils">
 <dt>strategy message &#8212;-&gt;   |                    |      |                                |        |                    |      |</dt>
 <dd><div class="first last line-block">
-<div class="line">input proxy     <a href="#id7"><span class="problematic" id="id8">|&#8211;&gt;&#8212;+                                +&#8212;-&gt;&#8212;|</span></a>    output proxy    <a href="#id3"><span class="problematic" id="id4">|</span></a>&#8211;&gt;&#8212;+</div>
+<div class="line">front proxy     <a href="#id7"><span class="problematic" id="id8">|&#8211;&gt;&#8212;+                                +&#8212;-&gt;&#8212;|</span></a>     back proxy     <a href="#id3"><span class="problematic" id="id4">|</span></a>&#8211;&gt;&#8212;+</div>
 </div>
 </dd>
 <dt>tick message &#8212;&#8212;&#8211;&gt;   |                    |      |                               |         |                    |      |</dt>
@@ -260,18 +260,18 @@
 </dd>
 </dl>
 </div></blockquote>
-<p>The two proxies, the input proxy and the output proxy opens four ports:
-1. The input proxy subscriber port receives strategy message, tick messages and so on.
-2. The input proxy publisher port forwards the received messages to one or more rule checkers.
-3. The output proxy subscriber ports receives messages from one or more rule checkers.
-4. The output proxy publisher port forwards the received messages (from rule checkers) to consumers</p>
+<p>The two proxies, the front proxy and the back proxy opens four ports:
+1. The front proxy subscriber port receives strategy message, tick messages and so on.
+2. The front proxy publisher port forwards the received messages to one or more rule checkers.
+3. The back proxy subscriber ports receives messages from one or more rule checkers.
+4. The back proxy publisher port forwards the received messages (from rule checkers) to consumers</p>
 <blockquote>
 <div>of the rule checkers, such as visualizers, database storage.</div></blockquote>
-<p>The purpose of the input and output proxy is to provide a single connection point for source messages,
+<p>The purpose of the front and back proxy is to provide a single connection point for source messages,
 one or more rule checkers and one or more rule checker result consumers.</p>
 <p>This architecture support multiple rule checkers. This can be useful, for example, when there are too many rules
 to check, and we need multiple processors, and each processor can run a rule checker instance, loaded with different
-rules, and all the rule checker instances get input from the publisher port of the input proxy, and send out
+rules, and all the rule checker instances get input from the publisher port of the front proxy, and send out
 rule checking results into the subscriber port of the output proxy.</p>
 <dl class="function">
 <dt id="ctxalgolib.scripts.rule_checking.message_proxies.get_command_line_parser">
