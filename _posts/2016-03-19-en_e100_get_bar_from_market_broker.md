@@ -10,7 +10,6 @@ the way to register bar data (dominant contracts or non-dominant contracts).
 
 ```python
 import zmq
-from ctxalgocore.market_data.market_data_broker_utils import MarketDataBrokerUtils
 from ctxalgolib.data_feed.zeromq_feed_utils import ZeromqFeedUtils
 from ctxalgolib.ohlc.periodicity import Periodicity
 
@@ -38,7 +37,7 @@ subscriber.connect("tcp://139.196.203.113" + ':' + "6557")
 while True:
     try:
         [filter_str, contents] = subscriber.recv_multipart(flags=zmq.NOBLOCK)
-        bar_data = MarketDataBrokerUtils.parse_subscribed_data('bar', contents)
+        bar_data = ZeromqFeedUtils.parse_sZeromqFeedUtilsubscribed_data('bar', contents)
         print str(bar_data)
         # ... You can apply any processing on the received bar data or tick data here in the loop.
 
