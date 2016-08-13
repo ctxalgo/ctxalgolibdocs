@@ -18,7 +18,7 @@ subscriber = sub_context.socket(zmq.SUB)
 
 # If you want to get the TICK market data, use the following way to generate filter string.
 instrument_type = "FUTURE"  # define the type of the instrument id, only support 'FUTURE' for now.
-instrument_id = 'IF00'  #  For dominant contract, use 'IF00', second dominant contract 'IF01', and so on.
+instrument_id = 'cu00'  #  For dominant contract, use 'IF00', second dominant contract 'IF01', and so on.
                         #  For general contracts, use name like 'IF1603', and so on.
 filter_str = instrument_type + '#' + instrument_id
 
@@ -26,10 +26,16 @@ filter_str = instrument_type + '#' + instrument_id
 # filter_str = ''
 
 # Based on the filter string defined above, we set the correct filter to receive the market data you want.
-subscriber.setsockopt(zmq.SUBSCRIBE, filter_str)
 
 # To accept the tick data, need to register 6556 port.
-subscriber.connect("tcp://127.0.0.1" + ':' + "6556")
+subscriber.connect("tcp://139.196.203.113:6556")
+
+# Market data processor
+# subscriber.connect("tcp://139.196.234.169:6556")
+
+
+subscriber.setsockopt(zmq.SUBSCRIBE, filter_str)
+
 
 while True:
     try:
