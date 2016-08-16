@@ -5,3 +5,4 @@ pub_subs
    :maxdepth: 2
 
    abstract_data_subscriber
+   pub_sub_base_thread
