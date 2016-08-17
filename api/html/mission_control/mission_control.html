@@ -148,7 +148,7 @@
 <span id="mission-control"></span><h1>mission_control<a class="headerlink" href="#module-ctxalgolib.mission_control.mission_control" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl">
-<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>queue_from_strategy</em>, <em>queue_into_strategy</em>, <em>topic=''</em>, <em>through_proxy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>queue_to_mission_controller</em>, <em>queue_from_mission_controller</em>, <em>strategy_name=''</em>, <em>proxy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../pub_subs/abstract_data_subscriber.html#ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber" title="ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber</span></code></a></p>
 <dl class="docutils">
 <dt>Class that represents an interface to the mission controller. Current class can communicate with the mission</dt>
@@ -174,13 +174,13 @@ for the moment, the returned message from the receive method will be None.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>queue_from_strategy</strong> &#8211; string, the address (such as IP address and port) to
+<li><strong>queue_to_mission_controller</strong> &#8211; string, the address (such as IP address and port) to
 send messages from the strategy to mission control center.</li>
-<li><strong>queue_into_strategy</strong> &#8211; string, the address (such as IP address and port) to
+<li><strong>queue_from_mission_controller</strong> &#8211; string, the address (such as IP address and port) to
 receive messages sent from mission control center into the strategy.</li>
-<li><strong>topic</strong> &#8211; string, the filter for the queuing system. usually the value is
+<li><strong>strategy_name</strong> &#8211; string, the filter for the queuing system. usually the value is
 strategy full name, which is usually product_tag.strategy_name.</li>
-<li><strong>through_proxy</strong> &#8211; bool, if True, the messages are sent through a proxy.</li>
+<li><strong>proxy</strong> &#8211; bool, if True, the messages are sent through a proxy.</li>
 </ul>
 </td>
 </tr>
@@ -232,29 +232,29 @@ strategy full name, which is usually product_tag.strategy_name.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.mission_control.mission_control.MissionController">
-<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionController</code><span class="sig-paren">(</span><em>context</em>, <em>queues_from_strategy</em>, <em>queues_into_strategy</em>, <em>with_poller=True</em>, <em>topic=''</em>, <em>through_proxy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionController</code><span class="sig-paren">(</span><em>context</em>, <em>queues_from_strategies</em>, <em>queues_into_strategies</em>, <em>with_poller=True</em>, <em>strategy_name=''</em>, <em>proxy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Class that represents a mission contoller, which is outside strategies and reads messages from strategies and
 sends messages into strategies.</p>
 <p>Initialize current.
 :param context: zmq.Context, zmq context.
-:param queues_from_strategy: string, or dict{string: string}, if the type is string, it represents</p>
+:param queues_from_strategies: string, or dict{string: string}, if the type is string, it represents</p>
 <blockquote>
-<div>a single queue address from strategy. It will use the topic given by the topic parameter.
-If the type is dict{string: string}, it means dict{topic: address},
+<div>a single queue address from strategy. It will use the strategy_name parameter.
+If the type is dict{string: string}, it means dict{strategy_name: address},
 then the topic parameter will be ignored.</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>queues_into_strategy</strong> &#8211; string, or dict{string: string}, if the type is string, it represents
+<li><strong>queues_into_strategies</strong> &#8211; string, or dict{string: string}, if the type is string, it represents
 a single queue address into strategy. It will use the topic given by the topic parameter.
 If the type is dict{string: string}, it means dict{topic: address},
 then the topic parameter will be ignored.</li>
 <li><strong>with_poller</strong> &#8211; bool, if True, create an internal Poller, so you can call self.poll_from_strategy().</li>
-<li><strong>topic</strong> &#8211; string, the topic.</li>
-<li><strong>through_proxy</strong> &#8211; bool, if True, the messages are sent through a proxy.</li>
+<li><strong>strategy_name</strong> &#8211; string, strategy name.</li>
+<li><strong>proxy</strong> &#8211; bool, if True, the messages are sent through a proxy.</li>
 </ul>
 </td>
 </tr>
