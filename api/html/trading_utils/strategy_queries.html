@@ -1306,6 +1306,24 @@ short_pending: int, the current pending position in the short direction.</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_rate">
+<code class="descname">margin_rate</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>direction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin rate for the given instrument.
+:param instrument_id: string, instrument id, if None, self.instrument_id() will be used.
+:param direction: string, not used.
+:return: float, margin rate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.money_per_tick">
+<code class="descname">money_per_tick</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>with_margin=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.money_per_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the money for a tick movement of the given instrument.
+:param instrument_id: string, instrument id, if None, self.instrument_id() will be used.
+:param with_margin: bool, If True, the returned value is multiplied by margin rate.
+:return: float, the money for a tick movement of the given instrument.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">

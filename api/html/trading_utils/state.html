@@ -786,6 +786,24 @@ between the current price and the position price.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.margin_rate">
+<code class="descname">margin_rate</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>direction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.margin_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin rate for the given instrument.
+:param instrument_id: string, instrument id, if None, self.instrument_id() will be used.
+:param direction: string, not used.
+:return: float, margin rate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.money_per_tick">
+<code class="descname">money_per_tick</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>with_margin=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.money_per_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the money for a tick movement of the given instrument.
+:param instrument_id: string, instrument id, if None, self.instrument_id() will be used.
+:param with_margin: bool, If True, the returned value is multiplied by margin rate.
+:return: float, the money for a tick movement of the given instrument.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.AbstractState.ohlc_in_last_days">
 <code class="descname">ohlc_in_last_days</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>start=-1</em>, <em>end=None</em>, <em>ohlc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.ohlc_in_last_days" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the sliced ohlc, which covers all bars from start to end (in days).
@@ -1590,6 +1608,15 @@ between the current price and the position price.</li>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.margin_rate">
+<code class="descname">margin_rate</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>direction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.margin_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin rate for the given instrument.
+:param instrument_id: string, instrument id, if None, self.instrument_id() will be used.
+:param direction: string, not used.
+:return: float, margin rate.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.margin_rate_by_money">
 <code class="descname">margin_rate_by_money</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.margin_rate_by_money" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1603,6 +1630,15 @@ between the current price and the position price.</li>
 <dt id="ctxalgolib.trading_utils.state.TemplateState.max_positions_to_open">
 <code class="descname">max_positions_to_open</code><span class="sig-paren">(</span><em>price</em>, <em>direction</em>, <em>instrument_id=None</em>, <em>available_money=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.max_positions_to_open" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.money_per_tick">
+<code class="descname">money_per_tick</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>with_margin=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.money_per_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the money for a tick movement of the given instrument.
+:param instrument_id: string, instrument id, if None, self.instrument_id() will be used.
+:param with_margin: bool, If True, the returned value is multiplied by margin rate.
+:return: float, the money for a tick movement of the given instrument.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.name">
