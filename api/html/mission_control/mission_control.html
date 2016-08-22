@@ -148,8 +148,8 @@
 <span id="mission-control"></span><h1>mission_control<a class="headerlink" href="#module-ctxalgolib.mission_control.mission_control" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl">
-<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>queue_to_mission_controller</em>, <em>queue_from_mission_controller</em>, <em>strategy_name=''</em>, <em>proxy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="../pub_subs/abstract_data_subscriber.html#ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber" title="ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber</span></code></a></p>
+<em class="property">class </em><code class="descclassname">ctxalgolib.mission_control.mission_control.</code><code class="descname">MissionControl</code><span class="sig-paren">(</span><em>context</em>, <em>queue_to_mission_controller</em>, <em>queue_from_mission_controller</em>, <em>strategy_name=''</em>, <em>proxy=False</em>, <em>send_through_thread=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../pub_subs/abstract_data_subscriber.html#ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber" title="ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pub_subs.abstract_data_subscriber.AbstractDataSubscriber</span></code></a>, <a class="reference internal" href="../pub_subs/abstract_data_publisher.html#ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher" title="ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher</span></code></a></p>
 <dl class="docutils">
 <dt>Class that represents an interface to the mission controller. Current class can communicate with the mission</dt>
 <dd><p class="first">controller in two directions, both async. This is achieved through two publisher-subscriber channels.</p>
@@ -187,9 +187,15 @@ strategy full name, which is usually product_tag.strategy_name.</li>
 </tbody>
 </table>
 <dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionControl.publisher_socket">
+<code class="descname">publisher_socket</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.publisher_socket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_controller">
 <code class="descname">send_to_mission_controller</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.send_to_mission_controller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send message to the mission controller. Sending message is non-blocking.
+Note: this is a blocking call, you should call this method in a separate thread.
 :param message: string, the message to send.</p>
 </dd></dl>
 
@@ -222,11 +228,26 @@ strategy full name, which is usually product_tag.strategy_name.</li>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionControl.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionControl.sender_thread">
+<code class="descname">sender_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.sender_thread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.mission_control.mission_control.MissionControl.set_on_data_action">
 <code class="descname">set_on_data_action</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.set_on_data_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set self.on_data_action with action.
 :param action: Function pointer with a single parameter.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.mission_control.mission_control.MissionControl.should_send_through_thread">
+<code class="descname">should_send_through_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionControl.should_send_through_thread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -278,6 +299,7 @@ then the topic parameter will be ignored.</li>
 <dt id="ctxalgolib.mission_control.mission_control.MissionController.send_to_strategy">
 <code class="descname">send_to_strategy</code><span class="sig-paren">(</span><em>topic</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.mission_control.mission_control.MissionController.send_to_strategy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a message with topic into strategy or strategies.
+Note: this is a blocking call, you should call this method in a separate thread.
 :param topic: string, topic.
 :param message: string message.</p>
 </dd></dl>
