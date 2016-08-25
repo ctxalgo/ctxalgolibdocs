@@ -178,6 +178,11 @@
 <code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="staticmethod">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.store_file">
+<em class="property">static </em><code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.get_message">
 <code class="descname">get_message</code><span class="sig-paren">(</span><em>ts</em>, <em>data</em>, <em>tag=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.get_message" title="Permalink to this definition">¶</a></dt>
@@ -347,6 +352,11 @@ flush all cached messages into storage.</p>
 :param tags: set of string, elements are tag names.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.store_file">
+<code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -441,6 +451,11 @@ objects. One cPickle object is serialization of a list of log records.</p>
 :param tags: set of string, elements are tag names.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.store_file">
+<code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -525,6 +540,11 @@ flush all cached messages into storage.</p>
 <dd><p>Set self.disabled_tags with tags.
 :param tags: set of string, elements are tag names.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.store_file">
+<code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -724,6 +744,11 @@ and there is a subscriber running on the other end of the communication queue.</
 :param tags: set of string, elements are tag names.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.store_file">
+<code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -806,6 +831,11 @@ to its component individual loggers.</p>
 :param tags: set of string, elements are tag names.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.store_file">
+<code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -830,7 +860,7 @@ to its component individual loggers.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Aug 23, 2016.
+      Last updated on Aug 25, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

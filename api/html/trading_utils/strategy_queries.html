@@ -1365,26 +1365,6 @@ related fields will have default values.</td>
 :return: function pointer.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.set_all_callbacks">
-<code class="descname">set_all_callbacks</code><span class="sig-paren">(</span><em>all_callbacks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyCallbacks.set_all_callbacks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set self.all_callbacks to all_callbacks.
-:param all_callbacks: OrderedDict{string: AbstractStrategyCallbacks},</p>
-<blockquote>
-<div>The set of individual strategy callbacks. Keys are strategy callback names,
-values are callbacks. Note that it is an ordered dict. So when callbacks are invoked,
-they follow the order that is given here. The callback names are useful to find
-corresponding strategy callbacks from outside.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -1416,26 +1396,6 @@ corresponding strategy callbacks from outside.</div></blockquote>
 :return: function pointer.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.set_all_callbacks">
-<code class="descname">set_all_callbacks</code><span class="sig-paren">(</span><em>all_callbacks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.CompositeStrategyCallbacks.set_all_callbacks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set self.all_callbacks to all_callbacks.
-:param all_callbacks: OrderedDict{string: AbstractStrategyCallbacks},</p>
-<blockquote>
-<div>The set of individual strategy callbacks. Keys are strategy callback names,
-values are callbacks. Note that it is an ordered dict. So when callbacks are invoked,
-they follow the order that is given here. The callback names are useful to find
-corresponding strategy callbacks from outside.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -1460,7 +1420,7 @@ corresponding strategy callbacks from outside.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Aug 23, 2016.
+      Last updated on Aug 25, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
