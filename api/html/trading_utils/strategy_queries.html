@@ -1324,6 +1324,15 @@ short_pending: int, the current pending position in the short direction.</p>
 :return: float, the money for a tick movement of the given instrument.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.order_book_height">
+<code class="descname">order_book_height</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.order_book_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the height of the order book.
+:param instrument_id: string, instrument id, if None, self.instrument_id() is used.
+:param level: int, the order book level, 0 means the nearest level, 1 means the next level.
+:return: int, the order book height in unit of tick size.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -1420,7 +1429,7 @@ corresponding strategy callbacks from outside.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Aug 25, 2016.
+      Last updated on Aug 26, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
