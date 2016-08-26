@@ -242,6 +242,18 @@ flush all cached messages into storage.</p>
 :return: LoggerHandler, if current is or contains a file logger, return it, otherwise return None.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.should_auto_dispose">
+<code class="descname">should_auto_dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether this logger should be auto-disposed after strategy terminates.
+:return: bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.LoggerHandler.set_should_auto_dispose">
+<code class="descname">set_should_auto_dispose</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.LoggerHandler.set_should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -353,6 +365,18 @@ flush all cached messages into storage.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.set_should_auto_dispose">
+<code class="descname">set_should_auto_dispose</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.set_should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.should_auto_dispose">
+<code class="descname">should_auto_dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether this logger should be auto-disposed after strategy terminates.
+:return: bool</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.store_file">
 <code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.TextFileLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -452,6 +476,18 @@ objects. One cPickle object is serialization of a list of log records.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.set_should_auto_dispose">
+<code class="descname">set_should_auto_dispose</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.set_should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.should_auto_dispose">
+<code class="descname">should_auto_dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether this logger should be auto-disposed after strategy terminates.
+:return: bool</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.store_file">
 <code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.BinaryFileLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -539,6 +575,18 @@ flush all cached messages into storage.</p>
 <code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set self.disabled_tags with tags.
 :param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.set_should_auto_dispose">
+<code class="descname">set_should_auto_dispose</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.set_should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.should_auto_dispose">
+<code class="descname">should_auto_dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ConsoleLoggerHandler.should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether this logger should be auto-disposed after strategy terminates.
+:return: bool</p>
 </dd></dl>
 
 <dl class="method">
@@ -745,6 +793,18 @@ and there is a subscriber running on the other end of the communication queue.</
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.set_should_auto_dispose">
+<code class="descname">set_should_auto_dispose</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.set_should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.should_auto_dispose">
+<code class="descname">should_auto_dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether this logger should be auto-disposed after strategy terminates.
+:return: bool</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.store_file">
 <code class="descname">store_file</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.ZmqLoggerHandler.store_file" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -802,6 +862,11 @@ to its component individual loggers.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.set_should_auto_dispose">
+<code class="descname">set_should_auto_dispose</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.set_should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.dump_json">
 <code class="descname">dump_json</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.dump_json" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -829,6 +894,13 @@ to its component individual loggers.</p>
 <code class="descname">set_disabled_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.set_disabled_tags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set self.disabled_tags with tags.
 :param tags: set of string, elements are tag names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.should_auto_dispose">
+<code class="descname">should_auto_dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.loggers.logger_handlers.CompositeLoggerHandler.should_auto_dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether this logger should be auto-disposed after strategy terminates.
+:return: bool</p>
 </dd></dl>
 
 <dl class="method">
@@ -860,7 +932,7 @@ to its component individual loggers.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Aug 26, 2016.
+      Last updated on Aug 27, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
