@@ -1256,8 +1256,17 @@ In the case when data feed is not set, queries which rely on data feed will fail
 :param timestamp: datetime, current timestamp, if None, use self.now().
 :param instrument_id: string, instrument id, if None, use self.instrument_id().
 :param trading_day: date, current trading day, if None, use self.trading_day().
-:param delta: timedelta, if not None, checks this delta before a market period ends.
-:return: bool.</p>
+:param delta: timedelta or int or float, if not None, checks this delta before a market period ends.</p>
+<blockquote>
+<div>If type is int or float, it means timedelta(seconds=int).</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
