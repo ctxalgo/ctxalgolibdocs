@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>abstract_future_tick_sizes &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="futures" href="index.html"/>
+        <link rel="next" title="future_margins" href="future_margins.html"/>
+        <link rel="prev" title="volume_multiples" href="volume_multiples.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security_companies/index.html">security_companies</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">futures</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="abstract_supported_futures.html">abstract_supported_futures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_future_margins.html">abstract_future_margins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="future_price_limits.html">future_price_limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_future_price_limits.html">abstract_future_price_limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="volume_multiples.html">volume_multiples</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">abstract_future_tick_sizes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="future_margins.html">future_margins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="future_tick_sizes.html">future_tick_sizes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="future_commissions.html">future_commissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="supported_futures.html">supported_futures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_volume_multiples.html">abstract_volume_multiples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_future_commissions.html">abstract_future_commissions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dominant_instrument_detector.html">dominant_instrument_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type_checking_utils.html">type_checking_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_market_periods.html">future_market_periods</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">trading_utils</a> &raquo;</li>
+      
+          <li><a href="index.html">futures</a> &raquo;</li>
+      
+    <li>abstract_future_tick_sizes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/trading_utils/futures/abstract_future_tick_sizes.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.trading_utils.futures.abstract_future_tick_sizes">
+<span id="abstract-future-tick-sizes"></span><h1>abstract_future_tick_sizes<a class="headerlink" href="#module-ctxalgolib.trading_utils.futures.abstract_future_tick_sizes" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.AbstractFutureTickSize">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.</code><code class="descname">AbstractFutureTickSize</code><a class="headerlink" href="#ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.AbstractFutureTickSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.AbstractFutureTickSize.tick_size">
+<code class="descname">tick_size</code><span class="sig-paren">(</span><em>future_prefix</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.AbstractFutureTickSize.tick_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get tick size of a future on date.
+If date is older than the oldest known date for the future, return tick size on the oldest date.
+If date is newer than the newest known date for th future, return tick size on the newest date.
+:param future_prefix: string, future prefix.
+:param dt: date or string in format yyyy-mm-dd HH:MM:SS
+:return: float, tick size for the future on that date.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="future_margins.html" class="btn btn-neutral float-right" title="future_margins" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="volume_multiples.html" class="btn btn-neutral" title="volume_multiples" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Sep 04, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

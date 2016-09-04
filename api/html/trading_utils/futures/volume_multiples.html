@@ -32,8 +32,8 @@
   
     <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
         <link rel="up" title="futures" href="index.html"/>
-        <link rel="next" title="future_margins" href="future_margins.html"/>
-        <link rel="prev" title="future_price_limits" href="future_price_limits.html"/> 
+        <link rel="next" title="abstract_future_tick_sizes" href="abstract_future_tick_sizes.html"/>
+        <link rel="prev" title="abstract_future_price_limits" href="abstract_future_price_limits.html"/> 
 
   
   <script src="../../static/js/modernizr.min.js"></script>
@@ -85,12 +85,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../security_companies/index.html">security_companies</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">futures</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="abstract_supported_futures.html">abstract_supported_futures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_future_margins.html">abstract_future_margins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="future_price_limits.html">future_price_limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_future_price_limits.html">abstract_future_price_limits</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">volume_multiples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_future_tick_sizes.html">abstract_future_tick_sizes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="future_margins.html">future_margins</a></li>
 <li class="toctree-l3"><a class="reference internal" href="future_tick_sizes.html">future_tick_sizes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="future_commissions.html">future_commissions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="supported_futures.html">supported_futures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_volume_multiples.html">abstract_volume_multiples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_future_commissions.html">abstract_future_commissions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../model_writer.html">model_writer</a></li>
@@ -182,10 +187,36 @@
 <dl class="class">
 <dt id="ctxalgolib.trading_utils.futures.volume_multiples.FutureVolumeMultiple">
 <em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.volume_multiples.</code><code class="descname">FutureVolumeMultiple</code><a class="headerlink" href="#ctxalgolib.trading_utils.futures.volume_multiples.FutureVolumeMultiple" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="abstract_volume_multiples.html#ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple" title="ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple</span></code></a></p>
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.futures.volume_multiples.FutureVolumeMultiple.volume_multiple">
 <code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>future_prefix</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.volume_multiples.FutureVolumeMultiple.volume_multiple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get volume multiple of a future on date.
+If date is older than the oldest known date for the future, return volume multiple on the oldest date.
+If date is newer than the newest known date for th future, return volume volume on the newest date.
+:param future_prefix: string, future prefix.
+:param dt: date or string in format yyyy-mm-dd HH:MM:SS
+:return: int, volume multiple for the future on that date.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.volume_multiples.</code><code class="descname">MySqlFutureVolumeMultiple</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="abstract_volume_multiples.html#ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple" title="ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple</span></code></a></p>
+<p>This class read all needed data from database once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>connection</strong> &#8211; CoretxDatabaseConfig.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple.volume_multiple">
+<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>future_prefix</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple.volume_multiple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get volume multiple of a future on date.
 If date is older than the oldest known date for the future, return volume multiple on the oldest date.
 If date is newer than the newest known date for th future, return volume volume on the newest date.
@@ -205,10 +236,10 @@ If date is newer than the newest known date for th future, return volume volume 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="future_margins.html" class="btn btn-neutral float-right" title="future_margins" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="abstract_future_tick_sizes.html" class="btn btn-neutral float-right" title="abstract_future_tick_sizes" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="future_price_limits.html" class="btn btn-neutral" title="future_price_limits" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="abstract_future_price_limits.html" class="btn btn-neutral" title="abstract_future_price_limits" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -218,7 +249,7 @@ If date is newer than the newest known date for th future, return volume volume 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 03, 2016.
+      Last updated on Sep 04, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

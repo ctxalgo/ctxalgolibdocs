@@ -65,6 +65,7 @@ scripts
    update_unique_stock_plates
    update_ohlc_with_periodicity
    extract_part_of_tick_data
+   generate_supported_futures
    update_share_holder_from_163
    update_company_news
    update_stock_daily_from_yahoo
