@@ -198,7 +198,7 @@ in the AbstractStateBasedStrategy.__init__ method.
 <dd><p>Return the list of registered ohlc periods for the given instrument.
 :param kind: string, ohlc kind such as &#8216;time-based&#8217;, &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to self.strategy_period_kind().</div></blockquote>
+<div>If None, defaults to self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -215,22 +215,29 @@ If None, defaults to self.instrument_id().</td>
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period_kind">
-<code class="descname">strategy_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period_kind" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the strategy period ohlc kind.
-:return: string, ohlc kind such as &#8216;time-based&#8217;, &#8216;volatility-based&#8217;.</p>
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.default_period">
+<code class="descname">default_period</code><span class="sig-paren">(</span><em>kind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.default_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default period for the given ohlc kind.
+:param kind: string, can be OhlcGeneratorConstants.time_based or OhlcGeneratorConstants.volatility_based.</p>
+<blockquote>
+<div>If None, self.default_period_kind() is used.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int or float, default period. Will return None if there are multiple possible values.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period">
-<code class="descname">strategy_period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_period" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the strategy period. A strategy does not have to trade under the strategy period.
-Strategy period is used to display strategy backtesting results: when backtesting results
-is displayed in the web portal of the CTX platform, all the trading signals will be
-displayed on OHLC bars with the strategy period.
-:return Periodicity, the strategy period, as given by the strategy_period parameter</p>
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.default_period_kind">
+<code class="descname">default_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.default_period_kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default period kind.
+:return: string, can be can be OhlcGeneratorConstants.time_based or OhlcGeneratorConstants.volatility_based,</p>
 <blockquote>
-<div>of the AbstractStateBasedStrategy.__init__ method.</div></blockquote>
+<div>or None in case where no default is available.</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -239,7 +246,7 @@ displayed on OHLC bars with the strategy period.
 <dd><p>Get all the ohlc objects for the given instrument.
 :param kind: string, the ohlc kind, such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;. Valid values are</p>
 <blockquote>
-<div>defined in ctxalgolib.ohlc.ohlc_generator.OhlcGeneratorConstants. If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>defined in ctxalgolib.ohlc.ohlc_generator.OhlcGeneratorConstants. If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -254,27 +261,19 @@ The result is a dict because an instrument may register for multiple OHLCs with 
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_ohlc">
-<code class="descname">strategy_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.strategy_ohlc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the ohlc under self.strategy_period().
-:param instrument_id: string, the instrument id. If None, use self.instrument_id().
-:return: OHLC, the ohlc object.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlc">
 <code class="descname">ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the ohlc for the given instrument and with the given periodicity.
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, self.default_period_kind() is used.</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</td>
+If None, use self.default_period() is used.</td>
 </tr>
 </tbody>
 </table>
@@ -1094,14 +1093,14 @@ If negative, return the previous delta-th trading day relative to ts.</td>
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -1126,14 +1125,14 @@ instrument_id, kind and period to find the ohlc.</li>
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -1156,14 +1155,14 @@ instrument_id, kind and period to find the ohlc.</li>
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -1438,7 +1437,7 @@ corresponding strategy callbacks from outside.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 04, 2016.
+      Last updated on Sep 05, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

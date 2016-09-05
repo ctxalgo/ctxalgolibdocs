@@ -322,11 +322,6 @@ and all the state classes. Do not use datetime.now() because it won&#8217;t work
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.state.AbstractState.strategy_ohlc">
-<code class="descname">strategy_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.strategy_ohlc" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.AbstractState.ohlc">
 <code class="descname">ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>kind=None</em>, <em>period=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.ohlc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -457,16 +452,6 @@ and all the state classes. Do not use datetime.now() because it won&#8217;t work
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.state.AbstractState.strategy_period">
-<code class="descname">strategy_period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.strategy_period" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.state.AbstractState.strategy_period_kind">
-<code class="descname">strategy_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.strategy_period_kind" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.AbstractState.last_known_price">
 <code class="descname">last_known_price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.last_known_price" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -570,6 +555,32 @@ Whether any position can be opened for an instrument id is defined by now &lt;= 
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.default_period">
+<code class="descname">default_period</code><span class="sig-paren">(</span><em>kind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.default_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default period for the given ohlc kind.
+:param kind: string, can be OhlcGeneratorConstants.time_based or OhlcGeneratorConstants.volatility_based.</p>
+<blockquote>
+<div>If None, self.default_period_kind() is used.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int or float, default period. Will return None if there are multiple possible values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.default_period_kind">
+<code class="descname">default_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.default_period_kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default period kind.
+:return: string, can be can be OhlcGeneratorConstants.time_based or OhlcGeneratorConstants.volatility_based,</p>
+<blockquote>
+<div>or None in case where no default is available.</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -819,14 +830,14 @@ between the current price and the position price.</li>
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -1070,14 +1081,14 @@ If an instrument has both long and short sided positions, its corresponding valu
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -1125,14 +1136,14 @@ instrument_id, kind and period to find the ohlc.</li>
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -1309,6 +1320,32 @@ Whether any position can be opened for an instrument id is defined by now &lt;= 
 <dt id="ctxalgolib.trading_utils.state.TemplateState.data_feed">
 <code class="descname">data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.data_feed" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.default_period">
+<code class="descname">default_period</code><span class="sig-paren">(</span><em>kind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.default_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default period for the given ohlc kind.
+:param kind: string, can be OhlcGeneratorConstants.time_based or OhlcGeneratorConstants.volatility_based.</p>
+<blockquote>
+<div>If None, self.default_period_kind() is used.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">int or float, default period. Will return None if there are multiple possible values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.default_period_kind">
+<code class="descname">default_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.default_period_kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default period kind.
+:return: string, can be can be OhlcGeneratorConstants.time_based or OhlcGeneratorConstants.volatility_based,</p>
+<blockquote>
+<div>or None in case where no default is available.</div></blockquote>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.direction">
@@ -1705,14 +1742,14 @@ and all the state classes. Do not use datetime.now() because it won&#8217;t work
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -2015,21 +2052,6 @@ Note: the current state may not be the same as current object.
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.state.TemplateState.strategy_ohlc">
-<code class="descname">strategy_ohlc</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.strategy_ohlc" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.state.TemplateState.strategy_period">
-<code class="descname">strategy_period</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.strategy_period" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.state.TemplateState.strategy_period_kind">
-<code class="descname">strategy_period_kind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.strategy_period_kind" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.tick_size">
 <code class="descname">tick_size</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.tick_size" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2066,14 +2088,14 @@ Note: the current state may not be the same as current object.
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -2154,14 +2176,14 @@ return the current state, that is, self.
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :param kind: string, ohlc kind such as &#8216;time-based&#8217; or &#8216;volatility-based&#8217;.</p>
 <blockquote>
-<div>If None, defaults to &#8216;time-based&#8217;.</div></blockquote>
+<div>If None, use self.default_period_kind().</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>period</strong> &#8211; Periodicity, the periodicity of the ohlc to return.
-If None, use self.strategy_period().</li>
+If None, use self.default_period().</li>
 <li><strong>now</strong> &#8211; datetime, an optional timestamp indicating current time, if None,
 use the last timestamp in ohlc as current time.</li>
 <li><strong>is_trading_day</strong> &#8211; boolean, if True, count days by trading days, otherwise, by calendar days.</li>
@@ -2897,7 +2919,7 @@ indices of the same graph
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 04, 2016.
+      Last updated on Sep 05, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
