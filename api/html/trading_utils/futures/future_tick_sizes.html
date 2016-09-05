@@ -201,32 +201,6 @@ If date is newer than the newest known date for th future, return tick size on t
 
 </dd></dl>
 
-<dl class="class">
-<dt id="ctxalgolib.trading_utils.futures.future_tick_sizes.MySqlFutureTickSize">
-<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.future_tick_sizes.</code><code class="descname">MySqlFutureTickSize</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.future_tick_sizes.MySqlFutureTickSize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="abstract_future_tick_sizes.html#ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.AbstractFutureTickSize" title="ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.AbstractFutureTickSize"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.futures.abstract_future_tick_sizes.AbstractFutureTickSize</span></code></a></p>
-<p>This class read all needed data from database once.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>connection</strong> &#8211; CoretxDatabaseConfig.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.future_tick_sizes.MySqlFutureTickSize.tick_size">
-<code class="descname">tick_size</code><span class="sig-paren">(</span><em>future_prefix</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.future_tick_sizes.MySqlFutureTickSize.tick_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get tick size of a future on date.
-If date is older than the oldest known date for the future, return tick size on the oldest date.
-If date is newer than the newest known date for th future, return tick size on the newest date.
-:param future_prefix: string, future prefix.
-:param dt: date or string in format yyyy-mm-dd HH:MM:SS
-:return: float, tick size for the future on that date.</p>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
 

@@ -201,32 +201,6 @@ If date is newer than the newest known date for th future, return volume volume 
 
 </dd></dl>
 
-<dl class="class">
-<dt id="ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple">
-<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.volume_multiples.</code><code class="descname">MySqlFutureVolumeMultiple</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="abstract_volume_multiples.html#ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple" title="ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.futures.abstract_volume_multiples.AbstractFutureVolumeMultiple</span></code></a></p>
-<p>This class read all needed data from database once.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>connection</strong> &#8211; CoretxDatabaseConfig.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple.volume_multiple">
-<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>future_prefix</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.volume_multiples.MySqlFutureVolumeMultiple.volume_multiple" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get volume multiple of a future on date.
-If date is older than the oldest known date for the future, return volume multiple on the oldest date.
-If date is newer than the newest known date for th future, return volume volume on the newest date.
-:param future_prefix: string, future prefix.
-:param dt: date or string in format yyyy-mm-dd HH:MM:SS
-:return: int, volume multiple for the future on that date.</p>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
 

@@ -211,42 +211,6 @@ If date is newer than the newest known date for th future, return commission on 
 
 </dd></dl>
 
-<dl class="class">
-<dt id="ctxalgolib.trading_utils.futures.future_commissions.MySqlFutureCommission">
-<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.future_commissions.</code><code class="descname">MySqlFutureCommission</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.future_commissions.MySqlFutureCommission" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="abstract_future_commissions.html#ctxalgolib.trading_utils.futures.abstract_future_commissions.AbstractFutureCommission" title="ctxalgolib.trading_utils.futures.abstract_future_commissions.AbstractFutureCommission"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.futures.abstract_future_commissions.AbstractFutureCommission</span></code></a></p>
-<p>This class read all needed data from database once.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>connection</strong> &#8211; CoretxDatabaseConfig.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.future_commissions.MySqlFutureCommission.commission">
-<code class="descname">commission</code><span class="sig-paren">(</span><em>future_prefix</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.future_commissions.MySqlFutureCommission.commission" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get commission of a future on date.
-If date is older than the oldest known date for the future, return commission on the oldest date.
-If date is newer than the newest known date for th future, return commission on the newest date.
-:param future_prefix: string, future prefix.
-:param dt: date or string in format yyyy-mm-dd HH:MM:SS
-:return: (open, close_yesterday, close_today), commission for the future on that date.</p>
-<blockquote>
-<div>All three elements are of type double.</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.future_commissions.MySqlFutureCommission.commission_type">
-<code class="descname">commission_type</code><span class="sig-paren">(</span><em>future_prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.future_commissions.MySqlFutureCommission.commission_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the commission type of the future.
-:param future_prefix: string, future prefix.
-:return: string, can be either &#8220;proportional&#8221; or &#8220;fixed&#8221;.</p>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
 

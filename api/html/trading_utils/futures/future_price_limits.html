@@ -201,32 +201,6 @@ If date is newer than the newest known date for th future, return price limit on
 
 </dd></dl>
 
-<dl class="class">
-<dt id="ctxalgolib.trading_utils.futures.future_price_limits.MySqlFuturePriceLimit">
-<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.future_price_limits.</code><code class="descname">MySqlFuturePriceLimit</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.future_price_limits.MySqlFuturePriceLimit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="abstract_future_price_limits.html#ctxalgolib.trading_utils.futures.abstract_future_price_limits.AbstractFuturePriceLimit" title="ctxalgolib.trading_utils.futures.abstract_future_price_limits.AbstractFuturePriceLimit"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.futures.abstract_future_price_limits.AbstractFuturePriceLimit</span></code></a></p>
-<p>This class read all needed data from database once.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>connection</strong> &#8211; CoretxDatabaseConfig.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.future_price_limits.MySqlFuturePriceLimit.next_day_price_limit">
-<code class="descname">next_day_price_limit</code><span class="sig-paren">(</span><em>future_prefix</em>, <em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.future_price_limits.MySqlFuturePriceLimit.next_day_price_limit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get price limit of a future on date.
-If date is older than the oldest known date for the future, return price limit on the oldest date.
-If date is newer than the newest known date for th future, return price limit on the newest date.
-:param future_prefix: string, future prefix.
-:param dt: date or string in format yyyy-mm-dd HH:MM:SS
-:return: float, price limit for the future on that date.</p>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
 
