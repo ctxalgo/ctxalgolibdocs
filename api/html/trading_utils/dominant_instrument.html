@@ -282,7 +282,7 @@ None if the asked level of dominant contract cannot be decided.</td>
 
 <dl class="class">
 <dt id="ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider">
-<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.dominant_instrument.</code><code class="descname">VolumeBasedDominantInstrumentDecider</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>days</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.dominant_instrument.</code><code class="descname">VolumeBasedDominantInstrumentDecider</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>days</em>, <em>trading_utils=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider" title="ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.dominant_instrument.AbstractDominantInstrumentDecider</span></code></a></p>
 <p>Class to decide dominant instrument ids by choosing the instrument with the largest average traded volume
 as the dominant instrument. The average traded volume is calculated using simple moving average.</p>
@@ -308,7 +308,7 @@ We would set the data of one kind of future in a special day each time
 <blockquote>
 <div>trading_day: data, the data of the special day
 instrument_id: string, the instruments of a special kind, like &#8216;cu0501&#8217; ...
-traded_volume: int, the traded volue of each instrument in one day</div></blockquote>
+traded_volume: int, the traded volume of each instrument in one day</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -316,9 +316,11 @@ traded_volume: int, the traded volue of each instrument in one day</div></blockq
 <code class="descname">decide</code><span class="sig-paren">(</span><em>trading_day</em>, <em>level=0</em>, <em>current_dominant_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.VolumeBasedDominantInstrumentDecider.decide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decide the actual instrument id for it associated dominant contract.
 :param trading_day: date, trading day.
-:param level: int, the level of dominant instrument ids to return. 0 means only the dominant instrument id,</p>
+:param level: int, the up-to level of dominant instrument ids to return.</p>
 <blockquote>
-<div>1 means the dominant and the next level of dominant, and so on.</div></blockquote>
+<div>0 means only the dominant instrument id (up to 0),
+1 means to decide on dominant levels for both 0 and 1 (up to 1).
+2 means to decide on dominant levels for both 0, 1 and 2 (up to 2).</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
