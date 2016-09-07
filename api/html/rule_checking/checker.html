@@ -220,6 +220,248 @@
 </dd></dl>
 
 <dl class="class">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.checker.</code><code class="descname">ZmqRuleCheckerDataPollerThread</code><span class="sig-paren">(</span><em>queues</em>, <em>data_cache</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.set_should_exit">
+<code class="descname">set_should_exit</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.set_should_exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.create_subscriber">
+<code class="descname">create_subscriber</code><span class="sig-paren">(</span><em>address</em>, <em>topics</em>, <em>socket=None</em>, <em>poller=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.create_subscriber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a subscriber socket connecting to the address.
+:param address: string, the queue address.
+:param poller: zmq.Poller, if not None, register the created subscriber socket to the poller.
+:return: zmq socket.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.daemon">
+<code class="descname">daemon</code><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.daemon" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean value indicating whether this thread is a daemon thread (True) or not (False).</p>
+<p>This must be set before start() is called, otherwise RuntimeError is
+raised. Its initial value is inherited from the creating thread; the
+main thread is not a daemon thread and therefore all threads created in
+the main thread default to daemon = False.</p>
+<p>The entire Python program exits when no alive non-daemon threads are
+left.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.getName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.ident">
+<code class="descname">ident</code><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.ident" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thread identifier of this thread or None if it has not been started.</p>
+<p>This is a nonzero integer. See the thread.get_ident() function. Thread
+identifiers may be recycled when a thread exits and another thread is
+created. The identifier is available even after the thread has exited.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.isAlive">
+<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.isAlive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.isDaemon">
+<code class="descname">isDaemon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.isDaemon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.is_alive">
+<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the thread terminates.</p>
+<p>This blocks the calling thread until the thread whose join() method is
+called terminates &#8211; either normally or through an unhandled exception
+or until the optional timeout occurs.</p>
+<p>When the timeout argument is present and not None, it should be a
+floating point number specifying a timeout for the operation in seconds
+(or fractions thereof). As join() always returns None, you must call
+isAlive() after join() to decide whether a timeout happened &#8211; if the
+thread is still alive, the join() call timed out.</p>
+<p>When the timeout argument is not present or None, the operation will
+block until the thread terminates.</p>
+<p>A thread can be join()ed many times.</p>
+<p>join() raises a RuntimeError if an attempt is made to join the current
+thread as that would cause a deadlock. It is also an error to join() a
+thread before it has been started and attempts to do so raises the same
+exception.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.name">
+<code class="descname">name</code><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string used for identification purposes only.</p>
+<p>It has no semantics. Multiple threads may be given the same name. The
+initial name is set by the constructor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.setDaemon">
+<code class="descname">setDaemon</code><span class="sig-paren">(</span><em>daemonic</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.setDaemon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.setName">
+<code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.setName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataPollerThread.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the thread&#8217;s activity.</p>
+<p>It must be called at most once per thread object. It arranges for the
+object&#8217;s run() method to be invoked in a separate thread of control.</p>
+<p>This method will raise a RuntimeError if called more than once on the
+same thread object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.checker.</code><code class="descname">ZmqRuleCheckerDataSenderThread</code><span class="sig-paren">(</span><em>socket_address</em>, <em>proxy</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.set_should_exit">
+<code class="descname">set_should_exit</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.set_should_exit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>topic</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.daemon">
+<code class="descname">daemon</code><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.daemon" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean value indicating whether this thread is a daemon thread (True) or not (False).</p>
+<p>This must be set before start() is called, otherwise RuntimeError is
+raised. Its initial value is inherited from the creating thread; the
+main thread is not a daemon thread and therefore all threads created in
+the main thread default to daemon = False.</p>
+<p>The entire Python program exits when no alive non-daemon threads are
+left.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.getName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.ident">
+<code class="descname">ident</code><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.ident" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thread identifier of this thread or None if it has not been started.</p>
+<p>This is a nonzero integer. See the thread.get_ident() function. Thread
+identifiers may be recycled when a thread exits and another thread is
+created. The identifier is available even after the thread has exited.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.isAlive">
+<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.isAlive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.isDaemon">
+<code class="descname">isDaemon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.isDaemon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.is_alive">
+<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the thread terminates.</p>
+<p>This blocks the calling thread until the thread whose join() method is
+called terminates &#8211; either normally or through an unhandled exception
+or until the optional timeout occurs.</p>
+<p>When the timeout argument is present and not None, it should be a
+floating point number specifying a timeout for the operation in seconds
+(or fractions thereof). As join() always returns None, you must call
+isAlive() after join() to decide whether a timeout happened &#8211; if the
+thread is still alive, the join() call timed out.</p>
+<p>When the timeout argument is not present or None, the operation will
+block until the thread terminates.</p>
+<p>A thread can be join()ed many times.</p>
+<p>join() raises a RuntimeError if an attempt is made to join the current
+thread as that would cause a deadlock. It is also an error to join() a
+thread before it has been started and attempts to do so raises the same
+exception.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.name">
+<code class="descname">name</code><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string used for identification purposes only.</p>
+<p>It has no semantics. Multiple threads may be given the same name. The
+initial name is set by the constructor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.setDaemon">
+<code class="descname">setDaemon</code><span class="sig-paren">(</span><em>daemonic</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.setDaemon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.setName">
+<code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.setName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the thread&#8217;s activity.</p>
+<p>It must be called at most once per thread object. It arranges for the
+object&#8217;s run() method to be invoked in a separate thread of control.</p>
+<p>This method will raise a RuntimeError if called more than once on the
+same thread object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="ctxalgolib.rule_checking.checker.ZmqRuleChecker">
 <em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.checker.</code><code class="descname">ZmqRuleChecker</code><span class="sig-paren">(</span><em>rules</em>, <em>input_queue_address</em>, <em>output_queue_address</em>, <em>context</em>, <em>passing_through_address=None</em>, <em>passing_through_topics=None</em>, <em>debug=False</em>, <em>is_stress_testing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleChecker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.checker.AbstractRuleChecker" title="ctxalgolib.rule_checking.checker.AbstractRuleChecker"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.checker.AbstractRuleChecker</span></code></a></p>
@@ -256,7 +498,12 @@
 
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.checker.ZmqRuleChecker.check_rules">
-<code class="descname">check_rules</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleChecker.check_rules" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_rules</code><span class="sig-paren">(</span><em>timestamp</em>, <em>timeout=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleChecker.check_rules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.checker.ZmqRuleChecker.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleChecker.dispose" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -265,18 +512,6 @@
 <dd><p>Are the given rules valid?
 :param rules: [AbstractRule], the given rules.
 :return: boolean.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.rule_checking.checker.ZmqRuleChecker.retrieve_data">
-<code class="descname">retrieve_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleChecker.retrieve_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Try to retrieve data from the input message queue.
-:return: (topic, content, data), the retrieved message.</p>
-<blockquote>
-<div>topic: string, the topic of the message.
-content: object, the content of the message.
-data: string, the original data.
-If no message is retrieved, return None.</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -303,7 +538,7 @@ If no message is retrieved, return None.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 07, 2016.
+      Last updated on Sep 08, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
