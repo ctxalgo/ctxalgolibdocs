@@ -346,6 +346,20 @@ same thread object.</p>
 <dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread">
 <em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.checker.</code><code class="descname">ZmqRuleCheckerDataSenderThread</code><span class="sig-paren">(</span><em>socket_address</em>, <em>proxy</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<p>Class to send messages into a zmq queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>socket_address</strong> &#8211; string, zmq socket address.</li>
+<li><strong>proxy</strong> &#8211; bool, if True, the socket is going through a proxy.</li>
+<li><strong>context</strong> &#8211; zmq Context.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.set_should_exit">
 <code class="descname">set_should_exit</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.checker.ZmqRuleCheckerDataSenderThread.set_should_exit" title="Permalink to this definition">¶</a></dt>

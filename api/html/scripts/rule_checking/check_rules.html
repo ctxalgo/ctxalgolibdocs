@@ -248,6 +248,21 @@
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.RuleStateWriterThread">
 <em class="property">class </em><code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">RuleStateWriterThread</code><span class="sig-paren">(</span><em>cache</em>, <em>log_frequency</em>, <em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.RuleStateWriterThread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<p>Class to write rule states (used in case of error-recovery) into a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cache</strong> &#8211; Queue, the queue which contains rule states.</li>
+<li><strong>log_frequency</strong> &#8211; int, the frequency in seconds to flush the log file, if None,
+flush log file after every write operation.</li>
+<li><strong>log_file</strong> &#8211; file pointer, the opened log file.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.RuleStateWriterThread.set_should_exit">
 <code class="descname">set_should_exit</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.RuleStateWriterThread.set_should_exit" title="Permalink to this definition">¶</a></dt>
@@ -362,6 +377,21 @@ same thread object.</p>
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.AlertThread">
 <em class="property">class </em><code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">AlertThread</code><span class="sig-paren">(</span><em>cache</em>, <em>alert_generator</em>, <em>alerta_url</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.AlertThread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<p>Class to send generate alerts and send alerts to the alerta server.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cache</strong> &#8211; Queue, the queue that contains rule checking results.
+Some results will be turned into alerts by alert_generator.</li>
+<li><strong>alert_generator</strong> &#8211; AbstractAlertGenerator, the alert generator.</li>
+<li><strong>alerta_url</strong> &#8211; string, the base url for the alerta server.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.AlertThread.set_should_exit">
 <code class="descname">set_should_exit</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.AlertThread.set_should_exit" title="Permalink to this definition">¶</a></dt>
@@ -474,13 +504,24 @@ same thread object.</p>
 
 <dl class="function">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.load_stored_rule_states">
-<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_stored_rule_states</code><span class="sig-paren">(</span><em>should_log</em>, <em>log_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_stored_rule_states" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_stored_rule_states</code><span class="sig-paren">(</span><em>should_log</em>, <em>log_file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_stored_rule_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load rule states from a log file.
+:param should_log: bool, True if we should load rule states.
+:param log_file_path: string, log file path.
+:return: dict{string: dict{string: object}}, meaning dict{rule_name: dict{metric: value}},</p>
+<blockquote>
+<div>the loaded states for rules.</div></blockquote>
+</dd></dl>
 
 <dl class="function">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.load_rules">
-<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_rules</code><span class="sig-paren">(</span><em>rule_file</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_rules" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_rules</code><span class="sig-paren">(</span><em>rule_file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load rules that should be checked from a given file.
+:param rule_file_path: string, rule config file path.
+:return: dict{string: dict{string: object}}, meaning dict{rule_name: dict{parameter: value}},</p>
+<blockquote>
+<div>loaded rules with their parameters.</div></blockquote>
+</dd></dl>
 
 <dl class="function">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.get_exit_time">
@@ -489,6 +530,11 @@ same thread object.</p>
 :param now: timestamp, current timestamp, if None, datetime.now() will be used.
 :return: bool</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.rule_checking.check_rules.parse_exit_time">
+<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">parse_exit_time</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.parse_exit_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.main">
