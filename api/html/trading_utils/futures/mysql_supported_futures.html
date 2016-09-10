@@ -196,8 +196,8 @@
   <div class="section" id="module-ctxalgolib.trading_utils.futures.mysql_supported_futures">
 <span id="mysql-supported-futures"></span><h1>mysql_supported_futures<a class="headerlink" href="#module-ctxalgolib.trading_utils.futures.mysql_supported_futures" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures">
-<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.mysql_supported_futures.</code><code class="descname">MySqlSupoprtedFutures</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.futures.mysql_supported_futures.</code><code class="descname">MySqlSupportedFutures</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="abstract_supported_futures.html#ctxalgolib.trading_utils.futures.abstract_supported_futures.AbstractSupportedFutures" title="ctxalgolib.trading_utils.futures.abstract_supported_futures.AbstractSupportedFutures"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.futures.abstract_supported_futures.AbstractSupportedFutures</span></code></a></p>
 <p>This class read all needed data from database once.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -209,8 +209,8 @@
 </tbody>
 </table>
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures.futures">
-<code class="descname">futures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures.futures" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures.futures">
+<code class="descname">futures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures.futures" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the list of futures.
 :return dict{string:string}, Keys are future prefixes, values are the Exchange (sc, sf, zc, dc) that</p>
 <blockquote>
@@ -218,16 +218,16 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures.is_stock_index">
-<code class="descname">is_stock_index</code><span class="sig-paren">(</span><em>prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures.is_stock_index" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures.is_stock_index">
+<code class="descname">is_stock_index</code><span class="sig-paren">(</span><em>prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures.is_stock_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if the given instrument is a stock index future.
 :param prefix: string, instrument prefix.
 :return: bool.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures.names">
-<code class="descname">names</code><span class="sig-paren">(</span><em>language='chinese'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupoprtedFutures.names" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures.names">
+<code class="descname">names</code><span class="sig-paren">(</span><em>language='chinese'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.futures.mysql_supported_futures.MySqlSupportedFutures.names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Chinese or English name for the given future prefix.
 :param language: string, language.
 :return: dict{string: string}, keys are future prefixes, values are future names.</p>
