@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>abstract_future_info_calculator &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="trading_utils" href="index.html"/>
+        <link rel="next" title="data_preparer" href="data_preparer.html"/>
+        <link rel="prev" title="mysql_future_info_calculator_factory" href="mysql_future_info_calculator_factory.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">trading_utils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="code_gen/index.html">code_gen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_companies/index.html">security_companies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="futures/index.html">futures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_writer.html">model_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spin.html">spin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strategy_queries.html">strategy_queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_name_parser.html">future_name_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_utils.html">instrument_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql_future_info_calculator_factory.html">mysql_future_info_calculator_factory</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">abstract_future_info_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer.html">data_preparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_source_generator.html">data_source_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument_detector.html">dominant_instrument_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="market_period_providers.html">market_period_providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_preparer_utils.html">data_preparer_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dominant_instrument.html">dominant_instrument</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator_factory.html">future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instrument_type_detector.html">instrument_type_detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design_by_contract.html">design_by_contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type_checking_utils.html">type_checking_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_constants.html">trading_constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine_type_checking.html">state_machine_type_checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trading_utils.html">trading_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_future_info_calculator_factory.html">abstract_future_info_calculator_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_market_periods.html">future_market_periods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="future_info_calculator.html">future_info_calculator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">trading_utils</a> &raquo;</li>
+      
+    <li>abstract_future_info_calculator</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/trading_utils/abstract_future_info_calculator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="abstract-future-info-calculator">
+<h1>abstract_future_info_calculator<a class="headerlink" href="#abstract-future-info-calculator" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.trading_utils.abstract_future_info_calculator"></span><dl class="class">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.abstract_future_info_calculator.</code><code class="descname">FutureInfoCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class that calculate basic information about futures.</p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureTickSizeCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.abstract_future_info_calculator.</code><code class="descname">AbstractFutureTickSizeCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureTickSizeCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator" title="ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureTickSizeCalculator.tick_size">
+<code class="descname">tick_size</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureTickSizeCalculator.tick_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tick size of the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: float, instrument tick size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureTickSizeCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureTickSizeCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureVolumeMultipleCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.abstract_future_info_calculator.</code><code class="descname">AbstractFutureVolumeMultipleCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureVolumeMultipleCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator" title="ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureVolumeMultipleCalculator.volume_multiple">
+<code class="descname">volume_multiple</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureVolumeMultipleCalculator.volume_multiple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the volume multiple of the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: int, volume multiple.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureVolumeMultipleCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureVolumeMultipleCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.abstract_future_info_calculator.</code><code class="descname">AbstractFutureMarginCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator" title="ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator.margin">
+<code class="descname">margin</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>direction</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator.margin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin of the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param direction: string, can be &#8216;long&#8217; or &#8216;short&#8217;.
+&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: float, future margin.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator.margin_money">
+<code class="descname">margin_money</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>price</em>, <em>volume</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator.margin_money" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the margin money needed to open positions for the given instrument.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>price</strong> &#8211; float, the price to open positions.</li>
+<li><strong>volume</strong> &#8211; int, the volume to open.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the calculate is performed.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+:return: float, the margin money</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureMarginCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator">
+<em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.abstract_future_info_calculator.</code><code class="descname">AbstractFutureCommissionCalculator</code><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator" title="ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.abstract_future_info_calculator.FutureInfoCalculator</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.commission_type">
+<code class="descname">commission_type</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.commission_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return the commission type.</dt>
+<dd><dl class="first last docutils">
+<dt>&#64;param instrument_id: string, the instrument id. If is_prefix is True,</dt>
+<dd>it is the prefix already, otherwise, full instrument id.</dd>
+</dl>
+</dd>
+</dl>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the commission type, can be &#8216;proportional&#8217; or &#8216;fixed&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.commission_rates">
+<code class="descname">commission_rates</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>day</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.commission_rates" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Get commission rate information.</dt>
+<dd><dl class="first last docutils">
+<dt>&#64;param instrument_id: string, the instrument id. If is_prefix is True,</dt>
+<dd>it is the prefix already, otherwise, full instrument id.</dd>
+</dl>
+</dd>
+</dl>
+<p>&#64;param day: date or string in form of yyyy-mm-dd, the date on which the commission rate is acquired.
+&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+:return: (open, close_yesterday, close_today), commission for the future on that date.</p>
+<blockquote>
+<div>All three elements are of type double.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.commission">
+<code class="descname">commission</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>price</em>, <em>volume</em>, <em>day</em>, <em>order_flag</em>, <em>is_prefix=False</em>, <em>has_commission=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate future trading commission.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param price: float, the price of the executed order.
+&#64;param volume, int, the volume of the trade, positive number means long trade, negative number means short trade.
+&#64;param day: date or string in form of yyyy-mm-dd, the date on which the trade happens.
+&#64;param order_flag: string, values can be &#8216;Open&#8217;, &#8216;Close&#8217;, &#8216;ForceClose&#8217;, &#8216;CloseToday&#8217;, &#8216;CloseYesterday&#8217;,</p>
+<blockquote>
+<div>&#8216;ForceOff&#8217;, &#8216;LocalForceClose&#8217;, &#8216;Cancel&#8217;.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;param has_commission: bool, if True, return normal commission, if False, always return 0.</p>
+<blockquote>
+<div>This is useful for early stage strategy research, when we can turn on and off commissions.</div></blockquote>
+<p>&#64;return: float, the commission in money unit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.get_instrument_prefix">
+<code class="descname">get_instrument_prefix</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>is_prefix=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.abstract_future_info_calculator.AbstractFutureCommissionCalculator.get_instrument_prefix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the prefix of an instrument. For example, the prefix if IF1601 is IF.
+&#64;param instrument_id: string, the instrument id. If is_prefix is True,</p>
+<blockquote>
+<div>it is the prefix already, otherwise, full instrument id.</div></blockquote>
+<p>&#64;param is_prefix: bool, indicates whether instrument_id is prefix already.
+&#64;return: string, the prefix of the given instrument id.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data_preparer.html" class="btn btn-neutral float-right" title="data_preparer" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mysql_future_info_calculator_factory.html" class="btn btn-neutral" title="mysql_future_info_calculator_factory" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Sep 10, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

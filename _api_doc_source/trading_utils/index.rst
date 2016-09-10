@@ -12,6 +12,8 @@ trading_utils
    strategy_queries
    future_name_parser
    instrument_utils
+   mysql_future_info_calculator_factory
+   abstract_future_info_calculator
    data_preparer
    data_source_generator
    dominant_instrument_detector
@@ -26,4 +28,6 @@ trading_utils
    state
    state_machine_type_checking
    trading_utils
+   abstract_future_info_calculator_factory
    future_market_periods
+   future_info_calculator
