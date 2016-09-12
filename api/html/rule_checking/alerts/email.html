@@ -167,8 +167,17 @@
 
 <dl class="class">
 <dt id="ctxalgolib.rule_checking.alerts.email.AlertEmailGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.email.</code><code class="descname">AlertEmailGenerator</code><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.email.AlertEmailGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.alerts.email.</code><code class="descname">AlertEmailGenerator</code><span class="sig-paren">(</span><em>get_receiver=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.email.AlertEmailGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>get_receiver</strong> &#8211; function from Alert object to an email address.
+This function defines for each alert, who to send email to.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.alerts.email.AlertEmailGenerator.generate">
 <code class="descname">generate</code><span class="sig-paren">(</span><em>alert</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.alerts.email.AlertEmailGenerator.generate" title="Permalink to this definition">¶</a></dt>
