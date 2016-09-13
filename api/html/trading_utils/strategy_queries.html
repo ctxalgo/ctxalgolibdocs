@@ -778,7 +778,7 @@ If None, return whether any instrument has position (either long or short).</div
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_pending_order">
-<code class="descname">has_pending_order</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_pending_order" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_pending_order</code><span class="sig-paren">(</span><em>instrument_id=None</em>, <em>orders=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_pending_order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is there any pending order that still needs to be executed?
 This query is useful to decide if all orders has been fully executed.
 :param instrument_id: string, the instrument id. If not None, return whether there is pending order</p>
@@ -788,7 +788,14 @@ This query is useful to decide if all orders has been fully executed.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean. True if there is at least one pending order; False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>orders</strong> &#8211; [dict{string: object}] or [string], orders information. If given, return True
+if all the given orders have finished (either fully traded or cancelled), otherwise return False.
+If type is [dict], each element should include the key order_ref, which is a string.
+If type is [string], each element represents a order_ref string.
+A common source for orders are the return value from order placement methods, such as
+open_limit_order, open_market_order, change_position_to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">boolean. True if there is at least one pending order; False otherwise.</td>
 </tr>
 </tbody>
 </table>
