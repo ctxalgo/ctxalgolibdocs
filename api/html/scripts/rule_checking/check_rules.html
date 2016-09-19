@@ -375,23 +375,16 @@ same thread object.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.AlertThread">
-<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">AlertThread</code><span class="sig-paren">(</span><em>cache</em>, <em>alert_generator</em>, <em>alerta_url</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.AlertThread" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">AlertThread</code><span class="sig-paren">(</span><em>cache</em>, <em>alert_generator</em>, <em>alerta_url</em>, <em>api_key</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.AlertThread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
 <p>Class to send generate alerts and send alerts to the alerta server.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cache</strong> &#8211; Queue, the queue that contains rule checking results.
-Some results will be turned into alerts by alert_generator.</li>
-<li><strong>alert_generator</strong> &#8211; AbstractAlertGenerator, the alert generator.</li>
-<li><strong>alerta_url</strong> &#8211; string, the base url for the alerta server.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="docutils">
+<dt>&#64;param cache: Queue, the queue that contains rule checking results.</dt>
+<dd>Some results will be turned into alerts by alert_generator.</dd>
+</dl>
+<p>&#64;param alert_generator: AbstractAlertGenerator, the alert generator.
+&#64;param alerta_url: string, the base url for the alerta server.
+&#64;param api_key: string, alerta api key</p>
 <dl class="method">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.AlertThread.set_should_exit">
 <code class="descname">set_should_exit</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.AlertThread.set_should_exit" title="Permalink to this definition">¶</a></dt>
@@ -563,7 +556,7 @@ same thread object.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 18, 2016.
+      Last updated on Sep 19, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
