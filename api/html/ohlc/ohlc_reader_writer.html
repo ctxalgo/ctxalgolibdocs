@@ -555,7 +555,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>time_precision=0</em>, <em>header=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>time_precision=0</em>, <em>header=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader</span></code></a></p>
 <p>Initialize current.
 :param instrument_id: string, the instrument id of the ohlc to be read.
@@ -632,7 +632,7 @@ If not None, use this parser to parse the data file.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcBinaryReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcBinaryReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader</span></code></a></p>
 <p>Reader to read ohlc from a binary file.</p>
 <p>Initialize current.
@@ -728,7 +728,7 @@ numpy.datetime64 -&gt; datetime, numpy.float64 to float.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 20, 2016.
+      Last updated on Sep 22, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
