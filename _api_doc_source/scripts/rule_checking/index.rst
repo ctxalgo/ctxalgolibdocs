@@ -6,5 +6,4 @@ rule_checking
 
    stress/index
    message_proxies
-   process_rule_checker_results
    check_rules
