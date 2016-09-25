@@ -226,6 +226,11 @@ trading_day: date, if None, a default value is provided.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.state">
 <code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.state" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -280,16 +285,6 @@ trading_day: date, if None, a default value is provided.</p>
 :param topic: string, message topic.
 :param content: object, message content.
 :return: boolean.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.reset">
-<code class="descname">reset</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.reset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reset current rule into initial states, meaning to forget current checking status.
-:param data: dict{string: object}, if not None, use the data to initialize current rule, which</p>
-<blockquote>
-<div>is useful for crash recovery: when the rule checker crashes, and restarts, it loads
-log data from a file and use the log data to initialize all the rules.</div></blockquote>
 </dd></dl>
 
 </dd></dl>
