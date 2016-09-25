@@ -5,3 +5,4 @@ holidays
    :maxdepth: 2
 
    ChineseHolidays
+   MySqlChineseHolidays

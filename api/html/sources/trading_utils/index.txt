@@ -9,6 +9,7 @@ trading_utils
    futures/index
    model_writer
    spin
+   mysql_future_market_periods
    strategy_queries
    future_name_parser
    instrument_utils
