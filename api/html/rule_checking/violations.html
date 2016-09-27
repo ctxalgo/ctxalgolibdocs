@@ -186,6 +186,11 @@
 <code class="descname">staging</code><em class="property"> = 'Staging'</em><a class="headerlink" href="#ctxalgolib.rule_checking.violations.AlertEnvironments.staging" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.violations.AlertEnvironments.exception">
+<code class="descname">exception</code><em class="property"> = 'Exception'</em><a class="headerlink" href="#ctxalgolib.rule_checking.violations.AlertEnvironments.exception" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -431,6 +436,36 @@ in a trading day, then all subsequent order requests will be rejected.</p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.violations.GeneralExceptionViolation">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.violations.</code><code class="descname">GeneralExceptionViolation</code><span class="sig-paren">(</span><em>resource</em>, <em>message</em>, <em>traceback</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.violations.GeneralExceptionViolation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.rule_checking.violations.AbstractRuleCheckingResult" title="ctxalgolib.rule_checking.violations.AbstractRuleCheckingResult"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.violations.AbstractRuleCheckingResult</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.violations.GeneralExceptionViolation.is_violation">
+<code class="descname">is_violation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.violations.GeneralExceptionViolation.is_violation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.violations.GeneralExceptionViolation.topic">
+<code class="descname">topic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.violations.GeneralExceptionViolation.topic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.violations.GeneralExceptionViolation.content">
+<code class="descname">content</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.violations.GeneralExceptionViolation.content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.violations.GeneralExceptionViolation.alert">
+<code class="descname">alert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.violations.GeneralExceptionViolation.alert" title="Permalink to this definition">¶</a></dt>
+<dd><p>The alert representation of current violation.
+:return: Alert, the alert from current rule checking result, if no alert should be generated,</p>
+<blockquote>
+<div>or can be generated, return None.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -453,7 +488,7 @@ in a trading day, then all subsequent order requests will be rejected.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 27, 2016.
+      Last updated on Sep 28, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
