@@ -304,6 +304,51 @@ same thread object.</p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher">
+<em class="property">class </em><code class="descclassname">ctxalgolib.pub_subs.abstract_data_publisher.</code><code class="descname">SimpleDataPublisher</code><span class="sig-paren">(</span><em>context</em>, <em>address</em>, <em>proxy=True</em>, <em>send_through_thread=True</em>, <em>sleep_second=2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher" title="ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher</span></code></a></p>
+<p>Initialize current.
+:param context: zmq Context.
+:param address: string, the zmq queue to send responses to strategies.
+:param proxy: bool, if True, send messages to a proxy.</p>
+<dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.publisher_socket">
+<code class="descname">publisher_socket</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.publisher_socket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.dispose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.context">
+<code class="descname">context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.has_disposed">
+<code class="descname">has_disposed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.has_disposed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.sender_thread">
+<code class="descname">sender_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.sender_thread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.should_send_through_thread">
+<code class="descname">should_send_through_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.should_send_through_thread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
