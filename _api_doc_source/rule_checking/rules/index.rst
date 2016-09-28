@@ -10,3 +10,4 @@ rules
    max_order_quota_rule
    max_order_speed_rule
    too_close_to_delivery_date_rule
+   strategy_warning_rule
