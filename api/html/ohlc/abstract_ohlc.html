@@ -690,6 +690,15 @@ current OHLC on some of the required dates, use None to fill in the missing part
 </dd></dl>
 
 <dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attribute_defaults">
+<em class="property">static </em><code class="descname">ohlc_frame_attribute_defaults</code><span class="sig-paren">(</span><em>attributes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attribute_defaults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default values for ohlc frame attributes. Internal use only: it is used to give
+default values when our market database does not have data for certain attributes.
+:param attributes: [string], the attributes in an OHLC frame.
+:return: dict{string: object}, keys are attribute names, values are the default values.</p>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_has_needed_attributes">
 <em class="property">static </em><code class="descname">ohlc_has_needed_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_has_needed_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test if the given ohlc object has needed attributes with respect to the requirements.
