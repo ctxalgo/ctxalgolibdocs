@@ -39,6 +39,7 @@ scripts
    collect_tianya_blog
    sync_ctxlite
    unzip_data_from_dafuweng_to_data_preparer_format
+   import_holidays_into_database
    collect_target_stock_expansion
    calculate_fundamentals
    correct_extra_large_stock_daily_price
