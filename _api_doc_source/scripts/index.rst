@@ -45,6 +45,7 @@ scripts
    update_stock_plates
    collect_index_composite_stocks_and_weights
    calculate_plate_money_flow
+   import_future_margin_into_database
    collect_blogs
    update_pool_return
    update_new_stocks
