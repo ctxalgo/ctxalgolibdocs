@@ -167,6 +167,66 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_dominants">
+<code class="descname">set_original_dominants</code><span class="sig-paren">(</span><em>dominants</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_dominants">
+<code class="descname">original_dominants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data dominants of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_profits">
+<code class="descname">set_original_profits</code><span class="sig-paren">(</span><em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_profits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_profits">
+<code class="descname">original_profits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_profits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data profits of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_use_mid_ask_bid">
+<code class="descname">set_original_use_mid_ask_bid</code><span class="sig-paren">(</span><em>use_mid_ask_bid</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_use_mid_ask_bid">
+<code class="descname">original_use_mid_ask_bid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data use_mid_ask_bid of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_with_open_interest">
+<code class="descname">set_original_with_open_interest</code><span class="sig-paren">(</span><em>with_open_interest</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_with_open_interest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_with_open_interest">
+<code class="descname">original_with_open_interest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_with_open_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data with_open_interest of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_order_book_level">
+<code class="descname">set_original_order_book_level</code><span class="sig-paren">(</span><em>order_book_level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.set_original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_order_book_level">
+<code class="descname">original_order_book_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data order_book_level of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.suggested_time_step">
 <code class="descname">suggested_time_step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.suggested_time_step" title="Permalink to this definition">¶</a></dt>
 <dd><p>The suggested time step in milliseconds to move time forward by the backtester.
@@ -276,7 +336,7 @@ param: start_date: date or string in format yyyy-mm-dd. If None, start_date defa
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.ohlcs">
-<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return generated ohlcs according to the given periods.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -332,7 +392,7 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.multiple_bars_iterator">
-<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator which yields an element when all specified instruments proceed with a bar. This is convenient
 when you are working on a multiple instrument strategy and you want to perform some action which requires
 all those instruments to have a new bar.
@@ -366,7 +426,7 @@ close value of the last bar of the instrument_id.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingDataSource.bars_iterator">
-<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator to generate and iterate over the specified ohlcs from underlying data source.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -500,7 +560,7 @@ param: data_sources: [BacktestingDataSource], the list of data sources.
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.bars_iterator">
-<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator to generate and iterate over the specified ohlcs from underlying data source.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -579,7 +639,7 @@ Most inner values are the OHLC objects containing ohlc bars that are generated s
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.multiple_bars_iterator">
-<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator which yields an element when all specified instruments proceed with a bar. This is convenient
 when you are working on a multiple instrument strategy and you want to perform some action which requires
 all those instruments to have a new bar.
@@ -613,7 +673,7 @@ close value of the last bar of the instrument_id.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.ohlcs">
-<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return generated ohlcs according to the given periods.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -668,10 +728,24 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_dominants">
+<code class="descname">original_dominants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data dominants of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_ohlcs">
 <code class="descname">original_ohlcs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the ohlcs inside current data source.
 :return: dict{string: OHLC}, Keys are instrument ids, values are corresponding ohlcs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_order_book_level">
+<code class="descname">original_order_book_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data order_book_level of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
 </dd></dl>
 
 <dl class="method">
@@ -682,8 +756,54 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_profits">
+<code class="descname">original_profits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_profits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data profits of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_use_mid_ask_bid">
+<code class="descname">original_use_mid_ask_bid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data use_mid_ask_bid of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_with_open_interest">
+<code class="descname">original_with_open_interest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.original_with_open_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data with_open_interest of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_dominants">
+<code class="descname">set_original_dominants</code><span class="sig-paren">(</span><em>dominants</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_order_book_level">
+<code class="descname">set_original_order_book_level</code><span class="sig-paren">(</span><em>order_book_level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_period">
 <code class="descname">set_original_period</code><span class="sig-paren">(</span><em>period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_profits">
+<code class="descname">set_original_profits</code><span class="sig-paren">(</span><em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_profits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_use_mid_ask_bid">
+<code class="descname">set_original_use_mid_ask_bid</code><span class="sig-paren">(</span><em>use_mid_ask_bid</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_with_open_interest">
+<code class="descname">set_original_with_open_interest</code><span class="sig-paren">(</span><em>with_open_interest</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingCompositeDataSource.set_original_with_open_interest" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -813,7 +933,7 @@ If None, use the last available date from data.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.bars_iterator">
-<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator to generate and iterate over the specified ohlcs from underlying data source.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -887,7 +1007,7 @@ Most inner values are the OHLC objects containing ohlc bars that are generated s
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.multiple_bars_iterator">
-<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator which yields an element when all specified instruments proceed with a bar. This is convenient
 when you are working on a multiple instrument strategy and you want to perform some action which requires
 all those instruments to have a new bar.
@@ -921,7 +1041,7 @@ close value of the last bar of the instrument_id.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.ohlcs">
-<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return generated ohlcs according to the given periods.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -976,10 +1096,24 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_dominants">
+<code class="descname">original_dominants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data dominants of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_ohlcs">
 <code class="descname">original_ohlcs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the ohlcs inside current data source.
 :return: dict{string: OHLC}, Keys are instrument ids, values are corresponding ohlcs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_order_book_level">
+<code class="descname">original_order_book_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data order_book_level of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
 </dd></dl>
 
 <dl class="method">
@@ -990,8 +1124,54 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_profits">
+<code class="descname">original_profits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_profits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data profits of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_use_mid_ask_bid">
+<code class="descname">original_use_mid_ask_bid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data use_mid_ask_bid of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_with_open_interest">
+<code class="descname">original_with_open_interest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.original_with_open_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data with_open_interest of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_dominants">
+<code class="descname">set_original_dominants</code><span class="sig-paren">(</span><em>dominants</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_order_book_level">
+<code class="descname">set_original_order_book_level</code><span class="sig-paren">(</span><em>order_book_level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_period">
 <code class="descname">set_original_period</code><span class="sig-paren">(</span><em>period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_profits">
+<code class="descname">set_original_profits</code><span class="sig-paren">(</span><em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_profits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_use_mid_ask_bid">
+<code class="descname">set_original_use_mid_ask_bid</code><span class="sig-paren">(</span><em>use_mid_ask_bid</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_with_open_interest">
+<code class="descname">set_original_with_open_interest</code><span class="sig-paren">(</span><em>with_open_interest</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingTickDataSource.set_original_with_open_interest" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1156,7 +1336,7 @@ all market periods in the time range of ohlc.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.bars_iterator">
-<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">bars_iterator</code><span class="sig-paren">(</span><em>periods</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator to generate and iterate over the specified ohlcs from underlying data source.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -1235,7 +1415,7 @@ Most inner values are the OHLC objects containing ohlc bars that are generated s
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.multiple_bars_iterator">
-<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">multiple_bars_iterator</code><span class="sig-paren">(</span><em>period</em>, <em>ohlc_kind='time-based'</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>instrument_ids=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.multiple_bars_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get an iterator which yields an element when all specified instruments proceed with a bar. This is convenient
 when you are working on a multiple instrument strategy and you want to perform some action which requires
 all those instruments to have a new bar.
@@ -1269,7 +1449,7 @@ close value of the last bar of the instrument_id.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.ohlcs">
-<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlcs</code><span class="sig-paren">(</span><em>periods=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>use_mid_ask_bid=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return generated ohlcs according to the given periods.
 :param periods: It can be of either of the following three types:</p>
 <blockquote>
@@ -1324,10 +1504,24 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_dominants">
+<code class="descname">original_dominants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data dominants of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_ohlcs">
 <code class="descname">original_ohlcs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the ohlcs inside current data source.
 :return: dict{string: OHLC}, Keys are instrument ids, values are corresponding ohlcs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_order_book_level">
+<code class="descname">original_order_book_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data order_book_level of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1338,8 +1532,54 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_profits">
+<code class="descname">original_profits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_profits" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data profits of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_use_mid_ask_bid">
+<code class="descname">original_use_mid_ask_bid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data use_mid_ask_bid of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_with_open_interest">
+<code class="descname">original_with_open_interest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.original_with_open_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>The original data with_open_interest of volatility threshold of current data source.
+:return: Periodicity or int/float.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_dominants">
+<code class="descname">set_original_dominants</code><span class="sig-paren">(</span><em>dominants</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_dominants" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_order_book_level">
+<code class="descname">set_original_order_book_level</code><span class="sig-paren">(</span><em>order_book_level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_order_book_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_period">
 <code class="descname">set_original_period</code><span class="sig-paren">(</span><em>period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_period" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_profits">
+<code class="descname">set_original_profits</code><span class="sig-paren">(</span><em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_profits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_use_mid_ask_bid">
+<code class="descname">set_original_use_mid_ask_bid</code><span class="sig-paren">(</span><em>use_mid_ask_bid</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_use_mid_ask_bid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_with_open_interest">
+<code class="descname">set_original_with_open_interest</code><span class="sig-paren">(</span><em>with_open_interest</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.set_original_with_open_interest" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1351,7 +1591,7 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 <p>Class to provide convenient methods to generate data sources.</p>
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate">
-<code class="descname">generate</code><span class="sig-paren">(</span><em>instrument_ids</em>, <em>market_period_provider</em>, <em>period</em>, <em>start_date</em>, <em>end_date</em>, <em>base_folder</em>, <em>data_folder=None</em>, <em>override_existing=False</em>, <em>data_paths=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate</code><span class="sig-paren">(</span><em>instrument_ids</em>, <em>market_period_provider</em>, <em>period</em>, <em>start_date</em>, <em>end_date</em>, <em>base_folder</em>, <em>data_folder=None</em>, <em>override_existing=False</em>, <em>data_paths=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>kind=None</em>, <em>exchange=None</em>, <em>market=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate data source for backtesting testing.
 If period is Periodicity.TICK, it is assumed that the tick data is already inside data_folder.
 Otherwise, the trading data will be downloaded from ctxalgo.com when it does not exist or
@@ -1445,7 +1685,7 @@ return None.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate_for_single_instrument">
-<code class="descname">generate_for_single_instrument</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>period</em>, <em>market_period_provider</em>, <em>start_date</em>, <em>end_date</em>, <em>data_folder</em>, <em>override_existing=False</em>, <em>data_path=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate_for_single_instrument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_for_single_instrument</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>period</em>, <em>market_period_provider</em>, <em>start_date</em>, <em>end_date</em>, <em>data_folder</em>, <em>override_existing=False</em>, <em>data_path=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>kind=None</em>, <em>exchange=None</em>, <em>market=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate_for_single_instrument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate data source for a single instrument.
 :param instrument_id: string, the instrument id whose data should be included.
 :param period: Periodicity, the backtesting period.
@@ -1501,7 +1741,7 @@ If not None, use this reader to load ohlc data from file.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 03, 2016.
+      Last updated on Oct 04, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

@@ -327,7 +327,7 @@ should not be generated.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.initialize_ohlcs">
-<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>previous_profits</em>, <em>process_profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -379,10 +379,11 @@ not contain information about traded price or order book.
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.get_profit">
-<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
 :param bar: current bar
-:param bar_period: current bar_period</p>
+:param bar_period: current bar_period
+:param tick: dict{string: object}, the tick data.</p>
 </dd></dl>
 
 <dl class="method">
@@ -456,7 +457,7 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.OhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">OhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">OhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em>, <em>previous_profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <p>Initialize current.
 :param market_periods: [(time, time)], a list of time periods defining the open periods (in one day)</p>
@@ -523,6 +524,9 @@ ask, bid, volume, set to 0.
 Of course, bars whose timestamps are outside of market periods for the given instrument
 should not be generated.</p>
 </li>
+<li><strong>previous_profits</strong> &#8211; dict{Periodicity: dict{string: object}}, the previous profit values.
+The inner dict must have the following keys: close, profits. And they store the close value
+and the profits series of the last bar. If there is no previously generated bars, set it to None.</li>
 </ul>
 </td>
 </tr>
@@ -592,15 +596,16 @@ use that partial bar as the current partial bar for the corresponding ohlcs.
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.get_profit">
-<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
 :param bar: current bar
-:param bar_period: current bar_period</p>
+:param bar_period: current bar_period
+:param tick: dict{string: object}, the tick data.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.initialize_ohlcs">
-<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>previous_profits</em>, <em>process_profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -665,7 +670,7 @@ not contain information about traded price or order book.
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">VolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">VolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>previous_profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <p>Initialize current.
 :param ohlcs: dict from volatility threshold to OHLC. Keys are volatility threshold of the ohlcs to generate,</p>
@@ -714,6 +719,9 @@ at 9:10 should be generated, its tick related field (in case order_book_level &g
 with the tick, but the tick itself does not participate in calculating the open, high, low, close,
 volume of that bar.</li>
 <li><strong>profit_factor</strong> &#8211; float, the factor used to calculate the profit series.</li>
+<li><strong>previous_profits</strong> &#8211; dict{Periodicity: dict{string: object}}, the previous profit values.
+The inner dict must have the following keys: close, profits. And they store the close value
+and the profits series of the last bar. If there is no previously generated bars, set it to None.</li>
 </ul>
 </td>
 </tr>
@@ -759,15 +767,16 @@ return: dict from string (volatility names) to Bars. Keys are all periodicities 
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_profit">
-<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
 :param bar: current bar
-:param bar_period: current bar_period</p>
+:param bar_period: current bar_period
+:param tick: dict{string: object}, the tick data.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.initialize_ohlcs">
-<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>previous_profits</em>, <em>process_profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -859,15 +868,16 @@ not contain information about traded price or order book.
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.get_profit">
-<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
 :param bar: current bar
-:param bar_period: current bar_period</p>
+:param bar_period: current bar_period
+:param tick: dict{string: object}, the tick data.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.initialize_ohlcs">
-<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>previous_profits</em>, <em>process_profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -998,15 +1008,16 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.get_profit">
-<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
 :param bar: current bar
-:param bar_period: current bar_period</p>
+:param bar_period: current bar_period
+:param tick: dict{string: object}, the tick data.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.initialize_ohlcs">
-<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>previous_profits</em>, <em>process_profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1101,7 +1112,7 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">DirectOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">DirectOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>previous_profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.kind">
@@ -1135,15 +1146,16 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.get_profit">
-<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
 :param bar: current bar
-:param bar_period: current bar_period</p>
+:param bar_period: current bar_period
+:param tick: dict{string: object}, the tick data.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.initialize_ohlcs">
-<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>previous_profits</em>, <em>process_profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1217,7 +1229,7 @@ the finishing of the previous bar.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">DirectVolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">DirectVolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>previous_profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.kind">
@@ -1246,15 +1258,16 @@ the finishing of the previous bar.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.get_profit">
-<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
 :param bar: current bar
-:param bar_period: current bar_period</p>
+:param bar_period: current bar_period
+:param tick: dict{string: object}, the tick data.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.initialize_ohlcs">
-<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">initialize_ohlcs</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>previous_profits</em>, <em>process_profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.initialize_ohlcs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1353,7 +1366,7 @@ the finishing of the previous bar.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 03, 2016.
+      Last updated on Oct 04, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
