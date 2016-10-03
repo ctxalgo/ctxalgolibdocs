@@ -323,6 +323,15 @@ same thread object.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.send_general_exception">
+<code class="descname">send_general_exception</code><span class="sig-paren">(</span><em>source</em>, <em>message</em>, <em>trace</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.send_general_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a general exception to the zeromq queue.
+:param source: string, the source of the exception, for example, &#8216;market broker&#8217;, &#8216;market data processor&#8217;.
+:param message: string, the exception message.
+:param trace: string, the trace of the exception.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.context">
 <code class="descname">context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.context" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -371,7 +380,7 @@ same thread object.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Sep 30, 2016.
+      Last updated on Oct 03, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
