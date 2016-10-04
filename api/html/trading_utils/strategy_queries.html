@@ -959,10 +959,7 @@ now &lt;= self.latest_time_to_open_position and now &lt;= self.latest_time_to_cl
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.last_known_price">
 <code class="descname">last_known_price</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.last_known_price" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the last known price for the given instrument. For instruments whose price information
-is kept in current strategy, return the last price directly. Otherwsie, if self.data_feed() is set,
-try to get the price information from that data feed.
-Finally if no price information is available, return None.
+<dd><p>Return the last known price for the given instrument. If no price information is available, return None.
 :param instrument_id: string, the instrument id. If None, use self.instrument_id().
 :return float, the last known price, None if no price is known for the given instrument.</p>
 </dd></dl>
@@ -1221,23 +1218,6 @@ instrument_id, kind and period to find the ohlc.</li>
 <blockquote>
 <div>keys are future instrument prefixes, such as IF, cu, values are the exchange to which
 those futures belong.</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.data_feed">
-<code class="descname">data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.data_feed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the data feed which provides external data, for example, from a database.
-:return: AbstractDataFeed. The data feed.</p>
-<blockquote>
-<div>If no data feed is set, return None.
-In the case when data feed is not set, queries which rely on data feed will fail.</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_data_feed">
-<code class="descname">has_data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.has_data_feed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is data feed set?
-:return: boolean.</p>
 </dd></dl>
 
 <dl class="method">

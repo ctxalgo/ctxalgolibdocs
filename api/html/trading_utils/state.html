@@ -477,11 +477,6 @@ and all the state classes. Do not use datetime.now() because it won&#8217;t work
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.state.AbstractState.data_feed">
-<code class="descname">data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.data_feed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.AbstractState.trading_day">
 <code class="descname">trading_day</code><span class="sig-paren">(</span><em>now=None</em>, <em>delta=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.trading_day" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -627,13 +622,6 @@ If there is no position, return None.</p>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.state.AbstractState.has_data_feed">
-<code class="descname">has_data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.has_data_feed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is data feed set?
-:return: boolean.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1322,11 +1310,6 @@ Whether any position can be opened for an instrument id is defined by now &lt;= 
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.state.TemplateState.data_feed">
-<code class="descname">data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.data_feed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.default_period">
 <code class="descname">default_period</code><span class="sig-paren">(</span><em>kind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.default_period" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the default period for the given ohlc kind.
@@ -1422,13 +1405,6 @@ If there is no position, return None.</p>
 <dt id="ctxalgolib.trading_utils.state.TemplateState.futures">
 <code class="descname">futures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.futures" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.state.TemplateState.has_data_feed">
-<code class="descname">has_data_feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.has_data_feed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is data feed set?
-:return: boolean.</p>
-</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.has_long_position">
