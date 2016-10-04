@@ -6,6 +6,7 @@ scripts
 
    rule_checking/index
    update_stock_plates_from_sohu
+   import_future_commissions_in_database
    generate_trading_days
    update_shibor
    collect_future_commission
