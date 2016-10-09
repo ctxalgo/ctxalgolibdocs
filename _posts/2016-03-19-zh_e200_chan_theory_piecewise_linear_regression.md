@@ -1,7 +1,7 @@
 ---
 title: 缠论的分型策略
 layout: post
-category: ta
+category: docs_ta
 language: zh
 ---
 

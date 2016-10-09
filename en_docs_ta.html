@@ -1,13 +1,17 @@
 ---
 layout: default
-title: ta
+title: docs_ta
 ---
+{% assign file_name = "docs_ta" %}
 <div>
+    <h2>{{ site.data.page.list[file_name].en.title }}</h2>
+    <p>{{ site.data.page.list[file_name].en.desc }}</p>
+    <br>
     <ul>
         {% for cate in site.categories %}
-            {% if cate[0] == 'ta' %}
+            {% if cate[0] == 'docs_ta' %}
                 {% for post in cate[1] %}
-                    {% if post.language == 'zh' %}
+                    {% if post.language == 'en' %}
                         <li>
                             <h4>
                                 <a href="{{ post.url }}">{{ post.title }}</a>

@@ -1,7 +1,7 @@
 ---
 title: Ohlc Generation Semantics
 layout: post
-category: ohlc_generation
+category: docs_ohlc_generation
 language: en
 ---
 

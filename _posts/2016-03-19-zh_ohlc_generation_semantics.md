@@ -1,6 +1,6 @@
 ---
 title: Generation semantics
 layout: post
-category: ohlc_generation
+category: docs_ohlc_generation
 language: zh
 ---

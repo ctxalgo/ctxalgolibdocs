@@ -1,7 +1,7 @@
 ---
 title: Chart customized series
 layout: post
-category: charting
+category: docs_charting
 language: zh
 ---
 

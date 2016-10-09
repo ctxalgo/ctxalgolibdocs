@@ -1,7 +1,7 @@
 ---
 title: Simple pattern recognition strategy from the Chan Theory
 layout: post
-category: ta
+category: docs_ta
 language: en
 ---
 

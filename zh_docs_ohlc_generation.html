@@ -1,11 +1,15 @@
 ---
 layout: default
-title: ohlc_generation
+title: docs_ohlc_generation
 ---
+{% assign file_name = "docs_ohlc_generation" %}
 <div>
+    <h2>{{ site.data.page.list[file_name].zh.title }}</h2>
+    <p>{{ site.data.page.list[file_name].zh.desc }}</p>
+    <br>
     <ul>
         {% for cate in site.categories %}
-            {% if cate[0] == 'ohlc_generation' %}
+            {% if cate[0] == 'docs_ohlc_generation' %}
                 {% for post in cate[1] %}
                     {% if post.language == 'zh' %}
                         <li>

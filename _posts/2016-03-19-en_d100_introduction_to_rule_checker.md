@@ -1,7 +1,7 @@
 ---
 title: Introduction to rule checker
 layout: post
-category: rule_checker
+category: docs_rule_checker
 language: en
 ---
 

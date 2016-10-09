@@ -1,7 +1,7 @@
 ---
 title: 使用实时市场行情数据的方法
 layout: post
-category: market_broker
+category: docs_market_broker
 language: zh
 ---
 

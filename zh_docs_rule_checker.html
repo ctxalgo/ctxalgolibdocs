@@ -1,13 +1,17 @@
 ---
 layout: default
-title: charting
+title: docs_rule_checker
 ---
+{% assign file_name = "docs_rule_checker" %}
 <div>
+    <h2>{{ site.data.page.list[file_name].zh.title }}</h2>
+    <p>{{ site.data.page.list[file_name].zh.desc }}</p>
+    <br>
     <ul>
         {% for cate in site.categories %}
-            {% if cate[0] == 'charting' %}
+            {% if cate[0] == 'docs_rule_checker' %}
                 {% for post in cate[1] %}
-                    {% if post.language == 'en' %}
+                    {% if post.language == 'zh' %}
                         <li>
                             <h4>
                                 <a href="{{ post.url }}">{{ post.title }}</a>

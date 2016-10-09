@@ -1,7 +1,7 @@
 ---
 title: Registration for using real time market data
 layout: post
-category: market_broker
+category: docs_market_broker
 language: en
 ---
 
