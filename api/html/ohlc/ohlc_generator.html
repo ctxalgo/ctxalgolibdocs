@@ -719,7 +719,8 @@ at 9:10 should be generated, its tick related field (in case order_book_level &g
 with the tick, but the tick itself does not participate in calculating the open, high, low, close,
 volume of that bar.</li>
 <li><strong>profit_factor</strong> &#8211; float, the factor used to calculate the profit series.</li>
-<li><strong>previous_profits</strong> &#8211; dict{Periodicity: dict{string: object}}, the previous profit values.
+<li><strong>previous_profits</strong> &#8211; dict{float: dict{string: object}}, the previous profit values.
+Outer keys are volatility thresholds.
 The inner dict must have the following keys: close, profits. And they store the close value
 and the profits series of the last bar. If there is no previously generated bars, set it to None.</li>
 </ul>
