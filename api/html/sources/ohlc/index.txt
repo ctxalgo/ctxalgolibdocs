@@ -16,6 +16,7 @@ ohlc
    ohlc_logger
    abstract_ohlc
    ohlc_utils
+   price_type
    ohlc_generator
    trading_days
    ohlc_merger
