@@ -275,9 +275,9 @@ log data from a file and use the log data to initialize all the rules.</div></bl
 :param topic: string, the topic of the message.
 :param content: object, message content.
 :param timestamp: datetime, the current timestamp.
-:return: AbstractRuleCheckingResult, the rule checking result.</p>
+:return: [AbstractRuleCheckingResult], the rule checking result.</p>
 <blockquote>
-<div>Can be None if there is no result.</div></blockquote>
+<div>If no rule violation, return an empty list.</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -312,7 +312,7 @@ log data from a file and use the log data to initialize all the rules.</div></bl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 10, 2016.
+      Last updated on Oct 11, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

@@ -367,6 +367,40 @@ s2 &lt; s1, e1 &lt; e2</dd>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.unified_market_periods">
+<code class="descname">unified_market_periods</code><span class="sig-paren">(</span><em>trading_day</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.unified_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get unified market periods for all instruments on the given trading day.
+:param trading_day: date, the trading day.
+:param delta: timedelta, a timedelta to subtract and add before or after every market
+period on that trading day.
+:return: [(start_ts, end_ts)]. Both start_ts and end_ts are of type datetime.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.unified_market_end_timestamp">
+<code class="descname">unified_market_end_timestamp</code><span class="sig-paren">(</span><em>time_str=None</em>, <em>now=None</em>, <em>delta=datetime.timedelta(0</em>, <em>1800)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.unified_market_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a unified market end timestamp for the given trading day.
+:param time_str: string, in various date or datetime format, if specified, this is the returned</p>
+<blockquote>
+<div>market end timestamp.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>now</strong> &#8211; datetime, current timestamp, used to decide trading day.</li>
+<li><strong>delta</strong> &#8211; timestamp, the</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">datetime, market end timestamp.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -381,6 +415,11 @@ s2 &lt; s1, e1 &lt; e2</dd>
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_exchange">
 <code class="descname">get_exchange</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_exchange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.unified_market_periods">
+<code class="descname">unified_market_periods</code><span class="sig-paren">(</span><em>trading_day</em>, <em>delta=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.unified_market_periods" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -539,6 +578,30 @@ trading day that ts belong to?
 <dd><p>Return the trading day given current timestamp.
 :param now: datetime, current timestamp.
 :return: date, trading day.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.unified_market_end_timestamp">
+<code class="descname">unified_market_end_timestamp</code><span class="sig-paren">(</span><em>time_str=None</em>, <em>now=None</em>, <em>delta=datetime.timedelta(0</em>, <em>1800)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.unified_market_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a unified market end timestamp for the given trading day.
+:param time_str: string, in various date or datetime format, if specified, this is the returned</p>
+<blockquote>
+<div>market end timestamp.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>now</strong> &#8211; datetime, current timestamp, used to decide trading day.</li>
+<li><strong>delta</strong> &#8211; timestamp, the</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">datetime, market end timestamp.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -1015,6 +1078,30 @@ trading day that ts belong to?
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.unified_market_end_timestamp">
+<code class="descname">unified_market_end_timestamp</code><span class="sig-paren">(</span><em>time_str=None</em>, <em>now=None</em>, <em>delta=datetime.timedelta(0</em>, <em>1800)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.unified_market_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a unified market end timestamp for the given trading day.
+:param time_str: string, in various date or datetime format, if specified, this is the returned</p>
+<blockquote>
+<div>market end timestamp.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>now</strong> &#8211; datetime, current timestamp, used to decide trading day.</li>
+<li><strong>delta</strong> &#8211; timestamp, the</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">datetime, market end timestamp.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price">
 <code class="descname">calculate_settlement_price</code><span class="sig-paren">(</span><em>future_id</em>, <em>ohlc_in_a_day</em>, <em>is_delivery_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the settlement price for a future given its trading data.
@@ -1048,7 +1135,7 @@ trading day that ts belong to?
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 10, 2016.
+      Last updated on Oct 11, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
