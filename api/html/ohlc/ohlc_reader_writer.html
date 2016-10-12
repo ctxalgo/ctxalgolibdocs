@@ -168,7 +168,7 @@
 <em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">AbstractOhlcIO</code><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcIO" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcIO.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcIO.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcIO.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -207,7 +207,7 @@
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -235,7 +235,7 @@
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcStringWriter</code><span class="sig-paren">(</span><em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcStringWriter</code><span class="sig-paren">(</span><em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter</span></code></a></p>
 <p>Writer to write OHLC into csv text file.</p>
 <p>Initialize current.
@@ -280,7 +280,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -308,7 +308,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>time_precision=0</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>time_precision=0</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter</span></code></a></p>
 <p>Initialize current.
 :param path: the file path to store the output.
@@ -338,7 +338,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -366,7 +366,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcBinaryFileWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcBinaryFileWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter</span></code></a></p>
 <p>Initialize current.
 :param path: the file path to store the output.
@@ -420,7 +420,7 @@ should be written as float64.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -468,7 +468,7 @@ should be written as float64.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -496,7 +496,7 @@ should be written as float64.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringReader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcStringReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>data</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcStringReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>data</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader</span></code></a></p>
 <p>Reader to read ohlc from a csv string.</p>
 <p>Initialize current.
@@ -528,7 +528,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringReader.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -556,7 +556,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>time_precision=0</em>, <em>header=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>time_precision=0</em>, <em>header=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader</span></code></a></p>
 <p>Initialize current.
 :param instrument_id: string, the instrument id of the ohlc to be read.
@@ -605,7 +605,7 @@ If not None, use this parser to parse the data file.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.
@@ -633,7 +633,7 @@ If not None, use this parser to parse the data file.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcBinaryReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcBinaryReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader</span></code></a></p>
 <p>Reader to read ohlc from a binary file.</p>
 <p>Initialize current.
@@ -672,7 +672,7 @@ If not None, use this parser to parse the data file.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader.ohlc_has_required_attributes">
-<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ohlc_has_required_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader.ohlc_has_required_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the ohlc have all the required attributes?
 :param ohlc: OHLC, the ohlc object.
 :param with_open_interests: boolean, if True, include the open_interests data in the output.

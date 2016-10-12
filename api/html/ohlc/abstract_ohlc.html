@@ -587,6 +587,26 @@ current OHLC on some of the required dates, use None to fill in the missing part
 <code class="descname">lower_limit_price</code><em class="property"> = 'lower_limit_price'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.lower_limit_price" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.moneys">
+<code class="descname">moneys</code><em class="property"> = 'moneys'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.moneys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.data_points">
+<code class="descname">data_points</code><em class="property"> = 'data_points'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.data_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.trades">
+<code class="descname">trades</code><em class="property"> = 'trades'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.trades" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.mean_prices">
+<code class="descname">mean_prices</code><em class="property"> = 'mean_prices'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.mean_prices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ask_prices_attribute">
 <em class="property">static </em><code class="descname">ask_prices_attribute</code><span class="sig-paren">(</span><em>order_book_level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ask_prices_attribute" title="Permalink to this definition">¶</a></dt>
@@ -650,7 +670,14 @@ current OHLC on some of the required dates, use None to fill in the missing part
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.profits_attributes">
 <em class="property">static </em><code class="descname">profits_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.profits_attributes" title="Permalink to this definition">¶</a></dt>
-<dd><p>REturn the list of attributes for profits series.
+<dd><p>Return the list of attributes for profits series.
+:return: [string]</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.l1_statistics_attributes">
+<em class="property">static </em><code class="descname">l1_statistics_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.l1_statistics_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of attributes for L1 statistics.
 :return: [string]</p>
 </dd></dl>
 
@@ -681,12 +708,13 @@ current OHLC on some of the required dates, use None to fill in the missing part
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes">
-<em class="property">static </em><code class="descname">ohlc_frame_attributes</code><span class="sig-paren">(</span><em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ohlc_frame_attributes</code><span class="sig-paren">(</span><em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the set of attribute names for an OHLC that meets the requirement.
-:param with_open_interests: boolean, if True, include attributes for open interests.
+:param with_open_interests: bool, if True, include attributes for open interests.
 :param order_book_level: int, non-negative, indicates the level of order book. 0 means no order book.
-:param dominant: boolean, if True, include attributes for dominant contract switching.
-:param profits: boolean, if True, include attributes for profit series.
+:param dominant: bool, if True, include attributes for dominant contract switching.
+:param profits: bool, if True, include attributes for profit series.
+:param l1_statistics: bool, if True, include L1 statistics related fields.
 :return: [string], the list of attributes that the ohlc should have to contain required information.</p>
 </dd></dl>
 
@@ -701,25 +729,27 @@ default values when our market database does not have data for certain attribute
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_has_needed_attributes">
-<em class="property">static </em><code class="descname">ohlc_has_needed_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_has_needed_attributes" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ohlc_has_needed_attributes</code><span class="sig-paren">(</span><em>ohlc</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_has_needed_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test if the given ohlc object has needed attributes with respect to the requirements.
 :param ohlc: AbstractOhlc, ohlc object.
 :param with_open_interests: boolean, if True, include attributes for open interests.
 :param order_book_level: int, non-negative, indicates the level of order book. 0 means no order book.
 :param dominant: boolean, if True, include the attribute for dominant contract switching.
 :param profits: boolean, if True, include attributes for profit series.
+:param l1_statistics: bool, if True, include L1 statistics related fields.
 :return: boolean, True if the given ohlc meets the requirement, False otherwise.</p>
 </dd></dl>
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_has_needed_attributes">
-<em class="property">static </em><code class="descname">ohlc_frame_has_needed_attributes</code><span class="sig-paren">(</span><em>tick</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_has_needed_attributes" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ohlc_frame_has_needed_attributes</code><span class="sig-paren">(</span><em>tick</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_has_needed_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test if the given tick has needed attributes with respect to the requirements.
 :param tick: dict{string: object}, the tick data, keys are tick data item names.
 :param with_open_interests: boolean, if True, include attributes for open interests.
 :param order_book_level: int, non-negative, indicates the level of order book. 0 means no order book.
 :param dominant: boolean, if True, include the attribute for dominant contract switching.
 :param profits: boolean, if True, include attributes for profit series.
+:param l1_statistics: bool, if True, include L1 statistics related fields.
 :return: boolean, True if the given tick meets the requirement, False otherwise.</p>
 </dd></dl>
 

@@ -263,7 +263,7 @@ Only suitable for future data.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">AbstractOhlcGenerator</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>use_mid_ask_bid</em>, <em>keep_new_bars=True</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">AbstractOhlcGenerator</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>use_mid_ask_bid</em>, <em>keep_new_bars=True</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Initialize current.
 :param with_open_interest: boolean, does underlying data has open interest information?
@@ -304,6 +304,7 @@ ask, bid, volume, set to 0.
 Of course, bars whose timestamps are outside of market periods for the given instrument
 should not be generated.</p>
 </li>
+<li><strong>l1_statistics</strong> &#8211; bool, if True, include statistics fields for L1 data.</li>
 </ul>
 </td>
 </tr>
@@ -458,7 +459,7 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.OhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">OhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em>, <em>previous_profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">OhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em>, <em>previous_profits=None</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <p>Initialize current.
 :param market_periods: [(time, time)], a list of time periods defining the open periods (in one day)</p>
@@ -527,7 +528,9 @@ should not be generated.</p>
 </li>
 <li><strong>previous_profits</strong> &#8211; dict{Periodicity: dict{string: object}}, the previous profit values.
 The inner dict must have the following keys: OhlcAttributes.closes, OhlcAttributes.profits. And they store
-the close value and the profits series of the last bar. If there is no previously generated bars, set it to None.</li>
+the close value and the profits series of the last bar. If there is no previously generated bars,
+set it to None.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, if True, include L1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -671,7 +674,7 @@ not contain information about traded price or order book.
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">VolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>previous_profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">VolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>previous_profits=None</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <p>Initialize current.
 :param ohlcs: dict from volatility threshold to OHLC. Keys are volatility threshold of the ohlcs to generate,</p>
@@ -725,6 +728,7 @@ Outer keys are volatility thresholds.
 The inner dict must have the following keys: OhlcAttributes.closes, OhlcAttributes.profits. And they store
 the close value and the profits series of the last bar. If there is no previously generated bars, set it to
 None.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, if True, include L1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
