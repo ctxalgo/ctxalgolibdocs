@@ -526,8 +526,8 @@ Of course, bars whose timestamps are outside of market periods for the given ins
 should not be generated.</p>
 </li>
 <li><strong>previous_profits</strong> &#8211; dict{Periodicity: dict{string: object}}, the previous profit values.
-The inner dict must have the following keys: close, profits. And they store the close value
-and the profits series of the last bar. If there is no previously generated bars, set it to None.</li>
+The inner dict must have the following keys: OhlcAttributes.closes, OhlcAttributes.profits. And they store
+the close value and the profits series of the last bar. If there is no previously generated bars, set it to None.</li>
 </ul>
 </td>
 </tr>
@@ -722,8 +722,9 @@ volume of that bar.</li>
 <li><strong>profit_factor</strong> &#8211; float, the factor used to calculate the profit series.</li>
 <li><strong>previous_profits</strong> &#8211; dict{float: dict{string: object}}, the previous profit values.
 Outer keys are volatility thresholds.
-The inner dict must have the following keys: close, profits. And they store the close value
-and the profits series of the last bar. If there is no previously generated bars, set it to None.</li>
+The inner dict must have the following keys: OhlcAttributes.closes, OhlcAttributes.profits. And they store
+the close value and the profits series of the last bar. If there is no previously generated bars, set it to
+None.</li>
 </ul>
 </td>
 </tr>
@@ -1368,7 +1369,7 @@ the finishing of the previous bar.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 11, 2016.
+      Last updated on Oct 12, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
