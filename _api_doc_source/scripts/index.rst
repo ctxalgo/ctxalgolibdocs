@@ -17,6 +17,7 @@ scripts
    collect_state_company
    generate_future_info_classes
    collect_fund_holders
+   calculate_stock_l1_statistics
    import_from_dafuweng
    update_stock_returns
    update_capital_structure

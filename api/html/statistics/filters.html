@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>filters &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="statistics" href="index.html"/>
+        <link rel="next" title="eval" href="../eval/index.html"/>
+        <link rel="prev" title="l1_data_loader" href="l1_data_loader.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">statistics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="twap_calculator.html">twap_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_statistics_calculator.html">abstract_statistics_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direction_volume_sum_calculator.html">direction_volume_sum_calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l1_data_loader.html">l1_data_loader</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">filters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">statistics</a> &raquo;</li>
+      
+    <li>filters</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/statistics/filters.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.statistics.filters">
+<span id="filters"></span><h1>filters<a class="headerlink" href="#module-ctxalgolib.statistics.filters" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.statistics.filters.FilterNames">
+<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.filters.</code><code class="descname">FilterNames</code><a class="headerlink" href="#ctxalgolib.statistics.filters.FilterNames" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.statistics.filters.FilterNames.nan">
+<code class="descname">nan</code><em class="property"> = 'nan'</em><a class="headerlink" href="#ctxalgolib.statistics.filters.FilterNames.nan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.statistics.filters.FilterNames.zero">
+<code class="descname">zero</code><em class="property"> = ('zero',)</em><a class="headerlink" href="#ctxalgolib.statistics.filters.FilterNames.zero" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.statistics.filters.FilterNames.price_out_of_range">
+<code class="descname">price_out_of_range</code><em class="property"> = 'price_out_of_range'</em><a class="headerlink" href="#ctxalgolib.statistics.filters.FilterNames.price_out_of_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.statistics.filters.AbstractL1DataFilter">
+<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.filters.</code><code class="descname">AbstractL1DataFilter</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.AbstractL1DataFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.AbstractL1DataFilter.kept">
+<code class="descname">kept</code><span class="sig-paren">(</span><em>ticks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.AbstractL1DataFilter.kept" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ticks</strong> &#8211; numpy.ndarray, a two dimensional array, each row represents a tick in L1 data.
+The whole array represents all the ticks for a single instrument on a trading day.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">numpy.ndarray, a list of bool, a True element means that the corresponding row in trading_data
+should be kept.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.AbstractL1DataFilter.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.AbstractL1DataFilter.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the filter.
+:return: string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.statistics.filters.CompositeFilter">
+<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.filters.</code><code class="descname">CompositeFilter</code><span class="sig-paren">(</span><em>filters</em>, <em>name='composite'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.CompositeFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.statistics.filters.AbstractL1DataFilter" title="ctxalgolib.statistics.filters.AbstractL1DataFilter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.statistics.filters.AbstractL1DataFilter</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.CompositeFilter.kept">
+<code class="descname">kept</code><span class="sig-paren">(</span><em>ticks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.CompositeFilter.kept" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.CompositeFilter.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.CompositeFilter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.statistics.filters.NanFilter">
+<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.filters.</code><code class="descname">NanFilter</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.NanFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.statistics.filters.AbstractL1DataFilter" title="ctxalgolib.statistics.filters.AbstractL1DataFilter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.statistics.filters.AbstractL1DataFilter</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.NanFilter.kept">
+<code class="descname">kept</code><span class="sig-paren">(</span><em>ticks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.NanFilter.kept" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.NanFilter.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.NanFilter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.statistics.filters.ZeroFilter">
+<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.filters.</code><code class="descname">ZeroFilter</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.ZeroFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.statistics.filters.AbstractL1DataFilter" title="ctxalgolib.statistics.filters.AbstractL1DataFilter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.statistics.filters.AbstractL1DataFilter</span></code></a></p>
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.ZeroFilter.kept">
+<code class="descname">kept</code><span class="sig-paren">(</span><em>ticks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.ZeroFilter.kept" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.ZeroFilter.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.ZeroFilter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.statistics.filters.PriceOutOfRangeFilter">
+<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.filters.</code><code class="descname">PriceOutOfRangeFilter</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em>, <em>price_range</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.PriceOutOfRangeFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.statistics.filters.AbstractL1DataFilter" title="ctxalgolib.statistics.filters.AbstractL1DataFilter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.statistics.filters.AbstractL1DataFilter</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_id</strong> &#8211; string, instrument id.</li>
+<li><strong>trading_day</strong> &#8211; date, trading day.</li>
+<li><strong>price_range</strong> &#8211; dict{string: float}, keys are &#8216;low&#8217; and &#8216;high&#8217;.
+If low and high price for this instrument on the trading day is not available,
+set them to None. In this case, not data will be filtered out.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.PriceOutOfRangeFilter.kept">
+<code class="descname">kept</code><span class="sig-paren">(</span><em>ticks</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.PriceOutOfRangeFilter.kept" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.statistics.filters.PriceOutOfRangeFilter.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.filters.PriceOutOfRangeFilter.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../eval/index.html" class="btn btn-neutral float-right" title="eval" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="l1_data_loader.html" class="btn btn-neutral" title="l1_data_loader" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Oct 13, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

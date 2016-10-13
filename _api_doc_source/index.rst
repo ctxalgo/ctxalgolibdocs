@@ -29,6 +29,7 @@ Ctxalgolib api doc
    trail/index
    http_trading/index
    time_series/index
+   statistics/index
    eval/index
    mission_control/index
    scripts/index
