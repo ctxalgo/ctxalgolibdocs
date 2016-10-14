@@ -237,6 +237,11 @@ which is a single column text file, each column contains an instrument id.</div>
 <kbd><span class="option">--start <var>START_DATE</var></span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>string, START_DATE is of form yyyymmdd, it specifies the starting trading day (inclusive) of the calculation.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--start-output <var>START_OUTPUT_DATE</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>string, START_OUTPUT_DATE is of form yyyymmdd, it specifies the start_output_date for the underlying
+statistics calculators. Default value is None, meaning no start_output_date is set.</td></tr>
 <tr><td class="option-group">
 <kbd><span class="option">--end <var>END_DATE</var></span></kbd></td>
 <td>string, END_DATE is of form yyyymmdd, it specifies the ending trading day (inclusive) of the calculation.</td></tr>
@@ -276,6 +281,37 @@ trading_day, stock, statistics_name, value</p>
 <p>If the value is numpy.nan, then output it as None.
 ...</p>
 <p>Some statistics calculator will generate more than one statistics, then there will be multiple output lines.</p>
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.create_filters">
+<code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">create_filters</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em>, <em>filter_names</em>, <em>price_range</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.create_filters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create data filters..
+:param filter_names: [string], the list of filter names.
+:param price_range: dict{string: dict{string: float}}, meaning dict{instrument_id: {high/low: price value}}.</p>
+<blockquote>
+<div>If there is no price range data for the instrument on the trading, day, then do not include
+the PriceOutOfRangeFilter in the result.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ctxalgolib.statistics.filters.CompositeFilter, the composite filter.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.create_statistics_calculators">
+<code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">create_statistics_calculators</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>statistics</em>, <em>start_output_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.create_statistics_calculators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create statistics calculators. statistics and start_output_date are values from command line options.
+:param instrument_id: string, the instrument id for the created statistics calculators.
+:param statistics: string, path to the statistics file or comma-separated statistics names.
+:param start_output_date: date, the start output date.
+:return: [ctxalgolib.statistics.abstract_statistics_calculators.AbstractStatisticsCalculator], the list</p>
+<blockquote>
+<div>of statistics calculators specified through command line options.</div></blockquote>
+</dd></dl>
+
 <dl class="class">
 <dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.DummyPriceRange">
 <em class="property">class </em><code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">DummyPriceRange</code><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.DummyPriceRange" title="Permalink to this definition">¶</a></dt>

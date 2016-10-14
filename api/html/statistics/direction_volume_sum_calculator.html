@@ -153,7 +153,7 @@
 <h1>direction_volume_sum_calculator<a class="headerlink" href="#direction-volume-sum-calculator" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-ctxalgolib.statistics.direction_volume_sum_calculator"></span><dl class="class">
 <dt id="ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.direction_volume_sum_calculator.</code><code class="descname">DirectionVolumeSumCalculator</code><a class="headerlink" href="#ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.statistics.direction_volume_sum_calculator.</code><code class="descname">DirectionVolumeSumCalculator</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>start_output_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="abstract_statistics_calculator.html#ctxalgolib.statistics.abstract_statistics_calculator.AbstractStatisticsCalculator" title="ctxalgolib.statistics.abstract_statistics_calculator.AbstractStatisticsCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.statistics.abstract_statistics_calculator.AbstractStatisticsCalculator</span></code></a></p>
 <p>This calculator outputs two statistics: the sum over volumes for buy direction and sell direction, this means
 we sum over the volume column on rows whose direction column is 0 (for buy), and we sum over the volume column
@@ -162,6 +162,18 @@ on rows whose direction column is 1 (for sell).</p>
 <dt id="ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator.add_daily_data">
 <code class="descname">add_daily_data</code><span class="sig-paren">(</span><em>trading_day</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator.add_daily_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator.should_output_for_date">
+<code class="descname">should_output_for_date</code><span class="sig-paren">(</span><em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator.should_output_for_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator.start_output_date">
+<code class="descname">start_output_date</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.direction_volume_sum_calculator.DirectionVolumeSumCalculator.start_output_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading day starting from which add_daily_data starts to output non empty dict result.
+:return: date. None value means add_daily_data should always output result when available.</p>
+</dd></dl>
 
 </dd></dl>
 
