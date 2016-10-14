@@ -11,6 +11,7 @@ scripts
    update_shibor
    collect_future_commission
    update_stock_info
+   generate_stock_l1_statistics_matrices
    check_ohlc_equality
    extract_instrument_from_data_preparer_folder
    extract_rumian_blogs

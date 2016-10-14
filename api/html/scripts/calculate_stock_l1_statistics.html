@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="update_shibor.html">update_shibor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="collect_future_commission.html">collect_future_commission</a></li>
 <li class="toctree-l2"><a class="reference internal" href="update_stock_info.html">update_stock_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_stock_l1_statistics_matrices.html">generate_stock_l1_statistics_matrices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="check_ohlc_equality.html">check_ohlc_equality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extract_instrument_from_data_preparer_folder.html">extract_instrument_from_data_preparer_folder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extract_rumian_blogs.html">extract_rumian_blogs</a></li>
@@ -221,7 +222,7 @@
 <span class="target" id="module-ctxalgolib.scripts.calculate_stock_l1_statistics"></span><p>This script has the following command line options:
 &#8211;instruments INSTRUMENTS</p>
 <blockquote>
-<div>INSTRUMENTS is either a comma-separated list of instrument ids, such as sh000001,sz000001, or path to a file
+<div>string, INSTRUMENTS is either a comma-separated list of instrument ids, such as sh000001,sz000001, or path to a file
 which is a single column text file, each column contains an instrument id.</div></blockquote>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
@@ -230,29 +231,29 @@ which is a single column text file, each column contains an instrument id.</div>
 <tr><td class="option-group" colspan="2">
 <kbd><span class="option">--start <var>START_DATE</var></span></kbd></td>
 </tr>
-<tr><td>&nbsp;</td><td>START_DATE is of form yyyymmdd, it specifies the starting trading day (inclusive) of the calculation.</td></tr>
+<tr><td>&nbsp;</td><td>string, START_DATE is of form yyyymmdd, it specifies the starting trading day (inclusive) of the calculation.</td></tr>
 <tr><td class="option-group">
 <kbd><span class="option">--end <var>END_DATE</var></span></kbd></td>
-<td>END_DATE is of form yyyymmdd, it specifies the ending trading day (inclusive) of the calculation.</td></tr>
+<td>string, END_DATE is of form yyyymmdd, it specifies the ending trading day (inclusive) of the calculation.</td></tr>
 <tr><td class="option-group" colspan="2">
 <kbd><span class="option">--statistics <var>STATISTICS</var></span></kbd></td>
 </tr>
-<tr><td>&nbsp;</td><td>STATISTICS is either a comma-separated statistics names, such as twap,direction_volume_sum, or path to a file
-which is a single column text file, each column contains a statistics name.</td></tr>
+<tr><td>&nbsp;</td><td>string, STATISTICS is either a comma-separated statistics names, such as twap,direction_volume_sum, or path to
+a file which is a single column text file, each column contains a statistics name.</td></tr>
 <tr><td class="option-group" colspan="2">
 <kbd><span class="option">--source <var>SOURCE_FOLDER</var></span></kbd></td>
 </tr>
-<tr><td>&nbsp;</td><td>SOURCE_FOLDER is a folder which stores stock L1 data. In SOURCE_FOLDER, for each trading day, there is a sub-folder,
-and in the sub-folder, for each stock, there is a single csv file.</td></tr>
+<tr><td>&nbsp;</td><td>string, SOURCE_FOLDER is a folder which stores stock L1 data. In SOURCE_FOLDER, for each trading day,
+there is a sub-folder, and in the sub-folder, for each stock, there is a single csv file.</td></tr>
 <tr><td class="option-group" colspan="2">
 <kbd><span class="option">--filters <var>FILTERS</var></span></kbd></td>
 </tr>
-<tr><td>&nbsp;</td><td>FILTERS is either a comma-separated filter names, such as nan,zero, or path to a file which is a single column
-text file, each column contains a filter name.</td></tr>
+<tr><td>&nbsp;</td><td>string, FILTERS is either a comma-separated filter names, such as nan,zero, or path to a file which is
+a single column text file, each column contains a filter name.</td></tr>
 <tr><td class="option-group" colspan="2">
 <kbd><span class="option">--price-range <var>PRICE_RANGE_FILE</var></span></kbd></td>
 </tr>
-<tr><td>&nbsp;</td><td><p class="first">If the price_out_of_range filter is included in FILTERS, then the user needs to provide a file containing
+<tr><td>&nbsp;</td><td><p class="first">string, If the price_out_of_range filter is included in FILTERS, then the user needs to provide a file containing
 the price range for stocks on each trading day. The file path is specified by PRICE_RANGE_FILE.
 The file is a csv file with four columns:
 trading_day, stock_id, low, high.
@@ -266,7 +267,8 @@ for a stock on a trading day, there is no entry for that stock on that trading d
 <p>The script will load the L1 data from files day by day ascendingly, and for a trading day, for each stock, load its
 L1 data using L1DataLoader, apply the data to the given filters, and pump the data to the statistics calculators.</p>
 <p>The script will print calculated statistics to standard output, in the follow form:
-trading_day, stock, statistics_name, value
+trading_day, stock, statistics_name, value</p>
+<p>If the value is numpy.nan, then output it as None.
 ...</p>
 <p>Some statistics calculator will generate more than one statistics, then there will be multiple output lines.</p>
 </div>
