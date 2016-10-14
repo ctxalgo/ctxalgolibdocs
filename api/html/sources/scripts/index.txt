@@ -5,20 +5,19 @@ scripts
    :maxdepth: 2
 
    rule_checking/index
+   stock/index
    update_stock_plates_from_sohu
    import_future_commissions_in_database
    generate_trading_days
    update_shibor
    collect_future_commission
    update_stock_info
-   generate_stock_l1_statistics_matrices
    check_ohlc_equality
    extract_instrument_from_data_preparer_folder
    extract_rumian_blogs
    collect_state_company
    generate_future_info_classes
    collect_fund_holders
-   calculate_stock_l1_statistics
    import_from_dafuweng
    update_stock_returns
    update_capital_structure
