@@ -228,7 +228,8 @@
 &#8211;instruments INSTRUMENTS</p>
 <blockquote>
 <div>string, INSTRUMENTS is either a comma-separated list of instrument ids, such as sh000001,sz000001, or path to a file
-which is a single column text file, each column contains an instrument id.</div></blockquote>
+which is a single column text file, each column contains an instrument id.
+If not given, it means all stocks from the SOURCE_FOLDER.</div></blockquote>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -237,14 +238,14 @@ which is a single column text file, each column contains an instrument id.</div>
 <kbd><span class="option">--start <var>START_DATE</var></span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>string, START_DATE is of form yyyymmdd, it specifies the starting trading day (inclusive) of the calculation.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--end <var>END_DATE</var></span></kbd></td>
+<td>string, END_DATE is of form yyyymmdd, it specifies the ending trading day (inclusive) of the calculation.</td></tr>
 <tr><td class="option-group" colspan="2">
 <kbd><span class="option">--start-output <var>START_OUTPUT_DATE</var></span></kbd></td>
 </tr>
 <tr><td>&nbsp;</td><td>string, START_OUTPUT_DATE is of form yyyymmdd, it specifies the start_output_date for the underlying
 statistics calculators. Default value is None, meaning no start_output_date is set.</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">--end <var>END_DATE</var></span></kbd></td>
-<td>string, END_DATE is of form yyyymmdd, it specifies the ending trading day (inclusive) of the calculation.</td></tr>
 <tr><td class="option-group" colspan="2">
 <kbd><span class="option">--statistics <var>STATISTICS</var></span></kbd></td>
 </tr>
