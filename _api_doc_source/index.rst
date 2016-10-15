@@ -10,6 +10,7 @@ Ctxalgolib api doc
    rule_checking/index
    news_analysis/index
    cache/index
+   wind/index
    messaging/index
    trading_utils/index
    timer/index
