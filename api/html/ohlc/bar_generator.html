@@ -167,7 +167,7 @@
 <span id="bar-generator"></span><h1>bar_generator<a class="headerlink" href="#module-ctxalgolib.ohlc.bar_generator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.ohlc.bar_generator.Bar">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">Bar</code><span class="sig-paren">(</span><em>timestamp</em>, <em>open_value</em>, <em>high_value</em>, <em>low_value</em>, <em>close_value</em>, <em>volume</em>, <em>amount=0</em>, <em>open_interest=None</em>, <em>dominant=None</em>, <em>next_dominant=None</em>, <em>tick=None</em>, <em>profits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">Bar</code><span class="sig-paren">(</span><em>timestamp</em>, <em>open_value</em>, <em>high_value</em>, <em>low_value</em>, <em>close_value</em>, <em>volume</em>, <em>amount=0</em>, <em>open_interest=None</em>, <em>dominant=None</em>, <em>next_dominant=None</em>, <em>tick=None</em>, <em>profits=None</em>, <em>money=None</em>, <em>data_point=None</em>, <em>trade=None</em>, <em>mean_price=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class that represents a OHLC bar.</p>
 <p>Initialize current bar.
 Parameters:
@@ -187,6 +187,10 @@ dominant contract information is not available.</li>
 <li><strong>next_dominant</strong> &#8211; not used.</li>
 <li><strong>tick</strong> &#8211; dict{string: object}, the tick data.</li>
 <li><strong>profits</strong> &#8211; float, the profits value.</li>
+<li><strong>money</strong> &#8211; float, sum of the moneys field in each tick</li>
+<li><strong>data_point</strong> &#8211; int, the number of data points that forms the bar</li>
+<li><strong>trade</strong> &#8211; float, sum of the trades field in each tick</li>
+<li><strong>mean_price</strong> &#8211; float, mean of the close prices of all the ticks</li>
 </ul>
 </td>
 </tr>
@@ -201,12 +205,13 @@ dominant contract information is not available.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.bar_generator.Bar.as_dict">
-<code class="descname">as_dict</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar.as_dict" title="Permalink to this definition">¶</a></dt>
+<code class="descname">as_dict</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar.as_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a dict containing data from current bar.
 :param with_open_interest: boolean, if True, include open interest data.
 :param order_book_level: int, order book level.
 :param dominant: boolean, if True, include dominant information.
 :param profits: boolean, if True, include the profits information.
+:param l1_statistics: boolean, if True, inclue the l1 statistics information
 :return: dict{string: object}, the bar data as dict.</p>
 </dd></dl>
 
@@ -276,7 +281,7 @@ by calling self.on_bar_generated.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.bar_generator.BarGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">BarGenerator</code><span class="sig-paren">(</span><em>periodicity</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>market_period_ends=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">BarGenerator</code><span class="sig-paren">(</span><em>periodicity</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>offset=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>market_period_ends=None</em>, <em>settlement_price=None</em>, <em>flat_bars=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator" title="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.bar_generator.AbstractBarGenerator</span></code></a></p>
 <p>Class that collects price events and emits ohlc bars.</p>
 <p>Initialize current.
@@ -350,7 +355,7 @@ by calling self.on_bar_generated.
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">VolatilityBarGenerator</code><span class="sig-paren">(</span><em>volatility</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">VolatilityBarGenerator</code><span class="sig-paren">(</span><em>volatility</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator" title="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.bar_generator.AbstractBarGenerator</span></code></a></p>
 <p>Class that collects price events and emits volatility ohlc bars.</p>
 <p>Initialize current.
