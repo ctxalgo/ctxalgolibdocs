@@ -167,7 +167,7 @@
 <span id="bar-generator"></span><h1>bar_generator<a class="headerlink" href="#module-ctxalgolib.ohlc.bar_generator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.ohlc.bar_generator.Bar">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">Bar</code><span class="sig-paren">(</span><em>timestamp</em>, <em>open_value</em>, <em>high_value</em>, <em>low_value</em>, <em>close_value</em>, <em>volume</em>, <em>amount=0</em>, <em>open_interest=None</em>, <em>dominant=None</em>, <em>next_dominant=None</em>, <em>tick=None</em>, <em>profits=None</em>, <em>money=None</em>, <em>data_point=None</em>, <em>trade=None</em>, <em>mean_price=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">Bar</code><span class="sig-paren">(</span><em>timestamp</em>, <em>open_value</em>, <em>high_value</em>, <em>low_value</em>, <em>close_value</em>, <em>volume</em>, <em>amount=0</em>, <em>open_interest=None</em>, <em>dominant=None</em>, <em>next_dominant=None</em>, <em>tick=None</em>, <em>profits=None</em>, <em>data_point=None</em>, <em>trade=None</em>, <em>mean_price=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class that represents a OHLC bar.</p>
 <p>Initialize current bar.
 Parameters:
@@ -187,7 +187,6 @@ dominant contract information is not available.</li>
 <li><strong>next_dominant</strong> &#8211; not used.</li>
 <li><strong>tick</strong> &#8211; dict{string: object}, the tick data.</li>
 <li><strong>profits</strong> &#8211; float, the profits value.</li>
-<li><strong>money</strong> &#8211; float, sum of the moneys field in each tick</li>
 <li><strong>data_point</strong> &#8211; int, the number of data points that forms the bar</li>
 <li><strong>trade</strong> &#8211; float, sum of the trades field in each tick</li>
 <li><strong>mean_price</strong> &#8211; float, mean of the close prices of all the ticks</li>

@@ -221,7 +221,7 @@ When using OhlcCsvWriter, set include_date_and_time to False, set include_instru
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.data_preparer.StockDataPreparer.generate_ohlc_data">
-<code class="descname">generate_ohlc_data</code><span class="sig-paren">(</span><em>raw_data_folder</em>, <em>ohlc_folders</em>, <em>use_mid_ask_bid=False</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>add_missing_bars=False</em>, <em>include_instrument_id=False</em>, <em>include_extra_date_and_time=False</em>, <em>output_text=True</em>, <em>time_precision=0</em>, <em>accepted_instrument_ids=None</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.generate_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_ohlc_data</code><span class="sig-paren">(</span><em>raw_data_folder</em>, <em>ohlc_folders</em>, <em>use_mid_ask_bid=False</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>add_missing_bars=False</em>, <em>include_instrument_id=False</em>, <em>include_extra_date_and_time=False</em>, <em>output_text=True</em>, <em>time_precision=0</em>, <em>accepted_instrument_ids=None</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.generate_ohlc_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate ohlc data
 :param raw_data_folder: string, the folder to store raw stock 3s trading data.</p>
 <blockquote>
@@ -262,6 +262,7 @@ When using OhlcCsvWriter, set include_date_and_time to False, set include_instru
 <li><strong>time_precision</strong> &#8211; int, 0 means second level precision, 1 means millisecond level precision.</li>
 <li><strong>accepted_instrument_ids</strong> &#8211; [string], the list of instrument IDs to process.
 If None, process all seen instruments.</li>
+<li><strong>l1_statistics</strong> &#8211; boolean, if True, include the l1 statistics information</li>
 </ul>
 </td>
 </tr>
@@ -271,14 +272,14 @@ If None, process all seen instruments.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.data_preparer.StockDataPreparer.write_ohlc_data">
-<code class="descname">write_ohlc_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>ohlc_folders</em>, <em>include_instrument_id</em>, <em>include_extra_date_and_time</em>, <em>add_missing_bars</em>, <em>use_mid_ask_bid</em>, <em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>output_text</em>, <em>time_precision</em>, <em>instrument_id</em>, <em>profits</em>, <em>ohlcs_generated</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.write_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_ohlc_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>ohlc_folders</em>, <em>include_instrument_id</em>, <em>include_extra_date_and_time</em>, <em>add_missing_bars</em>, <em>use_mid_ask_bid</em>, <em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>output_text</em>, <em>time_precision</em>, <em>instrument_id</em>, <em>profits</em>, <em>l1_statistics</em>, <em>ohlcs_generated</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.write_ohlc_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>generate ohlc data from source file and write it into target files
 param definition is in the above</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.data_preparer.StockDataPreparer.generate_volatility_ohlc_data">
-<code class="descname">generate_volatility_ohlc_data</code><span class="sig-paren">(</span><em>raw_data_folder</em>, <em>volatility_ohlc_folders</em>, <em>use_mid_ask_bid=False</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>add_missing_bars=False</em>, <em>include_instrument_id=False</em>, <em>include_extra_date_and_time=False</em>, <em>output_text=True</em>, <em>time_precision=0</em>, <em>accepted_instrument_ids=None</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.generate_volatility_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_volatility_ohlc_data</code><span class="sig-paren">(</span><em>raw_data_folder</em>, <em>volatility_ohlc_folders</em>, <em>use_mid_ask_bid=False</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>add_missing_bars=False</em>, <em>include_instrument_id=False</em>, <em>include_extra_date_and_time=False</em>, <em>output_text=True</em>, <em>time_precision=0</em>, <em>accepted_instrument_ids=None</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.generate_volatility_ohlc_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate ohlc data
 :param raw_data_folder: string, the folder to store raw stock 3s trading data.</p>
 <blockquote>
@@ -319,6 +320,7 @@ When using OhlcCsvWriter, set include_date_and_time to False, set include_instru
 <li><strong>time_precision</strong> &#8211; int, 0 means second level precision, 1 means millisecond level precision.</li>
 <li><strong>accepted_instrument_ids</strong> &#8211; [string], the list of instrument IDs to process.
 If None, process all seen instruments.</li>
+<li><strong>l1_statistics</strong> &#8211; boolean, if True, include the l1 stattistics information</li>
 </ul>
 </td>
 </tr>
@@ -328,14 +330,14 @@ If None, process all seen instruments.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.data_preparer.StockDataPreparer.write_volatility_ohlc_data">
-<code class="descname">write_volatility_ohlc_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>volatility_ohlc_folders</em>, <em>include_instrument_id</em>, <em>include_extra_date_and_time</em>, <em>add_missing_bars</em>, <em>use_mid_ask_bid</em>, <em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>output_text</em>, <em>time_precision</em>, <em>instrument_id</em>, <em>profits</em>, <em>ohlcs_generated</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.write_volatility_ohlc_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_volatility_ohlc_data</code><span class="sig-paren">(</span><em>source_file</em>, <em>volatility_ohlc_folders</em>, <em>include_instrument_id</em>, <em>include_extra_date_and_time</em>, <em>add_missing_bars</em>, <em>use_mid_ask_bid</em>, <em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>output_text</em>, <em>time_precision</em>, <em>instrument_id</em>, <em>profits</em>, <em>l1_statistics</em>, <em>ohlcs_generated</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.write_volatility_ohlc_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>generate ohlc data from source file and write it into target files
 param definition is in the above</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.data_preparer.StockDataPreparer.get_ohlcs_generated_from_files">
-<code class="descname">get_ohlcs_generated_from_files</code><span class="sig-paren">(</span><em>ohlc_folders</em>, <em>ohlc_kind</em>, <em>output_text</em>, <em>instrument_id</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>time_precision</em>, <em>profits</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.get_ohlcs_generated_from_files" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_ohlcs_generated_from_files</code><span class="sig-paren">(</span><em>ohlc_folders</em>, <em>ohlc_kind</em>, <em>output_text</em>, <em>instrument_id</em>, <em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant</em>, <em>time_precision</em>, <em>profits</em>, <em>l1_statistics</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.data_preparer.StockDataPreparer.get_ohlcs_generated_from_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>get ohlc which only contain one bar from files
 :return:</p>
 </dd></dl>

@@ -365,7 +365,7 @@ amount_func: A function pointer float-&gt;float. The function to change amounts.
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions">
-<em class="property">static </em><code class="descname">get_empty_ohlc_from_dimensions</code><span class="sig-paren">(</span><em>id_=''</em>, <em>name=''</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_empty_ohlc_from_dimensions</code><span class="sig-paren">(</span><em>id_=''</em>, <em>name=''</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an empty ohlc object with the required dimensions.
 :param <a href="#id5"><span class="problematic" id="id6">id_</span></a>: string, the instrument id.
 :param name: string, the name of the instrument.
@@ -373,6 +373,7 @@ amount_func: A function pointer float-&gt;float. The function to change amounts.
 :param order_book_level: int, non-negative, indicates the level of order book. 0 means no order book.
 :param dominant: boolean, if True, include the attribute for dominant contract switching.
 :param profits: boolean, if True, include the attribute for profits series.
+:param l1_statistics: boolean, if True, include the attribute fro l1 statistics
 :return: OHLC, the created empty ohlc object.</p>
 </dd></dl>
 
