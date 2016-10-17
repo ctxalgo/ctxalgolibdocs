@@ -349,6 +349,11 @@ should not be generated.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.get_fake_end_of_day_bar">
+<code class="descname">get_fake_end_of_day_bar</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.get_fake_end_of_day_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.on_tick">
 <code class="descname">on_tick</code><span class="sig-paren">(</span><em>tick</em>, <em>context=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator.on_tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>The action to be invoked when new tick data arrives.
@@ -601,6 +606,11 @@ use that partial bar as the current partial bar for the corresponding ohlcs.
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.get_fake_end_of_day_bar">
+<code class="descname">get_fake_end_of_day_bar</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.get_fake_end_of_day_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.get_profit">
 <code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.OhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
@@ -775,6 +785,11 @@ return: dict from string (volatility names) to Bars. Keys are all periodicities 
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_fake_end_of_day_bar">
+<code class="descname">get_fake_end_of_day_bar</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_fake_end_of_day_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_profit">
 <code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
@@ -874,6 +889,11 @@ not contain information about traded price or order book.
 :param force_end_timestamp: boolean,
 :param context: object, some arbitrary data.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.get_fake_end_of_day_bar">
+<code class="descname">get_fake_end_of_day_bar</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.get_fake_end_of_day_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqOhlcGenerator.get_profit">
@@ -1016,6 +1036,11 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.get_fake_end_of_day_bar">
+<code class="descname">get_fake_end_of_day_bar</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.get_fake_end_of_day_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.get_profit">
 <code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.ZeromqVolatilityOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
@@ -1154,6 +1179,11 @@ Return: dict from Periodicity to Bars. Keys are all periodicities that are in cu
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.get_fake_end_of_day_bar">
+<code class="descname">get_fake_end_of_day_bar</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.get_fake_end_of_day_bar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.get_profit">
 <code class="descname">get_profit</code><span class="sig-paren">(</span><em>bar</em>, <em>bar_period</em>, <em>tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectOhlcGenerator.get_profit" title="Permalink to this definition">¶</a></dt>
 <dd><p>get profit for this bar
@@ -1263,6 +1293,11 @@ the finishing of the previous bar.</li>
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.flush">
 <code class="descname">flush</code><span class="sig-paren">(</span><em>force_end_timestamp=False</em>, <em>context=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.get_fake_end_of_day_bar">
+<code class="descname">get_fake_end_of_day_bar</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.DirectVolatilityOhlcGenerator.get_fake_end_of_day_bar" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
