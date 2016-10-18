@@ -403,6 +403,16 @@ period on that trading day.
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_safe_market_end_timestamp">
+<code class="descname">get_safe_market_end_timestamp</code><span class="sig-paren">(</span><em>now=None</em>, <em>exit_time=None</em>, <em>delta=datetime.timedelta(0</em>, <em>3600)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_safe_market_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the timestamp to terminate (some script).
+:param now: datetime, the current timestamp, if None, use datetime.now().
+:param exit_time: datetime, the exit time, if not None, return this value direction.
+:param delta: timedelta, the timedelta added into the exit time after market close.
+:return: datetime, the time to terminate. If None, meaning there is no need to run the script at all.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -545,6 +555,16 @@ trading day that ts belong to?
 :param ts: datetime, given timestamp.
 :param number_of_days: int, the maximum number of trading days to get.
 :return: [date], the list of previous trading days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_safe_market_end_timestamp">
+<code class="descname">get_safe_market_end_timestamp</code><span class="sig-paren">(</span><em>now=None</em>, <em>exit_time=None</em>, <em>delta=datetime.timedelta(0</em>, <em>3600)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_safe_market_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the timestamp to terminate (some script).
+:param now: datetime, the current timestamp, if None, use datetime.now().
+:param exit_time: datetime, the exit time, if not None, return this value direction.
+:param delta: timedelta, the timedelta added into the exit time after market close.
+:return: datetime, the time to terminate. If None, meaning there is no need to run the script at all.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1042,6 +1062,16 @@ trading day that ts belong to?
 :param ts: datetime, given timestamp.
 :param number_of_days: int, the maximum number of trading days to get.
 :return: [date], the list of previous trading days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_safe_market_end_timestamp">
+<code class="descname">get_safe_market_end_timestamp</code><span class="sig-paren">(</span><em>now=None</em>, <em>exit_time=None</em>, <em>delta=datetime.timedelta(0</em>, <em>3600)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_safe_market_end_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the timestamp to terminate (some script).
+:param now: datetime, the current timestamp, if None, use datetime.now().
+:param exit_time: datetime, the exit time, if not None, return this value direction.
+:param delta: timedelta, the timedelta added into the exit time after market close.
+:return: datetime, the time to terminate. If None, meaning there is no need to run the script at all.</p>
 </dd></dl>
 
 <dl class="method">
