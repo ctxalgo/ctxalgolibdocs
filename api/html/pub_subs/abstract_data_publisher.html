@@ -302,7 +302,10 @@ same thread object.</p>
 <dl class="method">
 <dt id="ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher.send">
 <code class="descname">send</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.AbstractDataPublisher.send" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Send message.
+:param topic: string, the zmq message topic/filter.
+:param content: string, the message content.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -313,7 +316,11 @@ same thread object.</p>
 <p>Initialize current.
 :param context: zmq Context.
 :param address: string, the zmq queue to send responses to strategies.
-:param proxy: bool, if True, send messages to a proxy.</p>
+:param proxy: bool, if True, send messages to a proxy.
+:param send_through_thread: bool, if True, create a separate thread for message sending.
+:param sleep_second: int, the number of seconds to wait after connecting to the socket.</p>
+<blockquote>
+<div>If 0, no waiting.</div></blockquote>
 <dl class="method">
 <dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.publisher_socket">
 <code class="descname">publisher_socket</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.publisher_socket" title="Permalink to this definition">¶</a></dt>
@@ -346,7 +353,10 @@ same thread object.</p>
 <dl class="method">
 <dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.send">
 <code class="descname">send</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.send" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Send message.
+:param topic: string, the zmq message topic/filter.
+:param content: string, the message content.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.pub_subs.abstract_data_publisher.SimpleDataPublisher.sender_thread">

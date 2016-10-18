@@ -11,4 +11,5 @@ rule_checking
    violations
    rule_factory
    rule
+   rule_checker_message_sender
    configs
