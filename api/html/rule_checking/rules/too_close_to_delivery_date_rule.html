@@ -170,7 +170,7 @@
 <h1>too_close_to_delivery_date_rule<a class="headerlink" href="#too-close-to-delivery-date-rule" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule"></span><dl class="class">
 <dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule">
-<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.</code><code class="descname">TooCloseToDeliveryDateRule</code><span class="sig-paren">(</span><em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.</code><code class="descname">TooCloseToDeliveryDateRule</code><span class="sig-paren">(</span><em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../rule.html#ctxalgolib.rule_checking.rule.AbstractRule" title="ctxalgolib.rule_checking.rule.AbstractRule"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.rule.AbstractRule</span></code></a></p>
 <p>Rule to check if an account holds positions for instruments whose delivery date is too close.
 The message of topic Topics.risk_report_position_details_topic() has the following format:
@@ -204,8 +204,6 @@ trigger_time: time, the time to check this rule.
 latest_days_delta: int, the number of days before an instrument&#8217;s delivery</p>
 <blockquote>
 <div>that we are allowed to hold its positions.</div></blockquote>
-<p>The following keys are optional:
-trading_day: string, in form of yyyy-mm-dd, if None, a default value is provided.</p>
 </li>
 <li><strong>message_validity_checker</strong> &#8211; </li>
 </ul>
@@ -292,6 +290,11 @@ trading_day: string, in form of yyyy-mm-dd, if None, a default value is provided
 :param content: object, message content.
 :return: boolean.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.set_trading_day">
+<code class="descname">set_trading_day</code><span class="sig-paren">(</span><em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.set_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 

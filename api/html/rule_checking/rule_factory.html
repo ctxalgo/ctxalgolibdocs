@@ -162,7 +162,7 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rule">
-<code class="descname">get_rule</code><span class="sig-paren">(</span><em>name</em>, <em>parameters</em>, <em>state</em>, <em>message_validity_checker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rule" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_rule</code><span class="sig-paren">(</span><em>name</em>, <em>parameters</em>, <em>state</em>, <em>trading_day</em>, <em>message_validity_checker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a rule instance given the rule name and its parameters.
 :param name: string, the rule name.
 :param parameters: dict{string: object}, the rule parameters.
@@ -173,8 +173,9 @@
 
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rules">
-<code class="descname">get_rules</code><span class="sig-paren">(</span><em>config</em>, <em>states=None</em>, <em>message_validity_checker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rules" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_rules</code><span class="sig-paren">(</span><em>trading_day</em>, <em>config</em>, <em>states=None</em>, <em>message_validity_checker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the rules defined in config.
+:param trading_day: date, trading day.
 :param config: dict{string: dict{string: object}}, meaning dict{rule_name: dict{parameter_name: value}}.</p>
 <blockquote>
 <div>Outer keys are rule names, inner keys are parameter names for that rule, inner values are parameter values.</div></blockquote>

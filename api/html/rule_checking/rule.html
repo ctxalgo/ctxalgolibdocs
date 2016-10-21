@@ -208,7 +208,7 @@
 
 <dl class="class">
 <dt id="ctxalgolib.rule_checking.rule.AbstractRule">
-<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rule.</code><code class="descname">AbstractRule</code><span class="sig-paren">(</span><em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule.AbstractRule" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rule.</code><code class="descname">AbstractRule</code><span class="sig-paren">(</span><em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule.AbstractRule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Initialize current.
 :param parameters: dict{string: object}, the parameters used to initialize current.</p>
@@ -222,6 +222,11 @@
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rule.AbstractRule.set_trading_day">
+<code class="descname">set_trading_day</code><span class="sig-paren">(</span><em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule.AbstractRule.set_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.rule.AbstractRule.is_message_valid">
 <code class="descname">is_message_valid</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule.AbstractRule.is_message_valid" title="Permalink to this definition">¶</a></dt>

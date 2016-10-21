@@ -170,7 +170,7 @@
 <h1>market_data_source_liveness_rule<a class="headerlink" href="#market-data-source-liveness-rule" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-ctxalgolib.rule_checking.rules.market_data_source_liveness_rule"></span><dl class="class">
 <dt id="ctxalgolib.rule_checking.rules.market_data_source_liveness_rule.MarketDataSourceLivenessRule">
-<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.market_data_source_liveness_rule.</code><code class="descname">MarketDataSourceLivenessRule</code><span class="sig-paren">(</span><em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.market_data_source_liveness_rule.MarketDataSourceLivenessRule" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.market_data_source_liveness_rule.</code><code class="descname">MarketDataSourceLivenessRule</code><span class="sig-paren">(</span><em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.market_data_source_liveness_rule.MarketDataSourceLivenessRule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../rule.html#ctxalgolib.rule_checking.rule.AbstractRule" title="ctxalgolib.rule_checking.rule.AbstractRule"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.rule.AbstractRule</span></code></a></p>
 <p>This rule will receive the following messages:
 MARKET_DATA_SOURCE#HEARTBEAT, with body:
@@ -187,7 +187,6 @@ MARKET_DATA_SOURCE#HEARTBEAT, with body:
 <li><strong>parameters</strong> &#8211; <p>dict{string: object}, parameters to the current rule.
 Valid key-value pairs are:
 1. sources: dict{string: dict {string: object}}, meaning dict{source_name: dict{metric: value}}.
-2. trading_day: string, in form of yyyy-mm-dd, if None, a default value is provided.
 3. interval: int, the number of seconds between which there must be heartbeat messages, otherwise,</p>
 <blockquote>
 <div>rule is violated.</div></blockquote>
@@ -267,6 +266,11 @@ This means there is a single source named market_broker1, and its type is future
 :param content: object, message content.
 :return: boolean.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.market_data_source_liveness_rule.MarketDataSourceLivenessRule.set_trading_day">
+<code class="descname">set_trading_day</code><span class="sig-paren">(</span><em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.market_data_source_liveness_rule.MarketDataSourceLivenessRule.set_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
