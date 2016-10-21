@@ -226,6 +226,11 @@ The message of topic Topics.risk_report_position_details_topic() has the followi
 trigger_time: time, the time to check this rule. This rule is checked only once per product</p>
 <blockquote>
 <div>in a trading day: when current timestamp passed this given trigger_time.</div></blockquote>
+<dl class="docutils">
+<dt>(optional) ignored_strategies: [string], if given, this is the list of regular expressions</dt>
+<dd>that used to ignore certain strategies. For example, trade executor strategies do not need
+their positions checked.</dd>
+</dl>
 </li>
 <li><strong>message_validity_checker</strong> &#8211; </li>
 </ul>
