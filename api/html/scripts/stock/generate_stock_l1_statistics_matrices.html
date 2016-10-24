@@ -227,33 +227,67 @@
             
   <div class="section" id="generate-stock-l1-statistics-matrices">
 <h1>generate_stock_l1_statistics_matrices<a class="headerlink" href="#generate-stock-l1-statistics-matrices" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices"></span><dl class="class">
-<dt id="ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyStockIndex">
-<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.</code><code class="descname">DummyStockIndex</code><a class="headerlink" href="#ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyStockIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyStockIndex.index">
-<code class="descname">index</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyStockIndex.index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return 0-based stock index as matrix column.
-:param instrument_id: string, stock id, such as &#8216;sh000001&#8217;.
-:return: int, 0-based stock index.</p>
+<span class="target" id="module-ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices"></span><p>The script has the following command line options:</p>
+<p>How the matrices are generated:
+1. Decide the matrix size</p>
+<blockquote>
+<div><p>Given START_DATE, END_DATE and DATE_INDEX, find start date and end date in the date index, and calculate the number
+of trading days between start_date and end_date (both inclusive), let the number of trading days DAYS be the number
+of rows in the matrix.</p>
+<p>Given the STOCK_INDEX, the number of stocks STOCKS in that file is the number of columns of the matrix.</p>
+<p>So the size of the matrix is: DAYS x STOCKS.</p>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><dl class="first docutils">
+<dt>Initialize each matrices to an numpy ndarray with all numpy.nan values. For each statistics, we generate a matrix.</dt>
+<dd><p class="first last">Every matrix is of size DAYS x STOCKS.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Sort the files in INPUT_FOLDER by their names ascendingly, and read those sorted files, one row at a time.</dt>
+<dd><p class="first">Each row has the format:
+trading_day, stock, statistics_name, value</p>
+<p>Use the trading_day to decide the row number to put into the matrix. Note the row in the matrix is
+index(trading_day) - index(START_DATE), where index is the function that returns an integer index from a trading
+day, which is defined by DATE_INDEX.</p>
+<p>Ue the stock to decide the column number to put into the matrix.</p>
+<p>Use the statistics_name to decide which matrix to put the value in.</p>
+<p>Put the value into the correct position into the correct matrix. Note that the same
+(trading_day, stock, statistics_name, value) tuple may appear multiple times when there are multiple files
+in INPUT_FOLDER, always use the last None non value as the value to put into the matrix. Meaning that
+If on a trading day, if the statistics of a stock is None, then no need to update the matrix.</p>
+<p class="last">Note: if a stock is not in STOCK_INDEX or a date is not in DATE_INDEX, ignore that tuple.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">When all the files from INPUT_FOLDER have been exhausted, output the matrices into OUTPUT_FOLDER.</p>
+</li>
+</ol>
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.generate_indices">
+<code class="descclassname">ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.</code><code class="descname">generate_indices</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.generate_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate indices according to the path of file (for date_index, stock_index)
+:param path: string, path to the file
+:return: dict{string, int}, means {name : index}</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.generate_matrices">
+<code class="descclassname">ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.</code><code class="descname">generate_matrices</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em>, <em>stock_index</em>, <em>date_index</em>, <em>statistics_names</em>, <em>input_folder</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.generate_matrices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate stock l1 statistics matrices.
+:param start_date: string, the start date(inclusive)
+:param end_date: string, the end date(inclusive)
+:param stock_index: dict{string, int}, 0-based stock index as matrix column.
+:param date_index: dict{string, int}, 0-based day index for matrix rows.
+:param statistics_names: string, comma-separated string or path to file
+:param input_folder: string, path to folder which contain the statistics</p>
 </dd></dl>
 
-<dl class="class">
-<dt id="ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyDateIndex">
-<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.</code><code class="descname">DummyDateIndex</code><a class="headerlink" href="#ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyDateIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyDateIndex.index">
-<code class="descname">index</code><span class="sig-paren">(</span><em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.DummyDateIndex.index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return 0-based day index for matrix rows.
-:param day: date, a trading ay.
-:return: int, 0-based date index.</p>
-</dd></dl>
-
-</dd></dl>
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.generate_stock_l1_statistics_matrices">
+<code class="descclassname">ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.</code><code class="descname">generate_stock_l1_statistics_matrices</code><span class="sig-paren">(</span><em>command_line_args</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.generate_stock_l1_statistics_matrices.generate_stock_l1_statistics_matrices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 
@@ -277,7 +311,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 24, 2016.
+      Last updated on Oct 25, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
