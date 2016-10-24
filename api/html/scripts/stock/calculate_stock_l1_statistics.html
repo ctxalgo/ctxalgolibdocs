@@ -227,70 +227,18 @@
             
   <div class="section" id="calculate-stock-l1-statistics">
 <h1>calculate_stock_l1_statistics<a class="headerlink" href="#calculate-stock-l1-statistics" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-ctxalgolib.scripts.stock.calculate_stock_l1_statistics"></span><p>This script has the following command line options:
-&#8211;instruments INSTRUMENTS</p>
-<blockquote>
-<div>string, INSTRUMENTS is either a comma-separated list of instrument ids, such as sh000001,sz000001, or path to a file
-which is a single column text file, each column contains an instrument id.
-If not given, it means all stocks from the SOURCE_FOLDER.</div></blockquote>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--start <var>START_DATE</var></span></kbd></td>
-</tr>
-<tr><td>&nbsp;</td><td>string, START_DATE is of form yyyymmdd, it specifies the starting trading day (inclusive) of the calculation.</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">--end <var>END_DATE</var></span></kbd></td>
-<td>string, END_DATE is of form yyyymmdd, it specifies the ending trading day (inclusive) of the calculation.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--start-output <var>START_OUTPUT_DATE</var></span></kbd></td>
-</tr>
-<tr><td>&nbsp;</td><td>string, START_OUTPUT_DATE is of form yyyymmdd, it specifies the start_output_date for the underlying
-statistics calculators. Default value is None, meaning no start_output_date is set.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--statistics <var>STATISTICS</var></span></kbd></td>
-</tr>
-<tr><td>&nbsp;</td><td>string, STATISTICS is either a comma-separated statistics names, such as twap,direction_volume_sum, or path to
-a file which is a single column text file, each column contains a statistics name.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--source <var>SOURCE_FOLDER</var></span></kbd></td>
-</tr>
-<tr><td>&nbsp;</td><td>string, SOURCE_FOLDER is a folder which stores stock L1 data. In SOURCE_FOLDER, for each trading day,
-there is a sub-folder, and in the sub-folder, for each stock, there is a single csv file.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--filters <var>FILTERS</var></span></kbd></td>
-</tr>
-<tr><td>&nbsp;</td><td>string, FILTERS is either a comma-separated filter names, such as nan,zero, or path to a file which is
-a single column text file, each column contains a filter name.</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">--price-range <var>PRICE_RANGE_FILE</var></span></kbd></td>
-</tr>
-<tr><td>&nbsp;</td><td><p class="first">string, If the price_out_of_range filter is included in FILTERS, then the user needs to provide a file containing
-the price range for stocks on each trading day. The file path is specified by PRICE_RANGE_FILE.
-The file is a csv file with four columns:
-trading_day, stock_id, low, high.
-trading_day is in form of yyyymmdd, stock_id is sh000001, sz000001, low and high are floats, representing the</p>
-<blockquote class="last">
-<div>lowest price and highest price of that stock on that trading day. if there is no trading price information
-for a stock on a trading day, there is no entry for that stock on that trading day.</div></blockquote>
-</td></tr>
-</tbody>
-</table>
-<p>The script will load the L1 data from files day by day ascendingly, and for a trading day, for each stock, load its
+<span class="target" id="module-ctxalgolib.scripts.stock.calculate_stock_l1_statistics"></span><p>The script will load the L1 data from files day by day ascendingly, and for a trading day, for each stock, load its
 L1 data using L1DataLoader, apply the data to the given filters, and pump the data to the statistics calculators.</p>
 <p>The script will print calculated statistics to standard output, in the follow form:
 trading_day, stock, statistics_name, value</p>
-<p>If the value is numpy.nan, then output it as None.
-...</p>
+<p>If the value is numpy.nan, then output it as None.</p>
 <p>Some statistics calculator will generate more than one statistics, then there will be multiple output lines.</p>
 <dl class="function">
 <dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.create_filters">
 <code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">create_filters</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em>, <em>filter_names</em>, <em>price_range</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.create_filters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create data filters..
 :param filter_names: [string], the list of filter names.
-:param price_range: dict{string: dict{string: float}}, meaning dict{instrument_id: {high/low: price value}}.</p>
+:param price_range: dict{string: float}, meaning {high/low: price value}.</p>
 <blockquote>
 <div>If there is no price range data for the instrument on the trading, day, then do not include
 the PriceOutOfRangeFilter in the result.</div></blockquote>
@@ -316,16 +264,27 @@ the PriceOutOfRangeFilter in the result.</div></blockquote>
 <div>of statistics calculators specified through command line options.</div></blockquote>
 </dd></dl>
 
-<dl class="class">
-<dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.DummyPriceRange">
-<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">DummyPriceRange</code><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.DummyPriceRange" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.DummyPriceRange.price_range">
-<code class="descname">price_range</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.DummyPriceRange.price_range" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.get_values">
+<code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">get_values</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.get_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse specific name. The name is either comma-separated string or file path.
+For instruments, statistics, filters
+:param name: string, the specific value.
+:return: [string]</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.get_price_range">
+<code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">get_price_range</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.get_price_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate dict for price range data.
+:param path: string, path to a csv file with four columns:trading_day, stock_id, low, high
+:return: {string:{string:{string:float}}}, means {trading_day:{instrument_id:{high:float, low: float}}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.stock.calculate_stock_l1_statistics.calculate_l1_statistics">
+<code class="descclassname">ctxalgolib.scripts.stock.calculate_stock_l1_statistics.</code><code class="descname">calculate_l1_statistics</code><span class="sig-paren">(</span><em>command_line_args</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.stock.calculate_stock_l1_statistics.calculate_l1_statistics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 
@@ -349,7 +308,7 @@ the PriceOutOfRangeFilter in the result.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 22, 2016.
+      Last updated on Oct 24, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

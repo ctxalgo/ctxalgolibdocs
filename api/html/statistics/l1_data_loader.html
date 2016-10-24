@@ -156,9 +156,14 @@
 <dt id="ctxalgolib.statistics.l1_data_loader.L1DataLoader">
 <em class="property">class </em><code class="descclassname">ctxalgolib.statistics.l1_data_loader.</code><code class="descname">L1DataLoader</code><a class="headerlink" href="#ctxalgolib.statistics.l1_data_loader.L1DataLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
+<dl class="attribute">
+<dt id="ctxalgolib.statistics.l1_data_loader.L1DataLoader.column_len">
+<code class="descname">column_len</code><em class="property"> = 28</em><a class="headerlink" href="#ctxalgolib.statistics.l1_data_loader.L1DataLoader.column_len" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
 <dt id="ctxalgolib.statistics.l1_data_loader.L1DataLoader.load">
-<code class="descname">load</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.l1_data_loader.L1DataLoader.load" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">load</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.l1_data_loader.L1DataLoader.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load L1 data for an instrument on a trading day.
 The data should contain all the columns defined in StockL1DataNames.
 For a column, if its value in file is NaN or Inf, then set the loaded value to np.nan.
@@ -171,6 +176,19 @@ For the direction column, if its value is B, set the result value to 0, otherwis
 :param path: string, the file path.
 :return: numpy.ndarray.</p>
 </dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.statistics.l1_data_loader.L1DataLoader.get_info">
+<em class="property">static </em><code class="descname">get_info</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.l1_data_loader.L1DataLoader.get_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the basic info for an instrument on a trading day.
+:param path: string, the file path.
+:return: tuple, (exchange, instrument_id)</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.statistics.l1_data_loader.L1DataLoader.get_data_type">
+<em class="property">static </em><code class="descname">get_data_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.l1_data_loader.L1DataLoader.get_data_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -196,7 +214,7 @@ For the direction column, if its value is B, set the result value to 0, otherwis
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Oct 22, 2016.
+      Last updated on Oct 24, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
