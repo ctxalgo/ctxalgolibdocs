@@ -5,6 +5,7 @@ scripts
    :maxdepth: 2
 
    rule_checking/index
+   wind/index
    stock/index
    update_stock_plates_from_sohu
    import_future_commissions_in_database
