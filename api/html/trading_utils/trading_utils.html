@@ -217,7 +217,7 @@
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.market_periods">
-<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em>, <em>new=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the trading periods of the given future on the given date.
 :param instrument_prefix: string, the ID of the stock.
 :param day: date, the trading ay.
@@ -230,7 +230,12 @@ Otherwise, the dominant parameter is ignored.</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">[(time, time)], the list of trading periods for the future on the given date.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new</strong> &#8211; bool, if True, returned results are a deep copy of the original data, so you can
+mutate the returned result. Otherwise, the returned result is shared object with other parts
+of the system, and must be treated as immutable objects. This parameter is introduced
+for speed optimization.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[(time, time)], the list of trading periods for the future on the given date.
 If trading_day is not a trading day for the given instrument prefix, return None.</td>
 </tr>
 </tbody>
@@ -421,7 +426,7 @@ period on that trading day.
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils" title="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils</span></code></a></p>
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.market_periods">
-<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em>, <em>new=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -800,7 +805,7 @@ Returns: boolean, True if the instrument supports market order; False otherwise<
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.market_periods">
-<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
+<code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em>, <em>new=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the trading periods of the given future on the given date.
 :param instrument_prefix: string, the prefix of futures
 :param day: date or string in format yyyy-mm-dd, the date on which the trading day should start.
