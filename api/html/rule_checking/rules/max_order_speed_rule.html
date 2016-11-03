@@ -33,7 +33,7 @@
     <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
         <link rel="up" title="rules" href="index.html"/>
         <link rel="next" title="too_close_to_delivery_date_rule" href="too_close_to_delivery_date_rule.html"/>
-        <link rel="prev" title="market_data_source_liveness_rule" href="market_data_source_liveness_rule.html"/> 
+        <link rel="prev" title="startup_rule" href="startup_rule.html"/> 
 
   
   <script src="../../static/js/modernizr.min.js"></script>
@@ -79,10 +79,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">rule_checking</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">rules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="future_position_sum_valid_rule.html">future_position_sum_valid_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="liveness_rule.html">liveness_rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="general_exception_rule.html">general_exception_rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="strategy_exception_rule.html">strategy_exception_rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="max_order_quota_rule.html">max_order_quota_rule</a></li>
-<li class="toctree-l3"><a class="reference internal" href="market_data_source_liveness_rule.html">market_data_source_liveness_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="startup_rule.html">startup_rule</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">max_order_speed_rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="too_close_to_delivery_date_rule.html">too_close_to_delivery_date_rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="strategy_warning_rule.html">strategy_warning_rule</a></li>
@@ -245,6 +246,16 @@ This defines the speed limit (orders/minute) for specific accounts.</div></block
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_market_periods">
+<code class="descname">get_market_periods</code><span class="sig-paren">(</span><em>kind</em>, <em>trading_day</em>, <em>trading_utils</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market periods for the given on trading_day
+:param kind: string, instrument kind.
+:param trading_day: date, trading day.
+:param trading_utils: AbstractTradingUtils, trading utilities.
+:return: [(timestamp, timestamp)], meaning [(start_timestamp, end_timestamp)].</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_unique_account_signature">
 <code class="descname">get_unique_account_signature</code><span class="sig-paren">(</span><em>account_type</em>, <em>account_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule.get_unique_account_signature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a unique signature for the given account.
@@ -286,7 +297,7 @@ This defines the speed limit (orders/minute) for specific accounts.</div></block
         <a href="too_close_to_delivery_date_rule.html" class="btn btn-neutral float-right" title="too_close_to_delivery_date_rule" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="market_data_source_liveness_rule.html" class="btn btn-neutral" title="market_data_source_liveness_rule" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="startup_rule.html" class="btn btn-neutral" title="startup_rule" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

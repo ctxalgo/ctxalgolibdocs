@@ -204,6 +204,11 @@
 <code class="descname">market_source_liveness</code><em class="property"> = 'market_source_liveness'</em><a class="headerlink" href="#ctxalgolib.rule_checking.rule.RuleNames.market_source_liveness" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.rule.RuleNames.startup">
+<code class="descname">startup</code><em class="property"> = 'startup'</em><a class="headerlink" href="#ctxalgolib.rule_checking.rule.RuleNames.startup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -299,6 +304,16 @@ log data from a file and use the log data to initialize all the rules.</div></bl
 <dd><p>Is the parameters to current rule valid?
 :param parameters: dict{string: object}, keys are parameter names, values are parameter values.
 :return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rule.AbstractRule.get_market_periods">
+<code class="descname">get_market_periods</code><span class="sig-paren">(</span><em>kind</em>, <em>trading_day</em>, <em>trading_utils</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule.AbstractRule.get_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market periods for the given on trading_day
+:param kind: string, instrument kind.
+:param trading_day: date, trading day.
+:param trading_utils: AbstractTradingUtils, trading utilities.
+:return: [(timestamp, timestamp)], meaning [(start_timestamp, end_timestamp)].</p>
 </dd></dl>
 
 </dd></dl>
