@@ -207,7 +207,7 @@ stock_id is like sh000001, index is 0-based.</td>
 
 <dl class="method">
 <dt id="ctxalgolib.wind.abstract_wind_feed.AbstractWindFeed.series">
-<code class="descname">series</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.abstract_wind_feed.AbstractWindFeed.series" title="Permalink to this definition">¶</a></dt>
+<code class="descname">series</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em>, <em>bars=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.abstract_wind_feed.AbstractWindFeed.series" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load some time series with name and between the given range.
 The time series is required to have a field timestamp, which we can use to compare with start_ts and end_ts.
 And the timestamp field is assumed to be the first field.
@@ -219,10 +219,18 @@ And the timestamp field is assumed to be the first field.
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>end_ts</strong> &#8211; datetime, the end timestamp (inclusive).
-None means to end at the last row of the time series.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>end_ts</strong> &#8211; datetime, the end timestamp (inclusive).
+None means to end at the last row of the time series.</li>
+<li><strong>bars</strong> &#8211; int, if not None, the max number of bars (at the end of the series) to return, and
+start_ts, end_ts will be ignored. For example, bars=-100 means to return the last 100 rows
+in the data. If there is not enough rows to return (max rows &lt; 100), return the all the rows
+that the data has. If None, use start_ts and end_ts.</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[[object]], it is 2D array. Each inner array represents a row in the time series.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[[object]], it is 2D array. Each inner array represents a row in the time series.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -345,7 +353,7 @@ If No data is found, return an empty numpy.ndarray.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Nov 04, 2016.
+      Last updated on Nov 06, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
