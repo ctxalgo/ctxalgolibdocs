@@ -1141,6 +1141,15 @@ instrument_id, kind and period to find the ohlc.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.state.AbstractState.trading_days_between">
+<code class="descname">trading_days_between</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.trading_days_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading days between start_date and end_date.
+:param start_date: date, start date, inclusive.
+:param end_date: date, end date, inclusive. If None, defaults to self.trading_day().
+:return: [date], the trading days between the specified range.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.state.AbstractState.yesterday_bars">
 <code class="descname">yesterday_bars</code><span class="sig-paren">(</span><em>ohlc</em>, <em>now=None</em>, <em>is_trading_day=True</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.AbstractState.yesterday_bars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the bar slice in ohlc, which covers all bars from yesterday.
@@ -2180,6 +2189,15 @@ instrument_id, kind and period to find the ohlc.</li>
 <dt id="ctxalgolib.trading_utils.state.TemplateState.trading_day">
 <code class="descname">trading_day</code><span class="sig-paren">(</span><em>now=None</em>, <em>delta=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.trading_day" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.state.TemplateState.trading_days_between">
+<code class="descname">trading_days_between</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.state.TemplateState.trading_days_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the trading days between start_date and end_date.
+:param start_date: date, start date, inclusive.
+:param end_date: date, end date, inclusive. If None, defaults to self.trading_day().
+:return: [date], the trading days between the specified range.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.state.TemplateState.transaction_id_from_order_ref">
