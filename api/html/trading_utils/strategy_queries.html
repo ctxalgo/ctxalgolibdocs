@@ -983,6 +983,29 @@ now &lt;= self.latest_time_to_open_position and now &lt;= self.latest_time_to_cl
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.contract_multiplier">
+<code class="descname">contract_multiplier</code><span class="sig-paren">(</span><em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.contract_multiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get multiplier of the given instrument.
+:param instrument_id: string, the instrument id. If None, use self.instrument_id().
+:return: int. The volume multiple.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.contract_value">
+<code class="descname">contract_value</code><span class="sig-paren">(</span><em>price</em>, <em>volume</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.contract_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the contract value.
+:param price: float, price of the instrument.
+:param volume: int, the volume, positive number means long position, negative number means short position.
+:param instrument_id: string, instrument id. If None, use self.instrument_id().
+:return: float, contract value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.required_contract_margin">
+<code class="descname">required_contract_margin</code><span class="sig-paren">(</span><em>price</em>, <em>volume</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.required_contract_margin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_rate_by_money">
 <code class="descname">margin_rate_by_money</code><span class="sig-paren">(</span><em>direction</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.strategy_queries.AbstractStrategyQueries.margin_rate_by_money" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the margin rate for the given future.
