@@ -390,26 +390,18 @@ of the dates data in the OHLC.</li>
 </tbody>
 </table>
 <dl class="method">
-<dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.get_data_type">
-<code class="descname">get_data_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.get_data_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>get the data_type for BinaryFileTimeSeries
-:return: [(string, type)], the data type in the ohlc</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.get_numpy_timestamp">
 <code class="descname">get_numpy_timestamp</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.get_numpy_timestamp" title="Permalink to this definition">¶</a></dt>
 <dd><p>convert timestamp in ohlc to numpy datetime64 data
 :param timestamp: datetime, the timestamp need to convert
-:return: numpy.datetime64, the converted data</p>
+:return: (numpy.int64), the converted data</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.get_numpy_rows">
-<code class="descname">get_numpy_rows</code><span class="sig-paren">(</span><em>ohlc</em>, <em>data_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.get_numpy_rows" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_numpy_rows</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryFileWriter.get_numpy_rows" title="Permalink to this definition">¶</a></dt>
 <dd><p>convert ohlc data to numpy array
 :param ohlc: the ohlc data
-:param data_type: the numpy data type in the ohlc
 :return: numpy.ndarray, N-dimensional array storing ohlc data</p>
 </dd></dl>
 
@@ -659,10 +651,12 @@ If not None, use this parser to parse the data file.</li>
 </tbody>
 </table>
 <dl class="method">
-<dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader.get_data_type">
-<code class="descname">get_data_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader.get_data_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>get the data_type for BinaryFileTimeSeries
-:return: [(string, type)], the data type in the ohlc</p>
+<dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader.get_timestamp">
+<code class="descname">get_timestamp</code><span class="sig-paren">(</span><em>t1</em>, <em>t2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcBinaryReader.get_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert timestamp in ohlc to numpy datetime64 data
+:param t1: int, the data part of timestamp
+:param t2: int, the time part of timestamp
+:return: datetime, the converted timestamp</p>
 </dd></dl>
 
 <dl class="method">

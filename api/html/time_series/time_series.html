@@ -150,13 +150,11 @@
 <span id="time-series"></span><h1>time_series<a class="headerlink" href="#module-ctxalgolib.time_series.time_series" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.time_series.time_series.AbstractTimeSeries">
-<em class="property">class </em><code class="descclassname">ctxalgolib.time_series.time_series.</code><code class="descname">AbstractTimeSeries</code><span class="sig-paren">(</span><em>data_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.time_series.time_series.AbstractTimeSeries" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.time_series.time_series.</code><code class="descname">AbstractTimeSeries</code><span class="sig-paren">(</span><em>columns</em>, <em>time_precision</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.time_series.time_series.AbstractTimeSeries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Initialize current.
-:param data_type: [numpy data types], The list of numpy data types</p>
-<blockquote>
-<div>for each column of the time series. The first element must be numpy.datetime64.
-Other supported types are listed in: <a class="reference external" href="http://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html">http://docs.scipy.org/doc/numpy-1.10.1/user/basics.types.html</a></div></blockquote>
+:param columns: int, the columns of numpy array
+:param time_precision: int, 0 means second precision, 1 means millisecond precision.</p>
 <dl class="method">
 <dt id="ctxalgolib.time_series.time_series.AbstractTimeSeries.is_read_only">
 <code class="descname">is_read_only</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.time_series.time_series.AbstractTimeSeries.is_read_only" title="Permalink to this definition">¶</a></dt>
@@ -210,7 +208,7 @@ After close, this time series is not usable anymore.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.time_series.time_series.BinaryFileTimeSeries">
-<em class="property">class </em><code class="descclassname">ctxalgolib.time_series.time_series.</code><code class="descname">BinaryFileTimeSeries</code><span class="sig-paren">(</span><em>path</em>, <em>data_type</em>, <em>immediate_flush=True</em>, <em>read_only=False</em>, <em>read_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.time_series.time_series.BinaryFileTimeSeries" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.time_series.time_series.</code><code class="descname">BinaryFileTimeSeries</code><span class="sig-paren">(</span><em>path</em>, <em>columns</em>, <em>time_precision</em>, <em>immediate_flush=True</em>, <em>read_only=False</em>, <em>read_all=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.time_series.time_series.BinaryFileTimeSeries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.time_series.time_series.AbstractTimeSeries" title="ctxalgolib.time_series.time_series.AbstractTimeSeries"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.time_series.time_series.AbstractTimeSeries</span></code></a></p>
 <p>Initialize current.
 :param path: string, the path to the binary file for the data. Create the file</p>
@@ -221,7 +219,8 @@ After close, this time series is not usable anymore.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data_type</strong> &#8211; type is to be decided.</li>
+<li><strong>columns</strong> &#8211; int, the columns of np array</li>
+<li><strong>time_precision</strong> &#8211; int, 0 means second precision, 1 means millisecond precision.</li>
 <li><strong>immediate_flush</strong> &#8211; bool, If True flush the data to file after every write.</li>
 <li><strong>read_only</strong> &#8211; bool, if True, the time series will be read only.</li>
 <li><strong>read_all</strong> &#8211; bool, if True, read all data once into memory and other reads are just
