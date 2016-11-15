@@ -207,7 +207,7 @@ the timer has not been stopped.
 
 <dl class="class">
 <dt id="ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer">
-<em class="property">class </em><code class="descclassname">ctxalgolib.timer.simulated_timer.</code><code class="descname">CountDownSimulatedTimer</code><span class="sig-paren">(</span><em>interval</em>, <em>repeated=True</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.timer.simulated_timer.</code><code class="descname">CountDownSimulatedTimer</code><span class="sig-paren">(</span><em>interval</em>, <em>repeated=True</em>, <em>start_time=None</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.timer.simulated_timer.CountDownSimulatedTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.timer.simulated_timer.SimulatedTimer" title="ctxalgolib.timer.simulated_timer.SimulatedTimer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.timer.simulated_timer.SimulatedTimer</span></code></a></p>
 <p>Class that represents a count-down timer.
 A count-down timer can be in repeated mode, which causes the timer to repeat its count-down after it is triggered.
@@ -221,7 +221,12 @@ The timer can be in non-repeated mode, which cuases the timer to trigger at most
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; string, name of the timer.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>start_time</strong> &#8211; datetime, if not None, the countdown starts from this given timestamp.
+If None, the countdown starts immediately after the timer starts.</li>
+<li><strong>name</strong> &#8211; string, name of the timer.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
