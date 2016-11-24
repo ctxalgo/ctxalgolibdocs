@@ -210,7 +210,7 @@ dominant contract information is not available.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.bar_generator.Bar.as_dict">
-<code class="descname">as_dict</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em>, <em>with_limit_price=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar.as_dict" title="Permalink to this definition">¶</a></dt>
+<code class="descname">as_dict</code><span class="sig-paren">(</span><em>with_open_interest</em>, <em>order_book_level</em>, <em>dominant</em>, <em>profits</em>, <em>l1_statistics</em>, <em>with_limit_price=False</em>, <em>with_start_end_tick=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar.as_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a dict containing data from current bar.
 :param with_open_interest: boolean, if True, include open interest data.
 :param order_book_level: int, order book level.
@@ -321,6 +321,20 @@ and the generated ohlc bars contains open interest data.</li>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.set_start_tick">
+<code class="descname">set_start_tick</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.set_start_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.start_tick with tick.
+:param tick: int, tick index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.set_end_tick">
+<code class="descname">set_end_tick</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.set_end_tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set self.end_tick with tick.
+:param tick: int, tick index.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.add_tick">
 <code class="descname">add_tick</code><span class="sig-paren">(</span><em>tick</em>, <em>second_precision_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.add_tick" title="Permalink to this definition">¶</a></dt>
@@ -461,7 +475,7 @@ Return: Bar, the bat so far.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Nov 23, 2016.
+      Last updated on Nov 24, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
