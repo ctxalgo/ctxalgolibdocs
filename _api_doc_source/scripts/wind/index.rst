@@ -10,5 +10,6 @@ wind
    wind_test
    ctx_logger
    wind_api_util
+   draw_report
    data_downloader
    download_trading_data
