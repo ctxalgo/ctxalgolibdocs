@@ -695,6 +695,13 @@ current OHLC on some of the required dates, use None to fill in the missing part
 </dd></dl>
 
 <dl class="staticmethod">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.tick_index_attributes">
+<em class="property">static </em><code class="descname">tick_index_attributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.tick_index_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of attributes for tick index
+:return: [string]</p>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.tick_attributes">
 <em class="property">static </em><code class="descname">tick_attributes</code><span class="sig-paren">(</span><em>order_book_level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.tick_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the attributes for tick related data.
@@ -721,13 +728,14 @@ current OHLC on some of the required dates, use None to fill in the missing part
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes">
-<em class="property">static </em><code class="descname">ohlc_frame_attributes</code><span class="sig-paren">(</span><em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ohlc_frame_attributes</code><span class="sig-paren">(</span><em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>with_start_end_tick=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the set of attribute names for an OHLC that meets the requirement.
 :param with_open_interests: bool, if True, include attributes for open interests.
 :param order_book_level: int, non-negative, indicates the level of order book. 0 means no order book.
 :param dominant: bool, if True, include attributes for dominant contract switching.
 :param profits: bool, if True, include attributes for profit series.
 :param l1_statistics: bool, if True, include L1 statistics related fields.
+:param with_start_end_tick: bool, if True, include tick index related fields
 :return: [string], the list of attributes that the ohlc should have to contain required information.</p>
 </dd></dl>
 

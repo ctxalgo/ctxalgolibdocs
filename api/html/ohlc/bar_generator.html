@@ -168,7 +168,7 @@
 <span id="bar-generator"></span><h1>bar_generator<a class="headerlink" href="#module-ctxalgolib.ohlc.bar_generator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.ohlc.bar_generator.Bar">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">Bar</code><span class="sig-paren">(</span><em>timestamp</em>, <em>open_value</em>, <em>high_value</em>, <em>low_value</em>, <em>close_value</em>, <em>volume</em>, <em>amount=0</em>, <em>open_interest=None</em>, <em>dominant=None</em>, <em>next_dominant=None</em>, <em>tick=None</em>, <em>profits=None</em>, <em>data_point=None</em>, <em>trade=None</em>, <em>mean_price=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">Bar</code><span class="sig-paren">(</span><em>timestamp</em>, <em>open_value</em>, <em>high_value</em>, <em>low_value</em>, <em>close_value</em>, <em>volume</em>, <em>amount=0</em>, <em>open_interest=None</em>, <em>dominant=None</em>, <em>next_dominant=None</em>, <em>tick=None</em>, <em>profits=None</em>, <em>data_point=None</em>, <em>trade=None</em>, <em>mean_price=None</em>, <em>start_tick=None</em>, <em>end_tick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.Bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class that represents a OHLC bar.</p>
 <p>Initialize current bar.
 Parameters:
@@ -191,6 +191,8 @@ dominant contract information is not available.</li>
 <li><strong>data_point</strong> &#8211; int, the number of data points that forms the bar</li>
 <li><strong>trade</strong> &#8211; float, sum of the trades field in each tick</li>
 <li><strong>mean_price</strong> &#8211; float, mean of the close prices of all the ticks</li>
+<li><strong>start_tick</strong> &#8211; int, the first tick index used to generate this bar</li>
+<li><strong>end_tick</strong> &#8211; int, the last tick index used to generate this bar</li>
 </ul>
 </td>
 </tr>
@@ -337,7 +339,7 @@ and the generated ohlc bars contains open interest data.</li>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.bar_generator.BarGenerator.add_tick">
-<code class="descname">add_tick</code><span class="sig-paren">(</span><em>tick</em>, <em>second_precision_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.add_tick" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_tick</code><span class="sig-paren">(</span><em>tick</em>, <em>second_precision_time=None</em>, <em>tick_index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.BarGenerator.add_tick" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
