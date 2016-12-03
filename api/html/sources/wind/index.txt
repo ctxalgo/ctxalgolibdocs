@@ -7,3 +7,4 @@ wind
    file_based_wind_feed
    abstract_wind_feed
    stock_index_mapper
+   wind_base_tables

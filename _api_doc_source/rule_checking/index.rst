@@ -10,6 +10,7 @@ rule_checking
    checker
    violations
    rule_factory
+   error_codes
    rule
    rule_checker_message_sender
    configs

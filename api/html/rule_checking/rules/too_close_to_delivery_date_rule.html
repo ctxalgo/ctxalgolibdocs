@@ -94,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../checker.html">checker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../violations.html">violations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rule_factory.html">rule_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../error_codes.html">error_codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rule.html">rule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rule_checker_message_sender.html">rule_checker_message_sender</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../configs.html">configs</a></li>
@@ -169,7 +170,13 @@
             
   <div class="section" id="too-close-to-delivery-date-rule">
 <h1>too_close_to_delivery_date_rule<a class="headerlink" href="#too-close-to-delivery-date-rule" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule"></span><dl class="class">
+<span class="target" id="module-ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule"></span><p>[en]
+Title: Position too close to delivery date
+This rule reports that some held positions are too close to the instruments delivery dates.
+[zh]
+Title: 持仓品种过于接近交割日期
+这个规则报告某些持仓品种过于接近其交割日期。</p>
+<dl class="class">
 <dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule">
 <em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.</code><code class="descname">TooCloseToDeliveryDateRule</code><span class="sig-paren">(</span><em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../rule.html#ctxalgolib.rule_checking.rule.AbstractRule" title="ctxalgolib.rule_checking.rule.AbstractRule"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.rule.AbstractRule</span></code></a></p>
@@ -331,7 +338,7 @@ latest_days_delta: int, the number of days before an instrument&#8217;s delivery
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Nov 29, 2016.
+      Last updated on Dec 03, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>wind_base_tables &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="wind" href="index.html"/>
+        <link rel="next" title="messaging" href="../messaging/index.html"/>
+        <link rel="prev" title="stock_index_mapper" href="stock_index_mapper.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">wind</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="file_based_wind_feed.html">file_based_wind_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract_wind_feed.html">abstract_wind_feed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stock_index_mapper.html">stock_index_mapper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">wind_base_tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">wind</a> &raquo;</li>
+      
+    <li>wind_base_tables</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/wind/wind_base_tables.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.wind.wind_base_tables">
+<span id="wind-base-tables"></span><h1>wind_base_tables<a class="headerlink" href="#module-ctxalgolib.wind.wind_base_tables" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser">
+<em class="property">class </em><code class="descclassname">ctxalgolib.wind.wind_base_tables.</code><code class="descname">FieldParser</code><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.timestamp_to_time_string">
+<em class="property">static </em><code class="descname">timestamp_to_time_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.timestamp_to_time_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.timestamp_to_date_string">
+<em class="property">static </em><code class="descname">timestamp_to_date_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.timestamp_to_date_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.date_string_to_timestamp">
+<em class="property">static </em><code class="descname">date_string_to_timestamp</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.date_string_to_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.instrument_wind_to_ctx">
+<em class="property">static </em><code class="descname">instrument_wind_to_ctx</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.instrument_wind_to_ctx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.instrument_ctx_to_wind">
+<em class="property">static </em><code class="descname">instrument_ctx_to_wind</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.instrument_ctx_to_wind" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.float_to_string">
+<em class="property">static </em><code class="descname">float_to_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.float_to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.string_to_float">
+<em class="property">static </em><code class="descname">string_to_float</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.string_to_float" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.default_to_self">
+<em class="property">static </em><code class="descname">default_to_self</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.default_to_self" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.return_to_string">
+<em class="property">static </em><code class="descname">return_to_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.return_to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.dividend_to_string">
+<em class="property">static </em><code class="descname">dividend_to_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.dividend_to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.nan_to_string">
+<em class="property">static </em><code class="descname">nan_to_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.nan_to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.updown_limit_to_string">
+<em class="property">static </em><code class="descname">updown_limit_to_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.updown_limit_to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.wind.wind_base_tables.FieldParser.trade_status_to_string">
+<em class="property">static </em><code class="descname">trade_status_to_string</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.FieldParser.trade_status_to_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.wind.wind_base_tables.WindBaseTableDef">
+<em class="property">class </em><code class="descclassname">ctxalgolib.wind.wind_base_tables.</code><code class="descname">WindBaseTableDef</code><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.WindBaseTableDef" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.wind.wind_base_tables.WindBaseTableDef.indexes">
+<code class="descname">indexes</code><em class="property"> = ['000016.SH', '000300.SH', '399905.SZ']</em><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.WindBaseTableDef.indexes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.wind.wind_base_tables.WindBaseTableDef.sector_mapping">
+<code class="descname">sector_mapping</code><em class="property"> = {'1': ('a001010100000000', 'trading_stock_list'), '3': ('a001010l00000000', 'breakoff_stock_list'), '2': ('1000006527000000', 'exit_market_stock_list')}</em><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.WindBaseTableDef.sector_mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.wind.wind_base_tables.WindBaseTableDef.file_suffix">
+<code class="descname">file_suffix</code><em class="property"> = '.csv'</em><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.WindBaseTableDef.file_suffix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.wind.wind_base_tables.WindBaseTableDef.separator">
+<code class="descname">separator</code><em class="property"> = ','</em><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.WindBaseTableDef.separator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.wind.wind_base_tables.StockListTable">
+<em class="property">class </em><code class="descclassname">ctxalgolib.wind.wind_base_tables.</code><code class="descname">StockListTable</code><span class="sig-paren">(</span><em>name='trading_stock_list'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.StockListTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.wind.wind_base_tables.RawDailyDataTable">
+<em class="property">class </em><code class="descclassname">ctxalgolib.wind.wind_base_tables.</code><code class="descname">RawDailyDataTable</code><span class="sig-paren">(</span><em>name='raw_daily_data'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.RawDailyDataTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.wind.wind_base_tables.AdjuestedDailyDataTable">
+<em class="property">class </em><code class="descclassname">ctxalgolib.wind.wind_base_tables.</code><code class="descname">AdjuestedDailyDataTable</code><span class="sig-paren">(</span><em>name='adjuested_daily_data'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.AdjuestedDailyDataTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.wind.wind_base_tables.IndexWeightTable">
+<em class="property">class </em><code class="descclassname">ctxalgolib.wind.wind_base_tables.</code><code class="descname">IndexWeightTable</code><span class="sig-paren">(</span><em>name='index_weight'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.wind_base_tables.IndexWeightTable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../messaging/index.html" class="btn btn-neutral float-right" title="messaging" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="stock_index_mapper.html" class="btn btn-neutral" title="stock_index_mapper" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Dec 03, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -94,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../checker.html">checker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../violations.html">violations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rule_factory.html">rule_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../error_codes.html">error_codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rule.html">rule</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rule_checker_message_sender.html">rule_checker_message_sender</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../configs.html">configs</a></li>
@@ -169,6 +170,12 @@
             
   <div class="section" id="module-ctxalgolib.rule_checking.rules.max_order_speed_rule">
 <span id="max-order-speed-rule"></span><h1>max_order_speed_rule<a class="headerlink" href="#module-ctxalgolib.rule_checking.rules.max_order_speed_rule" title="Permalink to this headline">¶</a></h1>
+<p>[en]
+Title: Max order speed
+This rule reports that some strategy places orders in a speed which exceeds a limit.
+[zh]
+Title: 下单速度超过上限
+这个规则报告某个策略的下单速度超过指定上限。</p>
 <dl class="class">
 <dt id="ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule">
 <em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.max_order_speed_rule.</code><code class="descname">MaxOrderSpeedRule</code><span class="sig-paren">(</span><em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.max_order_speed_rule.MaxOrderSpeedRule" title="Permalink to this definition">¶</a></dt>
@@ -307,7 +314,7 @@ This defines the speed limit (orders/minute) for specific accounts.</div></block
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Nov 29, 2016.
+      Last updated on Dec 03, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

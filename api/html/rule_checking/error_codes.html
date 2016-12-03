@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>error_codes &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="rule_checking" href="index.html"/>
+        <link rel="next" title="rule" href="rule.html"/>
+        <link rel="prev" title="rule_factory" href="rule_factory.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">rule_checking</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rules/index.html">rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alerts/index.html">alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="message_validity_checker.html">message_validity_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checker.html">checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="violations.html">violations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_factory.html">rule_factory</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">error_codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html">rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_checker_message_sender.html">rule_checker_message_sender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configs.html">configs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wind/index.html">wind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">rule_checking</a> &raquo;</li>
+      
+    <li>error_codes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/rule_checking/error_codes.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.rule_checking.error_codes">
+<span id="error-codes"></span><h1>error_codes<a class="headerlink" href="#module-ctxalgolib.rule_checking.error_codes" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.error_codes.</code><code class="descname">ErrorCodes</code><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0001">
+<code class="descname">r0001</code><em class="property"> = 'r0001'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0001" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0002">
+<code class="descname">r0002</code><em class="property"> = 'r0002'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0002" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0003">
+<code class="descname">r0003</code><em class="property"> = 'r0003'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0003" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0004">
+<code class="descname">r0004</code><em class="property"> = 'r0004'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0004" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0005">
+<code class="descname">r0005</code><em class="property"> = 'r0005'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0005" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.w0001">
+<code class="descname">w0001</code><em class="property"> = 'w0001'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.w0001" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.s0001">
+<code class="descname">s0001</code><em class="property"> = 's0001'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.s0001" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.error_codes.</code><code class="descname">ErrorCodeExplanations</code><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations.messages">
+<code class="descname">messages</code><em class="property"> = {'w0001': u'General warning.', 's0001': u'Strategy exception', 'r0005': u'Held instruments are too close to delivery date.', 'r0004': u'No startup event.', 'r0003': u'No liveness heartbeat.', 'r0002': u'Position from risk report do not match positions from strategies.', 'r0001': u'Rule checker crashes.'}</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations.messages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations.message">
+<em class="property">static </em><code class="descname">message</code><span class="sig-paren">(</span><em>error_code</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rule.html" class="btn btn-neutral float-right" title="rule" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rule_factory.html" class="btn btn-neutral" title="rule_factory" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Dec 03, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

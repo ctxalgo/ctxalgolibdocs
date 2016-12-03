@@ -83,6 +83,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">file_based_wind_feed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="abstract_wind_feed.html">abstract_wind_feed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stock_index_mapper.html">stock_index_mapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wind_base_tables.html">wind_base_tables</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
@@ -184,7 +185,7 @@ None means to start from the first row of the time series.</li>
 <li><strong>end_ts</strong> &#8211; datetime, the end timestamp (inclusive).
 None means to end at the last row of the time series.</li>
 <li><strong>bars</strong> &#8211; int, if not None, the max number of bars (at the end of the series) to return, and
-start_ts, end_ts will be ignored. For example, bars=-100 means to return the last 100 rows
+start_ts, end_ts will be ignored. For example, bars=100 means to return the last 100 rows
 in the data. If there is not enough rows to return (max rows &lt; 100), return the all the rows
 that the data has. If None, use start_ts and end_ts.</li>
 </ul>
@@ -230,7 +231,7 @@ that the data has. If None, use start_ts and end_ts.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Nov 29, 2016.
+      Last updated on Dec 03, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
