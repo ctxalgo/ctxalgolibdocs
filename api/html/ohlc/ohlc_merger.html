@@ -168,7 +168,7 @@
 <span id="ohlc-merger"></span><h1>ohlc_merger<a class="headerlink" href="#module-ctxalgolib.ohlc.ohlc_merger" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_merger.OhlcMerger">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_merger.</code><code class="descname">OhlcMerger</code><span class="sig-paren">(</span><em>market_periods=None</em>, <em>offset=None</em>, <em>market_periods_provider=None</em>, <em>instrument_prefix=None</em>, <em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_merger.</code><code class="descname">OhlcMerger</code><span class="sig-paren">(</span><em>market_periods=None</em>, <em>offset=None</em>, <em>market_periods_provider=None</em>, <em>instrument_prefix=None</em>, <em>trading_days=None</em>, <em>end_timestamp_padding=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_merger.OhlcMerger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize current by setting the market open time and market close time.
 Market open and close time affects OHLC merging for daily data.
 Parameters:
@@ -197,6 +197,7 @@ need to be initialized when market periods is updated.</li>
 <li><strong>instrument_prefix</strong> &#8211; string, the prefix of instrument that need to update market periods.
 For futures, instrument prefix are &#8216;IF&#8217; from &#8216;IF1601&#8217;. For stocks, instrument prefixes are &#8216;sh&#8217; or &#8216;sz&#8217;.</li>
 <li><strong>trading_days</strong> &#8211; TradingDays, the trading days. If None, a default for Chinese trading days will be used.</li>
+<li><strong>end_timestamp_padding</strong> &#8211; bool, modify the timestamp of the end bar to the standard end time if True</li>
 </ul>
 </td>
 </tr>
@@ -531,7 +532,7 @@ THIRTY_MINUTE, HOURLY, TWO_HOURLY, DAILY, WEEKLY)</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Dec 07, 2016.
+      Last updated on Dec 08, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
