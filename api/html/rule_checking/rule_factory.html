@@ -163,9 +163,10 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rule">
-<code class="descname">get_rule</code><span class="sig-paren">(</span><em>name</em>, <em>parameters</em>, <em>state</em>, <em>trading_day</em>, <em>message_validity_checker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rule" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_rule</code><span class="sig-paren">(</span><em>name</em>, <em>kind</em>, <em>parameters</em>, <em>state</em>, <em>trading_day</em>, <em>message_validity_checker=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_factory.RuleFactory.get_rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a rule instance given the rule name and its parameters.
 :param name: string, the rule name.
+:param kind: string, type of the rule.
 :param parameters: dict{string: object}, the rule parameters.
 :param state: dict{string: object}, the state of the rule.
 :param message_validity_checker: MessageValidityChecker, if None, a default one will be used.

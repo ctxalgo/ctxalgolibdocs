@@ -517,9 +517,10 @@ same thread object.</p>
 <code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_rules</code><span class="sig-paren">(</span><em>rule_file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_rules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load rules that should be checked from a given file.
 :param rule_file_path: string, rule config file path.
-:return: dict{string: dict{string: object}}, meaning dict{rule_name: dict{parameter: value}},</p>
+:return: dict{string: dict{string: object}}, meaning dict{rule_name: dict{entry: value}},</p>
 <blockquote>
-<div>loaded rules with their parameters.</div></blockquote>
+<div>entry can be &#8216;parameters&#8217;, &#8216;kind&#8217;.
+loaded rules with their parameters.</div></blockquote>
 </dd></dl>
 
 <dl class="function">

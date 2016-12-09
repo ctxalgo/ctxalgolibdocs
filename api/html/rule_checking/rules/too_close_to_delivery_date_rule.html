@@ -178,7 +178,7 @@ Title: 持仓品种过于接近交割日期
 这个规则报告某些持仓品种过于接近其交割日期。</p>
 <dl class="class">
 <dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule">
-<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.</code><code class="descname">TooCloseToDeliveryDateRule</code><span class="sig-paren">(</span><em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.</code><code class="descname">TooCloseToDeliveryDateRule</code><span class="sig-paren">(</span><em>name</em>, <em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../rule.html#ctxalgolib.rule_checking.rule.AbstractRule" title="ctxalgolib.rule_checking.rule.AbstractRule"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.rule.AbstractRule</span></code></a></p>
 <p>Rule to check if an account holds positions for instruments whose delivery date is too close.
 The message of topic Topics.risk_report_position_details_topic() has the following format:
