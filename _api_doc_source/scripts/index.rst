@@ -41,6 +41,7 @@ scripts
    strong_stocks_statistics_calculator
    prepare_tick_data_for_ohlc_generation
    collect_tianya_blog
+   generate_ohlc_for_stock_historical_data
    sync_ctxlite
    unzip_data_from_dafuweng_to_data_preparer_format
    import_holidays_into_database
