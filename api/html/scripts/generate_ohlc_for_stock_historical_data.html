@@ -229,12 +229,13 @@ profits,book0, book1, book2, book3, book4, book5, l1_statistics. book3 means to 
 including book0, book1, book2 and book3.
 Note that if profits is included, always use profit_factor=1.0 for stocks.</dd>
 </dl>
-<p>&#8211;use-mid-ask-bid USE_MID_ASK_BID, this is a flag, if present, enable it during ohlc generation.</p>
+<p>&#8211;use-mid-ask-bid USE_MID_ASK_BID, this is a flag, if present, enable it during ohlc generation. Default is False.</p>
 <dl class="docutils">
 <dt>&#8211;periods PERIODS, comma separated string, indicating the periods/volatility thresholds to generate, for example,</dt>
-<dd>1m,5m,1d,v15.0,v23. a value starting from v means volatility threshold.</dd>
+<dd>1m,5m,1d,v15.0,v23. a value starting from v means volatility threshold. No Default.</dd>
 <dt>&#8211;instruments INSTRUMENTS, comma separated string, indicating the instruments to generate. For example,</dt>
-<dd>sh600338,sz000001 means only generate ohlcs for the two given instruments.</dd>
+<dd>sh600338,sz000001 means only generate ohlcs for the two given instruments. If not given, generate ohlcs
+for all stocks in INPUT_FOLDER.</dd>
 <dt>&#8211;input-folder INPUT_FOLDER string, the folder which includes future tick level data.</dt>
 <dd><p class="first">The folder contains sub-folders which are in form of yyyymmdd, indicating every trading day.
 In each sub-folder, there are a list of files representing individual instruments.
