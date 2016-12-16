@@ -6,6 +6,7 @@ rules
 
    future_position_sum_valid_rule
    liveness_rule
+   information_rule
    general_exception_rule
    strategy_exception_rule
    max_order_quota_rule
