@@ -515,14 +515,11 @@ same thread object.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="ctxalgolib.scripts.rule_checking.check_rules.load_rules">
-<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_rules</code><span class="sig-paren">(</span><em>path</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_rules" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load rules that should be checked from a given file.
-:param path: string, rule config file path.
-:return: dict{string: dict{string: object}}, meaning dict{rule_name: dict{entry: value}},</p>
-<blockquote>
-<div>entry can be &#8216;parameters&#8217;, &#8216;kind&#8217;.
-loaded rules with their parameters.</div></blockquote>
+<dt id="ctxalgolib.scripts.rule_checking.check_rules.load_config">
+<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_config</code><span class="sig-paren">(</span><em>path</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load configs from path.
+:param path: string, path to the config file. If None, use url to load config.
+:return: [dict{string: object}], the list of configs.</p>
 </dd></dl>
 
 <dl class="function">
@@ -577,7 +574,7 @@ loaded rules with their parameters.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Dec 19, 2016.
+      Last updated on Dec 20, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
