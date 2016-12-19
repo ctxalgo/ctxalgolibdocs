@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ctx_service &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="system" href="index.html"/>
+        <link rel="next" title="pydot" href="../pydot/index.html"/>
+        <link rel="prev" title="config_loader" href="config_loader.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wind/index.html">wind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">system</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config_loader.html">config_loader</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ctx_service</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">system</a> &raquo;</li>
+      
+    <li>ctx_service</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../sources/system/ctx_service.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.system.ctx_service">
+<span id="ctx-service"></span><h1>ctx_service<a class="headerlink" href="#module-ctxalgolib.system.ctx_service" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE">
+<em class="property">class </em><code class="descclassname">ctxalgolib.system.ctx_service.</code><code class="descname">CTX_SERVICE</code><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.SERVICE_NAMES">
+<code class="descname">SERVICE_NAMES</code><em class="property"> = ['base', 'market_data_broker', 'market_data_processor', 'strategy_monitor', 'strategy_websocket_server', 'market_data_http_server', 'market_data_http_server_with_profiler', 'store_historical_data_to_db', 'clear_historical_data_from_db', 'message_proxies', 'check_rules']</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.SERVICE_NAMES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.is_valid">
+<em class="property">static </em><code class="descname">is_valid</code><span class="sig-paren">(</span><em>ctx_service</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the service valid?
+:param ctx_service: CTX_SERVICE.
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.get_serivce_name">
+<em class="property">static </em><code class="descname">get_serivce_name</code><span class="sig-paren">(</span><em>ctx_service</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.get_serivce_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the corresponding string name for CTX_SERVICE.
+:param ctx_service: CTX_SERVICE
+:return: string, the name for the CTX_SERVICE</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.get_ctx_service_from_name">
+<em class="property">static </em><code class="descname">get_ctx_service_from_name</code><span class="sig-paren">(</span><em>service_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.get_ctx_service_from_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the corresponding CTX_SERVICE from string name.
+:param service_name: string, the name of the ctx service.
+:return: CTX_SERVICE.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.BASE">
+<code class="descname">BASE</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.BASE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.CHECK_RULES">
+<code class="descname">CHECK_RULES</code><em class="property"> = 10</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.CHECK_RULES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.CLEAR_HISTORICAL_DATA_FROM_DB">
+<code class="descname">CLEAR_HISTORICAL_DATA_FROM_DB</code><em class="property"> = 8</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.CLEAR_HISTORICAL_DATA_FROM_DB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_BROKER">
+<code class="descname">MARKET_DATA_BROKER</code><em class="property"> = 1</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_BROKER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_HTTP_SERVER">
+<code class="descname">MARKET_DATA_HTTP_SERVER</code><em class="property"> = 5</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_HTTP_SERVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_HTTP_SERVER_WITH_PROFILER">
+<code class="descname">MARKET_DATA_HTTP_SERVER_WITH_PROFILER</code><em class="property"> = 6</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_HTTP_SERVER_WITH_PROFILER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_PROCESSOR">
+<code class="descname">MARKET_DATA_PROCESSOR</code><em class="property"> = 2</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.MARKET_DATA_PROCESSOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.MESSAGE_PROXIES">
+<code class="descname">MESSAGE_PROXIES</code><em class="property"> = 9</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.MESSAGE_PROXIES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.STORE_HISTORICAL_DATA_TO_DB">
+<code class="descname">STORE_HISTORICAL_DATA_TO_DB</code><em class="property"> = 7</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.STORE_HISTORICAL_DATA_TO_DB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.STRATEGY_MONITOR">
+<code class="descname">STRATEGY_MONITOR</code><em class="property"> = 3</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.STRATEGY_MONITOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.system.ctx_service.CTX_SERVICE.STRATEGY_WEBSOCKET_SERVER">
+<code class="descname">STRATEGY_WEBSOCKET_SERVER</code><em class="property"> = 4</em><a class="headerlink" href="#ctxalgolib.system.ctx_service.CTX_SERVICE.STRATEGY_WEBSOCKET_SERVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pydot/index.html" class="btn btn-neutral float-right" title="pydot" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="config_loader.html" class="btn btn-neutral" title="config_loader" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Dec 19, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

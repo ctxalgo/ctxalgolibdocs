@@ -19,6 +19,7 @@ Ctxalgolib api doc
    machine_learning/index
    ta/index
    output/index
+   system/index
    pydot/index
    slippage/index
    trial/index
