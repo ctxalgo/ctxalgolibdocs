@@ -384,7 +384,7 @@ same thread object.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.AlertThread">
-<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">AlertThread</code><span class="sig-paren">(</span><em>cache</em>, <em>alerta_url</em>, <em>api_key</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.AlertThread" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">AlertThread</code><span class="sig-paren">(</span><em>cache</em>, <em>alerta_url</em>, <em>api_key</em>, <em>errors</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.AlertThread" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
 <p>Class to send generate alerts and send alerts to the alerta server.</p>
 <dl class="docutils">
@@ -516,9 +516,9 @@ same thread object.</p>
 
 <dl class="function">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.load_rules">
-<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_rules</code><span class="sig-paren">(</span><em>rule_file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_rules" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">load_rules</code><span class="sig-paren">(</span><em>path</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.load_rules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load rules that should be checked from a given file.
-:param rule_file_path: string, rule config file path.
+:param path: string, rule config file path.
 :return: dict{string: dict{string: object}}, meaning dict{rule_name: dict{entry: value}},</p>
 <blockquote>
 <div>entry can be &#8216;parameters&#8217;, &#8216;kind&#8217;.
@@ -532,7 +532,7 @@ loaded rules with their parameters.</div></blockquote>
 
 <dl class="function">
 <dt id="ctxalgolib.scripts.rule_checking.check_rules.start_alert_thread">
-<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">start_alert_thread</code><span class="sig-paren">(</span><em>alerta</em>, <em>alerta_key</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.start_alert_thread" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">ctxalgolib.scripts.rule_checking.check_rules.</code><code class="descname">start_alert_thread</code><span class="sig-paren">(</span><em>alerta</em>, <em>alerta_key</em>, <em>errors</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.rule_checking.check_rules.start_alert_thread" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
