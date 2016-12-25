@@ -289,6 +289,15 @@ latest_days_delta: int, the number of days before an instrument&#8217;s delivery
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.get_timestamp_from_time">
+<code class="descname">get_timestamp_from_time</code><span class="sig-paren">(</span><em>t</em>, <em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.get_timestamp_from_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine the time from time_ranges and the datetime from market periods.
+:param t: time, begin time or end time in time_ranges
+:param market_periods: [datetime], the market periods for the given on trading_day
+:return: datetime, the combined datetime.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.get_unique_account_signature">
 <code class="descname">get_unique_account_signature</code><span class="sig-paren">(</span><em>account_type</em>, <em>account_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.too_close_to_delivery_date_rule.TooCloseToDeliveryDateRule.get_unique_account_signature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a unique signature for the given account.
@@ -340,7 +349,7 @@ latest_days_delta: int, the number of days before an instrument&#8217;s delivery
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Dec 24, 2016.
+      Last updated on Dec 26, 2016.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
