@@ -169,7 +169,7 @@
 <dl class="method">
 <dt id="ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series">
 <code class="descname">series</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em>, <em>bars=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load time series with name.
+<dd><p>Load time series with name by rows.
 :param name: string, assume the name is a file name in self.folder, the file name ends with .csv extension.</p>
 <blockquote>
 <div>The data file is a csv file with comma-separated columns. The first rows is a header row, which defines
@@ -189,6 +189,35 @@ None means to end at the last row of the time series.</li>
 start_ts, end_ts will be ignored. For example, bars=100 means to return the last 100 rows
 in the data. If there is not enough rows to return (max rows &lt; 100), return the all the rows
 that the data has. If None, use start_ts and end_ts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[[object]], it is 2D array. Each inner array represents a row in the time series.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series_by_cloumn">
+<code class="descname">series_by_cloumn</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series_by_cloumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load time series with name by columns.
+:param name: string, assume the name is a file name in self.folder, the file name ends with .csv extension.</p>
+<blockquote>
+<div>The data file is a csv file with comma-separated columns. The first rows is a header row, which defines
+the field names of the time series. Use self.field_parsers and self.default_field_parser to parse
+the following rows in the file.
+If the file does not exist, return an empty array [].</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start_ts</strong> &#8211; datetime, the starting timestamp (inclusive).
+None means to start from the first row of the time series.</li>
+<li><strong>end_ts</strong> &#8211; datetime, the end timestamp (inclusive).
+None means to end at the last row of the time series.</li>
 </ul>
 </td>
 </tr>

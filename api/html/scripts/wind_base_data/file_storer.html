@@ -106,15 +106,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../wind/index.html">wind</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stock/index.html">stock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alpha_data/index.html">alpha_data</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">wind_base_data</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="trade_stock_list.html">trade_stock_list</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index_daily_data_downloader.html">index_daily_data_downloader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="abstract_downloader.html">abstract_downloader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ctx_logger.html">ctx_logger</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">file_storer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stock_list_downloader.html">stock_list_downloader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="trading_stock_list.html">trading_stock_list</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index_weight_downloader.html">index_weight_downloader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="abstract_storer.html">abstract_storer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="industry_index_downloader.html">industry_index_downloader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="downloader_factory.html">downloader_factory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="table_data_container.html">table_data_container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="raw_daily_data_downloader.html">raw_daily_data_downloader</a></li>
@@ -240,7 +242,7 @@
 <span id="file-storer"></span><h1>file_storer<a class="headerlink" href="#module-ctxalgolib.scripts.wind_base_data.file_storer" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.scripts.wind_base_data.file_storer.FileStorer">
-<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.wind_base_data.file_storer.</code><code class="descname">FileStorer</code><span class="sig-paren">(</span><em>table</em>, <em>path</em>, <em>date</em>, <em>append='a'</em>, <em>save_header=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.wind_base_data.file_storer.FileStorer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.scripts.wind_base_data.file_storer.</code><code class="descname">FileStorer</code><span class="sig-paren">(</span><em>table</em>, <em>path</em>, <em>date</em>, <em>append='a'</em>, <em>save_header=True</em>, <em>over_write=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.wind_base_data.file_storer.FileStorer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="abstract_storer.html#ctxalgolib.scripts.wind_base_data.abstract_storer.AbstractStorer" title="ctxalgolib.scripts.wind_base_data.abstract_storer.AbstractStorer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.scripts.wind_base_data.abstract_storer.AbstractStorer</span></code></a></p>
 <dl class="method">
 <dt id="ctxalgolib.scripts.wind_base_data.file_storer.FileStorer.load_data">
