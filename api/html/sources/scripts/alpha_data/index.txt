@@ -6,4 +6,5 @@ alpha_data
 
    generate_common_matrices
    generate_index_weight_matrices
+   generater_base_matrices
    series_column_utils
