@@ -7,6 +7,7 @@ ohlc
    holidays/index
    time_transformer
    exright
+   constraint_based_ohlc_generator
    volatility_ohlc_utils
    bar_arrival_request
    ohlc_spec_utils
