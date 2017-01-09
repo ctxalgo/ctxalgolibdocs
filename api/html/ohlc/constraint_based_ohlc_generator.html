@@ -203,6 +203,10 @@ c1&#8217; &lt;= h1, the close price must be smaller than or equal to the high pr
 c1&#8217; &gt;= l1, the close price must be larger than or equal to the high price (intrinsic constraint).</p>
 <p>To model the similarity of the new ohlc to the original ohlc, introduce the following minimization objective:</p>
 <p>Minimize: (c1&#8217;-c1)^2 + (c2&#8217;-c2)^2 + (cn&#8217;-cn)^2 + ... + (v1&#8217;-v1)^2 + ...</p>
+<p>Some useful OHLC APIs:
+To get every row from original_ohlc:  original_ohlc.get_bar
+To get an empty ohlc whose dimensions are the same as the original_ohlc: original_ohlc.get_empty_instance.
+To append a bar in an existing ohlc: ohlc.append_bar(bar).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
