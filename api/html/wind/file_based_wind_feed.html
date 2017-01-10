@@ -168,7 +168,7 @@
 
 <dl class="method">
 <dt id="ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series">
-<code class="descname">series</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em>, <em>bars=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series" title="Permalink to this definition">¶</a></dt>
+<code class="descname">series</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em>, <em>bars=None</em>, <em>have_suffix=False</em>, <em>have_header=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load time series with name by rows.
 :param name: string, assume the name is a file name in self.folder, the file name ends with .csv extension.</p>
 <blockquote>
@@ -180,7 +180,7 @@ If the file does not exist, return an empty array [].</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>start_ts</strong> &#8211; datetime, the starting timestamp (inclusive).
 None means to start from the first row of the time series.</li>
 <li><strong>end_ts</strong> &#8211; datetime, the end timestamp (inclusive).
@@ -192,16 +192,16 @@ that the data has. If None, use start_ts and end_ts.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[[object]], it is 2D array. Each inner array represents a row in the time series.</p>
-</td>
-</tr>
 </tbody>
 </table>
+<p>:param have_suffix:bool, if have file suffix.
+:param have_header:bool, if have column header in the file.
+:return: [[object]], it is 2D array. Each inner array represents a row in the time series.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series_by_cloumn">
-<code class="descname">series_by_cloumn</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series_by_cloumn" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series_by_column">
+<code class="descname">series_by_column</code><span class="sig-paren">(</span><em>name</em>, <em>start_ts=None</em>, <em>end_ts=None</em>, <em>have_suffix=False</em>, <em>have_header=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.wind.file_based_wind_feed.FileBasedWindFeed.series_by_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load time series with name by columns.
 :param name: string, assume the name is a file name in self.folder, the file name ends with .csv extension.</p>
 <blockquote>
@@ -213,7 +213,7 @@ If the file does not exist, return an empty array [].</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>start_ts</strong> &#8211; datetime, the starting timestamp (inclusive).
 None means to start from the first row of the time series.</li>
 <li><strong>end_ts</strong> &#8211; datetime, the end timestamp (inclusive).
@@ -221,11 +221,11 @@ None means to end at the last row of the time series.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">[[object]], it is 2D array. Each inner array represents a row in the time series.</p>
-</td>
-</tr>
 </tbody>
 </table>
+<p>:param have_suffix:bool, if have file suffix.
+:param have_header:bool, if have column header in the file.
+:return: [[object]], it is 2D array. Each inner array represents a row in the time series.</p>
 </dd></dl>
 
 <dl class="method">

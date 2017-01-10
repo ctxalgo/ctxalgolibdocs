@@ -32,7 +32,7 @@
   
     <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
         <link rel="up" title="alpha_data" href="index.html"/>
-        <link rel="next" title="generate_index_weight_matrices" href="generate_index_weight_matrices.html"/>
+        <link rel="next" title="generate_index_daily_matrices" href="generate_index_daily_matrices.html"/>
         <link rel="prev" title="alpha_data" href="index.html"/> 
 
   
@@ -108,7 +108,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../stock/index.html">stock</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">alpha_data</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">generate_common_matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generate_index_daily_matrices.html">generate_index_daily_matrices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="generate_index_weight_matrices.html">generate_index_weight_matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generate_alpha_data_matrices.html">generate_alpha_data_matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generate_kline_matrices.html">generate_kline_matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generate_matrix_utils.html">generate_matrix_utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="generater_base_matrices.html">generater_base_matrices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="series_column_utils.html">series_column_utils</a></li>
 </ul>
@@ -233,33 +237,8 @@
   <div class="section" id="module-ctxalgolib.scripts.alpha_data.generate_common_matrices">
 <span id="generate-common-matrices"></span><h1>generate_common_matrices<a class="headerlink" href="#module-ctxalgolib.scripts.alpha_data.generate_common_matrices" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="ctxalgolib.scripts.alpha_data.generate_common_matrices.save_file">
-<code class="descclassname">ctxalgolib.scripts.alpha_data.generate_common_matrices.</code><code class="descname">save_file</code><span class="sig-paren">(</span><em>file_name</em>, <em>values</em>, <em>field_parser</em>, <em>mode='a'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.alpha_data.generate_common_matrices.save_file" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="ctxalgolib.scripts.alpha_data.generate_common_matrices.get_pos_by_date">
-<code class="descclassname">ctxalgolib.scripts.alpha_data.generate_common_matrices.</code><code class="descname">get_pos_by_date</code><span class="sig-paren">(</span><em>timestamps</em>, <em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.alpha_data.generate_common_matrices.get_pos_by_date" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="ctxalgolib.scripts.alpha_data.generate_common_matrices.dummy_special_string">
-<code class="descclassname">ctxalgolib.scripts.alpha_data.generate_common_matrices.</code><code class="descname">dummy_special_string</code><span class="sig-paren">(</span><em>special_str</em>, <em>len</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.alpha_data.generate_common_matrices.dummy_special_string" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="ctxalgolib.scripts.alpha_data.generate_common_matrices.align_columns">
-<code class="descclassname">ctxalgolib.scripts.alpha_data.generate_common_matrices.</code><code class="descname">align_columns</code><span class="sig-paren">(</span><em>column_len</em>, <em>output</em>, <em>table_name</em>, <em>fields</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.alpha_data.generate_common_matrices.align_columns" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="ctxalgolib.scripts.alpha_data.generate_common_matrices.generate_alpha_matrices">
-<code class="descclassname">ctxalgolib.scripts.alpha_data.generate_common_matrices.</code><code class="descname">generate_alpha_matrices</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em>, <em>input</em>, <em>output</em>, <em>table_name</em>, <em>fields</em>, <em>alignment</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.alpha_data.generate_common_matrices.generate_alpha_matrices" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="ctxalgolib.scripts.alpha_data.generate_common_matrices.generate_all_matrices">
-<code class="descclassname">ctxalgolib.scripts.alpha_data.generate_common_matrices.</code><code class="descname">generate_all_matrices</code><span class="sig-paren">(</span><em>input</em>, <em>output</em>, <em>table_name</em>, <em>fields</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.alpha_data.generate_common_matrices.generate_all_matrices" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.scripts.alpha_data.generate_common_matrices.generate_common_matrices">
+<code class="descclassname">ctxalgolib.scripts.alpha_data.generate_common_matrices.</code><code class="descname">generate_common_matrices</code><span class="sig-paren">(</span><em>start_date</em>, <em>end_date</em>, <em>input</em>, <em>output</em>, <em>table_name</em>, <em>fields</em>, <em>alignment</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.alpha_data.generate_common_matrices.generate_common_matrices" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
@@ -291,7 +270,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="generate_index_weight_matrices.html" class="btn btn-neutral float-right" title="generate_index_weight_matrices" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="generate_index_daily_matrices.html" class="btn btn-neutral float-right" title="generate_index_daily_matrices" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="alpha_data" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

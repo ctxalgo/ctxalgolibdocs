@@ -11,6 +11,7 @@ wind_base_data
    file_storer
    stock_list_downloader
    index_weight_downloader
+   wind_daily_downloader
    abstract_storer
    industry_index_downloader
    downloader_factory
