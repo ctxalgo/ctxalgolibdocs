@@ -12,9 +12,11 @@ ohlc
    bar_arrival_request
    ohlc_spec_utils
    ctp_file_log_reader
+   ohlc_comparer
    ohlc_concatenator
    bar_generator
    ohlc_equality_checker
+   ohlc_binary_reader_writer
    ohlc_logger
    abstract_ohlc
    ohlc_utils

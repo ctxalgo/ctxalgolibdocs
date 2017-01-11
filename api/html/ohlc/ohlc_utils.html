@@ -101,9 +101,11 @@
 <li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_comparer.html">ohlc_comparer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_binary_reader_writer.html">ohlc_binary_reader_writer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_logger.html">ohlc_logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="abstract_ohlc.html">abstract_ohlc</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ohlc_utils</a></li>
@@ -507,20 +509,6 @@ The value is put into self.closes.
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.jpeg">
-<code class="descname">jpeg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.jpeg" title="Permalink to this definition">¶</a></dt>
-<dd><p>Display ohlc JPEG image in Ipython notebook inline.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.next">
 <code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.next" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -675,45 +663,6 @@ time_delta: timedelta, if not None, add this delta to all timestamps.</p>
 :param path: string, path of the file.
 :param append: boolean, If True, append to existing file.
 :param header: boolean, If True, include a header.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcComparer">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">OhlcComparer</code><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcComparer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="ctxalgolib.ohlc.ohlc_utils.OhlcComparer.compare">
-<code class="descname">compare</code><span class="sig-paren">(</span><em>ohlc1</em>, <em>ohlc2</em>, <em>minimal_bar_height=0.01</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OhlcComparer.compare" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compare ohlc1 and ohlc2 and return the comparison report.
-Only need to compare opens, highs, lows, closes and volumes.
-Parameters:</p>
-<blockquote>
-<div>ohlc1: OHLC, the first ohlc object.
-ohlc2: OHLC, the second ohlc object.
-minimal_bar_height: float, the minimal bar height, used in case if some ohlc bar has height 0.</div></blockquote>
-<dl class="docutils">
-<dt>Return:</dt>
-<dd><dl class="first last docutils">
-<dt>dict from string to objects. Keys include:</dt>
-<dd>missing_bars1: int,
-missing_bars2: int,
-common_bars: int,
-same_open_bars: int,
-same_high_bars: int,
-same_low_bars: int,
-same_close_bars: int,
-same_volume_bars: int,
-bar_distances: [float],
-correlation_between_opens: float,
-correlation_between_highs: float,
-correlation_between_lows: float,
-correlation_between_closes: float,
-correlation_between_volumes: float</dd>
-</dl>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1125,7 +1074,7 @@ Synchronization is performed as:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 10, 2017.
+      Last updated on Jan 11, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

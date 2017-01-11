@@ -99,6 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../position_sizing/index.html">position_sizing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../zhangdeyi/index.html">zhangdeyi</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">optimization</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="walk_forward_parameter_getter.html">walk_forward_parameter_getter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="parameters.html">parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="optimizer.html">optimizer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="regularizer.html">regularizer</a></li>
@@ -286,50 +287,6 @@ backtesting.</p>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="ctxalgolib.ta.optimization.walk_forward.WalkForwardParameterGetter">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ta.optimization.walk_forward.</code><code class="descname">WalkForwardParameterGetter</code><span class="sig-paren">(</span><em>initial_parameters</em>, <em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.walk_forward.WalkForwardParameterGetter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Initialize current.
-:param initial_parameters: dict{string: object}, initial parameters.</p>
-<blockquote>
-<div>Keys are parameter names, values are parameter values.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parameters</strong> &#8211; Parameters used in different periods. Each element represents a period (a number of
-consecutive trading days) in which the strategy uses the same set of parameters. Each element is a
-dict {string: object}. The dict has the following keys: start_date, end_date and parameters.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="ctxalgolib.ta.optimization.walk_forward.WalkForwardParameterGetter.parameters">
-<code class="descname">parameters</code><span class="sig-paren">(</span><em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.walk_forward.WalkForwardParameterGetter.parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the parameters used on the given trading day.
-Implementation note: this method should have constant execution time. This means no linear search
-based on trading_day. Use dict to find out the result. This means we need to store all dates between
-the walk-forwarded period.
-:param trading_day: date or string in form of yyyy-mm-dd, trading day.
-:return: dict{string: object} The parameters to use on trading_day, according to</p>
-<blockquote>
-<div>the result of walk-forward optimization.
-Keys are parameter names, values are parameter values.
-For parameters participated in optimization, their values are decided by the walk-forward optimization.
-For parameters not participated in optimization or trading_day is before the first predication window,
-use self.initial_parameters to find the values for parameters.</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.ta.optimization.walk_forward.WalkForwardParameterGetter.set_today">
-<code class="descname">set_today</code><span class="sig-paren">(</span><em>today</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.optimization.walk_forward.WalkForwardParameterGetter.set_today" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set self.today with today.
-:param today: date, the value to set.</p>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 
 
@@ -352,7 +309,7 @@ use self.initial_parameters to find the values for parameters.</div></blockquote
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 10, 2017.
+      Last updated on Jan 11, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

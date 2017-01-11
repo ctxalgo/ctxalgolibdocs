@@ -4,6 +4,7 @@ optimization
 .. toctree::
    :maxdepth: 2
 
+   walk_forward_parameter_getter
    parameters
    optimizer
    regularizer
