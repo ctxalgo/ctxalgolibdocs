@@ -12,4 +12,5 @@ wind
    wind_api_util
    draw_report
    data_downloader
+   download_future_periods_data
    download_trading_data
