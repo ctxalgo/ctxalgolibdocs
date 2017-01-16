@@ -321,6 +321,14 @@ This means there is a single source named market_broker1, and its type is future
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.liveness_rule.LivenessRule.handle_parameters">
+<code class="descname">handle_parameters</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.liveness_rule.LivenessRule.handle_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle comma-separated strings in source names.
+:parameters: dict{string: object}, parameters to the current rule.
+:return: dict{string: object}, source names not contain comma.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.rule_checking.rules.liveness_rule.LivenessRule.is_message_valid">
 <code class="descname">is_message_valid</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.liveness_rule.LivenessRule.is_message_valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is the given message valid?
