@@ -6,4 +6,5 @@ rule_checking
 
    stress/index
    message_proxies
+   close_alerts
    check_rules
