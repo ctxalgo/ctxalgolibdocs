@@ -213,8 +213,8 @@ If 0, no waiting.</li>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSender.send_infomation">
-<code class="descname">send_infomation</code><span class="sig-paren">(</span><em>source</em>, <em>message</em>, <em>body=None</em>, <em>error_code=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSender.send_infomation" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSender.send_information">
+<code class="descname">send_information</code><span class="sig-paren">(</span><em>source</em>, <em>message</em>, <em>body=None</em>, <em>error_code=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSender.send_information" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a piece of information.
 :param source: string, source of the information.
 :param message: string, message.
@@ -229,6 +229,47 @@ If 0, no waiting.</li>
 <dl class="method">
 <dt id="ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSender.should_send_through_thread">
 <code class="descname">should_send_through_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSender.should_send_through_thread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rule_checker_message_sender.</code><code class="descname">RuleCheckerMessageSendingUtils</code><a class="headerlink" href="#ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils.send_exception">
+<em class="property">static </em><code class="descname">send_exception</code><span class="sig-paren">(</span><em>source</em>, <em>title</em>, <em>content</em>, <em>error_code</em>, <em>rule_checker_address</em>, <em>context=None</em>, <em>sleep_second=5</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils.send_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send an exception to the rule checker.
+:param source: string, the source of the exception.
+:param title: string, the title of the alert.
+:param content: string, arbitrary data representing the exception.
+:param error_code: ErrorCodes, the error code. If None, a default error code is used.
+:param rule_checker_address: string, the zmq address to the rule checker.
+:param context: zmq context, If None, create a new zmq context.
+:param sleep_second: int, the number of seconds to sleep after zmq socket connection and after message sending.</p>
+<blockquote>
+<div>To reduce the possibility of the slow joiner problem.</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils.send_information">
+<em class="property">static </em><code class="descname">send_information</code><span class="sig-paren">(</span><em>source</em>, <em>title</em>, <em>body</em>, <em>rule_checker_address</em>, <em>context=None</em>, <em>sleep_second=5</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils.send_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send an information to the rule checker.
+:param source: string, the source of the exception.
+:param title: string, the title of the alert.
+:param body: string, arbitrary data representing the exception.
+:param rule_checker_address:
+:param rule_checker_address: string, the zmq address to the rule checker.
+:param context: zmq context, If None, create a new zmq context.
+:param sleep_second: int, the number of seconds to sleep after zmq socket connection and after message sending.</p>
+<blockquote>
+<div>To reduce the possibility of the slow joiner problem.</div></blockquote>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils.send">
+<em class="property">static </em><code class="descname">send</code><span class="sig-paren">(</span><em>rule_checker</em>, <em>method</em>, <em>args</em>, <em>context=None</em>, <em>sleep_second=5</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rule_checker_message_sender.RuleCheckerMessageSendingUtils.send" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -255,7 +296,7 @@ If 0, no waiting.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 16, 2017.
+      Last updated on Jan 19, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
