@@ -159,6 +159,23 @@
 <dt id="ctxalgolib.statistics.minite_twap_demo_calculator.MinuteTwapDemoCalculator">
 <em class="property">class </em><code class="descclassname">ctxalgolib.statistics.minite_twap_demo_calculator.</code><code class="descname">MinuteTwapDemoCalculator</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>date_column</em>, <em>time_column</em>, <em>milli_column</em>, <em>price_column</em>, <em>start_output_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.minite_twap_demo_calculator.MinuteTwapDemoCalculator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="abstract_statistics_calculator.html#ctxalgolib.statistics.abstract_statistics_calculator.AbstractStatisticsCalculator" title="ctxalgolib.statistics.abstract_statistics_calculator.AbstractStatisticsCalculator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.statistics.abstract_statistics_calculator.AbstractStatisticsCalculator</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_id</strong> &#8211; string, the instrument.</li>
+<li><strong>date_column</strong> &#8211; int, cannot be None, 0-based column index in tick data to find the date component.</li>
+<li><strong>time_column</strong> &#8211; int, cannot be None, 0-based column index in tick data to find the time component.</li>
+<li><strong>milli_column</strong> &#8211; int, 0-based column index in tick data to find the millisecond component.
+If millisecond component does not exist in tick data, set it to None.</li>
+<li><strong>price_column</strong> &#8211; int, cannot be None, 0-based column index in tick data to find the price component.</li>
+<li><strong>start_output_date</strong> &#8211; date, start output date.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="ctxalgolib.statistics.minite_twap_demo_calculator.MinuteTwapDemoCalculator.add_daily_data">
 <code class="descname">add_daily_data</code><span class="sig-paren">(</span><em>trading_day</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.statistics.minite_twap_demo_calculator.MinuteTwapDemoCalculator.add_daily_data" title="Permalink to this definition">¶</a></dt>
