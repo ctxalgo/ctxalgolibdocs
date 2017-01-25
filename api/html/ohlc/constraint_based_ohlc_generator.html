@@ -187,9 +187,27 @@
 </dd></dl>
 
 <dl class="class">
-<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.OhlcBarConstraint">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">OhlcBarConstraint</code><span class="sig-paren">(</span><em>dimension</em>, <em>operator</em>, <em>value</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.OhlcBarConstraint" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">AbstractOhlcBarConstraint</code><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint.is_direct">
+<code class="descname">is_direct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint.is_direct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint.is_relative">
+<code class="descname">is_relative</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint.is_relative" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.DirectOhlcBarConstraint">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">DirectOhlcBarConstraint</code><span class="sig-paren">(</span><em>dimension</em>, <em>operator</em>, <em>value</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.DirectOhlcBarConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint" title="ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint</span></code></a></p>
+<p>Direction constraint describes the property of a dimension of a set of rows with respect to a constant.
+For example, high value of a set of rows must be &gt;= 1000.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -207,6 +225,52 @@ If None, use the last timestamp in the ohlc.</li>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.DirectOhlcBarConstraint.is_direct">
+<code class="descname">is_direct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.DirectOhlcBarConstraint.is_direct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.DirectOhlcBarConstraint.is_relative">
+<code class="descname">is_relative</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.DirectOhlcBarConstraint.is_relative" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">RelativeOhlcBarConstraint</code><span class="sig-paren">(</span><em>source_date</em>, <em>source_dimension</em>, <em>operator</em>, <em>target_start_date=None</em>, <em>target_end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint" title="ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint</span></code></a></p>
+<p>Relative constraint describes the property of a dimension (called target dimension) of a set of
+rows (called target rows) with respect to a dimension (called source dimension) of another row (called source row).
+For example, high value of a set of rows must be smaller than the low value of another row.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source_date</strong> &#8211; datetime, the timestamp of the source row.</li>
+<li><strong>source_dimension</strong> &#8211; string, the dimension name of the source row.</li>
+<li><strong>operator</strong> &#8211; string, the constraint operator.</li>
+<li><strong>target_start_date</strong> &#8211; datetime, the stat timestamp of target rows, inclusive.
+If None, use the first timestamp in the ohlc.</li>
+<li><strong>target_end_date</strong> &#8211; datetime, the end timestamp of target rows, inclusive.
+If None, use the last timestamp in the ohlc.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint.is_relative">
+<code class="descname">is_relative</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint.is_relative" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint.is_direct">
+<code class="descname">is_direct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint.is_direct" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -264,13 +328,34 @@ Z3_LIBRARY_PATH pointing to the z3 dll/so file, located in z3/build/python.</p>
 <dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>constraint</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a constraint.
-:param constraint: OhlcBarConstraint, the constraint to add.</p>
+:param constraint: AbstractOhlcBarConstraint, the constraint to add.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_constraint">
-<code class="descname">add_constraint</code><span class="sig-paren">(</span><em>dimension</em>, <em>operator</em>, <em>value</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_constraint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a constraint into current generator.
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_relative_constraint">
+<code class="descname">add_relative_constraint</code><span class="sig-paren">(</span><em>source_date</em>, <em>source_dimension</em>, <em>operator</em>, <em>target_start_date=None</em>, <em>target_end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_relative_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a relative constraint.
+:param source_date: datetime, the timestamp of the source row.
+:param source_dimension: string, the dimension name of the source row.
+:param operator: string, the constraint operator.
+:param target_start_date: datetime, the stat timestamp of target rows, inclusive.</p>
+<blockquote>
+<div>If None, use the first timestamp in the ohlc.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>target_end_date</strong> &#8211; datetime, the end timestamp of target rows, inclusive.
+If None, use the last timestamp in the ohlc.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_direct_constraint">
+<code class="descname">add_direct_constraint</code><span class="sig-paren">(</span><em>dimension</em>, <em>operator</em>, <em>value</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_direct_constraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a direct constraint into current generator.
 :param dimension: string, the dimension name of the constraint, such as OhlcAttributes.highs.
 :param operator: string, the constraint operator.
 :param value: int/float, the value part of the constraint.
