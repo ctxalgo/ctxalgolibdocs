@@ -171,6 +171,45 @@
   <div class="section" id="constraint-based-ohlc-generator">
 <h1>constraint_based_ohlc_generator<a class="headerlink" href="#constraint-based-ohlc-generator" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-ctxalgolib.ohlc.constraint_based_ohlc_generator"></span><dl class="class">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGeneratorConstants">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">ConstraintBasedOhlcGeneratorConstants</code><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGeneratorConstants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGeneratorConstants.supported_dimensions">
+<code class="descname">supported_dimensions</code><em class="property"> = set(['closes', 'bid_price1', 'bid_volume1', 'ask_volume1', 'highs', 'ask_price1', 'lows', 'volumes', 'opens'])</em><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGeneratorConstants.supported_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGeneratorConstants.supported_operators">
+<code class="descname">supported_operators</code><em class="property"> = set(['&gt;', '&lt;=', '=', '&lt;', '&gt;='])</em><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGeneratorConstants.supported_operators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.OhlcBarConstraint">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">OhlcBarConstraint</code><span class="sig-paren">(</span><em>dimension</em>, <em>operator</em>, <em>value</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.OhlcBarConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dimension</strong> &#8211; string, the dimension name of the constraint, such as OhlcAttributes.highs.</li>
+<li><strong>operator</strong> &#8211; string, the constraint operator.</li>
+<li><strong>value</strong> &#8211; int/float, the value part of the constraint.</li>
+<li><strong>start_date</strong> &#8211; datetime, the stat timestamp, inclusive.
+If None, use the first timestamp in the ohlc.</li>
+<li><strong>end_date</strong> &#8211; datetime, the end timestamp, inclusive.
+If None, use the last timestamp in the ohlc.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
 <dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator">
 <em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">ConstraintBasedOhlcGenerator</code><span class="sig-paren">(</span><em>original_ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
@@ -205,10 +244,10 @@ c1&#8217; &lt;= h1, the close price must be smaller than or equal to the high pr
 c1&#8217; &gt;= l1, the close price must be larger than or equal to the high price (intrinsic constraint).</p>
 <p>To model the similarity of the new ohlc to the original ohlc, introduce the following minimization objective:</p>
 <p>Minimize: (c1&#8217;-c1)^2 + (c2&#8217;-c2)^2 + (cn&#8217;-cn)^2 + ... + (v1&#8217;-v1)^2 + ...</p>
-<p>Some useful OHLC APIs:
-To get every row from original_ohlc:  original_ohlc.get_bar
-To get an empty ohlc whose dimensions are the same as the original_ohlc: original_ohlc.get_empty_instance.
-To append a bar in an existing ohlc: ohlc.append_bar(bar).</p>
+<p>To use the class, you must have z3 installed, follow instructions from <a class="reference external" href="https://github.com/Z3Prover/z3">https://github.com/Z3Prover/z3</a> to install
+z3. After installation, you need to setup z3. Follow the instructions from the z3 python build example file,
+located in z3/build/python/example.py to setup. And you need to declare an environment variable
+Z3_LIBRARY_PATH pointing to the z3 dll/so file, located in z3/build/python.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -221,6 +260,13 @@ To append a bar in an existing ohlc: ohlc.append_bar(bar).</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>constraint</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a constraint.
+:param constraint: OhlcBarConstraint, the constraint to add.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_constraint">
 <code class="descname">add_constraint</code><span class="sig-paren">(</span><em>dimension</em>, <em>operator</em>, <em>value</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_constraint" title="Permalink to this definition">¶</a></dt>
@@ -237,8 +283,6 @@ To append a bar in an existing ohlc: ohlc.append_bar(bar).</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>end_date</strong> &#8211; datetime, the end timestamp, inclusive.
 If None, use the last timestamp in self.original_ohlc.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>

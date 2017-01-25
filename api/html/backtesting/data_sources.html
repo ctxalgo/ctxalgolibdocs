@@ -1227,7 +1227,7 @@ If None, use the last available date from data.</li>
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.from_file">
-<em class="property">static </em><code class="descname">from_file</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path</em>, <em>market_period_provider=None</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.from_file" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">from_file</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path</em>, <em>market_period_provider=None</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em>, <em>constraints=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.BacktestingOhlcDataSource.from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a data source by loading data from path.
 :param instrument_id: string, the instrument id.
 :param path: string, the file containing the ohlc data.</p>
@@ -1255,6 +1255,7 @@ If line parser is None, a default parser is used.</li>
 <li><strong>ohlc_reader</strong> &#8211; AbstractOhlcReader, the reader to read an ohlc from file.
 It can be a text reader or a binary reader.
 If not None, use this reader to load ohlc data from file.</li>
+<li><strong>constraints</strong> &#8211; [OhlcBarConstraint], list of constraints for new ohlc.</li>
 </ul>
 </td>
 </tr>
@@ -1594,7 +1595,7 @@ Most inner values are the OHLC objects containing ohlc bars that are generated.<
 <p>Class to provide convenient methods to generate data sources.</p>
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate">
-<code class="descname">generate</code><span class="sig-paren">(</span><em>instrument_ids</em>, <em>market_period_provider</em>, <em>period</em>, <em>start_date</em>, <em>end_date</em>, <em>base_folder</em>, <em>data_folder=None</em>, <em>override_existing=False</em>, <em>data_paths=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>kind=None</em>, <em>exchange=None</em>, <em>market=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate</code><span class="sig-paren">(</span><em>instrument_ids</em>, <em>market_period_provider</em>, <em>period</em>, <em>start_date</em>, <em>end_date</em>, <em>base_folder</em>, <em>data_folder=None</em>, <em>override_existing=False</em>, <em>data_paths=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>kind=None</em>, <em>exchange=None</em>, <em>market=None</em>, <em>constraints=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate data source for backtesting testing.
 If period is Periodicity.TICK, it is assumed that the tick data is already inside data_folder.
 Otherwise, the trading data will be downloaded from ctxalgo.com when it does not exist or
@@ -1636,6 +1637,7 @@ amount: float, the amount of money that has been traded, if there is no amount d
 <li><strong>ohlc_reader</strong> &#8211; AbstractOhlcReader, the reader to read an ohlc from file.
 It can be a text reader or a binary reader.
 If not None, use this reader to load ohlc data from file.</li>
+<li><strong>constraints</strong> &#8211; [OhlcBarConstraint], the list of constraints used to generate new ohlc.</li>
 </ul>
 </td>
 </tr>
@@ -1688,7 +1690,7 @@ return None.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate_for_single_instrument">
-<code class="descname">generate_for_single_instrument</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>period</em>, <em>market_period_provider</em>, <em>start_date</em>, <em>end_date</em>, <em>data_folder</em>, <em>override_existing=False</em>, <em>data_path=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>kind=None</em>, <em>exchange=None</em>, <em>market=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate_for_single_instrument" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate_for_single_instrument</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>period</em>, <em>market_period_provider</em>, <em>start_date</em>, <em>end_date</em>, <em>data_folder</em>, <em>override_existing=False</em>, <em>data_path=None</em>, <em>line_parser=None</em>, <em>use_natural_day=False</em>, <em>ohlc_reader=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>kind=None</em>, <em>exchange=None</em>, <em>market=None</em>, <em>constraints=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.backtesting.data_sources.DataSourceGenerator.generate_for_single_instrument" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate data source for a single instrument.
 :param instrument_id: string, the instrument id whose data should be included.
 :param period: Periodicity, the backtesting period.
@@ -1710,6 +1712,7 @@ In tick level mode, this file must be a folder, in ohlc bar mode, this path must
 <li><strong>ohlc_reader</strong> &#8211; AbstractOhlcReader, the reader to read an ohlc from file.
 It can be a text reader or a binary reader.
 If not None, use this reader to load ohlc data from file.</li>
+<li><strong>constraints</strong> &#8211; [OhlcBarConstraint], the list of constraints.</li>
 </ul>
 </td>
 </tr>
