@@ -1,0 +1,26 @@
+---
+layout: default
+title: docs_data
+---
+{% assign file_name = "docs_data" %}
+<div>
+    <h2>{{ site.data.page.list[file_name].en.title }}</h2>
+    <p>{{ site.data.page.list[file_name].en.desc }}</p>
+    <br>
+    <ul>
+        {% for cate in site.categories %}
+            {% if cate[0] == 'docs_data' %}
+                {% for post in cate[1] %}
+                    {% if post.language == 'en' %}
+                        <li>
+                            <h4>
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </h4>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
