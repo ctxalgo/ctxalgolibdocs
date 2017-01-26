@@ -239,18 +239,32 @@ If None, use the last timestamp in the ohlc.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">RelativeOhlcBarConstraint</code><span class="sig-paren">(</span><em>source_date</em>, <em>source_dimension</em>, <em>operator</em>, <em>target_start_date=None</em>, <em>target_end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">RelativeOhlcBarConstraint</code><span class="sig-paren">(</span><em>source_date</em>, <em>source_dimension</em>, <em>c</em>, <em>operator</em>, <em>target_dimension</em>, <em>target_start_date=None</em>, <em>target_end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.RelativeOhlcBarConstraint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint" title="ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.constraint_based_ohlc_generator.AbstractOhlcBarConstraint</span></code></a></p>
 <p>Relative constraint describes the property of a dimension (called target dimension) of a set of
 rows (called target rows) with respect to a dimension (called source dimension) of another row (called source row).
 For example, high value of a set of rows must be smaller than the low value of another row.</p>
+<p>Example constraints:
+1. high of row2 and row3 is larger than close of row1 + 5.</p>
+<blockquote>
+<div>target_dimension=high, target_start_date and target_end_date=row2, row3,
+source_date=row1, source_dimension=close, operator is &gt;,
+c=5.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>close of row10 to row20 equals the low of row2.
+target_dimension=close, target_start_date and target_end_date=row10,row20,
+source_date=row2, source_dimension=low, operator is =,
+c=0.</li>
+</ol>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>source_date</strong> &#8211; datetime, the timestamp of the source row.</li>
+<li><strong>source_date</strong> &#8211; datetime, the timestamp of the source row.
+Note, the source is always a single row.</li>
 <li><strong>source_dimension</strong> &#8211; string, the dimension name of the source row.</li>
+<li><strong>c</strong> &#8211; int/float, a constant.</li>
 <li><strong>operator</strong> &#8211; string, the constraint operator.</li>
 <li><strong>target_start_date</strong> &#8211; datetime, the stat timestamp of target rows, inclusive.
 If None, use the first timestamp in the ohlc.</li>
@@ -333,11 +347,13 @@ Z3_LIBRARY_PATH pointing to the z3 dll/so file, located in z3/build/python.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_relative_constraint">
-<code class="descname">add_relative_constraint</code><span class="sig-paren">(</span><em>source_date</em>, <em>source_dimension</em>, <em>operator</em>, <em>target_start_date=None</em>, <em>target_end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_relative_constraint" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_relative_constraint</code><span class="sig-paren">(</span><em>source_date</em>, <em>source_dimension</em>, <em>c</em>, <em>operator</em>, <em>target_dimension</em>, <em>target_start_date=None</em>, <em>target_end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.add_relative_constraint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a relative constraint.
 :param source_date: datetime, the timestamp of the source row.
 :param source_dimension: string, the dimension name of the source row.
+:param c: int/float, constant.
 :param operator: string, the constraint operator.
+:param target_dimension: string, target dimension.
 :param target_start_date: datetime, the stat timestamp of target rows, inclusive.</p>
 <blockquote>
 <div>If None, use the first timestamp in the ohlc.</div></blockquote>
