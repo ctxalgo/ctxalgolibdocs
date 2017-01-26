@@ -434,48 +434,26 @@ period on that trading day.
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_period_timestamps">
-<code class="descname">get_period_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_period_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get timestamp list of the period in a day
-:param period: eg:5m,15m,30m, but is&#8217;t more then 1d
-:param instrument_id: if stock, it is None. if future, it must be set.
-:return: [timestamp]</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_period_string_timestamps">
-<code class="descname">get_period_string_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_period_string_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get timestamp list of the period in a day
-:param period: eg:5m,15m,30m, but is&#8217;t more then 1d
-:param instrument_id: if stock, it is None. if future, it must be set.
-:return: [string]</p>
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_bar_end_timestamps">
+<code class="descname">get_bar_end_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_bar_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all end timestamps of  bars in a period during a trading day
+:param period: periodicity, eg:1m,3m,5m,30m..., but is&#8217;t more then 1d
+:param instrument_id: string, if stock, it is None. if future, it must be set.
+:parm trading_day:date, get trading time by it.trading time of a product maybe be changed and not fixed
+:return: [time]</p>
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_period_second">
-<em class="property">static </em><code class="descname">get_period_second</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_period_second" title="Permalink to this definition">¶</a></dt>
-<dd><p>get periodicity from string name
-:param name, string, include 3s,10s,30s, 1m, 5m, 30m, 120m, not more than 1d
-:return int, interval second of a period</p>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.time_string_to_second">
-<em class="property">static </em><code class="descname">time_string_to_second</code><span class="sig-paren">(</span><em>time_s</em>, <em>separator=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.time_string_to_second" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.time_to_seconds">
+<em class="property">static </em><code class="descname">time_to_seconds</code><span class="sig-paren">(</span><em>time_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.time_to_seconds" title="Permalink to this definition">¶</a></dt>
 <dd><p>translate time to second integer
-:param time_s:  time format
-:param separator: separator symbol in time
+:param <a href="#id1"><span class="problematic" id="id2">time_</span></a>: time
 :return:int, second integer</p>
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.second_to_time_string">
-<em class="property">static </em><code class="descname">second_to_time_string</code><span class="sig-paren">(</span><em>second</em>, <em>separator=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.second_to_time_string" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="staticmethod">
-<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.second_to_time">
-<em class="property">static </em><code class="descname">second_to_time</code><span class="sig-paren">(</span><em>second</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.second_to_time" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.seconds_to_time">
+<em class="property">static </em><code class="descname">seconds_to_time</code><span class="sig-paren">(</span><em>second</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.seconds_to_time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -484,11 +462,6 @@ period on that trading day.
 <dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils">
 <em class="property">class </em><code class="descclassname">ctxalgolib.trading_utils.trading_utils.</code><code class="descname">StockTradingUtils</code><span class="sig-paren">(</span><em>trading_days=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils" title="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils</span></code></a></p>
-<dl class="attribute">
-<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.trade_times">
-<code class="descname">trade_times</code><em class="property"> = [('09:30:00', '11:30:00'), ('13:00:00', '15:00:00')]</em><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.trade_times" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.market_periods">
 <code class="descname">market_periods</code><span class="sig-paren">(</span><em>instrument_prefix</em>, <em>day</em>, <em>dominant=None</em>, <em>new=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.market_periods" title="Permalink to this definition">¶</a></dt>
@@ -505,21 +478,13 @@ period on that trading day.
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_period_timestamps">
-<code class="descname">get_period_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_period_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get timestamps list of the period in a day
-:param period: eg:5m,15m,30m,120m but it is&#8217;t more then 1d
-:param instrument_id: if stock, it is None. if future, it must be set.
-:return: [timestamp]</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_period_string_timestamps">
-<code class="descname">get_period_string_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_period_string_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get timestamps list of the period in a day
-:param period: eg:5m,15m,30m,120m but it is&#8217;t more then 1d
-:param instrument_id: if stock, it is None. if future, it must be set.
-:return: [string]</p>
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_bar_end_timestamps">
+<code class="descname">get_bar_end_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_bar_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all end timestamps of  bars in a period during a trading day
+:param period: periodicity, eg:1m,3m,5m,30m..., but is&#8217;t more then 1d
+:param instrument_id: string, if stock, it is None. if future, it must be set.
+:parm trading_day:date, get trading time by it.trading time of a product maybe be changed and not fixed
+:return: [time]</p>
 </dd></dl>
 
 <dl class="method">
@@ -626,14 +591,6 @@ Next trading days means that at ts point of time, which trading day should ts be
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_period_second">
-<code class="descname">get_period_second</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_period_second" title="Permalink to this definition">¶</a></dt>
-<dd><p>get periodicity from string name
-:param name, string, include 3s,10s,30s, 1m, 5m, 30m, 120m, not more than 1d
-:return int, interval second of a period</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_previous_trading_day_end_time">
 <code class="descname">get_previous_trading_day_end_time</code><span class="sig-paren">(</span><em>now</em>, <em>all_market_end_time=datetime.time(15</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_previous_trading_day_end_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the market end time of the previous trading day, given current timestamp.
@@ -691,21 +648,15 @@ trading day that ts belong to?
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.second_to_time">
-<code class="descname">second_to_time</code><span class="sig-paren">(</span><em>second</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.second_to_time" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.seconds_to_time">
+<code class="descname">seconds_to_time</code><span class="sig-paren">(</span><em>second</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.seconds_to_time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.second_to_time_string">
-<code class="descname">second_to_time_string</code><span class="sig-paren">(</span><em>second</em>, <em>separator=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.second_to_time_string" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.time_string_to_second">
-<code class="descname">time_string_to_second</code><span class="sig-paren">(</span><em>time_s</em>, <em>separator=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.time_string_to_second" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.time_to_seconds">
+<code class="descname">time_to_seconds</code><span class="sig-paren">(</span><em>time_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.time_to_seconds" title="Permalink to this definition">¶</a></dt>
 <dd><p>translate time to second integer
-:param time_s:  time format
-:param separator: separator symbol in time
+:param <a href="#id3"><span class="problematic" id="id4">time_</span></a>: time
 :return:int, second integer</p>
 </dd></dl>
 
@@ -1050,6 +1001,16 @@ named yyyymmdd.txt for each day.</li>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_bar_end_timestamps">
+<code class="descname">get_bar_end_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_bar_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all end timestamps of  bars in a period during a trading day
+:param period: periodicity, eg:1m,3m,5m,30m..., but is&#8217;t more then 1d
+:param instrument_id: string, if stock, it is None. if future, it must be set.
+:parm trading_day:date, get trading time by it.trading time of a product maybe be changed and not fixed
+:return: [time]</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data2">
 <code class="descname">get_daily_trading_data2</code><span class="sig-paren">(</span><em>folders</em>, <em>instrument_id</em>, <em>future_prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data2" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the trading data of one day (the file with max trading volumes) and output to the target file
@@ -1174,32 +1135,6 @@ Next trading days means that at ts point of time, which trading day should ts be
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_period_second">
-<code class="descname">get_period_second</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_period_second" title="Permalink to this definition">¶</a></dt>
-<dd><p>get periodicity from string name
-:param name, string, include 3s,10s,30s, 1m, 5m, 30m, 120m, not more than 1d
-:return int, interval second of a period</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_period_string_timestamps">
-<code class="descname">get_period_string_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_period_string_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get timestamp list of the period in a day
-:param period: eg:5m,15m,30m, but is&#8217;t more then 1d
-:param instrument_id: if stock, it is None. if future, it must be set.
-:return: [string]</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_period_timestamps">
-<code class="descname">get_period_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_period_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get timestamp list of the period in a day
-:param period: eg:5m,15m,30m, but is&#8217;t more then 1d
-:param instrument_id: if stock, it is None. if future, it must be set.
-:return: [timestamp]</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_previous_trading_day_end_time">
 <code class="descname">get_previous_trading_day_end_time</code><span class="sig-paren">(</span><em>now</em>, <em>all_market_end_time=datetime.time(15</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_previous_trading_day_end_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the market end time of the previous trading day, given current timestamp.
@@ -1257,21 +1192,15 @@ trading day that ts belong to?
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.second_to_time">
-<code class="descname">second_to_time</code><span class="sig-paren">(</span><em>second</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.second_to_time" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.seconds_to_time">
+<code class="descname">seconds_to_time</code><span class="sig-paren">(</span><em>second</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.seconds_to_time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.second_to_time_string">
-<code class="descname">second_to_time_string</code><span class="sig-paren">(</span><em>second</em>, <em>separator=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.second_to_time_string" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.time_string_to_second">
-<code class="descname">time_string_to_second</code><span class="sig-paren">(</span><em>time_s</em>, <em>separator=':'</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.time_string_to_second" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.time_to_seconds">
+<code class="descname">time_to_seconds</code><span class="sig-paren">(</span><em>time_</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.time_to_seconds" title="Permalink to this definition">¶</a></dt>
 <dd><p>translate time to second integer
-:param time_s:  time format
-:param separator: separator symbol in time
+:param <a href="#id5"><span class="problematic" id="id6">time_</span></a>: time
 :return:int, second integer</p>
 </dd></dl>
 
@@ -1355,7 +1284,7 @@ trading day that ts belong to?
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 25, 2017.
+      Last updated on Jan 26, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
