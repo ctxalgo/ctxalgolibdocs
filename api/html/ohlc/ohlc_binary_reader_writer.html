@@ -172,7 +172,7 @@
 <span id="ohlc-binary-reader-writer"></span><h1>ohlc_binary_reader_writer<a class="headerlink" href="#module-ctxalgolib.ohlc.ohlc_binary_reader_writer" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryFileWriter">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_binary_reader_writer.</code><code class="descname">OhlcBinaryFileWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryFileWriter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_binary_reader_writer.</code><code class="descname">OhlcBinaryFileWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryFileWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ohlc_reader_writer.html#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter</span></code></a></p>
 <p>Initialize current.
 :param path: the file path to store the output.
@@ -184,11 +184,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
-<li><strong>time_precision</strong> &#8211; int, 0 means second precision, 1 means millisecond precision.</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</td>
 </tr>
 </tbody>
 </table>
@@ -211,9 +207,7 @@
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryFileWriter.write">
 <code class="descname">write</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryFileWriter.write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use BinaryFileTimeSeries to do the writing. The dates and timestamps attributes in ohlc should be written
-as datetime64 with proper time precision (see self.time_precision), the other attributes in ohlc
-should be written as float64.</p>
+<dd><p>Use BinaryFileTimeSeries to do the writing.</p>
 </dd></dl>
 
 <dl class="method">
@@ -232,6 +226,7 @@ should be written as float64.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -246,7 +241,7 @@ should be written as float64.</p>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_binary_reader_writer.</code><code class="descname">OhlcBinaryReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_binary_reader_writer.</code><code class="descname">OhlcBinaryReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ohlc_reader_writer.html#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader</span></code></a></p>
 <p>Reader to read ohlc from a binary file.</p>
 <p>Initialize current.
@@ -262,7 +257,6 @@ should be written as float64.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
-<li><strong>time_precision</strong> &#8211; int, 0 means second precision, 1 means millisecond precision.</li>
 </ul>
 </td>
 </tr>
@@ -270,7 +264,7 @@ should be written as float64.</p>
 </table>
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader.get_timestamp">
-<code class="descname">get_timestamp</code><span class="sig-paren">(</span><em>t1</em>, <em>t2</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader.get_timestamp" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_timestamp</code><span class="sig-paren">(</span><em>t1</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader.get_timestamp" title="Permalink to this definition">¶</a></dt>
 <dd><p>convert timestamp in ohlc to numpy datetime64 data
 :param t1: int, the data part of timestamp
 :param t2: int, the time part of timestamp
@@ -301,6 +295,7 @@ should be written as float64.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -314,10 +309,7 @@ should be written as float64.</p>
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader.read">
 <code class="descname">read</code><span class="sig-paren">(</span><em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_binary_reader_writer.OhlcBinaryReader.read" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use BinaryFileTimeSeries to do the reading. The dates and timestamps attributes in ohlc should be written
-as datetime64 with proper time precision (see self.time_precision), the other attributes in ohlc
-should be written as float64. After reading, covert all numpy objects into native Python object. This means
-numpy.datetime64 -&gt; datetime, numpy.float64 to float.</p>
+<dd><p>Use BinaryFileTimeSeries to do the reading.</p>
 </dd></dl>
 
 </dd></dl>
@@ -344,7 +336,7 @@ numpy.datetime64 -&gt; datetime, numpy.float64 to float.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 26, 2017.
+      Last updated on Jan 27, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

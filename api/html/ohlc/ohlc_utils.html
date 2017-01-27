@@ -268,6 +268,11 @@ representation as available.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.dimension_value">
+<code class="descname">dimension_value</code><span class="sig-paren">(</span><em>dimension</em>, <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.dimension_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.add_dimension">
 <code class="descname">add_dimension</code><span class="sig-paren">(</span><em>name</em>, <em>data</em>, <em>default_generator=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.add_dimension" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -333,15 +338,6 @@ amount_func: A function pointer float-&gt;float. The function to change amounts.
 <dd><p>Output current OHLC into a string with csv format.
 :param instrument_id: string, the instrument id. It is put in front of each row if it is not None.
 :param with_open_interest: boolean, if True, generate open interest information.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.save_to_file">
-<code class="descname">save_to_file</code><span class="sig-paren">(</span><em>file_name</em>, <em>instrument_id=None</em>, <em>extra_date_and_time=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.save_to_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save current ohlc to file.
-:param file_name: string, the name of the file to save data to.
-:param instrument_id, string, the ID of the instrument to save in file.
-:param extra_date_and_time: bool, if True, include extra fields for date and time.</p>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -1074,7 +1070,7 @@ Synchronization is performed as:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 26, 2017.
+      Last updated on Jan 27, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

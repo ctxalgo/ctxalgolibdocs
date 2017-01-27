@@ -189,6 +189,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -228,6 +229,7 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -242,7 +244,7 @@
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcStringWriter</code><span class="sig-paren">(</span><em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>time_precision=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcStringWriter</code><span class="sig-paren">(</span><em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcStringWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter</span></code></a></p>
 <p>Writer to write OHLC into csv text file.</p>
 <p>Initialize current.
@@ -260,7 +262,6 @@
 <li><strong>include_date_and_time</strong> &#8211; boolean, if True, include separate columns for the date and time parts
 of the dates data in the OHLC.</li>
 <li><strong>include_instrument_id</strong> &#8211; boolean, if True, include the instrument id column.</li>
-<li><strong>time_precision</strong> &#8211; int, 0 means second precision, 1 means millisecond precision.</li>
 </ul>
 </td>
 </tr>
@@ -306,6 +307,7 @@ of the dates data in the OHLC.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -320,7 +322,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>time_precision=0</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>header=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvWriter</code><span class="sig-paren">(</span><em>path</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>include_date_and_time=False</em>, <em>include_instrument_id=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>header=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcWriter</span></code></a></p>
 <p>Initialize current.
 :param path: the file path to store the output.
@@ -337,7 +339,6 @@ of the dates data in the OHLC.</li>
 <li><strong>include_date_and_time</strong> &#8211; boolean, if True, include separate columns for the date and time parts
 of the dates data in the OHLC.</li>
 <li><strong>include_instrument_id</strong> &#8211; boolean, if True, include the instrument id column.</li>
-<li><strong>time_precision</strong> &#8211; int, 0 means second precision, 1 means millisecond precision.</li>
 <li><strong>header</strong> &#8211; boolean, including the header row if True</li>
 </ul>
 </td>
@@ -365,6 +366,7 @@ of the dates data in the OHLC.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -413,6 +415,7 @@ of the dates data in the OHLC.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -473,6 +476,7 @@ of the dates data in the OHLC.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -487,7 +491,7 @@ of the dates data in the OHLC.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>time_precision=0</em>, <em>header=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_reader_writer.</code><code class="descname">OhlcCsvReader</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>path=None</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>header=False</em>, <em>line_parser=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_reader_writer.OhlcCsvReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader" title="ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_reader_writer.AbstractOhlcReader</span></code></a></p>
 <p>Initialize current.
 :param instrument_id: string, the instrument id of the ohlc to be read.
@@ -502,8 +506,7 @@ of the dates data in the OHLC.</li>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
-<li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
-<li><strong>time_precision</strong> &#8211; int, 0 means second precision, 1 means millisecond precision.
+<li><strong>profits</strong> &#8211; boolean, if True include the profits column.
 This means, that the read datetime should have second or millisecond precision.</li>
 <li><strong>header</strong> &#8211; boolean, if True, the underlying csv data file contains a header line, so ignore that
 header line when reading data.</li>
@@ -545,6 +548,7 @@ If not None, use this parser to parse the data file.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dominant</strong> &#8211; boolean, if True include the dominant column.</li>
 <li><strong>profits</strong> &#8211; boolean, if True include the profits column.</li>
+<li><strong>l1_statistics</strong> &#8211; bool, If True, include l1 statistics related fields.</li>
 </ul>
 </td>
 </tr>
@@ -584,7 +588,7 @@ If not None, use this parser to parse the data file.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 26, 2017.
+      Last updated on Jan 27, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
