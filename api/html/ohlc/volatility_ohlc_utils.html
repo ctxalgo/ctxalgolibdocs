@@ -179,9 +179,19 @@
 <code class="descname">volatility_ohlc</code><span class="sig-paren">(</span><em>instrument_id</em>, <em>data_source</em>, <em>threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.volatility_ohlc_utils.VolatilityOhlcUtils.volatility_ohlc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a volatility ohlc with threshold from data source.
 :param instrument_id: string, the instrument id of the ohlc.
-:param data_source: BacktestingOhlcDataSource, data source that contains a single ohlc.
-:param threshold: int/float, volatility threshold.
-:return: OHLC, volatility ohlc.</p>
+:param data_source: BacktestingOhlcDataSource, data source that contains a single ohlc.</p>
+<blockquote>
+<div>data_source can also be of type AbstractOhlc, in this case, that ohlc will be used as data.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>threshold</strong> &#8211; int/float, volatility threshold.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">OHLC, volatility ohlc.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -218,7 +228,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jan 27, 2017.
+      Last updated on Jan 30, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
