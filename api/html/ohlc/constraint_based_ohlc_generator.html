@@ -398,11 +398,24 @@ If None, use the last timestamp in self.original_ohlc.</td>
 <div>dimensions as the original ohlc. None if there is no solution for the constraints.</div></blockquote>
 </dd></dl>
 
+<dl class="method">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.z3_solver">
+<code class="descname">z3_solver</code><span class="sig-paren">(</span><em>row_indexes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.z3_solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use z3 to optimize for dimensions of target rows.
+:param row_indexes: [int], indexes of rows which need to be optimized.
+:return: dict{int: dict}, means dict{index: ohlc_bar}</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="function">
 <dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ohlc_abs">
 <code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">ohlc_abs</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ohlc_abs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.get_var_name">
+<code class="descclassname">ctxalgolib.ohlc.constraint_based_ohlc_generator.</code><code class="descname">get_var_name</code><span class="sig-paren">(</span><em>dimension</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.get_var_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
