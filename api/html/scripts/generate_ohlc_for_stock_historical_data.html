@@ -224,6 +224,68 @@
             
   <div class="section" id="generate-ohlc-for-stock-historical-data">
 <h1>generate_ohlc_for_stock_historical_data<a class="headerlink" href="#generate-ohlc-for-stock-historical-data" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.scripts.generate_ohlc_for_stock_historical_data"></span><dl class="docutils">
+<dt>&#8211;additional-fields FIELDS, string, it is a comma-separated string indicating which additional fields, except the</dt>
+<dd>normal dates,opens,highs,lows,closes,volumes,amount that the generated ohlc should have. Valid values can be:
+profits,book0, book1, book2, book3, book4, book5, l1_statistics. book3 means to include order book until book3,
+including book0, book1, book2 and book3.
+Note that if profits is included, always use profit_factor=1.0 for stocks.</dd>
+</dl>
+<p>&#8211;use-mid-ask-bid USE_MID_ASK_BID, this is a flag, if present, enable it during ohlc generation. Default is False.</p>
+<dl class="docutils">
+<dt>&#8211;periods PERIODS, comma separated string, indicating the periods/volatility thresholds to generate, for example,</dt>
+<dd>1m,5m,1d,v15.0,v23. a value starting from v means volatility threshold. No Default.</dd>
+<dt>&#8211;instruments INSTRUMENTS, comma separated string, indicating the instruments to generate. For example,</dt>
+<dd>sh600338,sz000001 means only generate ohlcs for the two given instruments. If not given, generate ohlcs
+for all stocks in INPUT_FOLDER.</dd>
+<dt>&#8211;input-folder INPUT_FOLDER string, the folder which includes future tick level data.</dt>
+<dd><p class="first">The folder contains sub-folders which are in form of yyyymmdd, indicating every trading day.
+In each sub-folder, there are a list of files representing individual instruments.
+There is no default, input folder must be provided.</p>
+<p class="last">Note:
+Load a data file using ctxalgolib.statistics.l1_data_loader, which supports loading both txt and binary data.
+Use SecurityLoader().exchange_from_stock_id_number to get stock exchange name from its id.</p>
+</dd>
+<dt>&#8211;output-folder OUTPUT_FOLDER string, the folder to store generated ohlc files.</dt>
+<dd><p class="first">ohlcs of different periods or volatility levels are generated in different sub-folders,
+which are named by either:
+1. Periodicity.get_periodicity_name for time-based ohlcs.
+2. vNum, where Num is an integer, indicating the volatility level.
+There is no default, output folder must be provided.</p>
+<p>File names of the generated ohlcs are defined by the following rules:
+1. The file name consists of two parts, the instrument id part, and the period/volatility part, separated by</p>
+<blockquote>
+<div>a _ in between. The instrument id is the full instrument id, for example, sh000001.
+The period/volatility part is the period name, for example sh000001_5m,
+or in case of volatility-based ohlcs, the volatility part, in form of vNum,
+where Num is an integer, such as sh000001_v5.</div></blockquote>
+<ol class="last arabic simple" start="2">
+<li>files have .txt as extension.</li>
+</ol>
+</dd>
+<dt>&#8211;start START_DATE, in form of yyyymmdd, indicating the starting date (inclusive) to process. None means to start</dt>
+<dd>from the first available date.</dd>
+<dt>&#8211;end END_DATE, in form of yyyymmdd, indicating the end date (inclusive) to process. None means to end</dt>
+<dd>at the last available date.</dd>
+</dl>
+<dl class="function">
+<dt id="ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.generate_ohlc_for_stock_historical_data">
+<code class="descclassname">ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.</code><code class="descname">generate_ohlc_for_stock_historical_data</code><span class="sig-paren">(</span><em>input_folder</em>, <em>output_folder</em>, <em>additional_fields</em>, <em>use_mid_ask_bid</em>, <em>periods</em>, <em>instruments</em>, <em>start_date</em>, <em>end_date</em>, <em>header</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.generate_ohlc_for_stock_historical_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.merge_ohlc_for_stock_historical_data">
+<code class="descclassname">ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.</code><code class="descname">merge_ohlc_for_stock_historical_data</code><span class="sig-paren">(</span><em>input_folder</em>, <em>ohlc_folders</em>, <em>order_book_level</em>, <em>profits</em>, <em>l1_statistics</em>, <em>header</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.merge_ohlc_for_stock_historical_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>merge daily ohlc to the specify ohlc data
+:param input_folder: the folder path of the daily ohlc
+:param ohlc_folders: the output folder of the specify ohlc data</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.main">
+<code class="descclassname">ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.scripts.generate_ohlc_for_stock_historical_data.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

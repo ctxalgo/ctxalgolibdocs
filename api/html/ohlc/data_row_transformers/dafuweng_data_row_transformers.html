@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ctp_file_log_reader.html">ctp_file_log_reader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ohlc_comparer.html">ohlc_comparer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_transformer.html">data_transformer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../bar_generator.html">bar_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ohlc_equality_checker.html">ohlc_equality_checker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ohlc_binary_reader_writer.html">ohlc_binary_reader_writer</a></li>
@@ -176,6 +177,45 @@
             
   <div class="section" id="dafuweng-data-row-transformers">
 <h1>dafuweng_data_row_transformers<a class="headerlink" href="#dafuweng-data-row-transformers" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers"></span><dl class="class">
+<dt id="ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengFutureTickTransformer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.</code><code class="descname">DafuwengFutureTickTransformer</code><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengFutureTickTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../data_transformer.html#ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer" title="ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer</span></code></a></p>
+<p>This class transforms a future tick row from DaFuWeng data provider.
+The future tick row of DaFuWeng has the following columns:
+市场代码,合约代码,时间,               最新,     持仓,  增仓,  成交额,       成交量,    开仓, 平仓, 成交类型, 方向,   买一价,    卖一价,      买一量,  卖一量
+dc,      a1609,  2016-04-06 20:59:00,3315.0000,254606,242,  12862200.0000, 388.0000, 315,  73,   空开,     S,      3314.0000,   3315.0000,  17,      45</p>
+<p>How to transform:
+1. Drop the 市场代码, 合约代码 columns.
+2. The 时间 column is a datetime string, use get_seconds_since_epoch(get_timestamp(时间), self.epoch) to transform it into numpy.float64.
+3. The 成交类型 column can have value: 多开, 多平, 多换, 空开, 空平, 空换, transform it into numpy.int64 with values 0, 1, 2, 3, 4, 5.
+4. The 方向 column can have value: B, S, transform it into numpy.int64 with values 0, 1.
+5. Transform 持仓, 成交量, 开仓, 平仓, 买一量, 卖一量 into numpy.int64.
+6. Transform the rest of the columns into numpy.float64.</p>
+<p>The transform will:</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengFutureTickTransformer.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengFutureTickTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengStockTickTransformer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.</code><code class="descname">DafuwengStockTickTransformer</code><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengStockTickTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../data_transformer.html#ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer" title="ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer</span></code></a></p>
+<p>This class transforms a stock tick row from DaFuWeng data provider.
+The stock tick row has the following columns:
+市场代码,证券代码,时间,最新,成交笔数,成交额,成交量,方向,买一价,买二价,买三价,买四价,买五价,卖一价,卖二价,卖三价,卖四价,卖五价,买一量,买二量,买三量,买四量,买五量,卖一量,卖二量,卖三量,卖四量,卖五量
+sz,000025,2014-08-04 09:25:00,10.0700,3,18126.0000,18.0000,S,10.0700,10.0400,10.0300,10.0200,10.0100,10.0800,10.1100,10.1200,10.1300,10.1500,65,10,12,9,3,61,43,59,15,159</p>
+<p>How to transform: This is similar to the future tick transformer.</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengStockTickTransformer.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengStockTickTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
