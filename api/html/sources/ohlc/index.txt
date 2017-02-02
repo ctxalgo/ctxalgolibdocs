@@ -4,6 +4,7 @@ ohlc
 .. toctree::
    :maxdepth: 2
 
+   data_row_transformers/index
    holidays/index
    time_transformer
    exright
