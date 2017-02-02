@@ -162,7 +162,7 @@
 <span id="highcharts-data-generator"></span><h1>highcharts_data_generator<a class="headerlink" href="#module-ctxalgolib.charting.highcharts_data_generator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_data_generator.</code><code class="descname">HighchartsDataGenerator</code><span class="sig-paren">(</span><em>translator</em>, <em>data_feed</em>, <em>instrument_id</em>, <em>periodicity=20</em>, <em>ohlc_kind='time-based'</em>, <em>start_time=None</em>, <em>end_time=None</em>, <em>limit_bars=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_data_generator.</code><code class="descname">HighchartsDataGenerator</code><span class="sig-paren">(</span><em>translator</em>, <em>data_feed</em>, <em>instrument_id</em>, <em>periodicity=20</em>, <em>ohlc_kind='time-based'</em>, <em>start_time=None</em>, <em>end_time=None</em>, <em>limit_bars=True</em>, <em>ohlc_attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="chart_data_generator.html#ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator" title="ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.charting.chart_data_generator.AbstractChartDataGenerator</span></code></a></p>
 <p>Class to generate JSON data for chart display.</p>
 <p>Initialize current.
@@ -184,11 +184,26 @@ It specifies the kind of ohlc to draw.</li>
 <li><strong>end_time</strong> &#8211; datetime, the end time (inclusive) to draw the ohlc.</li>
 <li><strong>limit_bars</strong> &#8211; boolean, if True, decide if there are two many ohlc bars to draw, if so, only draw
 a postfix of the required ohlc bars.</li>
+<li><strong>ohlc_attributes</strong> &#8211; <p>dict{string: value}, indicates which additional fields should be included in ohlc data.
+keys are open_interests, dominants, profits, order_book_level. If None, default is:
+{</p>
+<blockquote>
+<div>open_interests: False,
+dominants: False,
+profits: False,
+order_book_level: 0</div></blockquote>
+<p>}</p>
+</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_ohlc_attributes">
+<code class="descname">set_ohlc_attributes</code><span class="sig-paren">(</span><em>open_interests=False</em>, <em>dominants=False</em>, <em>profits=False</em>, <em>order_book_level=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_ohlc_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_k_area_sids">
 <code class="descname">set_k_area_sids</code><span class="sig-paren">(</span><em>k_sids</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerator.set_k_area_sids" title="Permalink to this definition">¶</a></dt>
@@ -332,7 +347,7 @@ Parameters:</p>
 
 <dl class="class">
 <dt id="ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils">
-<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_data_generator.</code><code class="descname">HighchartsDataGenerationUtils</code><span class="sig-paren">(</span><em>data_feed=None</em>, <em>translator=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.highcharts_data_generator.</code><code class="descname">HighchartsDataGenerationUtils</code><span class="sig-paren">(</span><em>data_feed=None</em>, <em>translator=None</em>, <em>ohlc_attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.highcharts_data_generator.HighchartsDataGenerationUtils" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Class to generate data for Highcharts rendering.</p>
 <p>Initialize current.
@@ -344,9 +359,22 @@ set data_feed to None.</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>translator</strong> &#8211; AbstractTranslator, the translator which provides text in different languages.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>translator</strong> &#8211; AbstractTranslator, the translator which provides text in different languages.
 Pass in a translator that will generate text in the desirable language.
-If None, use default translator.</td>
+If None, use default translator.</li>
+<li><strong>ohlc_attributes</strong> &#8211; <p>dict{string: value}, indicates which additional fields should be included in ohlc data.
+keys are open_interests, dominants, profits, order_book_level. If None, default is:
+{</p>
+<blockquote>
+<div>open_interests: False,
+dominants: False,
+profits: False,
+order_book_level: 0</div></blockquote>
+<p>}</p>
+</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>

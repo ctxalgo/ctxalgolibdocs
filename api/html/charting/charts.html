@@ -162,7 +162,7 @@
 <span id="charts"></span><h1>charts<a class="headerlink" href="#module-ctxalgolib.charting.charts" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.charting.charts.Charts">
-<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">Charts</code><span class="sig-paren">(</span><em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.Charts" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">Charts</code><span class="sig-paren">(</span><em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em>, <em>ohlc_attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.Charts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Class that generates html-based charts.</p>
 <p>Initialize current.
@@ -186,6 +186,16 @@ emove the generated html files and in case a temp folder is created, delete that
 If False, only generate the html page, and the page will reference javascript files from ctxalgolib.</li>
 <li><strong>open_in_browser</strong> &#8211; boolean, if True, calling the show method will open the generated html page
 in browser, if False, calling the show method only returns the path of the generated html page.</li>
+<li><strong>ohlc_attributes</strong> &#8211; <p>dict{string: value}, indicates which additional fields should be included in ohlc data.
+keys are open_interests, dominants, profits, order_book_level. If None, default is:
+{</p>
+<blockquote>
+<div>open_interests: False,
+dominants: False,
+profits: False,
+order_book_level: 0</div></blockquote>
+<p>}</p>
+</li>
 </ul>
 </td>
 </tr>
@@ -272,7 +282,7 @@ default instrument.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.charting.charts.ChartsWithReport">
-<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">ChartsWithReport</code><span class="sig-paren">(</span><em>report=None</em>, <em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">ChartsWithReport</code><span class="sig-paren">(</span><em>report=None</em>, <em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em>, <em>ohlc_attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.charting.charts.Charts" title="ctxalgolib.charting.charts.Charts"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.charting.charts.Charts</span></code></a></p>
 <p>Class that supports charting with a strategy report.</p>
 <p>Initialize current.
@@ -299,6 +309,16 @@ remove the generated html files and in case a temp folder is created, delete tha
 If False, only generate the html page, and the page will reference javascript files from ctxalgolib.</li>
 <li><strong>open_in_browser</strong> &#8211; boolean, if True, calling the show method will open the generated html page
 in browser, if False, calling the show method only returns the path of the generated html page.</li>
+<li><strong>ohlc_attributes</strong> &#8211; <p>dict{string: value}, indicates which additional fields should be included in ohlc data.
+keys are open_interests, dominants, profits, order_book_level. If None, default is:
+{</p>
+<blockquote>
+<div>open_interests: False,
+dominants: False,
+profits: False,
+order_book_level: 0</div></blockquote>
+<p>}</p>
+</li>
 </ul>
 </td>
 </tr>
