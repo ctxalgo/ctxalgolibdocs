@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>jishuyuan_data_row_transformers &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="data_row_transformers" href="index.html"/>
+        <link rel="next" title="holidays" href="../holidays/index.html"/>
+        <link rel="prev" title="dafuweng_data_row_transformers" href="dafuweng_data_row_transformers.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wind/index.html">wind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system/index.html">system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">ohlc</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">data_row_transformers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dafuweng_data_row_transformers.html">dafuweng_data_row_transformers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">jishuyuan_data_row_transformers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../holidays/index.html">holidays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time_transformer.html">time_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exright.html">exright</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constraint_based_ohlc_generator.html">constraint_based_ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volatility_ohlc_utils.html">volatility_ohlc_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bar_arrival_request.html">bar_arrival_request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_comparer.html">ohlc_comparer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_concatenator.html">ohlc_concatenator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_transformer.html">data_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bar_generator.html">bar_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_equality_checker.html">ohlc_equality_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_binary_reader_writer.html">ohlc_binary_reader_writer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_logger.html">ohlc_logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../abstract_ohlc.html">abstract_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_utils.html">ohlc_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../price_type.html">price_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_generator.html">ohlc_generator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trading_days.html">trading_days</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_merger.html">ohlc_merger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../periodicity.html">periodicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ohlc_reader_writer.html">ohlc_reader_writer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../statistics/index.html">statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">ohlc</a> &raquo;</li>
+      
+          <li><a href="index.html">data_row_transformers</a> &raquo;</li>
+      
+    <li>jishuyuan_data_row_transformers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/ohlc/data_row_transformers/jishuyuan_data_row_transformers.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jishuyuan-data-row-transformers">
+<h1>jishuyuan_data_row_transformers<a class="headerlink" href="#jishuyuan-data-row-transformers" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers"></span><dl class="class">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.</code><code class="descname">JishuyuanFutureTickTransformer</code><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../data_transformer.html#ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer" title="ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer</span></code></a></p>
+<p>This class transforms a future tick row from DaFuWeng data provider.
+The future tick row of DaFuWeng has the following columns:</p>
+<blockquote>
+<div>1 交易日   20161116
+2 合约代码  ru1703
+3 交易所代码
+4 合约在交易所的代码
+5 最新价 16045.0000
+6 上次结算价 15940.0000
+7 昨收盘 15845.0000
+8 昨持仓量 1304
+9 今开盘 16045.0000</div></blockquote>
+<p>10 最高价 16045.0000
+11 最低价 16045.0000
+12 数量 2
+13 成交金额 320900.0000
+14 持仓量 1304
+15 今收盘 0.0000
+16 本次结算价 0.0000
+17 涨停板价 16895.0000
+18 跌停板价 14980.0000
+19 昨虚实度 0
+20 今虚实度0
+21 最后修改时间 21:14:52
+22 最后修改毫秒 0
+23 申买价一 16045.0000
+24 申买量一 1
+25 申卖价一 16130.0000
+26 申卖量一 1
+27 申买价二 0
+28 申买量二 0
+29 申卖价二 0
+30 申卖量二 0
+31 申买价三 0
+32 申买量三 0
+33 申卖价三 0
+34 申卖量三 0
+35 申买价四 0
+36 申买量四 0
+37 申卖价四 0
+38 申卖量四 0
+39 申买价五 0
+40 申买量五 0
+41 申卖价五 0
+42 申卖量五 0
+43 当日均价 160450.0000
+44 业务日期 20161115</p>
+<p>The transformed output columns:
+1. 时间: combine 业务日期, 最后修改时间 and 最后修改毫秒. float64.
+2. 交易日, int64
+3. 最新价 float64
+4. 昨收盘 15845.0000，float64
+5. 昨持仓量 1304, int64
+6. 今开盘 16045.0000, float64
+7. 最高价 16045.0000, float64
+8. 最低价 16045.0000, float64
+9. 数量 2, int64
+10. 成交金额 320900.0000, float64
+11. 持仓量 1304, int64
+12. 今收盘 0.0000, float64
+13. 本次结算价 0.0000, float64
+14. 涨停板价 16895.0000, float64
+15. 跌停板价 14980.0000, float64
+16. 昨虚实度 0, float64
+17. 今虚实度0, float64
+18. 申买价一 16045.0000, float64
+19. 申买量一 1, int64
+20. 申卖价一 16130.0000, float64
+21. 申卖量一 1, int64
+22. 申买价二 0, float64
+23. 申买量二 0, int64
+24. 申卖价二 0, float64
+25. 申卖量二 0, int64
+26. 申买价三 0, float64
+27. 申买量三 0, int64
+28. 申卖价三 0, float64
+29. 申卖量三 0, int64
+30. 申买价四 0, float64
+31. 申买量四 0, int64
+32. 申卖价四 0, float64
+33. 申卖量四 0, int64
+34. 申买价五 0, float64
+35. 申买量五 0, int64
+36. 申卖价五 0, float64
+37. 申卖量五 0, int64
+38. 当日均价 160450.0000, float64</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../holidays/index.html" class="btn btn-neutral float-right" title="holidays" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dafuweng_data_row_transformers.html" class="btn btn-neutral" title="dafuweng_data_row_transformers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Feb 02, 2017.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

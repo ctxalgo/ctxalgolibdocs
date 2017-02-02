@@ -32,7 +32,7 @@
   
     <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
         <link rel="up" title="data_row_transformers" href="index.html"/>
-        <link rel="next" title="holidays" href="../holidays/index.html"/>
+        <link rel="next" title="jishuyuan_data_row_transformers" href="jishuyuan_data_row_transformers.html"/>
         <link rel="prev" title="data_row_transformers" href="index.html"/> 
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">ohlc</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">data_row_transformers</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">dafuweng_data_row_transformers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="jishuyuan_data_row_transformers.html">jishuyuan_data_row_transformers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../holidays/index.html">holidays</a></li>
@@ -192,7 +193,21 @@ dc,      a1609,  2016-04-06 20:59:00,3315.0000,254606,242,  12862200.0000, 388.0
 4. The 方向 column can have value: B, S, transform it into numpy.int64 with values 0, 1.
 5. Transform 持仓, 成交量, 开仓, 平仓, 买一量, 卖一量 into numpy.int64.
 6. Transform the rest of the columns into numpy.float64.</p>
-<p>The transform will:</p>
+<p>So the output columns are:
+1. 时间
+2. 最新
+3. 持仓
+4. 增仓
+5. 成交额
+6. 成交量
+7. 开仓
+8. 平仓
+9. 成交类型
+10. 方向
+11. 买一价
+12. 卖一价
+13. 买一量
+14. 卖一量</p>
 <dl class="method">
 <dt id="ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengFutureTickTransformer.transform">
 <code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengFutureTickTransformer.transform" title="Permalink to this definition">¶</a></dt>
@@ -209,6 +224,33 @@ The stock tick row has the following columns:
 市场代码,证券代码,时间,最新,成交笔数,成交额,成交量,方向,买一价,买二价,买三价,买四价,买五价,卖一价,卖二价,卖三价,卖四价,卖五价,买一量,买二量,买三量,买四量,买五量,卖一量,卖二量,卖三量,卖四量,卖五量
 sz,000025,2014-08-04 09:25:00,10.0700,3,18126.0000,18.0000,S,10.0700,10.0400,10.0300,10.0200,10.0100,10.0800,10.1100,10.1200,10.1300,10.1500,65,10,12,9,3,61,43,59,15,159</p>
 <p>How to transform: This is similar to the future tick transformer.</p>
+<p>So the output columnes are:
+1. 时间
+2. 最新,
+3. 成交笔数, int64.
+4. 成交额,
+5. 成交量,
+5. 方向,
+7. 买一价,
+8. 买二价,
+9. 买三价,
+10. 买四价,
+11. 买五价,
+12. 卖一价,
+13. 卖二价,
+14. 卖三价,
+15. 卖四价,
+16. 卖五价,
+17. 买一量,
+18. 买二量,
+19. 买三量,
+20. 买四量,
+21. 买五量,
+22. 卖一量,
+23. 卖二量,
+24. 卖三量,
+25. 卖四量,
+26. 卖五量</p>
 <dl class="method">
 <dt id="ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengStockTickTransformer.transform">
 <code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.dafuweng_data_row_transformers.DafuwengStockTickTransformer.transform" title="Permalink to this definition">¶</a></dt>
@@ -225,7 +267,7 @@ sz,000025,2014-08-04 09:25:00,10.0700,3,18126.0000,18.0000,S,10.0700,10.0400,10.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../holidays/index.html" class="btn btn-neutral float-right" title="holidays" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="jishuyuan_data_row_transformers.html" class="btn btn-neutral float-right" title="jishuyuan_data_row_transformers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="data_row_transformers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

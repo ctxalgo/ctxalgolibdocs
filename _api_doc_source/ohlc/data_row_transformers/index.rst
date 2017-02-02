@@ -5,3 +5,4 @@ data_row_transformers
    :maxdepth: 2
 
    dafuweng_data_row_transformers
+   jishuyuan_data_row_transformers
