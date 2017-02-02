@@ -400,10 +400,10 @@ If None, use the last timestamp in self.original_ohlc.</td>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.z3_solver">
-<code class="descname">z3_solver</code><span class="sig-paren">(</span><em>row_indexes</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.z3_solver" title="Permalink to this definition">¶</a></dt>
+<code class="descname">z3_solver</code><span class="sig-paren">(</span><em>row_indexes</em>, <em>optimize_result</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.constraint_based_ohlc_generator.ConstraintBasedOhlcGenerator.z3_solver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use z3 to optimize for dimensions of target rows.
 :param row_indexes: [int], indexes of rows which need to be optimized.
-:return: dict{int: dict}, means dict{index: ohlc_bar}</p>
+:param optimize_result: dict{int: dict}, means dict{index: ohlc_bar}</p>
 </dd></dl>
 
 </dd></dl>
@@ -440,7 +440,7 @@ If None, use the last timestamp in self.original_ohlc.</td>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Feb 01, 2017.
+      Last updated on Feb 02, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
