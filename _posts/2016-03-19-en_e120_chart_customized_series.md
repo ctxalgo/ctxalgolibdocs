@@ -7,17 +7,17 @@ language: en
 
 ```python
 from ctxalgolib.ohlc.periodicity import Periodicity
-from ctxalgolib.data_feed.web_data_feed import WebFutureDataFeed
+from ctxalgolib.data_feed.web_mongo_data_feed import WebMongoDataFeed
 from ctxalgolib.ohlc.ohlc_generator import OhlcGeneratorConstants
 from ctxalgolib.charting.charts import Charts
 from ctxalgolib.data_feed.ohlc_based_data_feed import OhlcBasedDataFeed
 
 
 # Get some ohlc from web, please replace ohlc with your own ohlc object.
-f = WebFutureDataFeed()
-instrument_id = 'IF99'
-period = Periodicity.WEEKLY
-ohlc = f.ohlc(instrument_id, start_time='2014-01-01', end_time='2015-12-31', periodicity=period)
+f = WebMongoDataFeed()
+instrument_id = 'cu00'
+period = Periodicity.DAILY
+ohlc = f.ohlc(instrument_id, start_time='2016-01-01', end_time='2016-12-31', periodicity=period)
 
 
 # Construct some ad-hoc time series based on the ohlc. series_t stores x-axis points, series_d stores y-axis points.
