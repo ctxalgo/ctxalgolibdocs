@@ -436,11 +436,24 @@ period on that trading day.
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_bar_end_timestamps">
 <code class="descname">get_bar_end_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.AbstractTradingUtils.get_bar_end_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get all end timestamps of  bars in a period during a trading day
-:param period: periodicity, eg:1m,3m,5m,30m..., but is&#8217;t more then 1d
-:param instrument_id: string, if stock, it is None. if future, it must be set.
-:parm trading_day:date, get trading time by it.trading time of a product maybe be changed and not fixed
-:return: [time]</p>
+<dd><p>Get all end timestamps of bars in a period during a trading day for given instrument.
+:param period: Periodicity, eg:1m,3m,5m,30m., but should be no larger than DAILY.
+:param instrument_id: string, instrument id.</p>
+<blockquote>
+<div>For stocks, you can set instrument_id to None because all stocks have the same bar end timestamps.
+For futures, you have to set the instrument id.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>trading_day</strong> &#8211; date, trading day on which bar end timestamps are to be retrieved.
+For stocks, you can set the trading_day to None, since bar end timestamps do not change on different days.
+For futures, you have to provide trading day.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[time], the end timestamps of bars at period.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -480,12 +493,7 @@ period on that trading day.
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_bar_end_timestamps">
 <code class="descname">get_bar_end_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_bar_end_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get all end timestamps of  bars in a period during a trading day
-:param period: periodicity, eg:1m,3m,5m,30m..., but is&#8217;t more then 1d
-:param instrument_id: string, if stock, it is None. if future, it must be set.
-:parm trading_day:date, get trading time by it.trading time of a product maybe be changed and not fixed
-:return: [time]</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.StockTradingUtils.get_dated_market_periods_between">
@@ -1001,16 +1009,6 @@ named yyyymmdd.txt for each day.</li>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_bar_end_timestamps">
-<code class="descname">get_bar_end_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_bar_end_timestamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>get all end timestamps of  bars in a period during a trading day
-:param period: periodicity, eg:1m,3m,5m,30m..., but is&#8217;t more then 1d
-:param instrument_id: string, if stock, it is None. if future, it must be set.
-:parm trading_day:date, get trading time by it.trading time of a product maybe be changed and not fixed
-:return: [time]</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data2">
 <code class="descname">get_daily_trading_data2</code><span class="sig-paren">(</span><em>folders</em>, <em>instrument_id</em>, <em>future_prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_daily_trading_data2" title="Permalink to this definition">¶</a></dt>
 <dd><p>get the trading data of one day (the file with max trading volumes) and output to the target file
@@ -1029,6 +1027,16 @@ named yyyymmdd.txt for each day.</li>
 :return the path of the dominant file in current folder, the instrument id of next folder,</p>
 <blockquote>
 <div>and the dominant value</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price">
+<code class="descname">calculate_settlement_price</code><span class="sig-paren">(</span><em>future_id</em>, <em>ohlc_in_a_day</em>, <em>is_delivery_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the settlement price for a future given its trading data.
+:param future_id: string, the if of the future.
+:param ohlc_in_a_day: OHLC, the ohlc for that future in a day.
+:param is_delivery_day: boolean, True if the current day is delivery day.
+:return: float, the settlement price for the future.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1251,13 +1259,24 @@ trading day that ts belong to?
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price">
-<code class="descname">calculate_settlement_price</code><span class="sig-paren">(</span><em>future_id</em>, <em>ohlc_in_a_day</em>, <em>is_delivery_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.calculate_settlement_price" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the settlement price for a future given its trading data.
-:param future_id: string, the if of the future.
-:param ohlc_in_a_day: OHLC, the ohlc for that future in a day.
-:param is_delivery_day: boolean, True if the current day is delivery day.
-:return: float, the settlement price for the future.</p>
+<dt id="ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_bar_end_timestamps">
+<code class="descname">get_bar_end_timestamps</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_id</em>, <em>trading_day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.trading_utils.FutureTradingUtils.get_bar_end_timestamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all end timestamps of bars in a period during a trading day for given instrument.
+:param period: Periodicity, eg:1m,3m,5m,30m., but should be no larger than DAILY.
+:param instrument_id: string, instrument id. You have to set the instrument id, since different</p>
+<blockquote>
+<div>futures have different market periods.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>trading_day</strong> &#8211; date, trading day on which bar end timestamps are to be retrieved.
+You have to provide trading day, since market periods for futures change over time.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">[time], the end timestamps of bars at period.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
