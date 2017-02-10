@@ -185,7 +185,7 @@
 :param trading_utils: FutureTradingUtils, future trading utils.</p>
 <dl class="method">
 <dt id="ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day">
-<code class="descname">dominant_instrument_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>current_dominant_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dominant_instrument_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>level</em>, <em>current_dominant_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the instrument id of the dominant contract for the next trading day.
 :param trading_day: date, the current trading day when traded_volumes is observed.
 :param traded_volumes: dict{string: int}, keys are instrument ids, values are the total traded volume</p>
@@ -195,13 +195,18 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>current_dominant_id</strong> &#8211; string, the current dominant instrument id. It is used to make sure that
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>current_dominant_id</strong> &#8211; string, the current dominant instrument id. It is used to make sure that
 next dominant instrument id cannot backtrack, meaning that dominant instrument id for next trading day
 must &gt;= current_dominant_id.
-If current_dominant_id is None, then the previous rule is not enforced.</td>
+If current_dominant_id is None, then the previous rule is not enforced.</li>
+<li><strong>level</strong> &#8211; int, the level of the dominance to decide.</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string, the dominant contract instrument id.
-If no dominant contract can be decided, return None.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string, the dominant contract instrument id.
+If no dominant contract can be decided, return None.</p>
+</td>
 </tr>
 </tbody>
 </table>
