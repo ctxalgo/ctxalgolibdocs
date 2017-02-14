@@ -184,8 +184,16 @@
 <p>Initialize current.
 :param trading_utils: FutureTradingUtils, future trading utils.</p>
 <dl class="method">
+<dt id="ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.next_suiable_dominant_instrument_id">
+<code class="descname">next_suiable_dominant_instrument_id</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.next_suiable_dominant_instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the next instrument id which could be used as a dominant id (in either 0 or 1 level).
+:param instrument_id: string, the current instrument id. The returned instrument id must be larger than this id.
+:return: string, instrument id.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day">
-<code class="descname">dominant_instrument_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>level</em>, <em>current_dominant_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dominant_instrument_for_next_trading_day</code><span class="sig-paren">(</span><em>trading_day</em>, <em>traded_volumes</em>, <em>level</em>, <em>current_dominant_id=None</em>, <em>previous_level_dominant_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.trading_utils.dominant_instrument.DominantContractDeciderByVolume.dominant_instrument_for_next_trading_day" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the instrument id of the dominant contract for the next trading day.
 :param trading_day: date, the current trading day when traded_volumes is observed.
 :param traded_volumes: dict{string: int}, keys are instrument ids, values are the total traded volume</p>
@@ -201,6 +209,8 @@ next dominant instrument id cannot backtrack, meaning that dominant instrument i
 must &gt;= current_dominant_id.
 If current_dominant_id is None, then the previous rule is not enforced.</li>
 <li><strong>level</strong> &#8211; int, the level of the dominance to decide.</li>
+<li><strong>previous_level_dominant_id</strong> &#8211; string, the dominant id in the previous level (the level which is
+immediately smaller than level). Used to generate sub-dominant level ids.</li>
 </ul>
 </td>
 </tr>
