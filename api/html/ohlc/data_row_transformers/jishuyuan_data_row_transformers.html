@@ -179,98 +179,115 @@
   <div class="section" id="jishuyuan-data-row-transformers">
 <h1>jishuyuan_data_row_transformers<a class="headerlink" href="#jishuyuan-data-row-transformers" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="module-ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers"></span><dl class="class">
-<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.</code><code class="descname">JishuyuanFutureTickTransformer</code><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureCtpDataTransformer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.</code><code class="descname">JishuyuanFutureCtpDataTransformer</code><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureCtpDataTransformer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="../data_transformer.html#ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer" title="ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer</span></code></a></p>
-<p>This class transforms a future tick row from DaFuWeng data provider.
-The future tick row of DaFuWeng has the following columns:</p>
-<blockquote>
-<div>1 交易日   20161116
-2 合约代码  ru1703
-3 交易所代码
-4 合约在交易所的代码
-5 最新价 16045.0000
-6 上次结算价 15940.0000
-7 昨收盘 15845.0000
-8 昨持仓量 1304
-9 今开盘 16045.0000</div></blockquote>
-<p>10 最高价 16045.0000
-11 最低价 16045.0000
-12 数量 2
-13 成交金额 320900.0000
-14 持仓量 1304
-15 今收盘 0.0000
-16 本次结算价 0.0000
-17 涨停板价 16895.0000
-18 跌停板价 14980.0000
-19 昨虚实度 0
-20 今虚实度0
-21 最后修改时间 21:14:52
-22 最后修改毫秒 0
-23 申买价一 16045.0000
-24 申买量一 1
-25 申卖价一 16130.0000
-26 申卖量一 1
-27 申买价二 0
-28 申买量二 0
-29 申卖价二 0
-30 申卖量二 0
-31 申买价三 0
-32 申买量三 0
-33 申卖价三 0
-34 申卖量三 0
-35 申买价四 0
-36 申买量四 0
-37 申卖价四 0
-38 申卖量四 0
-39 申买价五 0
-40 申买量五 0
-41 申卖价五 0
-42 申卖量五 0
-43 当日均价 160450.0000
-44 业务日期 20161115</p>
-<p>The transformed output columns:
-1. 时间: combine 业务日期, 最后修改时间 and 最后修改毫秒. float64.
-2. 交易日, int64
-3. 最新价 float64
-4. 昨收盘 15845.0000，float64
-5. 昨持仓量 1304, int64
-6. 今开盘 16045.0000, float64
-7. 最高价 16045.0000, float64
-8. 最低价 16045.0000, float64
-9. 数量 2, int64
-10. 成交金额 320900.0000, float64
-11. 持仓量 1304, int64
-12. 今收盘 0.0000, float64
-13. 本次结算价 0.0000, float64
-14. 涨停板价 16895.0000, float64
-15. 跌停板价 14980.0000, float64
-16. 昨虚实度 0, float64
-17. 今虚实度0, float64
-18. 申买价一 16045.0000, float64
-19. 申买量一 1, int64
-20. 申卖价一 16130.0000, float64
-21. 申卖量一 1, int64
-22. 申买价二 0, float64
-23. 申买量二 0, int64
-24. 申卖价二 0, float64
-25. 申卖量二 0, int64
-26. 申买价三 0, float64
-27. 申买量三 0, int64
-28. 申卖价三 0, float64
-29. 申卖量三 0, int64
-30. 申买价四 0, float64
-31. 申买量四 0, int64
-32. 申卖价四 0, float64
-33. 申卖量四 0, int64
-34. 申买价五 0, float64
-35. 申买量五 0, int64
-36. 申卖价五 0, float64
-37. 申卖量五 0, int64
-38. 当日均价 160450.0000, float64</p>
+<dl class="docutils">
+<dt>Source data columns:</dt>
+<dd>0 交易日   20161116
+1 合约代码  ru1703
+2 交易所代码
+3 合约在交易所的代码
+4 最新价 16045.0000
+5 上次结算价 15940.0000
+6 昨收盘 15845.0000
+7 昨持仓量 1304
+8 今开盘 16045.0000
+9 最高价 16045.0000</dd>
+</dl>
+<p>10 最低价 16045.0000
+11 数量 2
+12 成交金额 320900.0000
+13 持仓量 1304
+14 今收盘 0.0000
+15 本次结算价 0.0000
+16 涨停板价 16895.0000
+17 跌停板价 14980.0000
+18 昨虚实度 0
+19 今虚实度0
+20 最后修改时间 21:14:52
+21 最后修改毫秒 0
+22 申买价一 16045.0000
+23 申买量一 1
+24 申卖价一 16130.0000
+25 申卖量一 1
+26 申买价二 0
+27 申买量二 0
+28 申卖价二 0
+29 申卖量二 0
+30 申买价三 0
+31 申买量三 0
+32 申卖价三 0
+33 申卖量三 0
+34 申买价四 0
+35 申买量四 0
+36 申卖价四 0
+37 申卖量四 0
+38 申买价五 0
+39 申买量五 0
+40 申卖价五 0
+41 申卖量五 0
+42 当日均价 160450.0000
+43 业务日期 20161115</p>
+<p>The transformed output columns, all the columns are of type numpy.float64:
+0 trading_datetime: seconds since epoch.
+1 last_price,
+2 volume,
+3 update_time,
+4 update_millisec,
+5 open_interest,
+6 ask_price1,
+7 ask_volume1,
+8 bid_price1,
+9 bid_volume1,
+10 settlement_price,
+11 upper_limit_price,
+12 lower_limit_price</p>
 <dl class="method">
-<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureTickTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureCtpDataTransformer.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureCtpDataTransformer.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureOrderBookDataTransformer">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.</code><code class="descname">JishuyuanFutureOrderBookDataTransformer</code><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureOrderBookDataTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../data_transformer.html#ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer" title="ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.data_transformer.AbstractDataRowTransformer</span></code></a></p>
+<p>Source data columns.
+0 市场代码
+1 合约代码
+2 时间
+3 最新
+4 持仓
+5 增仓
+6 成交额
+7 成交量
+8 开仓
+9 平仓
+10 成交类型
+11 方向
+12 买一价
+13 卖一价
+14 买一量
+15 卖一量</p>
+<p>The transformed output columns, all the columns are of type numpy.float64:
+0 trading_datetime: seconds since epoch.
+1 last_price,
+2 volume,
+3 update_time,
+4 update_millisec,
+5 open_interest,
+6 ask_price1,
+7 ask_volume1,
+8 bid_price1,
+9 bid_volume1,
+10 settlement_price,
+11 upper_limit_price,
+12 lower_limit_price</p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureOrderBookDataTransformer.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanFutureOrderBookDataTransformer.transform" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
