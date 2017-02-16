@@ -292,6 +292,91 @@
 
 </dd></dl>
 
+<dl class="class">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.</code><code class="descname">JishuyuanTickBinaryLoader</code><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.load">
+<code class="descname">load</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.parse_bin_tick_row">
+<code class="descname">parse_bin_tick_row</code><span class="sig-paren">(</span><em>row</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.parse_bin_tick_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse numpy tick data row into Python data. This is just for illustration, for sake of speed,
+we may not necessarily need to do this parsing, we can use numpy data directly.
+:param row: numpy.array, a row.
+:return: [object], python row.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.trading_datetime">
+<code class="descname">trading_datetime</code><em class="property"> = 0</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.trading_datetime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.last_price">
+<code class="descname">last_price</code><em class="property"> = 1</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.last_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.volume">
+<code class="descname">volume</code><em class="property"> = 2</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.volume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.update_time">
+<code class="descname">update_time</code><em class="property"> = 3</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.update_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.update_millisec">
+<code class="descname">update_millisec</code><em class="property"> = 4</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.update_millisec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.open_interest">
+<code class="descname">open_interest</code><em class="property"> = 5</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.open_interest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.ask_price1">
+<code class="descname">ask_price1</code><em class="property"> = 6</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.ask_price1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.ask_volume1">
+<code class="descname">ask_volume1</code><em class="property"> = 7</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.ask_volume1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.bid_price1">
+<code class="descname">bid_price1</code><em class="property"> = 8</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.bid_price1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.bid_volume1">
+<code class="descname">bid_volume1</code><em class="property"> = 9</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.bid_volume1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.settlement_price">
+<code class="descname">settlement_price</code><em class="property"> = 10</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.settlement_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.upper_limit_price">
+<code class="descname">upper_limit_price</code><em class="property"> = 11</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.upper_limit_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.lower_limit_price">
+<code class="descname">lower_limit_price</code><em class="property"> = 12</em><a class="headerlink" href="#ctxalgolib.ohlc.data_row_transformers.jishuyuan_data_row_transformers.JishuyuanTickBinaryLoader.lower_limit_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
