@@ -102,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volatility_ohlc_merger.html">volatility_ohlc_merger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_comparer.html">ohlc_comparer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_transformer.html">data_transformer</a></li>
@@ -703,7 +704,7 @@ not contain information about traded price or order book.
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">VolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>previous_profits=None</em>, <em>l1_statistics=False</em>, <em>with_start_end_tick=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.ohlc_generator.</code><code class="descname">VolatilityOhlcGenerator</code><span class="sig-paren">(</span><em>ohlcs</em>, <em>market_periods=None</em>, <em>on_bar_generated=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>keep_new_bars=True</em>, <em>is_source_data_tick=False</em>, <em>profit_factor=None</em>, <em>previous_profits=None</em>, <em>l1_statistics=False</em>, <em>with_start_end_tick=False</em>, <em>enforce_bar_at_day_end=True</em>, <em>previous_trading_day_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator" title="ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.ohlc_generator.AbstractOhlcGenerator</span></code></a></p>
 <p>Initialize current.
 :param ohlcs: dict from volatility threshold to OHLC. Keys are volatility threshold of the ohlcs to generate,</p>
@@ -758,6 +759,11 @@ The inner dict must have the following keys: OhlcAttributes.closes, OhlcAttribut
 the close value and the profits series of the last bar. If there is no previously generated bars, set it to
 None.</li>
 <li><strong>l1_statistics</strong> &#8211; bool, if True, include L1 statistics related fields.</li>
+<li><strong>enforce_bar_at_day_end</strong> &#8211; bool, if True, always generate a bar (if there is data) at the end of a trading
+day, even if the data cannot form a high enough bar. If False, and if previous_trading_day_data is not None,
+use the information from previous_trading_day_data to setup the bar generation.</li>
+<li><strong>previous_trading_day_data</strong> &#8211; dict{string: object}, if not None, data that contains the information of the
+left over data from the previous trading day.</li>
 </ul>
 </td>
 </tr>
@@ -800,6 +806,19 @@ return: dict from string (volatility names) to Bars. Keys are all periodicities 
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.is_source_data_tick">
 <code class="descname">is_source_data_tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.is_source_data_tick" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_left_over_data">
+<code class="descname">get_left_over_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_left_over_data" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">{string: object}, return the left over data which does not form a full volatility bar yet.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_generator.VolatilityOhlcGenerator.get_fake_end_of_day_bar">

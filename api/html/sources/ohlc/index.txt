@@ -13,6 +13,7 @@ ohlc
    bar_arrival_request
    ohlc_spec_utils
    ctp_file_log_reader
+   volatility_ohlc_merger
    ohlc_comparer
    ohlc_concatenator
    data_transformer
