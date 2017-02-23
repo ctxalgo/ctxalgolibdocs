@@ -162,17 +162,23 @@
 <span id="charts"></span><h1>charts<a class="headerlink" href="#module-ctxalgolib.charting.charts" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ctxalgolib.charting.charts.Charts">
-<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">Charts</code><span class="sig-paren">(</span><em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em>, <em>ohlc_attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.Charts" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">Charts</code><span class="sig-paren">(</span><em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em>, <em>ohlc_attributes=None</em>, <em>period=None</em>, <em>volatility_threshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.Charts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Class that generates html-based charts.</p>
 <p>Initialize current.
 :param data_feed: AbstractDataFeed, BacktestingDataSource or string,</p>
 <blockquote>
-<div>the data feed used by current to load trading data.
+<div><p>the data feed used by current to load trading data.
 If it is AbstractDataFeed, then use the data feed directly.
 If it is a BacktestingDataSource, a data feed will be constructed based on that data source.
-If it is a string, the string represents a path to a data file or a folder containing data files.
-A FileBasedDataFeed will be crated internally.</div></blockquote>
+If it is a string, the string represents a path to a data file or a folder containing data files.</p>
+<blockquote>
+<div>A FileBasedDataFeed will be crated internally.</div></blockquote>
+<dl class="docutils">
+<dt>If it is a OHLC, create a OhlcBasedDataFeed object for the ohlc object. And you have to specify either</dt>
+<dd>period or volatility_threshold.</dd>
+</dl>
+</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -196,6 +202,9 @@ profits: False,
 order_book_level: 0</div></blockquote>
 <p>}</p>
 </li>
+<li><strong>period</strong> &#8211; Periodicity, only used to specify the time-based period if data_feed is an OHLC object.</li>
+<li><strong>volatility_threshold</strong> &#8211; int/float, only used to specify the volatility-based threshold if data_feed
+is an OHLC object.</li>
 </ul>
 </td>
 </tr>
@@ -282,7 +291,7 @@ default instrument.</li>
 
 <dl class="class">
 <dt id="ctxalgolib.charting.charts.ChartsWithReport">
-<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">ChartsWithReport</code><span class="sig-paren">(</span><em>report=None</em>, <em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em>, <em>ohlc_attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.charting.charts.</code><code class="descname">ChartsWithReport</code><span class="sig-paren">(</span><em>report=None</em>, <em>data_feed=None</em>, <em>translator=None</em>, <em>folder=None</em>, <em>include_all_files=False</em>, <em>open_in_browser=True</em>, <em>ohlc_attributes=None</em>, <em>period=None</em>, <em>volatility_threshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.charting.charts.Charts" title="ctxalgolib.charting.charts.Charts"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.charting.charts.Charts</span></code></a></p>
 <p>Class that supports charting with a strategy report.</p>
 <p>Initialize current.
@@ -363,6 +372,37 @@ If None, self.report is used.</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.dispose">
+<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.dispose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all generated files and temp folders.
+Should be invoked when you are done with the charting facility.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.period">
+<code class="descname">period</code><span class="sig-paren">(</span><em>period=None</em>, <em>position='a'</em>, <em>sid=None</em>, <em>height=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the default periodicity for chart builders.
+:param period: Periodicity, or string, if Periodicity, its value will be used,</p>
+<blockquote>
+<div>if string, it represents the periodicity name, such as <cite>1m</cite> for one minute, then
+a Periodicity object will be parsed from this string.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>position</strong> &#8211; Ignore.</li>
+<li><strong>sid</strong> &#8211; string, the instrument id whose period is set. If None, the period is set for the
+default instrument.</li>
+<li><strong>height</strong> &#8211; ignore.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.charting.charts.ChartsWithReport.returns">
 <code class="descname">returns</code><span class="sig-paren">(</span><em>period=None</em>, <em>balance=None</em>, <em>label=None</em>, <em>type='line'</em>, <em>style='Solid'</em>, <em>color='black'</em>, <em>thick=2</em>, <em>height=None</em>, <em>position='a'</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.returns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw returns series.
@@ -392,6 +432,46 @@ If None, self.report is used.</li>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.set_instrument">
+<code class="descname">set_instrument</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.set_instrument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the default instrument id with instrument_id. If the chart only involves a single instrument,
+set that instrument&#8217;s id here can simplify chart construction, because you don&#8217;t need to specify
+instrument ids the individual builder methods, such as self.series. If the chart involves multiple instruments,
+you can leave this instrument id None and specify instrument ids in all builder methods, or
+set it to a default instrument id, and specify other instrument ids in building methods which
+charts for other instruments.
+:param instrument_id: string, instrument id.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.show">
+<code class="descname">show</code><span class="sig-paren">(</span><em>html_file=None</em>, <em>should_dispose_html_file=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate html page representing the current chart construction and return the html page path.
+If self.open_in_browser is True, also try to open the generated html page in browser.
+:param html_file: string, the path to a file which will be the generated html file in self.folder.</p>
+<blockquote>
+<div>If None, create a file inside self.folder.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>should_dispose_html_file</strong> &#8211; boolean, only have effect when html_file is not None.
+If True, the generate html_file will not be deleted when self.dispose is called.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string, the path to the generated html page.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.sub_chart">
+<code class="descname">sub_chart</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.sub_chart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify which sub-chart to accept chart construction information.
+:param index: int, 0-based chart index. 0 means main chart.</p>
 </dd></dl>
 
 <dl class="method">
@@ -456,37 +536,6 @@ If None, self.report is used.</li>
 </dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.dispose">
-<code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.dispose" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove all generated files and temp folders.
-Should be invoked when you are done with the charting facility.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.period">
-<code class="descname">period</code><span class="sig-paren">(</span><em>period=None</em>, <em>position='a'</em>, <em>sid=None</em>, <em>height=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.period" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the default periodicity for chart builders.
-:param period: Periodicity, or string, if Periodicity, its value will be used,</p>
-<blockquote>
-<div>if string, it represents the periodicity name, such as <cite>1m</cite> for one minute, then
-a Periodicity object will be parsed from this string.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>position</strong> &#8211; Ignore.</li>
-<li><strong>sid</strong> &#8211; string, the instrument id whose period is set. If None, the period is set for the
-default instrument.</li>
-<li><strong>height</strong> &#8211; ignore.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.charting.charts.ChartsWithReport.position_sizing">
 <code class="descname">position_sizing</code><span class="sig-paren">(</span><em>period=None</em>, <em>sizing=None</em>, <em>label=None</em>, <em>type='step'</em>, <em>style='Solid'</em>, <em>color='black'</em>, <em>thick=2</em>, <em>position='a'</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.position_sizing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw position sizing information.
@@ -515,46 +564,6 @@ If None, self.report is used.</li>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.set_instrument">
-<code class="descname">set_instrument</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.set_instrument" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the default instrument id with instrument_id. If the chart only involves a single instrument,
-set that instrument&#8217;s id here can simplify chart construction, because you don&#8217;t need to specify
-instrument ids the individual builder methods, such as self.series. If the chart involves multiple instruments,
-you can leave this instrument id None and specify instrument ids in all builder methods, or
-set it to a default instrument id, and specify other instrument ids in building methods which
-charts for other instruments.
-:param instrument_id: string, instrument id.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.show">
-<code class="descname">show</code><span class="sig-paren">(</span><em>html_file=None</em>, <em>should_dispose_html_file=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.show" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate html page representing the current chart construction and return the html page path.
-If self.open_in_browser is True, also try to open the generated html page in browser.
-:param html_file: string, the path to a file which will be the generated html file in self.folder.</p>
-<blockquote>
-<div>If None, create a file inside self.folder.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>should_dispose_html_file</strong> &#8211; boolean, only have effect when html_file is not None.
-If True, the generate html_file will not be deleted when self.dispose is called.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">string, the path to the generated html page.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.sub_chart">
-<code class="descname">sub_chart</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.sub_chart" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify which sub-chart to accept chart construction information.
-:param index: int, 0-based chart index. 0 means main chart.</p>
 </dd></dl>
 
 <dl class="method">
@@ -649,7 +658,7 @@ If None, self.report is used.</li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Feb 22, 2017.
+      Last updated on Feb 23, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
