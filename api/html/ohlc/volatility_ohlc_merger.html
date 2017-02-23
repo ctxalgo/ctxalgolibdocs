@@ -211,6 +211,41 @@ Output the final leftover data from the original ohlc even if a full high enough
 
 </dd></dl>
 
+<dl class="class">
+<dt id="ctxalgolib.ohlc.volatility_ohlc_merger.OverlapBasedVolatilityOhlcMerger">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.volatility_ohlc_merger.</code><code class="descname">OverlapBasedVolatilityOhlcMerger</code><span class="sig-paren">(</span><em>overlap_ratio</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.volatility_ohlc_merger.OverlapBasedVolatilityOhlcMerger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger" title="ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger</span></code></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>overlap_ratio</strong> &#8211; <p>float, the K-bar body overlap ratio. The merging semantics is:
+1. The first bar from the original ohlc will be generated as the first bar in the result ohlc. And define</p>
+<blockquote>
+<div>the body of a K-bar to be the range between is open and close price.</div></blockquote>
+<ol class="arabic" start="2">
+<li>Starting from the second bar in the original ohlc:
+2.1. If the body of the previously generated bar is of 0 height, and output the current bar from<blockquote>
+<div>the original ohlc as the new result bar.</div></blockquote>
+<dl class="docutils">
+<dt>2.2. Otherwise, check how much the body from the processed but not generated original bars (which can</dt>
+<dd>potentially form a new result bar) overlaps with the previously generated bar. If the overlay is
+less than overlap_ratio, then output a new bar. If the body of the potentially new bar does not
+overlap with the previously generated bar&#8217;s body at all, output a new bar as well.</dd>
+</dl>
+</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.ohlc.volatility_ohlc_merger.OverlapBasedVolatilityOhlcMerger.merge">
+<code class="descname">merge</code><span class="sig-paren">(</span><em>ohlc</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.volatility_ohlc_merger.OverlapBasedVolatilityOhlcMerger.merge" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
