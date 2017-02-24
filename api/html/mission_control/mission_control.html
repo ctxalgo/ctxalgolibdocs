@@ -291,7 +291,7 @@ a single queue address into strategy. It will use the topic given by the topic p
 If the type is dict{string: string}, it means dict{topic: address},
 then the topic parameter will be ignored.</li>
 <li><strong>with_poller</strong> &#8211; bool, if True, create an internal Poller, so you can call self.poll_from_strategy().</li>
-<li><strong>strategy_name</strong> &#8211; string, strategy name.</li>
+<li><strong>strategy_name</strong> &#8211; string, strategy name. or [string], a list of strategy names.</li>
 <li><strong>proxy</strong> &#8211; bool, if True, the messages are sent through a proxy.</li>
 </ul>
 </td>
