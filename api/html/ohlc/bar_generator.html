@@ -394,7 +394,7 @@ by calling self.on_bar_generated.
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">VolatilityBarGenerator</code><span class="sig-paren">(</span><em>volatility</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>l1_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.bar_generator.</code><code class="descname">VolatilityBarGenerator</code><span class="sig-paren">(</span><em>volatility</em>, <em>on_bar_generated</em>, <em>market_periods=None</em>, <em>with_open_interest=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>use_mid_ask_bid=False</em>, <em>trading_days=None</em>, <em>l1_statistics=False</em>, <em>enforce_bar_at_day_end=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.bar_generator.AbstractBarGenerator" title="ctxalgolib.ohlc.bar_generator.AbstractBarGenerator"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.bar_generator.AbstractBarGenerator</span></code></a></p>
 <p>Class that collects price events and emits volatility ohlc bars.</p>
 <p>Initialize current.
@@ -443,6 +443,18 @@ and the generated ohlc bars contains open interest data.</li>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_time">
+<code class="descname">add_time</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.flush">
+<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finish current bar generator. Emit remaining data into a single bar and emit the bar
+by calling self.on_bar_generated.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.is_tick_usable">
 <code class="descname">is_tick_usable</code><span class="sig-paren">(</span><em>tick</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.is_tick_usable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Is the given tick usable?
@@ -456,23 +468,21 @@ and the generated ohlc bars contains open interest data.</li>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_time">
-<code class="descname">add_time</code><span class="sig-paren">(</span><em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.add_time" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.flush">
-<code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.flush" title="Permalink to this definition">¶</a></dt>
-<dd><p>Finish current bar generator. Emit remaining data into a single bar and emit the bar
-by calling self.on_bar_generated.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.peek_last_bar">
 <code class="descname">peek_last_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.peek_last_bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the last bar so far even if it is not fully developed.
 Return: Bar, the bat so far.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.get_previous_trading_day_data">
+<code class="descname">get_previous_trading_day_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.get_previous_trading_day_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.set_previous_trading_day_data">
+<code class="descname">set_previous_trading_day_data</code><span class="sig-paren">(</span><em>previous_data</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.bar_generator.VolatilityBarGenerator.set_previous_trading_day_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -498,7 +508,7 @@ Return: Bar, the bat so far.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Feb 24, 2017.
+      Last updated on Feb 26, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
