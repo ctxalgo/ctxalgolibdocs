@@ -1,0 +1,41 @@
+---
+title: 增量获取历史ohlc数据
+layout: post
+category: docs_data
+language: zh
+---
+
+本示例展示如何增量获取历史ohlc数据
+
+
+```python
+from datetime import datetime
+from ctxalgolib.ohlc.periodicity import Periodicity
+from ctxalgolib.data_feed.historical_data_fetcher import HistoricalLocalDataFeed
+from ctxalgolib.ohlc.ohlc_generator import OhlcGeneratorConstants
+
+folder = 'c:\\tmp\\ohlc'
+spec = {
+    OhlcGeneratorConstants.time_based: {
+        'cu00': {
+            Periodicity.ONE_MINUTE: {'start_time': datetime(2017, 1, 1), 'end_time': None},
+        },
+        'i00': {
+            Periodicity.ONE_MINUTE: {'start_time': datetime(2017, 1, 1), 'end_time': None},
+        }
+    }
+}
+
+feed = HistoricalLocalDataFeed(spec, folder, profits=True, dominants=True, check_start_time=False)
+ohlc = feed.ohlc('cu00')
+```
+
+如果你每天都运行该脚本，你会发现第一根K线的时间戳不改变，因为`spec`中的`start_time`没有变，但是最后一根K线的时间戳
+会不断变化，因为越来越多的历史数据被加入到数据库中了。
+
+
+```python
+print(ohlc.dates[0])
+print(ohlc.dates[-1])
+
+```
