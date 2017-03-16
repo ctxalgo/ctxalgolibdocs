@@ -10,7 +10,9 @@ rules
    general_exception_rule
    strategy_exception_rule
    max_order_quota_rule
+   strategy_abnormality_rule
    startup_rule
+   tick_speed_rule
    max_order_speed_rule
    too_close_to_delivery_date_rule
    strategy_warning_rule

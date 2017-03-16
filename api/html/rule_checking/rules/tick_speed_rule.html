@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tick_speed_rule &mdash; ctxalgolib 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ctxalgolib 0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="rules" href="index.html"/>
+        <link rel="next" title="max_order_speed_rule" href="max_order_speed_rule.html"/>
+        <link rel="prev" title="startup_rule" href="startup_rule.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../../index.html" class="icon icon-home"> ctxalgolib
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">rule_checking</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">rules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="future_position_sum_valid_rule.html">future_position_sum_valid_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="liveness_rule.html">liveness_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="information_rule.html">information_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="general_exception_rule.html">general_exception_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strategy_exception_rule.html">strategy_exception_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="max_order_quota_rule.html">max_order_quota_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strategy_abnormality_rule.html">strategy_abnormality_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="startup_rule.html">startup_rule</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tick_speed_rule</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">}</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">}</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="max_order_speed_rule.html">max_order_speed_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="too_close_to_delivery_date_rule.html">too_close_to_delivery_date_rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strategy_warning_rule.html">strategy_warning_rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../alerts/index.html">alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../message_validity_checker.html">message_validity_checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../checker.html">checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../violations.html">violations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rule_factory.html">rule_factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../error_codes.html">error_codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rule.html">rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rule_checker_message_sender.html">rule_checker_message_sender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../configs.html">configs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../news_analysis/index.html">news_analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cache/index.html">cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wind/index.html">wind</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../messaging/index.html">messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trading_utils/index.html">trading_utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ta/index.html">ta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output/index.html">output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system/index.html">system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pydot/index.html">pydot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slippage/index.html">slippage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trial/index.html">trial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ohlc/index.html">ohlc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../charting/index.html">charting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report/index.html">report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_imports/index.html">data_imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../trail/index.html">trail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../http_trading/index.html">http_trading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../time_series/index.html">time_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../statistics/index.html">statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eval/index.html">eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">ctxalgolib</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">rule_checking</a> &raquo;</li>
+      
+          <li><a href="index.html">rules</a> &raquo;</li>
+      
+    <li>tick_speed_rule</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../sources/rule_checking/rules/tick_speed_rule.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ctxalgolib.rule_checking.rules.tick_speed_rule">
+<span id="tick-speed-rule"></span><h1>tick_speed_rule<a class="headerlink" href="#module-ctxalgolib.rule_checking.rules.tick_speed_rule" title="Permalink to this headline">¶</a></h1>
+<p>[en]
+Title: Tick arrival speed
+This rule checks if ticks arrives at at least a minimum speed (number of ticks/minute). The parameters of the rule:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+{</p>
+<blockquote>
+<div><p>&#8216;sources&#8217;: [&#8216;market_broker1&#8217;, &#8216;market_data_processor&#8217;],
+&#8216;speeds&#8217;: {</p>
+<blockquote>
+<div>&#8216;cu00&#8217;: 60,
+&#8216;rb00&#8217;: 70</div></blockquote>
+<p>},
+&#8216;default_speed&#8217;: 1</p>
+</div></blockquote>
+<div class="section" id="id5">
+<h2>}<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>sources</cite> entry lists all the tick count sources that the rule is going to monitor. <cite>speeds</cite>
+defines the minimum number of ticks per minute for the given instruments during their market periods.
+<cite>default_speed</cite> defines the minimum number of ticks per minute for the instruments not specified in <cite>speeds</cite>.</p>
+<p>[zh]
+Title: Tick到达的速度
+这个规则报告Tick的到达速度是低于指定阈值。规则的参数如下：</p>
+<p><a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">`</span></a>python
+{</p>
+<blockquote>
+<div><p>&#8216;sources&#8217;: [&#8216;market_broker1&#8217;, &#8216;market_data_processor&#8217;],
+&#8216;speeds&#8217;: {</p>
+<blockquote>
+<div>&#8216;cu00&#8217;: 60,
+&#8216;rb00&#8217;: 70</div></blockquote>
+<p>},
+&#8216;default_speed&#8217;: 1</p>
+</div></blockquote>
+</div>
+<div class="section" id="id10">
+<h2>}<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p><a href="#id11"><span class="problematic" id="id12">`</span></a>sources`列出了需要监听的tick源，可以列出多个源。<a href="#id13"><span class="problematic" id="id14">`</span></a>speeds`定义每个合约品种的最低tick速度，单位为tick个数/分钟。
+<a href="#id15"><span class="problematic" id="id16">`</span></a>default_speed`指定那些没有在`speeds`中列出的合约的最低速度。</p>
+<dl class="class">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule">
+<em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.rules.tick_speed_rule.</code><code class="descname">TickSpeedRule</code><span class="sig-paren">(</span><em>name</em>, <em>trading_day</em>, <em>parameters</em>, <em>message_validity_checker</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../rule.html#ctxalgolib.rule_checking.rule.AbstractRule" title="ctxalgolib.rule_checking.rule.AbstractRule"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.rule_checking.rule.AbstractRule</span></code></a></p>
+<p>This rule checks if tick speed is above a given threshold.
+The input messages will be:
+TICK_COUNT#source {</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&#8216;tick_counts: {</dt>
+<dd>&#8216;cu00&#8217;: 5,
+&#8216;rb00&#8217;: 10,</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<p>TIMER</p>
+<p>The <cite>tick_counts</cite> values, for example, &#8216;cu00&#8217;: 5, are non-decreasing. The values mean the number of ticks that have
+been received for those instruments on current trading day. Normally, there will be a TICK_COUNT message per source
+every 30 seconds.</p>
+<dl class="docutils">
+<dt>The parameters of the current rule is:</dt>
+<dd><dl class="first docutils">
+<dt>parameters = {</dt>
+<dd><p class="first">&#8216;sources&#8217;: [&#8216;market_broker&#8217;, &#8216;market_data_processor&#8217;],
+&#8216;speeds&#8217;: {</p>
+<blockquote>
+<div>&#8216;cu00&#8217;: 60,
+&#8216;rb00&#8217;: 70</div></blockquote>
+<p class="last">},
+&#8216;default_speed&#8217;: 1</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>The <cite>sources</cite> entry lists all the tick count sources that the rule is going to monitor. <cite>speeds</cite>
+defines the minimum number of ticks per minute for the given instruments during their market periods.
+<cite>default_speed</cite> defines the minimum number of ticks per minute for the instruments not specified in <cite>speeds</cite>.</p>
+<p>Rule checking semantics:
+1. When a TICK_COUNT message arrives, look up the market periods for the included instruments using</p>
+<blockquote>
+<div>self._get_market_periods.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>When a TIMER message arrives, use the timestamp, along with instrument market periods, tick counts to
+decide if the rule should be violated for some instrument from some source.</li>
+<li>If the rule is violated for some instrument from some source, market this (instrument,source) pair as
+violated, and don&#8217;t trigger the violation again until the tick speed for this pair returns to above threshold.</li>
+<li>Only need to check during market periods and the checking starts from the first TICK_COUNT message we receive
+per source.</li>
+</ol>
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.name">
+<code class="descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.is_parameters_valid">
+<code class="descname">is_parameters_valid</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.is_parameters_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.input_topics">
+<code class="descname">input_topics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.input_topics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.state">
+<code class="descname">state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em>, <em>timestamp</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_market_periods">
+<code class="descname">get_market_periods</code><span class="sig-paren">(</span><em>kind</em>, <em>trading_day</em>, <em>trading_utils</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_market_periods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the market periods for the given on trading_day
+:param kind: string, instrument kind.
+:param trading_day: date, trading day.
+:param trading_utils: AbstractTradingUtils, trading utilities.
+:return: [(timestamp, timestamp)], meaning [(start_timestamp, end_timestamp)].</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_timestamp_from_time">
+<code class="descname">get_timestamp_from_time</code><span class="sig-paren">(</span><em>t</em>, <em>market_periods</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_timestamp_from_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine the time from time_ranges and the datetime from market periods.
+:param t: time, begin time or end time in time_ranges
+:param market_periods: [datetime], the market periods for the given on trading_day
+:return: datetime, the combined datetime. None means no time mapping.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_unique_account_signature">
+<code class="descname">get_unique_account_signature</code><span class="sig-paren">(</span><em>account_type</em>, <em>account_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_unique_account_signature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a unique signature for the given account.
+:param account_type: string, the account type, such as stock or future.
+:param account_id: string, the account id.
+:return: string, the account signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_unique_product_strategy">
+<code class="descname">get_unique_product_strategy</code><span class="sig-paren">(</span><em>product</em>, <em>strategy</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.get_unique_product_strategy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.handle_parameters">
+<code class="descname">handle_parameters</code><span class="sig-paren">(</span><em>parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.handle_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle comma-separated strings in source names.
+:parameters: dict{string: object}, parameters to the current rule.
+:return: dict{string: object}, source names not contain comma.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.is_message_valid">
+<code class="descname">is_message_valid</code><span class="sig-paren">(</span><em>topic</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.is_message_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the given message valid?
+:param topic: string, message topic.
+:param content: object, message content.
+:return: boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.set_trading_day">
+<code class="descname">set_trading_day</code><span class="sig-paren">(</span><em>day</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.rule_checking.rules.tick_speed_rule.TickSpeedRule.set_trading_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="max_order_speed_rule.html" class="btn btn-neutral float-right" title="max_order_speed_rule" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="startup_rule.html" class="btn btn-neutral" title="startup_rule" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, .
+      Last updated on Mar 16, 2017.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
