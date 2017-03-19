@@ -1,11 +1,11 @@
 ---
-title: dds获取历史ohlc数据
+title: dds获取给定时间点的历史ohlc数据
 layout: post
 category: docs_data
 language: zh
 ---
 
-本示例展示如何获取历史ohlc数据
+本示例展示如何获取给定时间点的历史ohlc数据，例如获取一定时间段内每日10：00am的k线数据
 
 
 ```python
