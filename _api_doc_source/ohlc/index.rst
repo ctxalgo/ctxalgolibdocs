@@ -23,6 +23,7 @@ ohlc
    ohlc_logger
    abstract_ohlc
    ohlc_utils
+   spread_and_mid_price_calculator
    price_type
    ohlc_generator
    trading_days
