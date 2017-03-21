@@ -20,7 +20,7 @@ feed = HistoricalLocalDataFeed(
     folder, sids=['cu00', 'i00'], period=Periodicity.ONE_MINUTE,
     start_time=datetime(2017, 1, 1), end_time=None,
     profits=True, dominants=True)
-ohlc = feed.ohlc('cu00')
+ohlc = feed.ohlc('cu00', periodicity=Periodicity.ONE_MINUTE)
 ```
 
 If you run the script day after day, the timestamp of the first ohlc bar does not change because the `start_time`

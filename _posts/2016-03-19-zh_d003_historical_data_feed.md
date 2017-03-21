@@ -21,7 +21,7 @@ feed = HistoricalLocalDataFeed(
     folder, sids=['cu00', 'i00'], period=Periodicity.ONE_MINUTE,
     start_time=datetime(2017, 1, 1), end_time=None,
     profits=True, dominants=True)
-ohlc = feed.ohlc('cu00')
+ohlc = feed.ohlc('cu00', periodicity=Periodicity.ONE_MINUTE)
 ```
 
 如果你每天都运行该脚本，你会发现第一根K线的时间戳不改变，因为`spec`中的`start_time`没有变，但是最后一根K线的时间戳
