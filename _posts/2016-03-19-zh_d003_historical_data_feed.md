@@ -15,18 +15,12 @@ from ctxalgolib.data_feed.historical_data_fetcher import HistoricalLocalDataFeed
 from ctxalgolib.ohlc.ohlc_generator import OhlcGeneratorConstants
 
 folder = 'c:\\tmp\\ohlc'
-spec = {
-    OhlcGeneratorConstants.time_based: {
-        'cu00': {
-            Periodicity.ONE_MINUTE: {'start_time': datetime(2017, 1, 1), 'end_time': None},
-        },
-        'i00': {
-            Periodicity.ONE_MINUTE: {'start_time': datetime(2017, 1, 1), 'end_time': None},
-        }
-    }
-}
-
-feed = HistoricalLocalDataFeed(spec, folder, profits=True, dominants=True, check_start_time=False)
+# Specify the instruments, the period and the time range to download trading data.
+# time_time set to None means to download until the last available data.
+feed = HistoricalLocalDataFeed(
+    folder, sids=['cu00', 'i00'], period=Periodicity.ONE_MINUTE,
+    start_time=datetime(2017, 1, 1), end_time=None,
+    profits=True, dominants=True)
 ohlc = feed.ohlc('cu00')
 ```
 
