@@ -1,5 +1,5 @@
 ---
-title: dds获取给定时间点的历史ohlc数据
+title: 获取给定时间点的历史ohlc数据
 layout: post
 category: docs_data
 language: zh
