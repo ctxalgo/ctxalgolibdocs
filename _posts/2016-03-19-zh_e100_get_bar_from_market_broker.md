@@ -1,5 +1,5 @@
 ---
-title: 使用实时市场行情数据的方法
+title: 使用实时市场行情数据的方法(基于ohlc)
 layout: post
 category: docs_market_broker
 language: zh
