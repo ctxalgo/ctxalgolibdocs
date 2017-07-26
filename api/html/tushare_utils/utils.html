@@ -154,8 +154,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="utils">
-<h1>utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ctxalgolib.tushare_utils.utils">
+<span id="utils"></span><h1>utils<a class="headerlink" href="#module-ctxalgolib.tushare_utils.utils" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="ctxalgolib.tushare_utils.utils.correct_tushare_stock_instrument_id">
+<code class="descclassname">ctxalgolib.tushare_utils.utils.</code><code class="descname">correct_tushare_stock_instrument_id</code><span class="sig-paren">(</span><em>instrument_id</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.utils.correct_tushare_stock_instrument_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a CTX stock instrument id from tushare instrument id.
+:param instrument_id: int, tushare stock instrument id.
+:return: string, CTX stock instrument id.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.tushare_utils.utils.get_tushare_stock_plates">
+<code class="descclassname">ctxalgolib.tushare_utils.utils.</code><code class="descname">get_tushare_stock_plates</code><span class="sig-paren">(</span><em>kind</em>, <em>path=None</em>, <em>enforce_fetch=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.utils.get_tushare_stock_plates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the stocks from given plate kind.
+:param kind: string, plate kind, can be concept, area, sme and gem.
+:param path: string, if not None, save or load the stock plate information from this file location.
+:param enforce_fetch: bool, if True, do not retrieve data from network, instead, load data from the file</p>
+<blockquote>
+<div>given by path. This also means if enforce_fetch is False, path must be set.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict{string: [string]}, meaning dict{plate_name: [stock ids]}.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.tushare_utils.utils.plates_of_stocks">
+<code class="descclassname">ctxalgolib.tushare_utils.utils.</code><code class="descname">plates_of_stocks</code><span class="sig-paren">(</span><em>kind</em>, <em>path=None</em>, <em>enforce_fetch=True</em>, <em>stocks_in_plates=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.utils.plates_of_stocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the plates that stocks belong to.
+:param kind: string, plate kind, can be concept, area, sme and gem.
+:param path: string, if not None, save or load the stock plate information from this file location.
+:param enforce_fetch: bool, if True, do not retrieve data from network, instead, load data from the file</p>
+<blockquote>
+<div>given by path. This also means if enforce_fetch is False, path must be set.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stocks_in_plates</strong> &#8211; if not None, use the data from here, the type is same as the returned value
+of get_tushare_stock_plates.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict{string: [string]}, meaning dict{stock_id: plate_names}.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.tushare_utils.utils.get_terminated_stocks">
+<code class="descclassname">ctxalgolib.tushare_utils.utils.</code><code class="descname">get_terminated_stocks</code><span class="sig-paren">(</span><em>path=None</em>, <em>enforce_fetch=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.utils.get_terminated_stocks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

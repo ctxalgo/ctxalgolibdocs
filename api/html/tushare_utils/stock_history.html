@@ -154,8 +154,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="stock-history">
-<h1>stock_history<a class="headerlink" href="#stock-history" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ctxalgolib.tushare_utils.stock_history">
+<span id="stock-history"></span><h1>stock_history<a class="headerlink" href="#module-ctxalgolib.tushare_utils.stock_history" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils">
+<em class="property">class </em><code class="descclassname">ctxalgolib.tushare_utils.stock_history.</code><code class="descname">StockHistoricalDataUtils</code><span class="sig-paren">(</span><em>connection</em>, <em>update_type</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils.update_stocks">
+<code class="descname">update_stocks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils.update_stocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use <a class="reference external" href="http://tushare.org/fundamental.html#id2">http://tushare.org/fundamental.html#id2</a> to update the stocks table in MySQL database.
+May add new stock ids, and may change name of some current stocks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils.update_trading_data">
+<code class="descname">update_trading_data</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils.update_trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update 
+:param period: Periodicity, can be DAILY, FIVE_MINUTE, FIFTEEN_MINUTE, THIRTY_MINUTE and HOURLY.
+:param instrument_ids: [string], the instruments ids whose data is to be retrieved from tushare and to be</p>
+<blockquote>
+<div>saved in MySQL database.
+For an instrument, if no data is available in MySQL database, then retrieve historical data from the
+beginning of that stock (this information is available from <a class="reference external" href="http://tushare.org/fundamental.html#id2">http://tushare.org/fundamental.html#id2</a>.
+Otherwise, only need to fetch and save new trading data.</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -154,8 +154,210 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="stock-live">
-<h1>stock_live<a class="headerlink" href="#stock-live" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ctxalgolib.tushare_utils.stock_live">
+<span id="stock-live"></span><h1>stock_live<a class="headerlink" href="#module-ctxalgolib.tushare_utils.stock_live" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData">
+<em class="property">class </em><code class="descclassname">ctxalgolib.tushare_utils.stock_live.</code><code class="descname">StockLiveData</code><span class="sig-paren">(</span><em>instrument_ids=None</em>, <em>frequency=3</em>, <em>max_instruments_per_fetch=30</em>, <em>max_history=100</em>, <em>as_thread=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Note: thread-safety, only need to assume that there is a single outside thread trying
+to call method in current class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>instrument_ids</strong> &#8211; [string], the list of stock ids whose live trading data is to be fetched.
+Note, that instrument ids here have &#8216;sh&#8217;, or &#8216;sz&#8217; prefixes, but the instrument ids sent to tushare do not
+need prefixes.</li>
+<li><strong>frequency</strong> &#8211; int, only do a fetch to tushare every this number of seconds.</li>
+<li><strong>max_instruments_per_fetch</strong> &#8211; int, the max number of instruments to fetch live trading data per tushare
+request. Since we may subscribe more stocks than this number, we need to arrange trading data fetch
+in a least-fetched fashion.</li>
+<li><strong>max_history</strong> &#8211; int, the number of trading data to keep in memory per stock.</li>
+<li><strong>as_thread</strong> &#8211; boolean, if True, start a thread to fetch trading data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData.subscribe">
+<code class="descname">subscribe</code><span class="sig-paren">(</span><em>instrument_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe instrument ids to fetch data.
+Be careful about thread-safety.
+:param instrument_ids: [string], stock instrument ids.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData.unsubscribe">
+<code class="descname">unsubscribe</code><span class="sig-paren">(</span><em>instrument_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData.unsubscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unsubscribe instrument ids. So no future data fetching for those instruments. But previously fetched
+data for those instruments will stay in memory.
+Be careful about thread-safety.
+:param instrument_ids: [string], stock instrument ids.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData.instruments">
+<code class="descname">instruments</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData.instruments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the list of subscribed instrument ids.
+:return: [string], the list of subscribed instrument ids.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData.trading_data">
+<code class="descname">trading_data</code><span class="sig-paren">(</span><em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData.trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getting the last history data for given stocks, remove all the trading data for those specified
+instruments from memory.
+Be careful about thread-safety. Clone result and return.
+:param instrument_ids: [string], stock instrument ids. If None, return data for all subscribed instrument ids.
+:return: dict{string: [object]}, keys are instrument ids, values are list of trading data up to history.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData.fetch_trading_data">
+<code class="descname">fetch_trading_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData.fetch_trading_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch trading data. Pay attention to self.frequency and make sure we do not exceed
+self.max_instruments_per_fetch quota.
+:return dict{string: object}, meaning dict{instrument_id: trading data}.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData.set_should_exit">
+<code class="descname">set_should_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData.set_should_exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ask the thread to terminate.
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.StockLiveData.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.StockLiveData.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start thread to fetch data.
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare">
+<em class="property">class </em><code class="descclassname">ctxalgolib.tushare_utils.stock_live.</code><code class="descname">FetchDataFromTushare</code><span class="sig-paren">(</span><em>instrument_id_queue</em>, <em>trading_data</em>, <em>should_exit</em>, <em>frequency</em>, <em>max_instruments_per_fetch</em>, <em>max_history</em>, <em>lock</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<p>Thread fetching live stock data from tushare.</p>
+<dl class="attribute">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.daemon">
+<code class="descname">daemon</code><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.daemon" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean value indicating whether this thread is a daemon thread (True) or not (False).</p>
+<p>This must be set before start() is called, otherwise RuntimeError is
+raised. Its initial value is inherited from the creating thread; the
+main thread is not a daemon thread and therefore all threads created in
+the main thread default to daemon = False.</p>
+<p>The entire Python program exits when no alive non-daemon threads are
+left.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.getName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.ident">
+<code class="descname">ident</code><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.ident" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thread identifier of this thread or None if it has not been started.</p>
+<p>This is a nonzero integer. See the thread.get_ident() function. Thread
+identifiers may be recycled when a thread exits and another thread is
+created. The identifier is available even after the thread has exited.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.isAlive">
+<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.isAlive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.isDaemon">
+<code class="descname">isDaemon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.isDaemon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.is_alive">
+<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the thread terminates.</p>
+<p>This blocks the calling thread until the thread whose join() method is
+called terminates &#8211; either normally or through an unhandled exception
+or until the optional timeout occurs.</p>
+<p>When the timeout argument is present and not None, it should be a
+floating point number specifying a timeout for the operation in seconds
+(or fractions thereof). As join() always returns None, you must call
+isAlive() after join() to decide whether a timeout happened &#8211; if the
+thread is still alive, the join() call timed out.</p>
+<p>When the timeout argument is not present or None, the operation will
+block until the thread terminates.</p>
+<p>A thread can be join()ed many times.</p>
+<p>join() raises a RuntimeError if an attempt is made to join the current
+thread as that would cause a deadlock. It is also an error to join() a
+thread before it has been started and attempts to do so raises the same
+exception.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.name">
+<code class="descname">name</code><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string used for identification purposes only.</p>
+<p>It has no semantics. Multiple threads may be given the same name. The
+initial name is set by the constructor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.setDaemon">
+<code class="descname">setDaemon</code><span class="sig-paren">(</span><em>daemonic</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.setDaemon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.setName">
+<code class="descname">setName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.setName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the thread&#8217;s activity.</p>
+<p>It must be called at most once per thread object. It arranges for the
+object&#8217;s run() method to be invoked in a separate thread of control.</p>
+<p>This method will raise a RuntimeError if called more than once on the
+same thread object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.FetchDataFromTushare.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thread run method, send http request to fetch live stock data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.tushare_utils.stock_live.one_fetch_from_tushare">
+<code class="descclassname">ctxalgolib.tushare_utils.stock_live.</code><code class="descname">one_fetch_from_tushare</code><span class="sig-paren">(</span><em>instrument_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_live.one_fetch_from_tushare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send http request to fetch specified stock data.
+:param instrument_ids: [string], stock instrument ids.
+:return: dict{string, dict{string, string}], means {instrument_id, {key: value}}</p>
+</dd></dl>
+
 </div>
 
 
