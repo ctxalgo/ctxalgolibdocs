@@ -74,6 +74,7 @@
           
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../portfolio/index.html">portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../risk/index.html">risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pub_subs/index.html">pub_subs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_checking/index.html">rule_checking</a></li>
@@ -85,7 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../timer/index.html">timer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../mt4/index.html">mt4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../alpha/index.html">alpha</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tushare_utils/index.html">tushare_utils</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">ta</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../support_resistance/index.html">support_resistance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../signal_processing/index.html">signal_processing</a></li>
@@ -146,6 +149,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../mission_control/index.html">mission_control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/index.html">scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../profiler_utils.html">profiler_utils</a></li>
 </ul>
 
           
@@ -188,8 +192,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="lvt">
-<h1>lvt<a class="headerlink" href="#lvt" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-ctxalgolib.ta.lvt.lvt">
+<span id="lvt"></span><h1>lvt<a class="headerlink" href="#module-ctxalgolib.ta.lvt.lvt" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ctxalgolib.ta.lvt.lvt.LvtCycle">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lvt.lvt.</code><code class="descname">LvtCycle</code><span class="sig-paren">(</span><em>length</em>, <em>amplitude</em>, <em>low_bar</em>, <em>strength</em>, <em>bartels</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lvt.lvt.LvtCycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Initialize current cycle.
+Parameters:</p>
+<blockquote>
+<div>length: int, the length of the cycle in number of bars.
+amplitude: double, the amplitude of the cycle.
+low: int, 0-based bar index indicating the low of the current cycle.
+strength: double, cycle strength.
+bartels: double, bartels value.</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="ctxalgolib.ta.lvt.lvt.LvtCycleScanner">
+<em class="property">class </em><code class="descclassname">ctxalgolib.ta.lvt.lvt.</code><code class="descname">LvtCycleScanner</code><span class="sig-paren">(</span><em>bartels_limit=49</em>, <em>cycle_min_length=10</em>, <em>cycle_max_length=299</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lvt.lvt.LvtCycleScanner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Initialize current scanner.
+Parameters:</p>
+<blockquote>
+<div>bartels_limit: int, a shreshold value to filter out noisy cycles.
+cycle_min_length: int, the minimum length of cycles in number of bars.
+cycle_max_length: int, the maximum length of cycles in number of bars.</div></blockquote>
+<dl class="method">
+<dt id="ctxalgolib.ta.lvt.lvt.LvtCycleScanner.scan_values">
+<code class="descname">scan_values</code><span class="sig-paren">(</span><em>values</em>, <em>start_bar</em>, <em>end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lvt.lvt.LvtCycleScanner.scan_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan values to detect cycles.
+Parameters:</p>
+<blockquote>
+<div>values: [float], the time series to scan.
+start_bar: int, 0-based bar (inclusive) to start scan.
+end_bar: int, 0-based bar (inclusive) to end scan.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[LvtCycle], the list of detected cycles.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.lvt.lvt.LvtCycleScanner.scan">
+<code class="descname">scan</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar</em>, <em>end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lvt.lvt.LvtCycleScanner.scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan ohlc from start_bar to end_bar (both inclusive) to find cycles.
+Parameters:</p>
+<blockquote>
+<div>ohlc: OHLC, ohlc time series object.
+start_bar: int, 0-based bar index in ohlc.
+end_bar: int, 0-based bar index in ohlc.</div></blockquote>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>[LvtCycle], the list of detected cycles.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ta.lvt.lvt.LvtCycleScanner.get_close_value">
+<code class="descname">get_close_value</code><span class="sig-paren">(</span><em>ohlc</em>, <em>start_bar</em>, <em>end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ta.lvt.lvt.LvtCycleScanner.get_close_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

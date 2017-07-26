@@ -74,6 +74,7 @@
           
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/index.html">portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
@@ -85,7 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alpha/index.html">alpha</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tushare_utils/index.html">tushare_utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../system/index.html">system</a></li>
@@ -93,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="padding/index.html">padding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_row_transformers/index.html">data_row_transformers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
@@ -101,11 +105,13 @@
 <li class="toctree-l2"><a class="reference internal" href="volatility_ohlc_utils.html">volatility_ohlc_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer_utils.html">ohlc_reader_writer_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="volatility_ohlc_merger.html">volatility_ohlc_merger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_comparer.html">ohlc_comparer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_transformer.html">data_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestamp_generator.html">timestamp_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_binary_reader_writer.html">ohlc_binary_reader_writer</a></li>
@@ -132,6 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiler_utils.html">profiler_utils</a></li>
 </ul>
 
           
@@ -370,7 +377,7 @@ amount_func: A function pointer float-&gt;float. The function to change amounts.
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions">
-<em class="property">static </em><code class="descname">get_empty_ohlc_from_dimensions</code><span class="sig-paren">(</span><em>id_=''</em>, <em>name=''</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>with_start_end_tick=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_empty_ohlc_from_dimensions</code><span class="sig-paren">(</span><em>id_=''</em>, <em>name=''</em>, <em>with_open_interests=False</em>, <em>order_book_level=0</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>with_start_end_tick=False</em>, <em>additional=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_empty_ohlc_from_dimensions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an empty ohlc object with the required dimensions.
 :param <a href="#id5"><span class="problematic" id="id6">id_</span></a>: string, the instrument id.
 :param name: string, the name of the instrument.
@@ -380,6 +387,7 @@ amount_func: A function pointer float-&gt;float. The function to change amounts.
 :param profits: boolean, if True, include the attribute for profits series.
 :param l1_statistics: boolean, if True, include the attribute fro l1 statistics
 :param with_start_end_tick: boolean, if True, include the attribute for tick index
+:param additional: [string], list of additional fields, if no additional field is needed, set to None.
 :return: OHLC, the created empty ohlc object.</p>
 </dd></dl>
 
@@ -452,6 +460,13 @@ The value is put into self.closes.
 :return bar: dict{string: object}, the new bar to be appended to the end of current ohlc.</p>
 <blockquote>
 <div>Keys are dimension names, values are data.</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.get_bar_index">
+<code class="descname">get_bar_index</code><span class="sig-paren">(</span><em>target_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.get_bar_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the corresponding bar index of the target date
+:return: the corresponding bar index</p>
 </dd></dl>
 
 <dl class="method">
@@ -537,6 +552,24 @@ current OHLC on some of the required dates, use None to fill in the missing part
 <dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.set_name">
 <code class="descname">set_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.set_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.slice_by_date">
+<code class="descname">slice_by_date</code><span class="sig-paren">(</span><em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.slice_by_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sub range of current OHLC between start_date (inclusive) and end_date (exclusive).
+:param start_date: datetime, start timestamp. If None, start from the first time point.
+:param end_date: datetime, end timestamp. If None, end until the last time point.
+:return: Slice, return the slice object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.slice_by_date2">
+<code class="descname">slice_by_date2</code><span class="sig-paren">(</span><em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.OHLC.slice_by_date2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sub range of current OHLC between start_date (inclusive) and end_date (inclusive).
+:param start_date: datetime, start timestamp. If None, start from the first time point.
+:param end_date: datetime, end timestamp. If None, end until the last time point.
+:return: Slice, return the slice object.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_utils.OHLC.sub_range_by_date">
@@ -1007,17 +1040,6 @@ Synchronization is performed as:</p>
 <p>Initialize current.
 :param fields: [string], the list of data attributes that should be synchronized.</p>
 <dl class="method">
-<dt id="ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.insert_ohlc">
-<code class="descname">insert_ohlc</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>target_bar</em>, <em>source_begin_bar</em>, <em>source_end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.insert_ohlc" title="Permalink to this definition">¶</a></dt>
-<dd><p>insert part of source ohlc into target ohlc
-:param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself
-:param source: OHLC, the source ohlc, the ohlc which provides new data.
-:param target_bar: int, the place to insert the target part (just before target_bar)
-:param source_begin_bar: int, the start bar of the part of the target ohlc (inclusive)
-:param source_end_bar: int, the end bar of the part of the target ohlc (inclusive)</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.synchronize">
 <code class="descname">synchronize</code><span class="sig-paren">(</span><em>target</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.synchronize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Synchronize source ohlc into target. The synchronization is performed as follows:
@@ -1027,6 +1049,17 @@ Notes: see the notes at OhlcSynchronizer.synchronize.
 :param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself.
 :param source: OHLC, the source ohlc, the ohlc which provides new data.
 :return Bar, always return None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.insert_ohlc">
+<code class="descname">insert_ohlc</code><span class="sig-paren">(</span><em>target</em>, <em>source</em>, <em>target_bar</em>, <em>source_begin_bar</em>, <em>source_end_bar</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.VolatilityOhlcSynchronizer.insert_ohlc" title="Permalink to this definition">¶</a></dt>
+<dd><p>insert part of source ohlc into target ohlc
+:param target: OHLC, the target ohlc, the ohlc which will have data inserted into itself
+:param source: OHLC, the source ohlc, the ohlc which provides new data.
+:param target_bar: int, the place to insert the target part (just before target_bar)
+:param source_begin_bar: int, the start bar of the part of the target ohlc (inclusive)
+:param source_end_bar: int, the end bar of the part of the target ohlc (inclusive)</p>
 </dd></dl>
 
 <dl class="method">
@@ -1063,6 +1096,13 @@ Synchronization is performed as:</p>
 </table>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="function">
+<dt id="ctxalgolib.ohlc.ohlc_utils.add_profit_series">
+<code class="descclassname">ctxalgolib.ohlc.ohlc_utils.</code><code class="descname">add_profit_series</code><span class="sig-paren">(</span><em>ohlc</em>, <em>eta=0.01</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.ohlc_utils.add_profit_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the profits series into given ohlc object.
+:param ohlc: OHLC, ohlc object.</p>
 </dd></dl>
 
 </div>

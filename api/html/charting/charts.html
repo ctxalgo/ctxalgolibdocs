@@ -74,6 +74,7 @@
           
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/index.html">portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
@@ -85,7 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alpha/index.html">alpha</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tushare_utils/index.html">tushare_utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../system/index.html">system</a></li>
@@ -118,6 +121,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiler_utils.html">profiler_utils</a></li>
 </ul>
 
           
@@ -334,49 +338,16 @@ order_book_level: 0</div></blockquote>
 </tbody>
 </table>
 <dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.figure">
-<code class="descname">figure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.figure" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.balance">
-<code class="descname">balance</code><span class="sig-paren">(</span><em>period=None</em>, <em>balance=None</em>, <em>label=None</em>, <em>type='line'</em>, <em>style='Solid'</em>, <em>color='black'</em>, <em>thick=2</em>, <em>height=None</em>, <em>position='a'</em>, <em>opposite=True</em>, <em>net_value=True</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.balance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot the balance time series from trading strategy report.
-:param period: Periodicity or string, the period to plot the balance series.</p>
-<blockquote>
-<div>If None, use default period.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>balance</strong> &#8211; OHLC, the balance series. The dates and closes attributes in the ohlc represents the
-balance series. If not None, the data in this ohlc will be used, and report will be ignored.</li>
-<li><strong>label</strong> &#8211; string, the label of the balance area.</li>
-<li><strong>type</strong> &#8211; string, the line type of the balance series, valid values are line and step.</li>
-<li><strong>style</strong> &#8211; string, the dash style, valid values are: Solid, ShortDash, ShortDot, ShortDashDot,
-ShortDashDotDot, Dot, Dash, LongDash, DashDot, LongDashDot, LongDashDotDot.</li>
-<li><strong>color</strong> &#8211; string, the color of the series.</li>
-<li><strong>thick</strong> &#8211; int, the width of the series.</li>
-<li><strong>height</strong> &#8211; int, the height of the chart, if None, a default will be used.</li>
-<li><strong>position</strong> &#8211; string, the position of the series.</li>
-<li><strong>opposite</strong> &#8211; boolean, if True, draw the curve on the opposite Y-aixs (on the right, instead of left).</li>
-<li><strong>net_value</strong> &#8211; boolean. If True, display balance as net values (starting from 1).</li>
-<li><strong>report</strong> &#8211; AbstractStrategyReport, the strategy backtesting report.
-If None, self.report is used.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="ctxalgolib.charting.charts.ChartsWithReport.dispose">
 <code class="descname">dispose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.dispose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove all generated files and temp folders.
 Should be invoked when you are done with the charting facility.</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.figure">
+<code class="descname">figure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.figure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="ctxalgolib.charting.charts.ChartsWithReport.period">
@@ -395,38 +366,6 @@ a Periodicity object will be parsed from this string.</div></blockquote>
 <li><strong>sid</strong> &#8211; string, the instrument id whose period is set. If None, the period is set for the
 default instrument.</li>
 <li><strong>height</strong> &#8211; ignore.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="ctxalgolib.charting.charts.ChartsWithReport.returns">
-<code class="descname">returns</code><span class="sig-paren">(</span><em>period=None</em>, <em>balance=None</em>, <em>label=None</em>, <em>type='line'</em>, <em>style='Solid'</em>, <em>color='black'</em>, <em>thick=2</em>, <em>height=None</em>, <em>position='a'</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.returns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Draw returns series.
-:param period: Periodicity or string, the period to plot the balance series.</p>
-<blockquote>
-<div>If None, use default period.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>balance</strong> &#8211; OHLC, the balance series. The dates and closes attributes in the ohlc represents the
-balance series. If not None, the data in this ohlc will be used to calculate returns,
-and report will be ignored.</li>
-<li><strong>label</strong> &#8211; string, the label of the balance area.</li>
-<li><strong>type</strong> &#8211; string, the line type of the balance series, valid values are line and step.</li>
-<li><strong>style</strong> &#8211; string, the dash style, valid values are: Solid, ShortDash, ShortDot, ShortDashDot,
-ShortDashDotDot, Dot, Dash, LongDash, DashDot, LongDashDot, LongDashDotDot.</li>
-<li><strong>color</strong> &#8211; string, the color of the series.</li>
-<li><strong>thick</strong> &#8211; int, the width of the series.</li>
-<li><strong>height</strong> &#8211; int, the height of the chart, if None, a default will be used.</li>
-<li><strong>position</strong> &#8211; string, the position of the series.</li>
-<li><strong>report</strong> &#8211; AbstractStrategyReport, the strategy backtesting report.
-If None, self.report is used.</li>
 </ul>
 </td>
 </tr>
@@ -472,6 +411,71 @@ If True, the generate html_file will not be deleted when self.dispose is called.
 <code class="descname">sub_chart</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.sub_chart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify which sub-chart to accept chart construction information.
 :param index: int, 0-based chart index. 0 means main chart.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.balance">
+<code class="descname">balance</code><span class="sig-paren">(</span><em>period=None</em>, <em>balance=None</em>, <em>label=None</em>, <em>type='line'</em>, <em>style='Solid'</em>, <em>color='black'</em>, <em>thick=2</em>, <em>height=None</em>, <em>position='a'</em>, <em>opposite=True</em>, <em>net_value=True</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the balance time series from trading strategy report.
+:param period: Periodicity or string, the period to plot the balance series.</p>
+<blockquote>
+<div>If None, use default period.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>balance</strong> &#8211; OHLC, the balance series. The dates and closes attributes in the ohlc represents the
+balance series. If not None, the data in this ohlc will be used, and report will be ignored.</li>
+<li><strong>label</strong> &#8211; string, the label of the balance area.</li>
+<li><strong>type</strong> &#8211; string, the line type of the balance series, valid values are line and step.</li>
+<li><strong>style</strong> &#8211; string, the dash style, valid values are: Solid, ShortDash, ShortDot, ShortDashDot,
+ShortDashDotDot, Dot, Dash, LongDash, DashDot, LongDashDot, LongDashDotDot.</li>
+<li><strong>color</strong> &#8211; string, the color of the series.</li>
+<li><strong>thick</strong> &#8211; int, the width of the series.</li>
+<li><strong>height</strong> &#8211; int, the height of the chart, if None, a default will be used.</li>
+<li><strong>position</strong> &#8211; string, the position of the series.</li>
+<li><strong>opposite</strong> &#8211; boolean, if True, draw the curve on the opposite Y-aixs (on the right, instead of left).</li>
+<li><strong>net_value</strong> &#8211; boolean. If True, display balance as net values (starting from 1).</li>
+<li><strong>report</strong> &#8211; AbstractStrategyReport, the strategy backtesting report.
+If None, self.report is used.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.charting.charts.ChartsWithReport.returns">
+<code class="descname">returns</code><span class="sig-paren">(</span><em>period=None</em>, <em>balance=None</em>, <em>label=None</em>, <em>type='line'</em>, <em>style='Solid'</em>, <em>color='black'</em>, <em>thick=2</em>, <em>height=None</em>, <em>position='a'</em>, <em>report=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.charting.charts.ChartsWithReport.returns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw returns series.
+:param period: Periodicity or string, the period to plot the balance series.</p>
+<blockquote>
+<div>If None, use default period.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>balance</strong> &#8211; OHLC, the balance series. The dates and closes attributes in the ohlc represents the
+balance series. If not None, the data in this ohlc will be used to calculate returns,
+and report will be ignored.</li>
+<li><strong>label</strong> &#8211; string, the label of the balance area.</li>
+<li><strong>type</strong> &#8211; string, the line type of the balance series, valid values are line and step.</li>
+<li><strong>style</strong> &#8211; string, the dash style, valid values are: Solid, ShortDash, ShortDot, ShortDashDot,
+ShortDashDotDot, Dot, Dash, LongDash, DashDot, LongDashDot, LongDashDotDot.</li>
+<li><strong>color</strong> &#8211; string, the color of the series.</li>
+<li><strong>thick</strong> &#8211; int, the width of the series.</li>
+<li><strong>height</strong> &#8211; int, the height of the chart, if None, a default will be used.</li>
+<li><strong>position</strong> &#8211; string, the position of the series.</li>
+<li><strong>report</strong> &#8211; AbstractStrategyReport, the strategy backtesting report.
+If None, self.report is used.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">

@@ -4,6 +4,7 @@ ohlc
 .. toctree::
    :maxdepth: 2
 
+   padding/index
    data_row_transformers/index
    holidays/index
    time_transformer
@@ -12,11 +13,13 @@ ohlc
    volatility_ohlc_utils
    bar_arrival_request
    ohlc_spec_utils
+   ohlc_reader_writer_utils
    ctp_file_log_reader
    volatility_ohlc_merger
    ohlc_comparer
    ohlc_concatenator
    data_transformer
+   timestamp_generator
    bar_generator
    ohlc_equality_checker
    ohlc_binary_reader_writer

@@ -74,6 +74,7 @@
           
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/index.html">portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
@@ -85,7 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alpha/index.html">alpha</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tushare_utils/index.html">tushare_utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../system/index.html">system</a></li>
@@ -93,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="padding/index.html">padding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_row_transformers/index.html">data_row_transformers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
@@ -101,11 +105,13 @@
 <li class="toctree-l2"><a class="reference internal" href="volatility_ohlc_utils.html">volatility_ohlc_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer_utils.html">ohlc_reader_writer_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">volatility_ohlc_merger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_comparer.html">ohlc_comparer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_transformer.html">data_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestamp_generator.html">timestamp_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_binary_reader_writer.html">ohlc_binary_reader_writer</a></li>
@@ -132,6 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiler_utils.html">profiler_utils</a></li>
 </ul>
 
           
@@ -190,13 +197,22 @@
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.volatility_ohlc_merger.ThresholdBasedVolatilityOhlcMerger">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.volatility_ohlc_merger.</code><code class="descname">ThresholdBasedVolatilityOhlcMerger</code><span class="sig-paren">(</span><em>new_threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.volatility_ohlc_merger.ThresholdBasedVolatilityOhlcMerger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.volatility_ohlc_merger.</code><code class="descname">ThresholdBasedVolatilityOhlcMerger</code><span class="sig-paren">(</span><em>new_threshold</em>, <em>additional_mergers</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.volatility_ohlc_merger.ThresholdBasedVolatilityOhlcMerger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger" title="ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new_threshold</strong> &#8211; int/float, the new bar height threshold for merging.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>new_threshold</strong> &#8211; int/float, the new bar height threshold for merging.</li>
+<li><strong>additional_mergers</strong> &#8211; dict{string: function}. If not None, this dict provides merging
+semantics for additional fields.
+Keys are field names, values are function pointer of the signature [object] -&gt; object. The inputs
+are the list of values to be merged, the output is the merged value.
+If a merging semantic is needed for an additional field is needed, but that field is not specified here,
+use self.default_additional_merger.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -214,13 +230,14 @@ Output the final leftover data from the original ohlc even if a full high enough
 
 <dl class="class">
 <dt id="ctxalgolib.ohlc.volatility_ohlc_merger.OverlapBasedVolatilityOhlcMerger">
-<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.volatility_ohlc_merger.</code><code class="descname">OverlapBasedVolatilityOhlcMerger</code><span class="sig-paren">(</span><em>overlap_ratio</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.volatility_ohlc_merger.OverlapBasedVolatilityOhlcMerger" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ctxalgolib.ohlc.volatility_ohlc_merger.</code><code class="descname">OverlapBasedVolatilityOhlcMerger</code><span class="sig-paren">(</span><em>overlap_ratio</em>, <em>additional_mergers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.volatility_ohlc_merger.OverlapBasedVolatilityOhlcMerger" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger" title="ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger"><code class="xref py py-class docutils literal"><span class="pre">ctxalgolib.ohlc.volatility_ohlc_merger.AbstractVolatilityOhlcMerger</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>overlap_ratio</strong> &#8211; <p>float, the K-bar body overlap ratio. The merging semantics is:
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>overlap_ratio</strong> &#8211; <p>float, the K-bar body overlap ratio. The merging semantics is:
 1. The first bar from the original ohlc will be generated as the first bar in the result ohlc. And define</p>
 <blockquote>
 <div>the body of a K-bar to be the range between is open and close price.</div></blockquote>
@@ -236,6 +253,14 @@ overlap with the previously generated bar&#8217;s body at all, output a new bar 
 </dl>
 </li>
 </ol>
+</li>
+<li><strong>additional_mergers</strong> &#8211; dict{string: function}. If not None, this dict provides merging
+semantics for additional fields.
+Keys are field names, values are function pointer of the signature [object] -&gt; object. The inputs
+are the list of values to be merged, the output is the merged value.
+If a merging semantic is needed for an additional field is needed, but that field is not specified here,
+use self.default_additional_merger.</li>
+</ul>
 </td>
 </tr>
 </tbody>

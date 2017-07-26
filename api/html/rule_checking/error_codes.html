@@ -74,6 +74,7 @@
           
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/index.html">portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">rule_checking</a><ul class="current">
@@ -97,7 +98,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alpha/index.html">alpha</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tushare_utils/index.html">tushare_utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../system/index.html">system</a></li>
@@ -116,6 +119,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiler_utils.html">profiler_utils</a></li>
 </ul>
 
           
@@ -207,6 +211,21 @@
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0009">
+<code class="descname">r0009</code><em class="property"> = 'r0009'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0009" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0010">
+<code class="descname">r0010</code><em class="property"> = 'r0010'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0010" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.r0020">
+<code class="descname">r0020</code><em class="property"> = 'r0020'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.r0020" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="ctxalgolib.rule_checking.error_codes.ErrorCodes.w0001">
 <code class="descname">w0001</code><em class="property"> = 'w0001'</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodes.w0001" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -238,7 +257,7 @@
 <em class="property">class </em><code class="descclassname">ctxalgolib.rule_checking.error_codes.</code><code class="descname">ErrorCodeExplanations</code><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations.messages">
-<code class="descname">messages</code><em class="property"> = {'s0004': u'Strategy logs an abnormal message.', 's0002': u'Strategy position mismatch against trader or backtesting.', 's0003': u'Strategy positions do not sum up to account.', 's0001': u'Strategy exception', 'r0007': u'Strategy weights file incorrect.', 'r0006': u'General exception.', 'r0005': u'Held instruments are too close to delivery date.', 'r0004': u'No strategy startup event.', 'r0003': u'No market broker/market data processor liveness heartbeat.', 'r0002': u'Position from risk report do not match positions from strategies.', 'r0001': u'Rule checker crashes.', 'r0000': u'Normal information.', 'r0008': u'Market tick speed is too low.', 'w0001': u'General warning.'}</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations.messages" title="Permalink to this definition">¶</a></dt>
+<code class="descname">messages</code><em class="property"> = {'r0010': u'Volatility checking for test data mismatched', 's0004': u'Strategy logs an abnormal message.', 'w0001': u'General warning.', 's0002': u'Strategy position mismatch against trader or backtesting.', 's0003': u'Strategy positions do not sum up to account.', 's0001': u'Strategy exception', 'r0020': u'Not enough disk space.', 'r0007': u'Strategy weights file incorrect.', 'r0006': u'General exception.', 'r0005': u'Held instruments are too close to delivery date.', 'r0004': u'No strategy startup event.', 'r0003': u'No market broker/market data processor liveness heartbeat.', 'r0002': u'Position from risk report do not match positions from strategies.', 'r0001': u'Rule checker crashes.', 'r0000': u'Normal information.', 'r0009': u'Volatility checking for live data mismatched', 'r0008': u'Market tick speed is too low.'}</em><a class="headerlink" href="#ctxalgolib.rule_checking.error_codes.ErrorCodeExplanations.messages" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="staticmethod">

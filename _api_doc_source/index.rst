@@ -5,6 +5,7 @@ Ctxalgolib api doc
    :maxdepth: 2
 
    loggers/index
+   portfolio/index
    risk/index
    pub_subs/index
    rule_checking/index
@@ -16,7 +17,9 @@ Ctxalgolib api doc
    timer/index
    mt4/index
    backtesting/index
+   alpha/index
    machine_learning/index
+   tushare_utils/index
    ta/index
    output/index
    system/index
@@ -36,3 +39,4 @@ Ctxalgolib api doc
    mission_control/index
    scripts/index
    utils.rst
+   profiler_utils.rst

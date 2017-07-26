@@ -5,6 +5,7 @@ wind
    :maxdepth: 2
 
    abstract_file_storer
+   holidays_from_wind
    clean_beta_data
    make_beta_data
    wind_test

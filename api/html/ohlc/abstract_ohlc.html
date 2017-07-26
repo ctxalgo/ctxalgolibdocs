@@ -74,6 +74,7 @@
           
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../loggers/index.html">loggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../portfolio/index.html">portfolio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../risk/index.html">risk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pub_subs/index.html">pub_subs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rule_checking/index.html">rule_checking</a></li>
@@ -85,7 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../timer/index.html">timer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mt4/index.html">mt4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../backtesting/index.html">backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alpha/index.html">alpha</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">machine_learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tushare_utils/index.html">tushare_utils</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ta/index.html">ta</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../output/index.html">output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../system/index.html">system</a></li>
@@ -93,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../slippage/index.html">slippage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trial/index.html">trial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ohlc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="padding/index.html">padding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_row_transformers/index.html">data_row_transformers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="holidays/index.html">holidays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="time_transformer.html">time_transformer</a></li>
@@ -101,11 +105,13 @@
 <li class="toctree-l2"><a class="reference internal" href="volatility_ohlc_utils.html">volatility_ohlc_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar_arrival_request.html">bar_arrival_request</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_spec_utils.html">ohlc_spec_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ohlc_reader_writer_utils.html">ohlc_reader_writer_utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ctp_file_log_reader.html">ctp_file_log_reader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="volatility_ohlc_merger.html">volatility_ohlc_merger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_comparer.html">ohlc_comparer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_concatenator.html">ohlc_concatenator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_transformer.html">data_transformer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timestamp_generator.html">timestamp_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bar_generator.html">bar_generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_equality_checker.html">ohlc_equality_checker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ohlc_binary_reader_writer.html">ohlc_binary_reader_writer</a></li>
@@ -132,6 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../mission_control/index.html">mission_control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiler_utils.html">profiler_utils</a></li>
 </ul>
 
           
@@ -389,6 +396,31 @@ The value is put into self.closes.
 </dd></dl>
 
 <dl class="method">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.slice_by_date">
+<code class="descname">slice_by_date</code><span class="sig-paren">(</span><em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.slice_by_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sub range of current OHLC between start_date (inclusive) and end_date (exclusive).
+:param start_date: datetime, start timestamp. If None, start from the first time point.
+:param end_date: datetime, end timestamp. If None, end until the last time point.
+:return: Slice, return the slice object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.slice_by_date2">
+<code class="descname">slice_by_date2</code><span class="sig-paren">(</span><em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.slice_by_date2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get sub range of current OHLC between start_date (inclusive) and end_date (inclusive).
+:param start_date: datetime, start timestamp. If None, start from the first time point.
+:param end_date: datetime, end timestamp. If None, end until the last time point.
+:return: Slice, return the slice object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.get_bar_index">
+<code class="descname">get_bar_index</code><span class="sig-paren">(</span><em>target_date</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.get_bar_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the corresponding bar index of the target date
+:return: the corresponding bar index</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.project_by_dates">
 <code class="descname">project_by_dates</code><span class="sig-paren">(</span><em>dates</em>, <em>fill_with_none=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.AbstractOhlc.project_by_dates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new OHLC which contains data on dates which are at dates. If there is no data available from
@@ -633,6 +665,26 @@ current OHLC on some of the required dates, use None to fill in the missing part
 <code class="descname">mid_price</code><em class="property"> = 'mid_price'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.mid_price" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.last_profit">
+<code class="descname">last_profit</code><em class="property"> = 'last_profit'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.last_profit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.mid_profit">
+<code class="descname">mid_profit</code><em class="property"> = 'mid_profit'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.mid_profit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.settlement_price">
+<code class="descname">settlement_price</code><em class="property"> = 'settlement_price'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.settlement_price" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.volume">
+<code class="descname">volume</code><em class="property"> = 'volume'</em><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.volume" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ask_prices_attribute">
 <em class="property">static </em><code class="descname">ask_prices_attribute</code><span class="sig-paren">(</span><em>order_book_level</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ask_prices_attribute" title="Permalink to this definition">¶</a></dt>
@@ -741,7 +793,7 @@ current OHLC on some of the required dates, use None to fill in the missing part
 
 <dl class="staticmethod">
 <dt id="ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes">
-<em class="property">static </em><code class="descname">ohlc_frame_attributes</code><span class="sig-paren">(</span><em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>with_start_end_tick=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">ohlc_frame_attributes</code><span class="sig-paren">(</span><em>with_open_interests</em>, <em>order_book_level</em>, <em>dominant=False</em>, <em>profits=False</em>, <em>l1_statistics=False</em>, <em>with_start_end_tick=False</em>, <em>additional=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.ohlc.abstract_ohlc.OhlcAttributes.ohlc_frame_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the set of attribute names for an OHLC that meets the requirement.
 :param with_open_interests: bool, if True, include attributes for open interests.
 :param order_book_level: int, non-negative, indicates the level of order book. 0 means no order book.
@@ -749,7 +801,8 @@ current OHLC on some of the required dates, use None to fill in the missing part
 :param profits: bool, if True, include attributes for profit series.
 :param l1_statistics: bool, if True, include L1 statistics related fields.
 :param with_start_end_tick: bool, if True, include tick index related fields
-:return: [string], the list of attributes that the ohlc should have to contain required information.</p>
+:param additional: [string], list of additional fields, if no additional field is needed, set to None.
+:return [string], the list of attributes that the ohlc should have to contain required information.</p>
 </dd></dl>
 
 <dl class="staticmethod">

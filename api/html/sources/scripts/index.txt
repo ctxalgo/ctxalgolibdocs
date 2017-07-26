@@ -8,6 +8,7 @@ scripts
    wind/index
    stock/index
    alpha_data/index
+   tushare/index
    wind_base_data/index
    update_stock_plates_from_sohu
    import_future_commissions_in_database
@@ -50,6 +51,7 @@ scripts
    calculate_fundamentals
    correct_extra_large_stock_daily_price
    update_stock_plates
+   transform_tick_data_into_binary_format
    collect_index_composite_stocks_and_weights
    calculate_plate_money_flow
    import_future_margin_into_database
