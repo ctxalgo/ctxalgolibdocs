@@ -169,7 +169,7 @@ May add new stock ids, and may change name of some current stocks.</p>
 
 <dl class="method">
 <dt id="ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils.update_trading_data">
-<code class="descname">update_trading_data</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_ids=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils.update_trading_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">update_trading_data</code><span class="sig-paren">(</span><em>period</em>, <em>instrument_ids=None</em>, <em>exright_direction=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ctxalgolib.tushare_utils.stock_history.StockHistoricalDataUtils.update_trading_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update 
 :param period: Periodicity, can be DAILY, FIVE_MINUTE, FIFTEEN_MINUTE, THIRTY_MINUTE and HOURLY.
 :param instrument_ids: [string], the instruments ids whose data is to be retrieved from tushare and to be</p>
@@ -178,6 +178,14 @@ May add new stock ids, and may change name of some current stocks.</p>
 For an instrument, if no data is available in MySQL database, then retrieve historical data from the
 beginning of that stock (this information is available from <a class="reference external" href="http://tushare.org/fundamental.html#id2">http://tushare.org/fundamental.html#id2</a>.
 Otherwise, only need to fetch and save new trading data.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>exright_direction</strong> &#8211; int, exright direction, 0 means forward, 1 means backward, None means no exright.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -204,7 +212,7 @@ Otherwise, only need to fetch and save new trading data.</div></blockquote>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2016, .
-      Last updated on Jul 31, 2017.
+      Last updated on Aug 06, 2017.
     </p>
   </div>
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
