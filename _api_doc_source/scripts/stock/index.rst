@@ -9,4 +9,5 @@ stock
    update_stock_id_index_mapping
    calculate_stock_l1_statistics
    statistics_calculator_factory
+   netease_stock_plate_extractor
    update_stock_data
